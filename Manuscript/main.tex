@@ -1,0 +1,447 @@
+%%%%%%%%%%%%%%%%%%%
+%% imports
+%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,twoside,a4paper,parskip]{scrbook} % oneside for writing, twoside for submission (space for comments on the print)
+\setcounter{tocdepth}{1} % depth of table of contents, for debugging purposes
+\usepackage[utf8]{inputenc} % define the encoding type for LateX, may be obsolete in newer versions of LateX
+\usepackage{csquotes} % helper package for quotes
+\usepackage[english]{babel} % language support, multiple languages can also be listed
+\usepackage{floatflt} % wrap text around tables and figures, useful for some templates
+\usepackage[pdftex]{graphicx} % /includegraphics command with more options
+\usepackage[hidelinks]{hyperref} % used for cross-referencing in LateX, hidelinks is an option to better format links
+\usepackage{xcolor} % color management
+\usepackage{amssymb} % symbol support
+\usepackage{textcomp} % text symbol support
+\usepackage{nicefrac} % better formatting for fractions
+\usepackage{scrhack} % definition of macros 
+\usepackage{pdfpages} % include pdf pages in LaTeX
+\usepackage{float} % floating objects (i.e. figures, tables)
+\usepackage{pdflscape} % better pdf support with more options
+\usepackage[verbose]{placeins} % checks that floats are within bounds - verbose adds extra logs
+\usepackage[markcase=ignoreuppercase,headsepline,plainfootsepline]{scrlayer-scrpage} % manage page styles, markcase: automatic typesetting in heads, headsepline: line underneath the headerm, plainfootsepline: rule above the footer
+\usepackage[ruled,vlined]{algorithm2e} % algorithm environment, ruled: algorithm with line at the top and bottom. Caption is not centered but at the beginning of the algorithm, vlined: vertical line followed by a small horizontal line between the start and the end of each block
+\usepackage{listings} % used to display nicely formatted source code 
+\usepackage{caption} % adds captions to figures, tables, equations... with correct number assignments
+\usepackage{subcaption} % adds subcaptions to subfigures, useful for more complex figures, has to be imported after the caption package
+\usepackage{epstopdf} % needed to use .eps 
+\usepackage{longtable} % enables long tables over page boundaries
+\usepackage{setspace} % sets line spacing
+\usepackage{booktabs} % better line management and line separation within tables
+\usepackage[sortcites,style=numeric,backend=biber,doi=false,isbn=false,url=false,eprint=false]{biblatex} % good package for bibliography support in LaTeX with biber backend, sortcites: sorting bibliography (name, title, year), style=numeric: standard numeric citation style (recommended!), doi/isbn/url/eprint=false: hide links in bibliography (recommended for clean bibliography!)
+\usepackage{makecell} % tabular column heads and multilined cells
+\usepackage{amsmath} % math support 
+\bibliography{bibliography} % included biblatex formatted citations from the file bibliography.bib
+
+\usepackage{lipsum} % only used for the template generation, remove this usepackage command and all \lipsum calls
+%%%%%%%%%%%%%%%%%%%
+%% definitions
+%%%%%%%%%%%%%%%%%%%
+\def\BaAuthor{Your Name}
+\def\BaAuthorStudyProgram{Study program} 
+\def\BaType{Master/Bachelor Thesis}
+\def\BaTitle{Thesis Title}
+\def\BaSupervisorOne{Prof. Dr. rer. nat. habil. Frank-Michael Schleif}
+\def\BaSupervisorTwo{Second supervisor}
+\def\BaDeadline{\SubmitDate}
+\def\SubmitDate{Your submission date}
+\def\git{https://github.com/.../...}
+
+% option to generate anonymous submission for plagiarism scan!
+\ifdefined\iswithfullname
+\def\ShowBaAuthor{\BaAuthor}
+\else
+\def\ShowBaAuthor{N.~N.}
+\fi
+
+\hypersetup{
+pdfauthor={\ShowBaAuthor},
+pdftitle={\BaTitle},
+pdfsubject={Subject},
+pdfkeywords={Keywords}
+}
+
+%%%%%%%%%%%%%%%%%%%
+%% configs to include
+%%%%%%%%%%%%%%%%%%%
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+  linewidth=\textwidth
+}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+\lstset{language=xml,
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  numbers=left,
+  numberstyle=\scriptsize,
+  stepnumber=1,
+  numbersep=8pt,
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  backgroundcolor=\color{background},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  tabsize=4,
+  breaklines=true,
+  keepspaces=true,
+  numbers=left,
+  numberstyle=\scriptsize,
+  stepnumber=1,
+  numbersep=8pt,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{pgreen},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pred},
+  basicstyle=\ttfamily,
+  backgroundcolor=\color{background},
+%  moredelim=[il][\textcolor{pgrey}]{$$},
+%  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}
+\newcommand*{\forcetwoside}[1][1]{%
+ \begingroup
+   \cleardoubleoddpage
+   \KOMAoptions{titlepage=true}% useful e.g. for scrartcl
+   \csname @twosidetrue\endcsname
+   \maketitle[{#1}]
+ \endgroup
+}
+\def\c#1{\mathcal{#1}}
+\DeclareUnicodeCharacter{2212}{-}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%
+%% Title page
+%%%%%%%%%%%%%%%%%%%
+\ifdefined\print
+\newgeometry{centering}    %%% make the page centered on paper
+\begin{titlepage}
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+	\centering
+	\begin{center}
+		\vspace*{.06\textheight}	
+		\HRule \\[0.4cm] % Horizontal line
+		{\huge \bfseries \BaTitle \par}\vspace{0.4cm} % Thesis title
+		\HRule \\[1.5cm] % Horizontal line
+		\vspace{4.5cm}
+		\begin{minipage}[t]{0.4\textwidth}
+
+		\centering
+		{\large \BaAuthor} 
+
+		\end{minipage}
+		\vfill
+		\vspace*{.1\textheight}
+		{\large \BaType}\\[0.5cm] % Thesis type
+		{\large University of Applied Sciences Würzburg-Schweinfurt}\\[0.5cm]
+		{\large \SubmitDate}\\[4cm] % Date
+		\vfill
+	\end{center}
+\end{titlepage}
+\restoregeometry
+\fi
+
+\frontmatter
+\titlehead{%  {\centering side head}
+  {Technical University of Applied Sciences Würzburg-Schweinfurt (THWS)\\
+   Faculty of Computer Science and Business Information Systems\\\\
+	}}
+\subject{\BaType}
+\title{\BaTitle\\[15mm]}
+\subtitle{\normalsize{submitted to the Technical University of Applied Sciences W\"{u}rzburg-Schweinfurt in the Faculty of Computer Science and Business Information Systems to complete a course of studies in \BaAuthorStudyProgram}}
+\author{\ShowBaAuthor}
+\date{\normalsize{Submitted on: \BaDeadline}}
+\publishers{
+  \normalsize{Initial examiner: \BaSupervisorOne}\\
+  \normalsize{Secondary examiner: \BaSupervisorTwo}\\
+}
+\lowertitleback{
+\centering\includegraphics[width=4cm]{figures/barcode_default.png}
+}
+\forcetwoside
+
+
+%%%%%%%%%%%%%%%%%%%
+%% abstract
+%%%%%%%%%%%%%%%%%%%
+
+\section*{Abstract (en)}
+\lipsum[1]
+
+% cSpell:disable
+\section*{Abstract (de)}
+\lipsum[1]
+
+\newpage
+\chapter*{Acknowledgment}
+\lipsum[1-2]
+
+%%%%%%%%%%%%%%%%%%%
+%% toc
+%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%% Main part of the thesis
+%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\chapter{Introduction}\label{ch:intro}
+\lipsum[]
+
+\section{Problem Definition}
+\lipsum[1-3]
+\begin{equation}
+	\begin{array}{l}
+	E = mc^2\\
+	f(x) = ax+b
+	\end{array}
+\label{equation_problem_definition}
+\end{equation} 
+
+\lipsum[1]
+
+\section{Limitations}
+\lipsum[1-2]
+
+\section{Theoretical Foundations}
+\lipsum[1]
+\vspace{1cm} % control extra spaces
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{c|c} 
+			\textbf{Col 1} & \textbf{Col 2}
+	\\
+			\hline \\
+			A	&  Lorem impsum
+	\\ 
+			B	&  Lorem impsum
+	\\ 
+			C	& Lorem impsum
+	\\ 
+			D	&  Lorem impsum
+	\\ 
+			E	&  Lorem impsum
+	\\ 
+			F	&  Lorem impsum
+	\\ 
+			G	&  Lorem impsum
+	\\ 
+			H	&  Lorem impsum
+	\\ 
+			I	 & Lorem impsum
+	\\ 
+			K	&  Lorem impsum
+		\end{tabular}
+	\end{center}
+	\caption{Cool caption}
+	\label{fig:cool_figure}
+	\end{table}
+
+\textbf{This is the reference of the cool table \ref{fig:cool_figure}.}\newline 
+
+\lipsum[1-2]
+\chapter{Machine Learning}
+\lipsum[1-2]
+
+\paragraph{Paragraph 1} \lipsum[2]
+
+\paragraph{Paragraph 2} \lipsum[2]
+
+\paragraph{Paragraph 3} \lipsum[2]
+\lipsum[]
+
+\section{First Section in Chapter}
+\lipsum[1]
+
+\subsection{First Subsection in Chapter}
+\lipsum[2]
+
+\subsection{Second Subsection in Chapter}
+\lipsum[2]
+
+\section{Second Section in Chapter}
+
+Sample algorithm:
+
+\vspace{0.25cm}
+\begin{algorithm}[H]
+	\KwData{$\mathbf{X}, ...$}
+	...
+	\tcp*[f]{cool annotation} \\
+	...\\
+	... \\
+	\Return $\mathbf{Y}, ...$
+	\caption{Cool algorithm \cite{goodfellow2016deep}}
+	\label{alg:cool_algorithm}
+\end{algorithm}
+\vspace{0.25cm}
+
+
+\chapter{Implementation}\label{chapter:implementation}
+\lipsum[3]\footnote{The full implementation is available at \url{\git}.}
+
+\section{Data Set}\label{sec:dataset}
+\lipsum[1-2]
+
+\vspace{0.75cm}
+\begin{figure}[H]
+	\captionsetup[subfloat]{justification=centering}
+	\subfloat[Label1\label{fig:xyz_label1}]{\centering\includegraphics[width=0.5\textwidth]
+	{example-image-b}}\hspace{1mm}%
+	\subfloat[Label2\label{fig:xyz_label2}]{\centering\includegraphics[width=0.5\textwidth]
+	{example-image-b}}\hspace{1mm}%
+	\subfloat[Label3\label{fig:xyz_label3}]{\centering\includegraphics[width=0.5\textwidth]
+	{example-image-b}}\hspace{1mm}%
+	\subfloat[Label4\label{fig:xyz_label4}]{\centering\includegraphics[width=0.5\textwidth]
+	{example-image-b}}\hspace{1mm}%
+\end{figure}	
+\newpage
+\section{Models}
+\lipsum[3]
+\paragraph{Paragraph 1} \lipsum[1]
+
+\paragraph{Paragraph 2} \lipsum[1]
+
+\paragraph{Paragraph 3} \lipsum[1]
+
+\paragraph{Paragraph 4} \lipsum[1]
+
+\paragraph{Paragraph 5} \lipsum[1]
+\newpage
+\section{Classifier}\label{sec:knn}
+\lipsum[1-3]
+
+\chapter{Experiments and Results} \label{chapter:experimentsresults} 
+\lipsum[3]
+\begin{table}[H]
+	\begin{center}
+		\def\arraystretch{2}
+		\begin{tabular}{p{0.155\linewidth}|p{0.15\linewidth}|p{0.145\linewidth}|p{0.14\linewidth}|p{0.14\linewidth}|p{0.15\linewidth}}
+			\textbf{A}& ...	&...	&... &...  \\
+			\hline \textbf{B} &...&...&... &... \\
+			\hline \textbf{C} & ... &... &... &... &... \\
+			\hline \textbf{D} & ... &...&... &... &... \\
+			\hline \textbf{E} & ... &... &... &... &... \\
+			\hline \textbf{F} & - &- &- &$\surd$  &$\surd$  \\
+			\hline \textbf{G} & - & -& - & $l \leq x$ & $11 \leq l \leq x$\\
+		\end{tabular}
+	\end{center}
+	\caption{Cool table}
+	\label{tab:cool_table}
+\end{table}
+
+\chapter{Conclusion}
+\lipsum
+
+\backmatter
+%%%%%%%%%%%%%%%%%%%
+%% create figure list
+%%%%%%%%%%%%%%%%%%%
+
+\listoffigures
+\addcontentsline{toc}{chapter}{Appendix}
+
+%%%%%%%%%%%%%%%%%%%
+%% create tables list
+%%%%%%%%%%%%%%%%%%%
+%\listoftables
+
+%%%%%%%%%%%%%%%%%%%
+%% create listings list
+%%%%%%%%%%%%%%%%%%%
+%\lstlistoflistings
+
+%%%%%%%%%%%%%%%%%%%
+%% create appendix
+%%%%%%%%%%%%%%%%%%%
+\setcounter{chapter}{1}
+\renewcommand{\thechapter}{\Alph{chapter}}
+\chapter*{Appendix}\label{appendix}
+
+%%%%%%%%%%%%%%%%%%%
+%% create bibliography
+%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Literature}
+\printbibliography
+
+%%%%%%%%%%%%%%%%%%%
+%% declaration on oath
+%%%%%%%%%%%%%%%%%%%
+\addchap{Declaration on oath}
+
+I hereby certify that I have written my master thesis independently and have not yet submitted it for examination purposes elsewhere. All sources and aids used are listed, literal and meaningful quotations have been marked as such.
+
+\vspace{20pt}
+\begin{flushright}
+$\overline{~~~~~~~~~~~~~~~~~\mbox{\ShowBaAuthor, \SubmitDate}~~~~~~~~~~~~~~~~~}$
+\end{flushright}
+
+\addchap{Consent to plagiarism check}
+
+I hereby agree that my submitted work may be sent to PlagScan (www.plagscan.com) in digital form for the purpose of checking for plagiarism and that it may be temporarily (max. 5~years) stored in the database maintained by PlagScan as well as personal data which are part of this work may be stored there.
+
+\begin{small}
+Consent is voluntary. Without this consent, the plagiarism check cannot be prevented by removing all personal data and protecting the copyright requirements. Consent to the storage and use of personal data may be revoked at any time by notifying the faculty.
+\end{small}
+
+\vspace{20pt}
+\begin{flushright}
+$\overline{~~~~~~~~~~~~~~~~~\mbox{\ShowBaAuthor, \SubmitDate}~~~~~~~~~~~~~~~~~}$
+\end{flushright}
+\end{document}

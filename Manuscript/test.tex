@@ -1,0 +1,426 @@
+%%%%%%%%%%%%%%%%%%%
+%% imports
+%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,twoside,a4paper,parskip]{scrbook} % oneside for writing, twoside for submission (space for comments on the print)
+\setcounter{tocdepth}{1} % depth of table of contents, for debugging purposes
+\usepackage[utf8]{inputenc} % define the encoding type for LateX, may be obsolete in newer versions of LateX
+\usepackage{csquotes} % helper package for quotes
+\usepackage[english]{babel} % language support, multiple languages can also be listed
+\usepackage{floatflt} % wrap text around tables and figures, useful for some templates
+\usepackage[pdftex]{graphicx} % /includegraphics command with more options
+\usepackage[hidelinks]{hyperref} % used for cross-referencing in LateX, hidelinks is an option to better format links
+\usepackage{xcolor} % color management
+\usepackage{amssymb} % symbol support
+\usepackage{textcomp} % text symbol support
+\usepackage{nicefrac} % better formatting for fractions
+\usepackage{scrhack} % definition of macros 
+\usepackage{pdfpages} % include pdf pages in LaTeX
+\usepackage{float} % floating objects (i.e. figures, tables)
+\usepackage{pdflscape} % better pdf support with more options
+\usepackage[verbose]{placeins} % checks that floats are within bounds - verbose adds extra logs
+\usepackage[markcase=ignoreuppercase,headsepline,plainfootsepline]{scrlayer-scrpage} % manage page styles, markcase: automatic typesetting in heads, headsepline: line underneath the headerm, plainfootsepline: rule above the footer
+\usepackage[ruled,vlined]{algorithm2e} % algorithm environment, ruled: algorithm with line at the top and bottom. Caption is not centered but at the beginning of the algorithm, vlined: vertical line followed by a small horizontal line between the start and the end of each block
+\usepackage{listings} % used to display nicely formatted source code 
+\usepackage{caption} % adds captions to figures, tables, equations... with correct number assignments
+\usepackage{subcaption} % adds subcaptions to subfigures, useful for more complex figures, has to be imported after the caption package
+\usepackage{epstopdf} % needed to use .eps 
+\usepackage{longtable} % enables long tables over page boundaries
+\usepackage{setspace} % sets line spacing
+\usepackage{booktabs} % better line management and line separation within tables
+\usepackage[sortcites,style=numeric,backend=biber,doi=false,isbn=false,url=false,eprint=false]{biblatex} % good package for bibliography support in LaTeX with biber backend, sortcites: sorting bibliography (name, title, year), style=numeric: standard numeric citation style (recommended!), doi/isbn/url/eprint=false: hide links in bibliography (recommended for clean bibliography!)
+
+\usepackage{makecell} % tabular column heads and multilined cells
+\usepackage{amsmath} % math support 
+\bibliography{bibliography} % included biblatex formatted citations from the file bibliography.bib
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{lipsum} % only used for the template generation, remove this usepackage command and all \lipsum calls
+%%%%%%%%%%%%%%%%%%%
+%% definitions
+%%%%%%%%%%%%%%%%%%%
+\def\BaAuthor{Bibin Babu}
+\def\BaAuthorStudyProgram{Master of Artificial intelligence} 
+\def\BaType{Master Thesis Proposal}
+\def\BaTitle{Determination of  Drug Efficacy  
+on Pancreatic Tumor 3D Spheroidal Tissues  }
+\def\BaSupervisorOne{Prof. Dr. Magda Gregorová}
+\def\BaSupervisorTwo{Prof. Dr. Jan Hansmann}
+\def\BaDeadline{\SubmitDate}
+\def\SubmitDate{13.05.2024}
+\def\git{https://github.com/.../...}
+
+% option to generate anonymous submission for plagiarism scan!
+\ifdefined\iswithfullname
+\def\ShowBaAuthor{\BaAuthor}
+\else
+\def\ShowBaAuthor{BIBIN BABU}
+\fi
+
+\hypersetup{
+pdfauthor={\ShowBaAuthor},
+pdftitle={\BaTitle},
+pdfsubject={Subject},
+pdfkeywords={Keywords}
+}
+
+%%%%%%%%%%%%%%%%%%%
+%% configs to include
+%%%%%%%%%%%%%%%%%%%
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+  linewidth=\textwidth
+}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+\lstset{language=xml,
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  numbers=left,
+  numberstyle=\scriptsize,
+  stepnumber=1,
+  numbersep=8pt,
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  backgroundcolor=\color{background},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  tabsize=4,
+  breaklines=true,
+  keepspaces=true,
+  numbers=left,
+  numberstyle=\scriptsize,
+  stepnumber=1,
+  numbersep=8pt,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{pgreen},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pred},
+  basicstyle=\ttfamily,
+  backgroundcolor=\color{background},
+%  moredelim=[il][\textcolor{pgrey}]{$$},
+%  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}
+\newcommand*{\forcetwoside}[1][1]{%
+ \begingroup
+   \cleardoubleoddpage
+   \KOMAoptions{titlepage=true}% useful e.g. for scrartcl
+   \csname @twosidetrue\endcsname
+   \maketitle[{#1}]
+ \endgroup
+}
+\def\c#1{\mathcal{#1}}
+\DeclareUnicodeCharacter{2212}{-}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%
+%% Title page
+%%%%%%%%%%%%%%%%%%%
+\ifdefined\print
+\newgeometry{centering}    %%% make the page centered on paper
+\begin{titlepage}
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+	\centering
+	\begin{center}
+		\vspace*{.06\textheight}	
+		\HRule \\[0.4cm] % Horizontal line
+		{\huge \bfseries \BaTitle \par}\vspace{0.4cm} % Thesis title
+		\HRule \\[1.5cm] % Horizontal line
+		\vspace{4.5cm}
+		\begin{minipage}[t]{0.4\textwidth}
+
+		\centering
+		{\large \BaAuthor} 
+
+		\end{minipage}
+		\vfill
+		\vspace*{.1\textheight}
+		{\large \BaType}\\[0.5cm] % Thesis type
+		{\large University of Applied Sciences Würzburg-Schweinfurt}\\[0.5cm]
+		{\large \SubmitDate}\\[4cm] % Date
+		\vfill
+	\end{center}
+\end{titlepage}
+\restoregeometry
+\fi
+
+\frontmatter
+\titlehead{%
+  \centering
+  Technical University of Applied Sciences Würzburg-Schweinfurt (THWS)\\
+  Faculty of Computer Science and Business Information Systems\\
+}
+
+\subject{\BaType}
+\title{\BaTitle\\[15mm]}
+\subtitle{\normalsize{submitted to the Technical University of Applied Sciences W\"{u}rzburg-Schweinfurt in the Faculty of Computer Science and Business Information Systems to complete a course of studies in \BaAuthorStudyProgram}}
+\author{\ShowBaAuthor}
+\date{\normalsize{Submitted on: \BaDeadline}}
+\publishers{
+  \normalsize{Initial examiner: \BaSupervisorOne}\\
+  \normalsize{Secondary examiner: \BaSupervisorTwo}\\
+}
+
+\forcetwoside
+
+
+%%%%%%%%%%%%%%%%%%%
+%% abstract
+%%%%%%%%%%%%%%%%%%%
+
+\section*{Abstract (en)}
+Pancreatic tumor treatment is hindered by the intricate nature of tumors and their diverse microenvironments. This complexity necessitates an exploration into identifying optimal drug combinations and concentrations tailored to each patient's specific tumor characteristics. This thesis aims to assess drug efficacy by ranking these various drug combinations and concentrations. The ranking is based on features extracted from bright-field microscopy images of three-dimensional tumor tissue models using representation learning. The core challenge is to learn robust features that accurately characterize alterations in these tumor tissue models induced by drug application over time. This research seeks to develop a standardized and effective approach for evaluating drug efficacy, potentially improving treatment outcomes for pancreatic tumor patients.
+
+
+
+% cSpell:disable
+\section*{Abstract (de)}
+Die Behandlung von Bauchspeicheldrüsentumoren wird durch die komplexe Natur der Tumore und ihre vielfältigen Mikroumgebungen behindert. Diese Komplexität erfordert eine Untersuchung zur Identifizierung optimaler Medikamentenkombinationen und -konzentrationen, die auf die spezifischen Tumoreigenschaften jedes Patienten zugeschnitten sind. Diese Masterarbeit zielt darauf ab, die Wirksamkeit von Medikamenten zu bewerten, indem sie diese verschiedenen Medikamentenkombinationen und -konzentrationen einstuft. Die Bewertung basiert auf Merkmalen, die aus Helligkeitsmikroskopiebildern dreidimensionaler Tumorgewebsmodelle mittels Repräsentationslernen extrahiert werden. Die zentrale Herausforderung besteht darin, robuste Merkmale zu erlernen, die Veränderungen in diesen Tumorgewebsmodellen genau charakterisieren, die durch die Anwendung von Medikamenten über Zeit induziert werden. Diese Forschung zielt darauf ab, einen standardisierten und effektiven Ansatz zur Bewertung der Medikamenteneffizienz zu entwickeln, der möglicherweise die Behandlungsergebnisse für Patienten mit Bauchspeicheldrüsentumoren verbessert.
+%%%%%%%%%%%%%%%%%%%
+%% Main part of the thesis
+%%%%%%%%%%%%%%%%%%%
+\mainmatter
+\let\cleardoublepage\clearpage
+\chapter{Introduction}\label{ch:intro}
+
+Pancreatic tumor presents a significant challenge in terms of treatment due to its heterogeneous nature and the mutations that occur during its progression within the human body. Clinicians rely on case studies, human trials, and their own expertise gained from past patient treatments to select drugs for new patients. However, this approach is often based on trial and error, with varying outcomes. Patients may experience either successful treatment or severe side effects such as hair loss and damage to other organs. Since each patient's tumor cells exhibit unique characteristics influenced by factors such as age and genetics, treatments that have worked for one patient may not be effective for another. Consequently, clinicians may need to change the prescribed drugs or try different combinations, which can lead to delays and increased risks for the patient, including mortality.
+
+In light of these challenges, Researchers at Fraunhofer Translational Center for Regenerative Therapy TLZ-RT Wuerzburg,  propose a vision for the future: cultivating multiple three-dimensional tumor tissue models for each patients in the lab using biopsy samples and studying the efficacy of drugs on these three-dimensional tumor tissue models first.\textit{(Note: In this thesis, "3D tumor tissue models or tumor tissue models" refers to physical, lab-grown tissues and not computational or AI models.)} By conducting drug development experiments and analyses on these tissue models, they aim to find the optimum or best drug combination tailored to each patient's specific tumor characteristics. This approach can not only minimize direct side effects on human patients and reduce the time needed to select the most effective personalized treatment, thereby decreasing the risk of that patient's mortality, but also significantly reduce the cost and time of preclinical testing in the drug development process. Ultimately, these information obtained from drug efficacy assessment experiments can inform clinicians' decisions, enabling them to select the most effective drug combination before administering it to the patient.
+
+As a proof of concept, The Fraunhofer TLZ-RT Wuerzburg laboratory utilized a modular dual-arm robot-based system \cite{Dembski2023Establishing}, equipped with incubators and bioreactors under physiological conditions to study drug efficacy for the long-term culture of these three-dimensional tumor tissue models. One advantage of this platform is its ability to capture bright-field microscopy images of 3D tumor tissue models using a customized microscope setup integrated into the robotic platform, offering flexibility in image acquisition according to experimental needs.
+
+Although the vision for the future is to simulate the identical interaction environment of drugs with tumor cells as it occurs in the human body, current technology has not yet achieved this. The current three-dimensional tumor tissue models developed in the lab do not fully resemble real pancreatic tumor cells found in the human body. These 3D tumor tissue models only contain pure tumor tissues, whereas real human pancreatic tumor cells exist within a complex microenvironment comprising tumor cells, blood vessels, other tissues, and various cell types. Despite this limitation, our work serves as a valuable starting point for studying drug efficacy in a controlled environment. Fortunately, if we are able to replicate human body tumor cells in the lab in the future, the techniques currently used to study the bright-field microscopy images will still be applicable, since they are grayscale images. However, the fact that bright-field microscopy images are two-dimensional limits the ability to perform a comprehensive analysis of the drug's impact on the entire 3D structure of the cultivated tumor tissue models.
+
+Alternatives to bright-field microscopy images include 3D fluorescence microscopy and luminescent cytotoxicity assays. However, both methods are invasive. Fluorescent molecules tend to generate reactive chemical species under illumination, enhancing phototoxic effects. This chemical reaction with the 3D tumor tissue model may alter its structure, making it not suitable to isolate the drug's effect over time. Similarly, luminescent cytotoxicity assays result in a dead culture, rendering them unsuitable for longitudinal studies. Additionally, both methods require removing the well plate from the isolated culture environment for extended periods, making the samples susceptible to external environmental factors. For instance, in fluorescence microscopy, cells are particularly vulnerable to phototoxicity from short wavelength light. In contrast, bright-field microscopy images are non-invasive, allowing continuous culture and the possibility of creating time series of images to study dynamic changes. Therefore, we rely on bright-field microscopy images to study the time-evolutionary effects of drugs, only applying the alternative methods at the end of the experiment.
+
+3D tumor tissue models were cultured in well plates containing 96 wells, each providing a nutrient medium that allows them to maintain their tissue-specific functions in vitro. Although each plate can yield 96 pure 3D tumor tissue models, the edge effect is accounted for, where outer wells may be exposed to variable conditions such as temperature fluctuations, increased evaporation rates, and other environmental factors. Consequently, we restrict our analysis to the 60 inner wells per plate, adhering to standard procedures to ensure consistent and reliable experimental data. These 60 wells are divided into sections to provide the three experimental groups (explained below ). From day 1 to day 7, the 3D tumor tissue models develops and on day 7, drug is applied. To isolate the effects of the drugs, changes in 3D tumor tissue models deterioration are evaluated on day 3 post-drug application, which is day 10, in accordance with established medical protocols and previous research findings.
+
+Based on the drug concentration applied to 3D tumor tissue models, the bright-field microscopy images we capture can be categorized into three main categories:
+
+Images of
+
+1. Control (0 percentage drug applied) - For clarity in the paper, we refer to this category as "untreated."
+
+2. Single concentration (theoretically recommended single concentration of drug treatment)
+
+3. Drug screening: different drug combinations and concentrations used for experimental study of drug efficacy, which may or may not result in the killing of surrounding non-tumor cells in the human body and potential side effects.
+
+For clarity in the paper, we refer second and third  categories as "treated."
+
+We assess the efficacy of the drug by comparing the changes it induces in the untreated bright-field microscopy images over a period of time. The current methods to differentiate these changes involve studying the alterations from day 7 (after applying the drug) to Day 10. These changes are typically observed in three main parameters: 
+
+1. Size/Area
+
+2. Circularity/Diameter/Perimeter
+
+3. Pixel intensity or color change
+
+These parameters serve as human-interpretable metrics for assessing the efficacy of the drug. However, there may be other hidden information or patterns within these bright-field microscopy images that are not human-interpretable. This potential can be explored using representation learning techniques. Additionally, this method can provide more standardization compared to manual assessment.
+\let\cleardoublepage\clearpage
+\chapter{Objective}\label{ch:Objective}
+This thesis aims to assess drug efficacy by ranking different drug combinations and concentrations. The ranking is based on features extracted from bright-field microscopy images of  three-dimensional tumor tissue models using representation learning. The primary challenge lies in learning the efficient features of alterations induced in these tumor tissue models by the impact of drug application over a period of time. We believe this assessment can potentially aid clinicians in making informed decisions to identify the optimal drug combination tailored to each patient's unique tumor characteristics.
+\let\cleardoublepage\clearpage
+\chapter{Research questions}\label{ch:Research questions}
+
+1. Can we learn latent features that effectively establish a ranking of drug efficacy from bright-field microscopy images, specifically features that capture the alterations induced in three-dimensional tumor tissue models by drug application over a period of time?
+
+2. What methodologies and frameworks can be employed to extract and learn these hidden representations efficiently?
+
+3. What could be reasonable metrics, such as L2 loss or cosine similarity, for supporting the relative assessment of drug efficacy?
+
+\chapter{Related works}\label{ch:Related works}
+\textbf{Base neural network architecture for representation learning.} Learning visual representations of medical images, such as X-rays (radiographic images) and bright-field microscopy images, is crucial for medical image understanding. However, progress in this area has been hindered by the heterogeneity and complexity of subtle features in these images, especially when they don't have labels. Existing work often relies on fine-tuning weights transferred from ImageNet pretraining (Wang et al., 2017 \cite{8099852} ; Esteva et al., 2017 \cite{Esteva2017Dermatologist} ; Irvin et al., 2019 \cite{irvin2019chexpert} ), which is suboptimal due to the drastically different characteristics of medical images. Recent studies have shown promising results using unsupervised contrastive learning on natural images, but these methods have limited effectiveness on medical images because of their high inter-class similarity.
+
+To address these challenges, researchers have proposed various innovative approaches. ConVIRT \cite{zhang2022contrastive} offers an alternative unsupervised strategy for learning medical visual representations by exploiting naturally occurring paired descriptive text. This method introduces a new approach to pretraining medical image encoders using paired text data via a bidirectional contrastive objective between the two modalities. It is domain-agnostic and requires no additional expert input.  However, given the absence of specific paired text data for our image dataset, ConVIRT does not offer a solution tailored to our specific problem.
+
+The contrastive loss used in ConVIRT is derived from the SimCLR \cite{chen2020simple} self supervised learning framework. SimCLR learns representations by maximizing agreement between differently augmented views of the same data example via a contrastive loss in the latent space. The framework consists of a neural network base encoder that extracts representation vectors from augmented data examples. The framework allows for various choices of network architecture without any constraints. The authors opt for simplicity and adopt ResNet, introducing a learnable nonlinear transformation between the representation and the contrastive loss to substantially improve the quality of the learned representations. However, these methods require careful treatment of negative pairs, typically relying on large batch sizes to retrieve them. Additionally, their performance is highly dependent on the choice of image augmentations. BYOL (Bootstrap Your Own Latent) \cite{grill2020bootstrap} addresses these limitations by using an architecture with online and target neural networks, which does not require negative pairs and is more robust to the choice of image augmentations compared to contrastive methods.
+
+While SimCLR has achieved impressive success in the computer vision field, directly applying it to the time series domain often yields poor performance due to its data augmentation and feature extractor not being tailored to the temporal dependencies inherent in time series data. To address this limitation and to obtain high-quality representations of univariate time series, \cite{YANG2022108606} proposed TimeCLR, a framework that combines the strengths of Dynamic Time Warping (DTW) and InceptionTime. Drawing inspiration from the DTW-based k-nearest neighbor classifier, they introduced DTW data augmentation. This technique generates phase shifts and amplitude changes targeted by DTW, preserving the time series structure and feature information. By integrating the advantages of DTW data augmentation and InceptionTime, TimeCLR method extends SimCLR and adapts it effectively to the time series domain.
+\cite{liu2024selfsupervised} conducted a comprehensive comparative analysis between contrastive and generative self-supervised learning methods for time series data, focusing specifically on SimCLR and MAE (Masked Autoencoder). They observed that, overall, MAE tends to converge more rapidly and delivers impressive performance, particularly when the fine-tuning dataset is relatively small (around 100 samples). However, in scenarios with larger datasets, SimCLR demonstrates a slight but consistent outperformance over its generative counterparts.
+
+Another recent alternative study for self-supervised visual representation is DINO \cite{caron2021emerging}, which can be also interpreted as a form of self-distillation with no labels. DINO provides new properties to Vision Transformers that stand out compared to convolutional networks.
+
+SupCon \cite{khosla2021supervised} extends the self-supervised batch contrastive approach to the fully-supervised setting, allowing us to effectively leverage label information. Clusters of points belonging to the same class are pulled together in embedding space, while simultaneously pushing apart clusters of samples from different classes. The drug applied to tumor samples could be used as labels for the bright-field microscopy images.
+
+\textbf{Coupling engineered features and learned representation.}  
+Due to its specificity, fluorescence microscopy has become a quintessential imaging tool in cell biology. However, photobleaching, phototoxicity and related artifacts continue to limit its utility. Recently, it has been shown that artificial intelligence (AI) can transform one form of contrast into another. Mikhail et al.\cite{Kandel_2020} present phase imaging with computational specificity (PICS), a combination of quantitative phase imaging (QPI) and AI, which provides information about unlabeled live cells with high specificity. By applying the computed fluorescence maps back to the QPI data, they measured the growth of both nuclei and cytoplasm independently over many days without loss of viability. This work could provide valuable insights for coupling fluorescent data with learned representations.
+
+\let\cleardoublepage\clearpage
+\chapter{Proposed methodologies}\label{ch:Proposed methodologies}
+We propose two different methodologies to approach the objective. The general idea of the proposed methodologies is to leverage representation learning of bright-field microscopy images to develop a ranking/ordering scale (1 to n) for these images. 
+
+\section{Methodology 1}
+Step 1: Create a latent space representation of each image using contrastive learning techniques such as SimCLR, masked autoencoder, or any other self supervised architectures such as DINO that can effectively help learn the efficient features of alterations induced in three-dimensional tumor tissue models by the impact of drug application over a period of time.
+
+Step 2: Train a time series prediction model exclusively on the representations of untreated images from Day 7 to Day 10 to predict the representation of Day 10 image.
+
+Step 3: Perform inference on the representations of test images, which include untreated, clinically recommended, and drug screening images.
+
+Since the time series model is trained solely on the representations of untreated images, the inference loss/metric (i.e., the difference between the predicted and actual Day 10 image representations) will be very small for untreated images. Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of untreated images. This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. Determining a reasonable inference loss/metric will be one of the research problems to tackle.
+\section{Methodology 2}
+
+This ranking/ordering scale categorizes the images into two distinct groups, ordered as follows:
+
+The first group includes treated images where no explosion of tissue has occurred due to the drug impact (i.e., the tissue still maintain complete circularity after drug application). These images are ranked/ordered from 1 to x based on the percentage of tumor deterioration in ascending order, as observed on day 10.
+
+The second group comprises treated images where tissue explosion has occurred, assuming that the tumor is potentially 100 percentage killed in every image in this group. These images are ranked/ordered from x+1 to n based on the degree of tumor tissue explosion (from less exploded to highly exploded), which can be learned using classical computer vision techniques like boundary detection, representing the ends of the scale.
+
+This percentage of tumor deterioration is determined through a comparative study of 3D fluorescence microscopy or luminescent cytotoxicity assays between 30 untreated samples and 30 samples treated with the specific drug combination from a half-divided well plate setup.
+
+In order to couple the  percentage of tumor deterioration data with bright-field microscopy images, first, use a self-supervised, unsupervised, or supervised base neural network such as as DINO\cite{caron2021emerging}, SimCLR\cite{chen2020simple}, SupCon\cite{khosla2021supervised} or ConVIRT\cite{zhang2022contrastive}, to learn the latent space representation of all images. Subsequently, we will train a ranking model on top of this frozen base network to rank each image according to the corresponding percentage of tumor deterioration. 
+
+
+In this ranking scale, x and n are natural numbers that define the boundaries and transitions between the groups, ensuring a systematic and comprehensible ranking from untreated to completely exploded tumor images.
+
+Advantage of training AI in a supervised setting is the ability to circumvent the need for invasive and expensive 3D fluorescent microscopy images or luminescent cytotoxicity assays, as these data are already trained to correlate with bright-field microscopy images. Consequently, when new bright-field microscopy images are introduced as test data, we can predict the percentage of tumor deterioration.
+
+\chapter{Experiments}\label{ch:Experiments}
+We decided to proceed with methodology 1.
+
+\section{Training SSL model}
+For step 1, we used SimCLR as SSL ( Self supervised leraning ) first model. Later will try other models ( Masked auto encoder, Dino) depend on time. 
+Why we would like to try other models? Because SimCLR demands larger batch size and more data for better performance which we don't have.
+\subsection{Training SimCLR}
+Why do we need to do Data augmentation? It forced have invariance (to get same feature vector regardless its transformation which helps to have a latent space with similar images together or more aligned. Also it helps to deal with invariance to microscope differrent sunlight exposure or environment factor or focal plane so it aligns with the interest of biological reason.
+
+\textbf{Question: Why don't we cutout/remove white well plate background? careful for drug screening}
+\textbf{Question: Pretrained resnet is on 8 bit, is there any concept like then the custom image should be also 8 bit to match it? or need to normlaise the same way that resnet pretrained normalise? } 
+
+$\square$ Find pretrained architectures for medical gray scale images/ Unet better for medical images?
+
+\textbf{Question: What happens data augmentation randomly change after each epoch? My answer: then learning won't happen properly because each epoch gradient calculation will be different to each epochs where we can't take average} 
+
+NT-Xent loss variations:
+
+1. Each image considered as rgb since we have 3 channel + 2 std augs
+
+2. Each image considered as rgb since we have 3 channel + > 2 std augs ( research for medical gray scale images )
+
+3. 1 channel considered as anchor(most sharped layer) others as 2 anchors
+
+4. Include anchor as positive , ie 3 augs  toal ( 1 anchor as aug other 2 layers as augs)
+
+5. Remove positive sample from denominator of los fn
+
+6. Supervised Simclr
+
+7. https://chatgpt.com/share/25365975-2a54-4a29-a18a-19c7f698cd2b
+code for applying 2 diefferent set of augs
+
+Try another loss fn like Triplet loss this already shown in the orig paper
+
+\textbf{Question: Whats model collapse, and in which situation it happens?}
+
+\section{Intermediate evaluation of SSL model}
+Evaluation of the SSL model depend on the  time series inference loss/metric, neverthless we can use other evaluation metrics such as downstream task like fine tuning classification loss trained upon the SSL. A common setup, which also verifies whether the model has learned generalized representations, is to perform Logistic Regression on the features. In other words, we learn a single, linear layer that maps the representations to a class prediction, where untreated, single dose, drug screened these 3 categories will be our classes. Since the base network is not changed during the training process, the model can only perform well if the representations of describe all features that might be necessary for the task. Further, we do not have to worry too much about overfitting since we have very few parameters that are trained. Hence, we might expect that the model can perform well even with very little data. We implemented a  simple pipeline for a  Logistic Regression setup where the images have been encoded in their feature vectors. 
+
+Note from SiCLR tutorial: If very little data is available, it might be beneficial to dynamically encode the images during training so that we can also apply data augmentations. However, the way we implement it here is much more efficient and can be trained within a few seconds. Further, using data augmentations did not show any significant gain in this simple setup.
+
+\textbf{Question: in the tutorial simclr trained on different distribution and logistic regression trained on different distribution, should we do the same? Does it matter?} 
+
+\subsection{Further variations}
+Further variations that we can try: 
+
+1. train a Logistic Regression model for datasets with only 10, 20, 30, and all  examples per class. This gives us an intuition on how well the representations learned by contrastive learning can be transfered to a image recognition task like this classification.
+
+2. As a baseline to our results above, we can train a standard ResNet-18 with random initialization on the labeled training set. The results will give us an indication of the advantages that contrastive learning on unlabeled data has compared to using only supervised training.
+
+\textbf{Question: Does this 2 variations really helps to evaluate SSL model in our case?} 
+\subsection{Baseline comparison}
+As a baseline to our results above, we will train a standard ResNet-18 with random initialization on the labeled training set of untreated, single dose,drug screened. The results will give us an indication of the advantages that contrastive learning on unlabeled data has compared to using only supervised training.
+
+It is clear that the ResNet easily overfits on the training data since its parameter count is more than 1000 times larger than the dataset size. To make the comparison to the contrastive learning models fair, we apply data augmentations similar to the ones we used before: horizontal flip, crop-and-resize, grayscale, and gaussian blur. 
+
+Note: in MG tutorial, Color distortions as before are not used because the color distribution of an image showed to be an important feature for the classification. Hence, in mg tutorial they observed no noticeable performance gains when adding color distortions to the set of augmentations.
+
+\textbf{Question: Does this color distortion matters in our gray scale image, need to look what exactly color distortion do to the cell grains (we like to add color distortion for the background changes but it should not effect the cell grains color?} 
+
+Similarly, we restrict  the scale is restricted to between 80 percentage and 100 percentage of the original image size. This is because, for classification, the model needs to recognize the full object, while in contrastive learning, we only want to check whether two patches belong to the same image/object. contrast transforms might lead to more aggressive cropping, possibly capturing smaller parts of the image, which could increase the difficulty for a model to learn specific features. Hence, the chosen augmentations below are overall weaker than in the contrastive learning case.
+The training function for the ResNet is almost identical to the Logistic Regression setup. Note that we allow the ResNet to perform validation every 2 epochs to also check whether the model overfits strongly in the first iterations or not.
+\section{Time series prediction model}
+\section{Integrated/ensembled model: SSL+Time series model}
+
+\chapter{To Do}\label{ch:To Do}
+$\square$ Check untreated images in treated image folder ( Data preperation) check for mismatch 
+
+$\checkmark$ Checked box: 
+\chapter{Conclusion}\label{ch:Conclusion}
+
+These methodological steps collectively form the framework for addressing critical research questions and challenges throughout the course of this thesis. By exploring the dataset, assessing models, and developing custom architecture, we aim to to assess drug efficacy by ranking different drug combinations and concentrations.
+
+\let\cleardoublepage\clearpage
+
+\chapter{Proposed timeline}\label{ch:Proposed timeline}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Thesis timeline.png} % Adjust the width as needed
+    \caption{Proposed Master Thesis timeline}
+    \label{fig:enter-label}
+\end{figure}
+
+\FloatBarrier
+
+\printbibliography
+
+\vspace{20pt}
+\begin{flushright}
+$\overline{~~~~~~~~~~~~~~~~~\mbox{\ShowBaAuthor, \SubmitDate}~~~~~~~~~~~~~~~~~}$
+\end{flushright}
+\end{document}
+experimental scheme 1:
+ On day 7, the drug treatment is applied to half of these, while the other half is left untreated to used as benchmark. This setup enables us to conduct a comparative study between the untreated 3D tumor tissue models and those treated with the specific drug combination to assess it's efficacy. However, live 3D tumor tissue models tend to deteriorate after a few days due to nutrient depletion in the well plate medium. 
+
+ experimental scheme 2:
+ drug screening not half  just look at dalia image
