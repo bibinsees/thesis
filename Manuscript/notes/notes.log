@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  3 SEP 2024 09:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  3 SEP 2024 11:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/k54739/thesis/Manuscript/notes/test.tex
-(c:/Users/k54739/thesis/Manuscript/notes/test.tex
+**"c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex"
+(c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
 (c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbook.cls
@@ -363,7 +363,7 @@ Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
 (scrhack)             need that hack, on input line 162.
 ) (c:/texlive/2024/texmf-dist/tex/latex/pdfpages/pdfpages.sty
-Package: pdfpages 2024/05/29 v0.6a Insert pages of external PDF documents (AM)
+Package: pdfpages 2024/08/20 v0.6b Insert pages of external PDF documents (AM)
  (c:/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count298
@@ -385,7 +385,7 @@ Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
 \AM@pageheight=\dimen162
 \AM@fboxrule=\dimen163
  (c:/texlive/2024/texmf-dist/tex/latex/pdfpages/pppdftex.def
-File: pppdftex.def 2024/05/29 v0.6a Pdfpages driver for pdfTeX (AM)
+File: pppdftex.def 2024/08/20 v0.6b Pdfpages driver for pdfTeX (AM)
 )
 \pdfpages@includegraphics@status=\count301
 \AM@pagebox=\box58
@@ -933,8 +933,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (./test.aux)
-\openout1 = `test.aux'.
+ (./notes.aux)
+\openout1 = `notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
 LaTeX Font Info:    ... okay on input line 165.
@@ -979,9 +979,9 @@ Package scrbase Info: activating english \indexname on input line 165.
 \everyMPtoPDFconversion=\toks38
 )
 Package hyperref Info: Link coloring OFF on input line 165.
- (./test.out) (./test.out)
+ (./notes.out) (./notes.out)
 \@outlinefile=\write4
-\openout4 = `test.out'.
+\openout4 = `notes.out'.
 
 Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           Using `bookmark' together with `hyperref' is recommended,
@@ -1014,11 +1014,11 @@ File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `test.bcf'.
+\openout3 = `notes.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'test.bbl' found.
- (./test.bbl)
+Package biblatex Info: ... file 'notes.bbl' found.
+ (./notes.bbl)
 Package biblatex Info: Reference section=0 on input line 165.
 Package biblatex Info: Reference segment=0 on input line 165.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 216.
@@ -1136,27 +1136,27 @@ Overfull \hbox (9.47974pt too wide) in paragraph at lines 416--416
 
 ]
 
-[18] (./test.aux)
+[18] (./notes.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-Package rerunfilecheck Info: File `test.out' has not changed.
+Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package logreq Info: Writing requests to 'test.run.xml'.
-\openout1 = `test.run.xml'.
+Package logreq Info: Writing requests to 'notes.run.xml'.
+\openout1 = `notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  30045 strings out of 473578
- 571124 string characters out of 5732243
+ 571185 string characters out of 5732243
  1940960 words of memory out of 5000000
  52501 multiletter control sequences out of 15000+600000
  568799 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,20n,107p,11016b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,20n,107p,11030b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on test.pdf (20 pages, 179015 bytes).
+Output written on notes.pdf (20 pages, 178975 bytes).
 PDF statistics:
  238 PDF objects out of 1000 (max. 8388607)
  199 compressed objects within 2 object streams

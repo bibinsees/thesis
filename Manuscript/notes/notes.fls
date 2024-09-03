@@ -1,9 +1,9 @@
-PWD c:/Users/k54739/thesis/Manuscript/notes
+PWD c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/k54739/thesis/Manuscript/notes/test.tex
-OUTPUT test.log
+INPUT c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex
+OUTPUT notes.log
 INPUT c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbook.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbook.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -294,21 +294,21 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT ./test.aux
-INPUT ./test.aux
-INPUT test.aux
-OUTPUT test.aux
+INPUT ./notes.aux
+INPUT ./notes.aux
+INPUT notes.aux
+OUTPUT notes.aux
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-INPUT ./test.out
-INPUT ./test.out
-INPUT test.out
-INPUT test.out
-INPUT ./test.out
-INPUT ./test.out
-OUTPUT test.out
-OUTPUT test.pdf
+INPUT ./notes.out
+INPUT ./notes.out
+INPUT notes.out
+INPUT notes.out
+INPUT ./notes.out
+INPUT ./notes.out
+OUTPUT notes.out
+OUTPUT notes.pdf
 INPUT c:/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -319,12 +319,12 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 INPUT c:/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 INPUT c:/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-OUTPUT test.bcf
-INPUT test.bbl
-INPUT ./test.bbl
-INPUT ./test.bbl
-INPUT ./test.bbl
-INPUT test.bbl
+OUTPUT notes.bcf
+INPUT notes.bbl
+INPUT ./notes.bbl
+INPUT ./notes.bbl
+INPUT ./notes.bbl
+INPUT notes.bbl
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
@@ -374,11 +374,11 @@ INPUT ./Thesis timeline.png
 INPUT ./Thesis timeline.png
 INPUT ./Thesis timeline.png
 INPUT ./Thesis timeline.png
-INPUT test.aux
-INPUT ./test.out
-INPUT ./test.out
-INPUT test.run.xml
-OUTPUT test.run.xml
+INPUT notes.aux
+INPUT ./notes.out
+INPUT ./notes.out
+INPUT notes.run.xml
+OUTPUT notes.run.xml
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb

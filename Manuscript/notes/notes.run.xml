@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>test.bcf</file>
+      <file>notes.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>test.bbl</file>
+      <file>notes.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -64,19 +64,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>test</infile>
+      <infile>notes</infile>
     </cmdline>
     <input>
-      <file>test.bcf</file>
+      <file>notes.bcf</file>
     </input>
     <output>
-      <file>test.bbl</file>
+      <file>notes.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>test.bbl</file>
+      <file>notes.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>test.bcf</file>
+      <file>notes.bcf</file>
     </requires>
     <requires type="editable">
       <file>bibliography.bib</file>
