@@ -1,0 +1,27 @@
+# Fdb version 4
+["pdflatex"] 1725352232.15571 "c:/Users/k54739/thesis/Manuscript/test_debug_packages/debug.tex" "debug.pdf" "debug" 1725352232.96399 0
+  "c:/Users/k54739/thesis/Manuscript/test_debug_packages/debug.tex" 1725352223 442 bf5b7c6173f60cb5cdb28e789d8b78b8 ""
+  "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1725326031 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1725323937 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1725323937 1288 655e228510b4c2a1abe905c368440826 ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1725320938 32080 340ef9bf63678554ee606688e7b5339d ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1725320938 35752 024fb6c41858982481f6968b5fc26508 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/base/article.cls" 1725327644 20144 67a5f8e0f9e445e8ec6834e595cebdc9 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/base/size10.clo" 1725327644 8448 358bf3de18513f057a13bdc6e6770c41 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty" 1725326466 2671 70891d50dac933918b827d326687c6e8 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1725327569 29785 9f93ab201fe5dd053afcc6c1bcf7d266 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg" 1725328010 1865 590dd246a0b45afbf728b7c8cdf53b63 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/listings/listings.sty" 1725328010 81407 9bb5c566f0fc5345e3f78fba3da17b12 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty" 1725328010 77023 71dc8ec77fb5648c3af15ec4b791f591 ""
+  "c:/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty" 1725328010 353 9024412f43e92cd5b21fe9ded82d0610 ""
+  "c:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1725320555 42007 0b741a3c21a5ca32b40e3846e75b3548 ""
+  "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1725333500 5543950 2aa73a438b7054b2327b796fbe5f4275 ""
+  "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1725333715 8239384 16021994be27108576c698a03589a7f5 ""
+  "c:/texlive/2024/texmf.cnf" 1725333477 713 614551405fc44b98efbf516466e3c909 ""
+  "debug.aux" 1725352232 236 1871a8884cce59ffdbaeba48fb01b3c9 "pdflatex"
+  "debug.tex" 1725352223 442 bf5b7c6173f60cb5cdb28e789d8b78b8 ""
+  (generated)
+  "debug.aux"
+  "debug.log"
+  "debug.pdf"
+  (rewritten before read)

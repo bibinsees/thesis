@@ -24,6 +24,6 @@
 \contentsline {chapter}{\numberline {5}Conclusion}{19}{chapter.5}%
 \contentsline {chapter}{Appendix}{21}{chapter*.24}%
 \contentsline {chapter}{Literature}{25}{section*.26}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{25}{chapter*.27}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{27}{chapter*.28}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{27}{chapter*.28}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{29}{chapter*.29}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
