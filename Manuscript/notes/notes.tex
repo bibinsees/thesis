@@ -331,6 +331,7 @@ Advantage of training AI in a supervised setting is the ability to circumvent th
 We decided to proceed with methodology 1.
 
 \section{Training SSL model}
+
 For step 1, we used SimCLR as SSL ( Self supervised leraning ) first model. Later will try other models ( Masked auto encoder, Dino) depend on time. 
 Why we would like to try other models? Because SimCLR demands larger batch size and more data for better performance which we don't have.
 
@@ -341,6 +342,9 @@ Why we would like to try other models? Because SimCLR demands larger batch size 
 
 
 \subsection{Training SimCLR}
+
+\textcolor{darkgreen}{Whats the correct data preprocessing order: resize, dataasug , normalisation}
+
 Why do we need to do Data augmentation? It force to have invariance (to get same feature vector regardless its transformation which helps to have a latent space with similar images together or more aligned. Also it helps to deal with invariance to microscope differrent sunlight exposure or environment factor or focal plane so it aligns with the interest of biological reason.
 
 \textbf{Question: Why don't we cutout/remove white well plate background? careful for drug screening because incase of drug screened images its debris are spread around so we need to be careful when cutting out.}
@@ -372,6 +376,14 @@ Try another loss fn like Triplet loss this already shown in the orig paper
 
 \textbf{Question: Whats model collapse, and in which situation it happens?}
 Mg comment: Model collapse meaning differ depend on the model or context. so understand first whats generally model collapse and then read original paper to find out whats the specific model collapse problem we have with simclr.
+\subsubsection{Variation 1:}
+Each image with 3d like rgb image.
+\begin{figure}[htbp] % [htbp] specifies the preferred placement of the figure
+  \centering % Centers the figure
+  \includegraphics[width=0.8\textwidth]{path/to/your/image.png} % Adjust the width as needed
+  \caption{Caption for the figure} % Adds a caption below the figure
+  \label{fig:my_figure} % Adds a label for cross-referencing
+\end{figure}
 
 \section{Intermediate evaluation of SSL model}
 Evaluation of the SSL model depend on the  time series inference loss/metric, neverthless we can use other evaluation metrics such as downstream task like fine tuning classification loss trained upon the SSL. A common setup, which also verifies whether the model has learned generalized representations, is to perform Logistic Regression on the features. In other words, we learn a single, linear layer that maps the representations to a class prediction, where untreated, single dose, drug screened these 3 categories will be our classes. Since the base network is not changed during the training process, the model can only perform well if the representations of describe all features that might be necessary for the task. Further, we do not have to worry too much about overfitting since we have very few parameters that are trained. Hence, we might expect that the model can perform well even with very little data. We implemented a  simple pipeline for a  Logistic Regression setup where the images have been encoded in their feature vectors. 
