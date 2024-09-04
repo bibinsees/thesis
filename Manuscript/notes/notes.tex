@@ -28,6 +28,8 @@
 \usepackage{setspace} % sets line spacing
 \usepackage{booktabs} % better line management and line separation within tables
 \usepackage[sortcites,style=numeric,backend=biber,doi=false,isbn=false,url=false,eprint=false]{biblatex} % good package for bibliography support in LaTeX with biber backend, sortcites: sorting bibliography (name, title, year), style=numeric: standard numeric citation style (recommended!), doi/isbn/url/eprint=false: hide links in bibliography (recommended for clean bibliography!)
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
 
 \usepackage{makecell} % tabular column heads and multilined cells
 \usepackage{amsmath} % math support 
@@ -331,15 +333,23 @@ We decided to proceed with methodology 1.
 \section{Training SSL model}
 For step 1, we used SimCLR as SSL ( Self supervised leraning ) first model. Later will try other models ( Masked auto encoder, Dino) depend on time. 
 Why we would like to try other models? Because SimCLR demands larger batch size and more data for better performance which we don't have.
+
+\textcolor{darkgreen}{Ours is not classification problem, so some treated with some specific dosage will have the same effect as untreated one or drug screened one, that's possible. For example, a single dose and a drug screened one may have the same effect, same pixel intensity. Therefore, our goal is not to push or pull because of the label name but because of its natural similarity or dissimilarity. At the moment, SimCLR is kind of forcing similar images to be invariant. Is there any way to do natural pulling and pushing? E.g., Siamese network? Considering the weight effect Prof. Magdas, we need to find a way to use weight but without tweaking too much.}
+
+
+\textcolor{darkgreen}{How can you say simclr is not pulling similar images of different dog breed together naturally? We can understand from the loss in a batch, lets say bulldog breed pulled together in the latent space and in another batch german sheperd pulled together in the latent space. We understood that from the mathematics. but does that mean these 2 different dog breeds are together in the latent space at the end of training? I think yes, beause that why Imagenet classification gives good accuracy with only simclr training without additional supervised training.  Inthat case how does that happened the 2 different dog breed pulling}
+
+
 \subsection{Training SimCLR}
-Why do we need to do Data augmentation? It forced have invariance (to get same feature vector regardless its transformation which helps to have a latent space with similar images together or more aligned. Also it helps to deal with invariance to microscope differrent sunlight exposure or environment factor or focal plane so it aligns with the interest of biological reason.
+Why do we need to do Data augmentation? It force to have invariance (to get same feature vector regardless its transformation which helps to have a latent space with similar images together or more aligned. Also it helps to deal with invariance to microscope differrent sunlight exposure or environment factor or focal plane so it aligns with the interest of biological reason.
 
-\textbf{Question: Why don't we cutout/remove white well plate background? careful for drug screening}
-\textbf{Question: Pretrained resnet is on 8 bit, is there any concept like then the custom image should be also 8 bit to match it? or need to normlaise the same way that resnet pretrained normalise? } 
+\textbf{Question: Why don't we cutout/remove white well plate background? careful for drug screening because incase of drug screened images its debris are spread around so we need to be careful when cutting out.}
 
-$\square$ Find pretrained architectures for medical gray scale images/ Unet better for medical images?
+\textbf{Question: Pretrained resnet is on 8 bit, is there any concept like then the custom image should be also 8 bit to match it? or need to normlaise the same way that resnet pretrained normalise? what else factors may effect like this other than normalisation? } 
 
-\textbf{Question: What happens data augmentation randomly change after each epoch? My answer: then learning won't happen properly because each epoch gradient calculation will be different to each epochs where we can't take average} 
+$\square$ Find pretrained architectures for medical gray scale images/ Unet better for medical images? (Unet is better for segmanetation - comment from MG)
+
+\textbf{Question: What happens data augmentation randomly change after each epoch? My answer: then learning won't happen properly because each epoch gradient calculation will be different to each epochs where we can't take average. Wrong: gradient calculation works independently so there will be no problem with gradient calc. What about loss? because loss is averaging for the bacth.} 
 
 NT-Xent loss variations:
 
@@ -361,6 +371,7 @@ code for applying 2 diefferent set of augs
 Try another loss fn like Triplet loss this already shown in the orig paper
 
 \textbf{Question: Whats model collapse, and in which situation it happens?}
+Mg comment: Model collapse meaning differ depend on the model or context. so understand first whats generally model collapse and then read original paper to find out whats the specific model collapse problem we have with simclr.
 
 \section{Intermediate evaluation of SSL model}
 Evaluation of the SSL model depend on the  time series inference loss/metric, neverthless we can use other evaluation metrics such as downstream task like fine tuning classification loss trained upon the SSL. A common setup, which also verifies whether the model has learned generalized representations, is to perform Logistic Regression on the features. In other words, we learn a single, linear layer that maps the representations to a class prediction, where untreated, single dose, drug screened these 3 categories will be our classes. Since the base network is not changed during the training process, the model can only perform well if the representations of describe all features that might be necessary for the task. Further, we do not have to worry too much about overfitting since we have very few parameters that are trained. Hence, we might expect that the model can perform well even with very little data. We implemented a  simple pipeline for a  Logistic Regression setup where the images have been encoded in their feature vectors. 
@@ -369,10 +380,13 @@ Note from SiCLR tutorial: If very little data is available, it might be benefici
 
 \textbf{Question: in the tutorial simclr trained on different distribution and logistic regression trained on different distribution, should we do the same? Does it matter?} 
 
+
 \subsection{Further variations}
 Further variations that we can try: 
 
 1. train a Logistic Regression model for datasets with only 10, 20, 30, and all  examples per class. This gives us an intuition on how well the representations learned by contrastive learning can be transfered to a image recognition task like this classification.
+
+$\square$ think about another model other than to evaluate the trained simclr (example siamese netwrok) maybe not with classification problem.
 
 2. As a baseline to our results above, we can train a standard ResNet-18 with random initialization on the labeled training set. The results will give us an indication of the advantages that contrastive learning on unlabeled data has compared to using only supervised training.
 

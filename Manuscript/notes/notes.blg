@@ -1,15 +1,15 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
-[0] Config.pm:311> INFO - Logfile is 'notes.blg'
-[91] biber-MSWIN64:340> INFO - === 
-[124] Biber.pm:420> INFO - Reading 'notes.bcf'
-[207] Biber.pm:994> INFO - Found 12 citekeys in bib section 0
-[221] Biber.pm:4463> INFO - Processing section 0
-[229] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[286] bibtex.pm:1713> INFO - LaTeX decoding ...
-[295] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[379] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[379] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[379] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[379] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[390] bbl.pm:676> INFO - Writing 'notes.bbl' with encoding 'UTF-8'
-[401] bbl.pm:779> INFO - Output to notes.bbl
+[8] Config.pm:311> INFO - Logfile is 'notes.blg'
+[92] biber-MSWIN64:340> INFO - === 
+[127] Biber.pm:420> INFO - Reading 'notes.bcf'
+[200] Biber.pm:994> INFO - Found 12 citekeys in bib section 0
+[211] Biber.pm:4463> INFO - Processing section 0
+[219] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[267] bibtex.pm:1713> INFO - LaTeX decoding ...
+[275] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[360] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[360] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[360] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[360] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[372] bbl.pm:676> INFO - Writing 'notes.bbl' with encoding 'UTF-8'
+[383] bbl.pm:779> INFO - Output to notes.bbl

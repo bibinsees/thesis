@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  3 SEP 2024 12:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  4 SEP 2024 13:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -936,34 +936,34 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (./notes.aux)
 \openout1 = `notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-Package scrbase Info: activating english \partname on input line 165.
-Package scrbase Info: activating english \chaptername on input line 165.
-Package scrbase Info: activating english \appendixname on input line 165.
-Package scrbase Info: activating english \figurename on input line 165.
-Package scrbase Info: activating english \tablename on input line 165.
-Package scrbase Info: activating english \contentsname on input line 165.
-Package scrbase Info: activating english \listfigurename on input line 165.
-Package scrbase Info: activating english \listtablename on input line 165.
-Package scrbase Info: activating english \bibname on input line 165.
-Package scrbase Info: activating english \indexname on input line 165.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+Package scrbase Info: activating english \partname on input line 167.
+Package scrbase Info: activating english \chaptername on input line 167.
+Package scrbase Info: activating english \appendixname on input line 167.
+Package scrbase Info: activating english \figurename on input line 167.
+Package scrbase Info: activating english \tablename on input line 167.
+Package scrbase Info: activating english \contentsname on input line 167.
+Package scrbase Info: activating english \listfigurename on input line 167.
+Package scrbase Info: activating english \listtablename on input line 167.
+Package scrbase Info: activating english \bibname on input line 167.
+Package scrbase Info: activating english \indexname on input line 167.
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count473
@@ -978,7 +978,7 @@ Package scrbase Info: activating english \indexname on input line 165.
 \makeMPintoPDFobject=\count478
 \everyMPtoPDFconversion=\toks38
 )
-Package hyperref Info: Link coloring OFF on input line 165.
+Package hyperref Info: Link coloring OFF on input line 167.
  (./notes.out) (./notes.out)
 \@outlinefile=\write4
 \openout4 = `notes.out'.
@@ -990,7 +990,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 165.
+(scrbook)           before \begin{document} on input line 167.
  (c:/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (c:/texlive/2024/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -998,7 +998,7 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 \BKM@id=\count479
 ))
 \c@lstlisting=\count480
-Package tocbasic Info: setting babel extension for `lol' on input line 165.
+Package tocbasic Info: setting babel extension for `lol' on input line 167.
 \scr@dte@lstlisting@maxnumwidth=\skip124
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
@@ -1019,13 +1019,13 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'notes.bbl' found.
  (./notes.bbl)
-Package biblatex Info: Reference section=0 on input line 165.
-Package biblatex Info: Reference segment=0 on input line 165.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 216.
+Package biblatex Info: Reference section=0 on input line 167.
+Package biblatex Info: Reference segment=0 on input line 167.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 218.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 216.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 218.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -1086,6 +1086,9 @@ Underfull \vbox (badness 7851) has occurred while \output is active []
 [9]
 chapter 6.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [10
 
@@ -1096,47 +1099,49 @@ chapter 6.
 [12]
 
 [13]
+
+[14]
 chapter 7.
-
-
-[14
-
-]
-chapter 8.
 
 
 [15
 
 ]
-chapter 9.
-<Thesis timeline.png, id=129, 639.13782pt x 313.9228pt>
-File: Thesis timeline.png Graphic file (type png)
-<use Thesis timeline.png>
-Package pdftex.def Info: Thesis timeline.png  used on input line 408.
-(pdftex.def)             Requested size: 403.31511pt x 198.09813pt.
-Package placeins Info: No floats held, on input line 413.
+chapter 8.
 
 
 [16
 
-Package placeins Info: Float barrier, from input line 413, processed on page 16, lands on page 16. 
+]
+chapter 9.
+<Thesis timeline.png, id=133, 639.13782pt x 313.9228pt>
+File: Thesis timeline.png Graphic file (type png)
+<use Thesis timeline.png>
+Package pdftex.def Info: Thesis timeline.png  used on input line 422.
+(pdftex.def)             Requested size: 403.31511pt x 198.09813pt.
+Package placeins Info: No floats held, on input line 427.
+
+
+[17
+
+Package placeins Info: Float barrier, from input line 427, processed on page 17, lands on page 17. 
  <./Thesis timeline.png>]
-Overfull \hbox (8.50629pt too wide) in paragraph at lines 416--416
+Overfull \hbox (8.50629pt too wide) in paragraph at lines 430--430
 []\OT1/cmr/m/n/12 Jean-Bastien Grill et al. \OT1/cmr/m/it/12 Boot-strap your own la-tent: A new ap-proach to self-supervised
  []
 
 
-Overfull \hbox (9.47974pt too wide) in paragraph at lines 416--416
+Overfull \hbox (9.47974pt too wide) in paragraph at lines 430--430
 \OT1/cmr/m/n/12 trastive learn-ing frame-work for uni-vari-ate time se-ries rep-re-sen-ta-tion". In: \OT1/cmr/m/it/12 Knowledge-
  []
 
 
 
-[17
+[18
 
 ]
 
-[18] (./notes.aux)
+[19] (./notes.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1148,18 +1153,18 @@ Package logreq Info: Writing requests to 'notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30045 strings out of 473578
- 571185 string characters out of 5732243
+ 30047 strings out of 473578
+ 571208 string characters out of 5732243
  1940960 words of memory out of 5000000
- 52501 multiletter control sequences out of 15000+600000
+ 52502 multiletter control sequences out of 15000+600000
  568799 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11030b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on notes.pdf (20 pages, 178813 bytes).
+Output written on notes.pdf (21 pages, 180870 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 199 compressed objects within 2 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 243 PDF objects out of 1000 (max. 8388607)
+ 202 compressed objects within 3 object streams
+ 56 named destinations out of 1000 (max. 500000)
  126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
