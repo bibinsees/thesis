@@ -33,4 +33,6 @@ for i, (image1, image2) in enumerate(train_loader):
 
 model = Resnet(96*96)
 
-model,results = train(train_loader,model,2,device='cpu')
+model,results = train(train_loader,model,2,device='cuda')
+
+
