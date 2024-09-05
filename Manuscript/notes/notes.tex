@@ -355,6 +355,12 @@ $\square$ Find pretrained architectures for medical gray scale images/ Unet bett
 
 \textbf{Question: What happens data augmentation randomly change after each epoch? My answer: then learning won't happen properly because each epoch gradient calculation will be different to each epochs where we can't take average. Wrong: gradient calculation works independently so there will be no problem with gradient calc. What about loss? because loss is averaging for the bacth.} 
 
+\textbf{Question: Does Ntxent loss denominator act as pushing dissimilar images apart?}
+No. Denominator only act as normalisor to scale the probability (output of softmax) so that the total probability distribution will sum upto 1. 
+
+\textbf{Question: Why don’t we calculate the loss of divergence of similar image to dissimilar image?}
+ Because we don’t know how much dissimilar they are or if its dissimilar at all. For example: 
+
 NT-Xent loss variations:
 
 1. Each image considered as rgb since we have 3 channel + 2 std augs
@@ -381,9 +387,9 @@ Each image with 3d like rgb image.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{image.png} % Adjust the width as needed
+  \includegraphics[width=0.9\linewidth]{figures/image.png} % Adjust the width as needed
   \caption{batchsize: 16}
-  \label{fig:enter-label}
+  \label{fig:batch 16}
 \end{figure}
 
 \section{Intermediate evaluation of SSL model}
@@ -432,7 +438,7 @@ These methodological steps collectively form the framework for addressing critic
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{Thesis timeline.png} % Adjust the width as needed
+    \includegraphics[width=0.9\linewidth]{figures/Thesis timeline.png} % Adjust the width as needed
     \caption{Proposed Master Thesis timeline}
     \label{fig:enter-label}
 \end{figure}

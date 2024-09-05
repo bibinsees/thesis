@@ -366,19 +366,19 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
-INPUT ./image.png
-INPUT ./image.png
-INPUT ./image.png
-INPUT ./image.png
-INPUT ./image.png
+INPUT ./figures/image.png
+INPUT ./figures/image.png
+INPUT ./figures/image.png
+INPUT ./figures/image.png
+INPUT ./figures/image.png
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT ./Thesis timeline.png
-INPUT ./Thesis timeline.png
-INPUT ./Thesis timeline.png
-INPUT ./Thesis timeline.png
-INPUT ./Thesis timeline.png
+INPUT ./figures/Thesis timeline.png
+INPUT ./figures/Thesis timeline.png
+INPUT ./figures/Thesis timeline.png
+INPUT ./figures/Thesis timeline.png
+INPUT ./figures/Thesis timeline.png
 INPUT notes.aux
 INPUT ./notes.out
 INPUT ./notes.out
