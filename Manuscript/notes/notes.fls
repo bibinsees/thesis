@@ -255,6 +255,9 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.cfg
 INPUT c:/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.cfg
 INPUT c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+INPUT c:/texlive/2024/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT c:/texlive/2024/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm
 INPUT c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty

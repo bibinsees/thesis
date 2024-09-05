@@ -30,6 +30,7 @@
 \usepackage[sortcites,style=numeric,backend=biber,doi=false,isbn=false,url=false,eprint=false]{biblatex} % good package for bibliography support in LaTeX with biber backend, sortcites: sorting bibliography (name, title, year), style=numeric: standard numeric citation style (recommended!), doi/isbn/url/eprint=false: hide links in bibliography (recommended for clean bibliography!)
 \usepackage{xcolor}
 \definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+\usepackage{ulem}
 
 \usepackage{makecell} % tabular column heads and multilined cells
 \usepackage{amsmath} % math support 
@@ -345,7 +346,11 @@ Why we would like to try other models? Because SimCLR demands larger batch size 
 
 \textcolor{darkgreen}{Whats the correct data preprocessing order: resize, dataasug , normalisation}
 
-Why do we need to do Data augmentation? It force to have invariance (to get same feature vector regardless its transformation which helps to have a latent space with similar images together or more aligned. Also it helps to deal with invariance to microscope differrent sunlight exposure or environment factor or focal plane so it aligns with the interest of biological reason.
+Why do we need to do Data augmentation? It force to have invariance (to get same feature vector regardless its transformation which helps to have a latent space with positive samples together or more aligned. Also it helps to deal with invariance to microscope differrent sunlight exposure or environment factor or focal plane so it aligns with the interest of biological reason.
+
+\textcolor{darkgreen}{Question: How do the 2 different breed of dog which belongs to same class pull together in the latent space eventhough loss fn explicitly doesn't do that (situation specific to our dataset will be: some specific single dose image and
+some specific drug screened image can also have sililarity like they belong to same class
+eventhough they have diffrent drug concentration applied )} Data augmentation helps here to generalise the features/characterics of different breed but in same class images while training.
 
 \textbf{Question: Why don't we cutout/remove white well plate background? careful for drug screening because incase of drug screened images its debris are spread around so we need to be careful when cutting out.}
 
@@ -355,12 +360,12 @@ $\square$ Find pretrained architectures for medical gray scale images/ Unet bett
 
 \textbf{Question: What happens data augmentation randomly change after each epoch? My answer: then learning won't happen properly because each epoch gradient calculation will be different to each epochs where we can't take average. Wrong: gradient calculation works independently so there will be no problem with gradient calc. What about loss? because loss is averaging for the bacth.} 
 
-\textbf{Question: Does Ntxent loss denominator act as pushing dissimilar images apart?}
+\textcolor{darkgreen}{Question: Does Ntxent loss denominator act as pushing dissimilar images apart?}
 No. Denominator only act as normalisor to scale the probability (output of softmax) so that the total probability distribution will sum upto 1. 
 
-\textbf{Question: Why don’t we calculate the loss of divergence of similar image to dissimilar image?}
- Because we don’t know how much dissimilar they are or if its dissimilar at all. For example: 
-
+\textcolor{darkgreen}{Question: Why don’t we calculate the loss of divergence of similar image to dissimilar image?(At the moment ntxent loss is only calculating loss of divergence of similar images(positive sample))}
+ Because we don’t know how much dissimilar they are or if its dissimilar at all. For example: Suppose we have 2 different breed dogs which will be in same class. positive samples will be bulldog aug1 and bulldog aug2. negative sample contains german sheperd aug1 and sheperd aug2. we don't want to push away the positive sample and negative sample here, because eventhough they are in 2 different breed they belongs to same class. likewise in our dataset, some specific single dose image and some specific drug screened image can also have sililarity like they belong to same class eventhough they have diffrent drug concentration applied. hence we don't want to push them away by including this loss.
+Thats why current ntxent loss is better than Binary cross entroppy loss (BCE) where BCE considers loss of divergence in probability distribution of ground truth dissimlar image to predicted dissimilar image probability.
 NT-Xent loss variations:
 
 1. Each image considered as rgb since we have 3 channel + 2 std augs
@@ -371,9 +376,9 @@ NT-Xent loss variations:
 
 4. Include anchor as positive , ie 3 augs  toal ( 1 anchor as aug other 2 layers as augs)
 
-5. Remove positive sample from denominator of los fn
+5. Remove positive sample j from denominator of loss fn. Since j is the  only one image as positive sample in the sum of denominator softmax its contribution will be less.
 
-6. Supervised Simclr
+6. Supervised Simclr: Make sure no same breed images in the negative samples. Does this increase the confidence score for 1's in the cross entropy loss? 
 
 7. https://chatgpt.com/share/25365975-2a54-4a29-a18a-19c7f698cd2b
 code for applying 2 diefferent set of augs
