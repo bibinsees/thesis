@@ -19,4 +19,4 @@ class Resnet(nn.Module):
         return self.convnet(x)
     
 
-#print(Resnet(96*96))
+#print(Resnet(96))

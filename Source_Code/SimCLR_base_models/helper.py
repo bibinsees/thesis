@@ -60,10 +60,13 @@ def plot_curves(train_losses, val_losses, train_top1_accs, val_top1_accs, train_
 def accuracy(output, target, topk=(1,)):
     """Computes the accuracy over the k top predictions for the specified values of k"""
     maxk = max(topk)
+    print(maxk)
     batch_size = target.size(0)
-
+    print(batch_size)
     _, pred = output.topk(maxk, 1, True, True)
+    print(pred.shape)
     pred = pred.t()
+    print(target.view(1, -1).expand_as(pred).shape)
     correct = pred.eq(target.view(1, -1).expand_as(pred))
 
     res = []

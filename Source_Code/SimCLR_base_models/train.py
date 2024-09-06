@@ -27,7 +27,7 @@ def train(train_loader,model,epochs,lr=5e-4, temperature=0.07, weight_decay=1e-4
             imgs = torch.cat((imgs1, imgs2), dim=0)
 
             feats = model.forward(imgs)
-
+            print(feats.shape)
             loss = SimCLR_loss(feats=feats,temperature=temperature)
             if not validate:
                 optimizer.zero_grad()
@@ -35,8 +35,10 @@ def train(train_loader,model,epochs,lr=5e-4, temperature=0.07, weight_decay=1e-4
                 optimizer.step()
                 lr_scheduler.step()
             total_loss += loss.item()
-
+            torch.functional.cosine_similarity(feats)
             target = torch.cat((torch.arange(imgs1.size(0)), torch.arange(imgs2.size(0)))).to(device)
+            print(imgs1.shape,imgs.shape)
+            print(feats.shape,target.shape)
             top1_acc, top5_acc = accuracy(feats, target, topk=(1, 5))
             total_top1_acc += top1_acc.item()
             total_top5_acc += top5_acc.item()

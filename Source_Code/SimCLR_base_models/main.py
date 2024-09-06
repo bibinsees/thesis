@@ -43,7 +43,8 @@ for i, (image1, image2) in enumerate(train_loader):
     plt.imshow(image1[0,0])
     break
 
-model = Resnet(size*size)
+model = Resnet(size)
+print(model)
 print('training')
 model,train_results = train(train_loader,model,10,device='cuda')
 print('validating')
