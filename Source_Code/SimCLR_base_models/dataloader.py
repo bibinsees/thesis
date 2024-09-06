@@ -8,14 +8,14 @@ from torchvision import transforms
 
 # Custom Dataset class
 class ImageDataset(Dataset):
-    def __init__(self, image_dir):
+    def __init__(self, image_dir,size):
         self.image_dir = image_dir
         #self.transform = transform
         self.image_files = [os.path.join(image_dir, file) for file in os.listdir(image_dir) if file.endswith('.tiff')]
         #we don't need to resize into 96*96 because we are doing that in below contrastive transform (self.resize_transform = transforms.resize((96,96)))
         self.transform = transforms.Compose([
             transforms.RandomHorizontalFlip(),
-            transforms.RandomResizedCrop(size=96),
+            transforms.RandomResizedCrop(size=size),
             transforms.RandomApply([transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.1)], p=0.8),
             transforms.RandomGrayscale(p=0.2),
             transforms.GaussianBlur(kernel_size=9),

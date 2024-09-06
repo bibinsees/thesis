@@ -366,6 +366,7 @@ $\square$ Find pretrained architectures for medical gray scale images/ Unet bett
 \textcolor{darkgreen}{Question: Why don’t we calculate the loss of divergence of similar image to dissimilar image?(At the moment ntxent loss is only calculating loss of divergence of similar images(positive sample))}
 \textcolor{darkgreen}{Because we don’t know how much dissimilar they are or if its dissimilar at all. For example: Suppose we have 2 different breed dogs which will be in same class. positive samples will be bulldog aug1 and bulldog aug2. negative sample contains german sheperd aug1 and sheperd aug2. we don't want to push away the positive sample and negative sample here, because eventhough they are in 2 different breed they belongs to same class. likewise in our dataset, some specific single dose image and some specific drug screened image can also have sililarity like they belong to same class eventhough they have diffrent drug concentration applied. hence we don't want to push them away by including this loss.
 Thats why current ntxent loss is better than Binary cross entroppy loss (BCE) where BCE considers loss of divergence in probability distribution of ground truth dissimlar image to predicted dissimilar image probability.}
+\textcolor{darkgreen}{Question:Is there alternative for BCE where it doesn't include loss of divergence of dissimilar to dissimilar? one idea is use just modified just CE and give ground truth labels equal probability like if we have (1,0,1,0,1,1,1) then probability matching should be (20,0,20,0,20,20,20) and this should match like 0.2log(predicted prob)}
 
 NT-Xent loss variations:
 
@@ -379,7 +380,7 @@ NT-Xent loss variations:
 
 5. Remove positive sample j from denominator of loss fn. Since j is the  only one image as positive sample in the sum of denominator softmax its contribution will be less.
 
-6. Supervised Simclr: Make sure no same breed images in the negative samples. Does this increase the confidence score for 1's in the cross entropy loss? 
+6. Supervised Simclr: Make sure no same breed/class images in the negative samples. Does this increase the confidence score for 1's in the cross entropy loss? or does this suppress confidence score for dissimilar one forcly? because in our case we get similar images from 2 different class 
 
 7. https://chatgpt.com/share/25365975-2a54-4a29-a18a-19c7f698cd2b
 code for applying 2 diefferent set of augs
