@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  5 SEP 2024 20:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  6 SEP 2024 09:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1106,10 +1106,10 @@ chapter 6.
 <figures/image.png, id=106, 1004.75375pt x 392.46625pt>
 File: figures/image.png Graphic file (type png)
 <use figures/image.png>
-Package pdftex.def Info: figures/image.png  used on input line 395.
+Package pdftex.def Info: figures/image.png  used on input line 396.
 (pdftex.def)             Requested size: 403.31511pt x 157.53465pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5802) has occurred while \output is active []
 
 
 
@@ -1139,56 +1139,56 @@ chapter 9.
 <figures/Thesis timeline.png, id=142, 639.13782pt x 313.9228pt>
 File: figures/Thesis timeline.png Graphic file (type png)
 <use figures/Thesis timeline.png>
-Package pdftex.def Info: figures/Thesis timeline.png  used on input line 446.
+Package pdftex.def Info: figures/Thesis timeline.png  used on input line 447.
 (pdftex.def)             Requested size: 403.31511pt x 198.09813pt.
-Package placeins Info: No floats held, on input line 451.
+Package placeins Info: No floats held, on input line 452.
 
 
 [18
 
-Package placeins Info: Float barrier, from input line 451, processed on page 18, lands on page 18. 
+Package placeins Info: Float barrier, from input line 452, processed on page 18, lands on page 18. 
  <./figures/Thesis timeline.png>]
-Overfull \hbox (4.23466pt too wide) in paragraph at lines 454--454
+Overfull \hbox (4.23466pt too wide) in paragraph at lines 455--455
 []\OT1/cmr/m/n/12 Mathilde Caron et al. |   [].
  []
 
 
-Overfull \hbox (42.19122pt too wide) in paragraph at lines 454--454
+Overfull \hbox (42.19122pt too wide) in paragraph at lines 455--455
 []\OT1/cmr/m/n/12 Ting Chen et al. |   [].
  []
 
 
-Overfull \hbox (75.79367pt too wide) in paragraph at lines 454--454
+Overfull \hbox (75.79367pt too wide) in paragraph at lines 455--455
 []\OT1/cmr/m/n/12 Jean-Bastien Grill et al. |   [].
  []
 
 
-Overfull \hbox (174.85237pt too wide) in paragraph at lines 454--454
+Overfull \hbox (174.85237pt too wide) in paragraph at lines 455--455
 []\OT1/cmr/m/n/12 Jeremy Irvin et al. |   [].
  []
 
 
-Overfull \hbox (26.89647pt too wide) in paragraph at lines 454--454
+Overfull \hbox (26.89647pt too wide) in paragraph at lines 455--455
 \OT1/cmr/m/n/12 mea-sur-ing dry mass changes in sub-cellular com-part-ments". In: |   []
  []
 
 
-Overfull \hbox (9.74156pt too wide) in paragraph at lines 454--454
+Overfull \hbox (9.74156pt too wide) in paragraph at lines 455--455
 []\OT1/cmr/m/n/12 Ziyu Liu et al. |   []
  []
 
 
-Overfull \hbox (97.82774pt too wide) in paragraph at lines 454--454
+Overfull \hbox (97.82774pt too wide) in paragraph at lines 455--455
 \OT1/cmr/m/n/12 Tho-rax Dis-eases". In: |   [].
  []
 
 
-Overfull \hbox (86.45975pt too wide) in paragraph at lines 454--454
+Overfull \hbox (86.45975pt too wide) in paragraph at lines 455--455
 \OT1/cmr/m/n/12 trastive learn-ing frame-work for uni-vari-ate time se-ries rep-re-sen-ta-tion". In: |   []
  []
 
 
-Overfull \hbox (124.49731pt too wide) in paragraph at lines 454--454
+Overfull \hbox (124.49731pt too wide) in paragraph at lines 455--455
 []\OT1/cmr/m/n/12 Yuhao Zhang et al. |   [].
  []
 
@@ -1218,7 +1218,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11030b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on notes.pdf (22 pages, 209532 bytes).
+Output written on notes.pdf (22 pages, 209550 bytes).
 PDF statistics:
  251 PDF objects out of 1000 (max. 8388607)
  208 compressed objects within 3 object streams

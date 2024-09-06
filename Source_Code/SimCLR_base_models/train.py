@@ -8,7 +8,7 @@ def train(train_loader,model,epochs,lr=5e-4, temperature=0.07, weight_decay=1e-4
     if not validate:
         model = model.train().to(device)
     else:
-        model = model.valid().to(device)
+        model = model.eval().to(device)
     optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
     lr_scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=50, eta_min=lr / 50)
 
