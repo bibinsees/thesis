@@ -26,10 +26,11 @@ def train(train_loader,model,epochs,lr=5e-4, temperature=0.07, weight_decay=1e-4
             imgs1, imgs2 = imgs1.to(device), imgs2.to(device)
             imgs = torch.cat((imgs1, imgs2), dim=0)
 
-            feats = model(imgs)
+            feats = model.forward(imgs)
 
             loss = SimCLR_loss(feats=feats,temperature=temperature)
             if not validate:
+                optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
                 lr_scheduler.step()
