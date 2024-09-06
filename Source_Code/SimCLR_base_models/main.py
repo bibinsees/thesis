@@ -46,9 +46,9 @@ for i, (image1, image2) in enumerate(train_loader):
 model = Resnet(size)
 print(model)
 print('training')
-model,train_results = train(train_loader,model,10,device='cuda')
+model,train_results = train(train_loader,model,2,device='cuda')
 print('validating')
-model,val_results = train(train_loader,model,10,device='cuda',validate = True)
+model,val_results = train(train_loader,model,2,device='cuda',validate = True)
 train_losses,train_top1_accs,train_top5_accs = train_results[0],train_results[1],train_results[2]
 val_losses,val_top1_accs,val_top5_accs = val_results[0], val_results[1], val_results[2]
 plot_curves(train_losses, val_losses, train_top1_accs, val_top1_accs, train_top5_accs, val_top5_accs)
