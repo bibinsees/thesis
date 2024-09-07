@@ -352,6 +352,13 @@ Why do we need to do Data augmentation? It force to have invariance (to get same
 some specific drug screened image can also have sililarity like they belong to same class
 eventhough they have diffrent drug concentration applied ) Data augmentation helps here to generalise the features/characterics of different breed but in same class images while training.}
 
+The choice of the data augmentation to use is the most crucial hyperparameter in SimCLR since it directly affects how the latent space is structured, and what patterns might be learned from the data.
+
+Two augmentations stand out for imagenet classification in their importance: crop-and-resize, and color distortion. Interestingly, however, they only lead to strong performance if they have been used together as discussed by Ting Chen et al. in their SimCLR paper. When performing randomly cropping and resizing, we can distinguish between two situations: (a) cropped image A provides a local view of cropped image B, or (b) cropped images C and D show neighboring views of the same image
+While situation (a) requires the model to learn some sort of scale invariance to make crops A and B similar in latent space, situation (b) is more challenging since the model needs to recognize an object beyond its limited view. However, without color distortion, there is a loophole that the model can exploit, namely that different crops of the same image usually look very similar in color space. Consider the picture of the dog above. Simply from the color of the fur and the green color tone of the background, you can reason that two patches belong to the same image without actually recognizing the dog in the picture. In this case, the model might end up focusing only on the color histograms of the images, and ignore other more generalizable features. If, however, we distort the colors in the two patches randomly and independently of each other, the model cannot rely on this simple feature anymore. Hence, by combining random cropping and color distortions, the model can only match two patches by learning generalizable representations.
+
+Lesson: Data augmentation should be beneficial such a way that model can't rely/exploit on common/unwanted pattern to distinguish between 2 images?
+
 \textbf{Question: Why don't we cutout/remove white well plate background? careful for drug screening because incase of drug screened images its debris are spread around so we need to be careful when cutting out.}
 
 \textbf{Question: Pretrained resnet is on 8 bit, is there any concept like then the custom image should be also 8 bit to match it? or need to normlaise the same way that resnet pretrained normalise? what else factors may effect like this other than normalisation? } 
@@ -382,10 +389,7 @@ NT-Xent loss variations:
 
 6. Supervised Simclr: Make sure no same breed/class images in the negative samples. Does this increase the confidence score for 1's in the cross entropy loss? or does this suppress confidence score for dissimilar one forcly? because in our case we get similar images from 2 different class 
 
-7. https://chatgpt.com/share/25365975-2a54-4a29-a18a-19c7f698cd2b
-code for applying 2 diefferent set of augs
-
-Try another loss fn like Triplet loss this already shown in the orig paper
+7. Try another loss fn like Triplet loss this already shown in the orig paper
 
 \textbf{Question: Whats model collapse, and in which situation it happens?}
 Mg comment: Model collapse meaning differ depend on the model or context. so understand first whats generally model collapse and then read original paper to find out whats the specific model collapse problem we have with simclr.
@@ -405,6 +409,49 @@ Evaluation of the SSL model depend on the  time series inference loss/metric, ne
 Note from SiCLR tutorial: If very little data is available, it might be beneficial to dynamically encode the images during training so that we can also apply data augmentations. However, the way we implement it here is much more efficient and can be trained within a few seconds. Further, using data augmentations did not show any significant gain in this simple setup.
 
 \textbf{Question: in the tutorial simclr trained on different distribution and logistic regression trained on different distribution, should we do the same? Does it matter?} 
+
+\[
+\text{cos\_sim} = \begin{bmatrix} 
+-9e15 & 0.2 & 0.3 & 0.4 & 0.9 & 0.5 & 0.1 & 0.6 \\ 
+0.2 & -9e15 & 0.1 & 0.4 & 0.5 & 0.3 & 0.9 & 0.2 \\ 
+0.3 & 0.1 & -9e15 & 0.7 & 0.6 & 0.2 & 0.1 & 0.8 \\ 
+0.4 & 0.4 & 0.7 & -9e15 & 0.9 & 0.5 & 0.2 & 0.1 \\ 
+0.9 & 0.5 & 0.6 & 0.9 & -9e15 & 0.7 & 0.3 & 0.2 \\ 
+0.5 & 0.3 & 0.2 & 0.5 & 0.7 & -9e15 & 0.6 & 0.4 \\ 
+0.1 & 0.9 & 0.1 & 0.2 & 0.3 & 0.6 & -9e15 & 0.5 \\ 
+0.6 & 0.2 & 0.8 & 0.1 & 0.2 & 0.4 & 0.5 & -9e15 
+\end{bmatrix}
+\]
+
+\[
+\text{pos\_mask} = \begin{bmatrix} 
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 
+\end{bmatrix}
+\]
+
+\[
+\text{comb\_sim[0]} = \begin{bmatrix} 
+0.9, & 0.2, & 0.3, & 0.4, & -9e15, & 0.5, & 0.1, & 0.6
+\end{bmatrix}
+\]
+
+\[
+\text{comb\_sim} = \begin{bmatrix} 
+0.9 & 0.2 & 0.3 & 0.4 & -9e15 & 0.5 & 0.1 & 0.6 \\ 
+0.5 & 0.3 & 0.1 & 0.4 & -9e15 & 0.5 & 0.9 & 0.2 \\ 
+0.6 & 0.1 & 0.7 & 0.4 & -9e15 & 0.3 & 0.2 & 0.8 \\ 
+0.9 & 0.4 & 0.7 & 0.8 & -9e15 & 0.6 & 0.1 & 0.4 \\ 
+0.7 & 0.5 & 0.9 & 0.1 & -9e15 & 0.6 & 0.2 & 0.4 \\ 
+\end{bmatrix}
+\]
+
 
 
 \subsection{Further variations}
