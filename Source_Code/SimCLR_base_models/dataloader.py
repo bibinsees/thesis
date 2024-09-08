@@ -44,4 +44,3 @@ class ImageDataset(Dataset):
             image1 = self.transform(image)
             image2 = self.transform(image)
         return image1, image2
-

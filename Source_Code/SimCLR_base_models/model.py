@@ -20,3 +20,4 @@ class Resnet(nn.Module):
     
 
 #print(Resnet(96))
+#

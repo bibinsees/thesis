@@ -17,9 +17,9 @@ def set_seed(seed):
     torch.backends.cudnn.benchmark = False
 
 
-def plot_curves(train_losses, val_losses, train_top1_accs, val_top1_accs, train_top5_accs, val_top5_accs, train_mean_pos, val_mean_pos):
+def plot_curves(train_losses, val_losses, train_top1_accs, val_top1_accs, train_top5_accs, val_top5_accs):
     epochs = range(1, len(train_losses) + 1)
-
+    
     # Plot loss
     plt.figure(figsize=(12, 4))
     plt.subplot(1, 2, 1)
@@ -29,7 +29,7 @@ def plot_curves(train_losses, val_losses, train_top1_accs, val_top1_accs, train_
     plt.xlabel('Epochs')
     plt.ylabel('Loss')
     plt.legend()
-
+    
     # Plot Top-1 accuracy
     plt.subplot(1, 2, 2)
     plt.plot(epochs, train_top1_accs, 'bo-', label='Training Top-1 Accuracy')
@@ -42,7 +42,7 @@ def plot_curves(train_losses, val_losses, train_top1_accs, val_top1_accs, train_
     # Show the plots
     plt.tight_layout()
     plt.show()
-
+    
     # Plot Top-5 accuracy
     plt.figure(figsize=(6, 4))
     plt.plot(epochs, train_top5_accs, 'bo-', label='Training Top-5 Accuracy')
@@ -52,17 +52,28 @@ def plot_curves(train_losses, val_losses, train_top1_accs, val_top1_accs, train_
     plt.ylabel('Top-5 Accuracy (%)')
     plt.legend()
 
-    # Plot Mean Position of Positive Example
-    plt.figure(figsize=(6, 4))
-    plt.plot(epochs, train_mean_pos, 'bo-', label='Training Mean Position')
-    plt.plot(epochs, val_mean_pos, 'ro-', label='Validation Mean Position')
-    plt.title('Training and Validation Mean Position of Positive Example')
-    plt.xlabel('Epochs')
-    plt.ylabel('Mean Position')
-    plt.legend()
-
+    # Show the plots
     plt.tight_layout()
     plt.show()
+
+
+def accuracy(output, target, topk=(1,)):
+    """Computes the accuracy over the k top predictions for the specified values of k"""
+    maxk = max(topk)
+    print(maxk)
+    batch_size = target.size(0)
+    print(batch_size)
+    _, pred = output.topk(maxk, 1, True, True)
+    print(pred.shape)
+    pred = pred.t()
+    print(target.view(1, -1).expand_as(pred).shape)
+    correct = pred.eq(target.view(1, -1).expand_as(pred))
+
+    res = []
+    for k in topk:
+        correct_k = correct[:k].reshape(-1).float().sum(0, keepdim=True)
+        res.append(correct_k.mul_(100.0 / batch_size))
+    return res
 
 
 # Function to split dataset with explicit percentage
@@ -70,4 +81,3 @@ def split_dataset(dataset, val_percentage):
     val_size = int(len(dataset) * val_percentage)
     train_size = len(dataset) - val_size
     return random_split(dataset, [train_size, val_size])
-#
