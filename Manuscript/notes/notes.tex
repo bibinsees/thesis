@@ -339,18 +339,33 @@ Why we would like to try other models? Because SimCLR demands larger batch size 
 \textcolor{darkgreen}{Ours is not classification problem, so some treated with some specific dosage will have the same effect as untreated one or drug screened one, that's possible. For example, a single dose and a drug screened one may have the same effect, same pixel intensity. Therefore, our goal is not to push or pull because of the label name but because of its natural similarity or dissimilarity. At the moment, SimCLR is kind of forcing similar images to be invariant. Is there any way to do natural pulling and pushing? E.g., Siamese network? Considering the weight effect Prof. Magdas, we need to find a way to use weight but without tweaking too much.}
 
 
-\textcolor{darkgreen}{How can you say simclr is not pulling similar images of different dog breed together naturally? We can understand from the loss in a batch, lets say bulldog breed pulled together in the latent space and in another batch german sheperd pulled together in the latent space. We understood that from the mathematics. but does that mean these 2 different dog breeds are together in the latent space at the end of training? I think yes, beause that why Imagenet classification gives good accuracy with only simclr training without additional supervised training.  Inthat case how does that happened the 2 different dog breed pulling}
-
-
 \subsection{Training SimCLR}
+
+
+
+\begin{table}[ht!]
+  \centering
+  \begin{tabular}{|l|c|c|c|c|}
+  \hline
+  \textbf{Dataset Type} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Untreated} & \textbf{Total} \\ \hline
+  \textbf{Combined Unlabeled} & 12 (3\%) & 204 (60\%) & 150 (37\%) & 366 \\ \hline
+  \textbf{Supervised}         & 12 (16.66\%) & 30 (41.66\%)  & 30 (41.66\%) & 72  \\ \hline
+  \end{tabular}
+  \caption{Dataset Overview}
+  \label{tab:dataset}
+  \end{table}
 
 \textcolor{darkgreen}{Whats the correct data preprocessing order: resize, dataasug , normalisation}
 
-Why do we need to do Data augmentation? It force to have invariance (to get same feature vector regardless its transformation which helps to have a latent space with positive samples together or more aligned. Also it helps to deal with invariance to microscope differrent sunlight exposure or environment factor or focal plane so it aligns with the interest of biological reason.
 
-\textcolor{darkgreen}{Question: How does the 2 different breed of dog which belongs to same class pull together in the latent space eventhough loss fn explicitly doesn't do that (situation specific to our dataset will be: some specific single dose image and
-some specific drug screened image can also have sililarity like they belong to same class
-eventhough they have diffrent drug concentration applied ) Data augmentation helps here to generalise the features/characterics of different breed but in same class images while training.}
+\textcolor{darkgreen}{Question: How can you say simclr is not pulling similar images of different dog breed together naturally? We can understand from the loss in a batch, lets say bulldog breed pulled together in the latent space and in another batch german sheperd pulled together in the latent space. We understood that from the mathematics. but does that mean these 2 different dog breeds are together in the latent space at the end of training? ( situation specific to our dataset will be: some specific single dose image and some specific drug screened image can also have sililarity like they belong to same class eventhough they have diffrent drug concentration applied ) In that case how does that happened the 2 different dog breed pulling}
+
+Ans: Because of the data augmentation. Data augmentation helps to generalise the features/characterics of different breed but in same class images while training. For example, suppose we have images of a black cat and a pink cat in our dataset. Through color augmentations (e.g., changing the hue, brightness, etc.), an augmented version of the pink cat might look visually closer to a black cat. Although the contrastive loss function doesn’t explicitly pull the black and pink cats together, the model learns to associate these images due to their shared visual characteristics after augmentation. As a result, the representations of the black and pink cat may end up closer in the latent space because the model has learned invariances to augmentations such as color changes, textures, or lighting conditions.
+
+
+Why do we need to do Data augmentation? 
+
+It force to have invariance (to get same feature vector regardless its transformation which helps to have a latent space with positive samples together or more aligned. Also it helps to deal with invariance to microscope differrent sunlight exposure or environment factor or focal plane so it aligns with the interest of biological reason.
 
 The choice of the data augmentation to use is the most crucial hyperparameter in SimCLR since it directly affects how the latent space is structured, and what patterns might be learned from the data.
 
