@@ -70,4 +70,3 @@ def split_dataset(dataset, val_percentage):
     val_size = int(len(dataset) * val_percentage)
     train_size = len(dataset) - val_size
     return random_split(dataset, [train_size, val_size])
-#

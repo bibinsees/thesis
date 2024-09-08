@@ -2,7 +2,6 @@ import torch
 from torch import nn, optim
 import torchvision
 
-from helper import accuracy
 
 class Resnet(nn.Module):
     def __init__(self, hidden_dim):

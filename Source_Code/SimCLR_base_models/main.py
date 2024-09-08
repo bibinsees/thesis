@@ -3,7 +3,7 @@ from torch.utils.data import DataLoader, random_split
 import numpy as np
 
 from SimLoss import SimCLR_loss
-from helper import plot_curves, accuracy, set_seed, split_dataset
+from helper import plot_curves, set_seed, split_dataset
 from train import train
 from model import Resnet
 from dataloader import ImageDataset
@@ -21,7 +21,7 @@ dataset = ImageDataset(image_dir=image_dir,size=size)
 # Split the dataset with 20% for validation
 val_percentage = 0.2
 train_dataset, val_dataset = split_dataset(dataset, val_percentage)
-
+#print(train_dataset.indices,val_dataset.indices)
 # Define DataLoaders
 train_loader = DataLoader(train_dataset, 
                           batch_size=batch_size, 

@@ -3,7 +3,6 @@ from torch import nn, optim
 
 
 from SimLoss import SimCLR_loss
-from helper import accuracy
 import tqdm
 
 def train(train_loader, model, epochs, lr=5e-4, temperature=0.07, weight_decay=1e-4, device='cuda', validate=False):
