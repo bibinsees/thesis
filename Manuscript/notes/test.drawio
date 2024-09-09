@@ -77,10 +77,10 @@
                     <mxGeometry x="210" y="398.75" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" value="Day 5" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=0;fontColor=#000000;fontStyle=1" vertex="1" parent="1">
-                    <mxGeometry x="260" y="398.75" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="261" y="398.75" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="37" value="Day 6" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=0;fontColor=#000000;fontStyle=1" vertex="1" parent="1">
-                    <mxGeometry x="310" y="398.75" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="312" y="398.75" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="Day 7" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=0;fontColor=#000000;fontStyle=1" vertex="1" parent="1">
                     <mxGeometry x="389" y="398.75" width="60" height="30" as="geometry"/>
@@ -101,7 +101,7 @@
                     <mxGeometry x="400" y="295.61" width="40" height="41.53" as="geometry"/>
                 </mxCell>
                 <mxCell id="61" value="" style="group" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="400" y="408.75" width="40" height="20" as="geometry"/>
+                    <mxGeometry x="399" y="426.75" width="40" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="62" value="" style="shape=delay;whiteSpace=wrap;html=1;sketch=0;fontColor=#FFFFFF;fillColor=#FFFFFF;gradientColor=#6E6E6E;gradientDirection=east;labelBackgroundColor=#FFFFFF;" vertex="1" parent="61">
                     <mxGeometry x="20" width="20" height="20" as="geometry"/>
