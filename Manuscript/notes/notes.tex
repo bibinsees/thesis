@@ -243,6 +243,20 @@ In light of these challenges, Researchers at Fraunhofer Translational Center for
 
 As a proof of concept, The Fraunhofer TLZ-RT Wuerzburg laboratory utilized a modular dual-arm robot-based system \cite{Dembski2023Establishing}, equipped with incubators and bioreactors under physiological conditions to study drug efficacy for the long-term culture of these three-dimensional tumor tissue models. One advantage of this platform is its ability to capture bright-field microscopy images of 3D tumor tissue models using a customized microscope setup integrated into the robotic platform, offering flexibility in image acquisition according to experimental needs.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{figures/setup.jpg} % Adjust the width as needed
+  \caption{Robo platform setup}
+  \label{fig:output1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{figures/Robot.jpg} % Adjust the scale factor as needed
+  \caption{Dual-arm robot}
+  \label{fig:output1}
+\end{figure}
+
 Although the vision for the future is to simulate the identical interaction environment of drugs with tumor cells as it occurs in the human body, current technology has not yet achieved this. The current three-dimensional tumor tissue models developed in the lab do not fully resemble real pancreatic tumor cells found in the human body. These 3D tumor tissue models only contain pure tumor tissues, whereas real human pancreatic tumor cells exist within a complex microenvironment comprising tumor cells, blood vessels, other tissues, and various cell types. Despite this limitation, our work serves as a valuable starting point for studying drug efficacy in a controlled environment. Fortunately, if we are able to replicate human body tumor cells in the lab in the future, the techniques currently used to study the bright-field microscopy images will still be applicable. However, the fact that bright-field microscopy images are two-dimensional limits the ability to perform a comprehensive analysis of the drug's impact on the entire 3D structure of the cultivated tumor tissue models.
 
 Alternatives to bright-field microscopy images include 3D fluorescence microscopy and luminescent cytotoxicity assays. However, both methods are invasive. Fluorescent molecules tend to generate reactive chemical species under illumination, enhancing phototoxic effects. This chemical reaction with the 3D tumor tissue model may alter its structure, making it not suitable to isolate the drug's effect over time. Similarly, luminescent cytotoxicity assays result in a dead culture, rendering them unsuitable for longitudinal studies. Additionally, both methods require removing the well plate from the isolated culture environment for extended periods, making the samples susceptible to external environmental factors. For instance, in fluorescence microscopy, cells are particularly vulnerable to phototoxicity from short wavelength light. In contrast, bright-field microscopy images are non-invasive, allowing continuous culture and the possibility of creating time series of images to study dynamic changes. Therefore, we rely on bright-field microscopy images to study the time-evolutionary effects of drugs, only applying the alternative methods at the end of the experiment.
@@ -270,6 +284,13 @@ We assess the efficacy of the drug by comparing the changes it induces in the un
 3. Pixel intensity or color change
 
 These parameters serve as human-interpretable metrics for assessing the efficacy of the drug. However, there may be other hidden information or patterns within these bright-field microscopy images that are not human-interpretable. This potential can be explored using representation learning techniques. Additionally, this method can provide more standardization compared to manual assessment.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{figures/Big picture.jpg} 
+  \caption{Big picture}
+
+  \label{fig:output1}
+\end{figure}
 \let\cleardoublepage\clearpage
 \chapter{Objective}\label{ch:Objective}
 This thesis aims to assess drug efficacy by ranking different drug combinations and concentrations. The ranking is based on features extracted from bright-field microscopy images of  three-dimensional tumor tissue models using representation learning. The primary challenge lies in learning the efficient features of alterations induced in these tumor tissue models by the impact of drug application over a period of time.
@@ -330,6 +351,32 @@ Advantage of training AI in a supervised setting is the ability to circumvent th
 
 \chapter{Experiments}\label{ch:Experiments}
 We decided to proceed with methodology 1.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{figures/evo.pdf} 
+  \caption{time progress}
+  \label{fig:evolution}
+\end{figure}
+
+\begin{itemize}
+  \item The current dataset we are working with only includes data from day 10 (ie after 3 days of drug application). For the next batch of tests, we will collect images on days 7, 8, 9, and 10, or at least on days 7 and 10, as these are the most important due to the significant changes caused by the drug effect between these days.
+  \item Figure 6.1 is the well plate setup for the single dose experiment where left half remain untreated and right half applied with a single drug concentration.This is the picture taken after 3 days drug applied.
+  \item Figure 6.2 is the well plate setup for the drug screening experiment where majority we apply different combination of drug concentration and some left untreated.
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/single_dose.jpg} % Adjust the width as needed
+  \caption{single dose}
+  \label{fig:output1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/drug_screened.png} % Adjust the width as needed
+  \caption{Drug screened}
+  \label{fig:output1}
+\end{figure}
 
 \section{Training SSL model}
 
@@ -340,6 +387,9 @@ Why we would like to try other models? Because SimCLR demands larger batch size 
 
 
 \subsection{Training SimCLR}
+
+
+
 
 
 
@@ -356,6 +406,7 @@ Why we would like to try other models? Because SimCLR demands larger batch size 
   \end{table}
 
 
+  Below images after data augmentation and normalisation of 3 channel version:
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{figures/op1.png} % Adjust the width as needed
