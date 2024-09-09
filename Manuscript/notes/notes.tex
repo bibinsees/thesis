@@ -378,21 +378,17 @@ We decided to proceed with methodology 1.
   \label{fig:output1}
 \end{figure}
 
-\section{Training SSL model}
-
-For step 1, we used SimCLR as SSL ( Self supervised leraning ) first model. Later will try other models ( Masked auto encoder, Dino) depend on time. 
-Why we would like to try other models? Because SimCLR demands larger batch size and more data for better performance which we don't have.
-
-\textcolor{darkgreen}{Ours is not classification problem, so some treated with some specific dosage will have the same effect as untreated one or drug screened one, that's possible. For example, a single dose and a drug screened one may have the same effect, same pixel intensity. Therefore, our goal is not to push or pull because of the label name but because of its natural similarity or dissimilarity. At the moment, SimCLR is kind of forcing similar images to be invariant. Is there any way to do natural pulling and pushing? E.g., Siamese network? Considering the weight effect Prof. Magdas, we need to find a way to use weight but without tweaking too much.}
+The original images are approximately 2500×2500 pixels in 16-bit grayscale, with multiple channels. The multiple channels result from images taken at different focal planes in brightfield microscopy.
 
 
-\subsection{Training SimCLR}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{figures/originals.pdf} 
+  \caption{originals}
+  \label{fig:originals}
+\end{figure}
 
-
-
-
-
-
+Dataset class overview:
 \begin{table}[ht!]
   \centering
   \begin{tabular}{|l|c|c|c|c|}
@@ -405,28 +401,15 @@ Why we would like to try other models? Because SimCLR demands larger batch size 
   \label{tab:dataset}
   \end{table}
 
+\section{Training SSL model}
 
-  Below images after data augmentation and normalisation of 3 channel version:
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/op1.png} % Adjust the width as needed
-    \caption{op1}
-    \label{fig:output1}
-  \end{figure}
+For step 1, we used SimCLR as SSL ( Self supervised leraning ) first model. Later will try other models ( Masked auto encoder, Dino) depend on time. 
+Why we would like to try other models? Because SimCLR demands larger batch size and more data for better performance which we don't have.
 
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/output3.png} % Adjust the width as needed
-    \caption{op3}
-    \label{fig:output3}
-  \end{figure}
+\textcolor{darkgreen}{Ours is not classification problem, so some treated with some specific dosage will have the same effect as untreated one or drug screened one, that's possible. For example, a single dose and a drug screened one may have the same effect, same pixel intensity. Therefore, our goal is not to push or pull because of the label name but because of its natural similarity or dissimilarity. At the moment, SimCLR is kind of forcing similar images to be invariant. Is there any way to do natural pulling and pushing? E.g., Siamese network? Considering the weight effect Prof. Magdas, we need to find a way to use weight but without tweaking too much.}
 
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/op4.png} % Adjust the width as needed
-    \caption{Blured augs}
-    \label{fig:output4}
-  \end{figure}
+
+\subsection{Training SimCLR}
 
 \textcolor{darkgreen}{Whats the correct data preprocessing order: resize, dataasug , normalisation}
 
@@ -463,7 +446,10 @@ $\square$ Find pretrained architectures for medical gray scale images/ Unet bett
 Thats why current ntxent loss is better than Binary cross entroppy loss (BCE) where BCE considers loss of divergence in probability distribution of ground truth dissimlar image to predicted dissimilar image probability.}
 \textcolor{darkgreen}{Question:Is there alternative for BCE where it doesn't include loss of divergence of dissimilar to dissimilar? one idea is use just modified just CE and give ground truth labels equal probability like if we have (1,0,1,0,1,1,1) then probability matching should be (20,0,20,0,20,20,20) and this should match like 0.2log(predicted prob)}
 
-NT-Xent loss variations:
+\textbf{Question: Whats model collapse, and in which situation it happens?}
+Mg comment: Model collapse meaning differ depend on the model or context. so understand first whats generally model collapse and then read original paper to find out whats the specific model collapse problem we have with simclr.
+
+\textbf{NT-Xent loss variations:}
 
 1. Each image considered as rgb since we have 3 channel + 2 std augs
 
@@ -479,18 +465,61 @@ NT-Xent loss variations:
 
 7. Try another loss fn like Triplet loss this already shown in the orig paper
 
-\textbf{Question: Whats model collapse, and in which situation it happens?}
-Mg comment: Model collapse meaning differ depend on the model or context. so understand first whats generally model collapse and then read original paper to find out whats the specific model collapse problem we have with simclr.
-\subsubsection{Variation 1:}
-Each image with 3d like rgb image.
 
+
+\subsubsection{Variation 1:}
+
+  Below images after data augmentation and normalisation of 3 channel version:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/op1.png} % Adjust the width as needed
+    \caption{op1}
+    \label{fig:output1}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/output3.png} % Adjust the width as needed
+    \caption{op3}
+    \label{fig:output3}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/op4.png} % Adjust the width as needed
+    \caption{Blured augs}
+    \label{fig:output4}
+  \end{figure}
+
+Results:
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/image.png} % Adjust the width as needed
   \caption{batchsize: 16}
   \label{fig:batch 16}
 \end{figure}
+\subsubsection{Variation 2:}
+Below images after data augmentation and normalisation of 1 channel version:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/1dop1.png} % Adjust the width as needed
+  \caption{1dop1}
+  \label{fig:1doutput1}
+\end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/1dop2.png} % Adjust the width as needed
+  \caption{1dop2}
+  \label{fig:1doutput2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/1dop3.png} % Adjust the width as needed
+  \caption{1dop3}
+  \label{fig:1doutput3}
+\end{figure}
 \section{Intermediate evaluation of SSL model}
 Evaluation of the SSL model depend on the  time series inference loss/metric, neverthless we can use other evaluation metrics such as downstream task like fine tuning classification loss trained upon the SSL. A common setup, which also verifies whether the model has learned generalized representations, is to perform Logistic Regression on the features. In other words, we learn a single, linear layer that maps the representations to a class prediction, where untreated, single dose, drug screened these 3 categories will be our classes. Since the base network is not changed during the training process, the model can only perform well if the representations of describe all features that might be necessary for the task. Further, we do not have to worry too much about overfitting since we have very few parameters that are trained. Hence, we might expect that the model can perform well even with very little data. We implemented a  simple pipeline for a  Logistic Regression setup where the images have been encoded in their feature vectors. 
 
