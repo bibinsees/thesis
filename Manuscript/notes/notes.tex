@@ -492,7 +492,8 @@ Mg comment: Model collapse meaning differ depend on the model or context. so und
 The two variations tried so far differ only in how they handle the image for data augmentation. In the first variation, we take a 3-channel image and treat it like a standard RGB image, applying SimCLR-style augmentations to create two augmented versions. In the second variation, we take a 3-channel image and compute the sharpness of each layer by calculating the magnitude of the gradient of pixel intensities in the x and y directions, which indicates edge strength and provides a measure of how sharp the transitions between pixel values are. The sharpest layer is used as the anchor, while the other two layers are treated as augmentations. In both cases, as per the SimCLR architecture, the augmented versions are then fed into a pretrained ResNet18 model.
 
 \subsubsection{Variation 1:}
-  Input from the train loader: 
+\textbf{Input from the train loader:} 
+
   Batch 0:
 
   aug1: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H*W)
@@ -501,9 +502,9 @@ The two variations tried so far differ only in how they handle the image for dat
 
   anchor: torch.Size([16, 3, 2054, 2456])  (batch size, no of channels, H*W)
 
-  Model output just after convolution layers: (before applying projetion head):
+  \textbf{Model output just after convolution layers: (before applying projetion head):} [32, 512]  (Batch size, standard resnet18 output dimension after avg pooling)   This output feature will be used for further downstream task.
 
-  Model output after projection head: torch.Size([32, 96]) (Batch size, no of values in feature vector)
+  \textbf{Model output after projection head:} torch.Size([32, 20]) (Batch size, no of values in feature vector)  no of values in feature vector is a variable which we can change and experiment which will give better accuracy.
 
   Below images after data augmentation and normalisation of 3 channel version:
 
@@ -529,6 +530,7 @@ The two variations tried so far differ only in how they handle the image for dat
   \end{figure}
 
 Results:
+Task of the model traiining is to reduce the loss thereby increase the cosine similarity of similar/positives images. 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/image.png} % Adjust the width as needed
