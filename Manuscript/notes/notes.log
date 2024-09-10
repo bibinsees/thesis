@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  9 SEP 2024 18:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  10 SEP 2024 15:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1186,157 +1186,153 @@ pdfTeX warning: pdflatex.exe (file ./figures/originals.pdf): PDF inclusion: foun
 <figures/originals.pdf, id=152, 601.28638pt x 173.68889pt>
 File: figures/originals.pdf Graphic file (type pdf)
 <use figures/originals.pdf>
-Package pdftex.def Info: figures/originals.pdf  used on input line 386.
+Package pdftex.def Info: figures/originals.pdf  used on input line 404.
 (pdftex.def)             Requested size: 481.02974pt x 138.9513pt.
 
-Overfull \hbox (32.89879pt too wide) in paragraph at lines 386--387
+Overfull \hbox (32.89879pt too wide) in paragraph at lines 404--405
  [][] 
  []
 
 
 
 [14 <./figures/originals.pdf>]
+Underfull \vbox (badness 1365) has occurred while \output is active []
+
+
 
 [15]
 
 [16]
-<figures/op1.png, id=183, 970.62625pt x 294.09875pt>
-File: figures/op1.png Graphic file (type png)
-<use figures/op1.png>
-Package pdftex.def Info: figures/op1.png  used on input line 475.
-(pdftex.def)             Requested size: 403.31511pt x 122.20576pt.
-
 
 [17]
-<figures/output3.png, id=191, 698.8509pt x 211.7511pt>
+
+[18]
+<figures/op1.png, id=192, 970.62625pt x 294.09875pt>
+File: figures/op1.png Graphic file (type png)
+<use figures/op1.png>
+Package pdftex.def Info: figures/op1.png  used on input line 508.
+(pdftex.def)             Requested size: 403.31511pt x 122.20576pt.
+<figures/output3.png, id=193, 698.8509pt x 211.7511pt>
 File: figures/output3.png Graphic file (type png)
 <use figures/output3.png>
-Package pdftex.def Info: figures/output3.png  used on input line 482.
+Package pdftex.def Info: figures/output3.png  used on input line 515.
 (pdftex.def)             Requested size: 403.31511pt x 122.20181pt.
-<figures/op4.png, id=192, 698.8509pt x 211.7511pt>
+<figures/op4.png, id=194, 698.8509pt x 211.7511pt>
 File: figures/op4.png Graphic file (type png)
 <use figures/op4.png>
-Package pdftex.def Info: figures/op4.png  used on input line 489.
+Package pdftex.def Info: figures/op4.png  used on input line 522.
 (pdftex.def)             Requested size: 403.31511pt x 122.20181pt.
-<figures/image.png, id=193, 1004.75375pt x 392.46625pt>
+
+
+[19 <./figures/op1.png> <./figures/output3.png>]
+<figures/image.png, id=204, 1004.75375pt x 392.46625pt>
 File: figures/image.png Graphic file (type png)
 <use figures/image.png>
-Package pdftex.def Info: figures/image.png  used on input line 497.
+Package pdftex.def Info: figures/image.png  used on input line 530.
 (pdftex.def)             Requested size: 403.31511pt x 157.53465pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[18 <./figures/op1.png> <./figures/output3.png> <./figures/op4.png>]
-<figures/1dop1.png, id=203, 674.2791pt x 211.7511pt>
+<figures/1dop1.png, id=205, 674.2791pt x 211.7511pt>
 File: figures/1dop1.png Graphic file (type png)
 <use figures/1dop1.png>
-Package pdftex.def Info: figures/1dop1.png  used on input line 505.
+Package pdftex.def Info: figures/1dop1.png  used on input line 538.
 (pdftex.def)             Requested size: 403.31511pt x 126.66066pt.
-<figures/1dop2.png, id=204, 674.2791pt x 211.7511pt>
+<figures/1dop2.png, id=206, 674.2791pt x 211.7511pt>
 File: figures/1dop2.png Graphic file (type png)
 <use figures/1dop2.png>
-Package pdftex.def Info: figures/1dop2.png  used on input line 512.
+Package pdftex.def Info: figures/1dop2.png  used on input line 545.
 (pdftex.def)             Requested size: 403.31511pt x 126.66066pt.
-<figures/1dop3.png, id=205, 674.2791pt x 211.7511pt>
+
+
+[20 <./figures/op4.png> <./figures/image.png> <./figures/1dop1.png>]
+<figures/1dop3.png, id=218, 674.2791pt x 211.7511pt>
 File: figures/1dop3.png Graphic file (type png)
 <use figures/1dop3.png>
-Package pdftex.def Info: figures/1dop3.png  used on input line 519.
+Package pdftex.def Info: figures/1dop3.png  used on input line 552.
 (pdftex.def)             Requested size: 403.31511pt x 126.66066pt.
 
 
-[19 <./figures/image.png> <./figures/1dop1.png> <./figures/1dop2.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[20 <./figures/1dop3.png>]
-
-[21]
-Underfull \vbox (badness 2005) has occurred while \output is active []
-
-
+[21 <./figures/1dop2.png> <./figures/1dop3.png>]
 
 [22]
 
 [23]
+
+[24]
 chapter 7.
-
-
-[24
-
-]
-chapter 8.
 
 
 [25
 
 ]
-chapter 9.
-<figures/Thesis timeline.png, id=254, 639.13782pt x 313.9228pt>
-File: figures/Thesis timeline.png Graphic file (type png)
-<use figures/Thesis timeline.png>
-Package pdftex.def Info: figures/Thesis timeline.png  used on input line 612.
-(pdftex.def)             Requested size: 403.31511pt x 198.09813pt.
-Package placeins Info: No floats held, on input line 617.
+chapter 8.
 
 
 [26
 
-Package placeins Info: Float barrier, from input line 617, processed on page 26, lands on page 26. 
+]
+chapter 9.
+<figures/Thesis timeline.png, id=258, 639.13782pt x 313.9228pt>
+File: figures/Thesis timeline.png Graphic file (type png)
+<use figures/Thesis timeline.png>
+Package pdftex.def Info: figures/Thesis timeline.png  used on input line 645.
+(pdftex.def)             Requested size: 403.31511pt x 198.09813pt.
+Package placeins Info: No floats held, on input line 650.
+
+
+[27
+
+Package placeins Info: Float barrier, from input line 650, processed on page 27, lands on page 27. 
  <./figures/Thesis timeline.png>]
-Overfull \hbox (4.23466pt too wide) in paragraph at lines 620--620
+Overfull \hbox (4.23466pt too wide) in paragraph at lines 653--653
 []\OT1/cmr/m/n/12 Mathilde Caron et al. |   [].
  []
 
 
-Overfull \hbox (42.19122pt too wide) in paragraph at lines 620--620
+Overfull \hbox (42.19122pt too wide) in paragraph at lines 653--653
 []\OT1/cmr/m/n/12 Ting Chen et al. |   [].
  []
 
 
-Overfull \hbox (75.79367pt too wide) in paragraph at lines 620--620
+Overfull \hbox (75.79367pt too wide) in paragraph at lines 653--653
 []\OT1/cmr/m/n/12 Jean-Bastien Grill et al. |   [].
  []
 
 
-Overfull \hbox (174.85237pt too wide) in paragraph at lines 620--620
+Overfull \hbox (174.85237pt too wide) in paragraph at lines 653--653
 []\OT1/cmr/m/n/12 Jeremy Irvin et al. |   [].
  []
 
 
-Overfull \hbox (26.89647pt too wide) in paragraph at lines 620--620
+Overfull \hbox (26.89647pt too wide) in paragraph at lines 653--653
 \OT1/cmr/m/n/12 mea-sur-ing dry mass changes in sub-cellular com-part-ments". In: |   []
  []
 
 
-Overfull \hbox (9.74156pt too wide) in paragraph at lines 620--620
+Overfull \hbox (9.74156pt too wide) in paragraph at lines 653--653
 []\OT1/cmr/m/n/12 Ziyu Liu et al. |   []
  []
 
 
-Overfull \hbox (97.82774pt too wide) in paragraph at lines 620--620
+Overfull \hbox (97.82774pt too wide) in paragraph at lines 653--653
 \OT1/cmr/m/n/12 Tho-rax Dis-eases". In: |   [].
  []
 
 
-Overfull \hbox (86.45975pt too wide) in paragraph at lines 620--620
+Overfull \hbox (86.45975pt too wide) in paragraph at lines 653--653
 \OT1/cmr/m/n/12 trastive learn-ing frame-work for uni-vari-ate time se-ries rep-re-sen-ta-tion". In: |   []
  []
 
 
-Overfull \hbox (124.49731pt too wide) in paragraph at lines 620--620
+Overfull \hbox (124.49731pt too wide) in paragraph at lines 653--653
 []\OT1/cmr/m/n/12 Yuhao Zhang et al. |   [].
  []
 
 
 
-[27
+[28
 
 ]
 
-[28] (./notes.aux)
+[29] (./notes.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1352,18 +1348,18 @@ Package logreq Info: Writing requests to 'notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30299 strings out of 473578
- 576216 string characters out of 5732243
+ 30300 strings out of 473578
+ 576223 string characters out of 5732243
  1955960 words of memory out of 5000000
  52719 multiletter control sequences out of 15000+600000
  569242 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11030b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on notes.pdf (30 pages, 3170789 bytes).
+Output written on notes.pdf (31 pages, 3173211 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 84 named destinations out of 1000 (max. 500000)
+ 390 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
+ 85 named destinations out of 1000 (max. 500000)
  196 words of extra memory for PDF output out of 10000 (max. 10000000)
 

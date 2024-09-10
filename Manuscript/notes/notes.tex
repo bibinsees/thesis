@@ -378,16 +378,6 @@ We decided to proceed with methodology 1.
   \label{fig:output1}
 \end{figure}
 
-The original images are approximately 2500×2500 pixels in 16-bit grayscale, with multiple channels. The multiple channels result from images taken at different focal planes in brightfield microscopy.
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.8]{figures/originals.pdf} 
-  \caption{originals}
-  \label{fig:originals}
-\end{figure}
-
 Dataset class overview:
 \begin{table}[ht!]
   \centering
@@ -400,6 +390,38 @@ Dataset class overview:
   \caption{Dataset Overview}
   \label{tab:dataset}
   \end{table}
+
+The original images are approximately 2500×2500 pixels in 16-bit grayscale, with multiple channels. The multiple channels result from images taken at different focal planes in brightfield microscopy. Hence, the number of channels per image is flexible. For time efficiency, the data collected so far includes 3 channels per image.
+
+It’s important to keep the original color depth, aka bit depth. An 8-bit image contains 256 color tones (0-255) per channel (red, green, and blue), while a 16-bit image contains 65,536 color tones (0-65,535) per channel—in our case, 65,536 shades of gray.
+
+When data augmentation involves significant changes in brightness, contrast, or color, if we have an 8-bit image and lose, let’s say, 50 percentage of the tones, we’re left with only 128 levels of color and tone. This loss of information will typically manifest as banding, especially in areas of smooth color transitions. This is where we see visible stripes of color with slightly jagged edges forming across the image.
+
+In contrast, a 16-bit image contains 65,536 levels of color and tone. If we lose 50 percentage of those colors and tones, we’d still have over 32,000 levels remaining. This means we’d retain smoother color transitions, preserve edge details, and maintain color and hue accuracy much better. The dynamic range (the difference between the lightest and darkest parts of the image) would be preserved much longer compared to a typical 8-bit image.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{figures/originals.pdf} 
+  \caption{originals}
+  \label{fig:originals}
+\end{figure}
+
+\textbf{Data preprocessing}
+
+Detailed study/research/experiments on data augmentation and image preprocessing techniques sepcifically for our 16 bit gray scale image are still need to be done.
+At the moment since we are trying to create the full pipe line first we used standard data augmentations from SimCLR paper.
+
+0. Convert data points to float( Using float32 ensures compatibility with the expected input types for PyTorch models) 
+
+1. Normalize the 16-bit image to [0, 1] by dividing each data by 65535.0
+
+2. resize croped to 96*96 (H*W) will make sure fixed uniform input requirement for CNN, efficient Computation and smooth batch processing.
+
+3. Apply standard SimCLR data augmentations.
+
+4. Apply standardization. Since we are using a pre-trained model, we are using the mean and standard deviation values that the model was trained with. This ensures consistency with the model's expected input format.
+
+Visualisation of before and after preprocessing of image shown in figures 6.5 to 6.11.
 
 \section{Training SSL model}
 
@@ -449,13 +471,13 @@ Thats why current ntxent loss is better than Binary cross entroppy loss (BCE) wh
 \textbf{Question: Whats model collapse, and in which situation it happens?}
 Mg comment: Model collapse meaning differ depend on the model or context. so understand first whats generally model collapse and then read original paper to find out whats the specific model collapse problem we have with simclr.
 
-\textbf{NT-Xent loss variations:}
+\textbf{variation ideas:}
 
 1. Each image considered as rgb since we have 3 channel + 2 std augs
 
-2. Each image considered as rgb since we have 3 channel + > 2 std augs ( research for medical gray scale images )
+2. 1 channel considered as anchor(most sharped layer) others as 2 anchors.
 
-3. 1 channel considered as anchor(most sharped layer) others as 2 anchors
+3. Each image considered as rgb since we have 3 channel + more than 2 std augs ( research for medical gray scale images )
 
 4. Include anchor as positive , ie 3 augs  toal ( 1 anchor as aug other 2 layers as augs)
 
@@ -463,13 +485,24 @@ Mg comment: Model collapse meaning differ depend on the model or context. so und
 
 6. Supervised Simclr: Make sure no same breed/class images in the negative samples. Does this increase the confidence score for 1's in the cross entropy loss? or does this suppress confidence score for dissimilar one forcly? because in our case we get similar images from 2 different class 
 
-7. Try another loss fn like Triplet loss this already shown in the orig paper
+7. Try another loss fn like Triplet loss this already shown in the orig paper.
 
+\textbf{variations implementations:}
 
+The two variations tried so far differ only in how they handle the image for data augmentation. In the first variation, we take a 3-channel image and treat it like a standard RGB image, applying SimCLR-style augmentations to create two augmented versions. In the second variation, we take a 3-channel image and compute the sharpness of each layer by calculating the magnitude of the gradient of pixel intensities in the x and y directions, which indicates edge strength and provides a measure of how sharp the transitions between pixel values are. The sharpest layer is used as the anchor, while the other two layers are treated as augmentations. In both cases, as per the SimCLR architecture, the augmented versions are then fed into a pretrained ResNet18 model.
 
 \subsubsection{Variation 1:}
+  Input from the train loader: 
+  Batch 0:
+
+  aug1: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H*W)
+
+  aug2: torch.Size([16, 3, 96, 96])                  (batch size, no of channels, H*W)
+
+  anchor: torch.Size([16, 3, 2054, 2456])  (batch size, no of channels, H*W)
 
   Below images after data augmentation and normalisation of 3 channel version:
+
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{figures/op1.png} % Adjust the width as needed
