@@ -353,9 +353,9 @@ Advantage of training AI in a supervised setting is the ability to circumvent th
 We decided to proceed with methodology 1.
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.9]{figures/evolution.pdf} 
+  \includegraphics[scale=0.9]{figures/time.pdf} 
   \caption{time progress}
-  \label{fig:evolution}
+  \label{fig:time}
 \end{figure}
 
 \begin{itemize}
@@ -497,9 +497,13 @@ The two variations tried so far differ only in how they handle the image for dat
 
   aug1: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H*W)
 
-  aug2: torch.Size([16, 3, 96, 96])                  (batch size, no of channels, H*W)
+  aug2: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H*W)
 
   anchor: torch.Size([16, 3, 2054, 2456])  (batch size, no of channels, H*W)
+
+  Model output just after convolution layers: (before applying projetion head):
+
+  Model output after projection head: 
 
   Below images after data augmentation and normalisation of 3 channel version:
 
