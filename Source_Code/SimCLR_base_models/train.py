@@ -28,8 +28,9 @@ def train(train_loader, model, epochs, lr=5e-4, temperature=0.07, weight_decay=1
         for imgs1, imgs2 in train_loader:
             imgs1, imgs2 = imgs1.to(device), imgs2.to(device)
             imgs = torch.cat((imgs1, imgs2), dim=0)
+            print(imgs.shape)
             feats = model(imgs)
-
+            print(feats.shape)
             # Compute the loss and accuracy
             loss, acc_top1, acc_top5, mean_pos = SimCLR_loss(feats, temperature)
 
