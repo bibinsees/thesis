@@ -254,7 +254,7 @@ As a proof of concept, The Fraunhofer TLZ-RT Wuerzburg laboratory utilized a mod
   \centering
   \includegraphics[scale=0.55]{figures/Robot.jpg} % Adjust the scale factor as needed
   \caption{Dual-arm robot}
-  \label{fig:output1}
+  \label{fig:out_02}
 \end{figure}
 
 Although the vision for the future is to simulate the identical interaction environment of drugs with tumor cells as it occurs in the human body, current technology has not yet achieved this. The current three-dimensional tumor tissue models developed in the lab do not fully resemble real pancreatic tumor cells found in the human body. These 3D tumor tissue models only contain pure tumor tissues, whereas real human pancreatic tumor cells exist within a complex microenvironment comprising tumor cells, blood vessels, other tissues, and various cell types. Despite this limitation, our work serves as a valuable starting point for studying drug efficacy in a controlled environment. Fortunately, if we are able to replicate human body tumor cells in the lab in the future, the techniques currently used to study the bright-field microscopy images will still be applicable. However, the fact that bright-field microscopy images are two-dimensional limits the ability to perform a comprehensive analysis of the drug's impact on the entire 3D structure of the cultivated tumor tissue models.
@@ -289,7 +289,7 @@ These parameters serve as human-interpretable metrics for assessing the efficacy
   \includegraphics[scale=0.55]{figures/Big picture.jpg} 
   \caption{Big picture}
 
-  \label{fig:output1}
+  \label{fig:out_6}
 \end{figure}
 \let\cleardoublepage\clearpage
 \chapter{Objective}\label{ch:Objective}
@@ -351,6 +351,9 @@ Advantage of training AI in a supervised setting is the ability to circumvent th
 
 \chapter{Experiments}\label{ch:Experiments}
 We decided to proceed with methodology 1.
+
+Below figure shows the flow chart of whole time evolutoion of cancer cell.
+
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.9]{figures/time.pdf} 
@@ -368,14 +371,14 @@ We decided to proceed with methodology 1.
   \centering
   \includegraphics[width=0.9\linewidth]{figures/single_dose.jpg} % Adjust the width as needed
   \caption{single dose}
-  \label{fig:output1}
+  \label{fig:out_0}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/drug_screened.png} % Adjust the width as needed
   \caption{Drug screened}
-  \label{fig:output1}
+  \label{fig:op_2}
 \end{figure}
 
 Dataset class overview:
@@ -500,8 +503,6 @@ The two variations tried so far differ only in how they handle the image for dat
 
   aug2: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H*W)
 
-  anchor: torch.Size([16, 3, 2054, 2456])  (batch size, no of channels, H*W)  this won't feed into model since SimCLR uses only augmentations.
-
   \textbf{Model output just after convolution layers: (before applying projetion head):} [32, 512]  (Batch size, standard resnet18 output dimension after avg pooling)   This output feature will be used for further downstream task.
 
   \textbf{Model output after projection head:} torch.Size([32, 20]) (2*Batch size, no of values in feature vector) 2*Batch size is due to the concatenation of aug1 images and aug2 images for the efficient/smart way to calculate the loss. No of values in feature vector is a variable which we can change and experiment which will give better accuracy. This output feed to loss function to train model to reduce the loss there by increase the cosine similarity between positive samples in the batch.
@@ -512,7 +513,7 @@ The two variations tried so far differ only in how they handle the image for dat
     \centering
     \includegraphics[width=0.9\linewidth]{figures/op1.png} % Adjust the width as needed
     \caption{op1}
-    \label{fig:output1}
+    \label{fig:out_2}
   \end{figure}
 
   \begin{figure}[H]
@@ -545,8 +546,6 @@ Task of the model traiining is to reduce the loss thereby increase the cosine si
   aug1: torch.Size([16, 1, 96, 96])        (batch size, no of channels, H*W)
 
   aug2: torch.Size([16, 1, 96, 96])        (batch size, no of channels, H*W)
-
-  anchor: torch.Size([16, 1, 96, 96])  (batch size, no of channels, H*W)  this won't feed into model since SimCLR uses only augmentations.
 
   \textbf{Model output just after convolution layers: (before applying projetion head):} [32, 512]  (Batch size, standard resnet18 output dimension after avg pooling)   This output feature will be used for further downstream task.
 
