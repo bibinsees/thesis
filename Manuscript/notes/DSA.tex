@@ -6,9 +6,8 @@
 \usepackage{float}
 \usepackage{hyperref}
 
-\title{Experiments and Results}
-\author{Your Name}
-\date{\today}
+\title{DSA}
+\author{Bibin Babu}
 
 \begin{document}
 
@@ -141,8 +140,7 @@ In the second variation, we take a 3-channel image and compute the sharpness of 
 \begin{itemize}
   \item aug1: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H, W)
   \item aug2: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H, W) \vspace{1em}
-\end{itemize}
-
+\end{itemize} \vspace{1em}
 \textbf{Model output just after convolution layers: (before applying projetion head):} 
 \begin{itemize}
   \item torch.Size([16, 512]) (Batch size, standard resnet18 output dimension after avg pooling)   
@@ -178,15 +176,6 @@ Below images after data augmentation and normalisation of 3 channel version:
     \caption{Blured augs}
     \label{fig:output4}
   \end{figure}
-
-Results:
-Task of the model training is to reduce the loss thereby increase the cosine similarity of similar/positives images in the batch.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/image.png} % Adjust the width as needed
-  \caption{batchsize: 16}
-  \label{fig:batch 16}
-\end{figure}
 \subsubsection{Variation 2:}
 
 \textbf{Input to model (train loader dimensions) :} 

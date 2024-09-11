@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  11 SEP 2024 21:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  11 SEP 2024 21:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -241,24 +241,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (./DSA.aux)
 \openout1 = `DSA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count295
@@ -278,16 +278,16 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 13.
+Package hyperref Info: Link coloring OFF on input line 12.
  (./DSA.out) (./DSA.out)
 \@outlinefile=\write3
 \openout3 = `DSA.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -302,15 +302,15 @@ pdfTeX warning: pdflatex.exe (file ./figures/time.pdf): PDF inclusion: found PDF
 <figures/time.pdf, id=15, 515.04419pt x 116.35469pt>
 File: figures/time.pdf Graphic file (type pdf)
 <use figures/time.pdf>
-Package pdftex.def Info: figures/time.pdf  used on input line 23.
+Package pdftex.def Info: figures/time.pdf  used on input line 22.
 (pdftex.def)             Requested size: 463.53549pt x 104.71825pt.
 
-Overfull \hbox (73.53549pt too wide) in paragraph at lines 23--24
+Overfull \hbox (73.53549pt too wide) in paragraph at lines 22--23
  [][] 
  []
 
 
-Overfull \hbox (41.44942pt too wide) in paragraph at lines 35--41
+Overfull \hbox (41.44942pt too wide) in paragraph at lines 34--40
  [][] 
  []
 
@@ -320,10 +320,10 @@ pdfTeX warning: pdflatex.exe (file ./figures/originals.pdf): PDF inclusion: foun
 <figures/originals.pdf, id=17, 601.28638pt x 173.68889pt>
 File: figures/originals.pdf Graphic file (type pdf)
 <use figures/originals.pdf>
-Package pdftex.def Info: figures/originals.pdf  used on input line 49.
+Package pdftex.def Info: figures/originals.pdf  used on input line 48.
 (pdftex.def)             Requested size: 481.02974pt x 138.9513pt.
 
-Overfull \hbox (91.02974pt too wide) in paragraph at lines 49--50
+Overfull \hbox (91.02974pt too wide) in paragraph at lines 48--49
  [][] 
  []
 
@@ -333,7 +333,7 @@ Overfull \hbox (91.02974pt too wide) in paragraph at lines 49--50
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52 \end{figure}
+l.51 \end{figure}
                   [1
 
 {c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./figures/time.pdf>]
@@ -341,7 +341,7 @@ l.52 \end{figure}
 [2 <./figures/originals.pdf>]
 
 [3]
-Overfull \hbox (10.92365pt too wide) in paragraph at lines 124--125
+Overfull \hbox (10.92365pt too wide) in paragraph at lines 123--124
 []\OT1/cmr/m/n/12 For su-per-vised Sim-CLR: En-sure that no im-ages from the same breed/class
  []
 
@@ -351,12 +351,12 @@ Overfull \hbox (10.92365pt too wide) in paragraph at lines 124--125
 <figures/op1.png, id=113, 970.62625pt x 294.09875pt>
 File: figures/op1.png Graphic file (type png)
 <use figures/op1.png>
-Package pdftex.def Info: figures/op1.png  used on input line 163.
+Package pdftex.def Info: figures/op1.png  used on input line 161.
 (pdftex.def)             Requested size: 350.99762pt x 106.35115pt.
 <figures/output3.png, id=114, 698.8509pt x 211.7511pt>
 File: figures/output3.png Graphic file (type png)
 <use figures/output3.png>
-Package pdftex.def Info: figures/output3.png  used on input line 170.
+Package pdftex.def Info: figures/output3.png  used on input line 168.
 (pdftex.def)             Requested size: 350.99762pt x 106.35023pt.
 
 
@@ -364,36 +364,29 @@ Package pdftex.def Info: figures/output3.png  used on input line 170.
 <figures/op4.png, id=120, 698.8509pt x 211.7511pt>
 File: figures/op4.png Graphic file (type png)
 <use figures/op4.png>
-Package pdftex.def Info: figures/op4.png  used on input line 177.
+Package pdftex.def Info: figures/op4.png  used on input line 175.
 (pdftex.def)             Requested size: 350.99762pt x 106.35023pt.
-<figures/image.png, id=121, 1004.75375pt x 392.46625pt>
-File: figures/image.png Graphic file (type png)
-<use figures/image.png>
-Package pdftex.def Info: figures/image.png  used on input line 186.
-(pdftex.def)             Requested size: 350.99762pt x 137.10173pt.
-
-
-[6 <./figures/output3.png> <./figures/op4.png> <./figures/image.png>]
-<figures/1dop1.png, id=133, 674.2791pt x 211.7511pt>
+<figures/1dop1.png, id=121, 674.2791pt x 211.7511pt>
 File: figures/1dop1.png Graphic file (type png)
 <use figures/1dop1.png>
-Package pdftex.def Info: figures/1dop1.png  used on input line 212.
+Package pdftex.def Info: figures/1dop1.png  used on input line 201.
 (pdftex.def)             Requested size: 350.99762pt x 110.23074pt.
-<figures/1dop2.png, id=134, 674.2791pt x 211.7511pt>
+
+
+[6 <./figures/output3.png> <./figures/op4.png>]
+<figures/1dop2.png, id=132, 674.2791pt x 211.7511pt>
 File: figures/1dop2.png Graphic file (type png)
 <use figures/1dop2.png>
-Package pdftex.def Info: figures/1dop2.png  used on input line 219.
+Package pdftex.def Info: figures/1dop2.png  used on input line 208.
 (pdftex.def)             Requested size: 350.99762pt x 110.23074pt.
-<figures/1dop3.png, id=135, 674.2791pt x 211.7511pt>
+<figures/1dop3.png, id=133, 674.2791pt x 211.7511pt>
 File: figures/1dop3.png Graphic file (type png)
 <use figures/1dop3.png>
-Package pdftex.def Info: figures/1dop3.png  used on input line 226.
+Package pdftex.def Info: figures/1dop3.png  used on input line 215.
 (pdftex.def)             Requested size: 350.99762pt x 110.23074pt.
 
 
-[7 <./figures/1dop1.png> <./figures/1dop2.png>]
-
-[8 <./figures/1dop3.png>] (./DSA.aux)
+[7 <./figures/1dop1.png> <./figures/1dop2.png> <./figures/1dop3.png>] (./DSA.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
@@ -402,18 +395,18 @@ Package rerunfilecheck Info: File `DSA.out' has not changed.
 (rerunfilecheck)             Checksum: 3FA44FF9C693447561A313AC8BE3741A;98.
  ) 
 Here is how much of TeX's memory you used:
- 9912 strings out of 473578
- 149903 string characters out of 5732243
+ 9902 strings out of 473578
+ 149706 string characters out of 5732243
  1934960 words of memory out of 5000000
- 32654 multiletter control sequences out of 15000+600000
+ 32646 multiletter control sequences out of 15000+600000
  566862 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,8n,79p,529b,606s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on DSA.pdf (9 pages, 2274264 bytes).
+Output written on DSA.pdf (8 pages, 2239094 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
- 54 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 205 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
