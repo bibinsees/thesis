@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  11 SEP 2024 21:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  11 SEP 2024 22:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -351,38 +351,38 @@ Overfull \hbox (10.92365pt too wide) in paragraph at lines 123--124
 <figures/op1.png, id=113, 970.62625pt x 294.09875pt>
 File: figures/op1.png Graphic file (type png)
 <use figures/op1.png>
-Package pdftex.def Info: figures/op1.png  used on input line 161.
+Package pdftex.def Info: figures/op1.png  used on input line 159.
 (pdftex.def)             Requested size: 350.99762pt x 106.35115pt.
 <figures/output3.png, id=114, 698.8509pt x 211.7511pt>
 File: figures/output3.png Graphic file (type png)
 <use figures/output3.png>
-Package pdftex.def Info: figures/output3.png  used on input line 168.
+Package pdftex.def Info: figures/output3.png  used on input line 166.
 (pdftex.def)             Requested size: 350.99762pt x 106.35023pt.
-
-
-[5 <./figures/op1.png>]
-<figures/op4.png, id=120, 698.8509pt x 211.7511pt>
+<figures/op4.png, id=116, 698.8509pt x 211.7511pt>
 File: figures/op4.png Graphic file (type png)
 <use figures/op4.png>
-Package pdftex.def Info: figures/op4.png  used on input line 175.
+Package pdftex.def Info: figures/op4.png  used on input line 173.
 (pdftex.def)             Requested size: 350.99762pt x 106.35023pt.
-<figures/1dop1.png, id=121, 674.2791pt x 211.7511pt>
+
+
+[5 <./figures/op1.png> <./figures/output3.png>]
+<figures/1dop1.png, id=123, 674.2791pt x 211.7511pt>
 File: figures/1dop1.png Graphic file (type png)
 <use figures/1dop1.png>
-Package pdftex.def Info: figures/1dop1.png  used on input line 201.
+Package pdftex.def Info: figures/1dop1.png  used on input line 199.
 (pdftex.def)             Requested size: 350.99762pt x 110.23074pt.
 
 
-[6 <./figures/output3.png> <./figures/op4.png>]
+[6 <./figures/op4.png>]
 <figures/1dop2.png, id=132, 674.2791pt x 211.7511pt>
 File: figures/1dop2.png Graphic file (type png)
 <use figures/1dop2.png>
-Package pdftex.def Info: figures/1dop2.png  used on input line 208.
+Package pdftex.def Info: figures/1dop2.png  used on input line 206.
 (pdftex.def)             Requested size: 350.99762pt x 110.23074pt.
 <figures/1dop3.png, id=133, 674.2791pt x 211.7511pt>
 File: figures/1dop3.png Graphic file (type png)
 <use figures/1dop3.png>
-Package pdftex.def Info: figures/1dop3.png  used on input line 215.
+Package pdftex.def Info: figures/1dop3.png  used on input line 213.
 (pdftex.def)             Requested size: 350.99762pt x 110.23074pt.
 
 
@@ -403,7 +403,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  75i,8n,79p,529b,606s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on DSA.pdf (8 pages, 2239094 bytes).
+Output written on DSA.pdf (8 pages, 2238578 bytes).
 PDF statistics:
  205 PDF objects out of 1000 (max. 8388607)
  144 compressed objects within 2 object streams
