@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  11 SEP 2024 20:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  11 SEP 2024 20:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex"
-(c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex
+**"c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/DSA.tex"
+(c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/DSA.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
 (c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbook.cls
@@ -1121,8 +1121,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (./notes.aux)
-\openout1 = `notes.aux'.
+ (./DSA.aux)
+\openout1 = `DSA.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 170.
 LaTeX Font Info:    ... okay on input line 170.
@@ -1167,9 +1167,9 @@ Package scrbase Info: activating english \indexname on input line 170.
 \everyMPtoPDFconversion=\toks51
 )
 Package hyperref Info: Link coloring OFF on input line 170.
- (./notes.out) (./notes.out)
+ (./DSA.out) (./DSA.out)
 \@outlinefile=\write5
-\openout5 = `notes.out'.
+\openout5 = `DSA.out'.
 
 Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           Using `bookmark' together with `hyperref' is recommended,
@@ -1202,11 +1202,11 @@ File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `notes.bcf'.
+\openout3 = `DSA.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'notes.bbl' found.
- (./notes.bbl)
+Package biblatex Info: ... file 'DSA.bbl' found.
+ (./DSA.bbl)
 Package biblatex Info: Reference section=0 on input line 170.
 Package biblatex Info: Reference segment=0 on input line 170.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 221.
@@ -1357,8 +1357,8 @@ Overfull \hbox (32.89879pt too wide) in paragraph at lines 409--410
 
 
 [14 <./figures/originals.pdf>]
-Overfull \hbox (17.25932pt too wide) in paragraph at lines 445--447
-[]$\OML/cmm/m/it/12 `[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OML/cmm/m/it/12 =^^\ \OT1/cmr/m/n/12 + [] []$
+Overfull \hbox (29.0092pt too wide) in paragraph at lines 445--446
+[]$\OML/cmm/m/it/12 `[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] \OML/cmm/m/it/12 =^^\ \OT1/cmr/m/n/12 + [] []$ 
  []
 
 
@@ -1375,12 +1375,12 @@ Overfull \hbox (17.25932pt too wide) in paragraph at lines 445--447
 <figures/op1.png, id=214, 970.62625pt x 294.09875pt>
 File: figures/op1.png Graphic file (type png)
 <use figures/op1.png>
-Package pdftex.def Info: figures/op1.png  used on input line 560.
+Package pdftex.def Info: figures/op1.png  used on input line 561.
 (pdftex.def)             Requested size: 403.31511pt x 122.20576pt.
 <figures/output3.png, id=215, 698.8509pt x 211.7511pt>
 File: figures/output3.png Graphic file (type png)
 <use figures/output3.png>
-Package pdftex.def Info: figures/output3.png  used on input line 567.
+Package pdftex.def Info: figures/output3.png  used on input line 568.
 (pdftex.def)             Requested size: 403.31511pt x 122.20181pt.
 
 
@@ -1388,12 +1388,12 @@ Package pdftex.def Info: figures/output3.png  used on input line 567.
 <figures/op4.png, id=223, 698.8509pt x 211.7511pt>
 File: figures/op4.png Graphic file (type png)
 <use figures/op4.png>
-Package pdftex.def Info: figures/op4.png  used on input line 574.
+Package pdftex.def Info: figures/op4.png  used on input line 575.
 (pdftex.def)             Requested size: 403.31511pt x 122.20181pt.
 <figures/image.png, id=224, 1004.75375pt x 392.46625pt>
 File: figures/image.png Graphic file (type png)
 <use figures/image.png>
-Package pdftex.def Info: figures/image.png  used on input line 583.
+Package pdftex.def Info: figures/image.png  used on input line 584.
 (pdftex.def)             Requested size: 403.31511pt x 157.53465pt.
 
 Underfull \vbox (badness 3219) has occurred while \output is active []
@@ -1404,17 +1404,17 @@ Underfull \vbox (badness 3219) has occurred while \output is active []
 <figures/1dop1.png, id=234, 674.2791pt x 211.7511pt>
 File: figures/1dop1.png Graphic file (type png)
 <use figures/1dop1.png>
-Package pdftex.def Info: figures/1dop1.png  used on input line 600.
+Package pdftex.def Info: figures/1dop1.png  used on input line 601.
 (pdftex.def)             Requested size: 403.31511pt x 126.66066pt.
 <figures/1dop2.png, id=235, 674.2791pt x 211.7511pt>
 File: figures/1dop2.png Graphic file (type png)
 <use figures/1dop2.png>
-Package pdftex.def Info: figures/1dop2.png  used on input line 607.
+Package pdftex.def Info: figures/1dop2.png  used on input line 608.
 (pdftex.def)             Requested size: 403.31511pt x 126.66066pt.
 <figures/1dop3.png, id=236, 674.2791pt x 211.7511pt>
 File: figures/1dop3.png Graphic file (type png)
 <use figures/1dop3.png>
-Package pdftex.def Info: figures/1dop3.png  used on input line 614.
+Package pdftex.def Info: figures/1dop3.png  used on input line 615.
 (pdftex.def)             Requested size: 403.31511pt x 126.66066pt.
 
 
@@ -1449,56 +1449,56 @@ chapter 9.
 <figures/Thesis timeline.png, id=281, 639.13782pt x 313.9228pt>
 File: figures/Thesis timeline.png Graphic file (type png)
 <use figures/Thesis timeline.png>
-Package pdftex.def Info: figures/Thesis timeline.png  used on input line 707.
+Package pdftex.def Info: figures/Thesis timeline.png  used on input line 708.
 (pdftex.def)             Requested size: 403.31511pt x 198.09813pt.
-Package placeins Info: No floats held, on input line 712.
+Package placeins Info: No floats held, on input line 713.
 
 
 [29
 
-Package placeins Info: Float barrier, from input line 712, processed on page 29, lands on page 29. 
+Package placeins Info: Float barrier, from input line 713, processed on page 29, lands on page 29. 
  <./figures/Thesis timeline.png>]
-Overfull \hbox (4.23466pt too wide) in paragraph at lines 715--715
+Overfull \hbox (4.23466pt too wide) in paragraph at lines 716--716
 []\OT1/cmr/m/n/12 Mathilde Caron et al. |   [].
  []
 
 
-Overfull \hbox (42.19122pt too wide) in paragraph at lines 715--715
+Overfull \hbox (42.19122pt too wide) in paragraph at lines 716--716
 []\OT1/cmr/m/n/12 Ting Chen et al. |   [].
  []
 
 
-Overfull \hbox (75.79367pt too wide) in paragraph at lines 715--715
+Overfull \hbox (75.79367pt too wide) in paragraph at lines 716--716
 []\OT1/cmr/m/n/12 Jean-Bastien Grill et al. |   [].
  []
 
 
-Overfull \hbox (174.85237pt too wide) in paragraph at lines 715--715
+Overfull \hbox (174.85237pt too wide) in paragraph at lines 716--716
 []\OT1/cmr/m/n/12 Jeremy Irvin et al. |   [].
  []
 
 
-Overfull \hbox (26.89647pt too wide) in paragraph at lines 715--715
+Overfull \hbox (26.89647pt too wide) in paragraph at lines 716--716
 \OT1/cmr/m/n/12 mea-sur-ing dry mass changes in sub-cellular com-part-ments". In: |   []
  []
 
 
-Overfull \hbox (9.74156pt too wide) in paragraph at lines 715--715
+Overfull \hbox (9.74156pt too wide) in paragraph at lines 716--716
 []\OT1/cmr/m/n/12 Ziyu Liu et al. |   []
  []
 
 
-Overfull \hbox (97.82774pt too wide) in paragraph at lines 715--715
+Overfull \hbox (97.82774pt too wide) in paragraph at lines 716--716
 \OT1/cmr/m/n/12 Tho-rax Dis-eases". In: |   [].
  []
 
 
-Overfull \hbox (86.45975pt too wide) in paragraph at lines 715--715
+Overfull \hbox (86.45975pt too wide) in paragraph at lines 716--716
 \OT1/cmr/m/n/12 trastive learn-ing frame-work for uni-vari-ate time se-ries rep-re-sen-ta-tion". In: |   []
  []
 
 
-Overfull \hbox (124.49731pt too wide) in paragraph at lines 715--715
+Overfull \hbox (124.49731pt too wide) in paragraph at lines 716--716
 []\OT1/cmr/m/n/12 Yuhao Zhang et al. |   [].
  []
 
@@ -1508,27 +1508,27 @@ Overfull \hbox (124.49731pt too wide) in paragraph at lines 715--715
 
 ]
 
-[31] (./notes.aux)
+[31] (./DSA.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-Package rerunfilecheck Info: File `notes.out' has not changed.
+Package rerunfilecheck Info: File `DSA.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package logreq Info: Writing requests to 'notes.run.xml'.
-\openout1 = `notes.run.xml'.
+Package logreq Info: Writing requests to 'DSA.run.xml'.
+\openout1 = `DSA.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  40255 strings out of 473578
- 793892 string characters out of 5732243
+ 793840 string characters out of 5732243
  1955960 words of memory out of 5000000
  62462 multiletter control sequences out of 15000+600000
  570172 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,20n,107p,11030b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,20n,107p,11028b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on notes.pdf (33 pages, 3248634 bytes).
+Output written on DSA.pdf (33 pages, 3248629 bytes).
 PDF statistics:
  447 PDF objects out of 1000 (max. 8388607)
  335 compressed objects within 4 object streams

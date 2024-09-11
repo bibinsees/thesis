@@ -2,8 +2,8 @@ PWD c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex
-OUTPUT notes.log
+INPUT c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/DSA.tex
+OUTPUT DSA.log
 INPUT c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbook.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbook.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -393,21 +393,21 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT ./notes.aux
-INPUT ./notes.aux
-INPUT notes.aux
-OUTPUT notes.aux
+INPUT ./DSA.aux
+INPUT ./DSA.aux
+INPUT DSA.aux
+OUTPUT DSA.aux
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-INPUT ./notes.out
-INPUT ./notes.out
-INPUT notes.out
-INPUT notes.out
-INPUT ./notes.out
-INPUT ./notes.out
-OUTPUT notes.out
-OUTPUT notes.pdf
+INPUT ./DSA.out
+INPUT ./DSA.out
+INPUT DSA.out
+INPUT DSA.out
+INPUT ./DSA.out
+INPUT ./DSA.out
+OUTPUT DSA.out
+OUTPUT DSA.pdf
 INPUT c:/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -418,12 +418,12 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 INPUT c:/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 INPUT c:/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-OUTPUT notes.bcf
-INPUT notes.bbl
-INPUT ./notes.bbl
-INPUT ./notes.bbl
-INPUT ./notes.bbl
-INPUT notes.bbl
+OUTPUT DSA.bcf
+INPUT DSA.bbl
+INPUT ./DSA.bbl
+INPUT ./DSA.bbl
+INPUT ./DSA.bbl
+INPUT DSA.bbl
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
@@ -548,11 +548,11 @@ INPUT ./figures/Thesis timeline.png
 INPUT ./figures/Thesis timeline.png
 INPUT ./figures/Thesis timeline.png
 INPUT ./figures/Thesis timeline.png
-INPUT notes.aux
-INPUT ./notes.out
-INPUT ./notes.out
-INPUT notes.run.xml
-OUTPUT notes.run.xml
+INPUT DSA.aux
+INPUT ./DSA.out
+INPUT ./DSA.out
+INPUT DSA.run.xml
+OUTPUT DSA.run.xml
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb
