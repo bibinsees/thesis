@@ -512,12 +512,12 @@ In the first variation, we take a 3-channel image and treat it like a standard R
 
 In the second variation, we take a 3-channel image and compute the sharpness of each layer by calculating the magnitude of the gradient of pixel intensities in the x and y directions, which indicates edge strength and provides a measure of how sharp the transitions between pixel values are. The sharpest layer is used as the anchor, while the other two layers are treated as augmentations. 
 
+(need edit from here)
+story should start from here:
 In both cases, as per the SimCLR architecture, the augmented versions are then fed into a pretrained ResNet18 model.
 
 \subsubsection{Variation 1:}
 \textbf{Input to model (train loader dimensions) :} 
-
-  Batch 0:
 
   aug1: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H*W)
 
