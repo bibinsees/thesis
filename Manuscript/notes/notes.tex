@@ -433,7 +433,22 @@ Why we would like to try other models? Because SimCLR demands larger batch size 
 
 
 \subsection{Training SimCLR}
-\( X=\left[\begin{array}{c}255 \\ 231 \\ \vdots \\ \vdots \\ 235 \\ 134 \\ \vdots\end{array}\right] \)
+
+ suppose we have one image with no of features : 3*96*96 ( no of channels*H*W) = 27648 = $n_{x_1}$ which we can arrange as below:
+
+
+
+
+
+\( x_1 =\left[\begin{array}{c}1 \\ 0.8 \\ \vdots \\ \vdots \\ 0.1 \\ 0.9 \\ \vdots\\ 0.0 \\\end{array}\right] \)
+
+Suppose we have \( m \) training examples \( \left\{ \mathbf{x}^{(1)}, \mathbf{x}^{(2)}, \ldots, \mathbf{x}^{(m)} \right\} \), where \( \mathbf{x}^{(i)} \in \mathbb{R}^{n_{x}} \) for \( i = 1, 2, \ldots, m \).
+
+\( X = \begin{bmatrix} x^{(1)} & x^{(2)} & \dots & x^{(m)} \end{bmatrix} \)
+
+\( n_x \)
+
+\( m \)
 
 \textcolor{darkgreen}{Whats the correct data preprocessing order: resize, dataasug , normalisation}
 
@@ -491,7 +506,13 @@ Mg comment: Model collapse meaning differ depend on the model or context. so und
 
 \textbf{variations implementations:}
 
-The two variations tried so far differ only in how they handle the image for data augmentation. In the first variation, we take a 3-channel image and treat it like a standard RGB image, applying SimCLR-style augmentations to create two augmented versions. In the second variation, we take a 3-channel image and compute the sharpness of each layer by calculating the magnitude of the gradient of pixel intensities in the x and y directions, which indicates edge strength and provides a measure of how sharp the transitions between pixel values are. The sharpest layer is used as the anchor, while the other two layers are treated as augmentations. In both cases, as per the SimCLR architecture, the augmented versions are then fed into a pretrained ResNet18 model.
+The two variations tried so far differ only in how they handle the image for data augmentation. 
+
+In the first variation, we take a 3-channel image and treat it like a standard RGB image, applying SimCLR-style augmentations to create two augmented versions.
+
+In the second variation, we take a 3-channel image and compute the sharpness of each layer by calculating the magnitude of the gradient of pixel intensities in the x and y directions, which indicates edge strength and provides a measure of how sharp the transitions between pixel values are. The sharpest layer is used as the anchor, while the other two layers are treated as augmentations. 
+
+In both cases, as per the SimCLR architecture, the augmented versions are then fed into a pretrained ResNet18 model.
 
 \subsubsection{Variation 1:}
 \textbf{Input to model (train loader dimensions) :} 
