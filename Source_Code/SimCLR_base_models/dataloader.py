@@ -19,8 +19,7 @@ class ImageDataset(Dataset):
             transforms.RandomApply([transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.1)], p=0.8),
             transforms.RandomGrayscale(p=0.2),
             transforms.GaussianBlur(kernel_size=9),
-            #transforms.Normalize(mean=mean, std=std) #Dataset specific normalisation
-            transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]) #When you are using pre-trained models that expect inputs normalized with specific values.
+
         ])
     
     def __len__(self):
