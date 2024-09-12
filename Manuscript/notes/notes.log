@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  12 SEP 2024 11:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  12 SEP 2024 22:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex"
-(c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex
+**c:/Users/k54739/thesis/Manuscript/notes/notes.tex
+(c:/Users/k54739/thesis/Manuscript/notes/notes.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
 (c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbook.cls
@@ -363,7 +363,7 @@ Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
 (scrhack)             need that hack, on input line 162.
 ) (c:/texlive/2024/texmf-dist/tex/latex/pdfpages/pdfpages.sty
-Package: pdfpages 2024/08/20 v0.6b Insert pages of external PDF documents (AM)
+Package: pdfpages 2024/05/29 v0.6a Insert pages of external PDF documents (AM)
  (c:/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count298
@@ -385,7 +385,7 @@ Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
 \AM@pageheight=\dimen162
 \AM@fboxrule=\dimen163
  (c:/texlive/2024/texmf-dist/tex/latex/pdfpages/pppdftex.def
-File: pppdftex.def 2024/08/20 v0.6b Pdfpages driver for pdfTeX (AM)
+File: pppdftex.def 2024/05/29 v0.6a Pdfpages driver for pdfTeX (AM)
 )
 \pdfpages@includegraphics@status=\count301
 \AM@pagebox=\box58
@@ -1427,115 +1427,6 @@ Package pdftex.def Info: figures/1dop3.png  used on input line 617.
 (pdftex.def)             Requested size: 403.31511pt x 126.66066pt.
 
 
-[23 <./figures/1dop1.png> <./figures/1dop2.png> <./figures/1dop3.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[24]
-
-[25]
-
-[26]
-chapter 7.
-
-
-[27
-
-]
-chapter 8.
-
-
-[28
-
-]
-chapter 9.
-<figures/Thesis timeline.png, id=281, 639.13782pt x 313.9228pt>
-File: figures/Thesis timeline.png Graphic file (type png)
-<use figures/Thesis timeline.png>
-Package pdftex.def Info: figures/Thesis timeline.png  used on input line 710.
-(pdftex.def)             Requested size: 403.31511pt x 198.09813pt.
-Package placeins Info: No floats held, on input line 715.
-
-
-[29
-
-Package placeins Info: Float barrier, from input line 715, processed on page 29, lands on page 29. 
- <./figures/Thesis timeline.png>]
-Overfull \hbox (4.23466pt too wide) in paragraph at lines 718--718
-[]\OT1/cmr/m/n/12 Mathilde Caron et al. |   [].
- []
-
-
-Overfull \hbox (42.19122pt too wide) in paragraph at lines 718--718
-[]\OT1/cmr/m/n/12 Ting Chen et al. |   [].
- []
-
-
-Overfull \hbox (75.79367pt too wide) in paragraph at lines 718--718
-[]\OT1/cmr/m/n/12 Jean-Bastien Grill et al. |   [].
- []
-
-
-Overfull \hbox (174.85237pt too wide) in paragraph at lines 718--718
-[]\OT1/cmr/m/n/12 Jeremy Irvin et al. |   [].
- []
-
-
-Overfull \hbox (26.89647pt too wide) in paragraph at lines 718--718
-\OT1/cmr/m/n/12 mea-sur-ing dry mass changes in sub-cellular com-part-ments". In: |   []
- []
-
-
-Overfull \hbox (9.74156pt too wide) in paragraph at lines 718--718
-[]\OT1/cmr/m/n/12 Ziyu Liu et al. |   []
- []
-
-
-Overfull \hbox (97.82774pt too wide) in paragraph at lines 718--718
-\OT1/cmr/m/n/12 Tho-rax Dis-eases". In: |   [].
- []
-
-
-Overfull \hbox (86.45975pt too wide) in paragraph at lines 718--718
-\OT1/cmr/m/n/12 trastive learn-ing frame-work for uni-vari-ate time se-ries rep-re-sen-ta-tion". In: |   []
- []
-
-
-Overfull \hbox (124.49731pt too wide) in paragraph at lines 718--718
-[]\OT1/cmr/m/n/12 Yuhao Zhang et al. |   [].
- []
-
-
-
-[30
-
-]
-
-[31] (./notes.aux)
- ***********
-LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2020/03/25>
- ***********
-Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package logreq Info: Writing requests to 'notes.run.xml'.
-\openout1 = `notes.run.xml'.
-
- ) 
-Here is how much of TeX's memory you used:
- 40255 strings out of 473578
- 793892 string characters out of 5732243
- 1954960 words of memory out of 5000000
- 62462 multiletter control sequences out of 15000+600000
- 570172 words of font info for 81 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 108i,20n,107p,11030b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on notes.pdf (33 pages, 3248744 bytes).
-PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 335 compressed objects within 4 object streams
- 91 named destinations out of 1000 (max. 500000)
- 208 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+[23 <./figures/1dop1.png
+!pdfTeX error: pdflatex.exe (file ./figures/1dop1.png): fflush() failed (Invalid argument)
+ ==> Fatal error occurred, no output PDF file produced!
