@@ -392,19 +392,22 @@ Advantage of training AI in a supervised setting is the ability to circumvent th
 
 \chapter{Experiments}\label{ch:Experiments}
 We decided to proceed with methodology 1.
-
+\section{Data set}
+\label{sec:Data set}
 Dataset class overview:
 \begin{table}[ht!]
   \centering
   \begin{tabular}{|l|c|c|c|c|}
   \hline
-  \textbf{Dataset Type} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Untreated} & \textbf{Total} \\ \hline
-  \textbf{Combined Unlabeled} & 12 (3\%) & 204 (60\%) & 150 (37\%) & 366 \\ \hline
-  \textbf{Supervised}         & 12 (16.66\%) & 30 (41.66\%)  & 30 (41.66\%) & 72  \\ \hline
+  \textbf{Class} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Untreated} & \textbf{Total} \\ \hline
+  \textbf{No. of Images (\%)}  & 12 (3\%) & 204 (60\%) & 150 (37\%) & 366 \\ \hline
   \end{tabular}
   \caption{Dataset Overview}
   \label{tab:dataset}
-  \end{table}
+\end{table}
+
+
+
 
 The original images are approximately 2500×2500 pixels in size, in 16-bit grayscale, and consist of multiple channels. These channels come from taking images at different focal planes in brightfield microscopy. The number of channels can vary, as you can take images at any number of focal planes. However, for time efficiency, the current data we have collected contains 3 channels per image.
 
