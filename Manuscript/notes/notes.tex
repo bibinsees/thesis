@@ -263,38 +263,75 @@ As a proof of concept, The Fraunhofer TLZ-RT Wuerzburg laboratory utilized a mod
 
 Although the vision for the future is to simulate the identical interaction environment of drugs with tumor cells as it occurs in the human body, current technology has not yet achieved this. The current three-dimensional tumor tissue models developed in the lab do not fully resemble real pancreatic tumor cells found in the human body. These 3D tumor tissue models only contain pure tumor tissues, whereas real human pancreatic tumor cells exist within a complex microenvironment comprising tumor cells, blood vessels, other tissues, and various cell types. Despite this limitation, our work serves as a valuable starting point for studying drug efficacy in a controlled environment. Fortunately, if we are able to replicate human body tumor cells in the lab in the future, the techniques currently used to study the bright-field microscopy images will still be applicable. However, the fact that bright-field microscopy images are two-dimensional limits the ability to perform a comprehensive analysis of the drug's impact on the entire 3D structure of the cultivated tumor tissue models.
 
-Alternatives to bright-field microscopy images include 3D fluorescence microscopy and luminescent cytotoxicity assays. However, both methods are invasive. Fluorescent molecules tend to generate reactive chemical species under illumination, enhancing phototoxic effects. This chemical reaction with the 3D tumor tissue model may alter its structure, making it not suitable to isolate the drug's effect over time. Similarly, luminescent cytotoxicity assays result in a dead culture, rendering them unsuitable for longitudinal studies. Additionally, both methods require removing the well plate from the isolated culture environment for extended periods, making the samples susceptible to external environmental factors. For instance, in fluorescence microscopy, cells are particularly vulnerable to phototoxicity from short wavelength light. In contrast, bright-field microscopy images are non-invasive, allowing continuous culture and the possibility of creating time series of images to study dynamic changes. Therefore, we rely on bright-field microscopy images to study the time-evolutionary effects of drugs, only applying the alternative methods at the end of the experiment.
+Alternatives to bright-field microscopy images include 3D fluorescence microscopy and luminescent cytotoxicity assays. However, both methods are invasive. Fluorescent molecules tend to generate reactive chemical species under illumination, enhancing phototoxic effects. This chemical reaction with the 3D tumor tissue model may alter its structure, making it not suitable to isolate the drug's effect over time. Similarly, luminescent cytotoxicity assays result in a dead culture, rendering them unsuitable for longitudinal studies. Additionally, both methods require removing the well plate from the isolated culture environment for extended periods, making the samples susceptible to external environmental factors. For instance, in fluorescence microscopy, cells are particularly vulnerable to phototoxicity from short wavelength light. In contrast, bright-field microscopy images are non-invasive, allowing continuous culture and the possibility of creating time series of images to study dynamic changes. Therefore, we rely on bright-field microscopy images to study the time-evolutionary effects of drugs.
 
-3D tumor tissue models were cultured in well plates containing 96 wells, each providing a nutrient medium that allows them to maintain their tissue-specific functions in vitro. Although each plate can yield 96 pure 3D tumor tissue models, the edge effect is accounted for, where outer wells may be exposed to variable conditions such as temperature fluctuations, increased evaporation rates, and other environmental factors. Consequently, we restrict our analysis to the 60 inner wells per plate, adhering to standard procedures to ensure consistent and reliable experimental data. These 60 wells are divided into sections to provide the three experimental groups (explained below ). From day 1 to day 7, the 3D tumor tissue models develops and on day 7, drug is applied. To isolate the effects of the drugs, changes in 3D tumor tissue models deterioration are evaluated on day 3 post-drug application, which is day 10, in accordance with established medical protocols and previous research findings.
+\section{Laboratory Setup}
+\label{sec:lab-setup}
+3D tumor tissue models were cultured in well plates containing 96 wells, each providing a nutrient medium that allows them to maintain their tissue-specific functions in vitro. Although each plate can yield 96 pure 3D tumor tissue models, the edge effect is accounted for, where outer wells may be exposed to variable conditions such as temperature fluctuations, increased evaporation rates, and other environmental factors. Consequently, we restrict our analysis to the 60 inner wells per plate as in figure \ref{fig:Wellplate}, adhering to standard procedures to ensure consistent and reliable experimental data. 
 
-Based on the drug concentration applied to 3D tumor tissue models, the bright-field microscopy images we capture can be categorized into three main categories:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/WellPlate.png} % Adjust the width as needed
+  \caption{A well plate containing 96 wells where rows A, H and columns 1, 2 are excluded due to edge effects.}
+  \label{fig:Wellplate}
+\end{figure}
+
+
+
+
+
+Based on the drug concentration applied to 3D tumor tissue models, the bright-field microscopy images we capture can be categorized into three:
 
 Images of
 
-1. Control (0 percentage drug applied) - For clarity in the paper, we refer to this category as "untreated."
+\begin{enumerate}
+  \item Control (0 percentage drug applied)
+        \begin{itemize}
+            \item For easiness, we refer to this category as ``Untreated''
+        \end{itemize}
+  
+  \item Single concentration (theoretically recommended single concentration of drug treatment)
+        \begin{itemize}
+            \item For easiness, we refer to this category as ``Single dose''
+        \end{itemize}
+  \item Drug screening: different drug combinations and concentrations used for experimental study of drug efficacy, which may or may not result in the killing of surrounding non-tumor cells in the human body with potential side effects.
+        \begin{itemize}
+            \item For easiness, we refer to this category as ``Drug screened''
+        \end{itemize}
+\end{enumerate}
 
-2. Single concentration (theoretically recommended single concentration of drug treatment)
+The 60 wells are divided into sections to provide these three type of tumor tissues shown in figure \ref{fig:Single dose wellplate} and figure \ref{fig:Drug screen wellplate}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/singledose.png} % Adjust the width as needed
+  \caption{Well plate setup for the single-dose experiment where the left half remains untreated and the right half is treated with a single drug concentration. This image was taken three days after drug application, i.e., on day 10.}
+  \label{fig:Single dose wellplate}
+\end{figure}
 
-3. Drug screening: different drug combinations and concentrations used for experimental study of drug efficacy, which may or may not result in the killing of surrounding non-tumor cells in the human body and potential side effects.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.2\linewidth]{figures/drug_screened.png} % Adjust the width as needed
+  \caption{Well plate setup for the drug screening experiment where the majority of tumor tissues are treated with different combinations of drug concentrations (multi-colored wells), while some are left untreated (white wells bounded by boxes).}
+  \label{fig:Drug screen wellplate}
+\end{figure}
 
-For clarity in the paper, we refer to second and third  categories as "treated."
+The 3D tumor tissue models develop in the wellplate progressively from day 1 to day 7, reaching their maximum cancerous state by day 7, at which point the drug is administered. By day 10, the drug's effect on the cancerous tissue is expected to peak, as nutrient availability gradually decreases and the tumor begins to diminish. To isolate the drug's effects, changes in tumor tissue deterioration are assessed on day 3 post-drug administration (day 10),  in accordance with established medical protocols and previous research findings.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.9]{figures/time.pdf} 
+  \caption{illustrates the flow chart of time evolutoion of 3D tumor tissues.}
+  \label{fig:time}
+\end{figure}
 
 We assess the efficacy of the drug by comparing the changes it induces in the untreated bright-field microscopy images over a period of time. The current methods to differentiate these changes involve studying the alterations from day 7 (after applying the drug) to Day 10. These changes are typically observed in three main parameters: 
 
-1. Size/Area
-
-2. Circularity/Diameter/Perimeter
-
-3. Pixel intensity or color change
+\begin{enumerate}
+  \item Size/Area
+  \item Circularity/Diameter/Perimeter
+  \item Pixel intensity or color change
+\end{enumerate}
 
 These parameters serve as human-interpretable metrics for assessing the efficacy of the drug. However, there may be other hidden information or patterns within these bright-field microscopy images that are not human-interpretable. This potential can be explored using representation learning techniques. Additionally, this method can provide more standardization compared to manual assessment.
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.55]{figures/Big picture.jpg} 
-  \caption{Big picture}
-
-  \label{fig:out_6}
-\end{figure}
 \let\cleardoublepage\clearpage
 \chapter{Objective}\label{ch:Objective}
 This thesis aims to assess drug efficacy by ranking different drug combinations and concentrations. The ranking is based on features extracted from bright-field microscopy images of  three-dimensional tumor tissue models using representation learning. The primary challenge lies in learning the efficient features of alterations induced in these tumor tissue models by the impact of drug application over a period of time.
@@ -355,35 +392,6 @@ Advantage of training AI in a supervised setting is the ability to circumvent th
 
 \chapter{Experiments}\label{ch:Experiments}
 We decided to proceed with methodology 1.
-
-Below figure shows the flow chart of whole time evolutoion of cancer cell.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.9]{figures/time.pdf} 
-  \caption{time progress}
-  \label{fig:time}
-\end{figure}
-
-\begin{itemize}
-  \item The current dataset we are working with only includes data from day 10 (ie after 3 days of drug application). For the next batch of tests, we will collect images on days 7, 8, 9, and 10, or at least on days 7 and 10, as these are the most important due to the significant changes caused by the drug effect between these days.
-  \item Figure 6.1 is the well plate setup for the single dose experiment where left half remain untreated and right half applied with a single drug concentration.This is the picture taken after 3 days drug applied.
-  \item Figure 6.2 is the well plate setup for the drug screening experiment where majority we apply different combination of drug concentration and some left untreated.
-\end{itemize}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/single_dose.jpg} % Adjust the width as needed
-  \caption{single dose}
-  \label{fig:out_0}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/drug_screened.png} % Adjust the width as needed
-  \caption{Drug screened}
-  \label{fig:op_2}
-\end{figure}
 
 Dataset class overview:
 \begin{table}[ht!]

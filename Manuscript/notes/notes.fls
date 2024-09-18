@@ -475,28 +475,28 @@ INPUT ./figures/robot.png
 INPUT ./figures/robot.png
 INPUT ./figures/robot.png
 INPUT ./figures/robot.png
-INPUT ./figures/Big picture.jpg
-INPUT ./figures/Big picture.jpg
-INPUT ./figures/Big picture.jpg
-INPUT ./figures/Big picture.jpg
-INPUT ./figures/Big picture.jpg
-INPUT ./figures/time.pdf
-INPUT ./figures/time.pdf
-INPUT ./figures/time.pdf
-INPUT ./figures/time.pdf
-INPUT ./figures/time.pdf
+INPUT ./figures/WellPlate.png
+INPUT ./figures/WellPlate.png
+INPUT ./figures/WellPlate.png
+INPUT ./figures/WellPlate.png
+INPUT ./figures/WellPlate.png
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
-INPUT ./figures/single_dose.jpg
-INPUT ./figures/single_dose.jpg
-INPUT ./figures/single_dose.jpg
-INPUT ./figures/single_dose.jpg
-INPUT ./figures/single_dose.jpg
+INPUT ./figures/singledose.png
+INPUT ./figures/singledose.png
+INPUT ./figures/singledose.png
+INPUT ./figures/singledose.png
+INPUT ./figures/singledose.png
 INPUT c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT ./figures/drug_screened.png
 INPUT ./figures/drug_screened.png
 INPUT ./figures/drug_screened.png
 INPUT ./figures/drug_screened.png
 INPUT ./figures/drug_screened.png
+INPUT ./figures/time.pdf
+INPUT ./figures/time.pdf
+INPUT ./figures/time.pdf
+INPUT ./figures/time.pdf
+INPUT ./figures/time.pdf
 INPUT ./figures/originals.pdf
 INPUT ./figures/originals.pdf
 INPUT ./figures/originals.pdf
