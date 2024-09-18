@@ -465,16 +465,16 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
-INPUT ./figures/setup.jpg
-INPUT ./figures/setup.jpg
-INPUT ./figures/setup.jpg
-INPUT ./figures/setup.jpg
-INPUT ./figures/setup.jpg
-INPUT ./figures/Robot.jpg
-INPUT ./figures/Robot.jpg
-INPUT ./figures/Robot.jpg
-INPUT ./figures/Robot.jpg
-INPUT ./figures/Robot.jpg
+INPUT ./figures/platform setup.png
+INPUT ./figures/platform setup.png
+INPUT ./figures/platform setup.png
+INPUT ./figures/platform setup.png
+INPUT ./figures/platform setup.png
+INPUT ./figures/robot.png
+INPUT ./figures/robot.png
+INPUT ./figures/robot.png
+INPUT ./figures/robot.png
+INPUT ./figures/robot.png
 INPUT ./figures/Big picture.jpg
 INPUT ./figures/Big picture.jpg
 INPUT ./figures/Big picture.jpg
