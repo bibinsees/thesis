@@ -394,20 +394,6 @@ Advantage of training AI in a supervised setting is the ability to circumvent th
 We decided to proceed with methodology 1.
 \section{Data set}
 \label{sec:Data set}
-Dataset class overview:
-\begin{table}[ht!]
-  \centering
-  \begin{tabular}{|l|c|c|c|c|}
-  \hline
-  \textbf{Class} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Untreated} & \textbf{Total} \\ \hline
-  \textbf{No. of Images (\%)}  & 12 (3\%) & 204 (60\%) & 150 (37\%) & 366 \\ \hline
-  \end{tabular}
-  \caption{Dataset Overview}
-  \label{tab:dataset}
-\end{table}
-
-
-
 
 The original images are approximately 2500×2500 pixels in size, in 16-bit grayscale, and consist of multiple channels. These channels come from taking images at different focal planes in brightfield microscopy. The number of channels can vary, as you can take images at any number of focal planes. However, for time efficiency, the current data we have collected contains 3 channels per image.
 
@@ -422,10 +408,22 @@ Figure \ref{fig:Transition} illustrates that, even with the application of the s
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.46]{figures/transition.png} 
-  \caption{Illustration of three layers per image: A, B, and C. The three layers looks visually similar, with slight differences in focal planes. In this figure, A is the sharpest/focused layer.}
+  \caption{C06, F11 and G04 are well names in the well plate.}
   \label{fig:Transition}
 \end{figure}
 
+Dataset class overview:
+We have mainly three different types of tumor tissues based on the drug applied as  explained in the section ~\ref{sec:lab-setup}
+\begin{table}[ht!]
+  \centering
+  \begin{tabular}{|l|c|c|c|c|}
+  \hline
+  \textbf{Class} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Untreated} & \textbf{Total} \\ \hline
+  \textbf{No. of Images (\%)}  & 12 (3\%) & 204 (60\%) & 150 (37\%) & 366 \\ \hline
+  \end{tabular}
+  \caption{Dataset Overview}
+  \label{tab:dataset}
+\end{table}
 
 It’s important to keep the original color depth, aka bit depth. An 8-bit image contains 256 color tones (0-255) per channel, while a 16-bit image contains 65,536 color tones (0-65,535) per channel—in our case, 65,536 shades of gray.
 
