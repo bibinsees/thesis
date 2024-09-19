@@ -318,8 +318,8 @@ The 60 wells are divided into sections to provide these three type of tumor tiss
 The 3D tumor tissue models develop in the wellplate progressively from day 1 to day 7, reaching their maximum cancerous state by day 7, at which point the drug is administered. By day 10, the drug's effect on the cancerous tissue is expected to peak, as nutrient availability gradually decreases and the tumor begins to diminish. To isolate the drug's effects, changes in tumor tissue deterioration are assessed on day 3 post-drug administration (day 10),  in accordance with established medical protocols and previous research findings.
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.9]{figures/time.pdf} 
-  \caption{illustrates the flow chart of time evolutoion of 3D tumor tissues.}
+  \includegraphics[scale=0.9]{figures/timed.pdf} 
+  \caption{Illustrates the flow chart of time evolutoion of 3D tumor tissues.}
   \label{fig:time}
 \end{figure}
 
@@ -412,8 +412,9 @@ Figure \ref{fig:Transition} illustrates that, even with the application of the s
   \label{fig:Transition}
 \end{figure}
 
-Dataset class overview:
-We have mainly three different types of tumor tissues based on the drug applied as  explained in the section ~\ref{sec:lab-setup}
+
+
+The table below shows the division of three different types of image datasets, as  explained in the section ~\ref{sec:lab-setup}.
 \begin{table}[ht!]
   \centering
   \begin{tabular}{|l|c|c|c|c|}
@@ -421,9 +422,18 @@ We have mainly three different types of tumor tissues based on the drug applied 
   \textbf{Class} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Untreated} & \textbf{Total} \\ \hline
   \textbf{No. of Images (\%)}  & 12 (3\%) & 204 (60\%) & 150 (37\%) & 366 \\ \hline
   \end{tabular}
-  \caption{Dataset Overview}
+  \caption{Dataset Class Overview}
   \label{tab:dataset}
 \end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{figures/originals.png} 
+  \caption{Three different types of images: Drug Screened, Single Dose, and Untreated as mentioned in section ~\ref{sec:lab-setup}.}
+  \label{fig:originals}
+\end{figure}
+
+
 
 It’s important to keep the original color depth, aka bit depth. An 8-bit image contains 256 color tones (0-255) per channel, while a 16-bit image contains 65,536 color tones (0-65,535) per channel—in our case, 65,536 shades of gray.
 
@@ -431,12 +441,7 @@ When data augmentation involves significant changes in brightness, contrast, or 
 
 In contrast, a 16-bit image contains 65,536 levels of color and tone. If we lose 50 percentage of those colors and tones, we’d still have over 32,000 levels remaining. This means we’d retain smoother color transitions, preserve edge details, and maintain color and hue accuracy much better. The dynamic range (the difference between the lightest and darkest parts of the image) would be preserved much longer compared to a typical 8-bit image.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.8]{figures/originals.pdf} 
-  \caption{originals}
-  \label{fig:originals}
-\end{figure}
+
 
 \textbf{Data preprocessing}
 
