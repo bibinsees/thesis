@@ -433,15 +433,18 @@ The table below shows the division of three different types of image datasets, a
   \label{fig:originals}
 \end{figure}
 
-It is important to retain the original 16-bit depth because converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details. Since 8-bit images only allow 256 possible values, the finer variations in intensity that are present in 16-bit images become compressed. For example, two distinct values in 16-bit (such as 30,000 and 30,001) could map to the same 8-bit value (for instance, both might be mapped to 117). This results in the loss of subtle intensity differences.
+An 8-bit image encompasses 256 color tones (ranging from 0 to 255) per channel, whereas a 16-bit image accommodates 65,536 color tones (ranging from 0 to 65,535) per channel, in our case 65,536 shades of gray. Retaining the original 16-bit depth is crucial for two primary reasons:
 
-It’s important to keep the original color depth, aka bit depth. An 8-bit image contains 256 color tones (0-255) per channel, while a 16-bit image contains 65,536 color tones (0-65,535) per channel—in our case, 65,536 shades of gray.
+\begin{enumerate}
+  \item Converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details. Since 8-bit images only allow 256 possible values, the finer variations in intensity that are present in 16-bit images become compressed. For example, two distinct values in 16-bit (such as 30,000 and 30,001) could map to the same 8-bit value (for instance, both might be mapped to 117). This results in the loss of subtle intensity differences. 
 
-When data augmentation involves significant changes in brightness, contrast, or color, if we have an 8-bit image and lose, let’s say, 50 percentage of the tones, we’re left with only 128 levels of color and tone. This loss of information will typically manifest as banding, especially in areas of smooth color transitions. This is where we see visible stripes of color with slightly jagged edges forming across the image.
+  \item During data augmentation processes that involve substantial alterations in brightness, contrast, or color, an 8-bit image, with a potential loss of 50\% of tones, would be reduced to only 128 levels of color and tone. This reduction can manifest as banding, particularly in areas characterized by smooth color transitions, leading to visible stripes of color with jagged edges. In contrast, when applying similar alterations to a 16-bit image, even with a 50\% reduction in tones, over 32,000 levels would remain. This retention allows for smoother color transitions, better preservation of edge details, and enhanced accuracy in color and hue representation. Consequently, the dynamic range—the difference between the lightest and darkest areas of the image—remains more effectively preserved compared to typical 8-bit images.
+\end{enumerate}
+In our case, the maximum reduction in unique pixel values for the 8-bit single channel images was found to be 99.27 percentage, whereas for the 16-bit single channel images, it was only 48 percentage after 1000 epochs of random color jitter applied using \texttt{torch.transforms.RandomApply([transform.ColorJitter(brightness=1, contrast=1, saturation=1, hue=0)], p=1)}.
 
-In contrast, a 16-bit image contains 65,536 levels of color and tone. If we lose 50 percentage of those colors and tones, we’d still have over 32,000 levels remaining. This means we’d retain smoother color transitions, preserve edge details, and maintain color and hue accuracy much better. The dynamic range (the difference between the lightest and darkest parts of the image) would be preserved much longer compared to a typical 8-bit image.
+for 3 channel?
 
-
+add figures
 
 \textbf{Data preprocessing}
 
