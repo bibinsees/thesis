@@ -433,7 +433,7 @@ The table below shows the division of three different types of image datasets, a
   \label{fig:originals}
 \end{figure}
 
-
+It is important to retain the original 16-bit depth because converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details. Since 8-bit images only allow 256 possible values, the finer variations in intensity that are present in 16-bit images become compressed. For example, two distinct values in 16-bit (such as 30,000 and 30,001) could map to the same 8-bit value (for instance, both might be mapped to 117). This results in the loss of subtle intensity differences.
 
 It’s important to keep the original color depth, aka bit depth. An 8-bit image contains 256 color tones (0-255) per channel, while a 16-bit image contains 65,536 color tones (0-65,535) per channel—in our case, 65,536 shades of gray.
 
