@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber notes"] 1726767159.10579 "notes.bcf" "notes.bbl" "notes" 1726923117.06357 0
-  "notes.bcf" 1726923116 109642 0410a0e563dae0e1de29cbd0e768e35b "pdflatex"
+["biber notes"] 1726767159.10579 "notes.bcf" "notes.bbl" "notes" 1727009573.33622 0
+  "notes.bcf" 1727009573 109642 0410a0e563dae0e1de29cbd0e768e35b "pdflatex"
   (generated)
   "notes.bbl"
   "notes.blg"
   (rewritten before read)
-["pdflatex"] 1726923113.30709 "c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex" "notes.pdf" "notes" 1726923117.06405 0
-  "c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex" 1726923112 59280 023d3c47e5971d85ff2618e2ed5c5cae ""
+["pdflatex"] 1727009568.7679 "c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex" "notes.pdf" "notes" 1727009573.33668 0
+  "c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex" 1727009568 63226 52ae77b59c1fb11a6fdf571560a2effb ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1725352686 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1725353392 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1725355689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -261,9 +261,14 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1725356492 5543950 2aa73a438b7054b2327b796fbe5f4275 ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1725356627 8239379 f63a47da47fb195b48636f85f39f1829 ""
   "c:/texlive/2024/texmf.cnf" 1725356480 713 e69b156964470283e0530f5060668171 ""
+  "figures/16bit_onen.png" 1727002566 184279 82f6e7dac8897c46f9f8ead297dd6eca ""
+  "figures/16bit_three_1.png" 1727008669 232750 58bfa43008d7cbc8722d8f41c99b11be ""
+  "figures/16bithree2.png" 1727009077 449820 e3d9c7e22ad05ad9b3a8de32a8d16e3f ""
   "figures/1dop1.png" 1725897570 78219 4522df806612b0d56ee424d1407bb71d ""
   "figures/1dop2.png" 1725897632 76484 da5368d9eccafa65fc4be13d8c8e42a9 ""
   "figures/1dop3.png" 1725897687 75525 2e483277439a07c5bfec6a276cd79648 ""
+  "figures/8bit_nOne.png" 1727006058 142159 460e6e960ad01496e9e454df26c323b1 ""
+  "figures/8bit_nThree.png" 1727006099 157753 764a2f9e4fa32f626f143b6935cc648c ""
   "figures/Thesis timeline.png" 1725355452 42005 1d380b15c949c417c1cde2bf56171986 ""
   "figures/WellPlate.png" 1726668159 506634 8e0f2dc497948577418565fdbfec32fd ""
   "figures/drug_screened.png" 1725880222 513924 2e86a531a0751720c4600ca2969d3cdb ""
@@ -278,11 +283,11 @@
   "figures/threes.png" 1726822295 1077958 6f0b180e0b11013cd23fc45186482de1 ""
   "figures/timed.pdf" 1726822295 300879 4fad6b7c83495751128520cfdbd8762c ""
   "figures/transition.png" 1726822295 2185888 ee5b2c10f87af199354ccbcfd5e8e517 ""
-  "notes.aux" 1726923116 16602 02ca0a54369108812b25d4c3209ce8d0 "pdflatex"
+  "notes.aux" 1727009573 18265 314995c754096c4a5e7428fab7d590bd "pdflatex"
   "notes.bbl" 1726822295 0 d41d8cd98f00b204e9800998ecf8427e "biber notes"
-  "notes.out" 1726923114 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "notes.run.xml" 1726923116 2314 878a9ea3ca759c2ccb98432fe66d0c1b "pdflatex"
-  "notes.tex" 1726923112 59280 023d3c47e5971d85ff2618e2ed5c5cae ""
+  "notes.out" 1727009570 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "notes.run.xml" 1727009573 2314 878a9ea3ca759c2ccb98432fe66d0c1b "pdflatex"
+  "notes.tex" 1727009568 63226 52ae77b59c1fb11a6fdf571560a2effb ""
   (generated)
   "notes.aux"
   "notes.bcf"

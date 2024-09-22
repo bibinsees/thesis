@@ -440,11 +440,96 @@ An 8-bit image encompasses 256 color tones (ranging from 0 to 255) per channel, 
 
   \item During data augmentation processes that involve substantial alterations in brightness, contrast, or color, an 8-bit image, with a potential loss of 50\% of tones, would be reduced to only 128 levels of color and tone. This reduction can manifest as banding, particularly in areas characterized by smooth color transitions, leading to visible stripes of color with jagged edges. In contrast, when applying similar alterations to a 16-bit image, even with a 50\% reduction in tones, over 32,000 levels would remain. This retention allows for smoother color transitions, better preservation of edge details, and enhanced accuracy in color and hue representation. Consequently, the dynamic range—the difference between the lightest and darkest areas of the image—remains more effectively preserved compared to typical 8-bit images.
 \end{enumerate}
-In our case, the maximum reduction in unique pixel values for the 8-bit single channel images was found to be 99.27 percentage, whereas for the 16-bit single channel images, it was only 48 percentage after 1000 epochs of random color jitter applied using \texttt{torch.transforms.RandomApply([transform.ColorJitter(brightness=1, contrast=1, saturation=1, hue=0)], p=1)}.
+In our case, the maximum reduction in unique pixel values for the 8-bit  images regardless number of channels was found to be 99.27 percentage, whereas for the 16-bit single channel images (extracted sharp layer from all 3 layer and used it only to get augmented version), it was only 49 percentage after 3000 epochs of random color jitter applied using \texttt{torch.transforms.RandomApply([transform.ColorJitter(brightness=1, contrast=1, saturation=1, hue=0)], p=1)}.
 
-for 3 channel?
+Surprisingly 16 bit image but with 3 channels instead of reduction, there was increase in number of unique pixel values maximum by 258757.57 percentage. the problem with the increase is, after data aug, increased pixel values are not distributed similar to the original image isntead it shift to two ends for example: 0 or 1 either 0 and 1 which are out of origianl image distribution.
 
-add figures
+8 bit three channel image before and after data aug:
+
+Loop 9: Reduction percentage in unique pixel values: 97.81 percentage
+Original Image - Min: 33, Max: 170
+Augmented Image - Min: 0, Max: 2
+Number of unique pixel values in the original image: 137
+Number of unique pixel values in the augmented image: 3
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{figures/8bit_nThree.png} 
+  \caption{eightbit three after 3000 epoch random torch color jitterness apply}
+  \label{fig:8bit_nThree}
+\end{figure}
+
+8 bit one channel (sharp layer) image before and after data aug:
+
+Loop 26: Reduction percentage in unique pixel values: 99.27 percentage
+Original Image - Min: 33, Max: 170
+Augmented Image - Min: 3, Max: 3
+Number of unique pixel values in the original image: 137
+Number of unique pixel values in the augmented image: 1
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{figures/8bit_nOne.png} 
+  \caption{eightbit one after 3000 epoch random torch color jitterness apply}
+  \label{fig:8bit_n one}
+\end{figure}
+
+16 bit three channel image before and after data aug:
+
+Original Image - Min: 0.13064774870872498, Max: 0.6874189376831055
+Augmented Image - Min: 0.022128667682409286, Max: 0.11041323840618134
+Number of unique pixel values in the original image: 2111
+Number of unique pixel values in the augmented image: 5044624
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{figures/16bit_three_1.png} 
+  \caption{sixteen bit three layer after 3000 epoch random torch color jitterness apply}
+  \label{fig:16bit_three_version2}
+\end{figure}
+
+another example for 16 bit three channel image before and after data aug:
+
+Original image shape: torch.Size([3, 2054, 2456])
+Augmented image shape: torch.Size([3, 2054, 2456])
+Original Image - Min: 0.13064774870872498, Max: 0.6874189376831055
+Augmented Image - Min: 0.1969958394765854, Max: 0.3747836649417877
+Original Image - Unique pixel counts per channel:
+Channel 1: 2111
+Channel 2: 2100
+Channel 3: 2137
+
+Augmented Image - Unique pixel counts per channel:
+Channel 1: 1672294
+Channel 2: 1646188
+Channel 3: 1686717
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{figures/16bithree2.png} 
+  \caption{sixteen bit three layer after 3000 epoch random torch color jitterness apply}
+  \label{fig:16bit_three_version2}
+\end{figure}
+
+16 bit one channel image before and after data aug:
+
+Loop 125: Reduction percentage in unique pixel values: 49.88 percentage
+Original Image - Min: 0.13064774870872498, Max: 0.6666666865348816
+Augmented Image - Min: 0.0, Max: 1.0
+Number of unique pixel values in the original image: 2111
+Number of unique pixel values in the augmented image: 1058
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{figures/16bit_onen.png} 
+  \caption{sixteen bit one layer after 3000 epoch random torch color jitterness apply}
+  \label{fig:16bit_n one}
+\end{figure}
+
+16 bit one channel data aug with color jitterness is also gives 49 percentage reduction  which is also not so good in the sense its diminish the gradual spreadness of dark matter as in the above image. so the solution will be instead of using random we experiment with specific parameters inside the color jiterness tranform such a way that it won't exceed lets say 30 percentage of reduction in unique no of pixel values.
+or another solution will be code own python function or try tensorflow transformation depend on time.
 
 \textbf{Data preprocessing}
 
