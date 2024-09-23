@@ -641,14 +641,14 @@ Below images after data augmentation and normalisation of 3 channel version:
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{figures/op1.png} % Adjust the width as needed
+    \includegraphics[width=0.9\linewidth]{figures/3_1.png} % Adjust the width as needed
     \caption{op1}
     \label{fig:out_2}
   \end{figure}
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{figures/op4.png} % Adjust the width as needed
+    \includegraphics[width=0.9\linewidth]{figures/3_2fine.png} % Adjust the width as needed
     \caption{Blured augs}
     \label{fig:output4}
   \end{figure}
@@ -674,104 +674,33 @@ Below images after data augmentation and normalisation of 3 channel version:
 Below images after data augmentation and normalisation of 1 channel version:
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/1dop1.png} % Adjust the width as needed
+  \includegraphics[width=0.9\linewidth]{figures/1_1.png} % Adjust the width as needed
   \caption{1dop1}
   \label{fig:1doutput1}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/1dop2.png} % Adjust the width as needed
-  \caption{1dop2}
-  \label{fig:1doutput2}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/1dop3.png} % Adjust the width as needed
+  \includegraphics[width=0.9\linewidth]{figures/1_2.png} % Adjust the width as needed
   \caption{1dop3}
   \label{fig:1doutput3}
 \end{figure}
 
 \section{Intermediate evaluation of SSL model}
-Evaluation of the SSL model depend on the  time series inference loss/metric, neverthless we can use other evaluation metrics such as downstream task like fine tuning classification loss trained upon the SSL. A common setup, which also verifies whether the model has learned generalized representations, is to perform Logistic Regression on the features. In other words, we learn a single, linear layer that maps the representations to a class prediction, where untreated, single dose, drug screened these 3 categories will be our classes. Since the base network is not changed during the training process, the model can only perform well if the representations of describe all features that might be necessary for the task. Further, we do not have to worry too much about overfitting since we have very few parameters that are trained. Hence, we might expect that the model can perform well even with very little data. We implemented a  simple pipeline for a  Logistic Regression setup where the images have been encoded in their feature vectors. 
-
-Note from SiCLR tutorial: If very little data is available, it might be beneficial to dynamically encode the images during training so that we can also apply data augmentations. However, the way we implement it here is much more efficient and can be trained within a few seconds. Further, using data augmentations did not show any significant gain in this simple setup.
-
-\textbf{Question: in the tutorial simclr trained on different distribution and logistic regression trained on different distribution, should we do the same? Does it matter?} 
-
-\[
-\text{cos\_sim} = \begin{bmatrix} 
--9e15 & 0.2 & 0.3 & 0.4 & 0.9 & 0.5 & 0.1 & 0.6 \\ 
-0.2 & -9e15 & 0.1 & 0.4 & 0.5 & 0.3 & 0.9 & 0.2 \\ 
-0.3 & 0.1 & -9e15 & 0.7 & 0.6 & 0.2 & 0.1 & 0.8 \\ 
-0.4 & 0.4 & 0.7 & -9e15 & 0.9 & 0.5 & 0.2 & 0.1 \\ 
-0.9 & 0.5 & 0.6 & 0.9 & -9e15 & 0.7 & 0.3 & 0.2 \\ 
-0.5 & 0.3 & 0.2 & 0.5 & 0.7 & -9e15 & 0.6 & 0.4 \\ 
-0.1 & 0.9 & 0.1 & 0.2 & 0.3 & 0.6 & -9e15 & 0.5 \\ 
-0.6 & 0.2 & 0.8 & 0.1 & 0.2 & 0.4 & 0.5 & -9e15 
-\end{bmatrix}
-\]
-
-\[
-\text{pos\_mask} = \begin{bmatrix} 
-0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\ 
-0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
-1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
-0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
-0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
-0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 
-\end{bmatrix}
-\]
-
-\[
-\text{comb\_sim[0]} = \begin{bmatrix} 
-0.9, & 0.2, & 0.3, & 0.4, & -9e15, & 0.5, & 0.1, & 0.6
-\end{bmatrix}
-\]
-
-\[
-\text{comb\_sim} = \begin{bmatrix} 
-0.9 & 0.2 & 0.3 & 0.4 & -9e15 & 0.5 & 0.1 & 0.6 \\ 
-0.5 & 0.3 & 0.1 & 0.4 & -9e15 & 0.5 & 0.9 & 0.2 \\ 
-0.6 & 0.1 & 0.7 & 0.4 & -9e15 & 0.3 & 0.2 & 0.8 \\ 
-0.9 & 0.4 & 0.7 & 0.8 & -9e15 & 0.6 & 0.1 & 0.4 \\ 
-0.7 & 0.5 & 0.9 & 0.1 & -9e15 & 0.6 & 0.2 & 0.4 \\ 
-\end{bmatrix}
-\]
-
-
-
-\subsection{Further variations}
-Further variations that we can try: 
-
-1. train a Logistic Regression model for datasets with only 10, 20, 30, and all  examples per class. This gives us an intuition on how well the representations learned by contrastive learning can be transfered to a image recognition task like this classification.
-
-$\square$ think about another model other than to evaluate the trained simclr (example siamese netwrok) maybe not with classification problem.
-
-2. As a baseline to our results above, we can train a standard ResNet-18 with random initialization on the labeled training set. The results will give us an indication of the advantages that contrastive learning on unlabeled data has compared to using only supervised training.
-
-\textbf{Question: Does this 2 variations really helps to evaluate SSL model in our case?} 
-\subsection{Baseline comparison}
+1. Evaluation of the SSL model depend on the  time series inference loss/metric, neverthless we can use other evaluation metrics such as downstream task like fine tuning classification loss trained upon the SSL. A common setup, which also verifies whether the model has learned generalized representations, is to perform Logistic Regression on the features. In other words, we learn a single, linear layer that maps the representations to a class prediction, where untreated, single dose, drug screened these 3 categories will be our classes. Since the base network is not changed during the training process, the model can only perform well if the representations of describe all features that might be necessary for the task. Further, we do not have to worry too much about overfitting since we have very few parameters that are trained. Hence, we might expect that the model can perform well even with very little data. We implemented a  simple pipeline for a  Logistic Regression setup where the images have been encoded in their feature vectors. 
+2. Baseline comparison:
 As a baseline to our results above, we will train a standard ResNet-18 with random initialization on the labeled training set of untreated, single dose,drug screened. The results will give us an indication of the advantages that contrastive learning on unlabeled data has compared to using only supervised training.
 
 It is clear that the ResNet easily overfits on the training data since its parameter count is more than 1000 times larger than the dataset size. To make the comparison to the contrastive learning models fair, we apply data augmentations similar to the ones we used before: horizontal flip, crop-and-resize, grayscale, and gaussian blur. 
 
-Note: in MG tutorial, Color distortions as before are not used because the color distribution of an image showed to be an important feature for the classification. Hence, in mg tutorial they observed no noticeable performance gains when adding color distortions to the set of augmentations.
 
-\textbf{Question: Does this color distortion matters in our gray scale image, need to look what exactly color distortion do to the cell grains (we like to add color distortion for the background changes but it should not effect the cell grains color?} 
 
-Similarly, we restrict  the scale is restricted to between 80 percentage and 100 percentage of the original image size. This is because, for classification, the model needs to recognize the full object, while in contrastive learning, we only want to check whether two patches belong to the same image/object. contrast transforms might lead to more aggressive cropping, possibly capturing smaller parts of the image, which could increase the difficulty for a model to learn specific features. Hence, the chosen augmentations below are overall weaker than in the contrastive learning case.
-The training function for the ResNet is almost identical to the Logistic Regression setup. Note that we allow the ResNet to perform validation every 2 epochs to also check whether the model overfits strongly in the first iterations or not.
+\chapter{Furture works}\label{ch:Furture works}
+
+
+
 \section{Time series prediction model}
 \section{Integrated/ensembled model: SSL+Time series model}
-
-\chapter{To Do}\label{ch:To Do}
-$\square$ Check untreated images in treated image folder ( Data preperation) check for mismatch 
-
-$\checkmark$ Checked box: 
 \chapter{Conclusion}\label{ch:Conclusion}
 
 These methodological steps collectively form the framework for addressing critical research questions and challenges throughout the course of this thesis. By exploring the dataset, assessing models, and developing custom architecture, we aim to to assess drug efficacy by ranking different drug combinations and concentrations.
