@@ -508,7 +508,7 @@ Interestingly, for 16-bit images with 3 channels, instead of a reduction, there 
   \label{fig:16bit_n one}
 \end{figure}
 
-$49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of darker regions, as seen in the image above. One potential solution is to experiment with specific parameters within the color jitter transform, instead of using random values, to ensure that the reduction in the number of unique pixel values does not exceed, say, $30\%$. Another option would be to write a custom Python function or use TensorFlow transformations, depending on the available time. Other augmentations from pytorch works fine.
+$49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of darker regions, as seen in the image above. One potential solution is to experiment with specific parameters within the color jitter transform, instead of using random values, to ensure that the reduction in the number of unique pixel values does not exceed, say, $30\%$. Another option would be to write a custom Python functions using, depending on the available time. Other augmentations from pytorch works fine.
 
 \section{Training SSL model}
 
@@ -637,20 +637,22 @@ In the second variation, we take a 3-channel image and compute the sharpness of 
   \item torch.Size([16, 20])  (Batch size, no of values in feature vector)  
   \item No of values in feature vector is a variable which we can change and experiment which will give better accuracy.
 \end{itemize}
-Below images after data augmentation and normalisation of 3 channel version:
 
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/3_1.png} % Adjust the width as needed
-    \caption{op1}
-    \label{fig:out_2}
-  \end{figure}
+The figure below shows the anchor and its two augmented versions as explained in section \ref{subsec:data preprocessing}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/3_1.png} % Adjust the width as needed
+  \caption{Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}
+  \label{fig:augmentation}
+\end{figure}
+
 
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{figures/3_2fine.png} % Adjust the width as needed
-    \caption{Blured augs}
-    \label{fig:output4}
+    \caption{Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}
+    \label{fig:augmentations}
   \end{figure}
 \subsubsection{Variation 2:}
 
@@ -661,7 +663,7 @@ Below images after data augmentation and normalisation of 3 channel version:
 \end{itemize}
 \textbf{Model output just after convolution layers: (before applying projetion head)} 
 \begin{itemize}
-  \item torch.Size([16, 512]) (Batch size, standard resnet18 output dimension after avg pooling)   
+  \item torch.Size([16, 512, 1, 1]) (Batch size, standard resnet18 output dimension after avg pooling, H, W)   
   \item This output feature will be used for further downstream task.  \vspace{1em}
 \end{itemize}
 
@@ -671,23 +673,24 @@ Below images after data augmentation and normalisation of 3 channel version:
   \item No of values in feature vector is a variable which we can change and experiment which will give better accuracy.
 \end{itemize}
 
-Below images after data augmentation and normalisation of 1 channel version:
+The figure below shows the anchor and its two augmented versions as explained in section \ref{subsec:data preprocessing}.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/1_1.png} % Adjust the width as needed
-  \caption{1dop1}
+  \caption{Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}
   \label{fig:1doutput1}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/1_2.png} % Adjust the width as needed
-  \caption{1dop3}
+  \caption{Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}
   \label{fig:1doutput3}
 \end{figure}
 
 \section{Intermediate evaluation of SSL model}
-1. Evaluation of the SSL model depend on the  time series inference loss/metric, neverthless we can use other evaluation metrics such as downstream task like fine tuning classification loss trained upon the SSL. A common setup, which also verifies whether the model has learned generalized representations, is to perform Logistic Regression on the features. In other words, we learn a single, linear layer that maps the representations to a class prediction, where untreated, single dose, drug screened these 3 categories will be our classes. Since the base network is not changed during the training process, the model can only perform well if the representations of describe all features that might be necessary for the task. Further, we do not have to worry too much about overfitting since we have very few parameters that are trained. Hence, we might expect that the model can perform well even with very little data. We implemented a  simple pipeline for a  Logistic Regression setup where the images have been encoded in their feature vectors. 
+Evaluation of the SSL model depend on the  time series inference loss/metric, neverthless we can use other evaluation metrics such as downstream task like fine tuning classification loss trained upon the SSL. A common setup, which also verifies whether the model has learned generalized representations, is to perform Logistic Regression on the features. In other words, we learn a single, linear layer that maps the representations to a class prediction, where untreated, single dose, drug screened these 3 categories will be our classes. Since the base network is not changed during the training process, the model can only perform well if the representations of describe all features that might be necessary for the task. Further, we do not have to worry too much about overfitting since we have very few parameters that are trained. Hence, we might expect that the model can perform well even with very little data. We implemented a  simple pipeline for a  Logistic Regression setup where the images have been encoded in their feature vectors. 
+
 2. Baseline comparison:
 As a baseline to our results above, we will train a standard ResNet-18 with random initialization on the labeled training set of untreated, single dose,drug screened. The results will give us an indication of the advantages that contrastive learning on unlabeled data has compared to using only supervised training.
 
@@ -696,9 +699,6 @@ It is clear that the ResNet easily overfits on the training data since its param
 
 
 \chapter{Furture works}\label{ch:Furture works}
-
-
-
 \section{Time series prediction model}
 \section{Integrated/ensembled model: SSL+Time series model}
 \chapter{Conclusion}\label{ch:Conclusion}
