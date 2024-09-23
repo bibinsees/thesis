@@ -362,36 +362,20 @@ SupCon \cite{khosla2021supervised} extends the self-supervised batch contrastive
 Due to its specificity, fluorescence microscopy has become a quintessential imaging tool in cell biology. However, photobleaching, phototoxicity and related artifacts continue to limit its utility. Recently, it has been shown that artificial intelligence (AI) can transform one form of contrast into another. Mikhail et al.\cite{Kandel_2020} present phase imaging with computational specificity (PICS), a combination of quantitative phase imaging (QPI) and AI, which provides information about unlabeled live cells with high specificity. By applying the computed fluorescence maps back to the QPI data, they measured the growth of both nuclei and cytoplasm independently over many days without loss of viability. This work could provide valuable insights for coupling fluorescent data with learned representations.
 
 \let\cleardoublepage\clearpage
-\chapter{Proposed methodologies}\label{ch:Proposed methodologies}
-We propose two different methodologies to approach the objective. The general idea of the proposed methodologies is to leverage representation learning of bright-field microscopy images to develop a ranking/ordering scale (1 to n) for these images. 
+\chapter{Methodology}\label{ch: Methodology}
+The goal is to leverage representation learning of bright-field microscopy images to develop a ranking/ordering scale (1 to n) for these images. 
 
-\section{Methodology 1}
-Step 1: Create a latent space representation of each image using contrastive learning techniques such as SimCLR, masked autoencoder, or any other self supervised architectures such as DINO that can effectively help learn the efficient features of alterations induced in three-dimensional tumor tissue models by the impact of drug application over a period of time.
-
-Step 2: Train a time series prediction model exclusively on the representations of untreated images from Day 7 to Day 10 to predict the representation of Day 10 image.
-
-Step 3: Perform inference on the representations of test images, which include untreated, clinically recommended, and drug screening images.
+\begin{enumerate}
+  \item \textbf{Step 1:} Create a latent space representation of each image using contrastive learning techniques such as SimCLR, masked autoencoder, or any other self-supervised architectures such as DINO that can effectively help learn the efficient features of alterations induced in three-dimensional tumor tissue models by the impact of drug application over a period of time.
+  
+  \item \textbf{Step 2:} Train a time series prediction model exclusively on the representations of untreated images from Day 7 to Day 10 to predict the representation of the Day 10 image.
+  
+  \item \textbf{Step 3:} Perform inference on the representations of test images, which include untreated, clinically recommended, and drug screening images.
+\end{enumerate}
 
 Since the time series model is trained solely on the representations of untreated images, the inference loss/metric (i.e., the difference between the predicted and actual Day 10 image representations) will be very small for untreated images. Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of untreated images. This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. Determining a reasonable inference loss/metric will be one of the research problems to tackle.
-\section{Methodology 2}
-
-This ranking/ordering scale categorizes the images into two distinct groups, ordered as follows:
-
-The first group includes treated images where no explosion of tissue has occurred due to the drug impact (i.e., the tissue still maintain complete circularity after drug application). These images are ranked/ordered from 1 to x based on the percentage of tumor deterioration in ascending order, as observed on day 10.
-
-The second group comprises treated images where tissue explosion has occurred, assuming that the tumor is potentially 100 percentage killed in every image in this group. These images are ranked/ordered from x+1 to n based on the degree of tumor tissue explosion (from less exploded to highly exploded), which can be learned using classical computer vision techniques like boundary detection, representing the ends of the scale.
-
-This percentage of tumor deterioration is determined through a comparative study of 3D fluorescence microscopy or luminescent cytotoxicity assays between 30 untreated samples and 30 samples treated with the specific drug combination from a half-divided well plate setup.
-
-In order to couple the  percentage of tumor deterioration data with bright-field microscopy images, first, use a self-supervised, unsupervised, or supervised base neural network such as as DINO\cite{caron2021emerging}, SimCLR\cite{chen2020simple}, SupCon\cite{khosla2021supervised} or ConVIRT\cite{zhang2022contrastive}, to learn the latent space representation of all images. Subsequently, we will train a ranking model on top of this frozen base network to rank each image according to the corresponding percentage of tumor deterioration. 
-
-
-In this ranking scale, x and n are natural numbers that define the boundaries and transitions between the groups, ensuring a systematic and comprehensible ranking from untreated to completely exploded tumor images.
-
-Advantage of training AI in a supervised setting is the ability to circumvent the need for invasive and expensive 3D fluorescent microscopy images or luminescent cytotoxicity assays, as these data are already trained to correlate with bright-field microscopy images. Consequently, when new bright-field microscopy images are introduced as test data, we can predict the percentage of tumor deterioration.
 
 \chapter{Experiments}\label{ch:Experiments}
-We decided to proceed with methodology 1.
 \section{Data set}
 \label{sec:Data set}
 
