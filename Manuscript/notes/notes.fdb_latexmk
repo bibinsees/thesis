@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber notes"] 1727093424.00051 "notes.bcf" "notes.bbl" "notes" 1727096845.54817 0
+["biber notes"] 1727100675.11384 "notes.bcf" "notes.bbl" "notes" 1727103579.15983 0
   "bibliography.bib" 1727089977 6258 2655ae6bc7522b92bc67fa84d34f3972 ""
-  "notes.bcf" 1727096845 109680 df3402368c8029369648c782bae788ea "pdflatex"
+  "notes.bcf" 1727103578 109890 51532260229cf67c131208c87e086a57 "pdflatex"
   (generated)
   "notes.bbl"
   "notes.blg"
   (rewritten before read)
-["pdflatex"] 1727096840.68904 "c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex" "notes.pdf" "notes" 1727096845.54907 0
-  "c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex" 1727096835 56216 b70b3d229eec7fd704a7f89c3b9f3f12 ""
+["pdflatex"] 1727103574.54211 "c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex" "notes.pdf" "notes" 1727103579.16036 0
+  "c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex" 1727103573 55941 c7ac5747cda1444a418cac3588b0e926 ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1725352686 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1725353392 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1725355689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -63,7 +63,6 @@
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1725352092 36118 fad905eba93cff5bce1e185fe980a177 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1725352092 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1725352092 31764 459c573c03a4949a528c2cc7f557e217 ""
-  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1725352092 34694 870c211f62cb72718a00e353f14f254d ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1725352686 136101 b18d10b3436f8cb0cd04046deb340fe7 ""
   "c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1725354534 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2024/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1725352189 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -276,22 +275,20 @@
   "figures/Thesis timeline.png" 1725355452 42005 1d380b15c949c417c1cde2bf56171986 ""
   "figures/WellPlate.png" 1726668159 506634 8e0f2dc497948577418565fdbfec32fd ""
   "figures/drug_screened.png" 1725880222 513924 2e86a531a0751720c4600ca2969d3cdb ""
-  "figures/image.png" 1725455976 44711 3120cfc6397b7cd5186930ad518c3274 ""
   "figures/op1.png" 1725875668 201654 0009da32904e6ff59111b7970f7486d8 ""
   "figures/op4.png" 1725879071 84384 33b801de3fd577f874e84c8bbe1d4745 ""
   "figures/originals.png" 1726822295 626745 7005fbc152113992181cf8b096f540af ""
-  "figures/output3.png" 1725877804 90609 22eefd47c8a3719d9cb214e020920f2f ""
   "figures/platform setup.png" 1726661082 669736 7c3c871babc7f4071cf8a888dfc39ef9 ""
   "figures/robot.png" 1726661170 562739 f455e023f695f13f760b3c11a8ba3d66 ""
   "figures/singledose.png" 1726669823 287838 574e302207918253affde08144f63f3d ""
   "figures/threes.png" 1726822295 1077958 6f0b180e0b11013cd23fc45186482de1 ""
   "figures/timed.pdf" 1726822295 300879 4fad6b7c83495751128520cfdbd8762c ""
   "figures/transition.png" 1726822295 2185888 ee5b2c10f87af199354ccbcfd5e8e517 ""
-  "notes.aux" 1727096845 19981 8de3d275ba3ac9dc14972cf89f88ffc2 "pdflatex"
-  "notes.bbl" 1727093425 37190 14353452a705c3d14e1248a03aaddbdf "biber notes"
-  "notes.out" 1727096842 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "notes.run.xml" 1727096845 2314 a696957d26249a411647802c4a193eb7 "pdflatex"
-  "notes.tex" 1727096835 56216 b70b3d229eec7fd704a7f89c3b9f3f12 ""
+  "notes.aux" 1727103578 19791 cc72051260d207bb59fb2c2d495667e0 "pdflatex"
+  "notes.bbl" 1727100676 37190 14353452a705c3d14e1248a03aaddbdf "biber notes"
+  "notes.out" 1727103576 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "notes.run.xml" 1727103578 2314 a696957d26249a411647802c4a193eb7 "pdflatex"
+  "notes.tex" 1727103573 55941 c7ac5747cda1444a418cac3588b0e926 ""
   (generated)
   "notes.aux"
   "notes.bcf"

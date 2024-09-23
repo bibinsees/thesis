@@ -2387,7 +2387,10 @@
     <bcf:citekey order="13" intorder="1">chen2020simple</bcf:citekey>
     <bcf:citekey order="14" intorder="1">he2015deepresiduallearningimage</bcf:citekey>
     <bcf:citekey order="15" intorder="1">chen2020simple</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">ronneberger2015unetconvolutionalnetworksbiomedical</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">chen2020simple</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">chen2020simple</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">chen2020simple</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">ronneberger2015unetconvolutionalnetworksbiomedical</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

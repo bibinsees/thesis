@@ -522,7 +522,7 @@ Why we would like to try other models? Because SimCLR demands larger batch size 
 \label{subsec:data preprocessing}
 
 Detailed study/research/experiments on data augmentation and image preprocessing techniques sepcifically for our 16 bit gray scale image are still need to be done.
-At the moment since we are trying to create the full pipe line first we used standard data augmentations from SimCLR \cite{chen2020simple} paper.
+Currently, as the focus is on creating the complete pipeline, the standard data augmentation combination (which showed high performance for SimCLR downstream tasks) from the SimCLR \cite{chen2020simple} paper is being used, as shown below.
 
 1. Normalize the 16-bit image to [0, 1] ( torch.transform.color jitterness didn't work without scaled data)
 
@@ -547,7 +547,7 @@ The training process follows these steps:
 \begin{enumerate}
     \item We take a batch of images with batch size $N$.
     
-    \item Our dataset class returns two augmented versions for each original image as explained in section \ref{sec:data_preprocessing} in the batch, resulting in $2N$ images as input.
+    \item Our dataset class returns two augmented versions for each original image as explained in section \ref{subsec:data preprocessing} in the batch, resulting in $2N$ images as input.
 
     \item The model produces $2N$ latent representations, independently for each augmented image.
 
@@ -566,7 +566,7 @@ which we can reformualte as:
 
 1. Apply the logarithm: The negative log of a fraction can be separated into the difference of the logarithms:
 \[
-\ell_{i, j} = -\left( \log \left(\exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_j\right) / \tau\right)\right) - \log\left( \sum_{k=1}^{2 N} \mathbb{1}_{[k \neq i]} \exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_k\right) / \tau\right) \right) \right)
+\ell_{i, j} = -\left( \log \left(\exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_j\right) / \tau\right)\right) - \log\left( \sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_k\right) / \tau\right) \right) \right)
 \]
 
 2. Simplifying the first term: The logarithm of an exponential function simplifies as follows:
@@ -590,31 +590,28 @@ where \(\mathbf{1}_{[k \neq i]} \in \{0, 1\}\) is an indicator function evaluati
 
 Equation \ref{eq:loss} implemented as the loss function in our experiments.
 
-The above standard simclr loss function with resnet model will be consideres as benchmark. and in future we will also explore the below variations.
+The above standard SimCLR loss function and data augmentation combination  with the ResNet18 model will be used as the initial benchmark for experiments, and in the future, the following variations will be explored.
 
-\textbf{variation ideas:}
+\textbf{Variation ideas:}
 
-1. Each image considered as rgb since we have 3 channel + 2 std augs
+\begin{enumerate}
+  \item Explore different data augmentation combinations by researching the best augmentations for medical grayscale images, and applying intuitive approaches beyond the standard SimCLR \cite{chen2020simple} data augmentation combinations as explained in section \ref{subsec:data preprocessing}.
+  \item Each image is treated as an RGB image with 3 channels, and two of the best-performing data augmentations, which yielded high performance for the our downstream task.
 
-2. 1 channel considered as anchor(most sharped layer) others as 2 anchors.
+  \item One channel is considered as the anchor (the most sharpened layer), and the others are treated as the two augmentations.
+  \item One channel is considered as the anchor (the most sharpened layer), and two of the best-performing data augmentations, which yielded high performance for the our downstream task.
 
-3. Each image considered as rgb since we have 3 channel + more than 2 std augs ( research for medical gray scale images )
+  \item Apply more than two standard augmentations to meet the large batch size requirement of SimCLR \cite{chen2020simple}.
 
-4. Include anchor as positive , ie 3 augs  toal ( 1 anchor as aug other 2 layers as augs)
+  \item Remove the positive sample \( j \) from the denominator of the loss function. Since \( j \) is the only image as a positive sample in the sum of the denominator softmax, its contribution will be less.
 
-5. For variations 3 and 4 we need to modify the loss since ce won't work. increasing augs of positive pair in these variation will help to increase the batch size.
+  \item Supervised SimCLR: Ensure that no images from the same breed/class are included in the negative samples.
+  \item Since SimCLR architecture \cite{chen2020simple} allows for flexibility in model selection, and explore other pretrained models  than Resnet18  suitable for medical grayscale images. For example pretrained U-Net \cite{ronneberger2015unetconvolutionalnetworksbiomedical} model for MRI brain images from PyTorch.  
+  \item Include the anchor as a positive sample, i.e., 3 augmentations in total (1 anchor as augmentation and the other 2 layers as augmentations). This resembles to triplet loss (not sure, need to be studied)  
+\end{enumerate}
+For variations 5 and 9 we need to modify the loss function since it includes more than 2 augmentations.
 
-6. Another way to increase the bacth size is to increase the augs for dissimilar images in the batch.
-
-5. Remove positive sample j from denominator of loss fn. Since j is the  only one image as positive sample in the sum of denominator softmax its contribution will be less.
-
-6. Supervised Simclr: Make sure no same breed/class images in the negative samples. Does this increase the confidence score for 1's in the cross entropy loss? or does this suppress confidence score for dissimilar one forcly? because in our case we get similar images from 2 different class 
-
-7. Try another loss fn like Triplet loss this already shown in the orig paper.
-
-8. The SimCLR architecture allows for flexibility in model selection, and experiments have been conducted using a pretrained ResNet-18  and a U-Net \cite{ronneberger2015unetconvolutionalnetworksbiomedical} from PyTorch. Future work will explore additional pretrained models suitable for medical grayscale images.  
-
-\textbf{variations implementations:}
+\textbf{Variations implementations:}
 
 The two variations tried so far differ only in how they handle the image for data augmentation. 
 
@@ -622,22 +619,25 @@ In the first variation, we take a 3-channel image and treat it like a standard R
 
 In the second variation, we take a 3-channel image and compute the sharpness of each layer by calculating the magnitude of the gradient of pixel intensities in the x and y directions, which indicates edge strength and provides a measure of how sharp the transitions between pixel values are. The sharpest layer is used as the anchor, while the other two layers are treated as augmentations. 
 
-(need edit from here)
-story should start from here:
-In both cases, as per the SimCLR architecture, the augmented versions are then fed into a pretrained ResNet18 model.
-
 \subsubsection{Variation 1:}
-\textbf{Input to model (train loader dimensions) :} 
+\textbf{Input to model (train loader dimension) :} 
 
-  aug1: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H*W)
+\begin{itemize}
+  \item aug1: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H, W)
+  \item aug2: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H, W) \vspace{1em}
+\end{itemize} \vspace{1em}
+\textbf{Model output just after convolution layers: (before applying projetion head)} 
+\begin{itemize}
+  \item torch.Size([16, 512, 1, 1]) (Batch size, standard resnet18 output dimension after avg pooling, H,W)   
+  \item This output feature will be used for further downstream task.  \vspace{1em}
+\end{itemize}
 
-  aug2: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H*W)
-
-  \textbf{Model output just after convolution layers: (before applying projetion head):} [32, 512]  (Batch size, standard resnet18 output dimension after avg pooling)   This output feature will be used for further downstream task.
-
-  \textbf{Model output after projection head:} torch.Size([16, 20]) (Batch size, no of values in feature vector) 2*Batch size is due to the concatenation of aug1 images and aug2 images for the efficient/smart way to calculate the loss. No of values in feature vector is a variable which we can change and experiment which will give better accuracy. This output feed to loss function to train model to reduce the loss there by increase the cosine similarity between positive samples in the batch.
-   
-  Below images after data augmentation and normalisation of 3 channel version:
+\textbf{Model output after projection head:}
+\begin{itemize}
+  \item torch.Size([16, 20])  (Batch size, no of values in feature vector)  
+  \item No of values in feature vector is a variable which we can change and experiment which will give better accuracy.
+\end{itemize}
+Below images after data augmentation and normalisation of 3 channel version:
 
   \begin{figure}[H]
     \centering
@@ -648,36 +648,29 @@ In both cases, as per the SimCLR architecture, the augmented versions are then f
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{figures/output3.png} % Adjust the width as needed
-    \caption{op3}
-    \label{fig:output3}
-  \end{figure}
-
-  \begin{figure}[H]
-    \centering
     \includegraphics[width=0.9\linewidth]{figures/op4.png} % Adjust the width as needed
     \caption{Blured augs}
     \label{fig:output4}
   \end{figure}
-
-Results:
-Task of the model traiining is to reduce the loss thereby increase the cosine similarity of similar/positives images in the batch.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/image.png} % Adjust the width as needed
-  \caption{batchsize: 16}
-  \label{fig:batch 16}
-\end{figure}
 \subsubsection{Variation 2:}
+
 \textbf{Input to model (train loader dimensions) :} 
+\begin{itemize}
+   \item aug1: torch.Size([16, 1, 96, 96])        (batch size, no of channels, H, W)
+   \item aug2: torch.Size([16, 1, 96, 96])        (batch size, no of channels, H, W) \vspace{1em}
+\end{itemize}
+\textbf{Model output just after convolution layers: (before applying projetion head)} 
+\begin{itemize}
+  \item torch.Size([16, 512]) (Batch size, standard resnet18 output dimension after avg pooling)   
+  \item This output feature will be used for further downstream task.  \vspace{1em}
+\end{itemize}
 
-  aug1: torch.Size([16, 1, 96, 96])        (batch size, no of channels, H*W)
+\textbf{Model output after projection head:}
+\begin{itemize}
+  \item torch.Size([16, 20])  (Batch size, no of values in feature vector)  
+  \item No of values in feature vector is a variable which we can change and experiment which will give better accuracy.
+\end{itemize}
 
-  aug2: torch.Size([16, 1, 96, 96])        (batch size, no of channels, H*W)
-
-  \textbf{Model output just after convolution layers: (before applying projetion head):} [32, 512]  (Batch size, standard resnet18 output dimension after avg pooling)   This output feature will be used for further downstream task.
-
-  \textbf{Model output after projection head:} torch.Size([16, 20]) (Batch size, no of values in feature vector)  2*Batch size is due to the concatenation of aug1 images and aug2 images for the efficient/smart way to calculate the loss. No of values in feature vector is a variable which we can change and experiment which will give better accuracy. This output feed to loss function to train model to reduce the loss there by increase the cosine similarity between positive samples in the batch.
 Below images after data augmentation and normalisation of 1 channel version:
 \begin{figure}[H]
   \centering
@@ -699,6 +692,7 @@ Below images after data augmentation and normalisation of 1 channel version:
   \caption{1dop3}
   \label{fig:1doutput3}
 \end{figure}
+
 \section{Intermediate evaluation of SSL model}
 Evaluation of the SSL model depend on the  time series inference loss/metric, neverthless we can use other evaluation metrics such as downstream task like fine tuning classification loss trained upon the SSL. A common setup, which also verifies whether the model has learned generalized representations, is to perform Logistic Regression on the features. In other words, we learn a single, linear layer that maps the representations to a class prediction, where untreated, single dose, drug screened these 3 categories will be our classes. Since the base network is not changed during the training process, the model can only perform well if the representations of describe all features that might be necessary for the task. Further, we do not have to worry too much about overfitting since we have very few parameters that are trained. Hence, we might expect that the model can perform well even with very little data. We implemented a  simple pipeline for a  Logistic Regression setup where the images have been encoded in their feature vectors. 
 
