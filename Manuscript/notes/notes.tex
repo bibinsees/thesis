@@ -596,7 +596,7 @@ The above standard SimCLR loss function and data augmentation combination  with 
 
 \begin{enumerate}
   \item Explore different data augmentation combinations by researching the best augmentations for medical grayscale images, and applying intuitive approaches beyond the standard SimCLR \cite{chen2020simple} data augmentation combinations as explained in section \ref{subsec:data preprocessing}.
-  \item Each image is treated as an RGB image with 3 channels, and two of the best-performing data augmentations, which yielded high performance for the our downstream task.
+  \item Each image is treated as an RGB image with 3 channels, and two of the best-performing data augmentations, which yielded high performance for our downstream task.
 
   \item One channel is considered as the anchor (the most sharpened layer), and the others are treated as the two augmentations.
   \item One channel is considered as the anchor (the most sharpened layer), and two of the best-performing data augmentations, which yielded high performance for the our downstream task.
@@ -611,7 +611,7 @@ The above standard SimCLR loss function and data augmentation combination  with 
 \end{enumerate}
 For variations 5 and 9 we need to modify the loss function since it includes more than 2 augmentations.
 
-\textbf{Variations implementations:}
+\textbf{Variations implementations:}  \label{sec:variations_implementations}
 
 The two variations tried so far differ only in how they handle the image for data augmentation. 
 
@@ -689,13 +689,11 @@ The figure below shows the anchor and its two augmented versions as explained in
 \end{figure}
 
 \section{Intermediate evaluation of SSL model}
-Evaluation of the SSL model depend on the  time series inference loss/metric, neverthless we can use other evaluation metrics such as downstream task like fine tuning classification loss trained upon the SSL. A common setup, which also verifies whether the model has learned generalized representations, is to perform Logistic Regression on the features. In other words, we learn a single, linear layer that maps the representations to a class prediction, where untreated, single dose, drug screened these 3 categories will be our classes. Since the base network is not changed during the training process, the model can only perform well if the representations of describe all features that might be necessary for the task. Further, we do not have to worry too much about overfitting since we have very few parameters that are trained. Hence, we might expect that the model can perform well even with very little data. We implemented a  simple pipeline for a  Logistic Regression setup where the images have been encoded in their feature vectors. 
+Evaluation of the SSL model depends on the  time series inference loss/accuracy metric, neverthless we can use other evaluation metrics, such as downstream task like classification. 
 
-2. Baseline comparison:
-As a baseline to our results above, we will train a standard ResNet-18 with random initialization on the labeled training set of untreated, single dose,drug screened. The results will give us an indication of the advantages that contrastive learning on unlabeled data has compared to using only supervised training.
+1. A common approach to verify whether the SSL model has learned generalized representations is to perform Logistic Regression on the learned features. In other words, we use a single, linear layer that maps these representations to class predictions, where the two categories, 'untreated' and 'single dose,' serve as our classes. The Logistic Regression model can only perform well if the learned representations capture all the relevant features necessary for the task. Moreover, we don't need to worry much about overfitting since only a few parameters are trained. Therefore, we expect the model to perform well even with limited data. We implemented a simple pipeline for a Logistic Regression setup, where the images are encoded into their feature vectors.
 
-It is clear that the ResNet easily overfits on the training data since its parameter count is more than 1000 times larger than the dataset size. To make the comparison to the contrastive learning models fair, we apply data augmentations similar to the ones we used before: horizontal flip, crop-and-resize, grayscale, and gaussian blur. 
-
+2. Baseline comparison: As a baseline for comparison  to our results above in the section \ref{sec:variations_implementations}, we will train a standard ResNet-18 with random initialization on the labeled training set, consisting of the 'untreated' and 'single dose' categories. The results will help us assess the advantages of contrastive learning on unlabeled data compared to purely supervised training. It is evident that ResNet-18 easily overfits the training data since its parameter count is over 1,000 times larger than the dataset size. To ensure a fair comparison with the contrastive learning models, we apply similar data augmentations as before, including crop-and-resize and color jittering.
 
 
 \chapter{Furture works}\label{ch:Furture works}
