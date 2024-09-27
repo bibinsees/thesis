@@ -508,7 +508,7 @@ Interestingly, for 16-bit images with 3 channels, instead of a reduction, there 
   \label{fig:16bit_n one}
 \end{figure}
 
-$49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of darker regions, as seen in the image above. One potential solution is to experiment with specific parameters within the color jitter transform, instead of using random values, to ensure that the reduction in the number of unique pixel values does not exceed, say, $30\%$. Another option would be to write a custom Python functions using, depending on the available time. Other augmentations from pytorch works fine.
+$49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of darker regions as happened in original image, as  as observed in figure \ref{fig:16bit_n one}. One potential solution is to experiment with specific parameters within the color jitter transform instead of using random values, ensuring that the reduction in the number of unique pixel values does not exceed, for example, $30\%$. Another option would be to write a custom Python function, depending on the available time. Other augmentations from PyTorch work fine in this experiment.
 
 \section{Training SSL model}
 
@@ -524,17 +524,29 @@ Why we would like to try other models? Because SimCLR demands larger batch size 
 Detailed study/research/experiments on data augmentation and image preprocessing techniques sepcifically for our 16 bit gray scale image are still need to be done.
 Currently, as the focus is on creating the complete pipeline, the standard data augmentation combination (which showed high performance for SimCLR downstream tasks) from the SimCLR \cite{chen2020simple} paper is being used, as shown below.
 
-1. Normalize the 16-bit image to [0, 1] ( torch.transform.color jitterness didn't work without scaled data)
+\begin{enumerate}
+  \item Normalize the 16-bit image to [0, 1] for the following reasons:
+  \begin{enumerate}
+      \item Ideally, normalization should be done at the end after augmentations to ensure scaled input to the neural network, but in our case, we have to normalize first since the augmentation with \texttt{torch.transform.ColorJitter} didn't work without scaled data.
+      \item \texttt{torch.transform.ToTensor()} didn't scale the data points to the [0, 1] range.
+  \end{enumerate}
+  
+  \item Perform the following augmentations:
+  \begin{enumerate}
+      \item Apply a horizontal flip.
+      \item Randomly crop the image and resize it to $96 \times 96$.
+      \item Randomly change the brightness, contrast, saturation, and hue of the cropped patch.
+  \end{enumerate}
 
-2. Do the following augmentations:
+  \item Perform Z-score normalization after data augmentation for the following reasons:
+  \begin{enumerate}
+      \item Pretrained models require this preprocessing.
+      \item It ensures that the data is still normalized even after data augmentation tweaks, allowing for effective feeding into the neural network.
+  \end{enumerate}
 
-      1. Do a horizontal flip.
+  \item For each original image, repeat step 2 twice to obtain two augmented images.
+\end{enumerate}
 
-      2. Crop the image randomly, And resize it to $96\times 96$.
-
-      3. Randomly change the brightness, contyrast, saturation and hue of the croped patch.
-
-3. For each original image we do the step 2 twice to get two augmentated images.
 
 Visualisation of before and after preprocessing of image shown in figures 6.5 to 6.11.
 
