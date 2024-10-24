@@ -1,8 +1,8 @@
-PWD c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes
+PWD c:/Users/k54739/Bibin/thesis/Manuscript/notes
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/k54739/Bibin Babu/thesis/Manuscript/notes/notes.tex
+INPUT c:/Users/k54739/Bibin/thesis/Manuscript/notes/notes.tex
 OUTPUT notes.log
 INPUT c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbook.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbook.cls

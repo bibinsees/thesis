@@ -701,6 +701,14 @@ The figure below shows the anchor and its two augmented versions as explained in
 \end{figure}
 
 \section{Intermediate evaluation of SSL model}
+**suppose I have a vector of image. if I normalise it unit length, willl I loose critical information?**
+
+**https://chatgpt.com/share/671a6a63-ca7c-8010-92a0-23b6bd25ef05**
+
+**if we do kmeans withcosine distance distance then it only compare cosine sim of whole image thats why we need to do normal kmeans with euclidean dist to show the magnitude similarity** 
+
+**thats why we need to do instance segmantation and classifiacation to see if it able to learn more than magnitude similarity and cosine similarity like as texture, contrast, and brightness**
+
 Evaluation of the SSL model depends on the  time series inference loss/accuracy metric, neverthless we can use other evaluation metrics, such as downstream task like classification. 
 
 1. A common approach to verify whether the SSL model has learned generalized representations is to perform Logistic Regression on the learned features. In other words, we use a single, linear layer that maps these representations to class predictions, where the two categories, 'untreated' and 'single dose,' serve as our classes. The Logistic Regression model can only perform well if the learned representations capture all the relevant features necessary for the task. Moreover, we don't need to worry much about overfitting since only a few parameters are trained. Therefore, we expect the model to perform well even with limited data. We implemented a simple pipeline for a Logistic Regression setup, where the images are encoded into their feature vectors.
