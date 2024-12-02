@@ -19,71 +19,74 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
-    \entry{anthropic2024contextual}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=f431db65cea024a5f19eab835afefee2}{%
-           family={Anthropic},
-           familyi={A\bibinitperiod}}}%
+    \entry{Dembski2023Establishing}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=d3575ba2898bbae85c4b78a3290b931a}{%
+           family={Dembski},
+           familyi={D\bibinitperiod},
+           given={Sofia},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b282cbf50d1880990791fbc4d63aeb80}{%
+           family={Schwarz},
+           familyi={S\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=198a0449642d5afe693b7ce00672b096}{%
+           family={Oppmann},
+           familyi={O\bibinitperiod},
+           given={Maximilian},
+           giveni={M\bibinitperiod}}}%
+        {{hash=818c025eda8c973a0bba21a1ee33a1eb}{%
+           family={Bandesha},
+           familyi={B\bibinitperiod},
+           given={Shahbaz\bibnamedelima Tareq},
+           giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=34f5af2150131a8c660d21c0040cda91}{%
+           family={Schmid},
+           familyi={S\bibinitperiod},
+           given={Jörn},
+           giveni={J\bibinitperiod}}}%
+        {{hash=170cf86db416019d8770664dc12bc4f4}{%
+           family={Wenderoth},
+           familyi={W\bibinitperiod},
+           given={Sarah},
+           giveni={S\bibinitperiod}}}%
+        {{hash=521b977849fd6ab3a232b65897d310cf}{%
+           family={Mandel},
+           familyi={M\bibinitperiod},
+           given={Karl},
+           giveni={K\bibinitperiod}}}%
+        {{hash=448027dcb03628d37d8752cac209f63b}{%
+           family={Hansmann},
+           familyi={H\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
       }
-      \strng{namehash}{f431db65cea024a5f19eab835afefee2}
-      \strng{fullhash}{f431db65cea024a5f19eab835afefee2}
-      \strng{fullhashraw}{f431db65cea024a5f19eab835afefee2}
-      \strng{bibnamehash}{f431db65cea024a5f19eab835afefee2}
-      \strng{authorbibnamehash}{f431db65cea024a5f19eab835afefee2}
-      \strng{authornamehash}{f431db65cea024a5f19eab835afefee2}
-      \strng{authorfullhash}{f431db65cea024a5f19eab835afefee2}
-      \strng{authorfullhashraw}{f431db65cea024a5f19eab835afefee2}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \strng{namehash}{c217e7b8a04cb10f6df696ce7f106b4f}
+      \strng{fullhash}{01cb85af1227b076a7a5eb52fffef116}
+      \strng{fullhashraw}{01cb85af1227b076a7a5eb52fffef116}
+      \strng{bibnamehash}{c217e7b8a04cb10f6df696ce7f106b4f}
+      \strng{authorbibnamehash}{c217e7b8a04cb10f6df696ce7f106b4f}
+      \strng{authornamehash}{c217e7b8a04cb10f6df696ce7f106b4f}
+      \strng{authorfullhash}{01cb85af1227b076a7a5eb52fffef116}
+      \strng{authorfullhashraw}{01cb85af1227b076a7a5eb52fffef116}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Accessed: 23-October-2024}
-      \field{title}{Introducing Contextual Retrieval}
-      \field{year}{2024}
+      \field{journaltitle}{Scientific Reports}
+      \field{title}{Establishing and testing a robot-based platform to enable the automated production of nanoparticles in a flexible and modular way}
+      \field{year}{2023}
       \verb{urlraw}
-      \verb https://www.anthropic.com/news/contextual-retrieval
+      \verb https://doi.org/10.1038/s41598-023-38535-6
       \endverb
       \verb{url}
-      \verb https://www.anthropic.com/news/contextual-retrieval
+      \verb https://doi.org/10.1038/s41598-023-38535-6
       \endverb
     \endentry
-    \entry{goodfellow2016deep}{book}{}{}
-      \name{author}{3}{}{%
-        {{hash=5d2585c11210cf1d4512e6e0a03ec315}{%
-           family={Goodfellow},
-           familyi={G\bibinitperiod},
-           given={Ian},
-           giveni={I\bibinitperiod}}}%
-        {{hash=40a8e4774982146adc2688546f54efb2}{%
-           family={Bengio},
-           familyi={B\bibinitperiod},
-           given={Yoshua},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
-           family={Courville},
-           familyi={C\bibinitperiod},
-           given={Aaron},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {MIT press}%
-      }
-      \strng{namehash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{fullhash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{fullhashraw}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{bibnamehash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{authorbibnamehash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{authornamehash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{authorfullhash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{authorfullhashraw}{3ae53fe582e8a815b118d26947eaa326}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Deep learning}
-      \field{year}{2016}
-    \endentry
   \enddatalist
+  \missing{anthropic2024contextual}
+  \missing{goodfellow2016deep}
 \endrefsection
 \endinput
 

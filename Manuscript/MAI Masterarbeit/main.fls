@@ -385,6 +385,8 @@ INPUT ./main.lof
 INPUT ./main.lof
 INPUT main.lof
 OUTPUT main.lof
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ./main.lot
 INPUT ./main.lot
 INPUT main.lot
@@ -395,6 +397,43 @@ OUTPUT chapters/introduction.aux
 INPUT ./chapters/introduction.tex
 INPUT ./chapters/introduction.tex
 INPUT chapters/introduction.tex
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT ./figures/platform setup.png
+INPUT ./figures/platform setup.png
+INPUT ./figures/platform setup.png
+INPUT ./figures/platform setup.png
+INPUT ./figures/platform setup.png
+INPUT ./figures/robot.png
+INPUT ./figures/robot.png
+INPUT ./figures/robot.png
+INPUT ./figures/robot.png
+INPUT ./figures/robot.png
+INPUT ./figures/WellPlate.png
+INPUT ./figures/WellPlate.png
+INPUT ./figures/WellPlate.png
+INPUT ./figures/WellPlate.png
+INPUT ./figures/WellPlate.png
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
+INPUT ./figures/singledose.png
+INPUT ./figures/singledose.png
+INPUT ./figures/singledose.png
+INPUT ./figures/singledose.png
+INPUT ./figures/singledose.png
+INPUT ./figures/drug_screened.png
+INPUT ./figures/drug_screened.png
+INPUT ./figures/drug_screened.png
+INPUT ./figures/drug_screened.png
+INPUT ./figures/drug_screened.png
+INPUT ./figures/timed.pdf
+INPUT ./figures/timed.pdf
+INPUT ./figures/timed.pdf
+INPUT ./figures/timed.pdf
+INPUT ./figures/timed.pdf
 INPUT ./chapters/literature_review.tex
 INPUT ./chapters/literature_review.tex
 OUTPUT chapters/literature_review.aux
@@ -407,12 +446,9 @@ INPUT ./figures/Contextual_Ret_preprocessing.png
 INPUT ./figures/Contextual_Ret_preprocessing.png
 INPUT ./figures/Contextual_Ret_preprocessing.png
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT ./chapters/methodology.tex
 INPUT ./chapters/methodology.tex
 OUTPUT chapters/methodology.aux
@@ -439,6 +475,12 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.tex
 INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.tex
 INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
@@ -463,12 +505,6 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
 INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT ./chapters/results.tex
 INPUT ./chapters/results.tex
 OUTPUT chapters/results.aux
@@ -488,7 +524,6 @@ INPUT ./chapters/discussion.tex
 INPUT ./chapters/discussion.tex
 INPUT chapters/discussion.tex
 OUTPUT chapters/conclusion.aux
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT main.aux
 INPUT ./chapters/introduction.aux
 INPUT ./chapters/introduction.aux

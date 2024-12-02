@@ -1,7 +1,13 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Robo platform}}{2}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Dual-arm robot}}{3}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces A well plate containing 96 wells where rows A, H and columns 1, 2 are excluded due to edge effects.}}{5}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Well plate setup for the single-dose experiment where the left half remains untreated and the right half is treated with a single drug concentration. This image was taken three days after drug application, i.e., on day 10.}}{6}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Well plate setup for the drug screening experiment where the majority of tumor tissues are treated with different combinations of drug concentrations (multi-colored wells), while some are left untreated (white wells bounded by boxes).}}{7}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Illustrates the flow chart of time evolutoion of 3D tumor tissues.}}{8}{figure.caption.12}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces This is the caption for the figure.\blx@tocontentsinit {0}\cite {anthropic2024contextual}}}{3}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces This is the caption for the figure.\blx@tocontentsinit {0}\cite {anthropic2024contextual}}}{10}{figure.caption.13}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
