@@ -1,0 +1,224 @@
+%%%%%%%%%%%%%%%%%%%
+%% imports
+%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,twoside,a4paper,parskip]{scrbook} % oneside for writing, twoside for submission (space for comments on the print)
+\setcounter{tocdepth}{2} % depth of table of contents, for debugging purposes
+\usepackage[utf8]{inputenc} % define the encoding type for LateX, may be obsolete in newer versions of LateX
+\usepackage{csquotes} % helper package for quotes
+\usepackage[english]{babel} % language support, multiple languages can also be listed
+\usepackage{mathptmx} % Sets text and math to Times-like font
+\usepackage{floatflt} % wrap text around tables and figures, useful for some templates
+\usepackage[pdftex]{graphicx} % /includegraphics command with more options
+\usepackage[hidelinks]{hyperref} % used for cross-referencing in LateX, hidelinks is an option to better format links
+\usepackage{xcolor} % color management
+\usepackage{amssymb} % symbol support
+\usepackage{textcomp} % text symbol support
+\usepackage{nicefrac} % better formatting for fractions
+\usepackage{pdfpages} % include pdf pages in LaTeX
+\usepackage{float} % floating objects (i.e. figures, tables)
+\usepackage{pdflscape} % better pdf support with more options
+\usepackage[verbose]{placeins} % checks that floats are within bounds - verbose adds extra logs
+\usepackage[markcase=ignoreuppercase,headsepline,plainfootsepline]{scrlayer-scrpage} % manage page styles, markcase: automatic typesetting in heads, headsepline: line underneath the headerm, plainfootsepline: rule above the footer
+\usepackage[ruled,vlined]{algorithm2e} % algorithm environment, ruled: algorithm with line at the top and bottom. Caption is not centered but at the beginning of the algorithm, vlined: vertical line followed by a small horizontal line between the start and the end of each block
+\usepackage{caption} % adds captions to figures, tables, equations... with correct number assignments
+\usepackage{subcaption} % adds subcaptions to subfigures, useful for more complex figures, has to be imported after the caption package
+\usepackage{epstopdf} % needed to use .eps 
+\usepackage{longtable} % enables long tables over page boundaries
+\usepackage{setspace} % sets line spacing
+\usepackage{booktabs} % better line management and line separation within tables
+\usepackage[sortcites,style=numeric,backend=biber,doi=false,isbn=false,url=false,eprint=false]{biblatex} % good package for bibliography support in LaTeX with biber backend, sortcites: sorting bibliography (name, title, year), style=numeric: standard numeric citation style (recommended!), doi/isbn/url/eprint=false: hide links in bibliography (recommended for clean bibliography!)
+\usepackage{makecell} % tabular column heads and multilined cells
+\usepackage{amsmath} % math support 
+\bibliography{bibliography} % included biblatex formatted citations from the file bibliography.bib
+
+\usepackage{lipsum} % only used for the template generation, remove this usepackage command and all \lipsum calls
+%%%%%%%%%%%%%%%%%%%
+%% definitions
+%%%%%%%%%%%%%%%%%%%
+\def\BaAuthor{Rodolfo Cacacho}
+\def\BaAuthorStudyProgram{MAI} 
+\def\BaType{Master Thesis}
+\def\BaTitle{Retrieval-Augmented System for Architecture and Planning}
+\def\BaSupervisorOne{Prof. Dr. Ivan Yamshchikov}
+\def\BaSupervisorTwo{Prof. Dr. Frank-Michael Schleif}
+\def\BaDeadline{\SubmitDate}
+\def\SubmitDate{December 10th 2024}
+\def\git{https://github.com/.../...}
+\def\iswithfullname{}  % Define this to indicate that the full name should be shown
+
+% option to generate anonymous submission for plagiarism scan!
+\ifdefined\iswithfullname
+\def\ShowBaAuthor{\BaAuthor}
+\else
+\def\ShowBaAuthor{N.~N.}
+\fi
+
+\hypersetup{
+pdfauthor={\ShowBaAuthor},
+pdftitle={\BaTitle},
+pdfsubject={Subject},
+pdfkeywords={Keywords}
+}
+
+%%%%%%%%%%%%%%%%%%%
+%% configs to include
+%%%%%%%%%%%%%%%%%%%
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\newcommand*{\forcetwoside}[1][1]{%
+ \begingroup
+   \cleardoubleoddpage
+   \KOMAoptions{titlepage=true}% useful e.g. for scrartcl
+   \csname @twosidetrue\endcsname
+   \maketitle[{#1}]
+ \endgroup
+}
+\def\c#1{\mathcal{#1}}
+\DeclareUnicodeCharacter{2212}{-}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%
+%% Title page
+%%%%%%%%%%%%%%%%%%%
+\ifdefined\print
+\newgeometry{centering}    %%% make the page centered on paper
+\begin{titlepage}
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+	\centering
+	\begin{center}
+		\vspace*{.06\textheight}	
+		\HRule \\[0.4cm] % Horizontal line
+		{\huge \bfseries \BaTitle \par}\vspace{0.4cm} % Thesis title
+		\HRule \\[1.5cm] % Horizontal line
+		\vspace{4.5cm}
+		\begin{minipage}[t]{0.4\textwidth}
+
+		\centering
+		{\large \BaAuthor} 
+
+		\end{minipage}
+		\vfill
+		\vspace*{.1\textheight}
+		{\large \BaType}\\[0.5cm] % Thesis type
+		{\large University of Applied Sciences Würzburg-Schweinfurt}\\[0.5cm]
+		{\large \SubmitDate}\\[4cm] % Date
+		\vfill
+	\end{center}
+\end{titlepage}
+\restoregeometry
+\fi
+
+\frontmatter
+\titlehead{%  {\centering side head}
+  {Technical University of Applied Sciences Würzburg-Schweinfurt (THWS)\\
+   Faculty of Computer Science and Business Information Systems\\\\
+	}}
+\subject{\BaType}
+\title{\BaTitle\\[15mm]}
+\subtitle{\normalsize{submitted to the Technical University of Applied Sciences W\"{u}rzburg-Schweinfurt in the Faculty of Computer Science and Business Information Systems to complete a course of studies in \BaAuthorStudyProgram}}
+\author{\ShowBaAuthor}
+\date{\normalsize{Submitted on: \BaDeadline}}
+\publishers{
+  \normalsize{Initial examiner: \BaSupervisorOne}\\
+  \normalsize{Secondary examiner: \BaSupervisorTwo}\\
+}
+\lowertitleback{
+\centering\includegraphics[width=4cm]{figures/qrcode-thesis.png}
+}
+\forcetwoside
+
+%%%%%%%%%%%%%%%%%%%
+%% abstract
+%%%%%%%%%%%%%%%%%%%
+\section*{Abstract (en)}
+ Hi this is my abstract, RAG is the best thing that ever happened to me.
+
+% cSpell:disable
+\section*{Abstract (de)}
+Servus Leute! RAG ist das Beste, was mir je passiert ist!!
+
+\newpage
+\chapter*{Acknowledgment}
+Oh cool, this is the acknowledgment!!
+%%%%%%%%%%%%%%%%%%%
+%% toc
+%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%
+%% List of Figures and Tables
+%%%%%%%%%%%%%%%%%%%
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+%%%%%%%%%%%%%%%%%%%
+%% Main part of the thesis
+%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+% Include chapters
+\include{chapters/introduction}
+\include{chapters/literature_review}
+\include{chapters/methodology}
+\include{chapters/results}
+\include{chapters/discussion}
+\include{chapters/conclusion}
+
+
+\backmatter
+%%%%%%%%%%%%%%%%%%%
+%% Appendices
+%%%%%%%%%%%%%%%%%%%
+\appendix
+\chapter{Appendix}\label{appendix}
+% Add appendix content here
+
+%%%%%%%%%%%%%%%%%%%
+%% create bibliography
+%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Literature}
+\printbibliography
+
+%%%%%%%%%%%%%%%%%%%
+%% declaration on oath
+%%%%%%%%%%%%%%%%%%%
+\addchap{Declaration on oath}
+
+I hereby certify that I have written my master thesis independently and have not yet submitted it for examination purposes elsewhere. All sources and aids used are listed, literal and meaningful quotations have been marked as such.
+
+\vspace{20pt}
+\begin{flushright}
+$\overline{~~~~~~~~~~~~~~~~~\mbox{\ShowBaAuthor, \SubmitDate}~~~~~~~~~~~~~~~~~}$
+\end{flushright}
+
+\addchap{Consent to plagiarism check}
+
+I hereby agree that my submitted work may be sent to PlagScan (www.plagscan.com) in digital form for the purpose of checking for plagiarism and that it may be temporarily (max. 5~years) stored in the database maintained by PlagScan as well as personal data which are part of this work may be stored there.
+
+\begin{small}
+Consent is voluntary. Without this consent, the plagiarism check cannot be prevented by removing all personal data and protecting the copyright requirements. Consent to the storage and use of personal data may be revoked at any time by notifying the faculty.
+\end{small}
+
+\vspace{20pt}
+\begin{flushright}
+$\overline{~~~~~~~~~~~~~~~~~\mbox{\ShowBaAuthor, \SubmitDate}~~~~~~~~~~~~~~~~~}$
+\end{flushright}
+\end{document}

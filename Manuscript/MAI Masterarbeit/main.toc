@@ -1,0 +1,48 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{List of Figures}{ix}{chapter*.5}%
+\contentsline {chapter}{List of Tables}{xi}{chapter*.6}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Literature review}{3}{chapter.2}%
+\contentsline {paragraph}{\nonumberline Paragraph 1}{3}{paragraph*.9}%
+\contentsline {paragraph}{\nonumberline Paragraph 2}{3}{paragraph*.11}%
+\contentsline {paragraph}{\nonumberline Paragraph 3}{4}{paragraph*.13}%
+\contentsline {section}{\numberline {2.1}Introduction to Retrieval-Augmented Generation (RAG) Architecture}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}RAG's purpose and importance for document retrieval}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Core components of RAG}{6}{subsection.2.1.2}%
+\contentsline {subsubsection}{\nonumberline Pre-Retrieval: Document Preparation}{6}{subsubsection*.15}%
+\contentsline {subsubsection}{\nonumberline Retrieval: Document retrieval}{6}{subsubsection*.17}%
+\contentsline {subsubsection}{\nonumberline Post-Retrieval: Optimizing retrieved documents}{6}{subsubsection*.19}%
+\contentsline {subsubsection}{\nonumberline Generation: Answer generation}{6}{subsubsection*.21}%
+\contentsline {section}{\numberline {2.2}Pre-Retrieval: Document Preparation}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Retrieval Techniques}{9}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Dense Retrieval}{9}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Sparse Retrieval}{9}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Hybrid Retrieval}{9}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Challenges in German Regulatory Retrieval}{9}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Post-Retrieval: Optimizing Results}{9}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Re-Ranking}{9}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Vocabulary and Named Entity Recognition (NER)}{9}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Generation: Answer Synthesis}{9}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Role of Large Language Models (LLMs)}{9}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Context Length and Chunking Impact}{9}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Advancements and Research Gaps in RAG for Regulatory Retrieval}{9}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Emerging RAG Techniques}{9}{subsection.2.6.1}%
+\contentsline {subsubsection}{\nonumberline Graph RAG}{9}{subsubsection*.23}%
+\contentsline {subsubsection}{\nonumberline Multimodal RAG}{9}{subsubsection*.25}%
+\contentsline {subsection}{\numberline {2.6.2}Research Gap in German Regulatory Texts}{9}{subsection.2.6.2}%
+\contentsline {chapter}{\numberline {3}Methodology}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Data Set}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Models}{13}{section.3.2}%
+\contentsline {paragraph}{\nonumberline Paragraph 1}{13}{paragraph*.28}%
+\contentsline {paragraph}{\nonumberline Paragraph 2}{13}{paragraph*.30}%
+\contentsline {paragraph}{\nonumberline Paragraph 3}{13}{paragraph*.32}%
+\contentsline {paragraph}{\nonumberline Paragraph 4}{14}{paragraph*.34}%
+\contentsline {paragraph}{\nonumberline Paragraph 5}{14}{paragraph*.36}%
+\contentsline {section}{\numberline {3.3}Classifier}{15}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Results}{17}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Discussion}{19}{chapter.5}%
+\contentsline {chapter}{\nonumberline Appendix}{21}{chapter*.38}%
+\contentsline {chapter}{Literature}{23}{section*.39}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{25}{chapter*.41}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{27}{chapter*.42}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
