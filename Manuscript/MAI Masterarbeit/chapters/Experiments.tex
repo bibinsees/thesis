@@ -1,0 +1,346 @@
+\chapter{Experiments}\label{ch:Experiments}
+\section{Data set}
+\label{sec:Data set}
+
+The original images are approximately 2500×2500 pixels in size, in 16-bit grayscale, and consist of multiple channels. These channels come from taking images at different focal planes in brightfield microscopy. The number of channels can vary, as you can take images at any number of focal planes. However, for time efficiency, the current data we have collected contains 3 channels per image.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.46]{figures/threes.png} 
+  \caption{Illustration of three layers per image: A, B, and C. The three layers looks visually similar, with slight differences in focal planes. In this figure, A is the sharpest/focused layer.}
+  \label{fig:Threes}
+\end{figure}
+
+Figure \ref{fig:Transition} illustrates that, even with the application of the same drug at the same concentration, the morphology of 3D tumor tissues changes differently.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.46]{figures/transition.png} 
+  \caption{C06, F11 and G04 are well names in the well plate.}
+  \label{fig:Transition}
+\end{figure}
+
+
+
+The table below shows the division of three different types of image datasets, as  explained in the section ~\ref{sec:lab-setup}.
+\begin{table}[ht!]
+  \centering
+  \begin{tabular}{|l|c|c|c|c|}
+  \hline
+  \textbf{Class} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Untreated} & \textbf{Total} \\ \hline
+  \textbf{No. of Images (\%)}  & 12 (3\%) & 204 (60\%) & 150 (37\%) & 366 \\ \hline
+  \end{tabular}
+  \caption{Dataset Class Overview}
+  \label{tab:dataset}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{figures/originals.png} 
+  \caption{Three different types of images: Drug Screened, Single Dose, and Untreated as mentioned in section ~\ref{sec:lab-setup}.}
+  \label{fig:originals}
+\end{figure}
+
+An 8-bit image encompasses 256 color tones (ranging from 0 to 255) per channel, whereas a 16-bit image accommodates 65,536 color tones (ranging from 0 to 65,535) per channel, in our case 65,536 shades of gray. Retaining the original 16-bit depth is crucial for two primary reasons:
+
+\begin{enumerate}
+  \item Converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details. Since 8-bit images only allow 256 possible values, the finer variations in intensity that are present in 16-bit images become compressed. For example, two distinct values in 16-bit (such as 30,000 and 30,001) could map to the same 8-bit value (for instance, both might be mapped to 117). This results in the loss of subtle intensity differences. 
+
+  \item During data augmentation processes that involve substantial alterations in brightness, contrast, or color, an 8-bit image—already limited to 256 tones—could lose up to 50 percentage of these tones, leaving only 128 levels of color and tone. This reduction can lead to "banding," where areas with smooth transitions in tone exhibit visible stripes with jagged edges. In contrast, a 16-bit image, even with a 50 percentage reduction in tones, would retain over 32,000 levels. This higher tonal range allows for smoother transitions, better edge preservation, and enhanced accuracy in color and hue representation. As a result, the dynamic range—the difference between the lightest and darkest areas of the image—remains much more effectively preserved in 16-bit images than in 8-bit images.
+\end{enumerate}
+In our case, the maximum reduction in unique pixel values for the 8-bit images, regardless number of channels was found to be 99.27 percentage after 3000 epochs of random
+color jitter applied  using \texttt{torch.transforms.RandomApply([transform.ColorJitter(brightness=1, contrast=1, saturation=1, hue=0)], p=1)} as shown in figure \ref{fig:8bit_nThree} and \ref{fig:8bit_n one}, whereas for the 16-bit single-channel images (where one sharp layer was extracted from all three layers and considered as input for data augmentation), the reduction in unique pixel values was only 49 percentage after 3,000 epochs of random color jitter, as shown in Figure \ref{fig:16bit_n one}.
+
+Interestingly, for 16-bit images with 3 channels, instead of a reduction, there was an increase in the number of unique pixel values—by a maximum of 258,757 percentage. The issue with this increase is that after data augmentation, the new pixel values are not distributed similarly to the original image. Instead, they shift to the two extremes, such as 0 or 1, or sometimes pushing values to both 0 and 1, which deviate significantly from the original image distribution, as shown in Figures \ref{fig:16bit_three_version1} and \ref{fig:16bit_three_version2}.
+
+\textbf{8-bit three-channel image example before and after data augmentation:}
+\begin{itemize}
+  \item Number of unique pixel values in the original image: 137
+  \item Number of unique pixel values in the augmented image: 3
+  \item Original Image - Minimum pixel value: 33, Maximum pixel value: 170
+  \item Augmented Image - Minimum pixel value: 0, Maximum pixel value: 2
+\end{itemize}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/8bit_nThree.png} 
+  \caption{8-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 97.81\%}
+  \label{fig:8bit_nThree}
+\end{figure}
+
+\textbf{8-bit single-channel (sharp layer) image before and after data augmentation:}
+
+\begin{itemize}
+  \item Number of unique pixel values in the original image: 137
+  \item Number of unique pixel values in the augmented image: 3
+  \item Original Image - Minimum pixel value: 33, Maximum pixel value: 170
+  \item Augmented Image - Minimum pixel value: 3, Maximum pixel value: 3
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/8bit_nOne.png} 
+  \caption{8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 99.27\%}
+  \label{fig:8bit_n one}
+\end{figure}
+
+\textbf{16-bit three-channel image before and after data augmentation:}
+\begin{itemize}
+  \item Number of unique pixel values in the original image: 2111
+  \item Number of unique pixel values in the augmented image: 5044624
+  \item Original Image - Minimum pixel value: 0.13064774870872498, Maximum pixel value: 0.6874189376831055
+  \item Augmented Image - Minimum pixel value: 0.022128667682409286, Maximum pixel value: 0.11041323840618134
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/16bit_three_1.png} 
+  \caption{sixteen bit three layer after 3000 epoch random torch color jitterness apply}
+  \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Increase in percentage of unique pixel values: 2388\%}
+  \label{fig:16bit_three_version1}
+\end{figure}
+
+\textbf{Another example of a 16-bit three-channel image before and after data augmentation:}
+
+\begin{itemize}
+  \item Original Image - Unique pixel counts per channel: 2137
+  \item Augmented Image - Unique pixel counts per channel: 1686717
+  \item Original Image - Minimum pixel value: 0.1306, Maximum pixel value: 0.6874
+  \item Augmented Image -  Minimum pixel value: 0.1970, Maximum pixel value: 0.3748
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/16bithree2.png} 
+  \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Increase in percentage of unique pixel values: 78\%}
+  \label{fig:16bit_three_version2}
+\end{figure}
+
+\textbf{16-bit single-channel image before and after data augmentation:}
+\begin{itemize}
+  \item Number of unique pixel values in the original image: 2111
+  \item Number of unique pixel values in the augmented image: 1058
+  \item Original Image - Minimum pixel value:  0.13064774870872498, Maximum pixel value: 0.6666666865348816
+  \item Augmented Image - Minimum pixel value: 0, Maximum pixel value: 1
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/16bit_onen.png} 
+  \caption{8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}
+  \label{fig:16bit_n one}
+\end{figure}
+
+$49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of darker regions as happened in original image, as  as observed in figure \ref{fig:16bit_n one}. One potential solution is to experiment with specific parameters within the color jitter transform instead of using random values, ensuring that the reduction in the number of unique pixel values does not exceed, for example, $30\%$. Another option would be to write a custom Python function, depending on the available time. Other augmentations from PyTorch work fine in this experiment.
+
+\section{Training SSL model}
+
+For step 1, as explained in chapter \ref{ch: Methodology}, SimCLR was used as the first model for self-supervised learning (SSL). Later, other models such as masked autoencoders and DINO will be explored, depending on the available time.
+Why we would like to try other models? Because SimCLR demands larger batch size and more data for better performance which we don't have.
+
+
+
+\subsection{Using SimCLR as SSL model}
+\subsubsection{Data preprocessing}
+\label{subsec:data preprocessing}
+
+Detailed study/research/experiments on data augmentation and image preprocessing techniques sepcifically for our 16 bit gray scale image are still need to be done.
+Currently, as the focus is on creating the complete pipeline, the standard data augmentation combination (which showed high performance for SimCLR downstream tasks) from the SimCLR \cite{chen2020simple} paper is being used, as shown below.
+
+\begin{enumerate}
+  \item Normalize the 16-bit image to [0, 1] for the following reasons:
+  \begin{enumerate}
+      \item Ideally, normalization should be done at the end after augmentations to ensure scaled input to the neural network, but in our case, we have to normalize first since the augmentation with \texttt{torch.transform.ColorJitter} didn't work without scaled data.
+      \item \texttt{torch.transform.ToTensor()} didn't scale the data points to the [0, 1] range.
+  \end{enumerate}
+  
+  \item Perform the following augmentations:
+  \begin{enumerate}
+      \item Apply a horizontal flip.
+      \item Randomly crop the image and resize it to $96 \times 96$.
+      \item Randomly change the brightness, contrast, saturation, and hue of the cropped patch.
+  \end{enumerate}
+
+  \item Perform Z-score normalization after data augmentation for the following reasons:
+  \begin{enumerate}
+      \item Pretrained models require this preprocessing.
+      \item It ensures that the data is still normalized even after data augmentation tweaks, allowing for effective feeding into the neural network.
+  \end{enumerate}
+
+  \item For each original image, repeat step 2 twice to obtain two augmented images.
+\end{enumerate}
+
+
+Visualisation of before and after preprocessing of image shown in figures 6.5 to 6.11.
+
+\subsubsection{Model}
+The Resnet18 \cite{he2015deepresiduallearningimage} model processes a single image to produce a latent representation of the input, aiming to cluster similar images together in a latent space. 
+
+\subsubsection{Training }
+The training process follows these steps:
+
+\begin{enumerate}
+    \item We take a batch of images with batch size $N$.
+    
+    \item Our dataset class returns two augmented versions for each original image as explained in section \ref{subsec:data preprocessing} in the batch, resulting in $2N$ images as input.
+
+    \item The model produces $2N$ latent representations, independently for each augmented image.
+
+    \item For each batch, the two augmentations of the same image are treated as positive pairs, while all others are considered negative pairs.
+
+    \item We calculate the cosine similarities between the positive and negative pairs. These cosine similarities are then used as input to the loss function described below equation \ref{eq:loss}
+\end{enumerate}
+The original loss function for each pair from SimCLR paper \cite{chen2020simple} is defined as:
+
+\begin{equation}
+\ell_{i, j} = -\log \frac{\exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_j\right) / \tau\right)}{\sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_k\right) / \tau\right)}
+\label{eq:original}
+\end{equation}
+  
+which we can reformualte as:
+
+1. Apply the logarithm: The negative log of a fraction can be separated into the difference of the logarithms:
+\[
+\ell_{i, j} = -\left( \log \left(\exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_j\right) / \tau\right)\right) - \log\left( \sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_k\right) / \tau\right) \right) \right)
+\]
+
+2. Simplifying the first term: The logarithm of an exponential function simplifies as follows:
+\[
+-\log\left(\exp\left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_j\right) / \tau\right)\right) = -\frac{\operatorname{sim}\left(z_{i}, z_{j}\right)}{\tau}
+\]
+
+Substituting that back into the equation:
+\[
+\ell_{i, j} = -\frac{\operatorname{sim}\left(z_{i}, z_{j}\right)}{\tau} - \log\left(\sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp\left(\operatorname{sim}\left(z_{i}, z_{k}\right) / \tau\right)\right)
+\]
+
+This gives us:
+
+\begin{equation}
+\ell_{i, j} = -\frac{\operatorname{sim}\left(z_{i}, z_{j}\right)}{\tau} + \log\left[\sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp\left(\operatorname{sim}\left(z_{i}, z_{k}\right) / \tau\right)\right]
+\label{eq:loss}
+\end{equation}
+
+where \(\mathbf{1}_{[k \neq i]} \in \{0, 1\}\) is an indicator function evaluating to 1 iff \(k \neq i\), and \(\tau\) denotes a temperature parameter. The final loss is computed across all positive pairs, both \((i, j)\) and \((j, i)\), in a mini-batch with $z_i, z_k$ representing negative pairs.
+
+Equation \ref{eq:loss} implemented as the loss function in our experiments.
+
+The above standard SimCLR loss function and data augmentation combination  with the ResNet18 model will be used as the initial benchmark for experiments, and in the future, the following variations will be explored.
+
+\textbf{Variation ideas:}
+
+\begin{enumerate}
+  \item Explore different data augmentation combinations by researching the best augmentations for medical grayscale images, and applying intuitive approaches beyond the standard SimCLR \cite{chen2020simple} data augmentation combinations as explained in section \ref{subsec:data preprocessing}.
+  \item Each image is treated as an RGB image with 3 channels, and two of the best-performing data augmentations, which yielded high performance for our downstream task.
+
+  \item One channel is considered as the anchor (the most sharpened layer), and the others are treated as the two augmentations.
+  \item One channel is considered as the anchor (the most sharpened layer), and two of the best-performing data augmentations, which yielded high performance for the our downstream task.
+
+  \item Apply more than two standard augmentations to meet the large batch size requirement of SimCLR \cite{chen2020simple}.
+
+  \item Remove the positive sample \( j \) from the denominator of the loss function. Since \( j \) is the only image as a positive sample in the sum of the denominator softmax, its contribution will be less.
+
+  \item Supervised SimCLR: Ensure that no images from the same breed/class are included in the negative samples.
+  \item Since SimCLR architecture \cite{chen2020simple} allows for flexibility in model selection, and explore other pretrained models  than Resnet18  suitable for medical grayscale images. For example pretrained U-Net \cite{ronneberger2015unetconvolutionalnetworksbiomedical} model for MRI brain images from PyTorch.  
+  \item Include the anchor as a positive sample, i.e., 3 augmentations in total (1 anchor as augmentation and the other 2 layers as augmentations). This resembles to triplet loss (not sure, need to be studied)  
+\end{enumerate}
+For variations 5 and 9 we need to modify the loss function since it includes more than 2 augmentations.
+
+\textbf{Variations implementations:}  \label{sec:variations_implementations}
+
+The two variations tried so far differ only in how they handle the image for data augmentation. 
+
+In the first variation, we take a 3-channel image and treat it like a standard RGB image, applying SimCLR-style augmentations to create two augmented versions.
+
+In the second variation, we take a 3-channel image and compute the sharpness of each layer by calculating the magnitude of the gradient of pixel intensities in the x and y directions, which indicates edge strength and provides a measure of how sharp the transitions between pixel values are. The sharpest layer is used as the anchor, while the other two layers are treated as augmentations. 
+
+\subsubsection{Variation 1:}
+\textbf{Input to model (train loader dimension) :} 
+
+\begin{itemize}
+  \item aug1: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H, W)
+  \item aug2: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H, W) \vspace{1em}
+\end{itemize} \vspace{1em}
+\textbf{Model output just after convolution layers: (before applying projetion head)} 
+\begin{itemize}
+  \item torch.Size([16, 512, 1, 1]) (Batch size, standard resnet18 output dimension after avg pooling, H,W)   
+  \item This output feature will be used for further downstream task.  \vspace{1em}
+\end{itemize}
+
+\textbf{Model output after projection head:}
+\begin{itemize}
+  \item torch.Size([16, 20])  (Batch size, no of values in feature vector)  
+  \item No of values in feature vector is a variable which we can change and experiment which will give better accuracy.
+\end{itemize}
+
+The figure below shows the anchor and its two augmented versions as explained in section \ref{subsec:data preprocessing}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/3_1.png} % Adjust the width as needed
+  \caption{Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}
+  \label{fig:augmentation}
+\end{figure}
+
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/3_2fine.png} % Adjust the width as needed
+    \caption{Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}
+    \label{fig:augmentations}
+  \end{figure}
+\subsubsection{Variation 2:}
+
+\textbf{Input to model (train loader dimensions) :} 
+\begin{itemize}
+   \item aug1: torch.Size([16, 1, 96, 96])        (batch size, no of channels, H, W)
+   \item aug2: torch.Size([16, 1, 96, 96])        (batch size, no of channels, H, W) \vspace{1em}
+\end{itemize}
+\textbf{Model output just after convolution layers: (before applying projetion head)} 
+\begin{itemize}
+  \item torch.Size([16, 512, 1, 1]) (Batch size, standard resnet18 output dimension after avg pooling, H, W)   
+  \item This output feature will be used for further downstream task.  \vspace{1em}
+\end{itemize}
+
+\textbf{Model output after projection head:}
+\begin{itemize}
+  \item torch.Size([16, 20])  (Batch size, no of values in feature vector)  
+  \item No of values in feature vector is a variable which we can change and experiment which will give better accuracy.
+\end{itemize}
+
+The figure below shows the anchor and its two augmented versions as explained in section \ref{subsec:data preprocessing}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/1_1.png} % Adjust the width as needed
+  \caption{Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}
+  \label{fig:1doutput1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/1_2.png} % Adjust the width as needed
+  \caption{Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}
+  \label{fig:1doutput3}
+\end{figure}
+
+\section{Intermediate evaluation of SSL model}
+**suppose I have a vector of image. if I normalise it unit length, willl I loose critical information?**
+
+**https://chatgpt.com/share/671a6a63-ca7c-8010-92a0-23b6bd25ef05**
+
+**if we do kmeans withcosine distance distance then it only compare cosine sim of whole image thats why we need to do normal kmeans with euclidean dist to show the magnitude similarity** 
+
+**thats why we need to do instance segmantation and classifiacation to see if it able to learn more than magnitude similarity and cosine similarity like as texture, contrast, and brightness**
+
+Evaluation of the SSL model depends on the  time series inference loss/accuracy metric, neverthless we can use other evaluation metrics, such as downstream task like classification. 
+
+1. A common approach to verify whether the SSL model has learned generalized representations is to perform Logistic Regression on the learned features. In other words, we use a single, linear layer that maps these representations to class predictions, where the two categories, 'untreated' and 'single dose,' serve as our classes. The Logistic Regression model can only perform well if the learned representations capture all the relevant features necessary for the task. Moreover, we don't need to worry much about overfitting since only a few parameters are trained. Therefore, we expect the model to perform well even with limited data. We implemented a simple pipeline for a Logistic Regression setup, where the images are encoded into their feature vectors.
+
+2. Baseline comparison: As a baseline for comparison  to our results above in the section \ref{sec:variations_implementations}, we will train a standard ResNet-18 with random initialization on the labeled training set, consisting of the 'untreated' and 'single dose' categories. The results will help us assess the advantages of contrastive learning on unlabeled data compared to purely supervised training. It is evident that ResNet-18 easily overfits the training data since its parameter count is over 1,000 times larger than the dataset size. To ensure a fair comparison with the contrastive learning models, we apply similar data augmentations as before, including crop-and-resize and color jittering.
+
+
+
+\chapter{Furture works}\label{ch:Furture works}
+\section{Time series prediction model}
+\section{Integrated/ensembled model: SSL+Time series model}
+\chapter{Conclusion}\label{ch:Conclusion}
+
+These methodological steps collectively form the framework for addressing critical research questions and challenges throughout the course of this thesis. By exploring the dataset, assessing models, and developing custom architecture, we aim to to assess drug efficacy by ranking different drug combinations and concentrations.

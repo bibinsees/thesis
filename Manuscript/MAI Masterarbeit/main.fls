@@ -260,12 +260,24 @@ INPUT main.aux
 INPUT ./chapters/introduction.aux
 INPUT ./chapters/introduction.aux
 INPUT chapters/introduction.aux
+INPUT ./chapters/objectives.aux
+INPUT ./chapters/objectives.aux
+INPUT chapters/objectives.aux
+INPUT ./chapters/Research questions.aux
+INPUT ./chapters/Research questions.aux
+INPUT chapters/Research questions.aux
 INPUT ./chapters/literature_review.aux
 INPUT ./chapters/literature_review.aux
 INPUT chapters/literature_review.aux
+INPUT ./chapters/Data Description.aux
+INPUT ./chapters/Data Description.aux
+INPUT chapters/Data Description.aux
 INPUT ./chapters/methodology.aux
 INPUT ./chapters/methodology.aux
 INPUT chapters/methodology.aux
+INPUT ./chapters/Experiments.aux
+INPUT ./chapters/Experiments.aux
+INPUT chapters/Experiments.aux
 INPUT ./chapters/results.aux
 INPUT ./chapters/results.aux
 INPUT chapters/results.aux
@@ -385,8 +397,6 @@ INPUT ./main.lof
 INPUT ./main.lof
 INPUT main.lof
 OUTPUT main.lof
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ./main.lot
 INPUT ./main.lot
 INPUT main.lot
@@ -434,89 +444,135 @@ INPUT ./figures/timed.pdf
 INPUT ./figures/timed.pdf
 INPUT ./figures/timed.pdf
 INPUT ./figures/timed.pdf
+INPUT ./chapters/objectives.tex
+INPUT ./chapters/objectives.tex
+OUTPUT chapters/objectives.aux
+INPUT ./chapters/objectives.tex
+INPUT ./chapters/objectives.tex
+INPUT chapters/objectives.tex
+INPUT ./chapters/Research questions.tex
+INPUT ./chapters/Research questions.tex
+OUTPUT chapters/Research questions.aux
+INPUT ./chapters/Research questions.tex
+INPUT ./chapters/Research questions.tex
+INPUT chapters/Research questions.tex
 INPUT ./chapters/literature_review.tex
 INPUT ./chapters/literature_review.tex
 OUTPUT chapters/literature_review.aux
 INPUT ./chapters/literature_review.tex
 INPUT ./chapters/literature_review.tex
 INPUT chapters/literature_review.tex
-INPUT ./figures/Contextual_Ret_preprocessing.png
-INPUT ./figures/Contextual_Ret_preprocessing.png
-INPUT ./figures/Contextual_Ret_preprocessing.png
-INPUT ./figures/Contextual_Ret_preprocessing.png
-INPUT ./figures/Contextual_Ret_preprocessing.png
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT ./chapters/Data Description.tex
+INPUT ./chapters/Data Description.tex
+OUTPUT chapters/Data Description.aux
+INPUT ./chapters/Data Description.tex
+INPUT ./chapters/Data Description.tex
+INPUT chapters/Data Description.tex
 INPUT ./chapters/methodology.tex
 INPUT ./chapters/methodology.tex
 OUTPUT chapters/methodology.aux
 INPUT ./chapters/methodology.tex
 INPUT ./chapters/methodology.tex
 INPUT chapters/methodology.tex
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT ./chapters/Experiments.tex
+INPUT ./chapters/Experiments.tex
+OUTPUT chapters/Experiments.aux
+INPUT ./chapters/Experiments.tex
+INPUT ./chapters/Experiments.tex
+INPUT chapters/Experiments.tex
+INPUT ./figures/threes.png
+INPUT ./figures/threes.png
+INPUT ./figures/threes.png
+INPUT ./figures/threes.png
+INPUT ./figures/threes.png
+INPUT ./figures/transition.png
+INPUT ./figures/transition.png
+INPUT ./figures/transition.png
+INPUT ./figures/transition.png
+INPUT ./figures/transition.png
+INPUT ./figures/originals.png
+INPUT ./figures/originals.png
+INPUT ./figures/originals.png
+INPUT ./figures/originals.png
+INPUT ./figures/originals.png
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT ./figures/8bit_nThree.png
+INPUT ./figures/8bit_nThree.png
+INPUT ./figures/8bit_nThree.png
+INPUT ./figures/8bit_nThree.png
+INPUT ./figures/8bit_nThree.png
+INPUT ./figures/8bit_nOne.png
+INPUT ./figures/8bit_nOne.png
+INPUT ./figures/8bit_nOne.png
+INPUT ./figures/8bit_nOne.png
+INPUT ./figures/8bit_nOne.png
+INPUT ./figures/16bit_three_1.png
+INPUT ./figures/16bit_three_1.png
+INPUT ./figures/16bit_three_1.png
+INPUT ./figures/16bit_three_1.png
+INPUT ./figures/16bit_three_1.png
+INPUT ./figures/16bithree2.png
+INPUT ./figures/16bithree2.png
+INPUT ./figures/16bithree2.png
+INPUT ./figures/16bithree2.png
+INPUT ./figures/16bithree2.png
+INPUT ./figures/16bit_onen.png
+INPUT ./figures/16bit_onen.png
+INPUT ./figures/16bit_onen.png
+INPUT ./figures/16bit_onen.png
+INPUT ./figures/16bit_onen.png
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7v.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.tex
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.tex
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.tex
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.tex
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.tex
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.tex
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.tex
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.tex
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT ./figures/3_1.png
+INPUT ./figures/3_1.png
+INPUT ./figures/3_1.png
+INPUT ./figures/3_1.png
+INPUT ./figures/3_1.png
+INPUT ./figures/3_2fine.png
+INPUT ./figures/3_2fine.png
+INPUT ./figures/3_2fine.png
+INPUT ./figures/3_2fine.png
+INPUT ./figures/3_2fine.png
+INPUT ./figures/1_1.png
+INPUT ./figures/1_1.png
+INPUT ./figures/1_1.png
+INPUT ./figures/1_1.png
+INPUT ./figures/1_1.png
+INPUT ./figures/1_2.png
+INPUT ./figures/1_2.png
+INPUT ./figures/1_2.png
+INPUT ./figures/1_2.png
+INPUT ./figures/1_2.png
 INPUT ./chapters/results.tex
 INPUT ./chapters/results.tex
 OUTPUT chapters/results.aux
 INPUT ./chapters/results.tex
 INPUT ./chapters/results.tex
 INPUT chapters/results.tex
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT ./chapters/discussion.tex
 INPUT ./chapters/discussion.tex
 OUTPUT chapters/discussion.aux
@@ -524,16 +580,31 @@ INPUT ./chapters/discussion.tex
 INPUT ./chapters/discussion.tex
 INPUT chapters/discussion.tex
 OUTPUT chapters/conclusion.aux
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT main.aux
 INPUT ./chapters/introduction.aux
 INPUT ./chapters/introduction.aux
 INPUT chapters/introduction.aux
+INPUT ./chapters/objectives.aux
+INPUT ./chapters/objectives.aux
+INPUT chapters/objectives.aux
+INPUT ./chapters/Research questions.aux
+INPUT ./chapters/Research questions.aux
+INPUT chapters/Research questions.aux
 INPUT ./chapters/literature_review.aux
 INPUT ./chapters/literature_review.aux
 INPUT chapters/literature_review.aux
+INPUT ./chapters/Data Description.aux
+INPUT ./chapters/Data Description.aux
+INPUT chapters/Data Description.aux
 INPUT ./chapters/methodology.aux
 INPUT ./chapters/methodology.aux
 INPUT chapters/methodology.aux
+INPUT ./chapters/Experiments.aux
+INPUT ./chapters/Experiments.aux
+INPUT chapters/Experiments.aux
 INPUT ./chapters/results.aux
 INPUT ./chapters/results.aux
 INPUT chapters/results.aux
@@ -547,12 +618,14 @@ INPUT ./main.out
 INPUT ./main.out
 INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
-INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss17.pfb
+INPUT c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb
+INPUT c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb

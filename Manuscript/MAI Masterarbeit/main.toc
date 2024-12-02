@@ -1,49 +1,31 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{List of Figures}{ix}{chapter*.5}%
+\contentsline {chapter}{List of Figures}{x}{chapter*.5}%
 \contentsline {chapter}{List of Tables}{xi}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Laboratory Setup}{4}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Literature review}{10}{chapter.2}%
-\contentsline {paragraph}{\nonumberline Paragraph 1}{10}{paragraph*.15}%
-\contentsline {paragraph}{\nonumberline Paragraph 2}{11}{paragraph*.17}%
-\contentsline {paragraph}{\nonumberline Paragraph 3}{11}{paragraph*.19}%
-\contentsline {section}{\numberline {2.1}Introduction to Retrieval-Augmented Generation (RAG) Architecture}{13}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}RAG's purpose and importance for document retrieval}{14}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Core components of RAG}{14}{subsection.2.1.2}%
-\contentsline {subsubsection}{\nonumberline Pre-Retrieval: Document Preparation}{15}{subsubsection*.21}%
-\contentsline {subsubsection}{\nonumberline Retrieval: Document retrieval}{15}{subsubsection*.23}%
-\contentsline {subsubsection}{\nonumberline Post-Retrieval: Optimizing retrieved documents}{15}{subsubsection*.25}%
-\contentsline {subsubsection}{\nonumberline Generation: Answer generation}{15}{subsubsection*.27}%
-\contentsline {section}{\numberline {2.2}Pre-Retrieval: Document Preparation}{15}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Retrieval Techniques}{17}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Dense Retrieval}{17}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Sparse Retrieval}{17}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Hybrid Retrieval}{17}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Challenges in German Regulatory Retrieval}{17}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}Post-Retrieval: Optimizing Results}{17}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Re-Ranking}{17}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Vocabulary and Named Entity Recognition (NER)}{17}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Generation: Answer Synthesis}{17}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Role of Large Language Models (LLMs)}{17}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Context Length and Chunking Impact}{17}{subsection.2.5.2}%
-\contentsline {section}{\numberline {2.6}Advancements and Research Gaps in RAG for Regulatory Retrieval}{17}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Emerging RAG Techniques}{17}{subsection.2.6.1}%
-\contentsline {subsubsection}{\nonumberline Graph RAG}{17}{subsubsection*.29}%
-\contentsline {subsubsection}{\nonumberline Multimodal RAG}{17}{subsubsection*.31}%
-\contentsline {subsection}{\numberline {2.6.2}Research Gap in German Regulatory Texts}{17}{subsection.2.6.2}%
-\contentsline {chapter}{\numberline {3}Methodology}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Data Set}{18}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Models}{20}{section.3.2}%
-\contentsline {paragraph}{\nonumberline Paragraph 1}{20}{paragraph*.34}%
-\contentsline {paragraph}{\nonumberline Paragraph 2}{20}{paragraph*.36}%
-\contentsline {paragraph}{\nonumberline Paragraph 3}{21}{paragraph*.38}%
-\contentsline {paragraph}{\nonumberline Paragraph 4}{21}{paragraph*.40}%
-\contentsline {paragraph}{\nonumberline Paragraph 5}{22}{paragraph*.42}%
-\contentsline {section}{\numberline {3.3}Classifier}{23}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Results}{24}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Discussion}{25}{chapter.5}%
-\contentsline {chapter}{\nonumberline Appendix}{27}{chapter*.44}%
-\contentsline {chapter}{Literature}{28}{section*.45}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{29}{chapter*.47}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{30}{chapter*.48}%
+\contentsline {chapter}{\numberline {2}Objective}{10}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Research questions}{11}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Literature Review}{12}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Data Description}{15}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Methodology}{16}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Experiments}{18}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Data set}{18}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Training SSL model}{27}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Using SimCLR as SSL model}{27}{subsection.7.2.1}%
+\contentsline {subsubsection}{\nonumberline Data preprocessing}{27}{subsubsection*.23}%
+\contentsline {subsubsection}{\nonumberline Model}{28}{subsubsection*.25}%
+\contentsline {subsubsection}{\nonumberline Training}{28}{subsubsection*.27}%
+\contentsline {subsubsection}{\nonumberline Variation 1:}{32}{subsubsection*.29}%
+\contentsline {subsubsection}{\nonumberline Variation 2:}{33}{subsubsection*.33}%
+\contentsline {section}{\numberline {7.3}Intermediate evaluation of SSL model}{35}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Furture works}{37}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Time series prediction model}{37}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Integrated/ensembled model: SSL+Time series model}{37}{section.8.2}%
+\contentsline {chapter}{\numberline {9}Conclusion}{38}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Results}{39}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Discussion}{40}{chapter.11}%
+\contentsline {chapter}{\nonumberline Appendix}{41}{chapter*.37}%
+\contentsline {chapter}{Literature}{42}{section*.38}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{44}{chapter*.40}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{45}{chapter*.41}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

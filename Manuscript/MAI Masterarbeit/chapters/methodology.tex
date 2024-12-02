@@ -1,33 +1,12 @@
-\chapter{Methodology}\label{chapter:methodology}
-\lipsum[3]\footnote{The full implementation is available at \url{\git}.}
+\chapter{Methodology}\label{ch: Methodology}
+The goal is to leverage representation learning of bright-field microscopy images to develop a ranking/ordering scale (1 to n) for these images. 
 
-\section{Data Set}\label{sec:dataset}
-\lipsum[1-2]
+\begin{enumerate}
+  \item \textbf{Step 1:} Create a latent space representation of each image using contrastive learning techniques such as SimCLR, masked autoencoder, or any other self-supervised architectures such as DINO that can effectively help learn the efficient features of alterations induced in three-dimensional tumor tissue models by the impact of drug application over a period of time.
+  
+  \item \textbf{Step 2:} Train a time series prediction model exclusively on the representations of untreated images from Day 7 to Day 10 to predict the representation of the Day 10 image.
+  
+  \item \textbf{Step 3:} Perform inference on the representations of test images, which include untreated, clinically recommended, and drug screening images.
+\end{enumerate}
 
-\vspace{0.75cm}
-\begin{figure}[H]
-	\captionsetup[subfloat]{justification=centering}
-	\subfloat[Label1\label{fig:xyz_label1}]{\centering\includegraphics[width=0.5\textwidth]
-	{example-image-b}}\hspace{1mm}%
-	\subfloat[Label2\label{fig:xyz_label2}]{\centering\includegraphics[width=0.5\textwidth]
-	{example-image-b}}\hspace{1mm}%
-	\subfloat[Label3\label{fig:xyz_label3}]{\centering\includegraphics[width=0.5\textwidth]
-	{example-image-b}}\hspace{1mm}%
-	\subfloat[Label4\label{fig:xyz_label4}]{\centering\includegraphics[width=0.5\textwidth]
-	{example-image-b}}\hspace{1mm}%
-\end{figure}	
-\newpage
-\section{Models}
-\lipsum[3]
-\paragraph{Paragraph 1} \lipsum[1]
-
-\paragraph{Paragraph 2} \lipsum[1]
-
-\paragraph{Paragraph 3} \lipsum[1]
-
-\paragraph{Paragraph 4} \lipsum[1]
-
-\paragraph{Paragraph 5} \lipsum[1]
-\newpage
-\section{Classifier}\label{sec:knn}
-\lipsum[1-3]
+Since the time series model is trained solely on the representations of untreated images, the inference loss/metric (i.e., the difference between the predicted and actual Day 10 image representations) will be very small for untreated images. Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of untreated images. This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. Determining a reasonable inference loss/metric will be one of the research problems to tackle.

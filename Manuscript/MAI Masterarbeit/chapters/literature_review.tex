@@ -1,68 +1,18 @@
-\chapter{Literature review}
-AI is cool!
+\chapter{Literature Review}\label{ch:Literature Review}
+\textbf{Base neural network architecture for representation learning.} Learning visual representations of medical images, such as X-rays (radiographic images) and bright-field microscopy images, is crucial for medical image understanding. However, progress in this area has been hindered by the heterogeneity and complexity of subtle features in these images, especially when they don't have labels. Existing work often relies on fine-tuning weights transferred from ImageNet pretraining (Wang et al., 2017 \cite{8099852} ; Esteva et al., 2017 \cite{Esteva2017Dermatologist} ; Irvin et al., 2019 \cite{irvin2019chexpert} ), which is suboptimal due to the drastically different characteristics of medical images. Recent studies have shown promising results using unsupervised contrastive learning on natural images, but these methods have limited effectiveness on medical images because of their high inter-class similarity.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\linewidth]{figures/Contextual_Ret_preprocessing.png} % replace with the path to your image file
-    \caption{This is the caption for the figure.\cite{anthropic2024contextual}}
-    \label{fig:your_label} % optional: label for referencing the figure
-\end{figure}
+To address these challenges, researchers have proposed various innovative approaches. ConVIRT \cite{zhang2022contrastive} offers an alternative unsupervised strategy for learning medical visual representations by exploiting naturally occurring paired descriptive text. This method introduces a new approach to pretraining medical image encoders using paired text data via a bidirectional contrastive objective between the two modalities. It is domain-agnostic and requires no additional expert input.  However, given the absence of specific paired text data for our image dataset, ConVIRT does not offer a solution tailored to our specific problem.
 
-\paragraph{Paragraph 1} \lipsum[2]
+The contrastive loss used in ConVIRT is derived from the SimCLR \cite{chen2020simple} self supervised learning framework. SimCLR learns representations by maximizing agreement between differently augmented views of the same data example via a contrastive loss in the latent space. The framework consists of a neural network base encoder that extracts representation vectors from augmented data examples. The framework allows for various choices of network architecture without any constraints. The authors opt for simplicity and adopt ResNet, introducing a learnable nonlinear transformation between the representation and the contrastive loss to substantially improve the quality of the learned representations. However, these methods require careful treatment of negative pairs, typically relying on large batch sizes to retrieve them. Additionally, their performance is highly dependent on the choice of image augmentations. BYOL (Bootstrap Your Own Latent) \cite{grill2020bootstrap} addresses these limitations by using an architecture with online and target neural networks, which does not require negative pairs and is more robust to the choice of image augmentations compared to contrastive methods.
 
-\paragraph{Paragraph 2} \lipsum[2]
+While SimCLR has achieved impressive success in the computer vision field, directly applying it to the time series domain often yields poor performance due to its data augmentation and feature extractor not being tailored to the temporal dependencies inherent in time series data. To address this limitation and to obtain high-quality representations of univariate time series, \cite{YANG2022108606} proposed TimeCLR, a framework that combines the strengths of Dynamic Time Warping (DTW) and InceptionTime. Drawing inspiration from the DTW-based k-nearest neighbor classifier, they introduced DTW data augmentation. This technique generates phase shifts and amplitude changes targeted by DTW, preserving the time series structure and feature information. By integrating the advantages of DTW data augmentation and InceptionTime, TimeCLR method extends SimCLR and adapts it effectively to the time series domain.
+\cite{liu2024selfsupervised} conducted a comprehensive comparative analysis between contrastive and generative self-supervised learning methods for time series data, focusing specifically on SimCLR and MAE (Masked Autoencoder). They observed that, overall, MAE tends to converge more rapidly and delivers impressive performance, particularly when the fine-tuning dataset is relatively small (around 100 samples). However, in scenarios with larger datasets, SimCLR demonstrates a slight but consistent outperformance over its generative counterparts.
 
-\paragraph{Paragraph 3} \lipsum[2]
-\lipsum[]
+Another recent alternative study for self-supervised visual representation is DINO \cite{caron2021emerging}, which can be also interpreted as a form of self-distillation with no labels. DINO provides new properties to Vision Transformers that stand out compared to convolutional networks.
 
-\section{Introduction to Retrieval-Augmented Generation (RAG) Architecture}
-\lipsum[1]
+SupCon \cite{khosla2021supervised} extends the self-supervised batch contrastive approach to the fully-supervised setting, allowing us to effectively leverage label information. Clusters of points belonging to the same class are pulled together in embedding space, while simultaneously pushing apart clusters of samples from different classes. The drug applied to tumor samples could be used as labels for the bright-field microscopy images.
 
-\subsection{RAG's purpose and importance for document retrieval}
-\lipsum[2]
+\textbf{Coupling engineered features and learned representation.}  
+Due to its specificity, fluorescence microscopy has become a quintessential imaging tool in cell biology. However, photobleaching, phototoxicity and related artifacts continue to limit its utility. Recently, it has been shown that artificial intelligence (AI) can transform one form of contrast into another. Mikhail et al.\cite{Kandel_2020} present phase imaging with computational specificity (PICS), a combination of quantitative phase imaging (QPI) and AI, which provides information about unlabeled live cells with high specificity. By applying the computed fluorescence maps back to the QPI data, they measured the growth of both nuclei and cytoplasm independently over many days without loss of viability. This work could provide valuable insights for coupling fluorescent data with learned representations.
 
-\subsection{Core components of RAG}
-\lipsum[2]
-
-\subsubsection{Pre-Retrieval: Document Preparation}
-\subsubsection{Retrieval: Document retrieval}
-\subsubsection{Post-Retrieval: Optimizing retrieved documents}
-\subsubsection{Generation: Answer generation}
-
-\section{Pre-Retrieval: Document Preparation}
-
-Sample algorithm:
-
-\vspace{0.25cm}
-\begin{algorithm}[H]
-	\KwData{$\mathbf{X}, ...$}
-	...
-	\tcp*[f]{cool annotation} \\
-	...\\
-	... \\
-	\Return $\mathbf{Y}, ...$
-	\caption{Cool algorithm \cite{goodfellow2016deep}}
-	\label{alg:cool_algorithm}
-\end{algorithm}
-\vspace{0.25cm}
-
-\section{Retrieval Techniques}
-\subsection{Dense Retrieval}
-\subsection{Sparse Retrieval}
-\subsection{Hybrid Retrieval}
-\subsection{Challenges in German Regulatory Retrieval}
-\section{Post-Retrieval: Optimizing Results}
-\subsection{Re-Ranking}
-\subsection{Vocabulary and Named Entity Recognition (NER)}
-\section{Generation: Answer Synthesis}
-\subsection{Role of Large Language Models (LLMs)}
-\subsection{Context Length and Chunking Impact}
-\section{Advancements and Research Gaps in RAG for Regulatory Retrieval}
-\subsection{Emerging RAG Techniques}
-
-\subsubsection{Graph RAG}
-
-\subsubsection{Multimodal RAG}
-
-\subsection{Research Gap in German Regulatory Texts}
-Hello!
+\let\cleardoublepage\clearpage
