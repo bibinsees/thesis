@@ -10,21 +10,21 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Illustration of three layers per image: A, B, and C. The three layers looks visually similar, with slight differences in focal planes. In this figure, A is the sharpest/focused layer.}}{15}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces C06, F11 and G04 are well names in the well plate.}}{16}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Three different types of images: Drug Screened, Single Dose, and Untreated as mentioned in section ~\ref {sec:lab-setup}.}}{17}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces 8-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 97.81\%}}{19}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 99.27\%}}{20}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces sixteen bit three layer after 3000 epoch random torch color jitterness apply}}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Increase in percentage of unique pixel values: 2388\%}}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Increase in percentage of unique pixel values: 78\%}}{22}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{23}{figure.caption.21}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Illustration of three layers per image: A, B, and C. The three layers looks visually similar, with slight differences in focal planes. In this figure, A is the sharpest/focused layer.}}{18}{figure.caption.13}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces C06, F11 and G04 are well names in the well plate.}}{19}{figure.caption.14}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Three different types of images: Drug Screened, Single Dose, and Untreated as mentioned in section ~\ref {sec:lab-setup}.}}{20}{figure.caption.16}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces 8-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 97.81\%}}{22}{figure.caption.17}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 99.27\%}}{23}{figure.caption.18}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces sixteen bit three layer after 3000 epoch random torch color jitterness apply}}{24}{figure.caption.19}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Increase in percentage of unique pixel values: 2388\%}}{24}{figure.caption.19}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Increase in percentage of unique pixel values: 78\%}}{25}{figure.caption.20}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{26}{figure.caption.21}%
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{33}{figure.caption.30}%
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{33}{figure.caption.31}%
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{34}{figure.caption.34}%
-\contentsline {figure}{\numberline {7.13}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{34}{figure.caption.35}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{32}{figure.caption.30}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{32}{figure.caption.31}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{33}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{34}{figure.caption.35}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

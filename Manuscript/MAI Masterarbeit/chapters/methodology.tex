@@ -1,6 +1,8 @@
 \chapter{Methodology}\label{ch: Methodology}
 The goal is to leverage representation learning of bright-field microscopy images to develop a ranking/ordering scale (1 to n) for these images. 
 
+\section{Methodology 1}
+
 \begin{enumerate}
   \item \textbf{Step 1:} Create a latent space representation of each image using contrastive learning techniques such as SimCLR, masked autoencoder, or any other self-supervised architectures such as DINO that can effectively help learn the efficient features of alterations induced in three-dimensional tumor tissue models by the impact of drug application over a period of time.
   
@@ -10,3 +12,13 @@ The goal is to leverage representation learning of bright-field microscopy image
 \end{enumerate}
 
 Since the time series model is trained solely on the representations of untreated images, the inference loss/metric (i.e., the difference between the predicted and actual Day 10 image representations) will be very small for untreated images. Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of untreated images. This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. Determining a reasonable inference loss/metric will be one of the research problems to tackle.
+
+\section{Methodology 2}
+
+\begin{enumerate}
+  \item \textbf{Step 1:} Feed control images into k means and find the centriod of control (untreated) cluster based on both cosine distance and the euclidean distance. ( we can choose the distacne metric if we have time)
+  
+  \item \textbf{Step 2:} calculate the euclidean/cosine distance from this centroid to every images.
+  
+  \item \textbf{Step 3:} Perform the same operation for simlcr features and on original images.
+\end{enumerate}

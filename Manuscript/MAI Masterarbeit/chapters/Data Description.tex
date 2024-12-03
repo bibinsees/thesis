@@ -1,1 +1,132 @@
 \chapter{Data Description}\label{ch: Data Description}
+\section{Data set}
+\label{sec:Data set}
+
+The original images are approximately 2500×2500 pixels in size, in 16-bit grayscale, and consist of multiple channels. These channels come from taking images at different focal planes in brightfield microscopy. The number of channels can vary, as you can take images at any number of focal planes. However, for time efficiency, the current data we have collected contains 3 channels per image.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.46]{figures/threes.png} 
+  \caption{Illustration of three layers per image: A, B, and C. The three layers looks visually similar, with slight differences in focal planes. In this figure, A is the sharpest/focused layer.}
+  \label{fig:Threes}
+\end{figure}
+
+Figure \ref{fig:Transition} illustrates that, even with the application of the same drug at the same concentration, the morphology of 3D tumor tissues changes differently.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.46]{figures/transition.png} 
+  \caption{C06, F11 and G04 are well names in the well plate.}
+  \label{fig:Transition}
+\end{figure}
+
+
+
+The table below shows the division of three different types of image datasets, as  explained in the section ~\ref{sec:lab-setup}.
+\begin{table}[ht!]
+  \centering
+  \begin{tabular}{|l|c|c|c|c|}
+  \hline
+  \textbf{Class} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Untreated} & \textbf{Total} \\ \hline
+  \textbf{No. of Images (\%)}  & 12 (3\%) & 204 (60\%) & 150 (37\%) & 366 \\ \hline
+  \end{tabular}
+  \caption{Dataset Class Overview}
+  \label{tab:dataset}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{figures/originals.png} 
+  \caption{Three different types of images: Drug Screened, Single Dose, and Untreated as mentioned in section ~\ref{sec:lab-setup}.}
+  \label{fig:originals}
+\end{figure}
+
+An 8-bit image encompasses 256 color tones (ranging from 0 to 255) per channel, whereas a 16-bit image accommodates 65,536 color tones (ranging from 0 to 65,535) per channel, in our case 65,536 shades of gray. Retaining the original 16-bit depth is crucial for two primary reasons:
+
+\begin{enumerate}
+  \item Converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details. Since 8-bit images only allow 256 possible values, the finer variations in intensity that are present in 16-bit images become compressed. For example, two distinct values in 16-bit (such as 30,000 and 30,001) could map to the same 8-bit value (for instance, both might be mapped to 117). This results in the loss of subtle intensity differences. 
+
+  \item During data augmentation processes that involve substantial alterations in brightness, contrast, or color, an 8-bit image—already limited to 256 tones—could lose up to 50 percentage of these tones, leaving only 128 levels of color and tone. This reduction can lead to "banding," where areas with smooth transitions in tone exhibit visible stripes with jagged edges. In contrast, a 16-bit image, even with a 50 percentage reduction in tones, would retain over 32,000 levels. This higher tonal range allows for smoother transitions, better edge preservation, and enhanced accuracy in color and hue representation. As a result, the dynamic range—the difference between the lightest and darkest areas of the image—remains much more effectively preserved in 16-bit images than in 8-bit images.
+\end{enumerate}
+In our case, the maximum reduction in unique pixel values for the 8-bit images, regardless number of channels was found to be 99.27 percentage after 3000 epochs of random
+color jitter applied  using \texttt{torch.transforms.RandomApply([transform.ColorJitter(brightness=1, contrast=1, saturation=1, hue=0)], p=1)} as shown in figure \ref{fig:8bit_nThree} and \ref{fig:8bit_n one}, whereas for the 16-bit single-channel images (where one sharp layer was extracted from all three layers and considered as input for data augmentation), the reduction in unique pixel values was only 49 percentage after 3,000 epochs of random color jitter, as shown in Figure \ref{fig:16bit_n one}.
+
+Interestingly, for 16-bit images with 3 channels, instead of a reduction, there was an increase in the number of unique pixel values—by a maximum of 258,757 percentage. The issue with this increase is that after data augmentation, the new pixel values are not distributed similarly to the original image. Instead, they shift to the two extremes, such as 0 or 1, or sometimes pushing values to both 0 and 1, which deviate significantly from the original image distribution, as shown in Figures \ref{fig:16bit_three_version1} and \ref{fig:16bit_three_version2}.
+
+\textbf{8-bit three-channel image example before and after data augmentation:}
+\begin{itemize}
+  \item Number of unique pixel values in the original image: 137
+  \item Number of unique pixel values in the augmented image: 3
+  \item Original Image - Minimum pixel value: 33, Maximum pixel value: 170
+  \item Augmented Image - Minimum pixel value: 0, Maximum pixel value: 2
+\end{itemize}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/8bit_nThree.png} 
+  \caption{8-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 97.81\%}
+  \label{fig:8bit_nThree}
+\end{figure}
+
+\textbf{8-bit single-channel (sharp layer) image before and after data augmentation:}
+
+\begin{itemize}
+  \item Number of unique pixel values in the original image: 137
+  \item Number of unique pixel values in the augmented image: 3
+  \item Original Image - Minimum pixel value: 33, Maximum pixel value: 170
+  \item Augmented Image - Minimum pixel value: 3, Maximum pixel value: 3
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/8bit_nOne.png} 
+  \caption{8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 99.27\%}
+  \label{fig:8bit_n one}
+\end{figure}
+
+\textbf{16-bit three-channel image before and after data augmentation:}
+\begin{itemize}
+  \item Number of unique pixel values in the original image: 2111
+  \item Number of unique pixel values in the augmented image: 5044624
+  \item Original Image - Minimum pixel value: 0.13064774870872498, Maximum pixel value: 0.6874189376831055
+  \item Augmented Image - Minimum pixel value: 0.022128667682409286, Maximum pixel value: 0.11041323840618134
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/16bit_three_1.png} 
+  \caption{sixteen bit three layer after 3000 epoch random torch color jitterness apply}
+  \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Increase in percentage of unique pixel values: 2388\%}
+  \label{fig:16bit_three_version1}
+\end{figure}
+
+\textbf{Another example of a 16-bit three-channel image before and after data augmentation:}
+
+\begin{itemize}
+  \item Original Image - Unique pixel counts per channel: 2137
+  \item Augmented Image - Unique pixel counts per channel: 1686717
+  \item Original Image - Minimum pixel value: 0.1306, Maximum pixel value: 0.6874
+  \item Augmented Image -  Minimum pixel value: 0.1970, Maximum pixel value: 0.3748
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/16bithree2.png} 
+  \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Increase in percentage of unique pixel values: 78\%}
+  \label{fig:16bit_three_version2}
+\end{figure}
+
+\textbf{16-bit single-channel image before and after data augmentation:}
+\begin{itemize}
+  \item Number of unique pixel values in the original image: 2111
+  \item Number of unique pixel values in the augmented image: 1058
+  \item Original Image - Minimum pixel value:  0.13064774870872498, Maximum pixel value: 0.6666666865348816
+  \item Augmented Image - Minimum pixel value: 0, Maximum pixel value: 1
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/16bit_onen.png} 
+  \caption{8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}
+  \label{fig:16bit_n one}
+\end{figure}
+
+$49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of darker regions as happened in original image, as  as observed in figure \ref{fig:16bit_n one}. One potential solution is to experiment with specific parameters within the color jitter transform instead of using random values, ensuring that the reduction in the number of unique pixel values does not exceed, for example, $30\%$. Another option would be to write a custom Python function, depending on the available time. Other augmentations from PyTorch work fine in this experiment.

@@ -470,18 +470,6 @@ OUTPUT chapters/Data Description.aux
 INPUT ./chapters/Data Description.tex
 INPUT ./chapters/Data Description.tex
 INPUT chapters/Data Description.tex
-INPUT ./chapters/methodology.tex
-INPUT ./chapters/methodology.tex
-OUTPUT chapters/methodology.aux
-INPUT ./chapters/methodology.tex
-INPUT ./chapters/methodology.tex
-INPUT chapters/methodology.tex
-INPUT ./chapters/Experiments.tex
-INPUT ./chapters/Experiments.tex
-OUTPUT chapters/Experiments.aux
-INPUT ./chapters/Experiments.tex
-INPUT ./chapters/Experiments.tex
-INPUT chapters/Experiments.tex
 INPUT ./figures/threes.png
 INPUT ./figures/threes.png
 INPUT ./figures/threes.png
@@ -526,6 +514,18 @@ INPUT ./figures/16bit_onen.png
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT ./chapters/methodology.tex
+INPUT ./chapters/methodology.tex
+OUTPUT chapters/methodology.aux
+INPUT ./chapters/methodology.tex
+INPUT ./chapters/methodology.tex
+INPUT chapters/methodology.tex
+INPUT ./chapters/Experiments.tex
+INPUT ./chapters/Experiments.tex
+OUTPUT chapters/Experiments.aux
+INPUT ./chapters/Experiments.tex
+INPUT ./chapters/Experiments.tex
+INPUT chapters/Experiments.tex
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
