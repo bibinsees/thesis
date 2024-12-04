@@ -9,23 +9,31 @@
 \contentsline {chapter}{\numberline {5}Data Description}{15}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Data set}{15}{section.5.1}%
 \contentsline {chapter}{\numberline {6}Methodology}{24}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Methodology 1}{24}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Methodology 2}{25}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Experiments}{26}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Training SSL model}{26}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Using SimCLR as SSL model}{26}{subsection.7.1.1}%
-\contentsline {subsubsection}{\nonumberline Data preprocessing}{26}{subsubsection*.23}%
-\contentsline {subsubsection}{\nonumberline Model}{27}{subsubsection*.25}%
-\contentsline {subsubsection}{\nonumberline Training}{28}{subsubsection*.27}%
-\contentsline {subsubsection}{\nonumberline Variation 1:}{31}{subsubsection*.29}%
-\contentsline {subsubsection}{\nonumberline Variation 2:}{32}{subsubsection*.33}%
-\contentsline {section}{\numberline {7.2}Intermediate evaluation of SSL model}{34}{section.7.2}%
-\contentsline {chapter}{\numberline {8}Furture works}{36}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Time series prediction model}{36}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Integrated/ensembled model: SSL+Time series model}{36}{section.8.2}%
-\contentsline {chapter}{\numberline {9}Conclusion}{37}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Results}{38}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Discussion}{39}{chapter.11}%
+\contentsline {section}{\numberline {6.1}Methodology 1: Prediction model}{24}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Day 10 predcition}{24}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Delta predcition}{25}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}K means centroid approach}{26}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Experiments}{27}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Training SSL model}{27}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Using SimCLR as SSL model}{27}{subsection.7.1.1}%
+\contentsline {subsubsection}{\nonumberline Data preprocessing}{27}{subsubsection*.23}%
+\contentsline {subsubsection}{\nonumberline Model}{28}{subsubsection*.25}%
+\contentsline {subsubsection}{\nonumberline Training}{29}{subsubsection*.27}%
+\contentsline {subsubsection}{\nonumberline Variation 1:}{32}{subsubsection*.29}%
+\contentsline {subsubsection}{\nonumberline Variation 2:}{33}{subsubsection*.33}%
+\contentsline {section}{\numberline {7.2}Intermediate evaluation of SSL model}{35}{section.7.2}%
+\contentsline {chapter}{\numberline {8}Results}{37}{chapter.8}%
+\contentsline {section}{\numberline {8.1}3 channel vs 1 channel}{38}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Unet vs resnet}{38}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Data augmentation comparitive study}{38}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Intermediate evaluation}{38}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Classification}{38}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Clustering}{38}{subsection.8.4.2}%
+\contentsline {section}{\numberline {8.5}evaluation}{38}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Day 10 prediction model}{38}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Delta prediction model}{38}{subsection.8.5.2}%
+\contentsline {subsection}{\numberline {8.5.3}K means centroid approach}{38}{subsection.8.5.3}%
+\contentsline {chapter}{\numberline {9}Discussion}{40}{chapter.9}%
 \contentsline {chapter}{\nonumberline Appendix}{41}{chapter*.37}%
 \contentsline {chapter}{Literature}{42}{section*.38}%
 \contentsline {chapter}{\nonumberline Declaration on oath}{44}{chapter*.40}%

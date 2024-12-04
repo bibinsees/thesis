@@ -21,12 +21,10 @@
 \contentsline {figure}{\numberline {5.9}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{23}{figure.caption.21}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{32}{figure.caption.30}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{32}{figure.caption.31}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{33}{figure.caption.34}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{34}{figure.caption.35}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{33}{figure.caption.30}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{33}{figure.caption.31}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{34}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{35}{figure.caption.35}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
