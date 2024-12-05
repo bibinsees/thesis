@@ -204,3 +204,12 @@ Evaluation of the SSL model depends on the  time series inference loss/accuracy 
 1. A common approach to verify whether the SSL model has learned generalized representations is to perform Logistic Regression on the learned features. In other words, we use a single, linear layer that maps these representations to class predictions, where the two categories, 'untreated' and 'single dose,' serve as our classes. The Logistic Regression model can only perform well if the learned representations capture all the relevant features necessary for the task. Moreover, we don't need to worry much about overfitting since only a few parameters are trained. Therefore, we expect the model to perform well even with limited data. We implemented a simple pipeline for a Logistic Regression setup, where the images are encoded into their feature vectors.
 
 2. Baseline comparison: As a baseline for comparison  to our results above in the section \ref{sec:variations_implementations}, we will train a standard ResNet-18 with random initialization on the labeled training set, consisting of the 'untreated' and 'single dose' categories. The results will help us assess the advantages of contrastive learning on unlabeled data compared to purely supervised training. It is evident that ResNet-18 easily overfits the training data since its parameter count is over 1,000 times larger than the dataset size. To ensure a fair comparison with the contrastive learning models, we apply similar data augmentations as before, including crop-and-resize and color jittering.
+
+
+\section{Ranking} \label{section:Ranking}
+
+\subsection{Day 10 prediction model} \label{subection:day10prediction}
+Original images: Unfortunately, the inference loss/metric 
+
+\subsection{Delta prediction model} \label{subsection:deltaprediction}
+\subsection{K means centroid approach} \label{subsection:kmeanscentroid}
