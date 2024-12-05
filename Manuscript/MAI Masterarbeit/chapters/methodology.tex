@@ -2,7 +2,17 @@
 The goal is to leverage representation learning of bright-field microscopy images to develop a ranking/ordering scale (1 to n) for these images. 
 
 \section{Methodology 1: Prediction model}
-\subsection{Day 10 predcition}
+
+\subsection{Day10 to day10 predcition}
+I start with classical anomaly detection approach that we train a model to 
+reconstruct/predict day 10 image from day 10 image exclusively on the untreated images. Since the day 10 prediction model is trained solely on untreated images,
+ we expect the the inference loss/metric (i.e., the difference between the predicted and actual Day 10 image) will be very small for untreated images.
+Conversely, the inference loss/metric will increase for treated images as their predictions deviate from those of untreated images.
+ This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start 
+ with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order.
+But unfortunately, the inference loss/metric
+
+\subsection{Day7 to day10 predcition}
 \begin{enumerate}
     \item \textbf{Step 1:} Create a latent space representation of all images, including untreated, clinically recommended, 
     and drug screening images, using SimCLR. 
@@ -18,7 +28,12 @@ The goal is to leverage representation learning of bright-field microscopy image
   \item \textbf{Step 4:} Perform step 2 and step 3 on images instead of simclr feature vectors for comparitive study.
 \end{enumerate}
 
-Since the day 10 prediction model is trained solely on the representations of untreated images, the inference loss/metric (i.e., the difference between the predicted and actual Day 10 image representations) will be very small for untreated images. Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of untreated images. This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. Determining a reasonable inference loss/metric will be one of the research problems to tackle.
+Since the day 10 prediction model is trained solely on the representations of untreated images, the inference loss/metric 
+(i.e., the difference between the predicted and actual Day 10 image representations) will be very small for untreated images.
+ Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of untreated images.
+This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start 
+with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. 
+Determining a reasonable inference loss/metric will be one of the research problems to tackle.
 
 \subsection{Delta predcition}
 \begin{enumerate}

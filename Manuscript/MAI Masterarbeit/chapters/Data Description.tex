@@ -2,6 +2,16 @@
 \section{Data set}
 \label{sec:Data set}
 
+1. challenges:
+1.1 limited data set for day 7 to day 10 prediction model
+1.2 same image can be flipped, blured, brightness change, position change. position change for some extend can be resolved 
+using center crop approach, but if the cell is in the edge then center crop won't help. i didn't do any data preprocessing
+ specifically for that problem. but I expect the croping and resizing to 96*96 will be a solution. because when we do that 
+ data transformation, augmented pairs will be positioned differently.  
+1.3 same drug can have different effect on day 10 (example: huge variation in: ds 61 g6 and 41 gp6. less variation: RBTDS 4.1 and 4.2 gp 3) initially i thought I will be able to use 
+as drug gp to evaluate, because of this difference, the difference can be due to different patient cancer cell?
+I choosed images from different gps which have huge debris amount visually. it was few so I didn't code my self.
+
 The original images are approximately 2500×2500 pixels in size, in 16-bit grayscale, and consist of multiple channels. These channels come from taking images at different focal planes in brightfield microscopy. The number of channels can vary, as you can take images at any number of focal planes. However, for time efficiency, the current data we have collected contains 3 channels per image.
 
 \begin{figure}[H]
