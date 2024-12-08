@@ -37,8 +37,42 @@ Visualisation of before and after preprocessing of image shown in figures 6.5 to
 
 \section{Data augmentation} \label{sec:data augmentation}
 
+I started with data augmentation just like simclr paper did, just to get 
+to play around , beacuse it was easy to do , since I can directly adapt code 
+from tutorial just to have complete pipeline.
+
+I found that those strong augmentations transformed to distribution out of 
+the original distribution. specifically color jitterness including brightness, 
+contrast, hue, saturation.
+
+then I removed contrast, saturation and hue. because if I tried to make 
+those augs as invariant that means I'm making control and treated as 
+similar because if I increase or decrease contrast or 
+saturation or hue it increase/decrease the darkness of cancer cell to 
+have similarity.
+which doesn't make sense because we want exact opposite of it.
+
+but if I use the same croping percentage as the original simclr does, 
+that means I crop 0.1  to 1 percentage which doesn't make sense because that 
+menas we make smilarity to small background to cancer which is unnecessary. 
+so i chaneg the percentage to 0.4-1.
+
+lasty it may be possible to learn efficient feature extraction by not 
+applying cropping, ie learn by seeing full picture (big picture). 
+I understand this is not good argument because then dog and cat have same 
+color and maybe similar shape but still learns to differentiate using simclr.
+But maybe for time predictoin ranking model it helps. because model have to 
+predict the change from day 7 to day 10. and most of the ime the size/shape
+ changes. especially to the category which are exploded, they produce debris. 
+ so maybe data augmentation seeing the time change. 
+
+
+
+
+
 \section{Train SimCLR as SSL model}
-For step 1, as explained in chapter \ref{ch: Methodology}, SimCLR was used as the first model for self-supervised learning (SSL). Later, other models such as masked autoencoders and DINO will be explored, depending on the available time.
+For step 1, as explained in chapter \ref{ch: Methodology}, SimCLR was used as the first model for self-supervised learning (SSL). 
+Future work: Later, other models such as masked autoencoders and DINO will be explored, depending on the available time.
 Why we would like to try other models? Because SimCLR demands larger batch size and more data for better performance which we don't have.
 
 
@@ -52,7 +86,7 @@ The training process follows these steps:
 \begin{enumerate}
     \item We take a batch of images with batch size $N$.
     
-    \item Our dataset class returns two augmented versions for each original image as explained in section \ref{subsec:data preprocessing} in the batch, resulting in $2N$ images as input.
+    \item Our dataset class returns two augmented versions for each original image as explained in section \ref{sec:data preprocessing} in the batch, resulting in $2N$ images as input.
 
     \item The model produces $2N$ latent representations, independently for each augmented image.
 
@@ -100,7 +134,7 @@ The above standard SimCLR loss function and data augmentation combination  with 
 \textbf{Variation ideas:}
 
 \begin{enumerate}
-  \item Explore different data augmentation combinations by researching the best augmentations for medical grayscale images, and applying intuitive approaches beyond the standard SimCLR \cite{chen2020simple} data augmentation combinations as explained in section \ref{subsec:data preprocessing}.
+  \item Explore different data augmentation combinations by researching the best augmentations for medical grayscale images, and applying intuitive approaches beyond the standard SimCLR \cite{chen2020simple} data augmentation combinations as explained in section \ref{sec:data preprocessing}.
   \item Each image is treated as an RGB image with 3 channels, and two of the best-performing data augmentations, which yielded high performance for our downstream task.
 
   \item One channel is considered as the anchor (the most sharpened layer), and the others are treated as the two augmentations.
@@ -138,7 +172,7 @@ In the second variation, we take a 3-channel image and compute the sharpness of 
   \item No of values in feature vector is a variable which we can change and experiment which will give better accuracy.
 \end{itemize}
 
-The figure below shows the anchor and its two augmented versions as explained in section \ref{subsec:data preprocessing}.
+The figure below shows the anchor and its two augmented versions as explained in section \ref{sec:data preprocessing}.
 
 \begin{figure}[H]
   \centering
@@ -173,7 +207,7 @@ The figure below shows the anchor and its two augmented versions as explained in
   \item No of values in feature vector is a variable which we can change and experiment which will give better accuracy.
 \end{itemize}
 
-The figure below shows the anchor and its two augmented versions as explained in section \ref{subsec:data preprocessing}.
+The figure below shows the anchor and its two augmented versions as explained in section \ref{sec:data preprocessing}.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/1_1.png} % Adjust the width as needed
@@ -278,4 +312,15 @@ Evaluation of the SSL model depends on the  time series inference loss/accuracy 
 1. A common approach to verify whether the SSL model has learned generalized representations is to perform Logistic Regression on the learned features. In other words, we use a single, linear layer that maps these representations to class predictions, where the two categories, 'untreated' and 'single dose,' serve as our classes. The Logistic Regression model can only perform well if the learned representations capture all the relevant features necessary for the task. Moreover, we don't need to worry much about overfitting since only a few parameters are trained. Therefore, we expect the model to perform well even with limited data. We implemented a simple pipeline for a Logistic Regression setup, where the images are encoded into their feature vectors.
 
 2. Baseline comparison: As a baseline for comparison  to our results above in the section \ref{sec:variations_implementations}, we will train a standard ResNet-18 with random initialization on the labeled training set, consisting of the 'untreated' and 'single dose' categories. The results will help us assess the advantages of contrastive learning on unlabeled data compared to purely supervised training. It is evident that ResNet-18 easily overfits the training data since its parameter count is over 1,000 times larger than the dataset size. To ensure a fair comparison with the contrastive learning models, we apply similar data augmentations as before, including crop-and-resize and color jittering.
+
+\subsubsection{Direct day 7 to day 10 distance evaluation}
+calculate distance between day 7 untreated and its corresponding day 10 treated one.
+Idea is:
+1. it should give same distance between day 7 and its corresponding day 10
+ even its changed in position/flipped. ie checking whether simlcr learned to 
+ be invariant to position error in microscope error because of manual 
+ handling/transporting.
+2. it sould give same distance even if its blured/sharpened
+3. it should give sma edistance even if its changed in brightness
+4. main test for k means centroid approach. it should give different distance to single dose and exploded.
 

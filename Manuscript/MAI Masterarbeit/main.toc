@@ -11,37 +11,38 @@
 \contentsline {chapter}{\numberline {6}Methodology}{25}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Data preprocessing}{25}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Data augmentation}{26}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Train SimCLR as SSL model}{26}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Train SimCLR as SSL model}{27}{section.6.3}%
 \contentsline {subsubsection}{\nonumberline Model}{27}{subsubsection*.23}%
-\contentsline {subsubsection}{\nonumberline Training}{27}{subsubsection*.25}%
-\contentsline {subsubsection}{\nonumberline Variation 1:}{30}{subsubsection*.27}%
-\contentsline {subsubsection}{\nonumberline Variation 2:}{31}{subsubsection*.31}%
-\contentsline {section}{\numberline {6.4}Ranking strategy 1: Using CAE}{33}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Day7 to day7 reconstruction}{33}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Day7 to day10 predcition}{33}{subsection.6.4.2}%
-\contentsline {subsubsection}{\nonumberline day10 predcition}{33}{subsubsection*.35}%
-\contentsline {subsubsection}{\nonumberline Delta predcition}{34}{subsubsection*.37}%
-\contentsline {section}{\numberline {6.5}Ranking strategy 2: K means centroid approach}{35}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Intermediate evaluation of SSL model}{35}{section.6.6}%
-\contentsline {subsubsection}{\nonumberline classification}{35}{subsubsection*.39}%
-\contentsline {subsubsection}{\nonumberline kmeans clustering}{35}{subsubsection*.41}%
-\contentsline {chapter}{\numberline {7}Experimental Setup}{37}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Experimental Results and Discussion}{38}{chapter.8}%
-\contentsline {section}{\numberline {8.1}3 channel vs 1 channel}{38}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Unet vs resnet}{38}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Intermediate evaluation}{38}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Classification}{38}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Clustering}{38}{subsection.8.3.2}%
-\contentsline {section}{\numberline {8.4}Data augmentation comparitive study}{38}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Ranking Evaluation}{39}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Using CAE}{39}{subsection.8.5.1}%
-\contentsline {subsubsection}{\nonumberline Day 7 to 7 reconstruction}{39}{subsubsection*.43}%
-\contentsline {subsubsection}{\nonumberline Day 7 to 10 prediction}{39}{subsubsection*.45}%
-\contentsline {paragraph}{\nonumberline Day 10 prediction model}{39}{paragraph*.47}%
-\contentsline {paragraph}{\nonumberline Delta prediction model}{39}{paragraph*.49}%
-\contentsline {subsection}{\numberline {8.5.2}K means centroid approach}{39}{subsection.8.5.2}%
-\contentsline {chapter}{\nonumberline Appendix}{41}{chapter*.51}%
-\contentsline {chapter}{Literature}{42}{section*.52}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{44}{chapter*.54}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{45}{chapter*.55}%
+\contentsline {subsubsection}{\nonumberline Training}{28}{subsubsection*.25}%
+\contentsline {subsubsection}{\nonumberline Variation 1:}{31}{subsubsection*.27}%
+\contentsline {subsubsection}{\nonumberline Variation 2:}{32}{subsubsection*.31}%
+\contentsline {section}{\numberline {6.4}Ranking strategy 1: Using CAE}{34}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Day7 to day7 reconstruction}{34}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Day7 to day10 predcition}{34}{subsection.6.4.2}%
+\contentsline {subsubsection}{\nonumberline day10 predcition}{34}{subsubsection*.35}%
+\contentsline {subsubsection}{\nonumberline Delta predcition}{35}{subsubsection*.37}%
+\contentsline {section}{\numberline {6.5}Ranking strategy 2: K means centroid approach}{36}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Intermediate evaluation of SSL model}{36}{section.6.6}%
+\contentsline {subsubsection}{\nonumberline classification}{36}{subsubsection*.39}%
+\contentsline {subsubsection}{\nonumberline kmeans clustering}{36}{subsubsection*.41}%
+\contentsline {subsubsection}{\nonumberline Direct day 7 to day 10 distance evaluation}{38}{subsubsection*.43}%
+\contentsline {chapter}{\numberline {7}Experimental Setup}{39}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Experimental Results and Discussion}{40}{chapter.8}%
+\contentsline {section}{\numberline {8.1}3 channel vs 1 channel}{40}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Unet vs resnet}{40}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Intermediate evaluation}{40}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Classification}{40}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Clustering}{40}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.3}Data augmentation day 7 to day 10 distance evaluation}{40}{subsection.8.3.3}%
+\contentsline {section}{\numberline {8.4}Ranking Evaluation}{41}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Using CAE}{41}{subsection.8.4.1}%
+\contentsline {subsubsection}{\nonumberline Day 7 to 7 reconstruction}{41}{subsubsection*.45}%
+\contentsline {subsubsection}{\nonumberline Day 7 to 10 prediction}{41}{subsubsection*.47}%
+\contentsline {paragraph}{\nonumberline Day 10 prediction model}{41}{paragraph*.49}%
+\contentsline {paragraph}{\nonumberline Delta prediction model}{41}{paragraph*.51}%
+\contentsline {subsection}{\numberline {8.4.2}K means centroid approach}{41}{subsection.8.4.2}%
+\contentsline {chapter}{\nonumberline Appendix}{43}{chapter*.53}%
+\contentsline {chapter}{Literature}{44}{section*.54}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{46}{chapter*.56}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{47}{chapter*.57}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
