@@ -1,24 +1,39 @@
-\chapter{Results} \label{chapter:experimentsresults} 
+\chapter{Experimental Results and Discussion} \label{chapter:experimental results and Discussion} 
 
 \section{3 channel vs 1 channel}
 \section{Unet vs resnet}
 
-\section{Data augmentation comparitive study}
+
 
 \section{Intermediate evaluation}
 \subsection{Classification} \label{subsection:classification}
 
 \subsection{Clustering} \label{subsection:kmeans}
 
+\section{Data augmentation comparitive study}
+basic evaluations for ranking:
+1.
+whether it learned to be invariant the position change:
+do flipps and calculate the cosine distance from control to treated flipped versions. ( i don't expect it learn to the change in center of position, 
+if it learns good we can say center crop have some effect maybe? but not for the edge one?)
+2. 
+shape invariant:control to all single dose should be almost same cosine distance.
+
+it also applicable to time prediction and reconstruction ranking evaluation and also from kmeans centriod approach.
+
+
 
 \section{Ranking Evaluation}
 
-\subsection{Day 10 prediction model} \label{subection:day10prediction}
-Original images: Unfortunately, the inference loss/metric 
 
-\subsection{Delta prediction model} \label{subsection:deltaprediction}
+
+\subsection{Using CAE} \label{subection:Using CAE}
+\subsubsection{Day 7 to 7 reconstruction} \label{subsubection:Day 7 to 7 reconstruction}
+Original images: Unfortunately, the inference loss/metric will ve same beacuse control day 10 and treatd looks same . I was dumb enough to do that. thats why i need  day 7 to day 7 reconstruction model.
+\subsubsection{Day 7 to 10 prediction} \label{subsubection:Day 7 to 10 prediction}
+\paragraph{Day 10 prediction model} \label{paragraph:Day 10 prediction model}
+\paragraph{Delta prediction model} \label{paragraph:delta prediction}
 \subsection{K means centroid approach} \label{subsection:kmeanscentroid}
-
 
 
 
