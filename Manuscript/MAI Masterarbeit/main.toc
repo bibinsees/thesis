@@ -22,9 +22,10 @@
 \contentsline {subsubsection}{\nonumberline day10 predcition}{34}{subsubsection*.35}%
 \contentsline {subsubsection}{\nonumberline Delta predcition}{35}{subsubsection*.37}%
 \contentsline {section}{\numberline {6.5}Ranking strategy 2: K means centroid approach}{36}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Intermediate evaluation of SSL model}{36}{section.6.6}%
-\contentsline {subsubsection}{\nonumberline classification}{36}{subsubsection*.39}%
-\contentsline {subsubsection}{\nonumberline kmeans clustering}{36}{subsubsection*.41}%
+\contentsline {section}{\numberline {6.6}Ranking strategy 3: Softmax approach}{36}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Intermediate evaluation of SSL model}{37}{section.6.7}%
+\contentsline {subsubsection}{\nonumberline classification}{37}{subsubsection*.39}%
+\contentsline {subsubsection}{\nonumberline kmeans clustering}{37}{subsubsection*.41}%
 \contentsline {subsubsection}{\nonumberline Direct day 7 to day 10 distance evaluation}{38}{subsubsection*.43}%
 \contentsline {chapter}{\numberline {7}Experimental Setup}{39}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Experimental Results and Discussion}{40}{chapter.8}%
@@ -41,6 +42,7 @@
 \contentsline {paragraph}{\nonumberline Day 10 prediction model}{41}{paragraph*.49}%
 \contentsline {paragraph}{\nonumberline Delta prediction model}{41}{paragraph*.51}%
 \contentsline {subsection}{\numberline {8.4.2}K means centroid approach}{41}{subsection.8.4.2}%
+\contentsline {subsection}{\numberline {8.4.3}Softmax approach}{41}{subsection.8.4.3}%
 \contentsline {chapter}{\nonumberline Appendix}{43}{chapter*.53}%
 \contentsline {chapter}{Literature}{44}{section*.54}%
 \contentsline {chapter}{\nonumberline Declaration on oath}{46}{chapter*.56}%
