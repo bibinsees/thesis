@@ -36,7 +36,12 @@ The original images are approximately 2500×2500 pixels in size, in 16-bit grays
   Images I got from the lab consisit of majority have 3 channels while minorly as very few have one channel and 
   5 cahnnels.
   However, for the ease of use to integrate with our pretarined architecture we use (both resnet18 and unet),
-  I determined to start with 3 channels per image.
+  I determined to start with 3 channels per image. 
+  But lately I found out that within the same image each channel/layer are not also out of focus according
+  to the focal plane, but also they are in slightly different position due to microscopic handle error i guess.
+  this can leads to error when we stack those as channels in the training of model. thats why we have to
+  investigate the performance of single channel too because maybe thats enough for us too to able to get our expected result.
+  how to choose the focused layer will be explained the data preprocessing section.
 
 \begin{figure}[H]
   \centering
