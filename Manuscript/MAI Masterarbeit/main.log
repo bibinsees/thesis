@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  15 DEC 2024 21:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  15 DEC 2024 22:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1297,138 +1297,150 @@ chapter 5.
 <figures/threes.png, id=333, 990.70125pt x 321.2pt>
 File: figures/threes.png Graphic file (type png)
 <use figures/threes.png>
-Package pdftex.def Info: figures/threes.png  used on input line 53.
+Package pdftex.def Info: figures/threes.png  used on input line 56.
 (pdftex.def)             Requested size: 455.7281pt x 147.75378pt.
 
-Overfull \hbox (7.59715pt too wide) in paragraph at lines 53--54
+Overfull \hbox (7.59715pt too wide) in paragraph at lines 56--57
  [][] 
  []
 
-<figures/transition.png, id=335, 682.55pt x 1071.00125pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[16]
+<figures/transition.png, id=339, 682.55pt x 1071.00125pt>
 File: figures/transition.png Graphic file (type png)
 <use figures/transition.png>
-Package pdftex.def Info: figures/transition.png  used on input line 61.
+Package pdftex.def Info: figures/transition.png  used on input line 64.
 (pdftex.def)             Requested size: 313.9768pt x 492.66656pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[16 <./figures/threes.png>]
-<figures/originals.png, id=342, 644.4075pt x 241.90375pt>
+
+
+[17 <./figures/threes.png>]
+<figures/originals.png, id=346, 644.4075pt x 241.90375pt>
 File: figures/originals.png Graphic file (type png)
 <use figures/originals.png>
-Package pdftex.def Info: figures/originals.png  used on input line 82.
+Package pdftex.def Info: figures/originals.png  used on input line 85.
 (pdftex.def)             Requested size: 386.64748pt x 145.14336pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[17 <./figures/transition.png>]
 
-[18 <./figures/originals.png>]
-Overfull \hbox (19.13567pt too wide) in paragraph at lines 94--96
+
+[18 <./figures/transition.png>]
+
+[19 <./figures/originals.png>]
+Overfull \hbox (19.13567pt too wide) in paragraph at lines 97--99
 \OT1/ptm/m/n/12 ap-plied us-ing \OT1/cmtt/m/n/12 torch.transforms.RandomApply([transform.ColorJitter(brightness=1,
  []
 
-<figures/8bit_nThree.png, id=362, 859.2903pt x 570.933pt>
+<figures/8bit_nThree.png, id=367, 859.2903pt x 570.933pt>
 File: figures/8bit_nThree.png Graphic file (type png)
 <use figures/8bit_nThree.png>
-Package pdftex.def Info: figures/8bit_nThree.png  used on input line 108.
+Package pdftex.def Info: figures/8bit_nThree.png  used on input line 111.
 (pdftex.def)             Requested size: 429.64409pt x 285.46579pt.
 
 
-[19]
-<figures/8bit_nOne.png, id=369, 859.2903pt x 570.933pt>
+[20]
+<figures/8bit_nOne.png, id=373, 859.2903pt x 570.933pt>
 File: figures/8bit_nOne.png Graphic file (type png)
 <use figures/8bit_nOne.png>
-Package pdftex.def Info: figures/8bit_nOne.png  used on input line 124.
+Package pdftex.def Info: figures/8bit_nOne.png  used on input line 127.
 (pdftex.def)             Requested size: 429.64409pt x 285.46579pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[20 <./figures/8bit_nThree.png>]
-<figures/16bit_three_1.png, id=375, 859.2903pt x 570.933pt>
+[21 <./figures/8bit_nThree.png>]
+<figures/16bit_three_1.png, id=379, 859.2903pt x 570.933pt>
 File: figures/16bit_three_1.png Graphic file (type png)
 <use figures/16bit_three_1.png>
-Package pdftex.def Info: figures/16bit_three_1.png  used on input line 139.
+Package pdftex.def Info: figures/16bit_three_1.png  used on input line 142.
 (pdftex.def)             Requested size: 429.64409pt x 285.46579pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[21 <./figures/8bit_nOne.png>]
-<figures/16bithree2.png, id=381, 859.2903pt x 830.3823pt>
+[22 <./figures/8bit_nOne.png>]
+<figures/16bithree2.png, id=385, 859.2903pt x 830.3823pt>
 File: figures/16bithree2.png Graphic file (type png)
 <use figures/16bithree2.png>
-Package pdftex.def Info: figures/16bithree2.png  used on input line 156.
+Package pdftex.def Info: figures/16bithree2.png  used on input line 159.
 (pdftex.def)             Requested size: 429.64409pt x 415.19012pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[22 <./figures/16bit_three_1.png>]
+[23 <./figures/16bit_three_1.png>]
 
-[23 <./figures/16bithree2.png>]
-<figures/16bit_onen.png, id=392, 859.2903pt x 570.933pt>
+[24 <./figures/16bithree2.png>]
+<figures/16bit_onen.png, id=396, 859.2903pt x 570.933pt>
 File: figures/16bit_onen.png Graphic file (type png)
 <use figures/16bit_onen.png>
-Package pdftex.def Info: figures/16bit_onen.png  used on input line 171.
+Package pdftex.def Info: figures/16bit_onen.png  used on input line 174.
 (pdftex.def)             Requested size: 429.64409pt x 285.46579pt.
 )
 
-[24 <./figures/16bit_onen.png>]
+[25 <./figures/16bit_onen.png>]
 \openout2 = `chapters/methodology.aux'.
 
  (./chapters/methodology.tex
 chapter 6.
 
 
-[25
+[26
 
 
 
 
 ]
 
-[26]
+[27]
 Underfull \vbox (badness 1635) has occurred while \output is active []
 
 
 
-[27]
-
 [28]
+
+[29]
 Overfull \hbox (14.16426pt too wide) in paragraph at lines 134--135
 []\OT1/ptm/m/n/12 The above stan-dard Sim-CLR loss func-tion and data aug-men-ta-tion com-bi-na-tion with the ResNet18
  []
 
 
 
-[29]
-
 [30]
-<figures/3_1.png, id=474, 970.62625pt x 295.1025pt>
+
+[31]
+<figures/3_1.png, id=479, 970.62625pt x 295.1025pt>
 File: figures/3_1.png Graphic file (type png)
 <use figures/3_1.png>
 Package pdftex.def Info: figures/3_1.png  used on input line 181.
 (pdftex.def)             Requested size: 403.31511pt x 122.62285pt.
 
 
-[31]
-<figures/3_2fine.png, id=482, 970.62625pt x 296.10625pt>
+[32]
+<figures/3_2fine.png, id=486, 970.62625pt x 296.10625pt>
 File: figures/3_2fine.png Graphic file (type png)
 <use figures/3_2fine.png>
 Package pdftex.def Info: figures/3_2fine.png  used on input line 189.
 (pdftex.def)             Requested size: 403.31511pt x 123.03993pt.
 
 
-[32 <./figures/3_1.png> <./figures/3_2fine.png>]
-<figures/1_1.png, id=492, 936.49875pt x 294.09875pt>
+[33 <./figures/3_1.png> <./figures/3_2fine.png>]
+<figures/1_1.png, id=496, 936.49875pt x 294.09875pt>
 File: figures/1_1.png Graphic file (type png)
 <use figures/1_1.png>
 Package pdftex.def Info: figures/1_1.png  used on input line 215.
 (pdftex.def)             Requested size: 403.31511pt x 126.65744pt.
-<figures/1_2.png, id=493, 936.49875pt x 296.10625pt>
+<figures/1_2.png, id=497, 936.49875pt x 296.10625pt>
 File: figures/1_2.png Graphic file (type png)
 <use figures/1_2.png>
 Package pdftex.def Info: figures/1_2.png  used on input line 222.
@@ -1438,27 +1450,27 @@ Underfull \vbox (badness 1796) has occurred while \output is active []
 
 
 
-[33 <./figures/1_1.png> <./figures/1_2.png>]
-
-[34]
+[34 <./figures/1_1.png> <./figures/1_2.png>]
 
 [35]
+
+[36]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[36]
+[37]
 
-[37])
+[38])
 
-[38]
+[39]
 \openout2 = `chapters/Experiments.aux'.
 
  (./chapters/Experiments.tex
 chapter 7.
 )
 
-[39
+[40
 
 
 
@@ -1473,42 +1485,38 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[40
+[41
 
 
 
 
 ]
 
-[41]
+[42]
 Overfull \hbox (20.21957pt too wide) in paragraph at lines 47--56
  [] 
  []
 
 
 
-[42])
+[43])
 
-[43]
+[44]
 \openout2 = `chapters/conclusion.aux'.
 
 
 No file chapters/conclusion.tex.
-
-
-[44
-
-
-
-
-
-
-
-]
 chapter without number
 
 
 [45
+
+
+
+
+
+
+
 
 ]
 Overfull \hbox (0.37463pt too wide) in paragraph at lines 225--225
@@ -1559,7 +1567,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11029b,2323s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (61 pages, 5596625 bytes).
+Output written on main.pdf (61 pages, 5597160 bytes).
 PDF statistics:
  809 PDF objects out of 1000 (max. 8388607)
  672 compressed objects within 7 object streams
