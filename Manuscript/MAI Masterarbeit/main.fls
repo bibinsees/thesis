@@ -571,6 +571,8 @@ INPUT ./figures/1_2.png
 INPUT ./figures/1_2.png
 INPUT ./figures/1_2.png
 INPUT ./figures/1_2.png
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT ./chapters/Experiments.tex
 INPUT ./chapters/Experiments.tex
 OUTPUT chapters/Experiments.aux
