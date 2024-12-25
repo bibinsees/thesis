@@ -17,12 +17,17 @@ Detailed study/research/experiments on data augmentation and image preprocessing
 Currently, as the focus is on creating the complete pipeline, the standard data augmentation combination (which showed high performance for SimCLR downstream tasks) from the SimCLR \cite{chen2020simple} paper is being used, as shown below.
 
 \begin{enumerate}
-  \item  original image width size is: 2456*2054 (H*W). crop the original image to have H = W. since the cancer cell debris spread across the width, we didn't change the width to include the debris,
-   instead we reduced the hight to same size of width. hence we get H = W = 2054. if cancer cell is formed for instance, the cell it self spread acroos one diemsion that means
-    its not valid cultvation by robot so we can digard it. ie maximum area of cancer cell should be included in this square 2054*2054 size image. advantage of croping like this are:
+  \item  We can't center crop it because for some of cancer cells are not centered in the image instead they are close to egdes. so we have to make 
+  sure that when we crop it it should include the cacne cell fully. the solution is find the boundary of cancer cell and get the bounding box of cancer 
+  cell then make crop to required size. original image width size is: 2456*2054 (H*W). crop the original image to have H = W. since the cancer cell debris
+   spread across the width, we didn't change the width to include the debris,
+   instead we reduced the hight to same size of width. hence we get H = W = 2054. if cancer cell is formed for instance, the cell it self spread acroos
+    one diemsion that means its not valid cultvation by robot so we can digard it. ie maximum area of cancer cell should be included in this square 
+    2054*2054 size image. advantage of croping like this are:
     \begin{enumerate}
       \item  remove unnecessary background which contains no information
-      \item  there will be no shear during resize crop augmentation to reduce the size to 96*96 like in the figure. 
+      \item  there will be no shear during resize to 96*96 augmentation like in the figure.
+       
       \item \textcolor{red}{give proof for above statement} 
     \end{enumerate}
 
@@ -115,9 +120,12 @@ The issue with this increase is that after data augmentation, the new pixel valu
     \label{fig:16bit_single_channel}
   \end{figure}
 
-  $49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of darker regions 
-as happened in original image, as  as observed in figure \ref{fig:16bit_single_channel}. One potential solution is to experiment with specific parameters within the color 
-jitter transform instead of using random values, ensuring that the reduction in the number of unique pixel values does not exceed, for example, $30\%$. Another 
+  $49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of 
+  darker regions 
+as happened in original image, as  as observed in figure \ref{fig:16bit_single_channel}. One potential solution is to experiment with specific parameters
+ within the color 
+jitter transform instead of using random values, ensuring that the reduction in the number of unique pixel values does not exceed, for example, $30\%$. 
+Another 
 option would be to write a custom Python function, depending on the available time. Other augmentations from PyTorch work fine in this experiment.
 
 then I removed contrast, saturation and hue. because if I tried to make 
@@ -155,7 +163,8 @@ Why we would like to try other models? Because SimCLR demands larger batch size 
 
 
 \subsubsection{Model}
-The Resnet18 \cite{he2015deepresiduallearningimage} model processes a single image to produce a latent representation of the input, aiming to cluster similar images together in a latent space. 
+The Resnet18 \cite{he2015deepresiduallearningimage} model processes a single image to produce a latent representation of the input, aiming to cluster 
+similar images together in a latent space. 
 
 \subsubsection{Training }
 The training process follows these steps:
@@ -163,13 +172,15 @@ The training process follows these steps:
 \begin{enumerate}
     \item We take a batch of images with batch size $N$.
     
-    \item Our dataset class returns two augmented versions for each original image as explained in section \ref{sec:data preprocessing} in the batch, resulting in $2N$ images as input.
+    \item Our dataset class returns two augmented versions for each original image as explained in section \ref{sec:data preprocessing} in the batch, 
+    resulting in $2N$ images as input.
 
     \item The model produces $2N$ latent representations, independently for each augmented image.
 
     \item For each batch, the two augmentations of the same image are treated as positive pairs, while all others are considered negative pairs.
 
-    \item We calculate the cosine similarities between the positive and negative pairs. These cosine similarities are then used as input to the loss function described below equation \ref{eq:loss}
+    \item We calculate the cosine similarities between the positive and negative pairs. These cosine similarities are then used as input to the loss
+     function described below equation \ref{eq:loss}
 \end{enumerate}
 The original loss function for each pair from SimCLR paper \cite{chen2020simple} is defined as:
 

@@ -1,0 +1,52 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{List of Figures}{x}{chapter*.5}%
+\contentsline {chapter}{List of Tables}{xi}{chapter*.6}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Laboratory Setup}{4}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Objective}{10}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Research questions}{11}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Literature Review}{12}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Data Description}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Data set}{15}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Methodology}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Data preprocessing}{25}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Data augmentation}{27}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Train SimCLR as SSL model}{31}{section.6.3}%
+\contentsline {subsubsection}{\nonumberline Model}{32}{subsubsection*.25}%
+\contentsline {subsubsection}{\nonumberline Training}{32}{subsubsection*.27}%
+\contentsline {subsubsection}{\nonumberline Variation 1:}{35}{subsubsection*.29}%
+\contentsline {subsubsection}{\nonumberline Variation 2:}{36}{subsubsection*.33}%
+\contentsline {section}{\numberline {6.4}Ranking strategy 1: Using CAE}{38}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Day7 to day7 reconstruction}{38}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Day7 to day10 predcition}{39}{subsection.6.4.2}%
+\contentsline {subsubsection}{\nonumberline day10 predcition}{39}{subsubsection*.37}%
+\contentsline {subsubsection}{\nonumberline Delta predcition}{40}{subsubsection*.39}%
+\contentsline {section}{\numberline {6.5}Ranking strategy 2: K means centroid approach}{40}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Ranking strategy 3: Softmax approach}{41}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Intermediate evaluation of SSL model}{41}{section.6.7}%
+\contentsline {subsubsection}{\nonumberline classification}{41}{subsubsection*.41}%
+\contentsline {subsubsection}{\nonumberline kmeans clustering}{42}{subsubsection*.43}%
+\contentsline {subsubsection}{\nonumberline Direct day 7 to day 10 distance evaluation}{50}{subsubsection*.58}%
+\contentsline {chapter}{\numberline {7}Experimental Setup}{51}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Experimental Results and Discussion}{52}{chapter.8}%
+\contentsline {section}{\numberline {8.1}3 channel vs 1 channel}{53}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Unet vs resnet}{53}{section.8.2}%
+\contentsline {section}{\numberline {8.3}96 vs 256}{53}{section.8.3}%
+\contentsline {section}{\numberline {8.4}bacthsize 16 vs 64 vs 128 vs 256}{53}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Intermediate evaluation}{53}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Classification}{53}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Clustering}{53}{subsection.8.5.2}%
+\contentsline {subsection}{\numberline {8.5.3}Data augmentation day 7 to day 10 distance evaluation}{53}{subsection.8.5.3}%
+\contentsline {section}{\numberline {8.6}Ranking Evaluation}{54}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Using CAE}{54}{subsection.8.6.1}%
+\contentsline {subsubsection}{\nonumberline Day 7 to 7 reconstruction}{54}{subsubsection*.60}%
+\contentsline {subsubsection}{\nonumberline Day 7 to 10 prediction}{54}{subsubsection*.62}%
+\contentsline {paragraph}{\nonumberline Day 10 prediction model}{54}{paragraph*.64}%
+\contentsline {paragraph}{\nonumberline Delta prediction model}{54}{paragraph*.66}%
+\contentsline {subsection}{\numberline {8.6.2}K means centroid approach}{54}{subsection.8.6.2}%
+\contentsline {subsection}{\numberline {8.6.3}Softmax approach}{54}{subsection.8.6.3}%
+\contentsline {chapter}{\nonumberline Appendix}{57}{chapter*.68}%
+\contentsline {chapter}{Literature}{58}{section*.69}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{60}{chapter*.71}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{61}{chapter*.72}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
