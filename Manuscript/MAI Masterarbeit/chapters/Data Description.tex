@@ -13,13 +13,16 @@ In our case, we have   3d tumor model as dark grayish color in the bright backgr
 
 1. challenges:
 1.1 limited data set for day 7 to day 10 prediction model
-1.2 same image can be flipped, blured, brightness change, position change. position change for some extend can 
-be resolved 
-using center crop approach, but if the cell is in the edge then center crop won't help. i didn't do any data
+1.2 day 10  image can be flipped, blured, brightness change, position change (position cahnge is due to because when we take day 10 images we have to bring the
+ well plate outside and sometimes
+ when we put that into microscope the position is already changed). Relativly small position of tumor cell in the image from center to other directions change  can 
+be resolved for some extend using center crop approach, but if the cell is in the edge then center crop won't help. i didn't do any data
  preprocessing
  specifically for that problem. but I expect the croping and resizing to 96*96 will be a solution. because 
  when we do that 
- data transformation, augmented pairs will be positioned differently.  
+ data transformation, augmented pairs will be positioned differently. 
+ 
+ \textcolor{red}{only state if you can show the proof}
 1.3 same drug can have different effect on day 10 (example: huge variation in: ds 61 g6 and 41 gp6. less variation: 
 RBTDS 4.1 and 4.2 gp 3) initially i thought I will be able to use 
 as drug gp to evaluate, because of this difference, the difference can be due to different patient cancer cell?
@@ -54,7 +57,8 @@ what matters is  most sharped because
  
   investigate the performance of single channel too because maybe thats enough for us too to able to get our expected result.
   how to choose the focused layer will be explained the data preprocessing section.
-
+  \textcolor{red}{correct the figure.take small patch and show the difference in edge effect. but neverthless we can't 
+  give show the focused one in whole image? check for image like that maybe you will find in 5 layers or maybeyou will find in 3 layers}
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.46]{figures/threes.png} 
@@ -63,6 +67,10 @@ what matters is  most sharped because
 \end{figure}
 
 Figure \ref{fig:Transition} illustrates that, even with the application of the same drug at the same concentration, the morphology of 3D tumor tissues changes differently.
+
+\textcolor{red}{correct the figure. show drug screen with same drug concentration we have diferent effect between different experiment. this maybe due to environmental 
+factors or anything}
+
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.46]{figures/transition.png} 
@@ -91,17 +99,30 @@ The table below shows the division of three different types of image datasets, a
   \label{fig:originals}
 \end{figure}
 
-An 8-bit image encompasses 256 color tones (ranging from 0 to 255) per channel, whereas a 16-bit image accommodates 65,536 color tones (ranging from 0 to 65,535) per channel, in our case 65,536 shades of gray. Retaining the original 16-bit depth is crucial for two primary reasons:
-
+An 8-bit image encompasses 256 color tones (ranging from 0 to 255) per channel, whereas a 16-bit image accommodates 65,536 color tones 
+(ranging from 0 to 65,535) per channel, in our case 65,536 shades of gray. Retaining the original 16-bit depth is crucial for two primary reasons:
 \begin{enumerate}
-  \item Converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details. Since 8-bit images only allow 256 possible values, the finer variations in intensity that are present in 16-bit images become compressed. For example, two distinct values in 16-bit (such as 30,000 and 30,001) could map to the same 8-bit value (for instance, both might be mapped to 117). This results in the loss of subtle intensity differences. 
+  \item Converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details.
+Since 8-bit images only allow 256 possible values, the finer variations in intensity that are present in 16-bit images become compressed as illusstrated in \ref{fig:8bitvs16bit}.
+For example, two distinct values in 16-bit (such as 30,000 to 30,048 ) could map to the same 8-bit value (for instance, both might be mapped to 117).
+This results in the loss of subtle intensity differences, which can be crucial in our image task, where minute variations in intensity can be indicative
+ of important features such as gradual trasnsition of dark color frfom center to border or amount of debris surrounded to the tumor cell.
 
-  \item During data augmentation processes that involve substantial alterations in brightness, contrast, or color, an 8-bit image—already limited to 256 tones—could lose up to 50 percentage of these tones, leaving only 128 levels of color and tone. This reduction can lead to "banding," where areas with smooth transitions in tone exhibit visible stripes with jagged edges. In contrast, a 16-bit image, even with a 50 percentage reduction in tones, would retain over 32,000 levels. This higher tonal range allows for smoother transitions, better edge preservation, and enhanced accuracy in color and hue representation. As a result, the dynamic range—the difference between the lightest and darkest areas of the image—remains much more effectively preserved in 16-bit images than in 8-bit images.
+
+ \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/8bitvs16bit.png} 
+  \caption{8-bit vs 16 bit data lose comparison}
+  \label{fig:8bitvs16bit}
+\end{figure}
+
+\item During data augmentation processes that involve substantial alterations in brightness, contrast, or color, an 8-bit image—already limited to 256 tones—could lose up to 50 percentage of these tones, leaving only 128 levels of color and tone. This reduction can lead to "banding," where areas with smooth transitions in tone exhibit visible stripes with jagged edges. In contrast, a 16-bit image, even with a 50 percentage reduction in tones, would retain over 32,000 levels. This higher tonal range allows for smoother transitions, better edge preservation, and enhanced accuracy in color and hue representation. As a result, the dynamic range—the difference between the lightest and darkest areas of the image—remains much more effectively preserved in 16-bit images than in 8-bit images.
 \end{enumerate}
 In our case, the maximum reduction in unique pixel values for the 8-bit images, regardless number of channels was found to be 99.27 percentage after 3000 epochs of random
-color jitter applied  using \texttt{torch.transforms.RandomApply([transform.ColorJitter(brightness=1, contrast=1, saturation=1, hue=0)], p=1)} as shown in figure \ref{fig:8bit_nThree} and \ref{fig:8bit_n one}, whereas for the 16-bit single-channel images (where one sharp layer was extracted from all three layers and considered as input for data augmentation), the reduction in unique pixel values was only 49 percentage after 3,000 epochs of random color jitter, as shown in Figure \ref{fig:16bit_n one}.
+color jitter applied  using \texttt{torch.transforms.RandomApply([transform.ColorJitter(brightness=1, contrast=1, saturation=1, hue=0)], p=1)} 
+as shown in figure \ref{fig:8bit_nThree} and \ref{fig:8bit_n one}, whereas for the 16-bit single-channel images (where one sharp layer was extracted from all three layers and considered as input for data augmentation), the reduction in unique pixel values was only 49 percentage after 3,000 epochs of random color jitter, as shown in Figure \ref{fig:16bit_n one}.
 
-Interestingly, for 16-bit images with 3 channels, instead of a reduction, there was an increase in the number of unique pixel values—by a maximum of 258,757 percentage. The issue with this increase is that after data augmentation, the new pixel values are not distributed similarly to the original image. Instead, they shift to the two extremes, such as 0 or 1, or sometimes pushing values to both 0 and 1, which deviate significantly from the original image distribution, as shown in Figures \ref{fig:16bit_three_version1} and \ref{fig:16bit_three_version2}.
+
 
 \textbf{8-bit three-channel image example before and after data augmentation:}
 \begin{itemize}
@@ -133,38 +154,6 @@ Interestingly, for 16-bit images with 3 channels, instead of a reduction, there 
   \label{fig:8bit_n one}
 \end{figure}
 
-\textbf{16-bit three-channel image before and after data augmentation:}
-\begin{itemize}
-  \item Number of unique pixel values in the original image: 2111
-  \item Number of unique pixel values in the augmented image: 5044624
-  \item Original Image - Minimum pixel value: 0.13064774870872498, Maximum pixel value: 0.6874189376831055
-  \item Augmented Image - Minimum pixel value: 0.022128667682409286, Maximum pixel value: 0.11041323840618134
-\end{itemize}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.5]{figures/16bit_three_1.png} 
-  \caption{sixteen bit three layer after 3000 epoch random torch color jitterness apply}
-  \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Increase in percentage of unique pixel values: 2388\%}
-  \label{fig:16bit_three_version1}
-\end{figure}
-
-\textbf{Another example of a 16-bit three-channel image before and after data augmentation:}
-
-\begin{itemize}
-  \item Original Image - Unique pixel counts per channel: 2137
-  \item Augmented Image - Unique pixel counts per channel: 1686717
-  \item Original Image - Minimum pixel value: 0.1306, Maximum pixel value: 0.6874
-  \item Augmented Image -  Minimum pixel value: 0.1970, Maximum pixel value: 0.3748
-\end{itemize}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.5]{figures/16bithree2.png} 
-  \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Increase in percentage of unique pixel values: 78\%}
-  \label{fig:16bit_three_version2}
-\end{figure}
-
 \textbf{16-bit single-channel image before and after data augmentation:}
 \begin{itemize}
   \item Number of unique pixel values in the original image: 2111
@@ -180,4 +169,4 @@ Interestingly, for 16-bit images with 3 channels, instead of a reduction, there 
   \label{fig:16bit_n one}
 \end{figure}
 
-$49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of darker regions as happened in original image, as  as observed in figure \ref{fig:16bit_n one}. One potential solution is to experiment with specific parameters within the color jitter transform instead of using random values, ensuring that the reduction in the number of unique pixel values does not exceed, for example, $30\%$. Another option would be to write a custom Python function, depending on the available time. Other augmentations from PyTorch work fine in this experiment.
+

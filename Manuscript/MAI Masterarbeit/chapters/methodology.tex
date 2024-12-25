@@ -17,6 +17,15 @@ Detailed study/research/experiments on data augmentation and image preprocessing
 Currently, as the focus is on creating the complete pipeline, the standard data augmentation combination (which showed high performance for SimCLR downstream tasks) from the SimCLR \cite{chen2020simple} paper is being used, as shown below.
 
 \begin{enumerate}
+  \item  original image width size is: 2456*2054 (H*W). crop the original image to have H = W. since the cancer cell debris spread across the width, we didn't change the width to include the debris,
+   instead we reduced the hight to same size of width. hence we get H = W = 2054. if cancer cell is formed for instance, the cell it self spread acroos one diemsion that means
+    its not valid cultvation by robot so we can digard it. ie maximum area of cancer cell should be included in this square 2054*2054 size image. advantage of croping like this are:
+    \begin{enumerate}
+      \item  remove unnecessary background which contains no information
+      \item  there will be no shear during resize crop augmentation to reduce the size to 96*96 like in the figure. 
+      \item \textcolor{red}{give proof for above statement} 
+    \end{enumerate}
+
   \item Normalize the 16-bit image to [0, 1] for the following reasons:
   \begin{enumerate}
       \item Ideally, normalization should be done at the end after augmentations to ensure scaled input to the neural network, but in our case, we have to normalize first since the augmentation with \texttt{torch.transform.ColorJitter} didn't work without scaled data.
@@ -26,7 +35,9 @@ Currently, as the focus is on creating the complete pipeline, the standard data 
   \item Perform the following augmentations:
   \begin{enumerate}
       \item Apply a horizontal flip.
-      \item Randomly crop the image and resize it to $96 \times 96$.
+      \item Randomly crop the image and resize it to $96 \times 96$. i choosed this small H and W as image size to feed train our model because of two reasons: 1. 
+      computational fast, so that we can complete the pipeline in time. 2. if we can get good performance in ranking with this small image sizes (ie less pixel details
+       compared to 2054 * 2056 ) that means we can improve the performance with larger image sizes.
       \item Randomly change the brightness, contrast, saturation, and hue of the cropped patch.
   \end{enumerate}
 
@@ -44,13 +55,70 @@ Visualisation of before and after preprocessing of image shown in figures 6.5 to
 
 \section{Data augmentation} \label{sec:data augmentation}
 
-I started with data augmentation just like simclr paper did, just to get 
+I started with data augmentation just like simclr paper did that is strong data augmentation, just to get 
 to play around , beacuse it was easy to do , since I can directly adapt code 
 from tutorial just to have complete pipeline.
 
 I found that those strong augmentations transformed to distribution out of 
-the original distribution. specifically color jitterness including brightness, 
+the original distribution like we see in the figures below. specifically color jitterness including brightness, 
 contrast, hue, saturation.
+
+Interestingly, for 16-bit images with 3 channels, instead of a reduction, there was an increase in the number of unique pixel values—by a maximum of 258,757 percentage. 
+The issue with this increase is that after data augmentation, the new pixel values are not distributed similarly to the original image. Instead, they shift to
+ the two extremes,
+ such as 0 or 1, or sometimes pushing values to both 0 and 1, which deviate significantly from the original image distribution, as shown in Figures
+  \ref{fig:16bit_three_v1} and \ref{fig:16bit_three_v2}.
+
+  \textbf{16-bit three-channel image before and after data augmentation:}
+  \begin{itemize}
+    \item Number of unique pixel values in the original image: 2111
+    \item Number of unique pixel values in the augmented image: 5044624
+    \item Original Image - Minimum pixel value: 0.13064774870872498, Maximum pixel value: 0.6874189376831055
+    \item Augmented Image - Minimum pixel value: 0.022128667682409286, Maximum pixel value: 0.11041323840618134
+  \end{itemize}
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figures/16bit_three_1.png} 
+    \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}
+    \label{fig:16bit_three_v1}
+  \end{figure}
+  
+  \textbf{Another example of a 16-bit three-channel image before and after data augmentation:}
+  
+  \begin{itemize}
+    \item Original Image - Unique pixel counts per channel: 2137
+    \item Augmented Image - Unique pixel counts per channel: 1686717
+    \item Original Image - Minimum pixel value: 0.1306, Maximum pixel value: 0.6874
+    \item Augmented Image -  Minimum pixel value: 0.1970, Maximum pixel value: 0.3748
+  \end{itemize}
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figures/16bithree2.png} 
+    \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}
+    \label{fig:16bit_three_v2}
+  \end{figure}
+  
+  \textbf{16-bit single-channel image before and after data augmentation:}
+  \begin{itemize}
+    \item Number of unique pixel values in the original image: 2111
+    \item Number of unique pixel values in the augmented image: 1058
+    \item Original Image - Minimum pixel value:  0.13064774870872498, Maximum pixel value: 0.6666666865348816
+    \item Augmented Image - Minimum pixel value: 0, Maximum pixel value: 1
+  \end{itemize}
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figures/16bit_onen.png} 
+    \caption{8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}
+    \label{fig:16bit_single_channel}
+  \end{figure}
+
+  $49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of darker regions 
+as happened in original image, as  as observed in figure \ref{fig:16bit_single_channel}. One potential solution is to experiment with specific parameters within the color 
+jitter transform instead of using random values, ensuring that the reduction in the number of unique pixel values does not exceed, for example, $30\%$. Another 
+option would be to write a custom Python function, depending on the available time. Other augmentations from PyTorch work fine in this experiment.
 
 then I removed contrast, saturation and hue. because if I tried to make 
 those augs as invariant that means I'm making control and treated as 
