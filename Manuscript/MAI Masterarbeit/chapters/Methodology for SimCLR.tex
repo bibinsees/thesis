@@ -69,23 +69,24 @@ Which follows a sequential of:
    compared to 2054 * 2056 ) that means we can improve the performance with larger image sizes. 
   \item Apply a horizontal flip, (simclr paper only used horizontal flip because it doesn't make sense to have vertical flip/rotation in natural images) vertical 
   flip, (Horizontal+Vertical flip), Rotation = (90, 270), Horizontal flip + Rotation = (90, 270). Other flip and rotation combinations are restrained due to its
-  repeatable pattern to the above as shown in figure and due to the black cut problem explained in \ref{fig:rotation}.
+  repeatable pattern to the above as shown in \ref{fig:repeat} and due to the black cut problem explained in \ref{fig:rotation}.
   \item Randomly change the brightness, contrast, saturation  upto lower=1-0.8, upper=1+0.8 and hue upto 0.2 times.
 \end{enumerate}
 
-I call it as strong data augmentation. I found that those strong augmentations transformed to distribution out of 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.35]{figures/repeat.png} 
+  \caption{Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations.}
+  \label{fig:repeat}
+\end{figure}
+
+I call this as strong data augmentation. I found that those strong augmentations transformed to distribution out of 
 the original distribution like we see in the figures below. specifically color jitterness including brightness, 
-contrast, hue, saturation. 
+contrast, hue, and saturation.
 
-
-
-eventhough we know that these kind of 
-strong augmentations is sensitive to our dataset, I was speculate that strong augmentation may have better learned latent space representations.
-\textcolor{red}{add what kind of rotations and flips are possible without repetion of image} 
-
-
-
-Interestingly, for 16-bit images with 3 channels, instead of a reduction, there was an increase in the number of unique pixel values—by a maximum of 258,757 percentage. 
+Interestingly, for 16-bit images with 3 channels, instead of a reduction, there was an increase in the number of unique pixel values—by a maximum of 258,757 
+percentage. 
 The issue with this increase is that after data augmentation, the new pixel values are not distributed similarly to the original image. Instead, they shift to
  the two extremes,
  such as 0 or 1, or sometimes pushing values to both 0 and 1, which deviate significantly from the original image distribution, as shown in Figures
@@ -168,6 +169,10 @@ predict the change from day 7 to day 10. and most of the ime the size/shape
  changes. especially to the category which are exploded, they produce debris. 
  so maybe data augmentation seeing the time change. 
 
+ Eventhough we know that these kind of strong augmentations is sensitive to our dataset, I was speculate that strong augmentation may
+ have better learned latent space representations because I feel like the purpose of ths strong data augmentation is not to include/increase 
+ the possible distribution that can happen in real life scenarios, but it is to learn the features that are invariant to these augmentations.
+Hence I decided to experiment with this strong augmentation for downstream tasks.
 \section{Train SimCLR as SSL model}
 For step 1, as explained in chapter \ref{ch: Methodology for SimCLR}, SimCLR was used as the first model for self-supervised learning (SSL). 
 Future work: Later, other models such as masked autoencoders and DINO will be explored, depending on the available time.

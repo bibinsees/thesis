@@ -13,30 +13,32 @@
 \newlabel{fig:rotation}{{7.2}{30}{A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}{figure.caption.23}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {7.2}Data augmentation}{31}{section.7.2}\protected@file@percent }
 \newlabel{sec:data augmentation}{{7.2}{31}{Data augmentation}{section.7.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{33}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:16bit_three_v1}{{7.3}{33}{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch}{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{34}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:16bit_three_v2}{{7.4}{34}{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch}{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{35}{figure.caption.26}\protected@file@percent }
-\newlabel{fig:16bit_single_channel}{{7.5}{35}{8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}{figure.caption.26}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Train SimCLR as SSL model}{36}{section.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Model}{36}{subsubsection*.28}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Training}{37}{subsubsection*.30}\protected@file@percent }
-\newlabel{eq:original}{{7.1}{37}{Training}{equation.7.3.1}{}}
-\newlabel{eq:loss}{{7.2}{38}{Training}{equation.7.3.2}{}}
-\newlabel{sec:variations_implementations}{{7.3}{39}{Training}{Item.41}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Variation 1:}{40}{subsubsection*.32}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{41}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:augmentation}{{7.6}{41}{Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}{figure.caption.33}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.7}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{41}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:augmentations}{{7.7}{41}{Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}{figure.caption.34}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Variation 2:}{41}{subsubsection*.36}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7.8}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{42}{figure.caption.37}\protected@file@percent }
-\newlabel{fig:1doutput1}{{7.8}{42}{Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}{figure.caption.37}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.9}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{42}{figure.caption.38}\protected@file@percent }
-\newlabel{fig:1doutput3}{{7.9}{42}{Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}{figure.caption.38}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations.}}{33}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:repeat}{{7.3}{33}{Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{35}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:16bit_three_v1}{{7.4}{35}{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{36}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:16bit_three_v2}{{7.5}{36}{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch}{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{37}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:16bit_single_channel}{{7.6}{37}{8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Train SimCLR as SSL model}{38}{section.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Model}{39}{subsubsection*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Training}{39}{subsubsection*.31}\protected@file@percent }
+\newlabel{eq:original}{{7.1}{39}{Training}{equation.7.3.1}{}}
+\newlabel{eq:loss}{{7.2}{40}{Training}{equation.7.3.2}{}}
+\newlabel{sec:variations_implementations}{{7.3}{41}{Training}{Item.41}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Variation 1:}{42}{subsubsection*.33}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.7}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{43}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:augmentation}{{7.7}{43}{Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}{figure.caption.34}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.8}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{43}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:augmentations}{{7.8}{43}{Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Variation 2:}{43}{subsubsection*.37}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.9}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{44}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:1doutput1}{{7.9}{44}{Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}{figure.caption.38}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.10}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{44}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:1doutput3}{{7.10}{44}{Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}{figure.caption.39}{}}
 \@setckpt{chapters/Methodology for SimCLR}{
-\setcounter{page}{43}
+\setcounter{page}{45}
 \setcounter{equation}{2}
 \setcounter{enumi}{7}
 \setcounter{enumii}{2}
@@ -51,7 +53,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{9}
+\setcounter{figure}{10}
 \setcounter{table}{0}
 \setcounter{OptionTest}{0}
 \setcounter{section@level}{3}
