@@ -18,13 +18,15 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 99.27\%}}{23}{figure.caption.19}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{24}{figure.caption.20}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{28}{figure.caption.21}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{29}{figure.caption.22}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{30}{figure.caption.23}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{36}{figure.caption.30}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{36}{figure.caption.31}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{37}{figure.caption.34}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{38}{figure.caption.35}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}}{27}{figure.caption.21}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}}{28}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{31}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{32}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{33}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{39}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{39}{figure.caption.33}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{40}{figure.caption.36}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{40}{figure.caption.37}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -522,6 +522,16 @@ OUTPUT chapters/methodology.aux
 INPUT ./chapters/methodology.tex
 INPUT ./chapters/methodology.tex
 INPUT chapters/methodology.tex
+INPUT ./figures/long.png
+INPUT ./figures/long.png
+INPUT ./figures/long.png
+INPUT ./figures/long.png
+INPUT ./figures/long.png
+INPUT ./figures/rotation.png
+INPUT ./figures/rotation.png
+INPUT ./figures/rotation.png
+INPUT ./figures/rotation.png
+INPUT ./figures/rotation.png
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr10.tfm

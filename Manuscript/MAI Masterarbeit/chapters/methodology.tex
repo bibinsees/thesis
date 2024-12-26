@@ -27,8 +27,25 @@ Currently, as the focus is on creating the complete pipeline, the standard data 
     \begin{enumerate}
       \item  remove unnecessary background which contains no information
       \item  there will be no shear during resize to 96*96 augmentation like in the figure.
-       
-      \item \textcolor{red}{give proof for above statement} 
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.46]{figures/long.png} 
+        \caption{First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: 
+       original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}
+        \label{fig:elong}
+      \end{figure}
+      
+      \item rotation = 90 and 270, Horiflip+rotation 90, Horiflip+rotation270 this is only possible because of square image. if its other 
+      angles except multiples of 90 then images will have black part for that we need additional careful interpolation or something like that.
+       so my point is since the image is square we could take rotations of 90 mulitiples without any additional tasks.
+       \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.46]{figures/rotation.png} 
+        \caption{A: croped to 2054*2054 then resized to 96*96: No black cuts. B: 
+        original image 2456*2054 then resized to 96*96: black cuts happened}
+        \label{fig:rotation}
+      \end{figure}
+       \item \textcolor{red}{should I do rotation after resie to 96 or not? check} 
     \end{enumerate}
 
   \item Normalize the 16-bit image to [0, 1] for the following reasons:
@@ -59,7 +76,7 @@ Currently, as the focus is on creating the complete pipeline, the standard data 
 Visualisation of before and after preprocessing of image shown in figures 6.5 to 6.11.
 
 \section{Data augmentation} \label{sec:data augmentation}
-
+\textcolor{red}{add what kind of rotations and flips are possible without repetition image} 
 I started with data augmentation just like simclr paper did that is strong data augmentation, just to get 
 to play around , beacuse it was easy to do , since I can directly adapt code 
 from tutorial just to have complete pipeline.

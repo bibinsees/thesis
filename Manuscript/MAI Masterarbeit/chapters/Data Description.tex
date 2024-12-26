@@ -20,9 +20,12 @@ be resolved for some extend using center crop approach, but if the cell is in th
  preprocessing
  specifically for that problem. but I expect the croping and resizing to 96*96 will be a solution. because 
  when we do that 
- data transformation, augmented pairs will be positioned differently. 
+ data transformation, augmented pairs will be positioned differently.  \textcolor{red}{only state if you can show the proof} 
+ horizontal, vertical, rotation = 90 and 270, Horiflip+rotation 90,
+  Horiflip+rotation270 
+ augs also helps to make invariate to position changes.
  
- \textcolor{red}{only state if you can show the proof}
+
 1.3 same drug can have different effect on day 10 (example: huge variation in: ds 61 g6 and 41 gp6. less variation: 
 RBTDS 4.1 and 4.2 gp 3) initially i thought I will be able to use 
 as drug gp to evaluate, because of this difference, the difference can be due to different patient cancer cell?
