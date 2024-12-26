@@ -1,8 +1,9 @@
 \chapter{Methodology for SimCLR}\label{ch: Methodology for SimCLR}
 
 \section{Data preprocessing} \label{sec:data preprocessing}
-
+\textcolor{red}{add croping image below?} 
 \begin{enumerate}
+  
   \item  We can't center crop it because for some of cancer cells are not centered in the image instead they are close to egdes. so we have to make 
   sure that when we crop it it should include the cacne cell fully. the solution is find the boundary of cancer cell and get the bounding box of cancer 
   cell then make crop to required size. original image width size is: 2456*2054 (H*W). crop the original image to have H = W. since the cancer cell debris
@@ -23,7 +24,7 @@
       
       \item rotation = 90 and 270, Horiflip+rotation 90, Horiflip+rotation270 this is only possible because of square image. if its other 
       angles except multiples of 90 then images will have black part for that we need additional careful interpolation or something like that.
-       so my point is since the image is square we could take rotations of 90 mulitiples without any additional tasks.
+       so my point is since the image is square we could take rotations of 90 mulitiples without any additional tasks. explained in \ref{fig:rotation}.
        \begin{figure}[H]
         \centering
         \includegraphics[scale=0.46]{figures/rotation.png} 
@@ -39,14 +40,7 @@
       \item \texttt{torch.transform.ToTensor()} didn't scale the data points to the [0, 1] range.
   \end{enumerate}
   
-  \item Perform the following augmentations:
-  \begin{enumerate}
-      \item Apply a horizontal flip.
-      \item Randomly crop the image and resize it to $96 \times 96$. i choosed this small H and W as image size to feed train our model because of two reasons: 1. 
-      computational fast, so that we can complete the pipeline in time. 2. if we can get good performance in ranking with this small image sizes (ie less pixel details
-       compared to 2054 * 2056 ) that means we can improve the performance with larger image sizes.
-      \item Randomly change the brightness, contrast, saturation, and hue of the cropped patch.
-  \end{enumerate}
+  \item Perform data augmentations which detaily explained in the \ref{sec:data augmentation}
 
   \item Perform Z-score normalization after data augmentation for the following reasons:
   \begin{enumerate}
@@ -62,16 +56,34 @@ Visualisation of before and after preprocessing of image shown in figures 6.5 to
 
 \section{Data augmentation} \label{sec:data augmentation}
 
-Currently, as the focus is on creating the complete pipeline, the standard data augmentation combination (which showed high performance for SimCLR downstream tasks)
- from the SimCLR \cite{chen2020simple} paper is being used, as shown below.
-\textcolor{red}{add what kind of rotations and flips are possible without repetion of image} 
-I started with data augmentation just like simclr paper did that is strong data augmentation, just to get 
-to play around , beacuse it was easy to do , since I can directly adapt code 
-from tutorial just to have complete pipeline.
+I started with best data augmentation pipeline that proposed by simclr \cite{chen2020simple} paper did,
+because it gave best performance on natural image dataset like Imagenet and CIFAR for downstream task like classification. 
 
-I found that those strong augmentations transformed to distribution out of 
+Which follows a sequential of:
+
+\begin{enumerate}
+  \item Randomly crop the image and resize to specific smaller size. In my case I choosed to crop and resize to $96 \times 96$. i choosed this small H and W as 
+  image size to feed train our model because of two reasons: 1. 
+  computational fast, so that we can complete the pipeline in time. 2. if we can get good performance in ranking with this small image sizes (ie less pixel details
+
+   compared to 2054 * 2056 ) that means we can improve the performance with larger image sizes. 
+  \item Apply a horizontal flip, (simclr paper only used horizontal flip because it doesn't make sense to have vertical flip/rotation in natural images) vertical 
+  flip, (Horizontal+Vertical flip), Rotation = (90, 270), Horizontal flip + Rotation = (90, 270). Other flip and rotation combinations are restrained due to its
+  repeatable pattern to the above as shown in figure and due to the black cut problem explained in \ref{fig:rotation}.
+  \item Randomly change the brightness, contrast, saturation  upto lower=1-0.8, upper=1+0.8 and hue upto 0.2 times.
+\end{enumerate}
+
+I call it as strong data augmentation. I found that those strong augmentations transformed to distribution out of 
 the original distribution like we see in the figures below. specifically color jitterness including brightness, 
-contrast, hue, saturation.
+contrast, hue, saturation. 
+
+
+
+eventhough we know that these kind of 
+strong augmentations is sensitive to our dataset, I was speculate that strong augmentation may have better learned latent space representations.
+\textcolor{red}{add what kind of rotations and flips are possible without repetion of image} 
+
+
 
 Interestingly, for 16-bit images with 3 channels, instead of a reduction, there was an increase in the number of unique pixel values—by a maximum of 258,757 percentage. 
 The issue with this increase is that after data augmentation, the new pixel values are not distributed similarly to the original image. Instead, they shift to
