@@ -1,15 +1,51 @@
-\chapter{Methodology}\label{ch: Methodology}
-The goal is to leverage representation learning of bright-field microscopy images to develop a ranking/ordering scale (1 to n) for these images. 
-since we don't have ground truth labels to rank the images except control images. my strategy was to simplify the current ranking problem to only scale/order/rank images 
+\chapter{Structure of the framework}\label{ch: Structure of the framework}
+
+The goal is to leverage representation learning of bright-field microscopy images from SimCLR to develop a ranking/ordering scale (1 to n)
+for all images. 
+
+In this chapter, I will explain the framework to address this problem. 
+
+First we learn latent representations from the images using SimCLR as a self-supervised learning (SSL) model.
+then we need to do intermediate evaluation to check whether those features are learned effectively 
+
+
+
+Last of all why we do we need to learn feature vectors from the images? why can't we use directly the images to establish the ranking? maybe usign directly
+images may perform better in ranking than simclr feature. hence we should also need a comparitive study between those performance.
+
+
+as illustrated in \ref{fig:BigOutline}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.46]{figures/BigOutline.drawio.png} 
+  \caption{Big outline}
+  \label{fig:BigOutline}
+\end{figure}
+ 
+ 
+ 
+ 
+ 
+ 
+ since we don't have ground truth labels to rank the images except control images.
+
+
+
+My strategy was to simplify the current ranking problem to
+ only scale/order/rank images 
 using only control, single dose and exploded images.
-Thereason to pick these groups is that controls we know that there is no drug applied which means that there is no effect of drug at all. 
-single dose images are the category which is clinically recommended at the moment (eventhough we don't know how much drug effected or howmmuch it killed the cancer) 
-and exploded are visually exploded from the original cancer cell meansing we can visually see debris around the cancer cell potentially which may potentially harm the surrounding goof cells.
-once if we can order those small subset of entire images, we can add the other image as inference to see where they plotted relative to control 
+The reason to pick these groups is that controls we know that there is no drug applied which means that there is no effect of drug at all. 
+single dose images are the category which is clinically recommended at the moment (eventhough we don't know how much drug effected or how 
+much it killed the cancer) 
+and exploded are visually exploded from the original cancer cell meansing we can visually see debris around the cancer cell potentially which
+ may potentially harm the surrounding goof cells.
+once if we can order those small subset of entire images, we can add the other image as inference to see where they plotted relative to 
+control 
 or single dose or exloded in this scale.
 
 
-
+\chapter{Methodology}\label{ch: Methodology}
 
 \section{Data preprocessing} \label{sec:data preprocessing}
 
@@ -45,7 +81,6 @@ Currently, as the focus is on creating the complete pipeline, the standard data 
         original image 2456*2054 then resized to 96*96: black cuts happened}
         \label{fig:rotation}
       \end{figure}
-       \item \textcolor{red}{should I do rotation after resie to 96 or not? check} 
     \end{enumerate}
 
   \item Normalize the 16-bit image to [0, 1] for the following reasons:
@@ -76,7 +111,7 @@ Currently, as the focus is on creating the complete pipeline, the standard data 
 Visualisation of before and after preprocessing of image shown in figures 6.5 to 6.11.
 
 \section{Data augmentation} \label{sec:data augmentation}
-\textcolor{red}{add what kind of rotations and flips are possible without repetition image} 
+\textcolor{red}{add what kind of rotations and flips are possible without repetion of image} 
 I started with data augmentation just like simclr paper did that is strong data augmentation, just to get 
 to play around , beacuse it was easy to do , since I can directly adapt code 
 from tutorial just to have complete pipeline.

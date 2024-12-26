@@ -454,12 +454,9 @@ INPUT ./figures/timed.pdf
 INPUT ./figures/timed.pdf
 INPUT ./figures/timed.pdf
 INPUT ./figures/timed.pdf
-INPUT ./chapters/objectives.tex
-INPUT ./chapters/objectives.tex
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 OUTPUT chapters/objectives.aux
-INPUT ./chapters/objectives.tex
-INPUT ./chapters/objectives.tex
-INPUT chapters/objectives.tex
 INPUT ./chapters/Research questions.tex
 INPUT ./chapters/Research questions.tex
 OUTPUT chapters/Research questions.aux
@@ -472,8 +469,6 @@ OUTPUT chapters/literature_review.aux
 INPUT ./chapters/literature_review.tex
 INPUT ./chapters/literature_review.tex
 INPUT chapters/literature_review.tex
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ./chapters/Data Description.tex
 INPUT ./chapters/Data Description.tex
 OUTPUT chapters/Data Description.aux
@@ -522,6 +517,11 @@ OUTPUT chapters/methodology.aux
 INPUT ./chapters/methodology.tex
 INPUT ./chapters/methodology.tex
 INPUT chapters/methodology.tex
+INPUT ./figures/BigOutline.drawio.png
+INPUT ./figures/BigOutline.drawio.png
+INPUT ./figures/BigOutline.drawio.png
+INPUT ./figures/BigOutline.drawio.png
+INPUT ./figures/BigOutline.drawio.png
 INPUT ./figures/long.png
 INPUT ./figures/long.png
 INPUT ./figures/long.png

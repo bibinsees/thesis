@@ -77,7 +77,11 @@ The 60 inner wells are divided into sections to provide these three type of tumo
   \label{fig:Drug screen wellplate}
 \end{figure}
 
-The 3D tumor tissue models develop in the wellplate progressively from day 1 to day 7, reaching their maximum cancerous state by day 7, at which point the drug is administered. By day 10, the drug's effect on the cancerous tissue is expected to peak, as nutrient availability gradually decreases and the tumor begins to diminish. To isolate the drug's effects, changes in tumor tissue deterioration are assessed on day 3 post-drug administration (day 10),  in accordance with established medical protocols and previous research findings.
+\ref{figtime} Illustrates the flow chart of time evolutoion of 3D tumor tissues.
+The 3D tumor tissue models develop in the wellplate progressively from day 1 to day 7, reaching their maximum cancerous state by day 7, at which point the drug is 
+administered. By day 10, the drug's effect on the cancerous tissue is expected to peak, as nutrient availability gradually decreases and the tumor begins to diminish. 
+To isolate the drug's effects, changes in tumor tissue deterioration are assessed on day 3 post-drug administration (day 10),  in accordance with established medical 
+protocols and previous research findings. 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.9]{figures/timed.pdf} 
@@ -85,7 +89,11 @@ The 3D tumor tissue models develop in the wellplate progressively from day 1 to 
   \label{fig:time}
 \end{figure}
 
-We assess the efficacy of the drug by comparing the changes it induces in the untreated bright-field microscopy images over a period of time. The current methods to differentiate these changes involve studying the alterations from day 7 (after applying the drug) to Day 10. These changes are typically observed in three main parameters: 
+\chapter{Motivation}\label{ch: Motivation}
+
+We assess the efficacy of the drug by comparing the changes it induces in the untreated bright-field microscopy images over a period of time. 
+The current methods to differentiate these changes involve studying the alterations from day 7 (after applying the drug) to Day 10. These changes are typically
+observed in three main parameters: 
 
 \begin{enumerate}
   \item Size/Area
@@ -93,5 +101,7 @@ We assess the efficacy of the drug by comparing the changes it induces in the un
   \item Pixel intensity or color change
 \end{enumerate}
 
-These parameters serve as human-interpretable metrics for assessing the efficacy of the drug. However, there may be other hidden information or patterns within these bright-field microscopy images that are not human-interpretable. This potential can be explored using representation learning techniques. Additionally, this method can provide more standardization compared to manual assessment.
+These parameters serve as human-interpretable metrics for assessing the efficacy of the drug. However, there may be other hidden information or patterns within 
+these bright-field microscopy images that are not human-interpretable. This potential can be explored using representation learning techniques. Additionally, this 
+method can provide more standardization compared to manual assessment.
 \let\cleardoublepage\clearpage

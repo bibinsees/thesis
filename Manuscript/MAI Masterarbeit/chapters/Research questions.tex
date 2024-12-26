@@ -1,24 +1,28 @@
 \chapter{Research questions}\label{ch:Research questions}
+This thesis aims to assess drug efficacy by ranking different drug combinations and concentrations. 
+The ranking is based on features extracted from bright-field microscopy images of  three-dimensional tumor tissue models using
+representation learning. 
 
 1. Can we learn latent features that capture the alterations 
-induced in three-dimensional tumor tissue models by drug application over a period of time?
+induced in three-dimensional tumor tissue models by drug application over a period of time from bright-field microscopy images?
 
-2.  Will these features can effectively establish a ranking of drug efficacy 
-from bright-field microscopy images?
+2.  Will these features can effectively establish a ranking of drug efficacy?
 
-2. What methodologies and frameworks can be employed to extract and learn these
+3. What methodologies and frameworks can be employed to extract and learn these
  hidden representations efficiently?
 
-3. What could be reasonable metrics, such as L2 loss or cosine similarity, for 
+4. What could be reasonable metrics, such as L2 loss or cosine similarity, for 
 supporting the relative assessment of drug efficacy?
 
-4. can unsupervised learning be used to tackle this ranking problem since lack of label is 
+5. can unsupervised learning be used to tackle this ranking problem since lack of label is 
 our main challenge?
 
-5. How do we deal with the position change in the image collection of day 10 if we want to use prediction 
-model as one of our rankng startegy.
+6. How do we deal with the position change in the image collection of day 10 if we want to use prediction 
+model as one of our ranking startegy?
 
-6. How do we incorporate the fact about brightness/blur change in the image collection due to environmental or microscope 
+7. How do we incorporate the fact about brightness/blur change in the image collection due to environmental or microscope 
 variations?
 
-7. how do we deal with the insufficient data problem?
+8. how do we deal with the insufficient data problem?
+
+9. Do we actually need to learn these latent features to establish effective ranking ? or do would it be possible to do it directly using images it self?
