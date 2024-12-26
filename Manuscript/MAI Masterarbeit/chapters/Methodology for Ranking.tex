@@ -1,0 +1,78 @@
+\chapter{Methodology for Ranking}\label{ch:Methodology for Ranking}
+
+\section{Ranking strategy 1: Using CAE}
+
+\subsection{Day7 to day7 reconstruction}
+I start with classical anomaly detection approach that we train a model to 
+reconstruct/predict day 10 image from day 10 image exclusively on the untreated images. Since the day 10 prediction model is trained solely on untreated images,
+ we expect the the inference loss/metric (i.e., the difference between the predicted and actual Day 10 image) will be very small for untreated images.
+Conversely, the inference loss/metric will increase for treated images as their predictions deviate from those of untreated images.
+ This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start 
+ with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order.
+
+
+\subsection{Day7 to day10 predcition}
+\subsubsection{day10 predcition}
+\begin{enumerate}
+    \item \textbf{Step 1:} Create a latent space representation of all images, including untreated, clinically recommended, 
+    and drug screening images, using SimCLR. 
+    The idea is that SimCLR effectively learns efficient features of similar images that are not captured by 
+    human-interpretable metrics. We expect the SimCLR feature vectors of similar images will be closer in the latent space. 
+    In other words, feature vectors of similar images will be more linearly separable.
+  
+  \item \textbf{Step 2:} Train a prediction model exclusively on the representations of 
+  untreated images from Day 7 to Day 10. ( Input: Day 7 feature vector and target: Day 10 feature vector )
+
+  
+  \item \textbf{Step 3:} Perform inference on the representations of test images, which include untreated, clinically recommended, and drug screening images.
+  \item \textbf{Step 4:} Perform step 2 and step 3 on images instead of simclr feature vectors for comparitive study.
+\end{enumerate}
+
+Since the day 10 prediction model is trained solely on the representations of untreated images, the inference loss/metric 
+(i.e., the difference between the predicted and actual Day 10 image representations) will be very small for untreated images.
+ Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of untreated images.
+This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start 
+with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. 
+Determining a reasonable inference loss/metric will be one of the research problems to tackle.
+
+\subsubsection{Delta predcition}
+\begin{enumerate}
+  \item \textbf{Step 1:} Calculate the difference/delta between the day 7 and day 10 simclr 
+  feature vectors  exclusively on the untreated images.
+  \item \textbf{Step 2:} Train a prediction model where input is day 7 feature vector 
+  and target will be Delta.
+
+
+  \item \textbf{Step 3:} Perform inference on the test set where input will be day 7 feature vector of all images which include untreated, 
+  clinically recommended, and drug screening images to predict the delta between the day 7 feature vector  and day 10 feature vector.
+\end{enumerate}
+
+Since the delta prediction model is trained solely on the representations of day 
+7 untreated  images to predict the delta between the day 7 feature vector 
+and day 10 feature vector of untreated images,
+ the inference loss/metric (i.e., the difference between the predicted delta and actual
+  delta) will be very small for untreated images. Conversely,
+   the inference loss/metric will increase for treated images as their representations 
+   deviate from those of untreated images. This inference loss/metric will be used as 
+   the feature for the ranking/order scale, where the initial images will start with 
+   untreated images that have very small inference loss/metric, and the scale will end 
+   with images having high inference loss/metric in ascending order. 
+   Determining a reasonable inference loss/metric will be one of the research problems 
+   to tackle.
+
+
+
+\section{Ranking strategy 2: K means centroid approach}
+
+\begin{enumerate}
+  \item \textbf{Step 1:} Feed control images into k means and find the centriod of control (untreated) cluster based on both cosine distance and the euclidean distance. 
+  ( we can choose the distacne metric if we have time)
+  
+  \item \textbf{Step 2:} calculate the euclidean/cosine distance from this centroid to every images.
+  
+  \item \textbf{Step 3:} Perform the same operation for simlcr features and on original images.
+\end{enumerate}
+
+\section{Ranking strategy 3: Softmax approach}
+1. Train classification model to classify untreated and treated. 
+2. Then do inference on them and take softmax probability as metric for ranking.

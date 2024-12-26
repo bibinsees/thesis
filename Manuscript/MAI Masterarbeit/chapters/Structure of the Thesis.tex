@@ -1,0 +1,44 @@
+\chapter{Structure of the Thesis}\label{ch:Structure of the Thesis}
+
+The goal of this thesis is to leverage representation learning of bright-field microscopy images using SimCLR to develop a ranking/ordering scale 
+(1 to \( n \)) for all images. 
+
+In this chapter, I will explain the framework designed to address this problem. The task is divided into three main pipelines.
+
+First, we learn latent representations from the images using SimCLR as a self-supervised learning (SSL) model. The details will be explained in the 
+\textit{Methodology for SimCLR} chapter.
+
+Next, we perform an intermediate evaluation to assess whether the features have been effectively learned. The intermediate evaluation aims to:
+
+\begin{enumerate}
+    \item Classify the images,
+    \item Cluster the images, and
+    \item Ensure that the same features are extracted for identical images, even after transformations such as flipping, rotation, blurring, or brightness changes,
+     using a direct distance measure approach.
+\end{enumerate}
+
+The details of this step will be explained in the \textit{Methodology for Intermediate Evaluation} chapter.
+
+Subsequently, we use the learned features to establish a ranking scale. To achieve this, the following methods are employed:
+
+\begin{enumerate}
+    \item Prediction model,
+    \item K-means centroid approach, and
+    \item Softmax approach.
+\end{enumerate}
+
+The details of these methods will be discussed in the \textit{Methodology for Ranking Strategy} chapter.
+
+Finally, we address an important question: why do we need to learn feature vectors from the images? Could the ranking task perform better using the raw images 
+directly instead of SimCLR features? To answer this, we conduct a comparative study to evaluate the performance of both approaches.
+
+The details of this comparative study will be covered in the \textit{Methodology for Comparative Study} chapter.
+
+The overall structure of the thesis is illustrated in Figure~\ref{fig:BigOutline}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.46]{figures/BigOutline.drawio.png} 
+  \caption{Overall framework of the thesis.}
+  \label{fig:BigOutline}
+\end{figure}

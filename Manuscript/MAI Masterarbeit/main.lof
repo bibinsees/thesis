@@ -18,17 +18,19 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 99.27\%}}{23}{figure.caption.19}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{24}{figure.caption.20}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Big outline}}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Overall framework of the thesis.}}{27}{figure.caption.21}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}}{28}{figure.caption.22}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}}{29}{figure.caption.23}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{32}{figure.caption.24}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{33}{figure.caption.25}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{34}{figure.caption.26}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{40}{figure.caption.33}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{40}{figure.caption.34}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{41}{figure.caption.37}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{41}{figure.caption.38}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}}{31}{figure.caption.23}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{34}{figure.caption.24}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{35}{figure.caption.25}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{36}{figure.caption.26}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{42}{figure.caption.33}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{42}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{43}{figure.caption.37}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{43}{figure.caption.38}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

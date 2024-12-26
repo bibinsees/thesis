@@ -273,9 +273,6 @@ INPUT main.aux
 INPUT ./chapters/introduction.aux
 INPUT ./chapters/introduction.aux
 INPUT chapters/introduction.aux
-INPUT ./chapters/objectives.aux
-INPUT ./chapters/objectives.aux
-INPUT chapters/objectives.aux
 INPUT ./chapters/Research questions.aux
 INPUT ./chapters/Research questions.aux
 INPUT chapters/Research questions.aux
@@ -285,9 +282,18 @@ INPUT chapters/literature_review.aux
 INPUT ./chapters/Data Description.aux
 INPUT ./chapters/Data Description.aux
 INPUT chapters/Data Description.aux
-INPUT ./chapters/methodology.aux
-INPUT ./chapters/methodology.aux
-INPUT chapters/methodology.aux
+INPUT ./chapters/Structure of the Thesis.aux
+INPUT ./chapters/Structure of the Thesis.aux
+INPUT chapters/Structure of the Thesis.aux
+INPUT ./chapters/Methodology for SimCLR.aux
+INPUT ./chapters/Methodology for SimCLR.aux
+INPUT chapters/Methodology for SimCLR.aux
+INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+INPUT ./chapters/Methodology for Ranking.aux
+INPUT ./chapters/Methodology for Ranking.aux
+INPUT chapters/Methodology for Ranking.aux
 INPUT ./chapters/Experiments.aux
 INPUT ./chapters/Experiments.aux
 INPUT chapters/Experiments.aux
@@ -456,7 +462,6 @@ INPUT ./figures/timed.pdf
 INPUT ./figures/timed.pdf
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
-OUTPUT chapters/objectives.aux
 INPUT ./chapters/Research questions.tex
 INPUT ./chapters/Research questions.tex
 OUTPUT chapters/Research questions.aux
@@ -511,17 +516,26 @@ INPUT ./figures/16bit_onen.png
 INPUT ./figures/16bit_onen.png
 INPUT ./figures/16bit_onen.png
 INPUT ./figures/16bit_onen.png
-INPUT ./chapters/methodology.tex
-INPUT ./chapters/methodology.tex
-OUTPUT chapters/methodology.aux
-INPUT ./chapters/methodology.tex
-INPUT ./chapters/methodology.tex
-INPUT chapters/methodology.tex
+INPUT ./chapters/Structure of the Thesis.tex
+INPUT ./chapters/Structure of the Thesis.tex
+OUTPUT chapters/Structure of the Thesis.aux
+INPUT ./chapters/Structure of the Thesis.tex
+INPUT ./chapters/Structure of the Thesis.tex
+INPUT chapters/Structure of the Thesis.tex
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT ./figures/BigOutline.drawio.png
 INPUT ./figures/BigOutline.drawio.png
 INPUT ./figures/BigOutline.drawio.png
 INPUT ./figures/BigOutline.drawio.png
 INPUT ./figures/BigOutline.drawio.png
+INPUT ./chapters/Methodology for SimCLR.tex
+INPUT ./chapters/Methodology for SimCLR.tex
+OUTPUT chapters/Methodology for SimCLR.aux
+INPUT ./chapters/Methodology for SimCLR.tex
+INPUT ./chapters/Methodology for SimCLR.tex
+INPUT chapters/Methodology for SimCLR.tex
 INPUT ./figures/long.png
 INPUT ./figures/long.png
 INPUT ./figures/long.png
@@ -552,9 +566,6 @@ INPUT ./figures/16bit_onen.png
 INPUT ./figures/16bit_onen.png
 INPUT ./figures/16bit_onen.png
 INPUT ./figures/16bit_onen.png
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -590,8 +601,20 @@ INPUT ./figures/1_2.png
 INPUT ./figures/1_2.png
 INPUT ./figures/1_2.png
 INPUT ./figures/1_2.png
+INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
+INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
+OUTPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
+INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
+INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT ./chapters/Methodology for Ranking.tex
+INPUT ./chapters/Methodology for Ranking.tex
+OUTPUT chapters/Methodology for Ranking.aux
+INPUT ./chapters/Methodology for Ranking.tex
+INPUT ./chapters/Methodology for Ranking.tex
+INPUT chapters/Methodology for Ranking.tex
 INPUT ./chapters/Experiments.tex
 INPUT ./chapters/Experiments.tex
 OUTPUT chapters/Experiments.aux
@@ -612,9 +635,6 @@ INPUT main.aux
 INPUT ./chapters/introduction.aux
 INPUT ./chapters/introduction.aux
 INPUT chapters/introduction.aux
-INPUT ./chapters/objectives.aux
-INPUT ./chapters/objectives.aux
-INPUT chapters/objectives.aux
 INPUT ./chapters/Research questions.aux
 INPUT ./chapters/Research questions.aux
 INPUT chapters/Research questions.aux
@@ -624,9 +644,18 @@ INPUT chapters/literature_review.aux
 INPUT ./chapters/Data Description.aux
 INPUT ./chapters/Data Description.aux
 INPUT chapters/Data Description.aux
-INPUT ./chapters/methodology.aux
-INPUT ./chapters/methodology.aux
-INPUT chapters/methodology.aux
+INPUT ./chapters/Structure of the Thesis.aux
+INPUT ./chapters/Structure of the Thesis.aux
+INPUT chapters/Structure of the Thesis.aux
+INPUT ./chapters/Methodology for SimCLR.aux
+INPUT ./chapters/Methodology for SimCLR.aux
+INPUT chapters/Methodology for SimCLR.aux
+INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+INPUT ./chapters/Methodology for Ranking.aux
+INPUT ./chapters/Methodology for Ranking.aux
+INPUT chapters/Methodology for Ranking.aux
 INPUT ./chapters/Experiments.aux
 INPUT ./chapters/Experiments.aux
 INPUT chapters/Experiments.aux
