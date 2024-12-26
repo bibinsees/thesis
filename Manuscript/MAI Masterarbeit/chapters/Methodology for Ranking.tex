@@ -1,8 +1,25 @@
 \chapter{Methodology for Ranking}\label{ch:Methodology for Ranking}
+ 
+since we don't have ground truth labels to rank the images except control images.
+My strategy was to simplify the current ranking problem to only scale/order/rank images 
+using only control, single dose and exploded images.
+The reason to pick these groups is that controls we know that there is no drug applied which means that there is no effect of drug at all. 
+single dose images are the category which is clinically recommended at the moment (eventhough we don't know how much drug effected or how 
+much it killed the cancer) 
+and exploded are visually exploded from the original cancer cell meansing we can visually see debris around the cancer cell potentially which
+ may potentially harm the surrounding goof cells.
+once if we can order those small subset of entire images, we can add the other image as inference to see where they plotted relative to 
+control 
+or single dose or exloded in this scale.
 
 \section{Ranking strategy 1: Using CAE}
 
 \subsection{Day7 to day7 reconstruction}
+Original images: Unfortunately, the inference loss/metric will ve same beacuse control day 10 and treatd looks same . I was dumb enough to do that.
+ thats why i need  day 7 to day 7 reconstruction model.
+
+
+
 I start with classical anomaly detection approach that we train a model to 
 reconstruct/predict day 10 image from day 10 image exclusively on the untreated images. Since the day 10 prediction model is trained solely on untreated images,
  we expect the the inference loss/metric (i.e., the difference between the predicted and actual Day 10 image) will be very small for untreated images.

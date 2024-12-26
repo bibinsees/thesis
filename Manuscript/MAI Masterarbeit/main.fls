@@ -294,15 +294,15 @@ INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux
 INPUT ./chapters/Methodology for Ranking.aux
 INPUT ./chapters/Methodology for Ranking.aux
 INPUT chapters/Methodology for Ranking.aux
-INPUT ./chapters/Experiments.aux
-INPUT ./chapters/Experiments.aux
-INPUT chapters/Experiments.aux
-INPUT ./chapters/results.aux
-INPUT ./chapters/results.aux
-INPUT chapters/results.aux
-INPUT ./chapters/conclusion.aux
-INPUT ./chapters/conclusion.aux
-INPUT chapters/conclusion.aux
+INPUT ./chapters/Comparative study.aux
+INPUT ./chapters/Comparative study.aux
+INPUT chapters/Comparative study.aux
+INPUT ./chapters/conclusions.aux
+INPUT ./chapters/conclusions.aux
+INPUT chapters/conclusions.aux
+INPUT ./chapters/new chapter.aux
+INPUT ./chapters/new chapter.aux
+INPUT chapters/new chapter.aux
 OUTPUT main.aux
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -460,8 +460,6 @@ INPUT ./figures/timed.pdf
 INPUT ./figures/timed.pdf
 INPUT ./figures/timed.pdf
 INPUT ./figures/timed.pdf
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ./chapters/Research questions.tex
 INPUT ./chapters/Research questions.tex
 OUTPUT chapters/Research questions.aux
@@ -474,6 +472,8 @@ OUTPUT chapters/literature_review.aux
 INPUT ./chapters/literature_review.tex
 INPUT ./chapters/literature_review.tex
 INPUT chapters/literature_review.tex
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ./chapters/Data Description.tex
 INPUT ./chapters/Data Description.tex
 OUTPUT chapters/Data Description.aux
@@ -615,19 +615,24 @@ OUTPUT chapters/Methodology for Ranking.aux
 INPUT ./chapters/Methodology for Ranking.tex
 INPUT ./chapters/Methodology for Ranking.tex
 INPUT chapters/Methodology for Ranking.tex
-INPUT ./chapters/Experiments.tex
-INPUT ./chapters/Experiments.tex
-OUTPUT chapters/Experiments.aux
-INPUT ./chapters/Experiments.tex
-INPUT ./chapters/Experiments.tex
-INPUT chapters/Experiments.tex
-INPUT ./chapters/results.tex
-INPUT ./chapters/results.tex
-OUTPUT chapters/results.aux
-INPUT ./chapters/results.tex
-INPUT ./chapters/results.tex
-INPUT chapters/results.tex
-OUTPUT chapters/conclusion.aux
+INPUT ./chapters/Comparative study.tex
+INPUT ./chapters/Comparative study.tex
+OUTPUT chapters/Comparative study.aux
+INPUT ./chapters/Comparative study.tex
+INPUT ./chapters/Comparative study.tex
+INPUT chapters/Comparative study.tex
+INPUT ./chapters/conclusions.tex
+INPUT ./chapters/conclusions.tex
+OUTPUT chapters/conclusions.aux
+INPUT ./chapters/conclusions.tex
+INPUT ./chapters/conclusions.tex
+INPUT chapters/conclusions.tex
+INPUT ./chapters/new chapter.tex
+INPUT ./chapters/new chapter.tex
+OUTPUT chapters/new chapter.aux
+INPUT ./chapters/new chapter.tex
+INPUT ./chapters/new chapter.tex
+INPUT chapters/new chapter.tex
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
@@ -656,15 +661,15 @@ INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux
 INPUT ./chapters/Methodology for Ranking.aux
 INPUT ./chapters/Methodology for Ranking.aux
 INPUT chapters/Methodology for Ranking.aux
-INPUT ./chapters/Experiments.aux
-INPUT ./chapters/Experiments.aux
-INPUT chapters/Experiments.aux
-INPUT ./chapters/results.aux
-INPUT ./chapters/results.aux
-INPUT chapters/results.aux
-INPUT ./chapters/conclusion.aux
-INPUT ./chapters/conclusion.aux
-INPUT chapters/conclusion.aux
+INPUT ./chapters/Comparative study.aux
+INPUT ./chapters/Comparative study.aux
+INPUT chapters/Comparative study.aux
+INPUT ./chapters/conclusions.aux
+INPUT ./chapters/conclusions.aux
+INPUT chapters/conclusions.aux
+INPUT ./chapters/new chapter.aux
+INPUT ./chapters/new chapter.aux
+INPUT chapters/new chapter.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT main.run.xml

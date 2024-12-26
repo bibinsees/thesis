@@ -9,7 +9,7 @@ like classification.
 **suppose I have a vector of image. if I normalise it unit length, willl I loose critical information?**
 **https://chatgpt.com/share/671a6a63-ca7c-8010-92a0-23b6bd25ef05**
 
-\subsubsection{classification}
+\section{classification}
 1. A common approach to verify whether the SSL model has learned generalized representations is to perform Logistic Regression on the learned features.
  In other words, we use a single, linear layer that maps these representations to class predictions, where the two categories, 'untreated' and 'single dose,' 
  serve as our classes. The Logistic Regression model can only perform well if the learned representations capture all the relevant features necessary for the task. 
@@ -21,7 +21,7 @@ like classification.
  learning on unlabeled data compared to purely supervised training. It is evident that ResNet-18 easily overfits the training data since its parameter count is over 1,000 times 
  larger than the dataset size. To ensure a fair comparison with the contrastive learning models, we apply similar data augmentations as before, including crop-and-resize 
  and color jittering.
-\subsubsection{kmeans clustering}
+\section{kmeans clustering}
 Idea is whether the learned representation from simlcr outperforms the original images in clustering the images (unsupervised manner) For that we use simple kmeans clusetring.
 We will cluster them based on both euclidean distance as well as cosine distance.
 
@@ -295,7 +295,7 @@ enables seamless interpretation and implementation in the algorithm.
 
 
 
-\subsubsection{Direct day 7 to day 10 distance evaluation}
+\section{Direct day 7 to day 10 distance evaluation}
 calculate distance between day 7 untreated and its corresponding day 10 treated one.
 Idea is:
 1. it should give same distance between day 7 and its corresponding day 10
@@ -305,3 +305,14 @@ Idea is:
 2. it sould give same distance even if its blured/sharpened
 3. it should give sma edistance even if its changed in brightness
 4. main test for k means centroid approach. it should give different distance to single dose and exploded.
+
+
+basic evaluations for ranking:
+1.
+whether it learned to be invariant the position change:
+do flipps and calculate the cosine distance from control to treated flipped versions. ( i don't expect it learn to the change in center of position, 
+if it learns good we can say center crop have some effect maybe? but not for the edge one?)
+2. 
+shape invariant:control to all single dose should be almost same cosine distance.
+
+it also applicable to time prediction and reconstruction ranking evaluation and also from kmeans centriod approach.
