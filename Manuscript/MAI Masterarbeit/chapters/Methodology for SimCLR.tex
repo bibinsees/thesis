@@ -133,7 +133,9 @@ Also original simclr random crop resizing to 96*96 is first done by random cropi
 crops without a cancer cell in it is train to have high cosine 
 simililartiy to these same image smaller crop patch of dark cancer cell from center due to the design of  loss function in SimCLR. Which doesn't make sense. Hence 
 the next data augmentation sequence designed to have random crop with scale 0.4 to 1 ( so that assuming crop patches will have atleast small portion of cancer cell)
-and brightness and contrast variations changed to lower=1-0.2, upper=1+0.2 and lower=1-0.35, upper=1+0.35 consequently.
+and brightness and contrast variations changed to lower=1-0.2, upper=1+0.2 and lower=1-0.35, upper=1+0.35 consequently. I named this augmentation as 'sweet'.
+
+
 
 
 
