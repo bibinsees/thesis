@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  27 DEC 2024 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  27 DEC 2024 23:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1447,7 +1447,7 @@ Underfull \vbox (badness 1377) has occurred while \output is active []
 <figures/repeat.png, id=476, 1062.21844pt x 1497.34406pt>
 File: figures/repeat.png Graphic file (type png)
 <use figures/repeat.png>
-Package pdftex.def Info: figures/repeat.png  used on input line 87.
+Package pdftex.def Info: figures/repeat.png  used on input line 91.
 (pdftex.def)             Requested size: 371.78203pt x 524.07828pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1457,30 +1457,33 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [32]
 
 [33 <./figures/repeat.png (PNG copy)>]
-<figures/16bit_three_1.png, id=488, 859.2903pt x 570.933pt>
+<figures/16bit_three_1.png, id=489, 859.2903pt x 570.933pt>
 File: figures/16bit_three_1.png Graphic file (type png)
 <use figures/16bit_three_1.png>
-Package pdftex.def Info: figures/16bit_three_1.png  used on input line 107.
+Package pdftex.def Info: figures/16bit_three_1.png  used on input line 112.
 (pdftex.def)             Requested size: 429.64409pt x 285.46579pt.
 
 
 [34 <./figures/16bit_three_1.png>]
 File: figures/16bit_onen.png Graphic file (type png)
 <use figures/16bit_onen.png>
-Package pdftex.def Info: figures/16bit_onen.png  used on input line 124.
+Package pdftex.def Info: figures/16bit_onen.png  used on input line 131.
 (pdftex.def)             Requested size: 429.64409pt x 285.46579pt.
+
+Underfull \vbox (badness 2253) has occurred while \output is active []
+
 
 
 [35]
 
 [36]
-<figures/strong_aug.png, id=504, 819.06pt x 824.07875pt>
+<figures/strong_aug.png, id=509, 819.06pt x 824.07875pt>
 File: figures/strong_aug.png Graphic file (type png)
 <use figures/strong_aug.png>
-Package pdftex.def Info: figures/strong_aug.png  used on input line 173.
+Package pdftex.def Info: figures/strong_aug.png  used on input line 185.
 (pdftex.def)             Requested size: 491.43979pt x 494.45107pt.
 
-Overfull \hbox (43.30884pt too wide) in paragraph at lines 173--174
+Overfull \hbox (43.30884pt too wide) in paragraph at lines 185--186
  [][] 
  []
 
@@ -1489,77 +1492,80 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[37 <./figures/strong_aug.png>]
+[37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[38]
+
+
+[38 <./figures/strong_aug.png>]
 
 [39]
-Overfull \hbox (14.16426pt too wide) in paragraph at lines 240--241
+
+[40]
+Overfull \hbox (14.16426pt too wide) in paragraph at lines 252--253
 []\OT1/ptm/m/n/12 The above stan-dard Sim-CLR loss func-tion and data aug-men-ta-tion com-bi-na-tion with the ResNet18
  []
 
 
 
-[40]
-
 [41]
-<figures/3_1.png, id=565, 970.62625pt x 295.1025pt>
+
+[42]
+<figures/3_1.png, id=575, 970.62625pt x 295.1025pt>
 File: figures/3_1.png Graphic file (type png)
 <use figures/3_1.png>
-Package pdftex.def Info: figures/3_1.png  used on input line 287.
+Package pdftex.def Info: figures/3_1.png  used on input line 299.
 (pdftex.def)             Requested size: 403.31511pt x 122.62285pt.
-<figures/3_2fine.png, id=566, 970.62625pt x 296.10625pt>
+<figures/3_2fine.png, id=576, 970.62625pt x 296.10625pt>
 File: figures/3_2fine.png Graphic file (type png)
 <use figures/3_2fine.png>
-Package pdftex.def Info: figures/3_2fine.png  used on input line 295.
+Package pdftex.def Info: figures/3_2fine.png  used on input line 307.
 (pdftex.def)             Requested size: 403.31511pt x 123.03993pt.
 
 
-[42 <./figures/3_1.png> <./figures/3_2fine.png>]
-<figures/1_1.png, id=575, 936.49875pt x 294.09875pt>
+[43 <./figures/3_1.png> <./figures/3_2fine.png>]
+<figures/1_1.png, id=585, 936.49875pt x 294.09875pt>
 File: figures/1_1.png Graphic file (type png)
 <use figures/1_1.png>
-Package pdftex.def Info: figures/1_1.png  used on input line 321.
+Package pdftex.def Info: figures/1_1.png  used on input line 333.
 (pdftex.def)             Requested size: 403.31511pt x 126.65744pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[43]
-<figures/1_2.png, id=583, 936.49875pt x 296.10625pt>
+[44]
+<figures/1_2.png, id=592, 936.49875pt x 296.10625pt>
 File: figures/1_2.png Graphic file (type png)
 <use figures/1_2.png>
-Package pdftex.def Info: figures/1_2.png  used on input line 328.
+Package pdftex.def Info: figures/1_2.png  used on input line 340.
 (pdftex.def)             Requested size: 403.31511pt x 127.522pt.
 )
 
-[44 <./figures/1_1.png> <./figures/1_2.png>]
+[45 <./figures/1_1.png> <./figures/1_2.png>]
 \openout2 = `"chapters/Methodology for Intermediate evaluation of SimCLR model.aux"'.
 
  (./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 chapter 8.
 
 
-[45
+[46
 
 
 
 
 ]
 
-[46]
-
 [47]
 
 [48]
 
 [49]
+
+[50]
 Underfull \vbox (badness 2293) has occurred while \output is active []
 
 
-
-[50]
 
 [51]
 
@@ -1567,34 +1573,36 @@ Underfull \vbox (badness 2293) has occurred while \output is active []
 
 [53]
 
-[54])
+[54]
 
-[55]
+[55])
+
+[56]
 \openout2 = `"chapters/Methodology for Ranking.aux"'.
 
  (./chapters/Methodology for Ranking.tex
 chapter 9.
 
 
-[56
+[57
 
 
 
 
 ]
 
-[57]
+[58]
 
-[58])
+[59])
 
-[59]
+[60]
 \openout2 = `"chapters/Comparative study.aux"'.
 
  (./chapters/Comparative study.tex
 chapter 10.
 )
 
-[60
+[61
 
 
 
@@ -1619,26 +1627,19 @@ Underfull \vbox (badness 5077) has occurred while \output is active []
 
 
 
-[61
+[62
 
 
 
 
 ]
 
-[62]
+[63]
 \openout2 = `"chapters/new chapter.aux"'.
 
  (./chapters/new chapter.tex
 chapter 12.
 )
-
-[63
-
-
-
-
-]
 
 [64
 
@@ -1650,6 +1651,10 @@ chapter without number
 
 
 [65
+
+
+
+
 
 ]
 Overfull \hbox (0.37463pt too wide) in paragraph at lines 228--228
@@ -1692,18 +1697,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29492 strings out of 473578
- 572266 string characters out of 5732243
- 1942960 words of memory out of 5000000
- 51665 multiletter control sequences out of 15000+600000
+ 29493 strings out of 473578
+ 572288 string characters out of 5732243
+ 1943960 words of memory out of 5000000
+ 51666 multiletter control sequences out of 15000+600000
  593236 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11029b,2323s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (81 pages, 8642204 bytes).
+Output written on main.pdf (81 pages, 8641569 bytes).
 PDF statistics:
- 954 PDF objects out of 1000 (max. 8388607)
- 787 compressed objects within 8 object streams
+ 959 PDF objects out of 1000 (max. 8388607)
+ 792 compressed objects within 8 object streams
  250 named destinations out of 1000 (max. 500000)
  417 words of extra memory for PDF output out of 10000 (max. 10000000)
 

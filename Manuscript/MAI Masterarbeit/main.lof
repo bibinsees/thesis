@@ -25,11 +25,11 @@
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations.}}{33}{figure.caption.24}%
 \contentsline {figure}{\numberline {7.4}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{34}{figure.caption.25}%
 \contentsline {figure}{\numberline {7.5}{\ignorespaces 16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{35}{figure.caption.26}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces 5 Data augmentations we explored}}{37}{figure.caption.27}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{42}{figure.caption.34}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{42}{figure.caption.35}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{44}{figure.caption.38}%
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{44}{figure.caption.39}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces 5 Data augmentations we explored}}{38}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{43}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{43}{figure.caption.35}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{45}{figure.caption.38}%
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{45}{figure.caption.39}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
