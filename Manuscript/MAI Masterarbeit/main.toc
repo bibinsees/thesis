@@ -1,0 +1,45 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{List of Figures}{x}{chapter*.5}%
+\contentsline {chapter}{List of Tables}{xi}{chapter*.6}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Laboratory Setup}{4}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Motivation}{9}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Research questions}{10}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Literature Review}{12}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Data Description}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Data set}{15}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Structure of the Thesis}{25}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Methodology for SimCLR}{28}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Data preprocessing}{28}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Data augmentation}{31}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Train SimCLR as SSL model}{36}{section.7.3}%
+\contentsline {subsubsection}{\nonumberline Model}{37}{subsubsection*.28}%
+\contentsline {subsubsection}{\nonumberline Training}{37}{subsubsection*.30}%
+\contentsline {subsubsection}{\nonumberline Variation 1:}{40}{subsubsection*.32}%
+\contentsline {subsubsection}{\nonumberline Variation 2:}{41}{subsubsection*.36}%
+\contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{44}{chapter.8}%
+\contentsline {section}{\numberline {8.1}classification}{44}{section.8.1}%
+\contentsline {section}{\numberline {8.2}kmeans clustering}{45}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{53}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Methodology for Ranking}{55}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{55}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Day7 to day7 reconstruction}{55}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Day7 to day10 predcition}{56}{subsection.9.1.2}%
+\contentsline {subsubsection}{\nonumberline day10 predcition}{56}{subsubsection*.53}%
+\contentsline {subsubsection}{\nonumberline Delta predcition}{57}{subsubsection*.55}%
+\contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{58}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{58}{section.9.3}%
+\contentsline {chapter}{\numberline {10}Comparative study}{59}{chapter.10}%
+\contentsline {section}{\numberline {10.1}SimCLR vs Original}{59}{section.10.1}%
+\contentsline {section}{\numberline {10.2}3 channel vs 1 channel}{59}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Unet vs Resnet}{59}{section.10.3}%
+\contentsline {section}{\numberline {10.4}96 vs 256}{59}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Batch size 16 vs 64 vs 128 vs 256}{59}{section.10.5}%
+\contentsline {chapter}{\numberline {11}Conclusion}{60}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Future research direction}{60}{section.11.1}%
+\contentsline {chapter}{\numberline {12}new chapter}{62}{chapter.12}%
+\contentsline {chapter}{\nonumberline Appendix}{63}{chapter*.57}%
+\contentsline {chapter}{Literature}{64}{section*.58}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{66}{chapter*.60}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{67}{chapter*.61}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -72,9 +72,12 @@ compared to 2054 * 2056 ) that means we can improve the performance with larger 
    improve 1 percentage accuracy for downstream task in simclr paper. Other flip and rotation combinations are restrained due to its repeatable pattern to the above as shown in \ref{fig:repeat} and due to the black cut problem explained in 
   \ref{fig:rotation}.
 
-  \item Randomly change the brightness, contrast, saturation  upto lower=1-0.8, upper=1+0.8 and hue upto 0.2 times with the probability of 80 percentage.
+  \item Randomly change the brightness and contrast  upto lower=1-0.8, upper=1+0.8  with the probability of 80 percentage. I removed saturation and hue since it 
+  doesn't have effect on gray scale images since gray scale images are  nuetral and saturation and hue of a gray scale image is zero. ie when we try
+   to adjust the value, we have essentially have no color to modify as it is achromatic and  grayscale images contain only intensity information.
+   
   
-  \item Gaussian blur. This augmentation is default policy in SimCLR, because they find it helpful as  it improves the performance for linear classification task
+  \item Gaussian blur. This augmentation is also default policy in SimCLR, because they find it helpful as  it improves the performance for linear classification task
    by around 2 percentage. as they do we randomly sample sigma from 0.1 to 2 . We also kept the kernal size to be 10 percentage of image height/width, in our case 5.
 \end{enumerate}
 
