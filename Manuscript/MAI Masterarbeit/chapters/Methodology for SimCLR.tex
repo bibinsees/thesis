@@ -62,42 +62,41 @@ because it gave best performance on natural image dataset like Imagenet and CIFA
 Which follows a sequential of:
 
 \begin{enumerate}
-  \item Randomly crop the image and resize to specific smaller size. In my case I choosed to crop and resize to $96 \times 96$. i choosed this small H and W as 
-  image size to feed train our model because of two reasons: 1. 
-  computational fast, so that we can complete the pipeline in time. 2. if we can get good performance in ranking with this small image sizes (ie less pixel details
+  \item Randomly crop  and resize to specific smaller size . In my case I choosed to crop and resize to $96 \times 96$. i choosed this small H and W as 
+  image size to feed train our model because of two reasons: 1. computational fast, so that we can complete the pipeline in time. 2. if we can get good performance in ranking with this small image sizes (ie less pixel details
+compared to 2054 * 2056 ) that means we can improve the performance with larger image sizes. The crop of random size (uniform from 0.08 to 1.0 in area) of the 
+   original size and a random aspect ratio (default: of 3/4 to 4/3) of the original aspect ratio is made. This crop is finally resized to the original size.
 
-   compared to 2054 * 2056 ) that means we can improve the performance with larger image sizes. 
   \item Apply a horizontal flip, (simclr paper only used horizontal flip because it doesn't make sense to have vertical flip/rotation in natural images) vertical 
-  flip, (Horizontal+Vertical flip), Rotation = (90, 270), Horizontal flip + Rotation = (90, 270). Other flip and rotation combinations are restrained due to its
-  repeatable pattern to the above as shown in \ref{fig:repeat} and due to the black cut problem explained in \ref{fig:rotation}.
-  \item Randomly change the brightness, contrast, saturation  upto lower=1-0.8, upper=1+0.8 and hue upto 0.2 times.
+  flip, (Horizontal+Vertical flip), Rotation = (90, 270), Horizontal flip + Rotation = (90, 270) with the probability 50 percentage. This is default policy as it
+   improve 1 percentage accuracy for downstream task in simclr paper. Other flip and rotation combinations are restrained due to its repeatable pattern to the above as shown in \ref{fig:repeat} and due to the black cut problem explained in 
+  \ref{fig:rotation}.
+
+  \item Randomly change the brightness, contrast, saturation  upto lower=1-0.8, upper=1+0.8 and hue upto 0.2 times with the probability of 80 percentage.
+  
+  \item Gaussian blur. This augmentation is default policy in SimCLR, because they find it helpful as  it improves the performance for linear classification task
+   by around 2 percentage. as they do we randomly sample sigma from 0.1 to 2 . We also kept the kernal size to be 10 percentage of image height/width, in our case 5.
 \end{enumerate}
 
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.35]{figures/repeat.png} 
-  \caption{Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations.}
+  \caption{Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to
+   the orange box augmentations.}
   \label{fig:repeat}
 \end{figure}
 
-I call this as strong data augmentation. I found that those strong augmentations transformed to distribution out of 
-the original distribution like we see in the figures below. specifically color jitterness including brightness, 
-contrast, hue, and saturation.
-
-Interestingly, for 16-bit images with 3 channels, instead of a reduction, there was an increase in the number of unique pixel values—by a maximum of 258,757 
-percentage. 
-The issue with this increase is that after data augmentation, the new pixel values are not distributed similarly to the original image. Instead, they shift to
- the two extremes,
- such as 0 or 1, or sometimes pushing values to both 0 and 1, which deviate significantly from the original image distribution, as shown in Figures
-  \ref{fig:16bit_three_v1} and \ref{fig:16bit_three_v2}.
+I call this color jitterness parameters as strong data augmentation. with this strong augmentation interestingly, for 16-bit images with 3 channels, instead of a reduction, there was an 
+increase in the number of unique pixel values—by a maximum of 258,757 percentage. The issue with this increase is that after data augmentation, the new pixel
+ values are not distributed similarly to the original image. Instead, they shift to
+ the two extremes,such as 0 or 1 which deviate significantly from the original image distribution, as shown in 
+ Figures \ref{fig:16bit_three_v1}.
 
   \textbf{16-bit three-channel image before and after data augmentation:}
   \begin{itemize}
     \item Number of unique pixel values in the original image: 2111
     \item Number of unique pixel values in the augmented image: 5044624
-    \item Original Image - Minimum pixel value: 0.13064774870872498, Maximum pixel value: 0.6874189376831055
-    \item Augmented Image - Minimum pixel value: 0.022128667682409286, Maximum pixel value: 0.11041323840618134
   \end{itemize}
   
   \begin{figure}[H]
@@ -106,45 +105,29 @@ The issue with this increase is that after data augmentation, the new pixel valu
     \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}
     \label{fig:16bit_three_v1}
   \end{figure}
-  
-  \textbf{Another example of a 16-bit three-channel image before and after data augmentation:}
-  
-  \begin{itemize}
-    \item Original Image - Unique pixel counts per channel: 2137
-    \item Augmented Image - Unique pixel counts per channel: 1686717
-    \item Original Image - Minimum pixel value: 0.1306, Maximum pixel value: 0.6874
-    \item Augmented Image -  Minimum pixel value: 0.1970, Maximum pixel value: 0.3748
-  \end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figures/16bithree2.png} 
-    \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}
-    \label{fig:16bit_three_v2}
-  \end{figure}
+
+  Comparing to three channel, single channel after 3000 epochs even with strong augmentation only had $49\%$ maximum reduction  as observed in figure 
+  \ref{fig:16bit_single_channel}. It is also not ideal, as it remove the gradual spread of darker regions and  debris around the cells, compare to three channel it
+   have less effect on getting out of original distribution. thats why we need to experiment the downstream tasks with  single channel.
   
   \textbf{16-bit single-channel image before and after data augmentation:}
   \begin{itemize}
     \item Number of unique pixel values in the original image: 2111
     \item Number of unique pixel values in the augmented image: 1058
-    \item Original Image - Minimum pixel value:  0.13064774870872498, Maximum pixel value: 0.6666666865348816
-    \item Augmented Image - Minimum pixel value: 0, Maximum pixel value: 1
   \end{itemize}
   
   \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figures/16bit_onen.png} 
-    \caption{8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}
+    \caption{16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}
     \label{fig:16bit_single_channel}
   \end{figure}
 
-  $49\%$ maximum reduction for 16-bit single-channel data augmentation with color jitter is also not ideal, as it diminishes the gradual spread of 
-  darker regions 
-as happened in original image, as  as observed in figure \ref{fig:16bit_single_channel}. One potential solution is to experiment with specific parameters
- within the color 
-jitter transform instead of using random values, ensuring that the reduction in the number of unique pixel values does not exceed, for example, $30\%$. 
-Another 
-option would be to write a custom Python function, depending on the available time. Other augmentations from PyTorch work fine in this experiment.
+As we seen before, I found that those strong augmentations transformed to distribution out of 
+the original distribution. Hence we need to experiment with less intensity change  within the color 
+jitter transform instead of using SimCLR values.
+
+
 
 then I removed contrast, saturation and hue. because if I tried to make 
 those augs as invariant that means I'm making control and treated as 
