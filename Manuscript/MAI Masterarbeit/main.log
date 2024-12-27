@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  27 DEC 2024 23:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  28 DEC 2024 00:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1477,13 +1477,13 @@ Underfull \vbox (badness 2253) has occurred while \output is active []
 [35]
 
 [36]
-<figures/strong_aug.png, id=509, 819.06pt x 824.07875pt>
+<figures/strong_aug.png, id=508, 819.06pt x 824.07875pt>
 File: figures/strong_aug.png Graphic file (type png)
 <use figures/strong_aug.png>
-Package pdftex.def Info: figures/strong_aug.png  used on input line 185.
+Package pdftex.def Info: figures/strong_aug.png  used on input line 192.
 (pdftex.def)             Requested size: 491.43979pt x 494.45107pt.
 
-Overfull \hbox (43.30884pt too wide) in paragraph at lines 185--186
+Overfull \hbox (43.30884pt too wide) in paragraph at lines 192--193
  [][] 
  []
 
@@ -1502,7 +1502,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [39]
 
 [40]
-Overfull \hbox (14.16426pt too wide) in paragraph at lines 252--253
+Overfull \hbox (14.16426pt too wide) in paragraph at lines 259--260
 []\OT1/ptm/m/n/12 The above stan-dard Sim-CLR loss func-tion and data aug-men-ta-tion com-bi-na-tion with the ResNet18
  []
 
@@ -1511,23 +1511,23 @@ Overfull \hbox (14.16426pt too wide) in paragraph at lines 252--253
 [41]
 
 [42]
-<figures/3_1.png, id=575, 970.62625pt x 295.1025pt>
+<figures/3_1.png, id=574, 970.62625pt x 295.1025pt>
 File: figures/3_1.png Graphic file (type png)
 <use figures/3_1.png>
-Package pdftex.def Info: figures/3_1.png  used on input line 299.
+Package pdftex.def Info: figures/3_1.png  used on input line 306.
 (pdftex.def)             Requested size: 403.31511pt x 122.62285pt.
-<figures/3_2fine.png, id=576, 970.62625pt x 296.10625pt>
+<figures/3_2fine.png, id=575, 970.62625pt x 296.10625pt>
 File: figures/3_2fine.png Graphic file (type png)
 <use figures/3_2fine.png>
-Package pdftex.def Info: figures/3_2fine.png  used on input line 307.
+Package pdftex.def Info: figures/3_2fine.png  used on input line 314.
 (pdftex.def)             Requested size: 403.31511pt x 123.03993pt.
 
 
 [43 <./figures/3_1.png> <./figures/3_2fine.png>]
-<figures/1_1.png, id=585, 936.49875pt x 294.09875pt>
+<figures/1_1.png, id=584, 936.49875pt x 294.09875pt>
 File: figures/1_1.png Graphic file (type png)
 <use figures/1_1.png>
-Package pdftex.def Info: figures/1_1.png  used on input line 333.
+Package pdftex.def Info: figures/1_1.png  used on input line 340.
 (pdftex.def)             Requested size: 403.31511pt x 126.65744pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1535,10 +1535,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [44]
-<figures/1_2.png, id=592, 936.49875pt x 296.10625pt>
+<figures/1_2.png, id=591, 936.49875pt x 296.10625pt>
 File: figures/1_2.png Graphic file (type png)
 <use figures/1_2.png>
-Package pdftex.def Info: figures/1_2.png  used on input line 340.
+Package pdftex.def Info: figures/1_2.png  used on input line 347.
 (pdftex.def)             Requested size: 403.31511pt x 127.522pt.
 )
 
@@ -1699,16 +1699,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  29493 strings out of 473578
  572288 string characters out of 5732243
- 1943960 words of memory out of 5000000
+ 1942960 words of memory out of 5000000
  51666 multiletter control sequences out of 15000+600000
  593236 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11029b,2323s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (81 pages, 8641569 bytes).
+Output written on main.pdf (81 pages, 8642098 bytes).
 PDF statistics:
- 959 PDF objects out of 1000 (max. 8388607)
- 792 compressed objects within 8 object streams
+ 958 PDF objects out of 1000 (max. 8388607)
+ 791 compressed objects within 8 object streams
  250 named destinations out of 1000 (max. 500000)
  417 words of extra memory for PDF output out of 10000 (max. 10000000)
 

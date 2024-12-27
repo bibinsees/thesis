@@ -143,10 +143,17 @@ the next data augmentation sequence designed to have random crop with scale 0.4 
 and brightness and contrast variations changed to lower=1-0.2, upper=1+0.2 and lower=1-0.35, upper=1+0.35 consequently. I named this augmentation as 'sweet'.
 which illustrated in \ref{fig:strong_aug} second row.
 
+ In some drug screening group of images, when we look at the day 10 image, they are exploded ( assuming due to the overdose). exploded in the sense, broke round 
+ small cancer cell surronding lot of debris around it. so if we apply the above random crop and resize aug: smaller crop from the round cancer cell part have high 
+ cosine similarity with some other small crop from the round cancer cell part of the same image. which doesn't connect anything about the debris surrounded by for 
+ exploed images. In general model will also learn to map high cosine similarity between dark area to gray area which can happen to generally all images except 
+ single dose images.
+
+ Maybe its better to not to crop and just resize to 96*96 all the time so that model learn to map high cosine similarity by seeing the whole picture. 
 
 
-One of the ranking strategy is 'Prediction' which is detaily explained in \ref{subsec:day7-to-day10}. breifly saying we use day 7 untreated image to predict the 
-day 10 image 
+
+from day 7 to day 10, maybe its better to 
 
 
 
