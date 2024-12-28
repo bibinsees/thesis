@@ -137,56 +137,44 @@ As we seen in the figures  \ref{fig:16bit_three_v1} and \ref{fig:16bit_single_ch
 distribution out of the original distribution. Hence we need to experiment with less intensity change instead of using SimCLR values.
 
 Also original simclr random crop resizing to 96*96 is first done by random croping of random size (uniform from 0.08 to 1 in area). that means even really small 
-crops without a cancer cell in it is train to have high cosine 
-simililartiy to these same image smaller crop patch of dark cancer cell from center due to the design of  loss function in SimCLR. Which doesn't make sense. Hence 
-the next data augmentation sequence designed to have random crop with scale 0.4 to 1 ( so that assuming crop patches will have atleast small portion of cancer cell)
-and brightness and contrast variations changed to lower=1-0.2, upper=1+0.2 and lower=1-0.35, upper=1+0.35 consequently. I named this augmentation as 'sweet'.
-which illustrated in \ref{fig:strong_aug} second row.
+crops without a cancer cell in it is train to have high cosine simililartiy to these same image smaller crop patch of dark cancer cell from center due to the design
+ of  loss function in SimCLR. Which doesn't make sense. Hence the next data augmentation sequence designed to have random crop with scale 0.4 to 1 ( so that 
+ assuming crop patches will have atleast small portion of cancer cell) and brightness and contrast variations changed to lower=1-0.2, upper=1+0.2 and lower=1-0.35,
+  upper=1+0.35 consequently. I named this augmentation as 'sweet'. which illustrated in \ref{fig:strong_aug} second row.
 
  In some drug screening group of images, when we look at the day 10 image, they are exploded ( assuming due to the overdose). exploded in the sense, broke round 
- small cancer cell surronding lot of debris around it. so if we apply the above random crop and resize aug: smaller crop from the round cancer cell part have high 
- cosine similarity with some other small crop from the round cancer cell part of the same image. which doesn't connect anything about the debris surrounded by for 
- exploed images. In general model will also learn to map high cosine similarity between dark area to gray area which can happen to generally all images except 
- single dose images.
+ small cancer cell surronding lot of debris around it. so if we apply the above random crop and resize aug: smaller crop from the round cancer cell part (without 
+ debris) have high cosine similarity with some other small crop from the round cancer cell part (without debris) of the same image. which doesn't connect anything
+  about the debris surrounded by for exploed images. In general model will also learn to map high cosine similarity between dark area to gray area which can happen
+to generally all images except single dose images, meaning it doesn't learn any specific feature about certain patterns.
+Maybe its better to not to crop and just resize to 96*96 all the time so that model learn to map high cosine similarity by seeing the whole picture (Big picture).
+I understand this is not good argument because then dog and cat have same color and maybe similar shape but still learns to differentiate using strong crop in simclr.
+But maybe for time predictoin ranking model it helps. because model have to predict the change from day 7 to day 10. and most of the time the size/shape changes. 
+especially to the category which are exploded, they produce debris. so maybe data augmentation seeing the whole picture is good to learn the model better for time 
+change.  With this assumption in mind, I decided to do data aug pipeline with just resizing in the begning.
 
- Maybe its better to not to crop and just resize to 96*96 all the time so that model learn to map high cosine similarity by seeing the whole picture. 
+\textcolor{red}{Include figure to explain better}
+
+I named this augmentation as 'Resize', which illustrated in \ref{fig:strong_aug} third row.
 
 
+All of the above augmentations includes contrast change. With this augmentation it is possible that model learned to have both dark cancer cell and gray cancer
+cell of same image have same feature map ( because 2 dta aug from original image can be one with increased contrast which makes darker and one with less contrast 
+which makes it gray) which is infact not good for our downstream task. because one of our goal is to differentiate/have diferent feature representation
+for  untreated images (gray color) and single dose (darker color). 
 
-from day 7 to day 10, maybe its better to 
+\textcolor{red}{Include figure to explain better }
 
+ 
+Hence I removed contrast from 'Resize' and 'Sweet' and named them as 'Resize ohne contrast' and 'Sweet ohne contrast' correspondingly. 
+which illustrated in \ref{fig:strong_aug} third row and fourth row correspondingly. 
 
+Eventhough we know that these kind of strong augmentations is sensitive to our dataset, I was speculate that strong augmentation may
+ have better learned latent space representations because I feel like the purpose of ths strong data augmentation explained by the authorsof simclr is not to
+ include/increase the possible distribution that can happen in real life scenarios, but it is to learn the features that are invariant to these augmentations.
+Hence Its worth to experiment with this strong augmentation for downstream tasks.
 
-
-then I removed contrast. because if I tried to make 
-those augs as invariant that means I'm making control and treated as 
-similar because if I increase or decrease contrast or 
-saturation or hue it increase/decrease the darkness of cancer cell to 
-have similarity.
-which doesn't make sense because we want exact opposite of it.
-
-but if I use the same croping percentage as the original simclr does, 
-that means I crop 0.1  to 1 percentage which doesn't make sense because that 
-menas we make smilarity to small background to cancer which is unnecessary. 
-so i chaneg the percentage to 0.4-1.
-
-Questionable below one:
-
-lasty it may be possible to learn efficient feature extraction by not 
-applying cropping, ie learn by seeing full picture (big picture). 
-I understand this is not good argument because then dog and cat have same 
-color and maybe similar shape but still learns to differentiate using simclr.
-But maybe for time predictoin ranking model it helps. because model have to 
-predict the change from day 7 to day 10. and most of the ime the size/shape
- changes. especially to the category which are exploded, they produce debris. 
- so maybe data augmentation seeing the time change. 
-
- Eventhough we know that these kind of strong augmentations is sensitive to our dataset, I was speculate that strong augmentation may
- have better learned latent space representations because I feel like the purpose of ths strong data augmentation is not to include/increase 
- the possible distribution that can happen in real life scenarios, but it is to learn the features that are invariant to these augmentations.
-Hence I decided to experiment with this strong augmentation for downstream tasks.
-
-Every data augmentations explored in nutshell in \ref{fig:strong_aug}
+5 Different data augmentation pipe lines explained above illlustrated as nutshell in \ref{fig:strong_aug}
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.6]{figures/strong_aug.png} 
@@ -261,14 +249,14 @@ The above standard SimCLR loss function and data augmentation combination  with 
 \textbf{Variation ideas:}
 
 \begin{enumerate}
-  \item Explore different data augmentation combinations by researching the best augmentations for medical grayscale images, and applying intuitive approaches beyond the standard SimCLR \cite{chen2020simple} data augmentation combinations as explained in section \ref{sec:data preprocessing}.
-  \item Each image is treated as an RGB image with 3 channels, and two of the best-performing data augmentations, which yielded high performance for our downstream task.
-
-  \item One channel is considered as the anchor (the most sharpened layer), and the others are treated as the two augmentations.
-  \item One channel is considered as the anchor (the most sharpened layer), and two of the best-performing data augmentations, which yielded high performance for the our downstream task.
-  \item Supervised SimCLR: Ensure that no images from the same breed/class are included in the negative samples.
-  \item Since SimCLR architecture \cite{chen2020simple} allows for flexibility in model selection, and explore other pretrained models  than Resnet18  suitable for medical grayscale images. For example pretrained U-Net \cite{ronneberger2015unetconvolutionalnetworksbiomedical} model for MRI brain images from PyTorch.  
-  \item Include the anchor as a positive sample, i.e., 3 augmentations in total (1 anchor as augmentation and the other 2 layers as augmentations). This resembles to triplet loss (not sure, need to be studied)  
+  \item Each image is treated as an RGB image with 3 channels, and two of the best-performing data augmentations, which yielded high performance for our downstream 
+  task.
+  \item One channel is considered as the anchor (the most sharpened layer), and two of the best-performing data augmentations, which yielded high performance for 
+  the our downstream task.
+  \item Since SimCLR architecture \cite{chen2020simple} allows for flexibility in model selection, and explore other pretrained models  than Resnet18  suitable for
+   medical grayscale 
+  images. For example pretrained U-Net \cite{ronneberger2015unetconvolutionalnetworksbiomedical} model for MRI brain images from PyTorch.  
+ 
 \end{enumerate}
 For variations 5 and 7 we need to modify the loss function since it includes more than 2 augmentations.
 

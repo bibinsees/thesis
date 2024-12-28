@@ -2,30 +2,27 @@
 
 \textcolor{red}{change the name to evaluatoin to check whether simclr learned something? instead of intermediate evaluatoin?}  
 
-**if we do kmeans withcosine distance distance then it only compare cosine sim of whole image thats why we need to do normal kmeans with euclidean dist to show 
-the magnitude similarity** 
+If we do kmeans with cosine distance distance then it only compare direction of the vector thats why we need to do normal kmeans with euclidean dist to show 
+the magnitude similarity
 
-Evaluation of the SSL model depends on the  time series inference loss/accuracy metric, neverthless we can use other evaluation metrics, such as downstream task 
-like classification. 
+Final evaluation of the SimCLR model depends on the  Ranking task, neverthless we can use other evaluation metrics, such as downstream task 
+like classification, clusetring, distance measurement approach to check if simclr atleast learned to differentiate between untreated , single dose and exploded images.
 
-**suppose I have a vector of image. if I normalise it unit length, willl I loose critical information?**
-**https://chatgpt.com/share/671a6a63-ca7c-8010-92a0-23b6bd25ef05**
-
-\section{classification}
+\section{Classification using Logistic Regression on the SimCLR features}
 1. A common approach to verify whether the SSL model has learned generalized representations is to perform Logistic Regression on the learned features.
- In other words, we use a single, linear layer that maps these representations to class predictions, where the two categories, 'untreated' and 'single dose,' 
+ In other words, we use a single, linear layer that maps these representations to class predictions, where the three categories, 'untreated' and 'single dose', 'explod'  
  serve as our classes. The Logistic Regression model can only perform well if the learned representations capture all the relevant features necessary for the task. 
  Moreover, we don't need to worry much about overfitting since only a few parameters are trained. Therefore, we expect the model to perform well even with limited data.
-  We implemented a simple pipeline for a Logistic Regression setup, where the images are encoded into their feature vectors.
+ 
 
-2. Baseline comparison: As a baseline for comparison  to our results above in the section \ref{sec:variations_implementations}, we will train a standard ResNet-18 with
- random initialization on the labeled training set, consisting of the 'untreated' and 'single dose' categories. The results will help us assess the advantages of contrastive 
- learning on unlabeled data compared to purely supervised training. It is evident that ResNet-18 easily overfits the training data since its parameter count is over 1,000 times 
- larger than the dataset size. To ensure a fair comparison with the contrastive learning models, we apply similar data augmentations as before, including crop-and-resize 
- and color jittering.
+2. Baseline comparison to original images. We classify the original images to see if simclr feature vectors are better or worse than original image to classify.
+
+\textcolor{red}{think and design in a paper first then take action tomorrow} 
+
 \section{kmeans clustering}
-Idea is whether the learned representation from simlcr outperforms the original images in clustering the images (unsupervised manner) For that we use simple kmeans clusetring.
-We will cluster them based on both euclidean distance as well as cosine distance.
+
+Idea is whether the learned representation from simlcr outperforms the original images in clustering the images (unsupervised manner) For that we use simple kmeans 
+clusetring. We will cluster them based on both euclidean distance as well as cosine distance.
 
 Derivation of K-Means Clustering using Euclidean Distance and Mean
 
