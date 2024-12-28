@@ -1,44 +1,46 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Methodology for SimCLR}{28}{chapter.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Methodology for SimCLR}{26}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{ch: Methodology for SimCLR}{{7}{28}{Methodology for SimCLR}{chapter.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Data preprocessing}{28}{section.7.1}\protected@file@percent }
-\newlabel{sec:data preprocessing}{{7.1}{28}{Data preprocessing}{section.7.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}}{29}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:elong}{{7.1}{29}{First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}{figure.caption.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}}{30}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:rotation}{{7.2}{30}{A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Data augmentation}{31}{section.7.2}\protected@file@percent }
-\newlabel{sec:data augmentation}{{7.2}{31}{Data augmentation}{section.7.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations.}}{33}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:repeat}{{7.3}{33}{Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations}{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{34}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:16bit_three_v1}{{7.4}{34}{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch}{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces 16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{35}{figure.caption.26}\protected@file@percent }
-\newlabel{fig:16bit_single_channel}{{7.5}{35}{16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}{figure.caption.26}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces 5 Data augmentations we explored}}{38}{figure.caption.27}\protected@file@percent }
-\newlabel{fig:strong_aug}{{7.6}{38}{5 Data augmentations we explored}{figure.caption.27}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Train SimCLR as SSL model}{39}{section.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Model}{39}{subsubsection*.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Training}{39}{subsubsection*.31}\protected@file@percent }
-\newlabel{eq:original}{{7.1}{40}{Training}{equation.7.3.1}{}}
-\newlabel{eq:loss}{{7.2}{40}{Training}{equation.7.3.2}{}}
-\newlabel{sec:variations_implementations}{{7.3}{41}{Training}{Item.38}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Variation 1:}{42}{subsubsection*.33}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7.7}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{43}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:augmentation}{{7.7}{43}{Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}{figure.caption.34}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.8}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{43}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:augmentations}{{7.8}{43}{Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}{figure.caption.35}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Variation 2:}{43}{subsubsection*.37}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7.9}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{44}{figure.caption.38}\protected@file@percent }
-\newlabel{fig:1doutput1}{{7.9}{44}{Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}{figure.caption.38}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.10}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{44}{figure.caption.39}\protected@file@percent }
-\newlabel{fig:1doutput3}{{7.10}{44}{Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}{figure.caption.39}{}}
+\newlabel{ch: Methodology for SimCLR}{{7}{26}{Methodology for SimCLR}{chapter.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Data preprocessing}{26}{section.7.1}\protected@file@percent }
+\newlabel{sec:data preprocessing}{{7.1}{26}{Data preprocessing}{section.7.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}}{27}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:elong}{{7.1}{27}{First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}}{28}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:rotation}{{7.2}{28}{A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Data augmentation}{29}{section.7.2}\protected@file@percent }
+\newlabel{sec:data augmentation}{{7.2}{29}{Data augmentation}{section.7.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations.}}{31}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:repeat}{{7.3}{31}{Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{32}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:16bit_three_v1}{{7.4}{32}{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces 16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{33}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:16bit_single_channel}{{7.5}{33}{16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.6}{\ignorespaces 5 Data augmentations we explored}}{36}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:strong_aug}{{7.6}{36}{5 Data augmentations we explored}{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Train SimCLR as SSL model}{36}{section.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Model}{37}{subsubsection*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Training}{37}{subsubsection*.31}\protected@file@percent }
+\newlabel{eq:original}{{7.1}{37}{Training}{equation.7.3.1}{}}
+\newlabel{eq:loss}{{7.2}{38}{Training}{equation.7.3.2}{}}
+\newlabel{sec:variations_implementations}{{7.3}{39}{Training}{Item.38}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Variation 1:}{39}{subsubsection*.33}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.7}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{40}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:augmentation}{{7.7}{40}{Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}{figure.caption.34}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.8}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{40}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:augmentations}{{7.8}{40}{Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Variation 2:}{41}{subsubsection*.37}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.9}{\ignorespaces Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{41}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:1doutput1}{{7.9}{41}{Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}{figure.caption.38}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.10}{\ignorespaces Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}}{42}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:1doutput3}{{7.10}{42}{Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}{figure.caption.39}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Evaluation result of SImclr}{42}{section.7.4}\protected@file@percent }
+\newlabel{sec:Evaluation result of SImclr}{{7.4}{42}{Evaluation result of SImclr}{section.7.4}{}}
 \@setckpt{chapters/Methodology for SimCLR}{
-\setcounter{page}{45}
+\setcounter{page}{43}
 \setcounter{equation}{2}
 \setcounter{enumi}{3}
 \setcounter{enumii}{2}
@@ -48,7 +50,7 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{7}
-\setcounter{section}{3}
+\setcounter{section}{4}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
@@ -56,7 +58,7 @@
 \setcounter{figure}{10}
 \setcounter{table}{0}
 \setcounter{OptionTest}{0}
-\setcounter{section@level}{3}
+\setcounter{section@level}{1}
 \setcounter{Item}{38}
 \setcounter{Hfootnote}{0}
 \setcounter{bookmark@seq@number}{0}

@@ -82,7 +82,8 @@ Which follows a sequential of:
   \item Gaussian blur and increase in sharpness. Blur augmentation is also default policy in SimCLR, because they find it helpful as  it improves the performance 
   for linear classification task by around 2 percentage. as they do we randomly sample sigma from 0.1 to 2 . We also kept the kernal size to be 10 percentage of 
   image height/width, in our case 5. Some images are blured ( Probabily due to the microscopic error). So inorder to mimic original version, I added sharpness 
- increase. It increaases the sharpness by a factor of 2. We set this also as our default for all data augmentation.
+ increase. It increaases the sharpness by a factor of 2. We set this also as our default for all data augmentation. \textcolor{red}{sharpeness increase what happens
+  to the image? figure explaination? edge details increase?} 
 \end{enumerate}
 
 
@@ -172,7 +173,14 @@ which illustrated in \ref{fig:strong_aug} third row and fourth row corresponding
 Eventhough we know that these kind of strong augmentations is sensitive to our dataset, I was speculate that strong augmentation may
  have better learned latent space representations because I feel like the purpose of ths strong data augmentation explained by the authorsof simclr is not to
  include/increase the possible distribution that can happen in real life scenarios, but it is to learn the features that are invariant to these augmentations.
+ \textcolor{red}{ie if contrast change is there it learns to have high cosine sim for same shape. if croping happens it learns to have high cosine sim for same pixel 
+ color. if shape is different but color is same it learns to have high cosine sim. if shape is same but color is different it learns to have high cosine sim. if  color
+  is different it learns to have high cosine sim for shape something like this}
+
 Hence Its worth to experiment with this strong augmentation for downstream tasks.
+
+\textcolor{red}{add data augs without brightness too  if we have time, and add our improvements to strong like sharpness rot flips} 
+
 
 5 Different data augmentation pipe lines explained above illlustrated as nutshell in \ref{fig:strong_aug}
 \begin{figure}[H]
@@ -181,6 +189,8 @@ Hence Its worth to experiment with this strong augmentation for downstream tasks
   \caption{5 Data augmentations we explored}
   \label{fig:strong_aug}
 \end{figure}
+
+
 
 \section{Train SimCLR as SSL model}
 For step 1, as explained in chapter \ref{ch: Methodology for SimCLR}, SimCLR was used as the first model for self-supervised learning (SSL). 
@@ -338,5 +348,7 @@ The figure below shows the anchor and its two augmented versions as explained in
 \end{figure}
 
 
+\section{Evaluation result of SImclr} \label{sec:Evaluation result of SImclr}
 
 
+\textcolor{red}{add figures of SImclr train and val and inference loss} 
