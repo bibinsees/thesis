@@ -28,63 +28,50 @@ i didn't add any other comibnation of drug screening experiments since we are no
 
 
 \subsection{Comparison of Classification Accuracy and Epochs for Different Data Augmentations}
-
-\begin{table}[h!]
-    \centering
-    \caption{Comparison of Classification Accuracy and Epochs for Different Data Augmentations}
-    \label{tab:aug_results}
-    \begin{tabularx}{\textwidth}{@{}l*{4}{c}@{}}
-    \toprule
-    \textbf{Augmentation Type} & \multicolumn{2}{c}{\textbf{After Projection Head}} & \multicolumn{2}{c}{\textbf{Before Projection Head}} \\ 
-    \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-                               & \textbf{Train Accuracy (\%)} & \textbf{Train Epoch}  & \textbf{Test Accuracy (\%)} & \textbf{Test Epoch}  \\ \midrule
-    Strong                     & 85.4                        & 15                    & 100                        & 20                   \\
-    Sweet                      & 87.2                        & 14                    & 100                        & 18                   \\
-    Resize                     & 82.6                        & 18                    & 100                        & 25                   \\
-    Resize No Contrast         & 100                        & 24                    & 100                        & 2                   \\
-    Sweet No Contrast          & 83.5                        & 16                    & 100                        & 22                   \\ \bottomrule
-    \end{tabularx}
-\end{table}
     
-
-    \begin{table}[]
+    \begin{table}[h!]
+        \centering
         \resizebox{\textwidth}{!}{%
-        \begin{tabular}{|lll|l|l|l|l|l|}
-        \hline
-        Augmentation Type                            &                            &          & Strong & Sweet & Resize & Resize No Contrast & Sweet No Contrast \\ \hline
-        \multicolumn{1}{|l|}{After Projection Head}  & \multicolumn{1}{l|}{}      & Accuracy &  88     & 59.76     & 97.15      & 58.74                  & 56.30                \\ \cline{3-8} 
-        \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{Train} & Epoch    &  249     & 248     & 236      & 239                  & 249                \\ \cline{2-8} 
-        \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{Test}  & Accuracy &  86.18    & 62.60     & 96.75      & 53.66                & 51.22                \\ \cline{3-8} 
-        \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{}      & Epoch    &  240     & 235     & 239      & 248                  & 237                 \\ \hline
-        \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{Train} & Accuracy & 100    & 100   & 100  & 100                & 100               \\ \cline{3-8} 
-        \multicolumn{1}{|l|}{Before Projection Head} & \multicolumn{1}{l|}{}      & Epoch    & 148     & 18     & 62    & 14                & 44                \\ \cline{2-8} 
-        \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{Test}  & Accuracy & 100    & 100   & 100  & 100                & 100               \\ \cline{3-8} 
-        \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{}      & Epoch    & 1      & 1     & 2   & 2                  & 2                \\ \hline
+        \begin{tabular}{llcccccc}
+        \toprule
+        \textbf{Augmentation Type}      & \textbf{Metric} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{Resize No Contrast} & \textbf{Sweet No Contrast} \\ \midrule
+        \multirow{4}{*}{\textbf{After Projection Head}}  
+            & Train Accuracy (\%) & 88 & 59.76 & 97.15 & 58.74 & 56.30 \\
+            & Train Epoch         & 249   & 248   & 236   & 239   & 249   \\
+            & Test Accuracy (\%)  & 86.18 & 62.60 & 96.75 & 53.66 & 51.22 \\
+            & Test Epoch          & 240   & 235   & 239   & 248   & 237   \\ \midrule
+        \multirow{4}{*}{\textbf{Before Projection Head}} 
+            & Train Accuracy (\%) & 100 & 100 & 100 & 100 & 100 \\
+            & Train Epoch         & 148    & 18     & 62     & 14     & 44     \\
+            & Test Accuracy (\%)  & 100 & 100 & 100 & 100 & 100 \\
+            & Test Epoch          & 1      & 1      & 2      & 2      & 2      \\ 
+        \bottomrule
         \end{tabular}%
         }
-    \end{table}
-    
+        \caption{Performance metrics for different augmentation strategies before and after the projection head.}
+        \label{tab:augmentation_metrics}
+        \end{table}
+        
 
-
-
-\begin{table}[h!]
-    \centering
-    \caption{Original Image Results}
-    \label{tab:original_image_results}
-    \begin{tabular}{|l|c|c|c|c|}
-    \hline
-    \textbf{Metric}            & \textbf{Train Accuracy (\%)} & \textbf{Train Epoch} & \textbf{Test Accuracy (\%)} & \textbf{Test Epoch} \\ \hline
-    \textbf{Original Image}    & 95.12                      & 18                    & 94.31                        & 15                   \\ \hline
-    \end{tabular}
-\end{table}
-
+        \begin{table}[h!]
+            \centering
+            \caption{Original Image Results}
+            \label{tab:original_image_results}
+            \begin{tabular}{lcccc}
+            \toprule
+            \textbf{Metric}         & \textbf{Train Accuracy (\%)} & \textbf{Train Epoch} & \textbf{Test Accuracy (\%)} & \textbf{Test Epoch} \\ \midrule
+            \textbf{Original Image} & 95.12                        & 18                   & 94.31                        & 15                  \\ 
+            \bottomrule
+            \end{tabular}
+        \end{table}
+            
 
 
 
 
 \textcolor{red}{I used some package to automate the width of the table in main.tex: change if needed} 
 
-\textcolor{red}{Should I need to add precision recall etc?} 
+
 
 
 
@@ -364,24 +351,94 @@ enables seamless interpretation and implementation in the algorithm.
 
 \subsection{Evaluation}
 
-\begin{table}[h!]
+Full dataset (unbalanced): contains all control(untreated): 472, all single dose: 103, all exploded: 40 images, all drug screen visualy similar/closer to single dose.
+
+40 subset (Balanced to the minimum nof set in the group which is exploded. ie there is only total 40 of exploded): contains random but make sure it have exploded like 
+controls total 40, and all exploded which is basically 40, 10 ds close to sd, 30 single dose.
+
+Curated Full dataset (unbalanced): contains all control except controls have debris: 280, all single dose: 103, all exploded: 40 images, all drug screen visualy 
+similar/closer to single dose: 22.
+
+Curated 40 subset  (Balanced to the minimum nof set in the group which is exploded. ie there is only total 40 of exploded but excluded explod look alike from control):
+contains random but make sure it doesn't have exploded like controls total 40, and all exploded which is basically 40, 10 ds close to sd, 30 single dose.
+
+run 100 times for different random initilisation.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Dataset Composition Overview}
+    \begin{tabular}{lccccl}
+    \toprule
+    Dataset Type & Control & Single Dose & Exploded & Drug Screen & Notes \\
+    \midrule
+    \multicolumn{6}{l}{\textbf{Raw Datasets}} \\
+    \midrule
+    Full & 472 & 103 & 40 & -- & Unbalanced \\
+    Balanced-40 & 40 & 30 & 40 & 10 & Minimum set balanced \\
+    \midrule
+    \multicolumn{6}{l}{\textbf{Curated Datasets}} \\
+    \midrule
+    Full & 280 & 103 & 40 & 22 & Debris-free controls \\
+    Balanced-40 & 40 & 30 & 40 & 10 & No exploded-like controls \\
+    \bottomrule
+    \end{tabular}
+    \begin{flushleft}
+    \small
+    Note: Drug screen images are visually similar to single dose treatment. All balanced datasets are normalized to the exploded group size (n=40).
+    \end{flushleft}
+    \end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Evaluation Results on Different Datasets and Augmentations with cosine distance}
+    \label{tab:evaluation_results_cosine_distance}
     \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|lll|l|l|l|l|l|}
-    \hline
-    Augmentation Type                            &                            &          & Strong & Sweet & Resize & Resize No Contrast & Sweet No Contrast \\ \hline
-    \multicolumn{1}{|l|}{After Projection Head}  & \multicolumn{1}{l|}{}      & Accuracy &  -     & -     & -      & -                  & -                 \\ \cline{3-8} 
-    \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{Train} & Epoch    &  -     & -     & -      & -                  & -                 \\ \cline{2-8} 
-    \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{Test}  & Accuracy &  -     & -     & -      & -                  & -                 \\ \cline{3-8} 
-    \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{}      & Epoch    &  -     & -     & -      & -                  & -                 \\ \hline
-    \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{Train} & Accuracy &  -     & -     & -      & -                  & -                 \\ \cline{3-8} 
-    \multicolumn{1}{|l|}{Before Projection Head} & \multicolumn{1}{l|}{}      & Epoch    &  -     & -     & -      & -                  & -                 \\ \cline{2-8} 
-    \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{Test}  & Accuracy &  -     & -     & -      & -                  & -                 \\ \cline{3-8} 
-    \multicolumn{1}{|l|}{}                       & \multicolumn{1}{l|}{}      & Epoch    &  -     & -     & -      & -                  & -                 \\ \hline
+    \begin{tabular}{@{}llcccc@{}}
+        \toprule
+        \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
+        \multirow{5}{*}{\textbf{Before}} 
+        & Strong                & 93.56 & 95.83 & 98.43 & 100 \\
+        & Sweet                 & 93.72 & 100 & 100 & 100 \\
+        & Resize                & - & - & - & - \\
+        & Resize No Contrast    & - & - & - & - \\
+        & Sweet No Contrast     & - & - & - & - \\ \midrule
+        \multirow{5}{*}{\textbf{After}} 
+        & Strong                & 86.19 & 94.17 & 89.89 & 95.83 \\
+        & Sweet                 & 74.10 & 72.50 & 75.96 & 69.17 \\
+        & Resize                & - & - & - & - \\
+        & Resize No Contrast    & - & - & - & - \\
+        & Sweet No Contrast     & - & - & - & - \\ \bottomrule
     \end{tabular}%
     }
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[H]
+    \centering
+    \caption{Evaluation Results on Different Datasets and Augmentations with euclidean distance}
+    \label{tab:evaluation_results_euclidean}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llcccc@{}}
+        \toprule
+        \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
+        \multirow{5}{*}{\textbf{Before}} 
+        & Strong                & 93.72 & 99.17 & 99.1 & 100 \\
+        & Sweet                 & 98.12 & 93.33 & 99.30 & 100 \\
+        & Resize                & - & - & - & - \\
+        & Resize No Contrast    & - & - & - & - \\
+        & Sweet No Contrast     & - & - & - & - \\ \midrule
+        \multirow{5}{*}{\textbf{After}} 
+        & Strong                & 92.15 & 95 & 89.89 & 95.83 \\
+        & Sweet                 & 74.10 & 71.67 & 73.71 & 68.33 \\
+        & Resize                & - & - & - & - \\
+        & Resize No Contrast    & - & - & - & - \\
+        & Sweet No Contrast     & - & - & - & - \\ \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+\textcolor{red}{Should I need to add precision recall? yes to confirm control exploded lokk like is the one who reduces the accuracy. maybe for full dataset where accuracy lw and included control looks like explod}
+
+\begin{table}[H]
     \centering
     \caption{Original Image Results}
     \label{tab:original_image_results}

@@ -21,28 +21,28 @@
 \contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{43}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features}{43}{section.8.1}%
 \contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{44}{subsection.8.1.1}%
-\contentsline {section}{\numberline {8.2}kmeans clustering}{45}{section.8.2}%
+\contentsline {section}{\numberline {8.2}kmeans clustering}{44}{section.8.2}%
 \contentsline {subsection}{\numberline {8.2.1}Evaluation}{52}{subsection.8.2.1}%
-\contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{53}{section.8.3}%
-\contentsline {chapter}{\numberline {9}Methodology for Ranking}{54}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{54}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Day7 to day7 reconstruction}{54}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}Day7 to day10 predcition}{55}{subsection.9.1.2}%
-\contentsline {subsubsection}{\nonumberline day10 predcition}{55}{subsubsection*.59}%
-\contentsline {subsubsection}{\nonumberline Delta predcition}{56}{subsubsection*.61}%
-\contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{56}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{57}{section.9.3}%
-\contentsline {chapter}{\numberline {10}Comparative study}{58}{chapter.10}%
-\contentsline {section}{\numberline {10.1}SimCLR vs Original}{58}{section.10.1}%
-\contentsline {section}{\numberline {10.2}3 channel vs 1 channel}{58}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Unet vs Resnet}{58}{section.10.3}%
-\contentsline {section}{\numberline {10.4}96 vs 256}{58}{section.10.4}%
-\contentsline {section}{\numberline {10.5}Batch size 16 vs 64 vs 128 vs 256}{58}{section.10.5}%
-\contentsline {chapter}{\numberline {11}Conclusion}{59}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Future research direction}{59}{section.11.1}%
-\contentsline {chapter}{\numberline {12}new chapter}{61}{chapter.12}%
-\contentsline {chapter}{\nonumberline Appendix}{63}{chapter*.63}%
-\contentsline {chapter}{Literature}{64}{section*.64}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{66}{chapter*.66}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{67}{chapter*.67}%
+\contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{54}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Methodology for Ranking}{55}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{55}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Day7 to day7 reconstruction}{55}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Day7 to day10 predcition}{56}{subsection.9.1.2}%
+\contentsline {subsubsection}{\nonumberline day10 predcition}{56}{subsubsection*.60}%
+\contentsline {subsubsection}{\nonumberline Delta predcition}{57}{subsubsection*.62}%
+\contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{57}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{58}{section.9.3}%
+\contentsline {chapter}{\numberline {10}Comparative study}{59}{chapter.10}%
+\contentsline {section}{\numberline {10.1}SimCLR vs Original}{59}{section.10.1}%
+\contentsline {section}{\numberline {10.2}3 channel vs 1 channel}{59}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Unet vs Resnet}{59}{section.10.3}%
+\contentsline {section}{\numberline {10.4}96 vs 256}{59}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Batch size 16 vs 64 vs 128 vs 256}{59}{section.10.5}%
+\contentsline {chapter}{\numberline {11}Conclusion}{60}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Future research direction}{60}{section.11.1}%
+\contentsline {chapter}{\numberline {12}new chapter}{62}{chapter.12}%
+\contentsline {chapter}{\nonumberline Appendix}{63}{chapter*.64}%
+\contentsline {chapter}{Literature}{64}{section*.65}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{66}{chapter*.67}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{67}{chapter*.68}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

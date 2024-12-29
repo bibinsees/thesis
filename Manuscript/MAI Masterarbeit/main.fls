@@ -269,6 +269,8 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 INPUT c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
@@ -620,6 +622,9 @@ INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT ./chapters/Methodology for Ranking.tex
 INPUT ./chapters/Methodology for Ranking.tex
 OUTPUT chapters/Methodology for Ranking.aux
@@ -644,9 +649,6 @@ OUTPUT chapters/new chapter.aux
 INPUT ./chapters/new chapter.tex
 INPUT ./chapters/new chapter.tex
 INPUT chapters/new chapter.tex
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT main.aux
 INPUT ./chapters/introduction.aux
 INPUT ./chapters/introduction.aux

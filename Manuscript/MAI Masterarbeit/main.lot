@@ -8,13 +8,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Comparison of Classification Accuracy and Epochs for Different Data Augmentations}}{44}{table.caption.40}%
-\contentsline {table}{\numberline {8.2}{\ignorespaces Original Image Results}}{45}{table.caption.42}%
-\contentsline {table}{\numberline {8.3}{\ignorespaces Original Image Results}}{53}{table.caption.57}%
+\contentsline {table}{\numberline {8.1}{\ignorespaces Performance metrics for different augmentation strategies before and after the projection head.}}{44}{table.caption.40}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Original Image Results}}{44}{table.caption.41}%
+\contentsline {table}{\numberline {8.3}{\ignorespaces Dataset Composition Overview}}{53}{table.caption.55}%
+\contentsline {table}{\numberline {8.4}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with cosine distance}}{53}{table.caption.56}%
+\contentsline {table}{\numberline {8.5}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with euclidean distance}}{53}{table.caption.57}%
+\contentsline {table}{\numberline {8.6}{\ignorespaces Original Image Results}}{54}{table.caption.58}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {11.1}{\ignorespaces Cool table}}{60}{table.caption.62}%
+\contentsline {table}{\numberline {11.1}{\ignorespaces Cool table}}{61}{table.caption.63}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
