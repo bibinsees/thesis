@@ -13,7 +13,7 @@
 \contentsline {table}{\numberline {8.3}{\ignorespaces Dataset Composition Overview}}{53}{table.caption.55}%
 \contentsline {table}{\numberline {8.4}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with cosine distance}}{53}{table.caption.56}%
 \contentsline {table}{\numberline {8.5}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with euclidean distance}}{53}{table.caption.57}%
-\contentsline {table}{\numberline {8.6}{\ignorespaces Original Image Results}}{54}{table.caption.58}%
+\contentsline {table}{\numberline {8.6}{\ignorespaces Evaluation Results Using Different Distance Metrics}}{54}{table.caption.58}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

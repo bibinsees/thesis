@@ -362,7 +362,7 @@ similar/closer to single dose: 22.
 Curated 40 subset  (Balanced to the minimum nof set in the group which is exploded. ie there is only total 40 of exploded but excluded explod look alike from control):
 contains random but make sure it doesn't have exploded like controls total 40, and all exploded which is basically 40, 10 ds close to sd, 30 single dose.
 
-run 100 times for different random initilisation.
+run 150 times for different random initilisation.
 
 \begin{table}[htbp]
     \centering
@@ -399,15 +399,15 @@ run 100 times for different random initilisation.
         \multirow{5}{*}{\textbf{Before}} 
         & Strong                & 93.56 & 95.83 & 98.43 & 100 \\
         & Sweet                 & 93.72 & 100 & 100 & 100 \\
-        & Resize                & - & - & - & - \\
-        & Resize No Contrast    & - & - & - & - \\
-        & Sweet No Contrast     & - & - & - & - \\ \midrule
+        & Resize                & 93.56 & 98.33 & 98.20 & 100 \\
+        & Resize No Contrast    & 92.62 & 99.17 & 91.01 & 99.17 \\
+        & Sweet No Contrast     & 97.65 & 98.33 & 99.55 & 99.17 \\ \midrule
         \multirow{5}{*}{\textbf{After}} 
         & Strong                & 86.19 & 94.17 & 89.89 & 95.83 \\
         & Sweet                 & 74.10 & 72.50 & 75.96 & 69.17 \\
-        & Resize                & - & - & - & - \\
-        & Resize No Contrast    & - & - & - & - \\
-        & Sweet No Contrast     & - & - & - & - \\ \bottomrule
+        & Resize                & 90.27 & 94.17 & 88.99 & 94.17 \\
+        & Resize No Contrast    & 74.1 & 56.67 & 68.31 & 60.83 \\
+        & Sweet No Contrast     & 74.10 & 75.83 & 75.28 & 76.67 \\ \bottomrule
     \end{tabular}%
     }
 \end{table}
@@ -423,33 +423,41 @@ run 100 times for different random initilisation.
         \multirow{5}{*}{\textbf{Before}} 
         & Strong                & 93.72 & 99.17 & 99.1 & 100 \\
         & Sweet                 & 98.12 & 93.33 & 99.30 & 100 \\
-        & Resize                & - & - & - & - \\
-        & Resize No Contrast    & - & - & - & - \\
-        & Sweet No Contrast     & - & - & - & - \\ \midrule
+        & Resize                & 90.27 & 85 & 89.89 & 82.50 \\
+        & Resize No Contrast    & 93.56 & 98.33 & 91.01 & 99.17 \\
+        & Sweet No Contrast     & 99.06 & 99.17 & 99.78 & 99.17 \\ \midrule
         \multirow{5}{*}{\textbf{After}} 
         & Strong                & 92.15 & 95 & 89.89 & 95.83 \\
         & Sweet                 & 74.10 & 71.67 & 73.71 & 68.33 \\
-        & Resize                & - & - & - & - \\
-        & Resize No Contrast    & - & - & - & - \\
-        & Sweet No Contrast     & - & - & - & - \\ \bottomrule
+        & Resize                & 74.10 & 84.17 & 75.73 & 84.17 \\
+        & Resize No Contrast    & 74.10 & 56.67 & 68.76 & 57.50 \\
+        & Sweet No Contrast     & 74.10 & 70.83 & 78.88 & 72.50 \\ \bottomrule
     \end{tabular}%
     }
 \end{table}
 
-\textcolor{red}{Should I need to add precision recall? yes to confirm control exploded lokk like is the one who reduces the accuracy. maybe for full dataset where accuracy lw and included control looks like explod}
+\textcolor{red}{Should I need to add precision recall? yes to confirm control exploded lokk like is the one who reduces the accuracy. maybe for full dataset where 
+accuracy lw and included control looks like explod}
+
 
 \begin{table}[H]
     \centering
-    \caption{Original Image Results}
-    \label{tab:original_image_results}
-    \begin{tabular}{|l|c|c|c|c|}
-    \hline
-    \textbf{Metric}            & \textbf{Train Accuracy (\%)} & \textbf{Train Epoch} & \textbf{Test Accuracy (\%)} & \textbf{Test Epoch} \\ \hline
-    \textbf{Original Image}    & -                      & -                    & -                        & -                   \\ \hline
-    \end{tabular}
+    \caption{Evaluation Results Using Different Distance Metrics}
+    \label{tab:distance_metrics}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llcccc@{}}
+        \toprule
+        & \textbf{Metric} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset (Unbalanced)} & \textbf{Curated 40 Subset (Balanced)} \\ \midrule
+        \multirow{2}{*}{\textbf{Original Images}} 
+        & Cosine Distance    & 93.09 & 65.83   & 82.25   & 65.83   \\ 
+        & Euclidean Distance & 81.48     & -   & -   & -   \\ \bottomrule
+    \end{tabular}%
+    }
 \end{table}
 
 
+
+\textcolor{red}{Include PCA 1 here? maybe in ranking. but we can add PCA 2 fugures}
 
 
 \section{Direct day 7 to day 10 distance evaluation}
