@@ -31,18 +31,21 @@
 \contentsline {subsubsection}{\nonumberline day10 predcition}{57}{subsubsection*.60}%
 \contentsline {subsubsection}{\nonumberline Delta predcition}{58}{subsubsection*.62}%
 \contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{58}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{59}{section.9.3}%
-\contentsline {chapter}{\numberline {10}Comparative study}{60}{chapter.10}%
-\contentsline {section}{\numberline {10.1}SimCLR vs Original}{60}{section.10.1}%
-\contentsline {section}{\numberline {10.2}3 channel vs 1 channel}{60}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Unet vs Resnet}{60}{section.10.3}%
-\contentsline {section}{\numberline {10.4}96 vs 256}{60}{section.10.4}%
-\contentsline {section}{\numberline {10.5}Batch size 16 vs 64 vs 128 vs 256}{60}{section.10.5}%
-\contentsline {chapter}{\numberline {11}Conclusion}{61}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Future research direction}{61}{section.11.1}%
-\contentsline {chapter}{\numberline {12}new chapter}{63}{chapter.12}%
-\contentsline {chapter}{\nonumberline Appendix}{65}{chapter*.64}%
-\contentsline {chapter}{Literature}{66}{section*.65}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{68}{chapter*.67}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{69}{chapter*.68}%
+\contentsline {paragraph}{\nonumberline Correct Transitions}{59}{paragraph*.67}%
+\contentsline {paragraph}{\nonumberline Total Possible Transitions}{60}{paragraph*.69}%
+\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{60}{paragraph*.71}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{61}{section.9.3}%
+\contentsline {chapter}{\numberline {10}Comparative study}{62}{chapter.10}%
+\contentsline {section}{\numberline {10.1}SimCLR vs Original}{62}{section.10.1}%
+\contentsline {section}{\numberline {10.2}3 channel vs 1 channel}{62}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Unet vs Resnet}{62}{section.10.3}%
+\contentsline {section}{\numberline {10.4}96 vs 256}{62}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Batch size 16 vs 64 vs 128 vs 256}{62}{section.10.5}%
+\contentsline {chapter}{\numberline {11}Conclusion}{63}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Future research direction}{63}{section.11.1}%
+\contentsline {chapter}{\numberline {12}new chapter}{65}{chapter.12}%
+\contentsline {chapter}{\nonumberline Appendix}{67}{chapter*.76}%
+\contentsline {chapter}{Literature}{68}{section*.77}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{70}{chapter*.79}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{71}{chapter*.80}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

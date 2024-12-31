@@ -81,6 +81,9 @@ and day 10 feature vector of untreated images,
 
 \section{Ranking strategy 2: K means centroid approach}
 
+This strategy utilizes the after projection head vectors since simclr loss function designed that after projection head vectors have cosine similarity between similar 
+group.
+
 \begin{enumerate}
   \item \textbf{Step 1:} Feed control images into k means and find the centriod of control (untreated) cluster based on both cosine distance and the euclidean distance. 
   ( we can choose the distacne metric if we have time)
@@ -90,6 +93,123 @@ and day 10 feature vector of untreated images,
   \item \textbf{Step 3:} Perform the same operation for simlcr features and on original images.
 \end{enumerate}
 
+
+\subsection*{Group-Wise Ranking Accuracy: Mathematical Definition and Process}
+
+\textcolor{red}{below maybe wrong because I didN't added that gp order determine by calculating mean of cosine distance}
+
+\subsubsection*{Definitions}
+
+Let \( G_1, G_2, G_3, \dots, G_n \) represent \( n \) different groups of distances.  
+The distances in each group \( G_i \) are denoted as:
+\[
+D_i = \{d_{i1}, d_{i2}, \dots, d_{im_i}\},
+\]
+where \( m_i \) is the number of elements in group \( G_i \).  
+
+Let:
+\[
+\{D_1, D_2, \dots, D_n\}
+\]
+represent the collection of all groups.
+
+After sorting all the distances across the groups into a single list, we check if the order of groups is maintained, i.e., whether all distances in \( G_1 \) are less than those in \( G_2 \), all in \( G_2 \) are less than those in \( G_3 \), and so on.
+
+\subsubsection*{Mathematical Formula for Group-Wise Ranking Accuracy}
+
+\paragraph{Correct Transitions}
+A correct transition between two groups \( G_i \) and \( G_j \) (with \( i < j \)) occurs if all elements of \( G_i \) are less than all elements of \( G_j \) after sorting.  
+
+This can be expressed mathematically as:
+\[
+\text{Correct Transition}(G_i \to G_j) = 
+\left[
+\forall d_{ik} \in G_i, \forall d_{jl} \in G_j : d_{ik} < d_{jl}
+\right], \quad \text{for } i < j.
+\]
+
+\paragraph{Total Possible Transitions}
+The total number of possible transitions is the number of adjacent group pairs:
+\[
+T_{\text{total}} = n - 1.
+\]
+
+\paragraph{Group-Wise Ranking Accuracy}
+The ranking accuracy is the ratio of correct transitions (\( T_{\text{correct}} \)) to total possible transitions (\( T_{\text{total}} \)):
+\[
+\text{Accuracy} = \frac{T_{\text{correct}}}{T_{\text{total}}}.
+\]
+
+\subsubsection*{Step-by-Step Process}
+
+1. \textbf{Sort the Distances:} Sort all the distances from all groups into a single list while keeping track of the group each distance belongs to.
+
+2. \textbf{Check for Correct Transitions:} For each adjacent group pair \( (G_i, G_j) \), check if the condition:
+\[
+\forall d_{ik} \in G_i, \forall d_{jl} \in G_j : d_{ik} < d_{jl}
+\]
+holds true.
+
+3. \textbf{Count Correct Transitions:} If the condition holds for a group pair, increment \( T_{\text{correct}} \).
+
+4. \textbf{Compute Accuracy:} Finally, compute the group-wise ranking accuracy as:
+\[
+\text{Accuracy} = \frac{T_{\text{correct}}}{T_{\text{total}}}.
+\]
+
+
+
+
+
+
+Curated control dataset: 280
+sd: full: 103
+exploded full: 40
+
+ds close to sd 10
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}llccccc@{}}
+  \toprule
+  Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
+                  & Single Dose Mean   & 92.42      & 91.71     & 92.42      & 91.47                  & 92.42                 \\
+  Before          & Control Mean       & 94.55      & 92.65     & 93.84      & 95.73                  & 94.55                 \\
+                  & Explod Mean        & 82.23      & 82.23     & 92.65     & 83.65                  & 81.52                \\ \midrule
+                  & Single Dose Mean   & 97.39  & 87.68     & 92.89     & 82.94                  & 83.65                 \\
+  After           & Control Mean       & 86.97      & 76.78    & 90.76      & 76.30                 & 82.70                 \\
+                  & Explod Mean        & 92.18      & 79.62    & 88.86      & 77.96                  & 82.23                 \\ \bottomrule
+  \end{tabular}
+  \caption{Cosine distance}
+  \label{tab:your_table_label}
+\end{table}
+
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}llccccc@{}}
+  \toprule
+  Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
+                  & Single Dose Mean   & -      & -     & -      & -                  & -                 \\
+  Before          & Control Mean       & -      & -     & -      & -                  & -                 \\
+                  & Explod Mean        & -      & -     & -      & -                  & -                 \\ \midrule
+                  & Single Dose Mean   & -      & -     & -      & -                  & -                 \\
+  After           & Control Mean       & -      & -     & -      & -                  & -                 \\
+                  & Explod Mean        & -      & -     & -      & -                  & -                 \\ \bottomrule
+  \end{tabular}
+  \caption{Euclidean distance}
+  \label{tab:your_table}
+\end{table}
+
+
+\textcolor{red}{check for any pattern in the 97.39 . do other distances depend on time later }
+
+
+
+
+
 \section{Ranking strategy 3: Softmax approach}
+
+This strategy utilizes the before projection head vectors since its linearly seperable for downstream task classification as suggested in original simclr paper.
 1. Train classification model to classify untreated and treated. 
 2. Then do inference on them and take softmax probability as metric for ranking.
