@@ -35,15 +35,15 @@
 \contentsline {paragraph}{\nonumberline Total Possible Transitions}{60}{paragraph*.69}%
 \contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{60}{paragraph*.71}%
 \contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{61}{section.9.3}%
-\contentsline {chapter}{\numberline {10}Comparative study}{62}{chapter.10}%
-\contentsline {section}{\numberline {10.1}SimCLR vs Original}{62}{section.10.1}%
-\contentsline {section}{\numberline {10.2}3 channel vs 1 channel}{62}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Unet vs Resnet}{62}{section.10.3}%
-\contentsline {section}{\numberline {10.4}96 vs 256}{62}{section.10.4}%
-\contentsline {section}{\numberline {10.5}Batch size 16 vs 64 vs 128 vs 256}{62}{section.10.5}%
-\contentsline {chapter}{\numberline {11}Conclusion}{63}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Future research direction}{63}{section.11.1}%
-\contentsline {chapter}{\numberline {12}new chapter}{65}{chapter.12}%
+\contentsline {chapter}{\numberline {10}Comparative study}{63}{chapter.10}%
+\contentsline {section}{\numberline {10.1}SimCLR vs Original}{63}{section.10.1}%
+\contentsline {section}{\numberline {10.2}3 channel vs 1 channel}{63}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Unet vs Resnet}{63}{section.10.3}%
+\contentsline {section}{\numberline {10.4}96 vs 256}{63}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Batch size 16 vs 64 vs 128 vs 256}{63}{section.10.5}%
+\contentsline {chapter}{\numberline {11}Conclusion}{64}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Future research direction}{64}{section.11.1}%
+\contentsline {chapter}{\numberline {12}new chapter}{66}{chapter.12}%
 \contentsline {chapter}{\nonumberline Appendix}{67}{chapter*.77}%
 \contentsline {chapter}{Literature}{68}{section*.78}%
 \contentsline {chapter}{\nonumberline Declaration on oath}{70}{chapter*.80}%

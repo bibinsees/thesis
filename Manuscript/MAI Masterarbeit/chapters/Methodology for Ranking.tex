@@ -225,3 +225,16 @@ we get above 95 if there is seperation for 3 gps.
 This strategy utilizes the before projection head vectors since its linearly seperable for downstream task classification as suggested in original simclr paper.
 1. Train classification model to classify untreated and treated. 
 2. Then do inference on them and take softmax probability as metric for ranking.
+
+When we used curated dataset percentage of gp wise accuracy went down where when we used control as the same number of images of sd accuracy is 100. 
+it worked maybe because of class balancing.
+
+How do we check which data aug is working?
+it should seperate cond7, ex, sd: 100 percentage. because if get 100 that means it is able to make gp of control and sd for sure, from ex mixing.
+
+why are we doing this because every aug can  seperate cond 7 and sd. thats obivious. because there is no other gps. so we have to add new gp as inference to see if 
+cond7 and sd still gp together. same principle in kmeans approach.
+
+
+\textcolor{red}{its better to not use exploded and harm people sentence from intro and data intro just say debris, because cond10 and exploded have debris. cond10 
+have debris even without drug so debris can happen without drug.it is probabliy because its cultivated in lab where these things happen.} 
