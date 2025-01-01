@@ -190,9 +190,9 @@ ds close to sd 10
   \begin{tabular}{@{}llccccc@{}}
   \toprule
   Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
-                  & Single Dose Mean   & -      & -     & -      & -                  & -                 \\
-  Before          & Control Mean       & -      & -     & -      & -                  & -                 \\
-                  & Explod Mean        & -      & -     & -      & -                  & -                 \\ \midrule
+                  & Single Dose Mean   & 91      & 89.10     & 91.23      & 86.49                  & 90.52                 \\
+  Before          & Control Mean       & 87.68      & 86.73     & 88.15      & 82.94                  & 86.73                 \\
+                  & Explod Mean        & 81.99      & 81.52     & 92.65      & 83.18                  &   81.52               \\ \midrule
                   & Single Dose Mean   & 90.05      & 81.28     & 91.94      & 77.25                  & 78.67                 \\
   After           & Control Mean       & 82.23      & 76.07     & 84.12      & 76.54                  & 74.17                 \\
                   & Explod Mean        & 90.52      & 78.20    & 94.79      & 75.83                  & 81.75                 \\ \bottomrule
@@ -204,8 +204,20 @@ ds close to sd 10
 
 \textcolor{red}{check for any pattern in the 97.39 . do other distances depend on time later }
 
+we get above 95 if there is seperation for 3 gps.
 
 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}llll@{}}
+  \toprule
+  Distance From & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Single Dose\\ Mean\end{tabular}} & \multicolumn{1}{c}{Control Mean} & \multicolumn{1}{c}{Explod Mean} \\ \midrule
+  Cosine        & 81.28                                                                           & 86.02                            & 76.78                           \\
+  Euclidean     & 83.18                                                                           & 78.44                            & 80.81                           \\ \bottomrule
+  \end{tabular}
+  \caption{Your table caption here}
+  \label{tab:you_label}
+\end{table}
 
 
 \section{Ranking strategy 3: Softmax approach}
