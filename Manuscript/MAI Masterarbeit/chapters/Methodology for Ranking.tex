@@ -52,32 +52,6 @@ This inference loss/metric will be used as the feature for the ranking/order sca
 with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. 
 Determining a reasonable inference loss/metric will be one of the research problems to tackle.
 
-\subsubsection{Delta predcition}
-\begin{enumerate}
-  \item \textbf{Step 1:} Calculate the difference/delta between the day 7 and day 10 simclr 
-  feature vectors  exclusively on the untreated images.
-  \item \textbf{Step 2:} Train a prediction model where input is day 7 feature vector 
-  and target will be Delta.
-
-
-  \item \textbf{Step 3:} Perform inference on the test set where input will be day 7 feature vector of all images which include untreated, 
-  clinically recommended, and drug screening images to predict the delta between the day 7 feature vector  and day 10 feature vector.
-\end{enumerate}
-
-Since the delta prediction model is trained solely on the representations of day 
-7 untreated  images to predict the delta between the day 7 feature vector 
-and day 10 feature vector of untreated images,
- the inference loss/metric (i.e., the difference between the predicted delta and actual
-  delta) will be very small for untreated images. Conversely,
-   the inference loss/metric will increase for treated images as their representations 
-   deviate from those of untreated images. This inference loss/metric will be used as 
-   the feature for the ranking/order scale, where the initial images will start with 
-   untreated images that have very small inference loss/metric, and the scale will end 
-   with images having high inference loss/metric in ascending order. 
-   Determining a reasonable inference loss/metric will be one of the research problems 
-   to tackle.
-
-
 
 \section{Ranking strategy 2: K means centroid approach}
 
@@ -204,7 +178,11 @@ ds close to sd 10
 
 \textcolor{red}{check for any pattern in the 97.39 . do other distances depend on time later }
 
-we get above 95 if there is seperation for 3 gps.
+With this costumized metric, we get around 95 if there is slightest seperation for 3 gps.
+
+after projection head: strong seperates perfectly but the problem is since the control is seperated at the middle ordering. Hence we can find the less effective in the middle,
+
+\textcolor{red}{clear seperation between sd and ex ( 2 gp) and max mean difference between them table:}
 
 
 \begin{table}[H]
@@ -241,6 +219,8 @@ We will use simclr features since original images are not able to classify 100 p
   \label{tab:ranking softmax}
   \end{table}
   
+\textcolor{red}{this questions if strong or No contrast sweet is betterr? because previously strong was better. Now sweet performed well for this task. 
+to understand why sweet performs better we need to see crop change and brghtness, contrast change seperatly.}
 
 When we used curated dataset percentage of gp wise accuracy went down where when we used control as the same number of images of sd accuracy is 100. 
 it worked maybe because of class balancing.
@@ -276,9 +256,11 @@ Below trained for 500 epochs:
   \label{tab:augmentation_metrics}
 \end{table}
 
+\textcolor{red}{include other classification combinations in table}
 
 Why its not giving 100 because now the problem is harder. we had 2 classes, explod vs all other drug screen,where drug screen look intermediate to explod and sigle dose.
-
+Also we can improve this result by adding more hidden layers instead of just one linear layer and so more. at the moment i didn't since we want to know which data aug works for harder problem.
+because in the intermediate evaluation  most of them gave 100 percenatage making it not  evaluator for evaluating inbetween data augs. there we get that orig vs data augs.
 
 \begin{table}[h!]
   \centering
@@ -291,6 +273,10 @@ Why its not giving 100 because now the problem is harder. we had 2 classes, expl
   \bottomrule
   \end{tabular}
 \end{table}
+
+
+ordered images can found in the below gdrive links for both mixed and cleaned order for ds and ex.
+show them ordered images for 80 percentage gp wise accuracy ie only seperated 2 gps, show them its worse.
 
 \textcolor{red}{its better to not use exploded and harm people sentence from intro and data intro just say debris, because cond10 and exploded have debris. cond10 
 have debris even without drug so debris can happen without drug.it is probabliy because its cultivated in lab where these things happen.} 

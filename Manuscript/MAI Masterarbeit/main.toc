@@ -29,11 +29,10 @@
 \contentsline {subsection}{\numberline {9.1.1}Day7 to day7 reconstruction}{56}{subsection.9.1.1}%
 \contentsline {subsection}{\numberline {9.1.2}Day7 to day10 predcition}{57}{subsection.9.1.2}%
 \contentsline {subsubsection}{\nonumberline day10 predcition}{57}{subsubsection*.60}%
-\contentsline {subsubsection}{\nonumberline Delta predcition}{58}{subsubsection*.62}%
 \contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{58}{section.9.2}%
-\contentsline {paragraph}{\nonumberline Correct Transitions}{59}{paragraph*.67}%
-\contentsline {paragraph}{\nonumberline Total Possible Transitions}{60}{paragraph*.69}%
-\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{60}{paragraph*.71}%
+\contentsline {paragraph}{\nonumberline Correct Transitions}{59}{paragraph*.65}%
+\contentsline {paragraph}{\nonumberline Total Possible Transitions}{59}{paragraph*.67}%
+\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{59}{paragraph*.69}%
 \contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{61}{section.9.3}%
 \contentsline {chapter}{\numberline {10}Comparative study}{64}{chapter.10}%
 \contentsline {section}{\numberline {10.1}SimCLR vs Original}{64}{section.10.1}%
@@ -44,8 +43,8 @@
 \contentsline {chapter}{\numberline {11}Conclusion}{65}{chapter.11}%
 \contentsline {section}{\numberline {11.1}Future research direction}{65}{section.11.1}%
 \contentsline {chapter}{\numberline {12}new chapter}{67}{chapter.12}%
-\contentsline {chapter}{\nonumberline Appendix}{69}{chapter*.80}%
-\contentsline {chapter}{Literature}{70}{section*.81}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{72}{chapter*.83}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{73}{chapter*.84}%
+\contentsline {chapter}{\nonumberline Appendix}{69}{chapter*.78}%
+\contentsline {chapter}{Literature}{70}{section*.79}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{72}{chapter*.81}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{73}{chapter*.82}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
