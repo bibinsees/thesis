@@ -223,8 +223,24 @@ we get above 95 if there is seperation for 3 gps.
 \section{Ranking strategy 3: Softmax approach}
 
 This strategy utilizes the before projection head vectors since its linearly seperable for downstream task classification as suggested in original simclr paper.
-1. Train classification model to classify untreated and treated. 
+
+We will use simclr features since original images are not able to classify 100 percentage as we seen in intermediate evaluation.
+1. Train classification model to classify cond7 and sd. 
 2. Then do inference on them and take softmax probability as metric for ranking.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}lccccc@{}}
+  \toprule
+  \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
+  97.89           & 99.29          & 98.59           & 98.25                       & 100                        \\ \bottomrule
+  \end{tabular}
+  \caption{Table description goes here.}
+  \label{tab:ranking softmax}
+  \end{table}
+  
 
 When we used curated dataset percentage of gp wise accuracy went down where when we used control as the same number of images of sd accuracy is 100. 
 it worked maybe because of class balancing.
@@ -235,6 +251,46 @@ it should seperate cond7, ex, sd: 100 percentage. because if get 100 that means 
 why are we doing this because every aug can  seperate cond 7 and sd. thats obivious. because there is no other gps. so we have to add new gp as inference to see if 
 cond7 and sd still gp together. same principle in kmeans approach.
 
+so, with this approach from cond7 to sd classsification softmax probability score we get mixture of exploded and gray from drug screen.
+
+if we want to avoid that we can train supervised classification to filter out the exploded from there then put them on right side of sd so that we get clean scale.
+for that training we can use simclr feature vectors because it gave more accuracy than the original image accuracy.
+
+Below trained for 500 epochs:
+
+\begin{table}[h!]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llccccc}
+  \toprule
+  \textbf{Augmentation Type}      & \textbf{Metric} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{Resize No Contrast} & \textbf{Sweet No Contrast} \\ \midrule
+  \multirow{4}{*}{\textbf{Before Projection Head}} 
+      & Train Accuracy (\%) & 97.07 & 96.23 & 96.23 & 97.91 & 97.07 \\
+      & Train Epoch         & 30 & 41 & 128 & 465 & 485 \\
+      & Test Accuracy (\%)  & 95 & 91.67 & 93.33 & 93.33 & 95 \\
+      & Test Epoch          & 5 & 5 & 21 & 12 & 17 \\ 
+  \bottomrule
+  \end{tabular}%
+  }
+  \caption{Performance metrics for different augmentation strategies before the projection head.}
+  \label{tab:augmentation_metrics}
+\end{table}
+
+
+Why its not giving 100 because now the problem is harder. we had 2 classes, explod vs all other drug screen,where drug screen look intermediate to explod and sigle dose.
+
+
+\begin{table}[h!]
+  \centering
+  \caption{Original Image Results}
+  \label{tab:original_image_results}
+  \begin{tabular}{lcccc}
+  \toprule
+  \textbf{Metric}         & \textbf{Train Accuracy (\%)} & \textbf{Train Epoch} & \textbf{Test Accuracy (\%)} & \textbf{Test Epoch} \\ \midrule
+  \textbf{Original Image} & 84.94                        & 434                   & 78.33                        & 19                  \\ 
+  \bottomrule
+  \end{tabular}
+\end{table}
 
 \textcolor{red}{its better to not use exploded and harm people sentence from intro and data intro just say debris, because cond10 and exploded have debris. cond10 
 have debris even without drug so debris can happen without drug.it is probabliy because its cultivated in lab where these things happen.} 

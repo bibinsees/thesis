@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  1 JAN 2025 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  2 JAN 2025 16:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -953,7 +953,14 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 107.
  (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (./main.aux (./chapters/introduction.aux) (./chapters/Research questions.aux) (./chapters/literature_review.aux) (./chapters/Data Description.aux) (./chapters/Structure of the Thesis.aux) (./chapters/Methodology for SimCLR.aux) (./chapters/Methodology for Intermediate evaluation of SimCLR model.aux) (./chapters/Methodology for Ranking.aux) (./chapters/Comparative study.aux) (./chapters/conclusions.aux) (./chapters/new chapter.aux))
+) (./main.aux (./chapters/introduction.aux) (./chapters/Research questions.aux) (./chapters/literature_review.aux) (./chapters/Data Description.aux) (./chapters/Structure of the Thesis.aux) (./chapters/Methodology for SimCLR.aux) (./chapters/Methodology for Intermediate evaluation of SimCLR model.aux) (./chapters/Methodology for Ranking.aux
+
+LaTeX Warning: Label `tab:augmentation_metrics' multiply defined.
+
+
+LaTeX Warning: Label `tab:original_image_results' multiply defined.
+
+) (./chapters/Comparative study.aux) (./chapters/conclusions.aux) (./chapters/new chapter.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
@@ -1231,12 +1238,12 @@ Overfull \hbox (20.42715pt too wide) in paragraph at lines 5--6
 
 
 ]
-<figures/platform setup.png, id=249, 834.11626pt x 624.3325pt>
+<figures/platform setup.png, id=256, 834.11626pt x 624.3325pt>
 File: figures/platform setup.png Graphic file (type png)
 <use figures/platform setup.png>
 Package pdftex.def Info: figures/platform setup.png  used on input line 11.
 (pdftex.def)             Requested size: 333.6406pt x 249.72858pt.
-<figures/robot.png, id=251, 804.00375pt x 602.25pt>
+<figures/robot.png, id=258, 804.00375pt x 602.25pt>
 File: figures/robot.png Graphic file (type png)
 <use figures/robot.png>
 Package pdftex.def Info: figures/robot.png  used on input line 20.
@@ -1249,7 +1256,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [2 <./figures/platform setup.png>]
 
 [3 <./figures/robot.png>]
-<figures/WellPlate.png, id=263, 1541.76pt x 1031.052pt>
+<figures/WellPlate.png, id=270, 1541.76pt x 1031.052pt>
 File: figures/WellPlate.png Graphic file (type png)
 <use figures/WellPlate.png>
 Package pdftex.def Info: figures/WellPlate.png  used on input line 36.
@@ -1261,7 +1268,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 52
  (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<figures/singledose.png, id=271, 752.8125pt x 480.79625pt>
+<figures/singledose.png, id=278, 752.8125pt x 480.79625pt>
 File: figures/singledose.png Graphic file (type png)
 <use figures/singledose.png>
 Package pdftex.def Info: figures/singledose.png  used on input line 68.
@@ -1272,7 +1279,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [5]
-<figures/drug_screened.png, id=279, 1445.4pt x 813.0375pt>
+<figures/drug_screened.png, id=286, 1445.4pt x 813.0375pt>
 File: figures/drug_screened.png Graphic file (type png)
 <use figures/drug_screened.png>
 Package pdftex.def Info: figures/drug_screened.png  used on input line 75.
@@ -1285,7 +1292,7 @@ Overfull \hbox (90.5922pt too wide) in paragraph at lines 75--76
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/timed.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/timed.pdf, id=281, 614.295pt x 794.97pt>
+<figures/timed.pdf, id=288, 614.295pt x 794.97pt>
 File: figures/timed.pdf Graphic file (type pdf)
 <use figures/timed.pdf>
 Package pdftex.def Info: figures/timed.pdf  used on input line 87.
@@ -1363,7 +1370,7 @@ Underfull \vbox (badness 1194) has occurred while \output is active []
 
 
 ]
-<figures/threes.png, id=376, 990.70125pt x 321.2pt>
+<figures/threes.png, id=383, 990.70125pt x 321.2pt>
 File: figures/threes.png Graphic file (type png)
 <use figures/threes.png>
 Package pdftex.def Info: figures/threes.png  used on input line 70.
@@ -1379,7 +1386,7 @@ Underfull \vbox (badness 6220) has occurred while \output is active []
 
 
 [16]
-<figures/transition.png, id=382, 682.55pt x 1071.00125pt>
+<figures/transition.png, id=389, 682.55pt x 1071.00125pt>
 File: figures/transition.png Graphic file (type png)
 <use figures/transition.png>
 Package pdftex.def Info: figures/transition.png  used on input line 82.
@@ -1390,7 +1397,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [17 <./figures/threes.png>]
-<figures/originals.png, id=389, 644.4075pt x 241.90375pt>
+<figures/originals.png, id=396, 644.4075pt x 241.90375pt>
 File: figures/originals.png Graphic file (type png)
 <use figures/originals.png>
 Package pdftex.def Info: figures/originals.png  used on input line 103.
@@ -1401,7 +1408,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [18 <./figures/transition.png>]
-<figures/8bitvs16bit.png, id=398, 808.7013pt x 714.7503pt>
+<figures/8bitvs16bit.png, id=405, 808.7013pt x 714.7503pt>
 File: figures/8bitvs16bit.png Graphic file (type png)
 <use figures/8bitvs16bit.png>
 Package pdftex.def Info: figures/8bitvs16bit.png  used on input line 120.
@@ -1419,7 +1426,7 @@ Overfull \hbox (2.9708pt too wide) in paragraph at lines 127--130
 
 
 [20 <./figures/8bitvs16bit.png>]
-<figures/8bit_nThree.png, id=416, 859.2903pt x 570.933pt>
+<figures/8bit_nThree.png, id=423, 859.2903pt x 570.933pt>
 File: figures/8bit_nThree.png Graphic file (type png)
 <use figures/8bit_nThree.png>
 Package pdftex.def Info: figures/8bit_nThree.png  used on input line 142.
@@ -1427,12 +1434,12 @@ Package pdftex.def Info: figures/8bit_nThree.png  used on input line 142.
 
 
 [21 <./figures/8bit_nThree.png>]
-<figures/8bit_nOne.png, id=422, 859.2903pt x 570.933pt>
+<figures/8bit_nOne.png, id=429, 859.2903pt x 570.933pt>
 File: figures/8bit_nOne.png Graphic file (type png)
 <use figures/8bit_nOne.png>
 Package pdftex.def Info: figures/8bit_nOne.png  used on input line 158.
 (pdftex.def)             Requested size: 429.64409pt x 285.46579pt.
-<figures/16bit_onen.png, id=423, 859.2903pt x 570.933pt>
+<figures/16bit_onen.png, id=430, 859.2903pt x 570.933pt>
 File: figures/16bit_onen.png Graphic file (type png)
 <use figures/16bit_onen.png>
 Package pdftex.def Info: figures/16bit_onen.png  used on input line 173.
@@ -1457,7 +1464,7 @@ chapter 6.
 
 
 ]
-<figures/BigOutline.drawio.png, id=443, 914.41624pt x 452.69125pt>
+<figures/BigOutline.drawio.png, id=450, 914.41624pt x 452.69125pt>
 File: figures/BigOutline.drawio.png Graphic file (type png)
 <use figures/BigOutline.drawio.png>
 Package pdftex.def Info: figures/BigOutline.drawio.png  used on input line 41.
@@ -1469,7 +1476,7 @@ Package pdftex.def Info: figures/BigOutline.drawio.png  used on input line 41.
 
  (./chapters/Methodology for SimCLR.tex
 chapter 7.
-<figures/long.png, id=453, 914.2155pt x 860.013pt>
+<figures/long.png, id=460, 914.2155pt x 860.013pt>
 File: figures/long.png Graphic file (type png)
 <use figures/long.png>
 Package pdftex.def Info: figures/long.png  used on input line 19.
@@ -1485,7 +1492,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<figures/rotation.png, id=462, 877.3578pt x 758.1123pt>
+<figures/rotation.png, id=469, 877.3578pt x 758.1123pt>
 File: figures/rotation.png Graphic file (type png)
 <use figures/rotation.png>
 Package pdftex.def Info: figures/rotation.png  used on input line 30.
@@ -1500,7 +1507,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [28 <./figures/rotation.png>]
 
 [29]
-<figures/repeat.png, id=493, 1062.21844pt x 1497.34406pt>
+<figures/repeat.png, id=500, 1062.21844pt x 1497.34406pt>
 File: figures/repeat.png Graphic file (type png)
 <use figures/repeat.png>
 Package pdftex.def Info: figures/repeat.png  used on input line 92.
@@ -1513,7 +1520,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [30]
 
 [31 <./figures/repeat.png (PNG copy)>]
-<figures/16bit_three_1.png, id=507, 859.2903pt x 570.933pt>
+<figures/16bit_three_1.png, id=514, 859.2903pt x 570.933pt>
 File: figures/16bit_three_1.png Graphic file (type png)
 <use figures/16bit_three_1.png>
 Package pdftex.def Info: figures/16bit_three_1.png  used on input line 113.
@@ -1533,7 +1540,7 @@ Underfull \vbox (badness 5091) has occurred while \output is active []
 
 
 [34]
-<figures/strong_aug.png, id=528, 819.06pt x 824.07875pt>
+<figures/strong_aug.png, id=535, 819.06pt x 824.07875pt>
 File: figures/strong_aug.png Graphic file (type png)
 <use figures/strong_aug.png>
 Package pdftex.def Info: figures/strong_aug.png  used on input line 190.
@@ -1562,12 +1569,12 @@ Overfull \hbox (9.32732pt too wide) in paragraph at lines 262--263
 [38]
 
 [39]
-<figures/3_1.png, id=584, 970.62625pt x 295.1025pt>
+<figures/3_1.png, id=591, 970.62625pt x 295.1025pt>
 File: figures/3_1.png Graphic file (type png)
 <use figures/3_1.png>
 Package pdftex.def Info: figures/3_1.png  used on input line 309.
 (pdftex.def)             Requested size: 407.66833pt x 123.9467pt.
-<figures/3_2fine.png, id=585, 970.62625pt x 296.10625pt>
+<figures/3_2fine.png, id=592, 970.62625pt x 296.10625pt>
 File: figures/3_2fine.png Graphic file (type png)
 <use figures/3_2fine.png>
 Package pdftex.def Info: figures/3_2fine.png  used on input line 317.
@@ -1575,12 +1582,12 @@ Package pdftex.def Info: figures/3_2fine.png  used on input line 317.
 
 
 [40 <./figures/3_1.png> <./figures/3_2fine.png>]
-<figures/1_1.png, id=593, 936.49875pt x 294.09875pt>
+<figures/1_1.png, id=600, 936.49875pt x 294.09875pt>
 File: figures/1_1.png Graphic file (type png)
 <use figures/1_1.png>
 Package pdftex.def Info: figures/1_1.png  used on input line 343.
 (pdftex.def)             Requested size: 407.66833pt x 128.02615pt.
-<figures/1_2.png, id=594, 936.49875pt x 296.10625pt>
+<figures/1_2.png, id=601, 936.49875pt x 296.10625pt>
 File: figures/1_2.png Graphic file (type png)
 <use figures/1_2.png>
 Package pdftex.def Info: figures/1_2.png  used on input line 350.
@@ -1682,16 +1689,26 @@ Overfull \hbox (62.64307pt too wide) in paragraph at lines 190--200
 
 
 
-[61])
+[61]
+Overfull \hbox (4.6844pt too wide) in paragraph at lines 287--293
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+)
 
 [62]
+
+[63]
 \openout2 = `"chapters/Comparative study.aux"'.
 
  (./chapters/Comparative study.tex
 chapter 10.
 )
 
-[63
+[64
 
 
 
@@ -1711,31 +1728,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[64
+[65
 
 
 
 
 ]
 
-[65]
+[66]
 \openout2 = `"chapters/new chapter.aux"'.
 
  (./chapters/new chapter.tex
 chapter 12.
 )
 
-[66
-
-
-
-
-]
-chapter without number
-
-
 [67
-
 
 
 
@@ -1745,25 +1752,42 @@ chapter without number
 [68
 
 
-]
 
-[69]
+
+]
 chapter without number
 
+
+[69
+
+]
 
 [70
 
+
+]
+
+[71]
+chapter without number
+
+
+[72
+
 ]
 chapter without number
 
 
-[71
+[73
 
 ] (./main.aux (./chapters/introduction.aux) (./chapters/Research questions.aux) (./chapters/literature_review.aux) (./chapters/Data Description.aux) (./chapters/Structure of the Thesis.aux) (./chapters/Methodology for SimCLR.aux) (./chapters/Methodology for Intermediate evaluation of SimCLR model.aux) (./chapters/Methodology for Ranking.aux) (./chapters/Comparative study.aux) (./chapters/conclusions.aux) (./chapters/new chapter.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1771,18 +1795,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30136 strings out of 473578
- 582698 string characters out of 5732243
+ 30142 strings out of 473578
+ 582781 string characters out of 5732243
  1954960 words of memory out of 5000000
- 52275 multiletter control sequences out of 15000+600000
+ 52276 multiletter control sequences out of 15000+600000
  595100 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11029b,2323s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (83 pages, 8655905 bytes).
+Output written on main.pdf (85 pages, 8658067 bytes).
 PDF statistics:
- 1011 PDF objects out of 1200 (max. 8388607)
- 841 compressed objects within 9 object streams
- 270 named destinations out of 1000 (max. 500000)
+ 1028 PDF objects out of 1200 (max. 8388607)
+ 856 compressed objects within 9 object streams
+ 275 named destinations out of 1000 (max. 500000)
  441 words of extra memory for PDF output out of 10000 (max. 10000000)
 
