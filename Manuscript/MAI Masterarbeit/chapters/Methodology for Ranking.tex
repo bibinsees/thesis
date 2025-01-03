@@ -205,19 +205,23 @@ This strategy utilizes the before projection head vectors since its linearly sep
 We will use simclr features since original images are not able to classify 100 percentage as we seen in intermediate evaluation.
 1. Train classification model to classify cond7 and sd. 
 2. Then do inference on them and take softmax probability as metric for ranking.
-
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
+below table used 750 epochs, batch:8: all of these value can improve by performing regularizytion and more layers or less layers basically hyper parameter tuning. 
+i didn't do it, since i was focused on methodolgy.
+Below trained for 750 epochs:batch:8
 \begin{table}[H]
   \centering
   \begin{tabular}{@{}lccccc@{}}
   \toprule
-  \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-  97.89           & 99.29          & 98.59           & 98.25                       & 100                        \\ \bottomrule
+  \textbf{Classification} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
+  Cond7 vs SD             & 97.89           & 99.29          & 98.59           & 98.25                       & 100                        \\
+  Cond7 vs Ex             & 97.54               & 96.49              & 98.94               & 100                           &   97.54                        \\
+  Ex vs SD             & 95.78               & 98.94              & 95.08               & 92.98                           & 97.54                         \\ \bottomrule
   \end{tabular}
   \caption{Table description goes here.}
   \label{tab:ranking softmax}
-  \end{table}
+\end{table}
+
+\textcolor{red}{Depend on time do ex twenty nine}
   
 \textcolor{red}{this questions if strong or No contrast sweet is betterr? because previously strong was better. Now sweet performed well for this task. 
 to understand why sweet performs better we need to see crop change and brghtness, contrast change seperatly.}
@@ -236,9 +240,9 @@ so, with this approach from cond7 to sd classsification softmax probability scor
 if we want to avoid that we can train supervised classification to filter out the exploded from there then put them on right side of sd so that we get clean scale.
 for that training we can use simclr feature vectors because it gave more accuracy than the original image accuracy.
 
-Below trained for 500 epochs:
+\textcolor{red}{put the below table in classification and also do classification of ex fourty others because we are usign it for softmax approach} 
 
-\begin{table}[h!]
+\begin{table}[H]
   \centering
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{llccccc}
