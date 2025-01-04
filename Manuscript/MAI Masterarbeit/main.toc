@@ -23,16 +23,17 @@
 \contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{44}{subsection.8.1.1}%
 \contentsline {section}{\numberline {8.2}kmeans clustering}{44}{section.8.2}%
 \contentsline {subsection}{\numberline {8.2.1}Evaluation}{52}{subsection.8.2.1}%
-\contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{54}{section.8.3}%
+\contentsline {section}{\numberline {8.3}PCA variation}{54}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Direct day 7 to day 10 distance evaluation}{55}{section.8.4}%
 \contentsline {chapter}{\numberline {9}Methodology for Ranking}{56}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{56}{section.9.1}%
 \contentsline {subsection}{\numberline {9.1.1}Day7 to day7 reconstruction}{56}{subsection.9.1.1}%
 \contentsline {subsection}{\numberline {9.1.2}Day7 to day10 predcition}{57}{subsection.9.1.2}%
-\contentsline {subsubsection}{\nonumberline day10 predcition}{57}{subsubsection*.60}%
+\contentsline {subsubsection}{\nonumberline day10 predcition}{57}{subsubsection*.61}%
 \contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{58}{section.9.2}%
-\contentsline {paragraph}{\nonumberline Correct Transitions}{59}{paragraph*.65}%
-\contentsline {paragraph}{\nonumberline Total Possible Transitions}{59}{paragraph*.67}%
-\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{59}{paragraph*.69}%
+\contentsline {paragraph}{\nonumberline Correct Transitions}{59}{paragraph*.66}%
+\contentsline {paragraph}{\nonumberline Total Possible Transitions}{59}{paragraph*.68}%
+\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{59}{paragraph*.70}%
 \contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{61}{section.9.3}%
 \contentsline {chapter}{\numberline {10}Comparative study}{64}{chapter.10}%
 \contentsline {section}{\numberline {10.1}SimCLR vs Original}{64}{section.10.1}%
@@ -41,10 +42,11 @@
 \contentsline {section}{\numberline {10.4}96 vs 256}{64}{section.10.4}%
 \contentsline {section}{\numberline {10.5}Batch size 16 vs 64 vs 128 vs 256}{64}{section.10.5}%
 \contentsline {chapter}{\numberline {11}Conclusion}{65}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Future research direction}{65}{section.11.1}%
+\contentsline {section}{\numberline {11.1}Final Evaluation}{65}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Future research direction}{65}{section.11.2}%
 \contentsline {chapter}{\numberline {12}new chapter}{67}{chapter.12}%
-\contentsline {chapter}{\nonumberline Appendix}{69}{chapter*.78}%
-\contentsline {chapter}{Literature}{70}{section*.79}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{72}{chapter*.81}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{73}{chapter*.82}%
+\contentsline {chapter}{\nonumberline Appendix}{69}{chapter*.79}%
+\contentsline {chapter}{Literature}{70}{section*.80}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{72}{chapter*.82}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{73}{chapter*.83}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

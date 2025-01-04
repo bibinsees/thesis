@@ -14,16 +14,17 @@
 \contentsline {table}{\numberline {8.4}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with cosine distance}}{53}{table.caption.56}%
 \contentsline {table}{\numberline {8.5}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with euclidean distance}}{53}{table.caption.57}%
 \contentsline {table}{\numberline {8.6}{\ignorespaces Evaluation Results Using Different Distance Metrics}}{54}{table.caption.58}%
+\contentsline {table}{\numberline {8.7}{\ignorespaces Table showing distances for different augmentation strategies.}}{54}{table.caption.59}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {9.1}{\ignorespaces Cosine distance}}{60}{table.caption.71}%
-\contentsline {table}{\numberline {9.2}{\ignorespaces Euclidean distance}}{60}{table.caption.72}%
-\contentsline {table}{\numberline {9.3}{\ignorespaces Your table caption here}}{61}{table.caption.73}%
-\contentsline {table}{\numberline {9.4}{\ignorespaces Table description goes here.}}{61}{table.caption.74}%
-\contentsline {table}{\numberline {9.5}{\ignorespaces Performance metrics for different augmentation strategies before the projection head.}}{62}{table.caption.75}%
-\contentsline {table}{\numberline {9.6}{\ignorespaces Original Image Results}}{63}{table.caption.76}%
+\contentsline {table}{\numberline {9.1}{\ignorespaces Cosine distance}}{60}{table.caption.72}%
+\contentsline {table}{\numberline {9.2}{\ignorespaces Euclidean distance}}{60}{table.caption.73}%
+\contentsline {table}{\numberline {9.3}{\ignorespaces Your table caption here}}{61}{table.caption.74}%
+\contentsline {table}{\numberline {9.4}{\ignorespaces Table description goes here.}}{61}{table.caption.75}%
+\contentsline {table}{\numberline {9.5}{\ignorespaces Performance metrics for different augmentation strategies before the projection head.}}{62}{table.caption.76}%
+\contentsline {table}{\numberline {9.6}{\ignorespaces Original Image Results}}{63}{table.caption.77}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {11.1}{\ignorespaces Cool table}}{66}{table.caption.77}%
+\contentsline {table}{\numberline {11.1}{\ignorespaces Cool table}}{66}{table.caption.78}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
