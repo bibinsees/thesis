@@ -462,26 +462,7 @@ gped correct maybe we dont need to do precision we can check the file path. if y
 
 \textcolor{red}{do sd VS others all}
 
-\section{ PCA variation}
 
-- First cluster points that exceed the minimum value of the middle cluster
-- Third cluster points that fall below the maximum value of the middle cluster
-
-\textcolor{red}{Should I put this in ranking? Yes definitive.}
-we used clearly differentiable curated cluster 40 dataset. after projection and original iamges couldnt make 100 percentage clustering so we didn't need to do pca.
-\begin{table}[H]
-    \centering
-    \begin{tabular}{@{}lccccc@{}}
-    \toprule
-    \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-    \textbf{Cosine Distance} & 66.67               & 66.67              & 67.50               & 66.67                           & 96.67                          \\
-    \textbf{Euclidean Distance} & -           & -              & -               & -                           & 97.50                          \\ \bottomrule
-    \end{tabular}
-    \caption{Table showing distances for different augmentation strategies.}
-    \label{tab:distances}
-  \end{table}
-
-using these we can order but in one end of the scale 2 gps will be mixed.
 
 
 

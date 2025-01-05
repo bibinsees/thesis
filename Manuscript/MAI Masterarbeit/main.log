@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  4 JAN 2025 23:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  5 JAN 2025 01:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1654,9 +1654,6 @@ Overfull \hbox (8.04485pt too wide) in paragraph at lines 369--384
 
 
 [53]
-Underfull \vbox (badness 3179) has occurred while \output is active []
-
-
 
 [54])
 
@@ -1702,13 +1699,15 @@ Overfull \hbox (4.6844pt too wide) in paragraph at lines 281--287
 )
 
 [63]
+
+[64]
 \openout2 = `"chapters/Comparative study.aux"'.
 
  (./chapters/Comparative study.tex
 chapter 10.
 )
 
-[64
+[65
 
 
 
@@ -1725,26 +1724,19 @@ Overfull \hbox (19.63907pt too wide) in paragraph at lines 21--30
 
 
 
-[65
+[66
 
 
 
 
 ])
 
-[66]
+[67]
 \openout2 = `"chapters/new chapter.aux"'.
 
  (./chapters/new chapter.tex
 chapter 12.
 )
-
-[67
-
-
-
-
-]
 
 [68
 
@@ -1756,6 +1748,10 @@ chapter without number
 
 
 [69
+
+
+
+
 
 ]
 
@@ -1800,7 +1796,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11029b,2323s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (85 pages, 8660195 bytes).
+Output written on main.pdf (85 pages, 8660722 bytes).
 PDF statistics:
  1035 PDF objects out of 1200 (max. 8388607)
  863 compressed objects within 9 object streams
