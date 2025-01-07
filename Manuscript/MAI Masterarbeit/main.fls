@@ -302,9 +302,6 @@ INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux
 INPUT ./chapters/Methodology for Ranking.aux
 INPUT ./chapters/Methodology for Ranking.aux
 INPUT chapters/Methodology for Ranking.aux
-INPUT ./chapters/Comparative study.aux
-INPUT ./chapters/Comparative study.aux
-INPUT chapters/Comparative study.aux
 INPUT ./chapters/conclusions.aux
 INPUT ./chapters/conclusions.aux
 INPUT chapters/conclusions.aux
@@ -636,12 +633,6 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT ./chapters/Comparative study.tex
-INPUT ./chapters/Comparative study.tex
-OUTPUT chapters/Comparative study.aux
-INPUT ./chapters/Comparative study.tex
-INPUT ./chapters/Comparative study.tex
-INPUT chapters/Comparative study.tex
 INPUT ./chapters/conclusions.tex
 INPUT ./chapters/conclusions.tex
 OUTPUT chapters/conclusions.aux
@@ -679,9 +670,6 @@ INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux
 INPUT ./chapters/Methodology for Ranking.aux
 INPUT ./chapters/Methodology for Ranking.aux
 INPUT chapters/Methodology for Ranking.aux
-INPUT ./chapters/Comparative study.aux
-INPUT ./chapters/Comparative study.aux
-INPUT chapters/Comparative study.aux
 INPUT ./chapters/conclusions.aux
 INPUT ./chapters/conclusions.aux
 INPUT chapters/conclusions.aux

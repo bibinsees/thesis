@@ -1,33 +1,38 @@
 \chapter{Conclusion}
 
 \section{Final Evaluation}
-\textcolor{red}{How do you know which ranking strategy is better visually? inference from ds close tosd for the worked one from each strategy and look which one works better?}
+
+\begin{table}[H]
+	\centering
+	\resizebox{\textwidth}{!}{%
+	\begin{tabular}{@{}lccc@{}}
+	\toprule
+	\textbf{Ranking Strategy}                                                                       & \textbf{Old Accuracy} & \textbf{New Accuracy} & \textbf{Accuracy Reduction} \\ \midrule
+	Softmax: cond7 vs sd                                                                            & 100                   & 100                   & 0                            \\ 
+	Softmax: cond7 vs Ex                                                                            & 100                   & 100                   & 0                            \\ 
+	\begin{tabular}[c]{@{}l@{}}K-means: Before resize Pearson \\ distance using explod mean\end{tabular} & 96.69                 & 95.50                 & 1.19                         \\ 
+	\begin{tabular}[c]{@{}l@{}}K-means: After cosine strong\\ using single dose mean\end{tabular}   & 97.39                 & 93.33                 & 4.06                         \\ 
+	PCA: strong cosine distance                                                                     & 100                   & 90.14                 & 9.86                         \\ 
+	PCA: Euclidean strong                                                                           & 99.17                 & 88.73                 & 10.44                        \\ \bottomrule
+	\end{tabular}%
+	}
+	\caption{Performance metrics across different ranking strategies.}
+	\label{tab:ranking_strategies}
+	\end{table}
+	
+	
+How do you know which ranking strategy is better visually? inference from ds close tosd for the worked one from each strategy and look which one works better?
 
 \section{Future research direction}
+\section{SimCLR vs Original}
+\section{3 channel vs 1 channel}
+\section{Unet vs Resnet}
 
+\section{96 vs 256}
+\section{Batch size 16 vs 64 vs 128 vs 256}
 \begin{enumerate}
     \item Hybrid: Include human-interpretable features in the unsupervised learning features combined effect.
     \item Weakly supervised DINO transformer-based approach.
     \item Weakly supervised SimCLR approach.
     \item Other distance-based approaches.
 \end{enumerate}
-
-
-
-\lipsum[3]
-\begin{table}[H]
-	\begin{center}
-		\def\arraystretch{2}
-		\begin{tabular}{p{0.155\linewidth}|p{0.15\linewidth}|p{0.145\linewidth}|p{0.14\linewidth}|p{0.14\linewidth}|p{0.15\linewidth}}
-			\textbf{A}& ...	&...	&... &...  \\
-			\hline \textbf{B} &...&...&... &... \\
-			\hline \textbf{C} & ... &... &... &... &... \\
-			\hline \textbf{D} & ... &...&... &... &... \\
-			\hline \textbf{E} & ... &... &... &... &... \\
-			\hline \textbf{F} & - &- &- &$\surd$  &$\surd$  \\
-			\hline \textbf{G} & - & -& - & $l \leq x$ & $11 \leq l \leq x$\\
-		\end{tabular}
-	\end{center}
-	\caption{Cool table}
-	\label{tab:cool_table}
-\end{table}

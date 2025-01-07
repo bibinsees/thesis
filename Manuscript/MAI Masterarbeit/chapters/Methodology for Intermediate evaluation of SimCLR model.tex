@@ -498,6 +498,37 @@ it also applicable to time prediction and reconstruction ranking evaluation and 
 
  \textcolor{red}{then if have time we will do cond7 to cond10, sd stuuf}
 
+ \begin{table}
+ \centering
+ \begin{tabular}{ll*{5}{l}}
+ \toprule
+ \multicolumn{2}{l}{Augmentation type} & Strong & Sweet & Resize & No contrast Resize & No contrast sweet \\ 
+ \midrule
+ & Flip and rotation & 0.1932 & 0.0109 & 0.134 & 0.0120 & 0.0108 \\
+ Before & Blur and sharpness & 0.0061 & 0.0185 & 0.171 & 0.0024 & 0.0058 \\
+ & Brightness change & 0.0003 & 0.0037 & 0.184 & 0.0013 & 0.0043 \\
+ \midrule
+ & Flip and rotation & 0.3435 & 0.0204 & 0.0747 & 0.0113 & 0.0212 \\
+ After & Blur and sharpness & 0.0108 & 0.0388 & 0.2087 & 0.0047 & 0.0133 \\
+ & Brightness change & 0.0005 & 0.0067 & 0.2864 & 0.0024 & 0.0078 \\
+ \bottomrule
+ \end{tabular}
+ \end{table}
+ ```
+    
+
+ \begin{table}[H]
+    \centering
+    \begin{tabular}{@{}lll@{}}
+    \toprule
+    \textbf{Flip and Rotation} & \textbf{Blur and Sharpness} & \textbf{Brightness Change} \\ \midrule
+    0.0291                     & 0.0001                     & $5.73 \times 10^{-8}$      \\ \bottomrule
+    \end{tabular}
+    \caption{Metrics for different augmentation types.}
+    \label{tab:augmentation_metrics}
+\end{table}
+    
+
 
 
   
