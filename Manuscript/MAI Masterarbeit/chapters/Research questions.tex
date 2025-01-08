@@ -2,8 +2,8 @@
 \section*{Research objective}
 This thesis aims to assess drug efficacy by ranking different drug combinations and concentrations on lab-cultivated pancreatic tumor tissue models. 
 The ranking is based on features extracted from bright-field microscopy images of these tumor tissue models using
-SimCLR self supervised learning. Since we lack ground truth labels, ranking to get exact efficacy value will be out of focus, instead we rank the images as
-a transition from untreated to single dose images or untreated to explod images. This is our objective.  
+SimCLR self supervised learning. Since we lack ground truth labels, ranking to get exact efficacy value and evaluation of our ranking system to exact drug efficacy metric 
+ will be out of focus, instead we rank the images as a transition from untreated to single dose images or untreated to explod images. This is our objective.  
 
 
 \textcolor{red}{My plan is to rewrite the introduction to include why we use SimCLR as self supervised learning for learning representation by including :
@@ -25,8 +25,6 @@ a transition from untreated to single dose images or untreated to explod images.
 5. What could be reasonable metrics, such as L2 loss or cosine similarity, to support the relative assessment of drug efficacy?
 
 6. Do we actually need to learn latent features to establish an effective ranking, or is it possible to achieve this directly using the images themselves?
-
-7. How do we deal with the insufficient data problem?
 
 8. What should be done if the same drug concentration has different effects on cancer cells across different experiments? (For instance, 
 we may not know whether the observed differences are due to real efficacy or visual effects, such as debris.)

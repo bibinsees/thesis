@@ -45,7 +45,7 @@ Each image in the dataset consists of different layers captured at varying focal
  \begin{figure}[H]
   \centering
   \includegraphics[scale=0.4]{figures/posi.png} 
-  \caption{invalid vs valid}
+  \caption{Misalighned}
   \label{fig:posi}
 \end{figure}
 
@@ -56,36 +56,37 @@ We have some time noise as in figure in the images that happens during the proce
  \begin{figure}[H]
   \centering
   \includegraphics[scale=0.4]{figures/noise.png} 
-  \caption{invalid vs valid}
+  \caption{Noise}
   \label{fig:noise}
 \end{figure}
  
+\textcolor{red}{organised folders}
+
 
 Figure \ref{fig:Transition} illustrates that, even with the application of the same drug at the same concentration, the morphology of 3D tumor tissues changes differently.
 
-\textcolor{red}{correct the figure. show drug screen with same drug concentration we have diferent effect between different experiment. this maybe due to environmental 
+\textcolor{red}{ show drug screen with same drug concentration we have diferent effect between different experiment. this maybe due to environmental 
 factors or anything}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.46]{figures/transition.png} 
-  \caption{C06, F11 and G04 are well names in the well plate.}
-  \label{fig:Transition}
-\end{figure}
 
+\textcolor{red}{rewrite intro lab to include all type explained in tabel below}
 
-
-The table below shows the division of three different types of image datasets, as  explained in the section ~\ref{sec:lab-setup}.
+The table below shows the division of different types of image datasets we have, as  explained in the section ~\ref{sec:lab-setup}.
 \begin{table}[ht!]
   \centering
-  \begin{tabular}{|l|c|c|c|c|}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|l|c|c|c|c|c|c|}
   \hline
-  \textbf{Class} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Untreated} & \textbf{Total} \\ \hline
-  \textbf{No. of Images (\%)}  & 12 (3\%) & 204 (60\%) & 150 (37\%) & 366 \\ \hline
-  \end{tabular}
+  \textbf{Class} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Cond 10} & \textbf{Untreated} & \textbf{Day 8 \& 9} & \textbf{Total} \\ \hline
+  \textbf{No. of Images (\%)}  & 200 (15.94\%) & 103 (8.21\%) & 201 (16\%) & 510 (40.67\%) & 240 (19.14\%) & 1254 \\ \hline
+  \end{tabular}%
+  }
   \caption{Dataset Class Overview}
   \label{tab:dataset}
 \end{table}
+
+
+
 
 \begin{figure}[H]
   \centering
