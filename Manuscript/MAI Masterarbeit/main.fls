@@ -565,16 +565,34 @@ OUTPUT chapters/Methodology for SimCLR.aux
 INPUT ./chapters/Methodology for SimCLR.tex
 INPUT ./chapters/Methodology for SimCLR.tex
 INPUT chapters/Methodology for SimCLR.tex
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT ./figures/long.png
 INPUT ./figures/long.png
 INPUT ./figures/long.png
 INPUT ./figures/long.png
 INPUT ./figures/long.png
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7v.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT ./figures/rotation.png
 INPUT ./figures/rotation.png
 INPUT ./figures/rotation.png
 INPUT ./figures/rotation.png
 INPUT ./figures/rotation.png
+INPUT ./figures/crop.png
+INPUT ./figures/crop.png
+INPUT ./figures/crop.png
+INPUT ./figures/crop.png
+INPUT ./figures/crop.png
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
@@ -597,16 +615,6 @@ INPUT ./figures/strong_aug.png
 INPUT ./figures/strong_aug.png
 INPUT ./figures/strong_aug.png
 INPUT ./figures/strong_aug.png
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7v.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT ./figures/3_1.png
 INPUT ./figures/3_1.png
 INPUT ./figures/3_1.png
@@ -632,13 +640,10 @@ OUTPUT chapters/Methodology for Ranking.aux
 INPUT ./chapters/Methodology for Ranking.tex
 INPUT ./chapters/Methodology for Ranking.tex
 INPUT chapters/Methodology for Ranking.tex
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT ./chapters/conclusions.tex
 INPUT ./chapters/conclusions.tex
 OUTPUT chapters/conclusions.aux

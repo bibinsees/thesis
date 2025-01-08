@@ -621,50 +621,6 @@
       \verb 2403.09809
       \endverb
     \endentry
-    \entry{ronneberger2015unetconvolutionalnetworksbiomedical}{misc}{}{}
-      \name{author}{3}{}{%
-        {{hash=8e46da9de9e53ea5d37089897d69cdd9}{%
-           family={Ronneberger},
-           familyi={R\bibinitperiod},
-           given={Olaf},
-           giveni={O\bibinitperiod}}}%
-        {{hash=168e84ce3582cbc6bac5e2ebc3ef8442}{%
-           family={Fischer},
-           familyi={F\bibinitperiod},
-           given={Philipp},
-           giveni={P\bibinitperiod}}}%
-        {{hash=b452a32296958371572717940f900884}{%
-           family={Brox},
-           familyi={B\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod}}}%
-      }
-      \strng{namehash}{f23ccc5160c62c7866172335b2c76e11}
-      \strng{fullhash}{f23ccc5160c62c7866172335b2c76e11}
-      \strng{fullhashraw}{f23ccc5160c62c7866172335b2c76e11}
-      \strng{bibnamehash}{f23ccc5160c62c7866172335b2c76e11}
-      \strng{authorbibnamehash}{f23ccc5160c62c7866172335b2c76e11}
-      \strng{authornamehash}{f23ccc5160c62c7866172335b2c76e11}
-      \strng{authorfullhash}{f23ccc5160c62c7866172335b2c76e11}
-      \strng{authorfullhashraw}{f23ccc5160c62c7866172335b2c76e11}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.CV}
-      \field{eprinttype}{arXiv}
-      \field{title}{U-Net: Convolutional Networks for Biomedical Image Segmentation}
-      \field{year}{2015}
-      \verb{eprint}
-      \verb 1505.04597
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/1505.04597
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/1505.04597
-      \endverb
-    \endentry
     \entry{8099852}{inproceedings}{}{}
       \name{author}{6}{}{%
         {{hash=c524ce366a5f141c1da3c2505692aaf4}{%

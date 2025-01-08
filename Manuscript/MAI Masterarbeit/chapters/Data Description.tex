@@ -68,9 +68,6 @@ Figure \ref{fig:Transition} illustrates that, even with the application of the s
 \textcolor{red}{ show drug screen with same drug concentration we have diferent effect between different experiment. this maybe due to environmental 
 factors or anything}
 
-
-\textcolor{red}{rewrite intro lab to include all type explained in tabel below}
-
 The table below shows the division of different types of image datasets we have, as  explained in the section ~\ref{sec:lab-setup}.
 \begin{table}[ht!]
   \centering
@@ -92,7 +89,7 @@ An 8-bit image encompasses 256 color tones (ranging from 0 to 255) per channel, 
 \begin{enumerate}
   \item Converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details.
 Since 8-bit images only allow 256 possible values, the finer variations in intensity that are present in 16-bit images become compressed as illusstrated in \ref{fig:8bitvs16bit}.
-For example, two distinct values in 16-bit (such as 30,000 to 30,048 ) could map to the same 8-bit value (for instance, both might be mapped to 117).
+For example, two distinct values in 16-bit (from 30,000 to 30,048 ) could map to the same 8-bit value (for instance, both might be mapped to 117).
 This results in the loss of subtle intensity differences, which can be crucial in our image task, where minute variations in intensity can be indicative
  of important features such as gradual trasnsition of dark color frfom center to border or amount of debris surrounded to the tumor cell.
 

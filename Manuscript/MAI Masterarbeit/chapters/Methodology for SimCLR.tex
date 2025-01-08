@@ -1,29 +1,44 @@
 \chapter{Methodology for SimCLR}\label{ch: Methodology for SimCLR}
 
 \section{Data preprocessing} \label{sec:data preprocessing}
-
-However, for the ease of use to integrate with our pretarined architecture resnet18 as it trained on 3 channels,
-I determined to start with 3 layers per image. Hence from now on each layers of the tiff image are refered as channels.
-what matters is  most sharped because 
-most sharpest channels have more texture/edge information information than less sharpness 
-less information (less texture/edge information) 
-\textcolor{red}{add the details of no of channels/image and how does it calcualtes the sharpness intuiton }
-
-the images with one channel will duplicate the channels to make upto 3.
-
-\textcolor{red}{add croping image below?} 
 \begin{enumerate}
+  \item \textbf{No of channel per image selection}:
+
+   For 3 reasons, I decided to use 3 layers per image as 3 channels of the image for SimCLR training:
+  \begin{enumerate}
+      \item Considering each 3 layers per image may  capture depth information at 3 different focal planes of a 3D tumor tissue model give more richer information
+      comparing to only single channel information.
+      \item For ease of integration with our pretrained architecture ResNet18, which was trained on 3-channel images.
+      \item The majority of the images in the dataset have exactly 3 layers, making this a practical choice.
+  \end{enumerate}
+   Images with only 1 channel will have their single channel duplicated to form 3 identical channels. For images with 5 channels, the top 3 sharpest
+   layers are filtered and selected to reduce the image to 3 layers. This ensures consistency across the dataset while maintaining maximum texture and edge 
+   information.
+
+   The concept of sharpness is central to selecting the most informative layers. Layers with higher sharpness are retained because they carry more 
+  texture and edge information, while layers with lower sharpness tend to have less detail and appear blurred. Sharpness is calculated intuitively as follows:
+  (Code is from Dalia)
+  \begin{enumerate}
+      \item Sharpness is related to how quickly pixel intensities change in an image. These changes are measured using gradients, which calculate how intensity changes between neighboring pixels. The gradient magnitude is computed as:
+      \[
+      g_{\text{norm}} = \sqrt{g_x^2 + g_y^2}
+      \]
+      where \(g_x\) and \(g_y\) are the gradients in the horizontal and vertical directions, respectively.
+      \item After calculating the gradients for all pixels in a layer, their magnitudes are averaged:
+      \[
+      \text{Sharpness Score} = \frac{1}{N} \sum_{i=1}^{N} g_{\text{norm}, i}
+      \]
+      where \(N\) is the total number of pixels in the layer. A higher sharpness score corresponds to layers with more edges, transitions, and details, which are likely to be in focus.
+      \item Layers are ranked based on their sharpness scores, and the top 3 layers are selected. This ensures that the dataset retains layers that are in focus and have the most texture and edge information.
+  \end{enumerate}
   
-  \item  We can't center crop it because for some of cancer cells are not centered in the image instead they are close to egdes. so we have to make 
-  sure that when we crop it it should include the cacne cell fully. the solution is find the boundary of cancer cell and get the bounding box of cancer 
-  cell then make crop to required size. original image width size is: 2456*2054 (H*W). crop the original image to have H = W. since the cancer cell debris
-   spread across the width, we didn't change the width to include the debris,
-   instead we reduced the hight to same size of width. hence we get H = W = 2054. if cancer cell is formed for instance, the cell it self spread acroos
-    one diemsion that means its not valid cultvation by robot so we can digard it. ie maximum area of cancer cell should be included in this square 
-    2054*2054 size image. advantage of croping like this are:
+  
+  \item  \textbf{Croping the image to make whole image from rectangular to square ie H= W}
+  
+    Advantage of croping to H=W are:
     \begin{enumerate}
-      \item  remove unnecessary background which contains no information
-      \item  there will be no shear during resize to 96*96 augmentation like in the figure.
+      \item  Remove unnecessary background which contains no information
+      \item  There will be no shear during resize to 96*96 augmentation like as shown in the figure \ref{fig:elong}
       \begin{figure}[H]
         \centering
         \includegraphics[scale=0.46]{figures/long.png} 
@@ -32,7 +47,7 @@ the images with one channel will duplicate the channels to make upto 3.
         \label{fig:elong}
       \end{figure}
       
-      \item rotation = 90 and 270, Horiflip+rotation 90, Horiflip+rotation270 this is only possible because of square image. if its other 
+      \item Augmentations such as rotation = 90 and 270, Horiflip+rotation 90, Horiflip+rotation270 this is only possible because of square image. if its other 
       angles except multiples of 90 then images will have black part for that we need additional careful interpolation or something like that.
        so my point is since the image is square we could take rotations of 90 mulitiples without any additional tasks. explained in \ref{fig:rotation}.
        \begin{figure}[H]
@@ -44,15 +59,37 @@ the images with one channel will duplicate the channels to make upto 3.
       \end{figure}
     \end{enumerate}
 
-  \item Normalize the 16-bit image to [0, 1] for the following reasons:
-  \begin{enumerate}
-      \item Ideally, normalization should be done at the end after augmentations to ensure scaled input to the neural network, but in our case, we have to normalize first since the augmentation with \texttt{torch.transform.ColorJitter} didn't work without scaled data.
-      \item \texttt{torch.transform.ToTensor()} didn't scale the data points to the [0, 1] range.
-  \end{enumerate}
-  
-  \item Perform data augmentations which detaily explained in the \ref{sec:data augmentation}
+    We cannot rely on a simple center crop for our images because some cancer cells are not centrally located within the image but are instead closer to the 
+edges. To ensure the cancer cells are fully included in the cropped region, the solution involves identifying the boundaries of the cancer cell including the
+ debris, obtaining the corresponding bounding box, and cropping the image, wich ensures that croped image contain the full cancer cell. 
+ The original image dimensions are 2456×2054 (Height × Width). It turns out to be H=W= 2054 ensures that the cancer cell is fully inside for all of the 
+ image using computer vision lybraries (will explain below).
+  and any cancer cell that have more than this are either elongated in single dimension (eg. Horizontal) this indicates an invalid cultivation by the robotic system,  which will be disgard in the first place through Dalias machine learning model 
+  or have have very few amount of debris which I neglected since its very small.
 
-  \item Perform Z-score normalization after data augmentation for the following reasons:
+
+For implementing this procedure, the following steps were employed using the \texttt{skimage}, \texttt{cv2}, and \texttt{numpy} libraries:
+\begin{enumerate}
+    \item The image is converted to grayscale by averaging across the three layers and then normalized to an 8-bit format using the \texttt{cv2.normalize} function.
+    \item The Otsu thresholding method (\texttt{skimage.filters.threshold\_otsu}) is used to create a binary mask, followed by inversion to highlight the cancer cell region.
+    \item Contours are extracted from the binary mask using \texttt{cv2.findContours}. The largest contour, corresponding to the cancer cell or debris, is identified by sorting the contours based on area.
+    \item A bounding rectangle is determined around the largest contour using \texttt{cv2.boundingRect}. The rectangle is then adjusted to ensure the crop is 
+    centered around the detected region and fits within the  \(2054 \times 2054\) dimensions. The image is then cropped ensuring that the cancer cell and debris 
+    are fully included in the crop. Figure \ref{fig:crop} demonstrates the whole procedure.
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.46]{figures/crop.png} 
+  \caption{crop}
+  \label{fig:crop}
+\end{figure}
+
+  \item  \textbf{Normalize the 16-bit image to [0, 1]}
+  
+  \item \textbf{Perform data augmentations} which detaily explained in the \ref{sec:data augmentation}
+
+  \item \textbf{Perform Z-score normalization} after data augmentation since:
   \begin{enumerate}
       \item Pretrained models require this preprocessing.
       \item It ensures that the data is still normalized even after data augmentation tweaks, allowing for effective feeding into the neural network.
@@ -60,9 +97,6 @@ the images with one channel will duplicate the channels to make upto 3.
 
   \item For each original image, repeat step 2 twice to obtain two augmented images.
 \end{enumerate}
-
-
-Visualisation of before and after preprocessing of image shown in figures 6.5 to 6.11.
 
 \section{Data augmentation} \label{sec:data augmentation}
 
