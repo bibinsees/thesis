@@ -634,8 +634,6 @@ INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT ./chapters/Methodology for Ranking.tex
@@ -644,6 +642,8 @@ OUTPUT chapters/Methodology for Ranking.aux
 INPUT ./chapters/Methodology for Ranking.tex
 INPUT ./chapters/Methodology for Ranking.tex
 INPUT chapters/Methodology for Ranking.tex
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm

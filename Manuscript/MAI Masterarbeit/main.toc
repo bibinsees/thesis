@@ -23,22 +23,22 @@
 \contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features}{45}{section.8.1}%
 \contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{46}{subsection.8.1.1}%
 \contentsline {section}{\numberline {8.2}kmeans clustering}{46}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Evaluation}{54}{subsection.8.2.1}%
-\contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{56}{section.8.3}%
-\contentsline {chapter}{\numberline {9}Methodology for Ranking}{58}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{58}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Day7 to day10 predcition}{58}{subsection.9.1.1}%
-\contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{59}{section.9.2}%
-\contentsline {paragraph}{\nonumberline Correct Transitions}{60}{paragraph*.69}%
-\contentsline {paragraph}{\nonumberline Total Possible Transitions}{61}{paragraph*.71}%
-\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{61}{paragraph*.73}%
-\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{63}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{65}{section.9.4}%
-\contentsline {chapter}{\numberline {10}Conclusion}{66}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Final Evaluation}{66}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Future research direction}{66}{section.10.2}%
-\contentsline {chapter}{\nonumberline Appendix}{69}{chapter*.83}%
-\contentsline {chapter}{Literature}{70}{section*.84}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{72}{chapter*.86}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{73}{chapter*.87}%
+\contentsline {subsection}{\numberline {8.2.1}Evaluation}{47}{subsection.8.2.1}%
+\contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{48}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Methodology for Ranking}{50}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{50}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Day7 to day10 predcition}{50}{subsection.9.1.1}%
+\contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{51}{section.9.2}%
+\contentsline {paragraph}{\nonumberline Correct Transitions}{52}{paragraph*.56}%
+\contentsline {paragraph}{\nonumberline Total Possible Transitions}{53}{paragraph*.58}%
+\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{53}{paragraph*.60}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{55}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{57}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Conclusion}{58}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Final Evaluation}{58}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Future research direction}{58}{section.10.2}%
+\contentsline {chapter}{\nonumberline Appendix}{61}{chapter*.70}%
+\contentsline {chapter}{Literature}{69}{section*.84}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{71}{chapter*.86}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{72}{chapter*.87}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
