@@ -617,16 +617,6 @@ INPUT ./figures/3_2fine.png
 INPUT ./figures/3_2fine.png
 INPUT ./figures/3_2fine.png
 INPUT ./figures/3_2fine.png
-INPUT ./figures/1_1.png
-INPUT ./figures/1_1.png
-INPUT ./figures/1_1.png
-INPUT ./figures/1_1.png
-INPUT ./figures/1_1.png
-INPUT ./figures/1_2.png
-INPUT ./figures/1_2.png
-INPUT ./figures/1_2.png
-INPUT ./figures/1_2.png
-INPUT ./figures/1_2.png
 INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 OUTPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux

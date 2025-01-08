@@ -269,29 +269,11 @@ where \(\mathbf{1}_{[k \neq i]} \in \{0, 1\}\) is an indicator function evaluati
 
 Equation \ref{eq:loss} implemented as the loss function in our experiments.
 
-The above standard SimCLR loss function and data augmentation combination  with the ResNet18 model will be used as the initial benchmark for experiments, and in the future, the following variations will be explored.
 
-\textbf{Variation ideas:}
-
-\begin{enumerate}
-  \item Each image is treated as an RGB image with 3 channels, and two of the best-performing data augmentations, which yielded high performance for our downstream 
-  task.
-  \item One channel is considered as the anchor (the most sharpened layer), and two of the best-performing data augmentations, which yielded high performance for 
-  the our downstream task.
-  \item Since SimCLR architecture \cite{chen2020simple} allows for flexibility in model selection, and explore other pretrained models  than Resnet18  suitable for
-   medical grayscale 
-  images. For example pretrained U-Net \cite{ronneberger2015unetconvolutionalnetworksbiomedical} model for MRI brain images from PyTorch.  
- 
-\end{enumerate}
-For variations 5 and 7 we need to modify the loss function since it includes more than 2 augmentations.
-
-\textbf{Variations implementations:}  \label{sec:variations_implementations}
 
 The two variations tried so far differ only in how they handle the image for data augmentation. 
 
 In the first variation, we take a 3-channel image and treat it like a standard RGB image, applying SimCLR-style augmentations to create two augmented versions.
-
-In the second variation, we take a 3-channel image and compute the sharpness of each layer by calculating the magnitude of the gradient of pixel intensities in the x and y directions, which indicates edge strength and provides a measure of how sharp the transitions between pixel values are. The sharpest layer is used as the anchor, while the other two layers are treated as augmentations. 
 
 \subsubsection{Variation 1:}
 \textbf{Input to model (train loader dimension) :} 
@@ -328,40 +310,6 @@ The figure below shows the anchor and its two augmented versions as explained in
     \caption{Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}
     \label{fig:augmentations}
   \end{figure}
-\subsubsection{Variation 2:}
-
-\textbf{Input to model (train loader dimensions) :} 
-\begin{itemize}
-   \item aug1: torch.Size([16, 1, 96, 96])        (batch size, no of channels, H, W)
-   \item aug2: torch.Size([16, 1, 96, 96])        (batch size, no of channels, H, W) \vspace{1em}
-\end{itemize}
-\textbf{Model output just after convolution layers: (before applying projetion head)} 
-\begin{itemize}
-  \item torch.Size([16, 512, 1, 1]) (Batch size, standard resnet18 output dimension after avg pooling, H, W)   
-  \item This output feature will be used for further downstream task.  \vspace{1em}
-\end{itemize}
-
-\textbf{Model output after projection head:}
-\begin{itemize}
-  \item torch.Size([16, 20])  (Batch size, no of values in feature vector)  
-  \item No of values in feature vector is a variable which we can change and experiment which will give better accuracy.
-\end{itemize}
-
-The figure below shows the anchor and its two augmented versions as explained in section \ref{sec:data preprocessing}.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/1_1.png} % Adjust the width as needed
-  \caption{Sample 1: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}
-  \label{fig:1doutput1}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/1_2.png} % Adjust the width as needed
-  \caption{Sample 2: Anchor (the preprocessed sharpest layer amoung all 3 layers) with one channel and its augmentations}
-  \label{fig:1doutput3}
-\end{figure}
-
 
 \section{Evaluation result of SImclr} \label{sec:Evaluation result of SImclr}
 
