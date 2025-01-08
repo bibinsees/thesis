@@ -1,76 +1,65 @@
-\chapter{Data Description}\label{ch: Data Description}
+\chapter{Data Description}\label{ch: DataDescription}
 \section{Data set}
 \label{sec:Data set}
+As explained in the chapter \ref{ch:intro}, the dataset consists of images taken by bright-field microscopy, which operate as follows: 
 
-As we explained in introduction chapter, dataset consist of bright-field microscopy images which 
-basically works by: 
-Sample illumination is transmitted (i.e., illuminated from below and observed from above) 
-white light, and contrast
-in the sample is caused by attenuation of the transmitted light in dense areas of the sample. The
- typical appearance 
-of a bright-field microscopy image is a dark sample on a bright background, hence the name.
-In our case, we have   3d tumor model as dark grayish color in the bright background.
+The sample is illuminated by transmitted white light (i.e., light is projected from below and observed from above).
+ The contrast in the image is created due to the reduction in light intensity as it passes through denser regions of the sample, where more light is
+  absorbed or scattered. This results in a typical bright-field microscopy image where the sample appears darker against a bright background, giving 
+the technique its name. In our case, the 3D tumor model appears as a dark grayish structure on a bright background. 
+For simplicity, bright-field microscopy images will be referred to as 'images'.
 
-\textcolor{red}{Datset recieved from Dalia is already filetred through some machine learning model to prevent disreagrded images.} 
+ Since the samples are cultivated using robotic arms, the process sometimes fails to replicate the natural shapes and patterns that typically occur when laboratory personnel manually cultivate the samples. To ensure the 
+ dataset's quality and consistency, Dalia pre-processed the images through a machine learning model to filter out invalid ones. By 'invalid images' , we mean
+  those that variates from the expected morphology of the tumor tissues as cultivated by lab personnel. These images are typically elongated either in height or width as shown in second image 
+ of figure \ref{fig:valid}. I collected these filtered images via USB and Google Drive in their original TIFF format. 
 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figures/finevalid.png} 
+    \caption{invalid vs valid}
+    \label{fig:valid}
+  \end{figure}
 
-1. challenges:
-1.1 limited data set for day 7 to day 10 prediction model
-1.2 day 10  image can be flipped, blured, brightness change, position change (position cahnge is due to because when we take day 10 images we have to bring the
- well plate outside and sometimes
- when we put that into microscope the position is already changed). Relativly small position of tumor cell in the image from center to other directions change  can 
-be resolved for some extend using center crop approach, but if the cell is in the edge then center crop won't help. i didn't do any data
- preprocessing
- specifically for that problem. but I expect the croping and resizing to 96*96 will be a solution. because 
- when we do that 
- data transformation, augmented pairs will be positioned differently.  \textcolor{red}{only state if you can show the proof} 
- horizontal, vertical, rotation = 90 and 270, Horiflip+rotation 90,
-  Horiflip+rotation270 
- augs also helps to make invariate to position changes.
- 
+  The original images are 2456x2054 pixels in size, in 16-bit grayscale, and consist of multiple layers. These layers are obtained by capturing images
+   at different focal planes in brightfield microscopy. The number of layers can vary, as images can be taken at any number of focal planes. The sharpness 
+   of each layer of an image depends on how well the focal plane of the microscope aligns with the depth of the sample. Only one layer of this 3D tumor tissue model will 
+   be perfectly in focus, while others may appear blurry because they are slightly above or below the focal point as you can see in figure \ref{fig:blur}. Combining these focal planes later in 
+   computational analysis can provide richer data, even if some layers are blurry individually. This is one of the reasons why I decided to use multiple
+    layers. The images I received from the lab mostly have three layers, while a few have one or five layers.
 
-1.3 same drug can have different effect on day 10 (example: huge variation in: ds 61 g6 and 41 gp6. less variation: 
-RBTDS 4.1 and 4.2 gp 3) initially i thought I will be able to use 
-as drug gp to evaluate, because of this difference, the difference can be due to different patient cancer cell?
-I choosed images from different gps which have huge debris amount visually. it was few so I didn't code my self.
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.4]{figures/blur.png} 
+      \caption{invalid vs valid}
+      \label{fig:blur}
+    \end{figure}
 
-The original images are approximately 2500×2500 pixels in size, in 16-bit grayscale,
- and consist of multiple channels. These channels come from taking images at different 
- focal planes in brightfield microscopy. The number of channels can vary, as you can take
-  images at any number of focal planes. the sharpness of an image is dependent 
-  on how well the focal plane of the microscope aligns with the depth of the sample. Only one focal plane
-   (layer) will be perfectly in focus, while others might appear blurry because they are slightly above 
-   or below the focal point. Combining these focal planes later in computational analysis can provide richer data,
-    even if some channels are blurry individually. thats why I initially decided to use multiple channels.
-  Images I got from the lab consisit of majority have 3 channels while minorly as very few have one channel and 
-  5 cahnnels.
+Each image in the dataset consists of different layers captured at varying focal lengths. For example, if Image 1 has layers corresponding to focal
+ lengths A, B, and C, Image 2 will also have layers corresponding to the same focal lengths A, B, and C, as all images within the same experiment are 
+ captured using consistent acquisition settings. However, for images from different experiments, the focal lengths may differ. For instance, images from 
+ Experiment 1 (single dose) may have slightly different acquisition settings compared to images from Experiment 2 (drug screening), leading to variations 
+ in the focal lengths and corresponding layers. 
+ Secondly, the layers in each image are slightly misaligned when stacked, as shown in the figure  \ref{fig:posi}. This misalignment may or may not affect the performance of ranking.
 
-  \textcolor{red}{add the details of no of channels/image and how does it calcualtes the sharpness intuiton behind it: https://chatgpt.com/share/675f440d-3868-8010-ae82-ad6cdca13c5d last explanation}
-
-  However, for the ease of use to integrate with our pretarined architecture we use (both resnet18 and unet),
-  I determined to start with 3 channels per image. 
-what matters is  most sharped because 
-  most sharpest channels have more less texture/edge information information than less sharpness 
- less information (less texture/edge information) 
-  how to calculate the sharpness and why does it make sense explained in data preprocess section.
-
-  also one thing to point out is that the   \textcolor{red}{depth of focus or focal length amoung the channels can be different/same in different mages ? ask Dalia}
-  \textcolor{red}{when I observed the channels/layers in each image, there is a slight gradual shift (visually) in the position amoung them. ie, if the first channel
-   have the tumor model in the center, if look at the last channel we can see 0.1 mm shift in random direction.} 
-
-  the images with one channel will duplicate the channels to make upto 3.
-  
- 
-  investigate the performance of single channel too because maybe thats enough for us too to able to get our expected result.
-  how to choose the focused layer will be explained the data preprocessing section.
-  \textcolor{red}{correct the figure.take small patch and show the difference in edge effect. but neverthless we can't 
-  give show the focused one in whole image? check for image like that maybe you will find in 5 layers or maybeyou will find in 3 layers}
-\begin{figure}[H]
+ \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.46]{figures/threes.png} 
-  \caption{Illustration of three layers per image: A, B, and C. The three layers looks visually similar, with slight differences in focal planes. In this figure, A is the sharpest/focused layer.}
-  \label{fig:Threes}
+  \includegraphics[scale=0.4]{figures/posi.png} 
+  \caption{invalid vs valid}
+  \label{fig:posi}
 \end{figure}
+
+We have some time noise as in figure in the images that happens during the process of whole experiment. It could happen due to the mishandling of the
+ environmental settings.
+ \textcolor{red}{talk about noise that we ignored as our limitation of work}
+  
+ \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{figures/noise.png} 
+  \caption{invalid vs valid}
+  \label{fig:noise}
+\end{figure}
+ 
 
 Figure \ref{fig:Transition} illustrates that, even with the application of the same drug at the same concentration, the morphology of 3D tumor tissues changes differently.
 
@@ -127,6 +116,8 @@ This results in the loss of subtle intensity differences, which can be crucial i
 In our case, the maximum reduction in unique pixel values for the 8-bit images, regardless number of channels was found to be 99.27 percentage after 3000 epochs of random
 color jitter applied  using \texttt{torch.transforms.RandomApply([transform.ColorJitter(brightness=1, contrast=1, saturation=1, hue=0)], p=1)} 
 as shown in figure \ref{fig:8bit_nThree} and \ref{fig:8bit_n one}, whereas for the 16-bit single-channel images (where one sharp layer was extracted from all three layers and considered as input for data augmentation), the reduction in unique pixel values was only 49 percentage after 3,000 epochs of random color jitter, as shown in Figure \ref{fig:16bit_n one}.
+\textcolor{red}{Hence its interesting to experiment the entire methods using single channel as future work, also because single channel remove the 
+problem of stacking inconsistant layers}
 
 
 
@@ -176,3 +167,23 @@ as shown in figure \ref{fig:8bit_nThree} and \ref{fig:8bit_n one}, whereas for t
 \end{figure}
 
 
+
+1. challenges:
+1.1 limited data set for day 7 to day 10 prediction model
+1.2 day 10  image can be flipped, blured, brightness change, position change (position cahnge is due to because when we take day 10 images we have to bring the
+ well plate outside and sometimes
+ when we put that into microscope the position is already changed). Relativly small position of tumor cell in the image from center to other directions change  can 
+be resolved for some extend using center crop approach, but if the cell is in the edge then center crop won't help. i didn't do any data
+ preprocessing
+ specifically for that problem. but I expect the croping and resizing to 96*96 will be a solution. because 
+ when we do that 
+ data transformation, augmented pairs will be positioned differently.  \textcolor{red}{only state if you can show the proof} 
+ horizontal, vertical, rotation = 90 and 270, Horiflip+rotation 90,
+  Horiflip+rotation270 
+ augs also helps to make invariate to position changes.
+ 
+
+1.3 same drug can have different effect on day 10 (example: huge variation in: ds 61 g6 and 41 gp6. less variation: 
+RBTDS 4.1 and 4.2 gp 3) initially i thought I will be able to use 
+as drug gp to evaluate, because of this difference, the difference can be due to different patient cancer cell?
+I choosed images from different gps which have huge debris amount visually. it was few so I didn't code my self.

@@ -1,39 +1,50 @@
-\chapter{Research questions}\label{ch:Research questions}
-This thesis aims to assess drug efficacy by ranking different drug combinations and concentrations. 
-The ranking is based on features extracted from bright-field microscopy images of  three-dimensional tumor tissue models using
-representation learning. 
+\chapter{Research Objective and Questions}\label{ch:Research Objectives and Questions}
+\section*{Research objective}
+This thesis aims to assess drug efficacy by ranking different drug combinations and concentrations on lab-cultivated pancreatic tumor tissue models. 
+The ranking is based on features extracted from bright-field microscopy images of these tumor tissue models using
+SimCLR self supervised learning. Since we lack ground truth labels, ranking to get exact efficacy value will be out of focus, instead we rank the images as
+a transition from untreated to single dose images or untreated to explod images. This is our objective.  
 
-1. Can we learn latent features that capture the alterations 
-induced in three-dimensional tumor tissue models by drug application over a period of time from bright-field microscopy images?
 
-2.  Will these features can effectively establish a ranking of drug efficacy?
+\textcolor{red}{My plan is to rewrite the introduction to include why we use SimCLR as self supervised learning for learning representation by including :
+ basically in simclr the loss function is defined such a way that it reduce the cosine distance between the augmentations derived from one image  and no 
+ penalisation for pushing or no pushing away of augmentation from one image to augmentation from another image. this is perfect in our case where 
+ we don't want to push away augmented images derived from different images, especially when we don't know if those images have same drug efficay or not.}
 
-3. What methodologies and frameworks can be employed to extract and learn these
- hidden representations efficiently?
+\textcolor{red}{Doubt: Should I need to answer the below questions here it self or can I answer as i write through out the the whole section?}
 
-4. What could be reasonable metrics, such as L2 loss or cosine similarity, for 
-supporting the relative assessment of drug efficacy?
+\section*{Research Questions}
+1. Can unsupervised learning be used to tackle this ranking problem, given the lack of labels as our primary challenge?
 
-5. can unsupervised learning be used to tackle this ranking problem since lack of label is 
-our main challenge?
+2. Can we learn latent features that capture the alterations induced in tumor tissue models by drug application from bright-field microscopy images?
 
-6. How do we deal with the position change in the image collection of day 10 if we want to use prediction 
-model as one of our ranking startegy?
+3. Will these features effectively establish a ranking of drug efficacy?
 
-7. How do we incorporate the fact about brightness/blur change in the image collection due to environmental or microscope 
+4. What methodologies and frameworks can be employed to extract and learn these hidden representations efficiently?
+
+5. What could be reasonable metrics, such as L2 loss or cosine similarity, to support the relative assessment of drug efficacy?
+
+6. Do we actually need to learn latent features to establish an effective ranking, or is it possible to achieve this directly using the images themselves?
+
+7. How do we deal with the insufficient data problem?
+
+8. What should be done if the same drug concentration has different effects on cancer cells across different experiments? (For instance, 
+we may not know whether the observed differences are due to real efficacy or visual effects, such as debris.)
+
+
+9. How do we deal with the position change in the image collection of day 10 if we want to use prediction 
+model as one of our ranking strategy?
+
+10. How do we incorporate the fact about brightness/blur change in the image collection due to environmental or microscope 
 variations?
 
-8. how do we deal with the insufficient data problem?
+11. Will strong data augmentation on medical grayscale images improve performance, or will it degrade it due to sensitivity to the original distribution?
 
-9. Do we actually need to learn these latent features to establish effective ranking ? or do would it be possible to do it directly using images it self?
+12. If yes, If we reduce the intensity of augmentation, will it still be able to learn the features effectively?
 
-10. If we use simclr then is our dataset sensitive to strong data augementation in that case if we reduce the intensity will it able to learn the features?
 
-11. What to do if same concentraion drug have diferent effect on the cancer cell in different experimant? ( we don't know if its visual effect or real efficay effect)
-but for sure there is visual effect in the sense debris. 
+13. Does data augmentation function as a tool for learning invariant features, or does it primarily act as a mechanism to increase the sample size,
+ enabling the model to see all possible distributions?
 
-12. Does medical gray scale image will give better performance with  strong data augementation or will it be worse since its sensitive to original distribution.
-13. Does Data augmentation works as a learning tool to learn the invariant features or it is act as increasing the sample size so that it sees all possible distribution
- that can happen to the same image groups?
 
- 
+

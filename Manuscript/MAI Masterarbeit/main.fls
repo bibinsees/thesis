@@ -281,6 +281,9 @@ INPUT main.aux
 INPUT ./chapters/introduction.aux
 INPUT ./chapters/introduction.aux
 INPUT chapters/introduction.aux
+INPUT ./chapters/Motivation.aux
+INPUT ./chapters/Motivation.aux
+INPUT chapters/Motivation.aux
 INPUT ./chapters/Research questions.aux
 INPUT ./chapters/Research questions.aux
 INPUT chapters/Research questions.aux
@@ -305,9 +308,6 @@ INPUT chapters/Methodology for Ranking.aux
 INPUT ./chapters/conclusions.aux
 INPUT ./chapters/conclusions.aux
 INPUT chapters/conclusions.aux
-INPUT ./chapters/new chapter.aux
-INPUT ./chapters/new chapter.aux
-INPUT chapters/new chapter.aux
 OUTPUT main.aux
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -445,26 +445,27 @@ INPUT ./figures/WellPlate.png
 INPUT ./figures/WellPlate.png
 INPUT ./figures/WellPlate.png
 INPUT ./figures/WellPlate.png
-INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT ./figures/singledose.png
 INPUT ./figures/singledose.png
 INPUT ./figures/singledose.png
 INPUT ./figures/singledose.png
 INPUT ./figures/singledose.png
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT ./figures/drug_screened.png
 INPUT ./figures/drug_screened.png
 INPUT ./figures/drug_screened.png
 INPUT ./figures/drug_screened.png
 INPUT ./figures/drug_screened.png
-INPUT ./figures/timed.pdf
-INPUT ./figures/timed.pdf
-INPUT ./figures/timed.pdf
-INPUT ./figures/timed.pdf
-INPUT ./figures/timed.pdf
+INPUT ./figures/timed.png
+INPUT ./figures/timed.png
+INPUT ./figures/timed.png
+INPUT ./figures/timed.png
+INPUT ./figures/timed.png
+INPUT ./chapters/Motivation.tex
+INPUT ./chapters/Motivation.tex
+OUTPUT chapters/Motivation.aux
+INPUT ./chapters/Motivation.tex
+INPUT ./chapters/Motivation.tex
+INPUT chapters/Motivation.tex
 INPUT ./chapters/Research questions.tex
 INPUT ./chapters/Research questions.tex
 OUTPUT chapters/Research questions.aux
@@ -485,11 +486,26 @@ OUTPUT chapters/Data Description.aux
 INPUT ./chapters/Data Description.tex
 INPUT ./chapters/Data Description.tex
 INPUT chapters/Data Description.tex
-INPUT ./figures/threes.png
-INPUT ./figures/threes.png
-INPUT ./figures/threes.png
-INPUT ./figures/threes.png
-INPUT ./figures/threes.png
+INPUT ./figures/finevalid.png
+INPUT ./figures/finevalid.png
+INPUT ./figures/finevalid.png
+INPUT ./figures/finevalid.png
+INPUT ./figures/finevalid.png
+INPUT ./figures/blur.png
+INPUT ./figures/blur.png
+INPUT ./figures/blur.png
+INPUT ./figures/blur.png
+INPUT ./figures/blur.png
+INPUT ./figures/posi.png
+INPUT ./figures/posi.png
+INPUT ./figures/posi.png
+INPUT ./figures/posi.png
+INPUT ./figures/posi.png
+INPUT ./figures/noise.png
+INPUT ./figures/noise.png
+INPUT ./figures/noise.png
+INPUT ./figures/noise.png
+INPUT ./figures/noise.png
 INPUT ./figures/transition.png
 INPUT ./figures/transition.png
 INPUT ./figures/transition.png
@@ -506,11 +522,16 @@ INPUT ./figures/8bitvs16bit.png
 INPUT ./figures/8bitvs16bit.png
 INPUT ./figures/8bitvs16bit.png
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT ./figures/8bit_nThree.png
 INPUT ./figures/8bit_nThree.png
 INPUT ./figures/8bit_nThree.png
 INPUT ./figures/8bit_nThree.png
 INPUT ./figures/8bit_nThree.png
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT ./figures/8bit_nOne.png
 INPUT ./figures/8bit_nOne.png
 INPUT ./figures/8bit_nOne.png
@@ -639,16 +660,13 @@ OUTPUT chapters/conclusions.aux
 INPUT ./chapters/conclusions.tex
 INPUT ./chapters/conclusions.tex
 INPUT chapters/conclusions.tex
-INPUT ./chapters/new chapter.tex
-INPUT ./chapters/new chapter.tex
-OUTPUT chapters/new chapter.aux
-INPUT ./chapters/new chapter.tex
-INPUT ./chapters/new chapter.tex
-INPUT chapters/new chapter.tex
 INPUT main.aux
 INPUT ./chapters/introduction.aux
 INPUT ./chapters/introduction.aux
 INPUT chapters/introduction.aux
+INPUT ./chapters/Motivation.aux
+INPUT ./chapters/Motivation.aux
+INPUT chapters/Motivation.aux
 INPUT ./chapters/Research questions.aux
 INPUT ./chapters/Research questions.aux
 INPUT chapters/Research questions.aux
@@ -673,9 +691,6 @@ INPUT chapters/Methodology for Ranking.aux
 INPUT ./chapters/conclusions.aux
 INPUT ./chapters/conclusions.aux
 INPUT chapters/conclusions.aux
-INPUT ./chapters/new chapter.aux
-INPUT ./chapters/new chapter.aux
-INPUT chapters/new chapter.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT main.run.xml
