@@ -255,7 +255,7 @@ Hence Its worth to experiment with this strong augmentation for downstream tasks
 
 \section{Train SimCLR as SSL model}
 
-For step 1, as explained in chapter \ref{ch: Methodology for SimCLR}, SimCLR was used as the  model for self-supervised learning (SSL). 
+ As explained in chapter \ref{ch: Methodology for SimCLR}, SimCLR was used as the  model for self-supervised learning (SSL). 
 
 
 
@@ -289,8 +289,14 @@ The original loss function for each pair from SimCLR paper \cite{chen2020simple}
 
 where \(\mathbf{1}_{[k \neq i]} \in \{0, 1\}\) is an indicator function evaluating to 1 iff \(k \neq i\), and \(\tau\) denotes a temperature parameter.
 The final loss is computed across all positive pairs, both \((i, j)\) and \((j, i)\), in a mini-batch with $z_i, z_k$ representing negative pairs.
+
+
+
+Intituivly given a set of \( \{ z_k \} \) with the batch size 2N, that includes a positive pair of examples \( z_i \) and \( z_j \), the loss function aims 
+to identify \( z_j \) in \( \{ z_k \}_{k \neq i} \) for a given \( z_i \).
+
   
-which we can reformualte as:
+Above loss function we can reformualte as:
 
 1. Apply the logarithm: The negative log of a fraction can be separated into the difference of the logarithms:
 \[
@@ -348,8 +354,31 @@ Both output feature before and after projection head will be used for further do
 
 \section{Evaluation of SimCLR training} \label{sec:Evaluation result of SImclr}
 
+\textbf{Top-1 Accuracy}:
 
-\textcolor{red}{add figures of resize figure} 
+Top-1 accuracy measures how often the loss function correctly identifies \( z_j \) in \( \{ z_k \}_{k \neq i} \) for a given \( z_i \). Specifically, it evaluates how often the model
+ ranks \( z_j \) and \( z_i \) as having the highest cosine similarity in a given set \( \{ z_k \} \), where the batch size is \( 2N \) while the set includes a positive pair of 
+ examples \( z_i \) and \( z_j \).  
+If the positive pair \( z_j \) and \( z_i \) is ranked first (i.e., has the highest cosine similarity), it is counted as correct. Top-1 accuracy is calculated as the mean of these correct
+ counts over all samples in the batch.  
+
+Purpose: Indicates how often the model correctly identifies the positive example as the most similar, reflecting the model's precision at a fine-grained level.
+
+
+\textbf{Top-5 Accuracy}:
+
+Top-5 accuracy measures how often the loss function identifies \( z_j \) in \( \{ z_k \}_{k \neq i} \) for a given \( z_i \) within the top 5 ranked pairs. Specifically, it evaluates whether \( z_j \) is ranked among the 5 highest cosine similarity scores in \( \{ z_k \} \), where the batch size is \( 2N \), and the set includes a positive pair \( z_i \) and \( z_j \).  
+If the positive pair \( z_j \) and \( z_i \) is ranked within the top 5, it is counted as correct. Top-5 accuracy is the mean of these correct counts over all samples in the batch.  
+
+Purpose: Evaluates the model's ability to identify the true positive within a broader range of candidates, providing a softer measure of precision compared to Top-1 accuracy.
+
+\textbf{Mean Position}: 
+For each pair, the ranking is calculated based on its cosine similarity relative to all other \( z_k \) in \( \{ z_k \}_{k \neq i} \). Calculate the ranking position of the positive 
+pair \( z_j \) and  \( z_i \) across all sample pairs in the batch. The mean position is the average of these ranking positions.
+
+Purpose: Provides a quantitative metric for how far down the ranked list the  positive pairs typically appears, offering insight into the quality of the model's ranking performance.
+
+While training  and validation images are applied for the data augmentations 
 
 \begin{figure}[H]
   \centering
@@ -375,6 +404,13 @@ Both output feature before and after projection head will be used for further do
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.3]{figures/Resize_No_contra.png} 
+  \caption{Resize no contra}
+  \label{fig:Resize_No_contra_b64}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.3]{figures/Resize.png} 
   \caption{Resize}
   \label{fig:Resize_b64}
 \end{figure}

@@ -656,6 +656,11 @@ INPUT ./figures/Resize_No_contra.png
 INPUT ./figures/Resize_No_contra.png
 INPUT ./figures/Resize_No_contra.png
 INPUT ./figures/Resize_No_contra.png
+INPUT ./figures/Resize.png
+INPUT ./figures/Resize.png
+INPUT ./figures/Resize.png
+INPUT ./figures/Resize.png
+INPUT ./figures/Resize.png
 INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 OUTPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux

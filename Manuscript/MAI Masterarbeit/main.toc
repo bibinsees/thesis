@@ -17,26 +17,26 @@
 \contentsline {subsubsection}{\nonumberline Model}{44}{subsubsection*.38}%
 \contentsline {subsubsection}{\nonumberline Training}{44}{subsubsection*.40}%
 \contentsline {section}{\numberline {7.4}Evaluation of SimCLR training}{46}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{49}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features}{49}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{50}{subsection.8.1.1}%
-\contentsline {section}{\numberline {8.2}kmeans clustering}{51}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Evaluation}{51}{subsection.8.2.1}%
-\contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{53}{section.8.3}%
-\contentsline {chapter}{\numberline {9}Methodology for Ranking}{55}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{55}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Day7 to day10 predcition}{55}{subsection.9.1.1}%
-\contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{56}{section.9.2}%
-\contentsline {paragraph}{\nonumberline Correct Transitions}{57}{paragraph*.57}%
-\contentsline {paragraph}{\nonumberline Total Possible Transitions}{58}{paragraph*.59}%
-\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{58}{paragraph*.61}%
-\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{60}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{62}{section.9.4}%
-\contentsline {chapter}{\numberline {10}Conclusion}{63}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Final Evaluation}{63}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Future research direction}{64}{section.10.2}%
-\contentsline {chapter}{\nonumberline Appendix}{65}{chapter*.71}%
-\contentsline {chapter}{Literature}{73}{section*.85}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{75}{chapter*.87}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{76}{chapter*.88}%
+\contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{50}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features}{50}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{51}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}kmeans clustering}{52}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Evaluation}{52}{subsection.8.2.1}%
+\contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{54}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Methodology for Ranking}{56}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{56}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Day7 to day10 predcition}{56}{subsection.9.1.1}%
+\contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{57}{section.9.2}%
+\contentsline {paragraph}{\nonumberline Correct Transitions}{58}{paragraph*.58}%
+\contentsline {paragraph}{\nonumberline Total Possible Transitions}{59}{paragraph*.60}%
+\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{59}{paragraph*.62}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{61}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{63}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Conclusion}{64}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Final Evaluation}{64}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Future research direction}{65}{section.10.2}%
+\contentsline {chapter}{\nonumberline Appendix}{67}{chapter*.72}%
+\contentsline {chapter}{Literature}{75}{section*.86}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{77}{chapter*.88}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{78}{chapter*.89}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
