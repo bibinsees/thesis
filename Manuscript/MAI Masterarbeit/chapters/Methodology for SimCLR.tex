@@ -100,15 +100,17 @@ For implementing this procedure, the following steps were employed using the \te
 
 \section{Data augmentation} \label{sec:data augmentation}
 
+\textcolor{red}{ figure add data aug for sweet , resize, ohne figure 7.7 why is anchor the last image and not the first in the left? }
+
 I started with best data augmentation pipeline that proposed by simclr \cite{chen2020simple} paper did,
-because it gave best performance on natural image dataset like Imagenet and CIFAR for downstream task like classification. 
+because it gave best performance on natural image dataset such as Imagenet and CIFAR for downstream task like classification. 
 
 Which follows a sequential of:
 
 \begin{enumerate}
-  \item Randomly crop  and resize to specific smaller size . In my case I choosed to crop and resize to $96 \times 96$. i choosed this small H and W as 
+  \item Randomly crop  and resize to specific smaller size. In my case I choosed to crop and resize to $96 \times 96$. i choosed this small H and W as 
   image size to feed train our model because of two reasons: 1. computational fast, so that we can complete the pipeline in time. 2. if we can get good performance
-   in ranking with this small image sizes (ie less pixel details compared to 2054 * 2056 ) that means we can improve the performance with larger image sizes. The
+   in ranking with this small image sizes (ie less pixel details compared to 2054 * 2056 ) that means we may can improve the performance with larger image sizes. The
    crop of random size (uniform from 0.08 to 1.0 in area) of the original size and a random aspect ratio (default: of 3/4 to 4/3) of the original aspect ratio is 
    made. This crop is finally resized to the original size.
 
@@ -116,20 +118,25 @@ Which follows a sequential of:
   default policy in SimCLR as it improve 1 percentage accuracy for downstream task in simclr paper) vertical flip, (Horizontal+Vertical flip), Rotation = (90, 270), 
   Horizontal flip + Rotation = (90, 270) with the probability 50 percentage. We can have these aditional augs because it will  still fall into our distribution
   samples. Other flip and rotation combinations are restrained due to its repeatable pattern to the above as shown in \ref{fig:repeat} and due to the black cut 
-  problem explained in \ref{fig:rotation}. We set this as our default for all data augmentation.
+  problem explained in \ref{fig:rotation}. We set this as our default for all data augmentation. Figure \ref{fig:bs} shows the original and corresponding blured image.
 
   \item Randomly change the brightness and contrast  upto lower=1-0.8, upper=1+0.8  with the probability of 80 percentage. I removed saturation and hue since it 
   doesn't have effect on gray scale images since gray scale images are  nuetral and saturation and hue of a gray scale image is zero. ie when we try
-   to adjust the value, we have essentially have no color to modify as it is achromatic and  grayscale images contain only intensity information.
+   to adjust the value, we have essentially have no color to modify as it is achromatic.
    
   
   \item Gaussian blur and increase in sharpness. Blur augmentation is also default policy in SimCLR, because they find it helpful as  it improves the performance 
-  for linear classification task by around 2 percentage. as they do we randomly sample sigma from 0.1 to 2 . We also kept the kernal size to be 10 percentage of 
+  for downstream linear classification task by around 2 percentage. as they do we randomly sample sigma from 0.1 to 2 . We also kept the kernal size to be 10 percentage of 
   image height/width, in our case 5. Some images are blured ( Probabily due to the microscopic error). So inorder to mimic original version, I added sharpness 
- increase. It increaases the sharpness by a factor of 2. We set this also as our default for all data augmentation. \textcolor{red}{sharpeness increase what happens
-  to the image? figure explaination? edge details increase?} 
+ increase. It increaases the sharpness by a factor of 2. We set this also as our default for all data augmentation.  Figure \ref{fig:bs} shows the original
+  and corresponding sharpened image
 \end{enumerate}
-
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/bs.png} 
+  \caption{Blur and sharped. explain what happens when its blured or sarpened. edge details}
+  \label{fig:bs}
+\end{figure}
 
 \begin{figure}[H]
   \centering
@@ -160,55 +167,67 @@ Since there is a strong intensity change in color jitter in the above data augme
   \end{figure}
 
   Comparing to three channel, single channel after 3000 epochs even with 'strong' augmentation only had $49\%$ maximum reduction  as observed in figure 
-  \ref{fig:16bit_single_channel}. It is also not ideal, as it remove the gradual spread of darker regions and  debris around the cells. But compare to three channel
-   it have less effect on getting out of original distribution. thats why we need to experiment the downstream tasks with  single channel.
+  \ref{fig:16bit_n_one}. It is also not ideal, as it remove the gradual spread of darker regions and  debris around the cells. But compare to three channel
+   it have less effect on getting out of original distribution. thats why its a good idea  to experiment the the entire methods using single channel as future work.
+  Also single channel helps to remove the problem of stacking misalighned layers problem mentioned in \ref{sec:Data set}.
+   
 
-  \textcolor{red}{Should we add the 3 layer position change issue? remove both if we are not showing comparison of sinlge and three }
-  
-  \textbf{16-bit single-channel image before and after data augmentation:}
-  \begin{itemize}
-    \item Number of unique pixel values in the original image: 2111
-    \item Number of unique pixel values in the augmented image: 1058
-  \end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figures/16bit_onen.png} 
-    \caption{16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}
-    \label{fig:16bit_single_channel}
-  \end{figure}
-
-As we seen in the figures  \ref{fig:16bit_three_v1} and \ref{fig:16bit_single_channel}, I found that those strong color jitter augmentations transformed to 
-distribution out of the original distribution. Hence we need to experiment with less intensity change instead of using SimCLR values.
+As we seen in the figures  \ref{fig:16bit_three_v1} and \ref{fig:16bit_n_one}, I found that those strong color jitter augmentations transformed to 
+distribution out of the original distribution. Hence its a good idea to experiment with less intensity change instead of using SimCLR best performed data aug parameters.
 
 Also original simclr random crop resizing to 96*96 is first done by random croping of random size (uniform from 0.08 to 1 in area). that means even really small 
 crops without a cancer cell in it is train to have high cosine simililartiy to these same image smaller crop patch of dark cancer cell from center due to the design
- of  loss function in SimCLR. Which doesn't make sense. Hence the next data augmentation sequence designed to have random crop with scale 0.4 to 1 ( so that 
- assuming crop patches will have atleast small portion of cancer cell) and brightness and contrast variations changed to lower=1-0.2, upper=1+0.2 and lower=1-0.35,
-  upper=1+0.35 consequently. I named this augmentation as 'sweet'. which illustrated in \ref{fig:strong_aug} second row.
+ of  loss function in SimCLR. Which doesn't make sense especially when we have commom as background inner well for every of our images (or natural images atleast cars are only seen in roads, so 
+ relating cars or bikes to road make sense). Hence the next data augmentation sequence designed to have random crop with scale 0.4 to 1 ( so that 
+ assuming crop patches will have atleast small portion of cancer cell) and brightness and contrast variations reduced to lower=1-0.2, upper=1+0.2 and lower=1-0.35,
+  upper=1+0.35 consequently as showed in figures  \ref{fig:bright} and  \ref{fig:contra}. I named this augmentation as 'sweet'. which illustrated in \ref{fig:strong_aug} second row.
 
- In some drug screening group of images, when we look at the day 10 image, they are exploded ( assuming due to the overdose). exploded in the sense, broke round 
- small cancer cell surronding lot of debris around it. so if we apply the above random crop and resize aug: smaller crop from the round cancer cell part (without 
- debris) have high cosine similarity with some other small crop from the round cancer cell part (without debris) of the same image. which doesn't connect anything
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figures/bright.png} 
+    \caption{contrast increased or decreased}
+    \label{fig:bright}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figures/contra.png} 
+    \caption{Brightness increased or decreased}
+    \label{fig:contra}
+  \end{figure}
+
+ In some drug screening group of images, when we look at the day 10 image, they are exploded ( assuming due to the overdose). exploded in the sense, round 
+ small cancer cell surronding lot of debris around it as we seen in figure \ref{fig:originals}. so if we apply the above random crop and resize aug: smaller crop from the round cancer cell part (without 
+ debris) have high cosine similarity with some other small crop from the round cancer cell part (without debris) of the same image like in figure \ref{fig:expo}. which doesn't connect anything
   about the debris surrounded by for exploed images. In general model will also learn to map high cosine similarity between dark area to gray area which can happen
-to generally all images except single dose images, meaning it doesn't learn any specific feature about certain patterns.
+to generally all images except single dose images, meaning it doesn't learn any specific feature or certain debris patterns of explod images.
 Maybe its better to not to crop and just resize to 96*96 all the time so that model learn to map high cosine similarity by seeing the whole picture (Big picture).
 I understand this is not good argument because then dog and cat have same color and maybe similar shape but still learns to differentiate using strong crop in simclr.
 But maybe for time predictoin ranking model it helps. because model have to predict the change from day 7 to day 10. and most of the time the size/shape changes. 
 especially to the category which are exploded, they produce debris. so maybe data augmentation seeing the whole picture is good to learn the model better for time 
-change.  With this assumption in mind, I decided to do data aug pipeline with just resizing in the begning.
+change.  With this assumption in mind, I decided to do data aug pipeline with just resizing.
 
-\textcolor{red}{Include figure to explain better}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{figures/expo.png} 
+  \caption{5 Data augmentations we explored}
+  \label{fig:expo}
+\end{figure}
 
 I named this augmentation as 'Resize', which illustrated in \ref{fig:strong_aug} third row.
 
 
 All of the above augmentations includes contrast change. With this augmentation it is possible that model learned to have both dark cancer cell and gray cancer
-cell of same image have same feature map ( because 2 dta aug from original image can be one with increased contrast which makes darker and one with less contrast 
-which makes it gray) which is infact not good for our downstream task. because one of our goal is to differentiate/have diferent feature representation
+cell of same image have same feature map ( because 2 data aug from original image can be one with increased contrast which makes darker and one with less contrast 
+which makes it gray as in the fugure \ref{fig:ohne} ) which is infact not good for our downstream task. because one of our goal is to differentiate/have different feature representation
 for  untreated images (gray color) and single dose (darker color). 
 
-\textcolor{red}{Include figure to explain better }
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{figures/ohne.png} 
+  \caption{contrast increased or decreased}
+  \label{fig:ohne}
+\end{figure}
 
  
 Hence I removed contrast from 'Resize' and 'Sweet' and named them as 'Resize ohne contrast' and 'Sweet ohne contrast' correspondingly. 
@@ -221,11 +240,7 @@ Eventhough we know that these kind of strong augmentations is sensitive to our d
  color. if shape is different but color is same it learns to have high cosine sim. if shape is same but color is different it learns to have high cosine sim. if  color
   is different it learns to have high cosine sim for shape something like this}
 
-as in figure when we did strong data aug background went white so it learns about only the dark matter.
-
 Hence Its worth to experiment with this strong augmentation for downstream tasks.
-
-\textcolor{red}{add data augs without brightness too  if we have time, and add our improvements to strong like sharpness rot flips} 
 
 
 5 Different data augmentation pipe lines explained above illlustrated as nutshell in \ref{fig:strong_aug}
@@ -240,11 +255,8 @@ Hence Its worth to experiment with this strong augmentation for downstream tasks
 
 \section{Train SimCLR as SSL model}
 
-\textcolor{red}{add explanation that tere is no pushing in the loss function} 
+For step 1, as explained in chapter \ref{ch: Methodology for SimCLR}, SimCLR was used as the  model for self-supervised learning (SSL). 
 
-For step 1, as explained in chapter \ref{ch: Methodology for SimCLR}, SimCLR was used as the first model for self-supervised learning (SSL). 
-Future work: Later, other models such as masked autoencoders and DINO will be explored, depending on the available time.
-Why we would like to try other models? Because SimCLR demands larger batch size and more data for better performance which we don't have.
 
 
 
@@ -274,6 +286,9 @@ The original loss function for each pair from SimCLR paper \cite{chen2020simple}
 \ell_{i, j} = -\log \frac{\exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_j\right) / \tau\right)}{\sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_k\right) / \tau\right)}
 \label{eq:original}
 \end{equation}
+
+where \(\mathbf{1}_{[k \neq i]} \in \{0, 1\}\) is an indicator function evaluating to 1 iff \(k \neq i\), and \(\tau\) denotes a temperature parameter.
+The final loss is computed across all positive pairs, both \((i, j)\) and \((j, i)\), in a mini-batch with $z_i, z_k$ representing negative pairs.
   
 which we can reformualte as:
 
@@ -282,70 +297,84 @@ which we can reformualte as:
 \ell_{i, j} = -\left( \log \left(\exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_j\right) / \tau\right)\right) - \log\left( \sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_k\right) / \tau\right) \right) \right)
 \]
 
+
+
+\[
+\ell_{i, j} = -\log \left(\exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_j\right) / \tau\right)\right) + \log \left( \sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp \left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_k\right) / \tau\right) \right)
+\]
+
+
+
+
 2. Simplifying the first term: The logarithm of an exponential function simplifies as follows:
 \[
 -\log\left(\exp\left(\operatorname{sim}\left(\boldsymbol{z}_i, \boldsymbol{z}_j\right) / \tau\right)\right) = -\frac{\operatorname{sim}\left(z_{i}, z_{j}\right)}{\tau}
 \]
 
-Substituting that back into the equation:
-\[
-\ell_{i, j} = -\frac{\operatorname{sim}\left(z_{i}, z_{j}\right)}{\tau} - \log\left(\sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp\left(\operatorname{sim}\left(z_{i}, z_{k}\right) / \tau\right)\right)
-\]
-
-This gives us:
-
+Substituting that back into the equation gives us:  
 \begin{equation}
-\ell_{i, j} = -\frac{\operatorname{sim}\left(z_{i}, z_{j}\right)}{\tau} + \log\left[\sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp\left(\operatorname{sim}\left(z_{i}, z_{k}\right) / \tau\right)\right]
+\ell_{i, j} = -\frac{\operatorname{sim}\left(z_{i}, z_{j}\right)}{\tau} + \log\left(\sum_{k=1}^{2 N} \mathbf{1}_{[k \neq i]} \exp\left(\operatorname{sim}\left(z_{i}, z_{k}\right) / \tau\right)\right)
 \label{eq:loss}
 \end{equation}
 
-where \(\mathbf{1}_{[k \neq i]} \in \{0, 1\}\) is an indicator function evaluating to 1 iff \(k \neq i\), and \(\tau\) denotes a temperature parameter. The final loss is computed across all positive pairs, both \((i, j)\) and \((j, i)\), in a mini-batch with $z_i, z_k$ representing negative pairs.
+Equation~\ref{eq:loss} is implemented as the loss function in our experiments.
 
-Equation \ref{eq:loss} implemented as the loss function in our experiments.
+The SimCLR framework was originally implemented in TensorFlow by the authors. In this work, I adopted the PyTorch implementation of SimCLR and utilized the parameters provided in
+ the PyTorch SimCLR tutorial \textcolor{red}{add reference}, as they demonstrated optimal performance for the STL10 dataset. The STL10 dataset is still natural image dataset, with 
+ an image resolution of \( 96 \times 96 \),  matches the dimensionality of the our images to feeded into the model. I used the following parameters for training from them: a learning 
+ rate of \( 5 \times 10^{-4} \), a temperature of 0.07, a weight decay of \( 1 \times 10^{-4} \),
+a cosine learning rate schedule, ADAM optimizer, 4 hidden layers with 128 hidden dimension in the projection head. Additionally I used max epoch as 245 and Batch size as 64. I didn't finetuned specifically for
+ downstream ranking task because we don't know the ground truth label. I could have been fine tune for the intermediate evaluations, but my focus was on completing the pipeline. 
 
+The following explains how we process a 3-channel image as if it were a standard RGB image and apply augmentations to generate two augmented versions.
 
-
-The two variations tried so far differ only in how they handle the image for data augmentation. 
-
-In the first variation, we take a 3-channel image and treat it like a standard RGB image, applying SimCLR-style augmentations to create two augmented versions.
-
-\subsubsection{Variation 1:}
 \textbf{Input to model (train loader dimension) :} 
 
 \begin{itemize}
-  \item aug1: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H, W)
-  \item aug2: torch.Size([16, 3, 96, 96])        (batch size, no of channels, H, W) \vspace{1em}
+  \item aug1: torch.Size([64, 3, 96, 96])        (batch size, no of channels, H, W)
+  \item aug2: torch.Size([64, 3, 96, 96])        (batch size, no of channels, H, W) \vspace{1em}
 \end{itemize} \vspace{1em}
 \textbf{Model output just after convolution layers: (before applying projetion head)} 
 \begin{itemize}
-  \item torch.Size([16, 512, 1, 1]) (Batch size, standard resnet18 output dimension after avg pooling, H,W)   
-  \item This output feature will be used for further downstream task.  \vspace{1em}
+  \item torch.Size([64, 512, 1, 1]) (Batch size, standard resnet18 output dimension after avg pooling, H,W)   
 \end{itemize}
 
 \textbf{Model output after projection head:}
 \begin{itemize}
-  \item torch.Size([16, 20])  (Batch size, no of values in feature vector)  
-  \item No of values in feature vector is a variable which we can change and experiment which will give better accuracy.
+  \item torch.Size([64, 20])  (Batch size, no of values in feature vector)  
 \end{itemize}
 
-The figure below shows the anchor and its two augmented versions as explained in section \ref{sec:data preprocessing}.
+Both output feature before and after projection head will be used for further downstream task to check the performance.
+
+\section{Evaluation of SimCLR training} \label{sec:Evaluation result of SImclr}
+
+
+\textcolor{red}{add figures of resize figure} 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/3_1.png} % Adjust the width as needed
-  \caption{Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}
-  \label{fig:augmentation}
+  \includegraphics[scale=0.3]{figures/strong.png} 
+  \caption{strong}
+  \label{fig:strong_64}
 \end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.3]{figures/sweet.png} 
+  \caption{sweet}
+  \label{fig:sweet_64}
+\end{figure}
 
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/3_2fine.png} % Adjust the width as needed
-    \caption{Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}
-    \label{fig:augmentations}
-  \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.3]{figures/sweet_no_contra.png} 
+  \caption{sweet no contra}
+  \label{fig:sweet_no_contra_64}
+\end{figure}
 
-\section{Evaluation result of SImclr} \label{sec:Evaluation result of SImclr}
-
-
-\textcolor{red}{add figures of SImclr train and val and inference loss} 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.3]{figures/Resize_No_contra.png} 
+  \caption{Resize}
+  \label{fig:Resize_b64}
+\end{figure}

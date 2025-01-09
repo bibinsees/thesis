@@ -105,11 +105,12 @@ This results in the loss of subtle intensity differences, which can be crucial i
 \end{enumerate}
 In our case, the maximum reduction in unique pixel values for the 8-bit images, regardless number of channels was found to be 99.27 percentage after 3000 epochs of random
 color jitter applied  using \texttt{torch.transforms.RandomApply([transform.ColorJitter(brightness=1, contrast=1, saturation=1, hue=0)], p=1)} 
-as shown in figure \ref{fig:8bit_nThree} and \ref{fig:8bit_n one}, whereas for the 16-bit single-channel images (where one sharp layer was extracted from all three layers and considered as input for data augmentation), the reduction in unique pixel values was only 49 percentage after 3,000 epochs of random color jitter, as shown in Figure \ref{fig:16bit_n one}.
-\textcolor{red}{Hence its interesting to experiment the entire methods using single channel as future work, also because single channel remove the 
-problem of stacking inconsistant layers}
+as shown in figure \ref{fig:8bit_nThree} and \ref{fig:8bit_n one}, whereas for the 16-bit single-channel images
+ (where one sharp layer was extracted from all three layers and considered as input for data augmentation), the reduction in unique pixel values was 
+ only 49 percentage after 3,000 epochs of random color jitter, as shown in Figure \ref{fig:16bit_n_one}.
 
-
+ \textcolor{red}{Page 21 - a bit random comment - you spend a lot of time talking about 16 vs 8 bit and random jitter and 3000 epochs. But is not clear at all at this
+point why are you even jittering and what jittering even is and why you need 3000 epochs for it.}
 
 \textbf{8-bit three-channel image example before and after data augmentation:}
 \begin{itemize}
@@ -152,8 +153,8 @@ problem of stacking inconsistant layers}
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{figures/16bit_onen.png} 
-  \caption{8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}
-  \label{fig:16bit_n one}
+  \caption{16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}
+  \label{fig:16bit_n_one}
 \end{figure}
 
 \section{Challenges}

@@ -20,14 +20,23 @@
 	\label{tab:ranking_strategies}
 	\end{table}
 	
-	
-How do you know which ranking strategy is better visually? inference from ds close tosd for the worked one from each strategy and look which one works better?
+	Conclusions - yes, what are they? What is the outcome. Important - it is fine to say that despite your best efforts the methods do not seem to
+	 deliver useful results. Perhaps they do not beat the baseline, this is very common in research and is perfectly fine, correct and useful to admit.
+	  Or they actually seem to perform randomly and are not reliable. This may be due to not enough data and is also ok to say, admit and point out. Or 
+	  they do something but you are not actually sure, how to use for the final objective or ranking. This is also ok and you shall explain why you are 
+	  not convinced. Perhaps the ranking is simply a badly formulated problem and it should not be approached this way at all. This is also ok to say and 
+	  be open about it. Simply, even if it "does not work" it is still VERY useful if we understand what you have done and why you think it does not work.	
+How do you know which ranking strategy is better visually? inference from ds close tosd for the worked one from each strategy and look which one works 
+better?
+
+References - clean these. Correct references shall have not only the names and year but also the publication venue (journal, conference, arxiv... etc.)
 
 \section{Future research direction}
 
 \begin{enumerate}
     \item Hybrid: Include human-interpretable features in the unsupervised learning features combined effect.
-    \item Weakly supervised DINO transformer-based approach.
+    \item Weakly supervised DINO transformer-based approach. Future work: Later, other models such as masked autoencoders and DINO will be explored, depending on the available time.
+	Why we would like to try other models? Because SimCLR demands larger batch size and more data for better performance which we don't have.
     \item Weakly supervised SimCLR approach.
     \item Other distance-based approaches.
     \item Image size 96 vs 256 vs 512

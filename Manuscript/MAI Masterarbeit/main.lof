@@ -18,19 +18,25 @@
 \contentsline {figure}{\numberline {5.5}{\ignorespaces 8-bit vs 16 bit data lose comparison}}{20}{figure.caption.21}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces 8-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 97.81\%}}{22}{figure.caption.22}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 99.27\%}}{23}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces 8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{24}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces 16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{24}{figure.caption.24}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Overall framework of the thesis.}}{27}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Overall framework of the thesis.}}{28}{figure.caption.25}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}}{30}{figure.caption.26}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}}{31}{figure.caption.27}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces crop}}{33}{figure.caption.28}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations.}}{36}{figure.caption.29}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{37}{figure.caption.30}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces 16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}}{38}{figure.caption.31}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces 5 Data augmentations we explored}}{41}{figure.caption.32}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Sample 1: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{44}{figure.caption.39}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Sample 2: Anchor (the preprocessed original image) with 3 channels and its augmentations}}{45}{figure.caption.40}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}}{31}{figure.caption.26}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}}{32}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces crop}}{34}{figure.caption.28}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Blur and sharped. explain what happens when its blured or sarpened. edge details}}{36}{figure.caption.29}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations.}}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{38}{figure.caption.31}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces contrast increased or decreased}}{39}{figure.caption.32}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Brightness increased or decreased}}{40}{figure.caption.33}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces 5 Data augmentations we explored}}{41}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.10}{\ignorespaces contrast increased or decreased}}{42}{figure.caption.35}%
+\contentsline {figure}{\numberline {7.11}{\ignorespaces 5 Data augmentations we explored}}{43}{figure.caption.36}%
+\contentsline {figure}{\numberline {7.12}{\ignorespaces strong}}{47}{figure.caption.41}%
+\contentsline {figure}{\numberline {7.13}{\ignorespaces sweet}}{47}{figure.caption.42}%
+\contentsline {figure}{\numberline {7.14}{\ignorespaces sweet no contra}}{48}{figure.caption.43}%
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Resize}}{48}{figure.caption.44}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

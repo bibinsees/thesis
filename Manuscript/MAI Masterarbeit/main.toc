@@ -10,34 +10,33 @@
 \contentsline {section}{\numberline {5.1}Data set}{16}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Challenges}{24}{section.5.2}%
 \contentsline {chapter}{\numberline {6}Structure of the Thesis}{26}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Methodology for SimCLR}{28}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Data preprocessing}{28}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Data augmentation}{34}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Train SimCLR as SSL model}{41}{section.7.3}%
-\contentsline {subsubsection}{\nonumberline Model}{42}{subsubsection*.34}%
-\contentsline {subsubsection}{\nonumberline Training}{42}{subsubsection*.36}%
-\contentsline {subsubsection}{\nonumberline Variation 1:}{44}{subsubsection*.38}%
-\contentsline {section}{\numberline {7.4}Evaluation result of SImclr}{45}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{46}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features}{46}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{47}{subsection.8.1.1}%
-\contentsline {section}{\numberline {8.2}kmeans clustering}{47}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Evaluation}{48}{subsection.8.2.1}%
-\contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{49}{section.8.3}%
-\contentsline {chapter}{\numberline {9}Methodology for Ranking}{51}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{51}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Day7 to day10 predcition}{51}{subsection.9.1.1}%
-\contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{52}{section.9.2}%
-\contentsline {paragraph}{\nonumberline Correct Transitions}{53}{paragraph*.53}%
-\contentsline {paragraph}{\nonumberline Total Possible Transitions}{54}{paragraph*.55}%
-\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{54}{paragraph*.57}%
-\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{56}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{58}{section.9.4}%
-\contentsline {chapter}{\numberline {10}Conclusion}{59}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Final Evaluation}{59}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Future research direction}{59}{section.10.2}%
-\contentsline {chapter}{\nonumberline Appendix}{61}{chapter*.67}%
-\contentsline {chapter}{Literature}{69}{section*.81}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{71}{chapter*.83}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{72}{chapter*.84}%
+\contentsline {chapter}{\numberline {7}Methodology for SimCLR}{29}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Data preprocessing}{29}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Data augmentation}{35}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Train SimCLR as SSL model}{43}{section.7.3}%
+\contentsline {subsubsection}{\nonumberline Model}{44}{subsubsection*.38}%
+\contentsline {subsubsection}{\nonumberline Training}{44}{subsubsection*.40}%
+\contentsline {section}{\numberline {7.4}Evaluation of SimCLR training}{46}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{49}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features}{49}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{50}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}kmeans clustering}{51}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Evaluation}{51}{subsection.8.2.1}%
+\contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{53}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Methodology for Ranking}{55}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{55}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Day7 to day10 predcition}{55}{subsection.9.1.1}%
+\contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{56}{section.9.2}%
+\contentsline {paragraph}{\nonumberline Correct Transitions}{57}{paragraph*.57}%
+\contentsline {paragraph}{\nonumberline Total Possible Transitions}{58}{paragraph*.59}%
+\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{58}{paragraph*.61}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{60}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{62}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Conclusion}{63}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Final Evaluation}{63}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Future research direction}{64}{section.10.2}%
+\contentsline {chapter}{\nonumberline Appendix}{65}{chapter*.71}%
+\contentsline {chapter}{Literature}{73}{section*.85}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{75}{chapter*.87}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{76}{chapter*.88}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
