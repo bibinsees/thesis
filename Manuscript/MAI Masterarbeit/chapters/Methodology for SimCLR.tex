@@ -148,7 +148,7 @@ Which follows a sequential of:
 
 I call the above chain of data augmentation pipeline parameters as 'strong' data augmentation which illustrated in \ref{fig:strong_aug} first row.
 
-Since there is a strong intensity change in color jitter in the above data augmentation I decided to analyse the effect of only that color jitter. For 16-bit images
+Since there is a strong intensity change in color jitter \textcolor{red}{ explain whats color jitter or directly use brightness contrast word} in the above data augmentation I decided to analyse the effect of only that color jitter. For 16-bit images
  with 3 channels, instead of a reduction, there was an increase in the number of unique pixel values—by a maximum of 258,757 percentage. The issue with this
   increase is that after data augmentation, the new pixel values are not distributed similarly to the original image. Instead, they shift to
  the two extremes,such as 0 or 1 which deviate significantly from the original image distribution, as shown in Figures \ref{fig:16bit_three_v1}.
@@ -165,14 +165,9 @@ Since there is a strong intensity change in color jitter in the above data augme
     \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}
     \label{fig:16bit_three_v1}
   \end{figure}
-
-  Comparing to three channel, single channel after 3000 epochs even with 'strong' augmentation only had $49\%$ maximum reduction  as observed in figure 
-  \ref{fig:16bit_n_one}. It is also not ideal, as it remove the gradual spread of darker regions and  debris around the cells. But compare to three channel
-   it have less effect on getting out of original distribution. thats why its a good idea  to experiment the the entire methods using single channel as future work.
-  Also single channel helps to remove the problem of stacking misalighned layers problem mentioned in \ref{sec:Data set}.
    
 
-As we seen in the figures  \ref{fig:16bit_three_v1} and \ref{fig:16bit_n_one}, I found that those strong color jitter augmentations transformed to 
+As we seen in the figures  \ref{fig:16bit_three_v1}, I found that those strong color jitter augmentations transformed to 
 distribution out of the original distribution. Hence its a good idea to experiment with less intensity change instead of using SimCLR best performed data aug parameters.
 
 Also original simclr random crop resizing to 96*96 is first done by random croping of random size (uniform from 0.08 to 1 in area). that means even really small 
@@ -378,7 +373,25 @@ pair \( z_j \) and  \( z_i \) across all sample pairs in the batch. The mean pos
 
 Purpose: Provides a quantitative metric for how far down the ranked list the  positive pairs typically appears, offering insight into the quality of the model's ranking performance.
 
-While training  and validation images are applied for the data augmentations 
+While training  and validation images are applied by data augmentation pipelines such as 'strong' , 'sweet', 'resize', 'sweet no contrast', 'resize no contrast' inference 
+images are only resized to 96*96 before the training as data augmentation. that means while calculating the ranking position or top 1 accuracy or top 5 accurcay or loss, model do inference on pairs 
+of images which are always full image without any cropping.
+
+If we compare the strong aug vs others we can see loss or top accuracies or mean position for training and validation dataset 
+are better for others than strong. This is because 'strong' have to learn harder than other augmentations since 2 different 
+augs of same image in strong are completely different. For example one is highly increased contrasted and other is highly 
+decreased contrast. or another example: one have very small portion of background other have small portion of cancer which is
+ just pure black.  which doesn't have any certain pattern or feature relation of same image. These pure small portion of black can be also be present in the batch as  from another image as aug
+ so it have to learn to map high cosine sim for these two different augs. Specifically Top one accuracy struugles to get close to 100  comparing to others.
+
+ Another interesting thing to notice is: top accuracy and mean position for inference dataset. From the beginning of the epoch inference top accuracies or mean position are the 
+ close to 100 or 1 respectively. This is because since inference image augs are just resized and not applied any kind of brightness or contrast or blur/sharp or flip/rotation,
+  its just original images but with reduced size 96*96. so while ranking or calculating the similarity between pairs model sees the full picture to determine the similarity. and as we are gonna seen in section \ref{sec: distance} if its full image  without any additional data augs other than reduced to size 96*96 cosine similarity between augs
+   of same image is higher than any other data aug pipelines which includes crop(strong, sweet etc).  in another words for model its so easy. this leads to the question whether model learn some effective features for downstream tasks.
+
+Thats also refelects why 'Resize' and 'resize no contrast' data aug pipelines have better performance in terms of training and val loss or top accuracies or mean position 
+than data aug pipeline which includes cropping.
+
 
 \begin{figure}[H]
   \centering
@@ -389,16 +402,16 @@ While training  and validation images are applied for the data augmentations
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.3]{figures/sweet.png} 
+  \includegraphics[scale=0.3]{figures/sweet_bs64.png} 
   \caption{sweet}
-  \label{fig:sweet_64}
+  \label{fig:sweet_bs64}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.3]{figures/sweet_no_contra.png} 
   \caption{sweet no contra}
-  \label{fig:sweet_no_contra_64}
+  \label{fig:sweet_no_contra}
 \end{figure}
 
 \begin{figure}[H]

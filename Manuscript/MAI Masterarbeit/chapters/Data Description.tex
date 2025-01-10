@@ -49,9 +49,10 @@ Each image in the dataset consists of different layers captured at varying focal
   \label{fig:posi}
 \end{figure}
 
-We have some time noise as in figure in the images that happens during the process of whole experiment. It could happen due to the mishandling of the
- environmental settings.
- \textcolor{red}{talk about noise that we ignored as our limitation of work}
+We observed some temporal noise/artifacts, as shown in figure  \ref{fig:noise} in different category of images such as untreated, cond10, single dose, explod. The presence of artifacts in the well-plates could be attributed to environmental factors such
+as temperature, humidity, or CO\textsubscript{2}, or by some inconsistencies in sample handling. Such factors are likely to cause variations in cell behavior and
+inconsistency in the  acquired images. These images were included as-is for SimCLR training, providing an opportunity for the model to learn from realistic conditions. 
+However, I didn't artificially introduce additional noise or artifacts through data augmentation. This approach highlights a potential area for further exploration in future work.
   
  \begin{figure}[H]
   \centering
@@ -63,10 +64,18 @@ We have some time noise as in figure in the images that happens during the proce
 \textcolor{red}{organised folders}
 
 
-Figure \ref{fig:Transition} illustrates that, even with the application of the same drug at the same concentration, the morphology of 3D tumor tissues changes differently.
+Figure \ref{fig:drug_eff} illustrates that, even with the The same drug concentration applied to the spheroids under controlled conditions occasionally resulted in 
+varying effects across different experiments. This variation could result from slight differences in spheroid composition, or undetected microenvironmental influences 
+that affect drug absorption by the spheroid and cellular response.  initially i thought I will be able to evaluate the effect by drug combination , but because of this 
+difference, we need to make the ranking relative assessment based on the day 10 images neverthless its appied by same drug combo.
 
-\textcolor{red}{ show drug screen with same drug concentration we have diferent effect between different experiment. this maybe due to environmental 
-factors or anything}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/drug_eff.png} 
+  \caption{gp 8 drug applied}
+  \label{fig:drug_eff}
+\end{figure}
+
 
 The table below shows the division of different types of image datasets we have, as  explained in the section ~\ref{sec:lab-setup}.
 \begin{table}[ht!]
@@ -75,7 +84,7 @@ The table below shows the division of different types of image datasets we have,
   \begin{tabular}{|l|c|c|c|c|c|c|}
   \hline
   \textbf{Class} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Cond 10} & \textbf{Untreated} & \textbf{Day 8 \& 9} & \textbf{Total} \\ \hline
-  \textbf{No. of Images (\%)}  & 200 (15.94\%) & 103 (8.25\%) & 201 (16\%) & 510 (40.67\%) & 240 (19.14\%) & 1254 \\ \hline
+  \textbf{No. of Images (\%)}  & 200 (16.05\%) & 103 (8.26\%) & 231 (18.54\%) & 472 (37.89\%) & 240 (19.26\%) & 1246 \\ \hline
   \end{tabular}%
   }
   \caption{Dataset Class Overview}
@@ -85,9 +94,8 @@ The table below shows the division of different types of image datasets we have,
 
 
 An 8-bit image encompasses 256 color tones (ranging from 0 to 255) per channel, whereas a 16-bit image accommodates 65,536 color tones 
-(ranging from 0 to 65,535) per channel, in our case 65,536 shades of gray. Retaining the original 16-bit depth is crucial for two primary reasons:
-\begin{enumerate}
-  \item Converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details.
+(ranging from 0 to 65,535) per channel, in our case 65,536 shades of gray. Retaining the original 16-bit depth is crucial because
+ Converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details.
 Since 8-bit images only allow 256 possible values, the finer variations in intensity that are present in 16-bit images become compressed as illusstrated in \ref{fig:8bitvs16bit}.
 For example, two distinct values in 16-bit (from 30,000 to 30,048 ) could map to the same 8-bit value (for instance, both might be mapped to 117).
 This results in the loss of subtle intensity differences, which can be crucial in our image task, where minute variations in intensity can be indicative
@@ -99,62 +107,6 @@ This results in the loss of subtle intensity differences, which can be crucial i
   \includegraphics[scale=0.5]{figures/8bitvs16bit.png} 
   \caption{8-bit vs 16 bit data lose comparison}
   \label{fig:8bitvs16bit}
-\end{figure}
-
-\item During data augmentation processes that involve substantial alterations in brightness, contrast, or color, an 8-bit image—already limited to 256 tones—could lose up to 50 percentage of these tones, leaving only 128 levels of color and tone. This reduction can lead to "banding," where areas with smooth transitions in tone exhibit visible stripes with jagged edges. In contrast, a 16-bit image, even with a 50 percentage reduction in tones, would retain over 32,000 levels. This higher tonal range allows for smoother transitions, better edge preservation, and enhanced accuracy in color and hue representation. As a result, the dynamic range—the difference between the lightest and darkest areas of the image—remains much more effectively preserved in 16-bit images than in 8-bit images.
-\end{enumerate}
-In our case, the maximum reduction in unique pixel values for the 8-bit images, regardless number of channels was found to be 99.27 percentage after 3000 epochs of random
-color jitter applied  using \texttt{torch.transforms.RandomApply([transform.ColorJitter(brightness=1, contrast=1, saturation=1, hue=0)], p=1)} 
-as shown in figure \ref{fig:8bit_nThree} and \ref{fig:8bit_n one}, whereas for the 16-bit single-channel images
- (where one sharp layer was extracted from all three layers and considered as input for data augmentation), the reduction in unique pixel values was 
- only 49 percentage after 3,000 epochs of random color jitter, as shown in Figure \ref{fig:16bit_n_one}.
-
- \textcolor{red}{Page 21 - a bit random comment - you spend a lot of time talking about 16 vs 8 bit and random jitter and 3000 epochs. But is not clear at all at this
-point why are you even jittering and what jittering even is and why you need 3000 epochs for it.}
-
-\textbf{8-bit three-channel image example before and after data augmentation:}
-\begin{itemize}
-  \item Number of unique pixel values in the original image: 137
-  \item Number of unique pixel values in the augmented image: 3
-  \item Original Image - Minimum pixel value: 33, Maximum pixel value: 170
-  \item Augmented Image - Minimum pixel value: 0, Maximum pixel value: 2
-\end{itemize}
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.5]{figures/8bit_nThree.png} 
-  \caption{8-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 97.81\%}
-  \label{fig:8bit_nThree}
-\end{figure}
-
-\textbf{8-bit single-channel (sharp layer) image before and after data augmentation:}
-
-\begin{itemize}
-  \item Number of unique pixel values in the original image: 137
-  \item Number of unique pixel values in the augmented image: 3
-  \item Original Image - Minimum pixel value: 33, Maximum pixel value: 170
-  \item Augmented Image - Minimum pixel value: 3, Maximum pixel value: 3
-\end{itemize}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.5]{figures/8bit_nOne.png} 
-  \caption{8-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 99.27\%}
-  \label{fig:8bit_n one}
-\end{figure}
-
-\textbf{16-bit single-channel image before and after data augmentation:}
-\begin{itemize}
-  \item Number of unique pixel values in the original image: 2111
-  \item Number of unique pixel values in the augmented image: 1058
-  \item Original Image - Minimum pixel value:  0.13064774870872498, Maximum pixel value: 0.6666666865348816
-  \item Augmented Image - Minimum pixel value: 0, Maximum pixel value: 1
-\end{itemize}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.5]{figures/16bit_onen.png} 
-  \caption{16-bit single-channel image after 3000 epochs of random color jitter applied using PyTorch. Reduction percentage in unique pixel values: 49.88\%}
-  \label{fig:16bit_n_one}
 \end{figure}
 
 \section{Challenges}
@@ -184,7 +136,13 @@ point why are you even jittering and what jittering even is and why you need 300
 
  
 
-1.3 same drug can have different effect on day 10 (example: huge variation in: ds 61 g6 and 41 gp6. less variation: 
-RBTDS 4.1 and 4.2 gp 3) initially i thought I will be able to use 
-as drug gp to evaluate, because of this difference, the difference can be due to different patient cancer cell?
+
+
+
+
+
+
+
+
+
 I choosed images from different gps which have huge debris amount visually. it was few so I didn't code my self.
