@@ -8,23 +8,26 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Performance metrics for different augmentation strategies before and after the projection head.}}{48}{table.caption.44}%
-\contentsline {table}{\numberline {8.2}{\ignorespaces Original Image Results}}{49}{table.caption.45}%
-\contentsline {table}{\numberline {8.3}{\ignorespaces Dataset Composition Overview}}{50}{table.caption.46}%
-\contentsline {table}{\numberline {8.4}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with cosine distance}}{50}{table.caption.47}%
-\contentsline {table}{\numberline {8.5}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with euclidean distance}}{50}{table.caption.48}%
-\contentsline {table}{\numberline {8.6}{\ignorespaces Evaluation Results Using Different Distance Metrics}}{50}{table.caption.49}%
-\contentsline {table}{\numberline {8.7}{\ignorespaces Metrics for different augmentation types.}}{51}{table.caption.51}%
+\contentsline {table}{\numberline {8.1}{\ignorespaces Dataset Summary from Drug Screening Experiments}}{50}{table.caption.44}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Performance metrics for different augmentation strategies before and after the projection head.}}{51}{table.caption.45}%
+\contentsline {table}{\numberline {8.3}{\ignorespaces Original Image Results}}{51}{table.caption.46}%
+\contentsline {table}{\numberline {8.4}{\ignorespaces Performance Metrics Before and After the Projection Head}}{54}{table.caption.50}%
+\contentsline {table}{\numberline {8.5}{\ignorespaces Summary of Datasets}}{56}{table.caption.51}%
+\contentsline {table}{\numberline {8.6}{\ignorespaces Dataset Composition Overview}}{56}{table.caption.52}%
+\contentsline {table}{\numberline {8.7}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with cosine distance}}{57}{table.caption.53}%
+\contentsline {table}{\numberline {8.8}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with euclidean distance}}{57}{table.caption.54}%
+\contentsline {table}{\numberline {8.9}{\ignorespaces Evaluation Results Using Different Distance Metrics}}{57}{table.caption.55}%
+\contentsline {table}{\numberline {8.10}{\ignorespaces Metrics for different augmentation types.}}{58}{table.caption.57}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {9.1}{\ignorespaces Cosine distance}}{57}{table.caption.62}%
-\contentsline {table}{\numberline {9.2}{\ignorespaces Euclidean distance}}{57}{table.caption.63}%
-\contentsline {table}{\numberline {9.3}{\ignorespaces Your table caption here}}{57}{table.caption.64}%
-\contentsline {table}{\numberline {9.4}{\ignorespaces Table description goes here.}}{58}{table.caption.65}%
-\contentsline {table}{\numberline {9.5}{\ignorespaces Performance metrics for different augmentation strategies before the projection head.}}{59}{table.caption.66}%
-\contentsline {table}{\numberline {9.6}{\ignorespaces Original Image Results}}{59}{table.caption.67}%
-\contentsline {table}{\numberline {9.7}{\ignorespaces Table showing distances for different augmentation strategies.}}{60}{table.caption.68}%
+\contentsline {table}{\numberline {9.1}{\ignorespaces Cosine distance}}{63}{table.caption.68}%
+\contentsline {table}{\numberline {9.2}{\ignorespaces Euclidean distance}}{63}{table.caption.69}%
+\contentsline {table}{\numberline {9.3}{\ignorespaces Your table caption here}}{63}{table.caption.70}%
+\contentsline {table}{\numberline {9.4}{\ignorespaces Table description goes here.}}{64}{table.caption.71}%
+\contentsline {table}{\numberline {9.5}{\ignorespaces Performance metrics for different augmentation strategies before the projection head.}}{65}{table.caption.72}%
+\contentsline {table}{\numberline {9.6}{\ignorespaces Original Image Results}}{65}{table.caption.73}%
+\contentsline {table}{\numberline {9.7}{\ignorespaces Table showing distances for different augmentation strategies.}}{66}{table.caption.74}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {10.1}{\ignorespaces Performance metrics across different ranking strategies.}}{61}{table.caption.69}%
+\contentsline {table}{\numberline {10.1}{\ignorespaces Performance metrics across different ranking strategies.}}{67}{table.caption.75}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

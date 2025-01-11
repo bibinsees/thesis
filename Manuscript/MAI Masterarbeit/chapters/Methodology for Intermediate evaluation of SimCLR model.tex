@@ -6,7 +6,10 @@ If we do kmeans with cosine distance distance then it only compare direction of 
 the magnitude similarity
 
 Final evaluation of the SimCLR model depends on the  Ranking task, neverthless we can use other evaluation metrics, such as downstream task 
-like classification, clusetring, distance measurement approach to check if simclr atleast learned to differentiate between untreated , single dose and exploded images.
+like classification  and clusetring to check if simclr atleast learned to differentiate between untreated , single dose and exploded images.
+
+Distance measurement approach is used to whats the performance of simclr feats derived from  5 different aug pipelines  in terms of cosine distance between 2 augs derived 
+from same image.
 
 \section{Classification using Logistic Regression on the SimCLR features}
 1. A common approach to verify whether the SSL model has learned generalized representations is to perform Logistic Regression on the learned features.
@@ -17,17 +20,71 @@ like classification, clusetring, distance measurement approach to check if simcl
 
 2. Baseline comparison to original images. We classify the original images to see if simclr feature vectors are better or worse than original image to classify.
 
+The logistic regression model is implemented as a single linear layer, where the input dimension corresponds to the feature dimension of feature spits out from simclr, and the 
+output dimension corresponds to the number of classes. Specifically, the model uses a feature dimension of \(512\) if the feature is before projection head or  \(20\) if the
+ feature is after projection head and outputs predictions for \(3\) classes. The mathematical representation of the model is as follows:
 
-3 classes trained for 250 epochs.
-1.untreated dataset: total no of images: 472
-2. single dose dataset :  total no of images: 103
-3. exploded dataset from drug screening experiments:  total no of images:  40
+\[
+\hat{y} = xW^T + b
+\]
 
-i didn't add any other comibnation of drug screening experiments since we are not sure whether they belong to which gp. ( some of them have medium resemblence of the
- above dataset images but we can't be sure.)
+where:
+
+- \(x \in \mathbb{R}^{N \times d}\) is the input feature vector, where \(d = 512\) if the feature is extracted before the projection head, or \(d = 20\) if the feature is 
+extracted after the projection head.  
+- \(W \in \mathbb{R}^{3 \times d}\) represents the learnable weights.  
+- \(b \in \mathbb{R}^3\) is the bias term,
+- \(\hat{y} \in \mathbb{R}^{N \times 3}\) are the logits representing the unnormalized class scores for \(N\) samples.
+
+PyTorch's CrossEntropyLoss combines the softmax operation with the log loss computation for numerical stability, which is why we pass the logits (unnormalized outputs) directly
+to the loss function.
+
+This model is trained to minimize the cross-entropy loss for multi-class classification.
+3 classes trained for 250 epochs. The dataset was divided into a training set (80\%) and a validation set (20\%). Batch size = 8. loss function = 
+cross entropy loss.  a learning rate of \( 5 \times 10^{-4} \). 
+
+The learning rate scheduler used is the \texttt{MultiStepLR}, which reduces the learning rate at specific milestones during training. In this case, the learning rate is 
+reduced by a factor of 0.1 at the epochs corresponding to 60\% and 80\% of the total training epochs. These milestones are defined as:
+\[
+\text{milestones} = \left[ \text{int}(T_{\text{max}} \times 0.6), \, \text{int}(T_{\text{max}} \times 0.8) \right]
+\]
+where \( T_{\text{max}} \) represents the total number of training epochs. The \texttt{gamma} parameter specifies the factor by which the learning rate is multiplied at each 
+milestone, which in this case is 0.1.
+
+\begin{table}[h!]
+    \centering
+    \caption{Dataset Summary from Drug Screening Experiments}
+    \label{tab:dataset_summary}
+    \begin{tabular}{lc}
+    \toprule
+    \textbf{Dataset}                              & \textbf{Total Number of Images} \\ 
+    \midrule
+    Untreated Dataset                             & 472                            \\ 
+    Single Dose Dataset                           & 103                            \\ 
+    Exploded Dataset from Drug Screening Experiments & 40                             \\ 
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+I didn't add any other comibnation of drug screening experiments since we are not sure whether they belong to which group. Some of them have medium resemblence of the
+ above 3 classes but we can't be sure.
 
 
 \subsection{Comparison of Classification Accuracy and Epochs for Different Data Augmentations}
+
+As explained in Data augmentation section we use  'strong', 'sweet', 'resize', 'sweet no contrast', 'resize no contrast' simclr features to compare their performance inbetween
+ and also against original images which one classify these 3 classes better.
+
+We calculate the train accuracy and the test accuracy for each data aug pipelines as well as for original images.
+
+Train epoch in the table: The number of epochs required to reach the best training accuracy.
+Test epoch in the table: The number of epochs required to reach the best test accuracy.
+
+\textcolor{red}{how do we turn raw images to orig images to feats}
+To use original images directly first we resized to 96*96 since we did that for simclr so that it could be fair comparison. Then we normalised each by dividing it by 65535 
+(16 bit). Each image flatten into vectors of ([1,96*96*3]where 96 =H=W and 3 = no of channels) suitable for logistic regression model. and we use same parameters that we used 
+for simclr feats classification lke learning rate , batch size etc for fair comparison.
+
 
 \textcolor{red}{Table 8.1.1 - are you saying that you classification accuracy is 100?
  That seems far too good to be true. Why do the train runs have different number of epochs? And what do you mean by "Test Epoch"?!}
@@ -45,15 +102,15 @@ i didn't add any other comibnation of drug screening experiments since we are no
         \toprule
         \textbf{Augmentation Type}      & \textbf{Metric} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{Resize No Contrast} & \textbf{Sweet No Contrast} \\ \midrule
         \multirow{4}{*}{\textbf{After Projection Head}}  
-            & Train Accuracy (\%) & 88 & 59.76 & 97.15 & 58.74 & 56.30 \\
-            & Train Epoch         & 249   & 248   & 236   & 239   & 249   \\
-            & Test Accuracy (\%)  & 86.18 & 62.60 & 96.75 & 53.66 & 51.22 \\
-            & Test Epoch          & 240   & 235   & 239   & 248   & 237   \\ \midrule
+            & Train Accuracy (\%) & 66.67 & 47.76 & 89.63 & 63.41 & 54.67 \\
+            & Train Epoch         & 246   & 249   & 250   & 250   & 245   \\
+            & Test Accuracy (\%)  & 68.29 & 55.28 & 90.24 & 63.41 & 56.10 \\
+            & Validation Epoch          & 228   & 246   & 223   & 202   & 244   \\ \midrule
         \multirow{4}{*}{\textbf{Before Projection Head}} 
             & Train Accuracy (\%) & 100 & 100 & 100 & 100 & 100 \\
-            & Train Epoch         & 148    & 18     & 62     & 14     & 44     \\
-            & Test Accuracy (\%)  & 100 & 100 & 100 & 100 & 100 \\
-            & Test Epoch          & 1      & 1      & 2      & 2      & 2      \\ 
+            & Train Epoch         & 190    & 3     & 13     & 12     & 21     \\
+            & Validation Accuracy (\%)  & 100 & 100 & 100 & 100 & 100 \\
+            & Validation Epoch          & 1      & 1      & 1      & 2      & 2      \\ 
         \bottomrule
         \end{tabular}%
         }
@@ -68,21 +125,73 @@ i didn't add any other comibnation of drug screening experiments since we are no
             \label{tab:original_image_results}
             \begin{tabular}{lcccc}
             \toprule
-            \textbf{Metric}         & \textbf{Train Accuracy (\%)} & \textbf{Train Epoch} & \textbf{Test Accuracy (\%)} & \textbf{Test Epoch} \\ \midrule
-            \textbf{Original Image} & 95.12                        & 18                   & 94.31                        & 15                  \\ 
+            \textbf{Metric}         & \textbf{Train Accuracy (\%)} & \textbf{Train Epoch} & \textbf{Validation Accuracy (\%)} & \textbf{Validation Epoch} \\ \midrule
+            \textbf{Original Image} & 99.39                        & 249                  & 99.19                        & 17                  \\ 
             \bottomrule
             \end{tabular}
         \end{table}
-            
+           
+Train loss vs Val loss . Train accurcay  vs val accuracy 
+          
+
+          \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.95]{figures/before.pdf} 
+            \caption{before}
+            \label{fig:before}
+          \end{figure}
+
+          \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.95]{figures/after.pdf} 
+            \caption{after}
+            \label{fig:after}
+          \end{figure}
+
+          
+          \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.95]{figures/orig_classi.png} 
+            \caption{orig}
+            \label{fig:orig}
+          \end{figure}
+
+\subsection{Inference}
+
+I choose my self 22 images that have close resemblence in my eyes to single dose images from drug screen for inference. ( I repeat these are not biology expert labeled drug 
+screened image. so any inference result is irrelavant in the sense to actual ground truth )
+
+For doing inferecne I choosed before head projection features since thats the one gave 100 perentage accuracy while train and validation.
 
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{@{}lcccccc@{}}
+    \toprule
+    \textbf{Type} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{Resize no Contrast} & \textbf{Sweet no Contrast} \\ \midrule
+    Before Projection Head & 90.91 & 100.00 & 100.00 & 100.00 & 95.45 \\ \midrule
+    Original Images & & & & 68.18 & \\ \bottomrule
+    \end{tabular}
+    \caption{Performance Metrics Before and After the Projection Head}
+    \label{tab:performance_metrics}
+\end{table}
+
+
+
+From the above table we can see that during the inference except 'strong' and 'sweet no contrast' all other augs still able to reach 100 percentage accuracy to classify the ds 
+close to sd images to sd based on visual resemblence. Using raw Original images features it got  68.18 percentage accuracy while Simclr before projectoin head could classify atleast 90 percentage.
 
 
 \textcolor{red}{table 8.2 can you somehow bring this into table 8.1 e.g. as another column? Would be easier to read. The first column 
 "Augmentation Type" could be made smaller if you wrap the text so that it is on multiple lines.} 
 
 
+In Table 8.1. we show that when using the features Before Projection Head, all augmentation methods reached 100 percent train and test accuracy. It is clear that the features extracted 
+before the projection head perform far better than those extracted after the projection head, as seen in the original similar paper. Also, the number of epochs required
+to reach the best accuracy is lower for the features extracted before the projection head than those extracted after the projection head.
 
+While original images also classify with 99 percent accuracy, they perform better than the features we use after projection. Also, their almost indistinguishable performance 
+from the features extracted before the projection head leads to the conclusion that we cannot make an informed decision based on this classification task.
 
 
 
@@ -107,6 +216,25 @@ similar/closer to single dose: 22.
 
 Curated 40 subset  (Balanced to the minimum nof set in the group which is exploded. ie there is only total 40 of exploded but excluded explod look alike from control):
 contains random but make sure it doesn't have exploded like controls total 40, and all exploded which is basically 40, 10 ds close to sd, 30 single dose.
+
+\begin{table}[H]
+\centering
+\caption{Summary of Datasets}
+\label{tab:dataset_summary}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Dataset}             & \textbf{Control (C)} & \textbf{Single Dose (SD)} & \textbf{Exploded (E)} & \textbf{DS Closer to SD (DS-SD)} \\ \midrule
+Full Dataset (Unbalanced)    & 472                  & 103                       & 40                    & Included                          \\ 
+40 Subset (Balanced)         & 40                   & 30                        & 40                    & 10                                \\ 
+Curated Full Dataset         & 280                  & 103                       & 40                    & 22                                \\ 
+Curated 40 Subset (Balanced) & 40                   & 30                        & 40                    & 10                                \\ 
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+    
 
 run 100 times for different random initilisation.
 
