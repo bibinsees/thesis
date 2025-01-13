@@ -14,7 +14,7 @@
 \contentsline {table}{\numberline {8.4}{\ignorespaces Performance Metrics Before and After the Projection Head}}{54}{table.caption.50}%
 \contentsline {table}{\numberline {8.5}{\ignorespaces Summary of Datasets}}{56}{table.caption.51}%
 \contentsline {table}{\numberline {8.6}{\ignorespaces Dataset Composition Overview}}{56}{table.caption.52}%
-\contentsline {table}{\numberline {8.7}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with cosine distance}}{57}{table.caption.53}%
+\contentsline {table}{\numberline {8.7}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with cosine distance}}{56}{table.caption.53}%
 \contentsline {table}{\numberline {8.8}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with euclidean distance}}{57}{table.caption.54}%
 \contentsline {table}{\numberline {8.9}{\ignorespaces Evaluation Results Using Different Distance Metrics}}{57}{table.caption.55}%
 \contentsline {table}{\numberline {8.10}{\ignorespaces Metrics for different augmentation types.}}{58}{table.caption.57}%
