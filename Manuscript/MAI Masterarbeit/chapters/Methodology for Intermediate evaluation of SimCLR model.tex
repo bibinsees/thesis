@@ -285,16 +285,16 @@ run 100 times for different random initilisation.
             \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
             \multirow{5}{*}{\textbf{Before}} 
             & Strong                & 90.40 & 100 & 100 & 100 \\
-            & Sweet                 & 71.70 & 100 & 100 & 100 \\
-            & Resize                & - & - & - & - \\
-            & Resize No Contrast    & - & - & - & - \\
-            & Sweet No Contrast     & - & - & - & - \\ \midrule
+            & Sweet                 & 97.89 & 100 & 100 & 100 \\
+            & Resize                & 65.7 & 97.50 & 98.10 & 100 \\
+            & Resize No Contrast    & 66.34 & 90 & 86.29 & 100 \\
+            & Sweet No Contrast     & 88.61 & 99.17 & 99.05  & 99.17 \\ \midrule
             \multirow{5}{*}{\textbf{After}} 
-            & Strong                & 60.04 & 75.83 & 53.2 & 70.83 \\
-            & Sweet                 & - & - & - & - \\
-            & Resize                & - & - & - & - \\
-            & Resize No Contrast    & - & - & - & - \\
-            & Sweet No Contrast     & - & - & - & - \\ \bottomrule
+            & Strong                & 60.04 & 92.5 & 53.2 & 100 \\
+            & Sweet                 & 48.13 & 67.5 & 53.65 & 71.67 \\
+            & Resize                & 59.83 & 92.50 & 74.23 & 100 \\
+            & Resize No Contrast    & 45.85 & 58.33 & 45.62 & 62.5 \\
+            & Sweet No Contrast     & 49.26 & 82.5 & 57.21 & 85.83 \\ \bottomrule
         \end{tabular}%
         }
     \end{table}
@@ -308,17 +308,17 @@ run 100 times for different random initilisation.
             \toprule
             \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
             \multirow{5}{*}{\textbf{Before}} 
-            & Strong                & - & - & - & - \\
-            & Sweet                 & - & - & - & - \\
-            & Resize                & - & - & - & - \\
-            & Resize No Contrast    & - & - & - & - \\
-            & Sweet No Contrast     & - & - & - & - \\ \midrule
+            & Strong                & 83.74 & 100 & 100 & 100 \\
+            & Sweet                 & 98.05 & 91.67 & 99.29 & 95.83 \\
+            & Resize                & 70.24 & 79.17 & 66.66 & 87.50 \\
+            & Resize No Contrast    & 59.51 & 90.00 & 86.28 & 100 \\
+            & Sweet No Contrast     & 99.02 & 97.50 & 99.76 & 99.17 \\ \midrule
             \multirow{5}{*}{\textbf{After}} 
-            & Strong                & - & - & - & - \\
-            & Sweet                 & - & - & - & - \\
-            & Resize                & - & - & - & - \\
-            & Resize No Contrast    & - & - & - & - \\
-            & Sweet No Contrast     & - & - & - & - \\ \bottomrule
+            & Strong                & 71.70 & 100 & 72.57 & 100 \\
+            & Sweet                 & 47.00 & 68.33 & 52.71 & 74.17 \\
+            & Resize                & 43.25 & 83.33 & 53.90 & 87.5 \\
+            & Resize No Contrast    & 48.45 & 59.17 & 44.20 & 60.83 \\
+            & Sweet No Contrast     & 49.75 & 81.67 & 52.00 & 81.67 \\ \bottomrule
         \end{tabular}%
         }
     \end{table}
@@ -332,8 +332,8 @@ run 100 times for different random initilisation.
             \toprule
             & \textbf{Metric} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset (Unbalanced)} & \textbf{Curated 40 Subset (Balanced)} \\ \midrule
             \multirow{2}{*}{\textbf{Original Images}} 
-            & Cosine Distance    & - & - & - & - \\ 
-            & Euclidean Distance & - & - & - & - \\ \bottomrule
+            & Cosine Distance    & - & 70 & - & 73.33 \\ 
+            & Euclidean Distance & - & 73.33 & - & 77.5 \\ \bottomrule
         \end{tabular}%
         }
     \end{table}
