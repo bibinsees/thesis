@@ -672,6 +672,16 @@ INPUT ./figures/orig_classi.png
 INPUT ./figures/orig_classi.png
 INPUT ./figures/orig_classi.png
 INPUT ./figures/orig_classi.png
+INPUT ./figures/test_class.png
+INPUT ./figures/test_class.png
+INPUT ./figures/test_class.png
+INPUT ./figures/test_class.png
+INPUT ./figures/test_class.png
+INPUT ./figures/train_class.png
+INPUT ./figures/train_class.png
+INPUT ./figures/train_class.png
+INPUT ./figures/train_class.png
+INPUT ./figures/train_class.png
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm

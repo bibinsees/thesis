@@ -156,6 +156,19 @@ Train loss vs Val loss . Train accurcay  vs val accuracy
             \label{fig:orig}
           \end{figure}
 
+          \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.5]{figures/test_class.png} 
+            \caption{before}
+            \label{fig:before}
+          \end{figure}
+
+          \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.5]{figures/train_class.png} 
+            \caption{before}
+            \label{fig:before}
+          \end{figure}
 \subsection{Inference}
 
 I choose my self 22 images that have close resemblence in my eyes to single dose images from drug screen for inference. ( I repeat these are not biology expert labeled drug 
@@ -262,71 +275,69 @@ run 100 times for different random initilisation.
     \end{flushleft}
     \end{table}
 
-\begin{table}[H]
-    \centering
-    \caption{Evaluation Results on Different Datasets and Augmentations with cosine distance}
-    \label{tab:evaluation_results_cosine_distance}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}llcccc@{}}
-        \toprule
-        \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
-        \multirow{5}{*}{\textbf{Before}} 
-        & Strong                & 93.33 & 100 & 100 & 100 \\
-        & Sweet                 & 97.89 & 100 & 100 & 100 \\
-        & Resize                & 93.17 & 97.50 & 97.87 & 100 \\
-        & Resize No Contrast    & 90.57 & 90.00 & 90.54 & 100 \\
-        & Sweet No Contrast     & 94.96 & 99.17 & 99.53 & 99.17 \\ \midrule
-        \multirow{5}{*}{\textbf{After}} 
-        & Strong                & 86.83 & 92.5 & 89.83 & 100 \\
-        & Sweet                 & 76.75 & 68.33 & 77.07 & 72.50 \\
-        & Resize                & 89.59 & 92.50 & 88.42 & 100 \\
-        & Resize No Contrast    & 76.75 & 59.17 & 68.56 & 63.33 \\
-        & Sweet No Contrast     & 76.75 & 81.67 & 75.41 & 86.67 \\ \bottomrule
-    \end{tabular}%
-    }
-\end{table}
-
-\begin{table}[H]
-    \centering
-    \caption{Evaluation Results on Different Datasets and Augmentations with euclidean distance}
-    \label{tab:evaluation_results_euclidean}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}llcccc@{}}
-        \toprule
-        \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
-        \multirow{5}{*}{\textbf{Before}} 
-        & Strong                & 93.5 & 100 & 100 & 100 \\
-        & Sweet                 & 98.05 & 91.67 & 99.30 & 95.83 \\
-        & Resize                & 89.43 & 79.17 & 89.36 & 87.50 \\
-        & Resize No Contrast    & 92.52 & 90.00 & 90.54 & 100 \\
-        & Sweet No Contrast     & 99.02 & 97.50 & 99.76 & 99.17 \\ \midrule
-        \multirow{5}{*}{\textbf{After}} 
-        & Strong                & 93.33 & 100 & 89.83 & 100 \\
-        & Sweet                 & 76.75 & 68.33 & 79.43 & 74.17 \\
-        & Resize                & 76.75 & 83.33 & 74.70 & 87.50 \\
-        & Resize No Contrast    & 76.75 & 59.17 & 66.19 & 60.83 \\
-        & Sweet No Contrast     & 76.75 & 81.67 & 77.30 & 81.67 \\ \bottomrule
-    \end{tabular}%
-    }
-\end{table}
-
-
-
-
-\begin{table}[H]
-    \centering
-    \caption{Evaluation Results Using Different Distance Metrics}
-    \label{tab:distance_metrics}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}llcccc@{}}
-        \toprule
-        & \textbf{Metric} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset (Unbalanced)} & \textbf{Curated 40 Subset (Balanced)} \\ \midrule
-        \multirow{2}{*}{\textbf{Original Images}} 
-        & Cosine Distance    & 76.75 & 70   & 75.18   & 73.33   \\ 
-        & Euclidean Distance & 81.30     & 73.33   & 72.34   & 77.5   \\ \bottomrule
-    \end{tabular}%
-    }
-\end{table}
+    \begin{table}[H]
+        \centering
+        \caption{Evaluation Results on Different Datasets and Augmentations with cosine distance}
+        \label{tab:evaluation_results_cosine_distance}
+        \resizebox{\textwidth}{!}{%
+        \begin{tabular}{@{}llcccc@{}}
+            \toprule
+            \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
+            \multirow{5}{*}{\textbf{Before}} 
+            & Strong                & 90.40 & 100 & 100 & 100 \\
+            & Sweet                 & 71.70 & 100 & 100 & 100 \\
+            & Resize                & - & - & - & - \\
+            & Resize No Contrast    & - & - & - & - \\
+            & Sweet No Contrast     & - & - & - & - \\ \midrule
+            \multirow{5}{*}{\textbf{After}} 
+            & Strong                & 60.04 & 75.83 & 53.2 & 70.83 \\
+            & Sweet                 & - & - & - & - \\
+            & Resize                & - & - & - & - \\
+            & Resize No Contrast    & - & - & - & - \\
+            & Sweet No Contrast     & - & - & - & - \\ \bottomrule
+        \end{tabular}%
+        }
+    \end{table}
+    
+    \begin{table}[H]
+        \centering
+        \caption{Evaluation Results on Different Datasets and Augmentations with euclidean distance}
+        \label{tab:evaluation_results_euclidean}
+        \resizebox{\textwidth}{!}{%
+        \begin{tabular}{@{}llcccc@{}}
+            \toprule
+            \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
+            \multirow{5}{*}{\textbf{Before}} 
+            & Strong                & - & - & - & - \\
+            & Sweet                 & - & - & - & - \\
+            & Resize                & - & - & - & - \\
+            & Resize No Contrast    & - & - & - & - \\
+            & Sweet No Contrast     & - & - & - & - \\ \midrule
+            \multirow{5}{*}{\textbf{After}} 
+            & Strong                & - & - & - & - \\
+            & Sweet                 & - & - & - & - \\
+            & Resize                & - & - & - & - \\
+            & Resize No Contrast    & - & - & - & - \\
+            & Sweet No Contrast     & - & - & - & - \\ \bottomrule
+        \end{tabular}%
+        }
+    \end{table}
+    
+    \begin{table}[H]
+        \centering
+        \caption{Evaluation Results Using Different Distance Metrics}
+        \label{tab:distance_metrics}
+        \resizebox{\textwidth}{!}{%
+        \begin{tabular}{@{}llcccc@{}}
+            \toprule
+            & \textbf{Metric} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset (Unbalanced)} & \textbf{Curated 40 Subset (Balanced)} \\ \midrule
+            \multirow{2}{*}{\textbf{Original Images}} 
+            & Cosine Distance    & - & - & - & - \\ 
+            & Euclidean Distance & - & - & - & - \\ \bottomrule
+        \end{tabular}%
+        }
+    \end{table}
+    
 
 
 
