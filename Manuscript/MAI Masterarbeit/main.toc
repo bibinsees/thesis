@@ -1,6 +1,6 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{List of Figures}{x}{chapter*.5}%
-\contentsline {chapter}{List of Tables}{xi}{chapter*.6}%
+\contentsline {chapter}{List of Tables}{xii}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Laboratory Setup}{4}{section.1.1}%
 \contentsline {chapter}{\numberline {2}Motivation}{9}{chapter.2}%
@@ -28,16 +28,16 @@
 \contentsline {section}{\numberline {9.1}Ranking strategy 1: Using CAE}{60}{section.9.1}%
 \contentsline {subsection}{\numberline {9.1.1}Day7 to day10 predcition}{60}{subsection.9.1.1}%
 \contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{61}{section.9.2}%
-\contentsline {paragraph}{\nonumberline Correct Transitions}{62}{paragraph*.64}%
-\contentsline {paragraph}{\nonumberline Total Possible Transitions}{63}{paragraph*.66}%
-\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{63}{paragraph*.68}%
+\contentsline {paragraph}{\nonumberline Correct Transitions}{62}{paragraph*.66}%
+\contentsline {paragraph}{\nonumberline Total Possible Transitions}{63}{paragraph*.68}%
+\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{63}{paragraph*.70}%
 \contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{65}{section.9.3}%
 \contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{67}{section.9.4}%
 \contentsline {chapter}{\numberline {10}Conclusion}{68}{chapter.10}%
 \contentsline {section}{\numberline {10.1}Final Evaluation}{68}{section.10.1}%
 \contentsline {section}{\numberline {10.2}Future research direction}{69}{section.10.2}%
-\contentsline {chapter}{\nonumberline Appendix}{71}{chapter*.78}%
-\contentsline {chapter}{Literature}{79}{section*.92}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{81}{chapter*.94}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{82}{chapter*.95}%
+\contentsline {chapter}{\nonumberline Appendix}{71}{chapter*.80}%
+\contentsline {chapter}{Literature}{79}{section*.94}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{81}{chapter*.96}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{82}{chapter*.97}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
