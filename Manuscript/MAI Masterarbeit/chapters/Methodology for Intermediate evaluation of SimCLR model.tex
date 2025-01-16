@@ -284,11 +284,11 @@ run 100 times for different random initilisation.
             \toprule
             \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
             \multirow{5}{*}{\textbf{Before}} 
-            & Strong                & 90.40 & 100 & 100 & 100 \\
-            & Sweet                 & 97.89 & 100 & 100 & 100 \\
-            & Resize                & 65.7 & 97.50 & 98.10 & 100 \\
-            & Resize No Contrast    & 66.34 & 90 & 86.29 & 100 \\
-            & Sweet No Contrast     & 96.09 & 99.17 & 99.05  & 99.17 \\ \midrule
+            & Strong                & 99.18 & 100 & 100 & 100 \\
+            & Sweet                 & 99.18 & 100 & 100 & 100 \\
+            & Resize                & 65.7 & 97.5 & 97.87 & 100 \\
+            & Resize No Contrast    & 69.92 & 90 & 86.76 & 100 \\
+            & Sweet No Contrast     & 96.74 & 99.17 & 99.52  & 99.17 \\ \midrule
             \multirow{5}{*}{\textbf{After}} 
             & Strong                & 60.04 & 92.5 & 53.2 & 100 \\
             & Sweet                 & 48.13 & 67.5 & 53.65 & 71.67 \\
@@ -357,11 +357,11 @@ Inference
         \textbf{Type} & \textbf{Augmentation} & \textbf{Full Dataset (Unbalanced)} & \textbf{Uncured Balanced} & \textbf{Curated Full Dataset} & \textbf{Curated Balanced} \\ 
         \midrule
         \multirow{5}{*}{\textbf{Before Projection Head}} 
-        & Strong             & 68.13 & 100 & 98.43 & 100 \\ 
+        & Strong             & 92.62 & 100 & 100 & 100 \\ 
         & Sweet              & 98.74 & 100 & 100 & 100 \\ 
-        & Resize             & 68.45 & 97.50 & 98.20 & 100 \\ 
-        & Resize No Contrast &  52.74    & 90.83    & 66.96     & 100 \\ 
-        & Sweet No Contrast  & 97.65     & 98.33    & 99.10     & 99.17   \\ 
+        & Resize             & 67.03 & 97.50 & 98.42 & 100 \\ 
+        & Resize No Contrast &  71.89    & 90.83    & 87.42     & 100 \\ 
+        & Sweet No Contrast  & 97.65     & 98.33    & 99.55     & 99.17   \\ 
         \midrule
         \multirow{2}{*}{\textbf{After Projection Head}} 
         & Strong             & -     & -    & -     & 94.17 \\ 
