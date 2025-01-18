@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  18 JAN 2025 11:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  18 JAN 2025 18:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1792,32 +1792,34 @@ Overfull \hbox (8.04485pt too wide) in paragraph at lines 257--272
 [57]
 
 [58]
-Overfull \hbox (30.62878pt too wide) in paragraph at lines 435--448
+
+[59]
+Overfull \hbox (30.62878pt too wide) in paragraph at lines 463--476
  [][] 
  []
 
 )
 
-[59]
+[60]
 \openout2 = `"chapters/Methodology for Ranking.aux"'.
 
  (./chapters/Methodology for Ranking.tex
 chapter 9.
 
 
-[60
+[61
 
 
 
 
 ]
 
-[61]
+[62]
 Underfull \vbox (badness 1102) has occurred while \output is active []
 
 
 
-[62]
+[63]
 Overfull \hbox (62.64307pt too wide) in paragraph at lines 138--148
  [][] 
  []
@@ -1827,50 +1829,47 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[63]
+[64]
 Overfull \hbox (62.64307pt too wide) in paragraph at lines 155--165
  [][] 
  []
 
 
 
-[64]
-
 [65]
+
+[66]
 Overfull \hbox (4.6844pt too wide) in paragraph at lines 271--277
  [][] 
  []
 
 
 
-[66])
+[67])
 
-[67]
+[68]
 \openout2 = `chapters/conclusions.aux'.
 
  (./chapters/conclusions.tex
 chapter 10.
 
 
-[68
+[69
 
 
 
 
 ])
 
-[69]
-
-[70
-
-
-
-
-]
+[70]
 chapter without number
 
 
 [71
+
+
+
+
 
 ]
 
@@ -1932,13 +1931,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  30237 strings out of 473578
  584037 string characters out of 5732243
- 1958960 words of memory out of 5000000
+ 1948960 words of memory out of 5000000
  52347 multiletter control sequences out of 15000+600000
  595100 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11029b,2323s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (94 pages, 13822015 bytes).
+Output written on main.pdf (94 pages, 13823610 bytes).
 PDF statistics:
  1101 PDF objects out of 1200 (max. 8388607)
  903 compressed objects within 10 object streams

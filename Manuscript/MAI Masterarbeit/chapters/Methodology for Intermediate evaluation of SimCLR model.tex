@@ -284,20 +284,45 @@ run 100 times for different random initilisation.
             \toprule
             \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
             \multirow{5}{*}{\textbf{Before}} 
-            & Strong                & 83.90 & 100 & 100 & 100 \\
-            & Sweet                 & 99.18 & 100 & 100 & 100 \\
+            & Strong                & \textbf{83.90} & \textbf{100} & \textbf{100} & \textbf{100} \\
+            & Sweet                 & \textbf{99.18} & \textbf{100} & \textbf{100} & \textbf{100} \\
             & Resize                & 65.7 & 97.5 & 97.87 & 100 \\
             & Resize No Contrast    & 69.92 & 90 & 86.76 & 100 \\
-            & Sweet No Contrast     & 96.74 & 99.17 & 99.52  & 99.17 \\ \midrule
+            & Sweet No Contrast     & \textbf{96.74} & \textbf{99.17} & \textbf{99.52}  & \textbf{99.17} \\ \midrule
             \multirow{5}{*}{\textbf{After}} 
             & Strong                & 72.68 & 95.83 & 74.00 & 100 \\
             & Sweet                 & 47.32 & 74.17 & 55.08 & 78.33 \\
             & Resize                & 60.32 & 92.50 & 74.23 & 100 \\
             & Resize No Contrast    & 44.72 & 64.17 & 47.28 & 66.67 \\
             & Sweet No Contrast     & 52.20 & 86.67 & 58.16 & 89.17 \\ \bottomrule
-        \end{tabular}%
+        \end{tabular}% 
         }
     \end{table}
+    
+
+cosine distance:
+
+The results show a clear trend of superior clustering performance **before the projection head** compared to **after the projection head**.
+
+Before: 
+
+data augmentatoin ‘sweet’ performs the best over other data augmentations and achieved consistant accuracy over all different data set types. 
+
+since sweet performed 100 percentage accurcay across cured and uncured dataset its evidant that the problem for having less accracy is nothing
+ to do with exploeded look like images in control instead its weight unbalance class problem. 
+
+ comparing 'sweet' and 'sweet no contrast' its evident that without contrast slightly hurts the performance, so its a good idea to keep contrast in data augmentation.
+
+comparing 'sweet' and 'strong' they both achieved 100 percenatage accuracy ir (same performance)over all different data set types except the full dataset.
+for full dataset sweet performed far better than strong , sweeet even achieved 99.18 where strong reached only 83.90.
+
+comparing all data augmentations 'resize' and 'reesize no contrast performed the worst giving the insight that cropping is essential to get better cluster performance
+ using cosine distance as distance metric.
+
+ as a breif conclusion its pretty clear 'contrast' and 'cropping 0.35 to 1 percentage of whole image is esential for cluster performance using cosine distance as distacne metric.
+
+ One thing that need to keep in mind that all above explanations or achievements by different data augs are corresponds to clustering performance doesn't mean that
+  it could work for rankin strategies too.
     
     \begin{table}[H]
         \centering
@@ -323,9 +348,12 @@ run 100 times for different random initilisation.
         }
     \end{table}
     
+Euclidean distance:
+
+
     \begin{table}[H]
         \centering
-        \caption{Evaluation Results Using Different Distance Metrics}
+        \caption{Evaluation Results Using Different Distance Metrics for original images}
         \label{tab:distance_metrics}
         \resizebox{\textwidth}{!}{%
         \begin{tabular}{@{}llcccc@{}}
