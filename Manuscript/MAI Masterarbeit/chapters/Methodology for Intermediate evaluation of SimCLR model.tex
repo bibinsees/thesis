@@ -288,7 +288,7 @@ run 100 times for different random initilisation.
             & Sweet                 & \textbf{99.18} & \textbf{100} & \textbf{100} & \textbf{100} \\
             & Resize                & 65.7 & 97.5 & 97.87 & 100 \\
             & Resize No Contrast    & 69.92 & 90 & 86.76 & 100 \\
-            & Sweet No Contrast     & \textbf{96.74} & \textbf{99.17} & \textbf{99.52}  & \textbf{99.17} \\ \midrule
+            & Sweet No Contrast     & \textbf{98.21} & \textbf{99.17} & \textbf{99.52}  & \textbf{99.17} \\ \midrule
             \multirow{5}{*}{\textbf{After}} 
             & Strong                & 72.68 & 95.83 & 74.00 & 100 \\
             & Sweet                 & 47.32 & 74.17 & 55.08 & 78.33 \\
@@ -302,7 +302,7 @@ run 100 times for different random initilisation.
 
 cosine distance:
 
-The results show a clear trend of superior clustering performance **before the projection head** compared to **after the projection head**.
+The results show a clear trend of superior clustering performance before the projection head compared to after the projection head.
 
 Before: 
 
@@ -311,45 +311,55 @@ data augmentatoin ‘sweet’ performs the best over other data augmentations an
 since sweet performed 100 percentage accurcay across cured and uncured dataset its evidant that the problem for having less accracy is nothing
  to do with exploeded look like images in control instead its weight unbalance class problem. 
 
- comparing 'sweet' and 'sweet no contrast' its evident that without contrast slightly hurts the performance, so its a good idea to keep contrast in data augmentation.
+ comparing 'sweet' and 'sweet no contrast' its evident that without contrast slightly hurts the performance.
 
-comparing 'sweet' and 'strong' they both achieved 100 percenatage accuracy ir (same performance)over all different data set types except the full dataset.
+comparing 'sweet' and 'strong' they both achieved 100 percenatage accuracy ie (same performance)over all different data set types except the full dataset.
 for full dataset sweet performed far better than strong , sweeet even achieved 99.18 where strong reached only 83.90.
 
-comparing all data augmentations 'resize' and 'reesize no contrast performed the worst giving the insight that cropping is essential to get better cluster performance
+comparing all data augmentations 'resize' and 'reesize no contrast performed the least giving the insight that cropping is essential to get better cluster performance
  using cosine distance as distance metric.
 
- as a breif conclusion its pretty clear 'contrast' and 'cropping 0.35 to 1 percentage of whole image is esential for cluster performance using cosine distance as distacne metric.
+ as a breif conclusion its pretty clear that cropping 0.35 to 1 percentage of whole image is crucial especially cropping have huge effect for cluster performance using cosine distance as distacne metric.
 
  One thing that need to keep in mind that all above explanations or achievements by different data augs are corresponds to clustering performance doesn't mean that
   it could work for rankin strategies too.
     
-    \begin{table}[H]
-        \centering
-        \caption{Evaluation Results on Different Datasets and Augmentations with euclidean distance}
-        \label{tab:evaluation_results_euclidean}
-        \resizebox{\textwidth}{!}{%
-        \begin{tabular}{@{}llcccc@{}}
-            \toprule
-            \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
-            \multirow{5}{*}{\textbf{Before}} 
-            & Strong                & 88.45 & 100 & 100 & 100 \\
-            & Sweet                 & 98.21 & 91.67 & 99.29 & 95.83 \\
-            & Resize                & 70.40 & 78.33 & 66.66 & 88.33 \\
-            & Resize No Contrast    & 68.62 & 90.00 & 86.28 & 100 \\
-            & Sweet No Contrast     & 99.02 & 97.50 & 99.76 & 99.17 \\ \midrule
-            \multirow{5}{*}{\textbf{After}} 
-            & Strong                & 75.45 & 100 & 99.53 & 100 \\
-            & Sweet                 & 51.54 & 74.17 & 60.52 & 79.17 \\
-            & Resize                & 43.25 & 83.33 & 53.90 & 87.5 \\
-            & Resize No Contrast    & 47.8 & 63.33 & 47.04 & 65.83 \\
-            & Sweet No Contrast     & 51.87 & 85.0 & 57.68 & 88.33 \\ \bottomrule
-        \end{tabular}%
-        }
-    \end{table}
+  \begin{table}[H]
+    \centering
+    \caption{Evaluation Results on Different Datasets and Augmentations with euclidean distance}
+    \label{tab:evaluation_results_euclidean}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llcccc@{}}
+        \toprule
+        \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
+        \multirow{5}{*}{\textbf{Before}} 
+        & Strong                & \textbf{88.45} & \textbf{100} & \textbf{100} & \textbf{100} \\
+        & Sweet                 & \textbf{98.21} & \textbf{91.67} & \textbf{99.29} & \textbf{95.83} \\
+        & Resize                & 70.40 & 78.33 & 66.66 & 88.33 \\
+        & Resize No Contrast    & 68.62 & 90.00 & 86.28 & 100 \\
+        & Sweet No Contrast     & \textbf{99.02} & \textbf{97.50} & \textbf{99.76} & \textbf{99.17} \\ \midrule
+        \multirow{5}{*}{\textbf{After}} 
+        & Strong                & \textbf{75.45} & \textbf{100} & \textbf{99.53} & \textbf{100} \\
+        & Sweet                 & 51.54 & 74.17 & 60.52 & 79.17 \\
+        & Resize                & 43.25 & 83.33 & 53.90 & 87.5 \\
+        & Resize No Contrast    & 47.8 & 63.33 & 47.04 & 65.83 \\
+        & Sweet No Contrast     & 51.87 & 85.0 & 57.68 & 88.33 \\ \bottomrule
+    \end{tabular}% 
+    }
+\end{table}
+
     
 Euclidean distance:
+Just like  cosine distance, with eulcidean distacne as distacne metric also established a superior performance trend for before the projection head compared to after the
+ projection head.
+ Just like  cosine distance, inside the before projection head, data augs with cropping have far better performance than without cropping dataaugs such as resize and 
+ resize no contrast.
 
+ Eventhough 'strong' achieved 100 percentage accuracy across all dataset types except the full dataset unbalanced. when it comes to full dataset, sweet and sweet nocontrast pperforms better than all others.
+ and among all data augs we can see sweet no contrast' maintain the cosistancey in performance across all dataset types with more than 97 percentage accuracy and also perfromed better than just 'sweet' across all dataset.
+ 
+ interesting thing to notice here is the after projection head  'strong' it achieved higher clusterig performance 99 and above across all dataset types except 
+ the full dataset. which is a good indication that we should also consider the after projection head features for ranking task.
 
     \begin{table}[H]
         \centering
@@ -366,16 +376,31 @@ Euclidean distance:
         }
     \end{table}
     
+Original images:
+comparing original images feats to simclr feats we can see that entire data augs for  before head feats outperformed entirly for both cosine distacne and euclidean distacne.
+while comparing original image to after projection head the performance is comparable except for the strong data aug where after head still have better perfromance.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.37]{figures/cluster.png} 
+    \caption{orig}
+    \label{fig:cluster}
+\end{figure}
 
 
 
-\textcolor{red}{Include PCA 1 here? maybe in ranking. but we can add PCA 2 fugures}
+\textcolor{red}{Include PCA 1 here? maybe in ranking. but we can add PCA 2 fugures.}
+\textcolor{red}{add image of exlod look like control day 10.}
 
 \textcolor{red}{do sd VS others all?}
 
-Inference
+Inference:
 
-\begin{table}[H]
+Since before projection head for cosine distance gives far better performance, i do  inference on them. I choose 22 images that have close resemblence in my eyes 
+to single dose images from drug screen for inference. ( I repeat these are not biology expert labeled drug screened image. so any inference result is irrelavant
+ in the sense to actual ground truth )
+
+ \begin{table}[H]
     \centering
     \caption{Evaluation Results on COSINE}
     \label{tab:professional_table}
@@ -385,19 +410,17 @@ Inference
         \textbf{Type} & \textbf{Augmentation} & \textbf{Full Dataset (Unbalanced)} & \textbf{Uncured Balanced} & \textbf{Curated Full Dataset} & \textbf{Curated Balanced} \\ 
         \midrule
         \multirow{5}{*}{\textbf{Before Projection Head}} 
-        & Strong             & 85.09 & 100 & 98.43 & 100 \\ 
-        & Sweet              & 92.00 & 100 & 100 & 100 \\ 
-        & Resize             & 67.03 & 97.50 & 98.42 & 100 \\ 
-        & Resize No Contrast &  71.89    & 90.83    & 87.42     & 100 \\ 
-        & Sweet No Contrast  & 97.33     & 98.33    & 99.55     & 99.17   \\ 
-        \midrule
-        \multirow{2}{*}{\textbf{After Projection Head}} 
-        & Strong             & -     & -    & -     & 94.17 \\ 
-        & Resize             & -     & -    & -     & 100    \\ 
+        & Strong             & 85.09 (+1.19) & 100 (0) & 98.43 (-1.57) & 100 (0) \\ 
+        & Sweet              & 92.00 (-7.18) & 100 (0) & 100 (0) & 100 (0) \\ 
+        & Resize             & 67.03 (+1.33) & 97.50 (0) & 98.42 (+0.55) & 100 (0) \\ 
+        & Resize No Contrast & 71.89 (+1.97) & 90.83 (+0.83) & 87.42 (+0.66) & 100 (0)\\ 
+        & \textbf{Sweet No Contrast}  & \textbf{97.33 (+0.59)} & \textbf{98.33 (-0.84)} & \textbf{99.55 (+0.03)} & \textbf{99.17 (0)} \\ 
         \bottomrule
-    \end{tabular}%
+    \end{tabular}% 
     }
 \end{table}
+
+
 
 \textcolor{red}{How do you know in inference dsclose was the one confused? maybe confusion matrix?  sweet no contrast before cosine}
 
@@ -411,18 +434,18 @@ Inference
         \textbf{Type} & \textbf{Augmentation} & \textbf{Full Dataset (Unbalanced)} & \textbf{Uncured Balanced} & \textbf{Curated Full Dataset} & \textbf{Curated Balanced} \\ 
         \midrule
         \multirow{5}{*}{\textbf{Before Projection Head}} 
-        & Strong             & 84.61 & 100 & 99.10 & 100 \\ 
-        & Sweet              & 98.27 & 91.67 & 99.32 & 95.83 \\ 
-        & Resize             & 72.06 & 79.17 & 68.54 & 86.67 \\ 
-        & Resize No Contrast & 71.11 & 100 & 87.42 & 100 \\ 
-        & Sweet No Contrast  & 99.06 & 97.50 & 99.78 & 99.17 \\ 
+        & Strong             & 84.61 (-3.84) & 100 (0) & 99.10 (-0.9)& 100 (0) \\ 
+        & Sweet              & 98.27 (+0.06) & 91.67(0) & 99.32(+0.03) & 95.83 (0) \\ 
+        & Resize             & 72.06 (+1.66) & 79.17 (+0.84) & 68.54 (+1.88) & 86.67(-1.66) \\ 
+        & Resize No Contrast & 71.11 (+2.49) & 100 (+10) & 87.42 (1.14)& 100 (0)\\ 
+        & \textbf{Sweet No Contrast}  & \textbf{99.06 (+.04)} & \textbf{97.50 (0)} & \textbf{99.78 (+.02)} & \textbf{99.17 (0)} \\ 
         \midrule
-        \multirow{2}{*}{\textbf{After Projection Head}} 
-        & Strong             & - & 92.5 & - & 95 \\  
+        \textbf{After Projection Head} & Strong & 75.51 (+0.06) & 92.5 (-7.5)& 72.58 (-26.95) & 95 (-5 )\\  
         \bottomrule
     \end{tabular}% 
     }
 \end{table}
+
 
 
 
