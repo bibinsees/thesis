@@ -47,16 +47,20 @@ or single dose or exloded in this scale.
 
 \subsubsection*{original images}
 data preperation: I decided to train with day 7 untreated to day 10 untretaed images which we have pair of 231 images as explained in table \ref{tab:dataset}.
-training parameters and archiecture: normalised the images by dividing them by 65535. reduced the size to 96*96. Added data augmentations such as 
-horizontal/vertical flips and rotations except contrast and cropping. We can't change contrast  
- as I explained in the augmentation chapter. and also i didn't use cropping because of the idea that inorder to learn whole change or transformation to day 10, it neds to see the whole 
- day 7 image which is already explained in the data augmentation resize chapter. i made sure that augmentation to be coupled that means the same  data augmenattion type parameter value used for both day 7
-and corresponding day 10 images. The augmentation helps to increase the possible sample distribution that could happen in real life by that we are trying to find 
+ normalised the images by dividing them by 65535. reduced the size to 96*96. Added data augmentations such as horizontal/vertical flips and rotations and random brightness/sharpness/blur as explained in the sweet augmentation section  except contrast and cropping. We can't change contrast  as I explained in the augmentation chapter.and also i didn't use cropping because of the idea that inorder to learn whole change or transformation to day 10, it needs to see the whole day 7 image which is already explained in the data augmentation resize chapter. i made sure that 
+ 1. augmentation to be coupled that means the same  data augmenattion type parameter value used for both day and corresponding day 10 images. 
+ 2.  flips or rotation will be unique to each image with random brightness/sharpness/blur change. that means in the dataset original image can have different augs with the same parameter value of brightness/sharpness/blur since its random but it won't have the same geomatrical transformation.
+
+
+
+
+
+The augmentation helps to increase the possible sample distribution that could happen in real life by that we are trying to find 
 a solution for data defficiency and also helps to prevent overfiting.
 also it helps to be invariant of the brightness/position/blur/sharp changes that can happen due to the microscope mishandling.
 
 
- 
+training parameters and archiecture:
 
 Convolutional Autoencoder Architecture:
 We developed an autoencoder architecture with an encoder-decoder structure, utilizing convolutional layers, batch normalization, dropout, and activation functions
@@ -118,9 +122,9 @@ simclr features to see if it can learn the transition better than the original i
 \end{figure}
 
 \subsubsection*{Simclr feats}
-
+Set up of data processing same as above original setup.
 frist I started with the pair of day 7 untreated to predict the day 10 untreated images setup.normalised images by dividing them by 65535. resized to 96*96. then
-I increased the dataset by using same data augmentation technics that I did to original image setup as explained in the above section. then I feed to simclr model 
+I increased the dataset of all gps 231 of untreated , 103 of single dose and 40 of exploded to 750 by using same data augmentation technics that I did to original image setup as explained in the above section but with made sure that flips or rotation will be unique to each image with random brightness/sharpness/blur change within a range as above. then I feed to simclr model 
 to get features after and before projection head to train the CAE model. 
 
 Training setup: first to ensure the simclr features are scaled I did featurewise minmax scaling. Then I feed those into FeaturePredictor model which is a fully 
@@ -135,12 +139,33 @@ ReLU activation: Introduces non-linearity to model complex feature relationships
 Dropout (Dropout): Applied with probabilities ranging from 0.2 to 0.4 to prevent overfitting, with deeper layers using higher dropout rates for regularization.
 The final layer is a linear transformation to ensure the output feature size matches the day 10 feature vectore dimensions which is 512 for before and 20 for after.
 
-batch size = 32. loss = mse loss. optimizer = adam optimizer. learning rate = 0.0001. no of epochs = 2000. used cross validation with 5 fold and  early stopp with 
-the parameters patience = 500 and delta = 0.0001.
+batch size = 32. loss = mse loss. optimizer = adam optimizer. learning rate = 0.0001. no of epochs = 2000. used cross validation with 3 fold and  early stopp with 
+the parameters patience = 500 and delta = 0.0001. training data and validation data divided as 80: 20 ratio.
+
+As we see in the figure below, for the training of day 7 to day 10 untreated images and single dose, the train loss and validation loss decreased gradually  in the 2000 epochs. But for the category of cosnidering exploded as normal ie training  day 7 to day 10 exploed images we can see overfitting behaviour in the loss. This is probably due to the fact that for training day 7 to day 10 untreated images and single dose we have 231 and 103  images correspondingly but for day 7 to day 10 exploded images we have only 40 images as original. This is the problem of data deficiency. We have tried to mitigate this problem by increasing the dataset size by data augmentation but neverthless for the exploded images training didn't quite worked out.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/overfit.png} 
+  \caption{Ohne contrast Resize  before projection head data aug: Explod dataset plot in the figure shows overfitting }
+  \label{fig:unloss}
+\end{figure}
+
+
+Do inference loss for both  before and after projection head feats.
+used following metrics as inference loss between target feature vector and predicted feature vector.: mse, cosine distance, L2 ( euclidean distance ), L1 distance, Pearson correlation, dot product,jaccard similarity, hamming distance.
+
+Reason to choose cosine distance is basically because the loss function of simclr is designed to make the cosine distance between similar images to be close to 1. the reason to choose other metrics are the metrics mainly used in medical images as explained in literature review.
+
 
 results:
-do inference loss for both  beofre and after projection head feats.
-used following metrics as inference loss: mse, cosine distance, L2 ( euclidean distance ), L1 distance, Pearson correlation, dot product,jaccard similarity, hamming distance.
+
+as explained before, if the cae trained solely on the transition of untreated images when we do the inerence metric calculation between predicted feature vector and target feature vector for these untreated images should be less than other classes. we met that expectation as 
+we can see the figure. the inference loss for untreated images is less than the other classes except pearson, dot product and jaccard similarity. since for those metrics similartiy increases as the value of them increases as explained in literature review. ad some of the metric are able to make a clear seperation of the training class to others ie atleat one class is have clear seperation from other classes as we seen in figure. and some of the metric couldn't make a clear seperation for atleast one class ie all of the classes are mixed as we seen in the figure. Ideal situation is that all of the classes are seperated from each other. so that when we do inference on drug screen images there will be look alike smooth transition from class to other.
+
+We observed this same trend  for both before and after projection head features and for all transition category.
+
 
 range of cosine distacnes = 0-2
 range of euclidean distacnes = working
@@ -152,9 +177,12 @@ range of pearson correlation coefficient: -1 to 1 working. 1 linearly correlated
 range of dot product  working.
 range of jaccard : working 0 to 1
 range of hamming distance is working.
+\textcolor{red}{show figures of each distance as example show that one gp is seperated as expected but others mixed.}
 
 
+Since we couldn't seperate those 3 classes well that means we won't have good ranking of drug screnn images since sd close images and explod images will be mixed while ranking. this calls the need for other ranking strategy such as Softmax approach.
 
+Hence we nned better approach for ranking where small no of data will not effect that much for the performance such as K means centroid approach, PCA approach. 
 
 \section{Ranking strategy 2: K means centroid approach}
 
