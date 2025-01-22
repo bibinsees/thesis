@@ -230,6 +230,13 @@ similar/closer to single dose: 22.
 Curated 40 subset  (Balanced to the minimum nof set in the group which is exploded. ie there is only total 40 of exploded but excluded explod look alike from control):
 contains random but make sure it doesn't have exploded like controls total 40, and all exploded which is basically 40, 10 ds close to sd, 30 single dose.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.37]{figures/controlex.png} 
+    \caption{orig}
+    \label{fig:controlex.png}
+\end{figure}
+
 \begin{table}[H]
 \centering
 \caption{Summary of Datasets}
@@ -237,11 +244,11 @@ contains random but make sure it doesn't have exploded like controls total 40, a
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccc}
 \toprule
-\textbf{Dataset}             & \textbf{Control (C)} & \textbf{Single Dose (SD)} & \textbf{Exploded (E)} & \textbf{DS Closer to SD (DS-SD)} \\ \midrule
-Full Dataset (Unbalanced)    & 472                  & 103                       & 40                    & Included                          \\ 
-40 Subset (Balanced)         & 40                   & 30                        & 40                    & 10                                \\ 
-Curated Full Dataset         & 280                  & 103                       & 40                    & 22                                \\ 
-Curated 40 Subset (Balanced) & 40                   & 30                        & 40                    & 10                                \\ 
+\textbf{Dataset}             & \textbf{Control (C)} & \textbf{Single Dose (SD)} & \textbf{Exploded (E)} & \textbf{SD close for inference} \\ \midrule
+Full Dataset (Unbalanced)    & 472                  & 103                       & 40                    & all 22                          \\ 
+40 Subset (Balanced)         & (20 with debris + 20 without debris)                   & 40                        & 40                    &    20          \\ 
+Curated Full Dataset         & 280                  & 103                       & 40                    & all 22                                \\ 
+Curated 40 Subset (Balanced) & 40 (all without debris)                  & 40                        & 40                    & 20           \\ 
 \bottomrule
 \end{tabular}%
 }
@@ -249,31 +256,10 @@ Curated 40 Subset (Balanced) & 40                   & 30                        
 
     
 
-run 100 times for different random initilisation.
+run 400 times for different random initilisation. Note: Drug screen images are visually similar to single dose treatment. All balanced datasets
+ are normalized to the exploded group size (n=40).
+ \textcolor{red}{the curated full data set doesn't give any infromation ? if no remove the column}
 
-\begin{table}[htbp]
-    \centering
-    \caption{Dataset Composition Overview}
-    \begin{tabular}{lccccl}
-    \toprule
-    Dataset Type & Control & Single Dose & Exploded & Drug Screen & Notes \\
-    \midrule
-    \multicolumn{6}{l}{\textbf{Raw Datasets}} \\
-    \midrule
-    Full & 472 & 103 & 40 & -- & Unbalanced \\
-    Balanced-40 & 40 & 30 & 40 & 10 & Minimum set balanced \\
-    \midrule
-    \multicolumn{6}{l}{\textbf{Curated Datasets}} \\
-    \midrule
-    Full & 280 & 103 & 40 & 22 & Debris-free controls \\
-    Balanced-40 & 40 & 30 & 40 & 10 & No exploded-like controls \\
-    \bottomrule
-    \end{tabular}
-    \begin{flushleft}
-    \small
-    Note: Drug screen images are visually similar to single dose treatment. All balanced datasets are normalized to the exploded group size (n=40).
-    \end{flushleft}
-    \end{table}
 
     \begin{table}[H]
         \centering
@@ -390,15 +376,29 @@ while comparing original image to after projection head the performance is compa
 
 
 \textcolor{red}{Include PCA 1 here? maybe in ranking. but we can add PCA 2 fugures.}
-\textcolor{red}{add image of exlod look like control day 10.}
+\textcolor{red}{remove inference data from table.}
 
-\textcolor{red}{do sd VS others all?}
+\textcolor{red}{do sd VS others all? yes depend on time}
 
 Inference:
 
+
+
 Since before projection head for cosine distance gives far better performance, i do  inference on them. I choose 22 images that have close resemblence in my eyes 
-to single dose images from drug screen for inference. ( I repeat these are not biology expert labeled drug screened image. so any inference result is irrelavant
+to single dose images from drug screen for inference. We name those images as 'sd close'( I repeat these are not biology expert labeled drug screened image. so any inference result is irrelavant
  in the sense to actual ground truth )
+
+we used all 22 sd close images for full dataset along with the 3 classes that describe in the table. But for balanced datasets except control and exploded
+ we changed the  dataset setup described in the table as follows for keeping the dataset balancing: 20 sd and 20 sd close images. so that it will stil be 40 as other classes.
+
+
+
+ so during 3 class clustering 'sweet' (99.18 ) perfromed better than sweet no contrast (98.21) for all full dataset unbalanced. and in others sweet achieved 100 percentage accuracy
+ whihc makes clear that for 3 class problem sweet have higher perfromacne comparing to other data augs. but during inference sweet accuracy reduced to 95.76  with -3.42 
+ change in reduction while sweet no contrast reduced to  97.33 with -0.88 reduction change. and sweet no contrast kept the highest accuracy during inference. figure 8.8 shows that 
+ with sweet no contrast data aug it classified all 103 sd images correctly and during inference it clustered all sd close image images in the cluster of sd images.
+ 
+ 
 
  \begin{table}[H]
     \centering
@@ -411,16 +411,21 @@ to single dose images from drug screen for inference. ( I repeat these are not b
         \midrule
         \multirow{5}{*}{\textbf{Before Projection Head}} 
         & Strong             & 85.09 (+1.19) & 100 (0) & 98.43 (-1.57) & 100 (0) \\ 
-        & Sweet              & 92.00 (-7.18) & 100 (0) & 100 (0) & 100 (0) \\ 
+        & Sweet              & 95.76 (-3.42) & 100 (0) & 100 (0) & 100 (0) \\ 
         & Resize             & 67.03 (+1.33) & 97.50 (0) & 98.42 (+0.55) & 100 (0) \\ 
         & Resize No Contrast & 71.89 (+1.97) & 90.83 (+0.83) & 87.42 (+0.66) & 100 (0)\\ 
-        & \textbf{Sweet No Contrast}  & \textbf{97.33 (+0.59)} & \textbf{98.33 (-0.84)} & \textbf{99.55 (+0.03)} & \textbf{99.17 (0)} \\ 
+        & \textbf{Sweet No Contrast}  & \textbf{97.33 (-0.88)} & \textbf{98.33 (-0.84)} & \textbf{99.55 (+0.03)} & \textbf{99.17 (0)} \\ 
         \bottomrule
     \end{tabular}% 
     }
 \end{table}
 
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.37]{figures/cconfusion.png} 
+    \caption{orig}
+    \label{fig:cconfusion}
+\end{figure}
 
 \textcolor{red}{How do you know in inference dsclose was the one confused? maybe confusion matrix?  sweet no contrast before cosine}
 
@@ -446,34 +451,36 @@ to single dose images from drug screen for inference. ( I repeat these are not b
     }
 \end{table}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.37]{figures/econfuse.png} 
+    \caption{orig}
+    \label{fig:econfuse.png}
+\end{figure}
 
+
+For euclidean distance, during 3 class 'sweet no contrast' have he highest performance with 99.02 accuracy without any misclassification for sd images as we seen 
+in figure 8.9. and during inference it clustered all sd close image and sd images together in the cluster of sd images corrrectly as we seen in figure 8.9.
+
+
+From this we can conclude that 'sweet no contrast' data aug before projection head is the best data aug for clustering task for both
+ cosine distance and euclidean distance as distance metric. which basically means that sweet cropping of 0.35 to 1 (less intense cropping is essential for clustering performance.)
 
 
 \section{Direct day 7 to day 10 distance evaluation}\label{sec: distance}
-calculate distance between day 7 untreated and its corresponding day 10 treated one.
-Idea is:
-1. it should give same distance between day 7 and its corresponding day 10
- even its changed in position/flipped. ie checking whether simlcr learned to 
- be invariant to position error in microscope error because of manual 
- handling/transporting.
-2. it sould give same distance even if its blured/sharpened
-3. it should give sma edistance even if its changed in brightness
-4. main test for k means centroid approach. it should give different distance to single dose and exploded.
+calculate cosine distance between each image (of all 1246 images that we used to train simclr ) and its corresponding augmentation that we used in simclr.
+Idea is to ie check whether simlcr learned to 
+be invariant to position/flipped error specifically for day 10 images or blured/sharpened or brightness in microscope error because of manual 
+handling/transporting. If its learned well then we expect the cosine distance between the original image feat and its corresponding augmentatoin  feat should be same 
+or very close to each other. specifically  features after projection head since the after projection head features are used for reducing loss function.
+                                                                    
 
+it also applicable to time prediction  ranking evaluation. in time prediction ranking strategy, we will predict from day 7 to day 10. since we
+may have mispositioned images of day 10,the more simclr is learned to invariant to flips and rotation the better day 10 prediction.
 
-basic evaluations for ranking:
-1.
-whether it learned to be invariant the position change:
-do flipps and calculate the cosine distance from control to treated flipped versions. ( i don't expect it learn to the change in center of position, 
-if it learns good we can say center crop have some effect maybe? but not for the edge one?)
-2. 
-shape invariant:control to all single dose should be almost same cosine distance.
-
-it also applicable to time prediction and reconstruction ranking evaluation and also from kmeans centriod approach.
-
-
-\textcolor{red}{We will start with cosine distance and euclidean distance. other distcances based on time if we have}
-
+setup: we calculate the difference between the cosine distance of original image and augmented image for each augmentatoin and then we average the difference for 
+all images. if the average difference is close to 0 then it means simclr learned to be invariant to that specific augmentatoin. while augmentation values were random according to the speicifc 
+data aug that we explained in chepter simclr.
 
 \textcolor{red}{we are trying to find whether simclr learns something, from simclr side cond 7 to same cond7 augs should have high cosine similarity and within all
  gps foe example within sd higher cosine similarity since its gping this is what we have to check but we will do this only after ranking strategy depend on time}
@@ -497,8 +504,17 @@ it also applicable to time prediction and reconstruction ranking evaluation and 
  \bottomrule
  \end{tabular}
  \end{table}
- ```
-    
+
+Within the simclr feats strong have more avg difference comparing other aug avg errors for flip and rotation augs , this is due to the  strong intense croping of 
+0.1 to 1 percentage of the image. since in those crops doesn't sometimes include the cancer round tissue model sometimes it leads to less learning of the overall structure invarience.
+Surprisingly avg error are higher generally for after feats than beofore. strong data aug feats learned to be invariant for brightness than other augs as it have 
+very low avg error differenece. original image vectors have far less and even closer to 0 avg errors comparing to simclr feats, this make this evaluation makes still
+interesting to see the comparison performance of  original image vector vs simclr feats for different ranking strategy.
+
+
+ 
+
+
 
  \begin{table}[H]
     \centering
@@ -513,5 +529,5 @@ it also applicable to time prediction and reconstruction ranking evaluation and 
     
 
 
-
-  
+4. leads to the idea of ranking strategy for k means centroid approach. it should give different distance to single dose and exploded and closer distance to same gp from control.
+\textcolor{red}{show original day 7to day 10 sd is smae as day 7 to day 7.}

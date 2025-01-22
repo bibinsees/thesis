@@ -12,10 +12,7 @@ once if we can order those small subset of entire images, we can add the other i
 control 
 or single dose or exloded in this scale.
 
-\section{Ranking strategy 1: Using CAE}
-
-
-\subsection{Day7 to day10 predcition} \label{subsec:day7-to-day10}
+\section{Day7 to day10 predcition using CAE} \label{subsec:day7-to-day10}
 
 
 \textcolor{red}{mention problem of data lack here instead in research questions?}
@@ -28,19 +25,135 @@ or single dose or exloded in this scale.
     In other words, feature vectors of similar images will be more linearly separable.
   
   \item \textbf{Step 2:} Train a prediction model exclusively on the representations of 
-  untreated images from Day 7 to Day 10. ( Input: Day 7 feature vector and target: Day 10 feature vector )
+  untreated images from Day 7 to Day 10 using convolutional autoencoder. ( Input: Day 7 feature vector and target: Day 10 feature vector )
 
   
   \item \textbf{Step 3:} Perform inference on the representations of test images, which include untreated, clinically recommended, and drug screening images.
-  \item \textbf{Step 4:} Perform step 2 and step 3 on images instead of simclr feature vectors for comparitive study.
+  Since the day 10 prediction model is trained solely on the representations of untreated images, the inference loss/metric 
+  (i.e., the difference between the predicted and actual Day 10 image representations) will be very small for untreated images.
+   Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of untreated images.
+  This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start 
+  with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. 
+  
+  \item \textbf{Step 4:} so in the above methods we train first solely on untreated /control images then we did inference on all images just like classical anomaly detection approach. 
+  with that same idea/concept, but now we considered other gps as normal and will try to find the deviation from that transition. that is
+  we train solyliy on day 7 untreated to day 10 sd images then we do the inference on all images so that inference loss will be how much it deviated from the single dose 
+  images. repeating the same concept, we train solely on day 7 untreated to day 10 ex images then we do the inference on all images so that inference loss will be
+   how much it deviated from the exploded
+  \item Perform the above steps on original image features instead of simclr feature vectors for comparitive study.
 \end{enumerate}
 
-Since the day 10 prediction model is trained solely on the representations of untreated images, the inference loss/metric 
-(i.e., the difference between the predicted and actual Day 10 image representations) will be very small for untreated images.
- Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of untreated images.
-This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start 
-with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. 
-Determining a reasonable inference loss/metric will be one of the research problems to tackle.
+
+
+\subsubsection*{original images}
+data preperation: I decided to train with day 7 untreated to day 10 untretaed images which we have pair of 231 images as explained in table \ref{tab:dataset}.
+training parameters and archiecture: normalised the images by dividing them by 65535. reduced the size to 96*96. Added data augmentations such as 
+horizontal/vertical flips and rotations except contrast and cropping. We can't change contrast  
+ as I explained in the augmentation chapter. and also i didn't use cropping because of the idea that inorder to learn whole change or transformation to day 10, it neds to see the whole 
+ day 7 image which is already explained in the data augmentation resize chapter. i made sure that augmentation to be coupled that means the same  data augmenattion type parameter value used for both day 7
+and corresponding day 10 images. The augmentation helps to increase the possible sample distribution that could happen in real life by that we are trying to find 
+a solution for data defficiency and also helps to prevent overfiting.
+also it helps to be invariant of the brightness/position/blur/sharp changes that can happen due to the microscope mishandling.
+
+
+ 
+
+Convolutional Autoencoder Architecture:
+We developed an autoencoder architecture with an encoder-decoder structure, utilizing convolutional layers, batch normalization, dropout, and activation functions
+ to learn feature representations and predict day 10 image from day 7. The number of feature maps is progressively increased and then symmetrically decreased to balance
+  feature extraction and construction of day 10 same size image as day 7.   
+
+
+  \textbf{Encoder}
+  The encoder consists of three convolutional layers with a kernel size of $3 \times 3$ and \texttt{same} padding to maintain spatial resolution.  
+  \begin{itemize}
+      \item Input channels begin with 3, progressively increasing to 16, 32, and 64 to extract deeper hierarchical features.  
+      \item Each convolutional layer is followed by \texttt{BatchNorm2d} for stable learning, \texttt{ReLU} activation for non-linearity, and dropout with probabilities of 0.2, 0.3, and 0.4, respectively, to mitigate overfitting.  
+      \item Downsampling is performed using \texttt{MaxPool2d} with a kernel size of $2 \times 2$, stride of 2, and padding to reduce spatial dimensions at each step.  
+  \end{itemize}
+  
+  \textbf{Decoder}
+  The decoder mirrors the encoder, reconstructing the input from the learned features.  
+  \begin{itemize}
+      \item It begins with 64 channels and symmetrically decreases the number of channels to 32, 16, and finally 3 to match the input dimensions.  
+      \item Each convolutional layer retains a kernel size of $3 \times 3$ with \texttt{same} padding, followed by \texttt{BatchNorm2d}, \texttt{ReLU} activation, and dropout with probabilities of 0.3 and 0.2, respectively.  
+      \item Upsampling is performed using \texttt{Upsample(scale\_factor=2, mode='nearest')} to restore spatial dimensions step by step.  
+      \item The final layer includes a \texttt{Sigmoid} activation function to ensure output pixel values are in the range $[0, 1]$, making the model suitable for 
+      day 10 image construction.  
+  \end{itemize}
+  
+
+The overall structure employs progressive channel expansion in the encoder (\(3 \to 16 \to 32 \to 64\)) to capture detailed feature hierarchies and symmetric 
+channel reduction in the decoder (\(64 \to 32 \to 16 \to 3\)) for day 10 image construction. 
+training parameters: bacth size = 32. learning rate = 0.001. optimizer = adam. loss = mse. epochs = 500. 
+
+
+
+Result: 
+unfortunately, the model didn't learn the features of transition to day 10 well. the loss didn't decrease in the 500 epochs as we see in the figure.  figure reflects that
+model struggles to predict the day 10 images from day 7 image, the predicted image is more resemblence visually to day 7 than day 10. For the model its hard to learn probably because in most cases the day 10 image cancer cell is totally changed to different 
+shape or size or color pixel intensity. Also it could be the position change due to the microscope handling position. (We used different flip and rotation 
+augmentation but it maynot be effective as we think it is.) since the same problem we may have with the day 7 to day 10 single dose or explod images, I decided to move to
+simclr features to see if it can learn the transition better than the original images. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.46]{figures/rankloss.png} 
+  \caption{train vs test loss}
+  \label{fig:unloss}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.46]{figures/unpred.png} 
+  \caption{train vs test loss}
+  \label{fig:unloss}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/pproblem.png} 
+  \caption{last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}
+  \label{fig:unloss}
+\end{figure}
+
+\subsubsection*{Simclr feats}
+
+frist I started with the pair of day 7 untreated to predict the day 10 untreated images setup.normalised images by dividing them by 65535. resized to 96*96. then
+I increased the dataset by using same data augmentation technics that I did to original image setup as explained in the above section. then I feed to simclr model 
+to get features after and before projection head to train the CAE model. 
+
+Training setup: first to ensure the simclr features are scaled I did featurewise minmax scaling. Then I feed those into FeaturePredictor model which is a fully 
+connected neural network. It consists of a series of 12 linear layers, where the input size reduces from 512 to 8 and then symmetrically increases back to 512 to
+ match the original feature dimensions for before projection head features. For after projection head features,consists of a series of 6 linear layers, where the 
+ input size reduces from 20 to 4 and then symmetrically increases back to 20.
+
+Each intermediate layer is followed by:
+
+Batch normalization (BatchNorm1d): Normalizes activations to stabilize training and accelerate convergence.
+ReLU activation: Introduces non-linearity to model complex feature relationships.
+Dropout (Dropout): Applied with probabilities ranging from 0.2 to 0.4 to prevent overfitting, with deeper layers using higher dropout rates for regularization.
+The final layer is a linear transformation to ensure the output feature size matches the day 10 feature vectore dimensions which is 512 for before and 20 for after.
+
+batch size = 32. loss = mse loss. optimizer = adam optimizer. learning rate = 0.0001. no of epochs = 2000. used cross validation with 5 fold and  early stopp with 
+the parameters patience = 500 and delta = 0.0001.
+
+results:
+do inference loss for both  beofre and after projection head feats.
+used following metrics as inference loss: mse, cosine distance, L2 ( euclidean distance ), L1 distance, Pearson correlation, dot product,jaccard similarity, hamming distance.
+
+range of cosine distacnes = 0-2
+range of euclidean distacnes = working
+range of mse working
+
+range of L1 distacne is working
+
+range of pearson correlation coefficient: -1 to 1 working. 1 linearly correlated 0 no corelation, -1 inversly corelated.
+range of dot product  working.
+range of jaccard : working 0 to 1
+range of hamming distance is working.
+
+
 
 
 \section{Ranking strategy 2: K means centroid approach}
