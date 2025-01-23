@@ -161,10 +161,9 @@ Reason to choose cosine distance is basically because the loss function of simcl
 
 results:
 
-as explained before, if the cae trained solely on the transition of untreated images when we do the inerence metric calculation between predicted feature vector and target feature vector for these untreated images should be less than other classes. we met that expectation as 
-we can see the figure. the inference loss for untreated images is less than the other classes except pearson, dot product and jaccard similarity. since for those metrics similartiy increases as the value of them increases as explained in literature review. ad some of the metric are able to make a clear seperation of the training class to others ie atleat one class is have clear seperation from other classes as we seen in figure. and some of the metric couldn't make a clear seperation for atleast one class ie all of the classes are mixed as we seen in the figure. Ideal situation is that all of the classes are seperated from each other. so that when we do inference on drug screen images there will be look alike smooth transition from class to other.
+As explained before, if the cae trained solely on the transition of untreated images when we do the inerence metric calculation between predicted feature vector and target feature vector for these untreated images should be less than other classes  except pearson, dot product and jaccard similarity. since for those metrics similartiy increases as the value of them increases as explained in \textcolor{red}{ metric chapter}. we met that expectation as we can see the figure \ref{fig:bargraph}.  and some of the metric are able to make a clear seperation of the training class to others ie atleat one class is have clear seperation from other classes as we seen in figure. and some of the metric couldn't make a clear seperation for atleast one class ie all of the classes are mixed as we seen in the figure for dot product and jaccard similarity. We observed this same trend  for both before and after projection head features and for all transition category. Ideal situation that we would like to have is all of the classes are seperated from each other. so that when we do inference on drug screen images there will be look alike smooth transition from class to other.
 
-We observed this same trend  for both before and after projection head features and for all transition category.
+
 
 
 range of cosine distacnes = 0-2
@@ -177,12 +176,16 @@ range of pearson correlation coefficient: -1 to 1 working. 1 linearly correlated
 range of dot product  working.
 range of jaccard : working 0 to 1
 range of hamming distance is working.
-\textcolor{red}{show figures of each distance as example show that one gp is seperated as expected but others mixed.}
 
 
-Since we couldn't seperate those 3 classes well that means we won't have good ranking of drug screnn images since sd close images and explod images will be mixed while ranking. this calls the need for other ranking strategy such as Softmax approach.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{figures/bargraph.pdf} 
+  \caption{last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}
+  \label{fig:bargraph}
+\end{figure}
 
-Hence we nned better approach for ranking where small no of data will not effect that much for the performance such as K means centroid approach, PCA approach. 
+Since we couldn't seperate those 3 classes well that means we won't have good ranking of drug screnn images since sd close images and explod images will be mixed while ranking. this calls the need for other ranking strategy such as Softmax approach, K means centroid approach, PCA approach. where for K means centroid , PCA approach small no of data will not effect that much for the performance of ranking. since there is no training required.
 
 \section{Ranking strategy 2: K means centroid approach}
 

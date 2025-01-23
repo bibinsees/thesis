@@ -728,6 +728,11 @@ INPUT ./figures/overfit.png
 INPUT ./figures/overfit.png
 INPUT ./figures/overfit.png
 INPUT ./figures/overfit.png
+INPUT ./figures/bargraph.pdf
+INPUT ./figures/bargraph.pdf
+INPUT ./figures/bargraph.pdf
+INPUT ./figures/bargraph.pdf
+INPUT ./figures/bargraph.pdf
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
