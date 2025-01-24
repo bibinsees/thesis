@@ -26,17 +26,17 @@
 \contentsline {section}{\numberline {8.3}Direct day 7 to day 10 distance evaluation}{62}{section.8.3}%
 \contentsline {chapter}{\numberline {9}Methodology for Ranking}{64}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Day7 to day10 predcition using CAE}{64}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Ranking strategy 2: K means centroid approach}{73}{section.9.2}%
+\contentsline {section}{\numberline {9.2}Ranking strategy 2: Mean approach}{73}{section.9.2}%
 \contentsline {paragraph}{\nonumberline Correct Transitions}{74}{paragraph*.76}%
 \contentsline {paragraph}{\nonumberline Total Possible Transitions}{74}{paragraph*.78}%
-\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{74}{paragraph*.80}%
-\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{76}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{78}{section.9.4}%
+\contentsline {paragraph}{\nonumberline Group-Wise Ranking Accuracy}{75}{paragraph*.80}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{77}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{79}{section.9.4}%
 \contentsline {chapter}{\numberline {10}Conclusion}{80}{chapter.10}%
 \contentsline {section}{\numberline {10.1}Final Evaluation}{80}{section.10.1}%
 \contentsline {section}{\numberline {10.2}Future research direction}{81}{section.10.2}%
-\contentsline {chapter}{\nonumberline Appendix}{83}{chapter*.90}%
-\contentsline {chapter}{Literature}{91}{section*.104}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{93}{chapter*.106}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{94}{chapter*.107}%
+\contentsline {chapter}{\nonumberline Appendix}{83}{chapter*.92}%
+\contentsline {chapter}{Literature}{91}{section*.106}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{93}{chapter*.108}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{94}{chapter*.109}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

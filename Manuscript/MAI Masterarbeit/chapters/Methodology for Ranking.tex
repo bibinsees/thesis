@@ -187,18 +187,17 @@ range of hamming distance is working.
 
 Since we couldn't seperate those 3 classes well that means we won't have good ranking of drug screnn images since sd close images and explod images will be mixed while ranking. this calls the need for other ranking strategy such as Softmax approach, K means centroid approach, PCA approach. where for K means centroid , PCA approach small no of data will not effect that much for the performance of ranking. since there is no training required.
 
-\section{Ranking strategy 2: K means centroid approach}
-
-This strategy utilizes the after projection head vectors since simclr loss function designed that after projection head vectors have cosine similarity between similar 
-group.
+\section{Ranking strategy 2: Mean approach}
 
 \begin{enumerate}
-  \item \textbf{Step 1:} Feed control images into k means and find the centriod of control (untreated) cluster based on both cosine distance and the euclidean distance. 
-  ( we can choose the distacne metric if we have time)
+  \item \textbf{Step 1:} Feed control images simclr features into k means and find the centriod of control (untreated) cluster based on both cosine distance and the euclidean distance using kmeans clustering. 
+ 
   
   \item \textbf{Step 2:} calculate the euclidean/cosine distance from this centroid to every images.
+  \item \textbf{Step 3:} Rank the images based on the distance from the centroid of control simclr features.
+  \item \textbf{Step 4:} Perform the above ranking procedure from centroid of single dose image simclr features to other image features and from centroid of exploded image simclr features to other image features correspondingly.
   
-  \item \textbf{Step 3:} Perform the same operation for simlcr features and on original images.
+  \item \textbf{Step 5:} Perform the same operation  on original images.
 \end{enumerate}
 
 \textcolor{red}{change metric to mistakes from center gp to teft and right.}
@@ -293,6 +292,22 @@ ds close to sd 10
   \label{tab:your_table_label}
 \end{table}
 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}llccccc@{}}
+  \toprule
+  Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
+                  & Single Dose Mean   & 93.33      & -     & -      & -                  & -                 \\
+  Before          & Control Mean       & 78.86      & -     & -      & -                  & -                 \\
+                  & Explod Mean        & 83.25      & -     & -      & -                  & -                 \\ \midrule
+                  & Single Dose Mean   & -      & -     & -      & -                  & -                 \\
+  After           & Control Mean       & -      & -     & -      & -                  & -                 \\
+                  & Explod Mean        & -      & -     & -      & -                  & -                 \\ \bottomrule
+  \end{tabular}
+  \caption{Cosine distance}
+  \label{tab:table_label}
+\end{table}
+
 
 \begin{table}[H]
   \centering
@@ -312,6 +327,23 @@ ds close to sd 10
 
 
 \textcolor{red}{ add figures below. }
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}llccccc@{}}
+  \toprule
+  Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
+                  & Single Dose Mean   & -      & -     & -      & -                  & -                 \\
+  Before          & Control Mean       & -      & -     & -      & -                  & -                 \\
+                  & Explod Mean        & -      & -     & -      & -                  & -                 \\ \midrule
+                  & Single Dose Mean   & -      & -     & -      & -                  & -                 \\
+  After           & Control Mean       & -      & -     & -      & -                  & -                 \\
+                  & Explod Mean        & -      & -     & -      & -                  & -                 \\ \bottomrule
+  \end{tabular}
+  \caption{Cosine distance}
+  \label{tab:table_label}
+\end{table}
+
 
 other notable metrics that achieved around 95 percentage accuracy are pearson distance by resize before explod mean with 96.69. hence we need supervised classifier for explod then its fine.
 
