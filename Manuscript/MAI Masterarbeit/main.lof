@@ -47,11 +47,11 @@
 \contentsline {figure}{\numberline {8.8}{\ignorespaces orig}}{61}{figure.caption.60}%
 \contentsline {figure}{\numberline {8.9}{\ignorespaces orig}}{61}{figure.caption.62}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{68}{figure.caption.66}%
-\contentsline {figure}{\numberline {9.2}{\ignorespaces train vs test loss}}{68}{figure.caption.67}%
-\contentsline {figure}{\numberline {9.3}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{68}{figure.caption.68}%
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Ohne contrast Resize before projection head data aug: Explod dataset plot in the figure shows overfitting }}{70}{figure.caption.70}%
-\contentsline {figure}{\numberline {9.5}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{72}{figure.caption.71}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{67}{figure.caption.64}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces train vs test loss}}{67}{figure.caption.65}%
+\contentsline {figure}{\numberline {9.3}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{67}{figure.caption.66}%
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Ohne contrast Resize before projection head data aug: Explod dataset plot in the figure shows overfitting }}{69}{figure.caption.68}%
+\contentsline {figure}{\numberline {9.5}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{71}{figure.caption.69}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

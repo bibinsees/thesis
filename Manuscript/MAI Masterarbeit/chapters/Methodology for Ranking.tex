@@ -200,70 +200,82 @@ Since we couldn't seperate those 3 classes well that means we won't have good ra
   \item \textbf{Step 5:} Perform the same operation  on original images.
 \end{enumerate}
 
-\textcolor{red}{change metric to mistakes from center gp to teft and right.}
 
-\subsection*{Group-Wise Ranking Accuracy: Mathematical Definition and Process}
+\section*{Ranking customized Accuracy Calculation}
 
-\textcolor{red}{below maybe wrong because I didN't added that gp order determine by calculating mean of cosine distance}
+Accuracy formulation for: Goal is to check whether we have clear seperation of each class due to this inference metric while using as a scale. Accuracy below formulated to check whether the first and third classes are well-separated from the middle. there by it also penalizes if first and third classes are overlaped each other. If its clearly seperated from the middile means all 3 classes  are well seperated. 
 
-\subsubsection*{Definitions}
+Once we obtain the inference metric for each individual feature vector in each class, the next steps involve calculating the mean inference metric for each class, identifying the middle class based on the mean values, and proceeding with the remaining computations as described below.
 
-Let \( G_1, G_2, G_3, \dots, G_n \) represent \( n \) different groups of distances.  
-The distances in each group \( G_i \) are denoted as:
+\textbf{Task 1: Mean of Each Class}
+
+The mean inference metric for each class \( C_i \) is calculated as:
+
 \[
-D_i = \{d_{i1}, d_{i2}, \dots, d_{im_i}\},
-\]
-where \( m_i \) is the number of elements in group \( G_i \).  
-
-Let:
-\[
-\{D_1, D_2, \dots, D_n\}
-\]
-represent the collection of all groups.
-
-After sorting all the distances across the groups into a single list, we check if the order of groups is maintained, i.e., whether all distances in \( G_1 \) are less than those in \( G_2 \), all in \( G_2 \) are less than those in \( G_3 \), and so on.
-
-\subsubsection*{Mathematical Formula for Group-Wise Ranking Accuracy}
-
-\paragraph{Correct Transitions}
-A correct transition between two groups \( G_i \) and \( G_j \) (with \( i < j \)) occurs if all elements of \( G_i \) are less than all elements of \( G_j \) after sorting.  
-
-This can be expressed mathematically as:
-\[
-\text{Correct Transition}(G_i \to G_j) = 
-\left[
-\forall d_{ik} \in G_i, \forall d_{jl} \in G_j : d_{ik} < d_{jl}
-\right], \quad \text{for } i < j.
+\mu_i = \frac{1}{|C_i|} \sum_{\mathbf{x} \in C_i} M(\mathbf{x}, \mathbf{c})
 \]
 
-\paragraph{Total Possible Transitions}
-The total number of possible transitions is the number of adjacent group pairs:
+where \( |C_i| \) represents the number of points in class \( C_i \), and \( M(\mathbf{x}, \mathbf{c}) \) is the inference metric between a point \( \mathbf{x} \) and the centroid \( \mathbf{c} \).
+
+\textbf{Task 2: Middle Class Based on Mean}
+
+To determine the middle class, sort the mean values \( \mu_1, \mu_2, \mu_3 \) in ascending order:
+
 \[
-T_{\text{total}} = n - 1.
+\mu_{\text{sorted}} = \{\mu_{\text{min}}, \mu_{\text{mid}}, \mu_{\text{max}}\}
 \]
 
-\paragraph{Group-Wise Ranking Accuracy}
-The ranking accuracy is the ratio of correct transitions (\( T_{\text{correct}} \)) to total possible transitions (\( T_{\text{total}} \)):
+The middle class is the class corresponding to \( \mu_{\text{mid}} \).
+
+\textbf{Task 3: Minimum and Maximum of Middle Class}
+
+For the middle class (denoted as \( C_{\text{mid}} \)), compute the minimum and maximum inference metric values:
+
 \[
-\text{Accuracy} = \frac{T_{\text{correct}}}{T_{\text{total}}}.
+\text{middle\_class\_min} = \min_{\mathbf{x} \in C_{\text{mid}}} M(\mathbf{x}, \mathbf{c})
+\]
+\[
+\text{middle\_class\_max} = \max_{\mathbf{x} \in C_{\text{mid}}} M(\mathbf{x}, \mathbf{c})
 \]
 
-\subsubsection*{Step-by-Step Process}
+\textbf{Task 4: Error and Accuracy Calculation}
 
-1. \textbf{Sort the Distances:} Sort all the distances from all groups into a single list while keeping track of the group each distance belongs to.
+1. \textbf{Error Calculation}: Count the number of points in the first class \( C_1 \) that exceed the middle class's minimum, and the number of points in the third class \( C_3 \) that are less than the middle class's maximum. The total error is given by:
 
-2. \textbf{Check for Correct Transitions:} For each adjacent group pair \( (G_i, G_j) \), check if the condition:
 \[
-\forall d_{ik} \in G_i, \forall d_{jl} \in G_j : d_{ik} < d_{jl}
+\text{error}_1 = \left| \{\mathbf{x} \in C_1 : M(\mathbf{x}, \mathbf{c}) > \text{middle\_class\_min} \} \right|
 \]
-holds true.
-
-3. \textbf{Count Correct Transitions:} If the condition holds for a group pair, increment \( T_{\text{correct}} \).
-
-4. \textbf{Compute Accuracy:} Finally, compute the group-wise ranking accuracy as:
 \[
-\text{Accuracy} = \frac{T_{\text{correct}}}{T_{\text{total}}}.
+\text{error}_3 = \left| \{\mathbf{x} \in C_3 : M(\mathbf{x}, \mathbf{c}) < \text{middle\_class\_max} \} \right|
 \]
+\[
+\text{total\_errors} = \text{error}_1 + \text{error}_3
+\]
+
+2. \textbf{Accuracy Calculation}: Subtract the total errors from the total number of points across all classes to compute the number of non-errors. Divide this by the total number of points to calculate the accuracy:
+
+\[
+\text{accuracy} = \frac{\text{total\_points} - \text{total\_errors}}{\text{total\_points}}
+\]
+
+where:
+\[
+\text{total\_points} = |C_1| + |C_2| + |C_3|
+\]
+
+\textbf{Summary of Steps}
+1. Compute \( \mu_1, \mu_2, \mu_3 \).
+2. Identify the middle class using \( \mu_{\text{mid}} \).
+3. Compute \( \text{middle\_class\_min} \) and \( \text{middle\_class\_max} \).
+4. Count the errors \( \text{error}_1 \) and \( \text{error}_3 \).
+5. Calculate accuracy using the formula above.
+
+
+
+
+
+
+
 
 
 
@@ -274,56 +286,28 @@ Curated control dataset: 280
 sd: full: 103
 exploded full: 40
 
-ds close to sd 10
+\textcolor{red}{ds close to sd 10 worked 12 didn't worked}
+
+
 
 \begin{table}[H]
   \centering
   \begin{tabular}{@{}llccccc@{}}
   \toprule
   Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
-                  & Single Dose Mean   & 92.42      & 91.71     & 92.42      & 91.47                  & 92.42                 \\
-  Before          & Control Mean       & 94.55      & 92.65     & 93.84      & 95.73                   & 94.55                 \\
-                  & Explod Mean        & 82.23      & 82.23     & 92.65     & 83.65                  & 81.52                \\ \midrule
-                  & Single Dose Mean   & \textbf{97.39}  & 87.68     & 92.89     & 82.94                  & 83.65                 \\
-  After           & Control Mean       & 86.97      & 76.78    & 90.76      & 76.30                 & 82.70                 \\
-                  & Explod Mean        & 92.18      & 79.62    & 88.86      & 77.96                  & 82.23                 \\ \bottomrule
-  \end{tabular}
-  \caption{Cosine distance}
-  \label{tab:your_table_label}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{@{}llccccc@{}}
-  \toprule
-  Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
-                  & Single Dose Mean   & 93.33      & -     & -      & -                  & -                 \\
-  Before          & Control Mean       & 78.86      & -     & -      & -                  & -                 \\
-                  & Explod Mean        & 83.25      & -     & -      & -                  & -                 \\ \midrule
-                  & Single Dose Mean   & -      & -     & -      & -                  & -                 \\
-  After           & Control Mean       & -      & -     & -      & -                  & -                 \\
-                  & Explod Mean        & -      & -     & -      & -                  & -                 \\ \bottomrule
+                  & Single Dose Mean   & 93.33      & 93.50     & 48.23      & 92.52                  & 93.82                 \\
+  Before          & Control Mean       & 78.86      & 87.64     & 91.49      & 85.53                  & 92.20                 \\
+                  & Explod Mean        & 83.25      & 25.53     & 82.74      & 29.43                  & 82.76                 \\ \midrule
+                  & Single Dose Mean   & \textbf{95.12}      & 85.69     & 28.29      & 77.72                  & 83.74                 \\
+  After           & Control Mean       & 71.54      & 76.75     & 82.76      & 14.47                  & 20.16                 \\
+                  & Explod Mean        & 85.37      & 80.00     & 37.72      & 78.21                  & 80.81                 \\ \bottomrule
   \end{tabular}
   \caption{Cosine distance}
   \label{tab:table_label}
 \end{table}
 
 
-\begin{table}[H]
-  \centering
-  \begin{tabular}{@{}llccccc@{}}
-  \toprule
-  Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
-                  & Single Dose Mean   & 91      & 89.10     & 91.23      & 86.49                  & 90.52                 \\
-  Before          & Control Mean       & 87.68      & 86.73     & 88.15      & 82.94                  & 86.73                 \\
-                  & Explod Mean        & 81.99      & 81.52     & 92.65      & 83.18                  &   81.52               \\ \midrule
-                  & Single Dose Mean   & 90.05      & 81.28     & 91.94      & 77.25                  & 78.67                 \\
-  After           & Control Mean       & 82.23      & 76.07     & 84.12      & 76.54                  & 74.17                 \\
-                  & Explod Mean        & 90.52      & 78.20    & 94.79      & 75.83                  & 81.75                 \\ \bottomrule
-  \end{tabular}
-  \caption{Euclidean distance}
-  \label{tab:your_table}
-\end{table}
+
 
 
 \textcolor{red}{ add figures below. }
@@ -333,14 +317,14 @@ ds close to sd 10
   \begin{tabular}{@{}llccccc@{}}
   \toprule
   Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
-                  & Single Dose Mean   & -      & -     & -      & -                  & -                 \\
-  Before          & Control Mean       & -      & -     & -      & -                  & -                 \\
-                  & Explod Mean        & -      & -     & -      & -                  & -                 \\ \midrule
-                  & Single Dose Mean   & -      & -     & -      & -                  & -                 \\
-  After           & Control Mean       & -      & -     & -      & -                  & -                 \\
-                  & Explod Mean        & -      & -     & -      & -                  & -                 \\ \bottomrule
+                  & Single Dose Mean   & 92.52      & 90.41     & 31.71      & 83.58                  &  91.38                \\
+  Before          & Control Mean       & 69.11      & 37.24     & 76.75      & 39.84                  & 57.89                 \\
+                  & Explod Mean        & 82.44      & 82.60    & 67.97      & 23.90                  & 82.28                 \\ \midrule
+                  & Single Dose Mean   & 90.57     & 80.33     & 36.42      & 76.75                  & 21.63                 \\
+  After           & Control Mean       & 55.70      & 76.75     & 76.75      & 76.75                  & 77.07                 \\
+                  & Explod Mean        & 83.09      & 77.40     & 55.93      & 19.84                  &  81.63                \\ \bottomrule
   \end{tabular}
-  \caption{Cosine distance}
+  \caption{Euckidean distance}
   \label{tab:table_label}
 \end{table}
 
@@ -364,8 +348,8 @@ after projection head: strong seperates perfectly but the problem is since the c
   \begin{tabular}{@{}llll@{}}
   \toprule
   Distance From & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Single Dose\\ Mean\end{tabular}} & \multicolumn{1}{c}{Control Mean} & \multicolumn{1}{c}{Explod Mean} \\ \midrule
-  Cosine        & 81.28                                                                           & 86.02                            & 76.78                           \\
-  Euclidean     & 83.18                                                                           & 78.44                            & 80.81                           \\ \bottomrule
+  Cosine        & 17.56                                                                           & 46.50                            & 28.45                           \\
+  Euclidean     & 24.227                                                                           & 50.08                            & 34.47                           \\ \bottomrule
   \end{tabular}
   \caption{Your table caption here}
   \label{tab:you_label}
