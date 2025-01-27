@@ -1,6 +1,6 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{List of Figures}{xi}{chapter*.5}%
-\contentsline {chapter}{List of Tables}{xiii}{chapter*.6}%
+\contentsline {chapter}{List of Tables}{xiv}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Laboratory Setup}{4}{section.1.1}%
 \contentsline {chapter}{\numberline {2}Motivation}{9}{chapter.2}%
@@ -31,8 +31,8 @@
 \contentsline {chapter}{\numberline {10}Conclusion}{80}{chapter.10}%
 \contentsline {section}{\numberline {10.1}Final Evaluation}{80}{section.10.1}%
 \contentsline {section}{\numberline {10.2}Future research direction}{81}{section.10.2}%
-\contentsline {chapter}{\nonumberline Appendix}{83}{chapter*.80}%
-\contentsline {chapter}{Literature}{91}{section*.94}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{93}{chapter*.96}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{94}{chapter*.97}%
+\contentsline {chapter}{\nonumberline Appendix}{83}{chapter*.81}%
+\contentsline {chapter}{Literature}{91}{section*.95}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{93}{chapter*.97}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{94}{chapter*.98}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
