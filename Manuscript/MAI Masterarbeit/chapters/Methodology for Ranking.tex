@@ -193,7 +193,7 @@ Since we couldn't seperate those 3 classes well that means we won't have good ra
   \item \textbf{Step 1:} Feed control images simclr features into k means and find the centriod of control (untreated) cluster based on both cosine distance and the euclidean distance using kmeans clustering. 
  
   
-  \item \textbf{Step 2:} calculate the euclidean/cosine distance from this centroid to every images.
+  \item \textbf{Step 2:} calculate the euclidean/cosine distance from this centroid to every simclr features.
   \item \textbf{Step 3:} Rank the images based on the distance from the centroid of control simclr features.
   \item \textbf{Step 4:} Perform the above ranking procedure from centroid of single dose image simclr features to other image features and from centroid of exploded image simclr features to other image features correspondingly.
   
@@ -203,7 +203,9 @@ Since we couldn't seperate those 3 classes well that means we won't have good ra
 
 \section*{Ranking customized Accuracy Calculation}
 
-Accuracy formulation for: Goal is to check whether we have clear seperation of each class due to this inference metric while using as a scale. Accuracy below formulated to check whether the first and third classes are well-separated from the middle. there by it also penalizes if first and third classes are overlaped each other. If its clearly seperated from the middile means all 3 classes  are well seperated. 
+Accuracy formulation: Goal is to check whether we have clear seperation of each class by the inference metric while using as it as a scale. Accuracy below formulated to check whether the first and third classes are well-separated from the middle. there by it also penalizes if first and third classes are overlaped each other. If its clearly seperated from the middile means all 3 classes  are well seperated. 
+
+Detailed explanation of the accuracy calculation:
 
 Once we obtain the inference metric for each individual feature vector in each class, the next steps involve calculating the mean inference metric for each class, identifying the middle class based on the mean values, and proceeding with the remaining computations as described below.
 
@@ -273,18 +275,8 @@ where:
 
 
 
-
-
-
-
-
-
-
-
-
-Curated control dataset: 280
-sd: full: 103
-exploded full: 40
+Dataset we used : As explained in the table, we used all of the control images (472),
+single dose image (103) and exploded images (40).
 
 \textcolor{red}{ds close to sd 10 worked 12 didn't worked}
 
@@ -306,9 +298,12 @@ exploded full: 40
   \label{tab:table_label}
 \end{table}
 
-
-
-
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{figures/allbox.pdf} 
+  \caption{train vs test loss}
+  \label{fig:unloss}
+\end{figure}
 
 \textcolor{red}{ add figures below. }
 
@@ -317,31 +312,28 @@ exploded full: 40
   \begin{tabular}{@{}llccccc@{}}
   \toprule
   Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
-                  & Single Dose Mean   & 92.52      & 90.41     & 31.71      & 83.58                  &  91.38                \\
+                  & Single Dose Mean   & \textbf{92.52}      & 90.41     & 31.71      & 83.58                  &  91.38                \\
   Before          & Control Mean       & 69.11      & 37.24     & 76.75      & 39.84                  & 57.89                 \\
                   & Explod Mean        & 82.44      & 82.60    & 67.97      & 23.90                  & 82.28                 \\ \midrule
                   & Single Dose Mean   & 90.57     & 80.33     & 36.42      & 76.75                  & 21.63                 \\
   After           & Control Mean       & 55.70      & 76.75     & 76.75      & 76.75                  & 77.07                 \\
                   & Explod Mean        & 83.09      & 77.40     & 55.93      & 19.84                  &  81.63                \\ \bottomrule
   \end{tabular}
-  \caption{Euckidean distance}
+  \caption{Euclidean distance}
   \label{tab:table_label}
 \end{table}
 
+As you can see in the above table, cosine distance of each after projection head strong simclr feature from the single dose mean have the most seperation of classes with accuracy of 95.12. It doesn't seperate three classes fully but its something to hope for. 
 
-other notable metrics that achieved around 95 percentage accuracy are pearson distance by resize before explod mean with 96.69. hence we need supervised classifier for explod then its fine.
+With the euclidean distance also  each before projection head strong simclr feature from the single dose mean have the most seperation of classes with accuracy of 92.52. It clearly  seperates one class from other but still far awy from the result of 3 class seperation that we hoped for.
 
+By observing the plot of all inference metric scales the general trend of the accuracy metric is that if its achieved 90 percentage means it seperates one class from other while other 2 classes are still be mixed. And if it starts to increase  from   95 percentage accuracy, it means it seperates those mixed  2 classes. 100 percentage means it seperates all classes clearly without any overlap.
 
+For other inference metrics instead of kmeans clustering, I direcly calculated mean vector of each class to get the centroid vector. and treat it as the centroid of each class and calculated the accuracy as we did before. None of them achieved 90 percentage accuracy. Hence for this mean ranking approach cosine distacne as inference metric is the better choice for the ranking. 
 
+from both of the Cosine and euclidan table its evident that distance from single dose centroid using strong simclr fature is the better choice for the ranking comparing to others since it all achieves 90 percentage accuracy.
 
-
-
-With this costumized metric, we get around 95 if there is slightest seperation for 3 gps.
-
-after projection head: strong seperates perfectly but the problem is since the control is seperated at the middle ordering. Hence we can find the less effective in the middle,
-
-\textcolor{red}{clear seperation between sd and ex ( 2 gp) and max mean difference between them table:}
-
+All of the above inference metric scaling  I did it on original image vector and as you can see below perfromacne of the ranking accuracy using cosine and euclidean distacne were quite low comparing to the simclr feature vectors. Other inference metrics were also very low. Whcih basically tells us for this ranking strategy also simclr features are better than original image vectors.
 
 \begin{table}[H]
   \centering
@@ -361,11 +353,11 @@ after projection head: strong seperates perfectly but the problem is since the c
 This strategy utilizes the before projection head vectors since its linearly seperable for downstream task classification as suggested in original simclr paper.
 
 We will use simclr features since original images are not able to classify 100 percentage as we seen in intermediate evaluation.
+Steps:
+
 1. Train classification model to classify cond7 and sd. 
 2. Then do inference on them and take softmax probability as metric for ranking.
-below table used 750 epochs, batch:8: all of these value can improve by performing regularizytion and more layers or less layers basically hyper parameter tuning. 
-i didn't do it, since i was focused on methodolgy.
-Below trained for 750 epochs:batch:8
+below table used 750 epochs, batch:8.
 \begin{table}[H]
   \centering
   \begin{tabular}{@{}lccccc@{}}
