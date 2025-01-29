@@ -25,14 +25,14 @@
 \contentsline {subsection}{\numberline {8.2.1}Evaluation}{56}{subsection.8.2.1}%
 \contentsline {chapter}{\numberline {9}Methodology for Ranking}{63}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Day7 to day10 predcition using CAE}{63}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Ranking strategy 2: Mean approach}{72}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{77}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{79}{section.9.4}%
-\contentsline {chapter}{\numberline {10}Conclusion}{80}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Final Evaluation}{80}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Future research direction}{81}{section.10.2}%
-\contentsline {chapter}{\nonumberline Appendix}{83}{chapter*.82}%
-\contentsline {chapter}{Literature}{91}{section*.96}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{93}{chapter*.98}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{94}{chapter*.99}%
+\contentsline {section}{\numberline {9.2}Ranking strategy 2: Mean approach}{74}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 3: Softmax approach}{79}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{81}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Conclusion}{82}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Final Evaluation}{82}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Future research direction}{83}{section.10.2}%
+\contentsline {chapter}{\nonumberline Appendix}{85}{chapter*.88}%
+\contentsline {chapter}{Literature}{93}{section*.102}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{95}{chapter*.104}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{96}{chapter*.105}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
