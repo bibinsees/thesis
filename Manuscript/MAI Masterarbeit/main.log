@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  30 JAN 2025 23:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  31 JAN 2025 01:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1884,37 +1884,30 @@ chapter 9.
 
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2150) has occurred while \output is active []
 
 
 
 [64]
-Underfull \vbox (badness 2318) has occurred while \output is active []
-
-
 
 [65]
-<figures/rankloss.png, id=800, 499.8675pt x 388.45125pt>
-File: figures/rankloss.png Graphic file (type png)
-<use figures/rankloss.png>
-Package pdftex.def Info: figures/rankloss.png  used on input line 102.
-(pdftex.def)             Requested size: 229.94183pt x 178.68973pt.
-
 
 [66]
+<figures/rankloss.png, id=804, 499.8675pt x 388.45125pt>
+File: figures/rankloss.png Graphic file (type png)
+<use figures/rankloss.png>
+Package pdftex.def Info: figures/rankloss.png  used on input line 103.
+(pdftex.def)             Requested size: 229.94183pt x 178.68973pt.
 <figures/unpred.png, id=805, 893.58844pt x 301.8778pt>
 File: figures/unpred.png Graphic file (type png)
 <use figures/unpred.png>
-Package pdftex.def Info: figures/unpred.png  used on input line 109.
+Package pdftex.def Info: figures/unpred.png  used on input line 110.
 (pdftex.def)             Requested size: 411.05566pt x 138.86546pt.
 <figures/pproblem.png, id=806, 615.0478pt x 228.10219pt>
 File: figures/pproblem.png Graphic file (type png)
 <use figures/pproblem.png>
-Package pdftex.def Info: figures/pproblem.png  used on input line 116.
+Package pdftex.def Info: figures/pproblem.png  used on input line 117.
 (pdftex.def)             Requested size: 307.52315pt x 114.0508pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 [67 <./figures/rankloss.png (PNG copy)> <./figures/unpred.png (PNG copy)> <./figures/pproblem.png (PNG copy)>]
@@ -1923,22 +1916,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figures/overfit.png, id=816, 548.0475pt x 654.19406pt>
 File: figures/overfit.png Graphic file (type png)
 <use figures/overfit.png>
-Package pdftex.def Info: figures/overfit.png  used on input line 147.
+Package pdftex.def Info: figures/overfit.png  used on input line 148.
 (pdftex.def)             Requested size: 274.02307pt x 327.09622pt.
 
 
 [69 <./figures/overfit.png (PNG copy)>]
-Overfull \hbox (32.31934pt too wide) in paragraph at lines 165--175
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 166--176
  [][] 
  []
 
 
-Overfull \hbox (32.31934pt too wide) in paragraph at lines 181--191
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 182--192
  [][] 
  []
 
 
-Overfull \hbox (32.31934pt too wide) in paragraph at lines 197--207
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 198--208
  [][] 
  []
 
@@ -1948,36 +1941,36 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [70]
-Overfull \hbox (32.31934pt too wide) in paragraph at lines 213--223
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 214--224
  [][] 
  []
 
 
-Overfull \hbox (32.31934pt too wide) in paragraph at lines 229--239
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 230--240
  [][] 
  []
 
 
-Overfull \hbox (32.31934pt too wide) in paragraph at lines 246--256
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 247--257
  [][] 
  []
 
 
-Overfull \hbox (32.31934pt too wide) in paragraph at lines 262--272
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 263--273
  [][] 
  []
 
 
 
 [71]
-Overfull \hbox (32.31934pt too wide) in paragraph at lines 278--288
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 279--289
  [][] 
  []
 
 <figures/bargraph.pdf, id=832, 545.78906pt x 802.49812pt>
 File: figures/bargraph.pdf Graphic file (type pdf)
 <use figures/bargraph.pdf>
-Package pdftex.def Info: figures/bargraph.pdf  used on input line 309.
+Package pdftex.def Info: figures/bargraph.pdf  used on input line 310.
 (pdftex.def)             Requested size: 382.04973pt x 561.74486pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1991,7 +1984,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [74]
 
 [75]
-Overfull \hbox (62.64307pt too wide) in paragraph at lines 413--423
+Overfull \hbox (62.64307pt too wide) in paragraph at lines 414--424
  [][] 
  []
 
@@ -2004,10 +1997,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figures/allbox.pdf, id=864, 835.62187pt x 800.23969pt>
 File: figures/allbox.pdf Graphic file (type pdf)
 <use figures/allbox.pdf>
-Package pdftex.def Info: figures/allbox.pdf  used on input line 429.
+Package pdftex.def Info: figures/allbox.pdf  used on input line 430.
 (pdftex.def)             Requested size: 417.8099pt x 400.11887pt.
 
-Overfull \hbox (62.64307pt too wide) in paragraph at lines 438--448
+Overfull \hbox (62.64307pt too wide) in paragraph at lines 439--449
  [][] 
  []
 
@@ -2021,7 +2014,7 @@ Underfull \vbox (badness 5533) has occurred while \output is active []
 [78]
 
 [79]
-Overfull \hbox (4.6844pt too wide) in paragraph at lines 549--555
+Overfull \hbox (4.6844pt too wide) in paragraph at lines 550--556
  [][] 
  []
 
@@ -2128,7 +2121,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11029b,2469s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (110 pages, 16477291 bytes).
+Output written on main.pdf (110 pages, 16477715 bytes).
 PDF statistics:
  1236 PDF objects out of 1440 (max. 8388607)
  998 compressed objects within 10 object streams
