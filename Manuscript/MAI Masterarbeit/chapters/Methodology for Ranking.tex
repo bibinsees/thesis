@@ -151,6 +151,77 @@ As we see in the figure below, for the training of day 7 to day 10 untreated ima
 \end{figure}
 
 
+\section*{Ranking customized Accuracy Calculation}
+
+Accuracy formulation: Goal is to check whether we have clear seperation of each class by the inference metric while using as it as a scale. Accuracy below formulated to check whether the first and third classes are well-separated from the middle. there by it also penalizes if first and third classes are overlaped each other. If its clearly seperated from the middile means all 3 classes  are well seperated. 
+
+Detailed explanation of the accuracy calculation:
+
+Once we obtain the inference metric for each individual feature vector in each class, the next steps involve calculating the mean inference metric for each class, identifying the middle class based on the mean values, and proceeding with the remaining computations as described below.
+
+\textbf{Task 1: Mean of Each Class}
+
+The mean inference metric for each class \( C_i \) is calculated as:
+
+\[
+\mu_i = \frac{1}{|C_i|} \sum_{\mathbf{x} \in C_i} M(\mathbf{x}, \mathbf{c})
+\]
+
+where \( |C_i| \) represents the number of points in class \( C_i \), and \( M(\mathbf{x}, \mathbf{c}) \) is the inference metric between a point \( \mathbf{x} \) and the centroid \( \mathbf{c} \).
+
+\textbf{Task 2: Middle Class Based on Mean}
+
+To determine the middle class, sort the mean values \( \mu_1, \mu_2, \mu_3 \) in ascending order:
+
+\[
+\mu_{\text{sorted}} = \{\mu_{\text{min}}, \mu_{\text{mid}}, \mu_{\text{max}}\}
+\]
+
+The middle class is the class corresponding to \( \mu_{\text{mid}} \).
+
+\textbf{Task 3: Minimum and Maximum of Middle Class}
+
+For the middle class (denoted as \( C_{\text{mid}} \)), compute the minimum and maximum inference metric values:
+
+\[
+\text{middle\_class\_min} = \min_{\mathbf{x} \in C_{\text{mid}}} M(\mathbf{x}, \mathbf{c})
+\]
+\[
+\text{middle\_class\_max} = \max_{\mathbf{x} \in C_{\text{mid}}} M(\mathbf{x}, \mathbf{c})
+\]
+
+\textbf{Task 4: Error and Accuracy Calculation}
+
+1. \textbf{Error Calculation}: Count the number of points in the first class \( C_1 \) that exceed the middle class's minimum, and the number of points in the third class \( C_3 \) that are less than the middle class's maximum. The total error is given by:
+
+\[
+\text{error}_1 = \left| \{\mathbf{x} \in C_1 : M(\mathbf{x}, \mathbf{c}) > \text{middle\_class\_min} \} \right|
+\]
+\[
+\text{error}_3 = \left| \{\mathbf{x} \in C_3 : M(\mathbf{x}, \mathbf{c}) < \text{middle\_class\_max} \} \right|
+\]
+\[
+\text{total\_errors} = \text{error}_1 + \text{error}_3
+\]
+
+2. \textbf{Accuracy Calculation}: Subtract the total errors from the total number of points across all classes to compute the number of non-errors. Divide this by the total number of points to calculate the accuracy:
+
+\[
+\text{accuracy} = \frac{\text{total\_points} - \text{total\_errors}}{\text{total\_points}}
+\]
+
+where:
+\[
+\text{total\_points} = |C_1| + |C_2| + |C_3|
+\]
+
+\textbf{Summary of Steps}
+1. Compute \( \mu_1, \mu_2, \mu_3 \).
+2. Identify the middle class using \( \mu_{\text{mid}} \).
+3. Compute \( \text{middle\_class\_min} \) and \( \text{middle\_class\_max} \).
+4. Count the errors \( \text{error}_1 \) and \( \text{error}_3 \).
+5. Calculate accuracy using the formula above.
+
 Do inference loss for both  before and after projection head feats.
 used following metrics as inference loss between target feature vector and predicted feature vector.: mse, cosine distance, L2 ( euclidean distance ), L1 distance, Pearson correlation, dot product,jaccard similarity, hamming distance.
 
@@ -290,7 +361,7 @@ As explained before, if the cae trained solely on the transition of untreated im
   \label{tab:table_label}
 \end{table}
 
-
+Dot product is seperating the classes least amoung all metrics which make it as the worst metric for ranking.
 
 
 range of cosine distacnes = 0-2
@@ -307,14 +378,15 @@ range of hamming distance is working.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.7]{figures/bargraph.pdf} 
-  \caption{last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}
+  \includegraphics[scale=0.5, angle=270]{figures/predall.pdf} 
+  \caption{Last row shows the misposition of the cancer cell. On day 7, it was above, and on day 10, it moved below.}
   \label{fig:bargraph}
 \end{figure}
 
+
 Since we couldn't seperate those 3 classes well that means we won't have good ranking of drug screnn images since sd close images and explod images will be mixed while ranking. this calls the need for other ranking strategy such as Softmax approach, K means centroid approach, PCA approach. where for K means centroid , PCA approach small no of data will not effect that much for the performance of ranking. since there is no training required.
 
-\section{Ranking strategy 2: Mean approach}
+\section{Ranking strategy 2: K Means approach}
 
 \begin{enumerate}
   \item \textbf{Step 1:} Feed control images simclr features into k means and find the centriod of control (untreated) cluster based on both cosine distance and the euclidean distance using kmeans clustering. 
@@ -326,80 +398,6 @@ Since we couldn't seperate those 3 classes well that means we won't have good ra
   
   \item \textbf{Step 5:} Perform the same operation  on original images.
 \end{enumerate}
-
-
-\section*{Ranking customized Accuracy Calculation}
-
-Accuracy formulation: Goal is to check whether we have clear seperation of each class by the inference metric while using as it as a scale. Accuracy below formulated to check whether the first and third classes are well-separated from the middle. there by it also penalizes if first and third classes are overlaped each other. If its clearly seperated from the middile means all 3 classes  are well seperated. 
-
-Detailed explanation of the accuracy calculation:
-
-Once we obtain the inference metric for each individual feature vector in each class, the next steps involve calculating the mean inference metric for each class, identifying the middle class based on the mean values, and proceeding with the remaining computations as described below.
-
-\textbf{Task 1: Mean of Each Class}
-
-The mean inference metric for each class \( C_i \) is calculated as:
-
-\[
-\mu_i = \frac{1}{|C_i|} \sum_{\mathbf{x} \in C_i} M(\mathbf{x}, \mathbf{c})
-\]
-
-where \( |C_i| \) represents the number of points in class \( C_i \), and \( M(\mathbf{x}, \mathbf{c}) \) is the inference metric between a point \( \mathbf{x} \) and the centroid \( \mathbf{c} \).
-
-\textbf{Task 2: Middle Class Based on Mean}
-
-To determine the middle class, sort the mean values \( \mu_1, \mu_2, \mu_3 \) in ascending order:
-
-\[
-\mu_{\text{sorted}} = \{\mu_{\text{min}}, \mu_{\text{mid}}, \mu_{\text{max}}\}
-\]
-
-The middle class is the class corresponding to \( \mu_{\text{mid}} \).
-
-\textbf{Task 3: Minimum and Maximum of Middle Class}
-
-For the middle class (denoted as \( C_{\text{mid}} \)), compute the minimum and maximum inference metric values:
-
-\[
-\text{middle\_class\_min} = \min_{\mathbf{x} \in C_{\text{mid}}} M(\mathbf{x}, \mathbf{c})
-\]
-\[
-\text{middle\_class\_max} = \max_{\mathbf{x} \in C_{\text{mid}}} M(\mathbf{x}, \mathbf{c})
-\]
-
-\textbf{Task 4: Error and Accuracy Calculation}
-
-1. \textbf{Error Calculation}: Count the number of points in the first class \( C_1 \) that exceed the middle class's minimum, and the number of points in the third class \( C_3 \) that are less than the middle class's maximum. The total error is given by:
-
-\[
-\text{error}_1 = \left| \{\mathbf{x} \in C_1 : M(\mathbf{x}, \mathbf{c}) > \text{middle\_class\_min} \} \right|
-\]
-\[
-\text{error}_3 = \left| \{\mathbf{x} \in C_3 : M(\mathbf{x}, \mathbf{c}) < \text{middle\_class\_max} \} \right|
-\]
-\[
-\text{total\_errors} = \text{error}_1 + \text{error}_3
-\]
-
-2. \textbf{Accuracy Calculation}: Subtract the total errors from the total number of points across all classes to compute the number of non-errors. Divide this by the total number of points to calculate the accuracy:
-
-\[
-\text{accuracy} = \frac{\text{total\_points} - \text{total\_errors}}{\text{total\_points}}
-\]
-
-where:
-\[
-\text{total\_points} = |C_1| + |C_2| + |C_3|
-\]
-
-\textbf{Summary of Steps}
-1. Compute \( \mu_1, \mu_2, \mu_3 \).
-2. Identify the middle class using \( \mu_{\text{mid}} \).
-3. Compute \( \text{middle\_class\_min} \) and \( \text{middle\_class\_max} \).
-4. Count the errors \( \text{error}_1 \) and \( \text{error}_3 \).
-5. Calculate accuracy using the formula above.
-
-
 
 
 Dataset we used : As explained in the table, we used all of the control images (472),
@@ -479,12 +477,14 @@ All of the above inference metric scaling  I did it on original image vector and
 
 This strategy utilizes the before projection head vectors since its linearly seperable for downstream task classification as suggested in original simclr paper.
 
-We will use simclr features since original images are not able to classify 100 percentage as we seen in intermediate evaluation.
-Steps:
+We are using only before projectoin head simclr features since original images or after projection head simclr features are not able to classify 100 percentage as we seen in intermediate evaluation chapter.
 
-1. Train classification model to classify cond7 and sd. 
-2. Then do inference on them and take softmax probability as metric for ranking.
-below table used 750 epochs, batch:8.
+Steps:
+1. Train classification model to classify control and single dose images. 
+2. While inference we add explod images to see if they are overlapping with  control or single dose images when we take  softmax probability as metric for ranking. If there is no overlap that means it seperates control explod and single dose seperately we get 100 percentage accuracy.
+\textcolor{red}{add image}
+We train with 750 epochs, batch:8.
+
 \begin{table}[H]
   \centering
   \begin{tabular}{@{}lccccc@{}}
