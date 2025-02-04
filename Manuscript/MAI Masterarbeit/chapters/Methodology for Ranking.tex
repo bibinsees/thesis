@@ -479,12 +479,14 @@ This strategy utilizes the before projection head vectors since its linearly sep
 
 We are using only before projectoin head simclr features since original images or after projection head simclr features are not able to classify 100 percentage as we seen in intermediate evaluation chapter.
 
-Steps:
+Steps of methodology for softmax approach:
 1. Train classification model to classify control and single dose images.
-2. Since we train to classify these 2 groups, if we use softmax score as metric 
-2. While inference we add explod images to see if they are overlapping with  control or single dose images when we take  softmax probability as metric for ranking. If there is no overlap that means it seperates control explod and single dose seperately we get 100 percentage accuracy as per our customized ranking accuracy calculator.
-\textcolor{red}{add image}
-I train with differnet parameters for  number of epochs and batch size. following parameers gave higher accuracy:750 epochs, batch:8. every other parameter is same as explained in the classification chapter.
+2. Since we attained 100 percentage acuracy for train and test dataset for this binary classification If we look at softmax score of all of the single dose feature vector to classify as single dose class the values will be will be equal to  or really closer to 1 and similarly, If we look at softmax score of all of the control feature vector to classify as single dose class will be equal to or really closer to 0.
+3. Now when we do inference with this learned weights and parameters on the same control, single dose features, we will get   softmax value of all of the single dose feature vector to classify as single dose class the values will be equal to  or really closer to 1 and similarly, If we look at softmax score of all of the control feature vector to classify as single dose class the values will be equal to or really closer to 0.
+4. Now we add explod class in addition to this control and single dose class in inference. Idea is that, since we didn't used explod class in training, the softmax score of all of the explod feature vector to classify as single dose class  will not be exactly or closer to 1. It can be below  the values of single dose class features. that  means it can overlap with the values of control feature values. But what if those explod feature softmax values did not overlap with the values of control? ie if we use softmax score to predict as single dose class as inference metric for ranking, in the range of our ranking scale control class features comes first as the values are closer or equal to 0, then explod class features comes next in the scale inbetween 0 and 1.and single dose class features comes last as the values are closer to 1. This is the ideal situation that we would like to have. If we get this kind of ranking scale, we can say that our softmax score is able to seperate control, explod and single dose classes. and we use same customized rankng accuracy calculation as we used in the previous ranking strategies.
+
+Initialy I used original dataset of control (472 images) and single dose images (103 images) as explained in the dataset table and we used explod ( 40m images) that we get from dalias classifier model.
+I train with differnet parameters for  number of epochs and batch size. following parameers gave higher accuracy: 750 epochs, batch:8. every other parameter is same as explained in the classification chapter.
 
 
 \begin{table}[H]
@@ -500,6 +502,7 @@ I train with differnet parameters for  number of epochs and batch size. followin
   \label{tab:ranking softmax}
 \end{table}
 
+As we seen in the above table, none of the  data augmentation types are not able to give clear seperation between 3 classes. but interestingly overlap between class happened only between explod and control softmax values not with single dose. No contrast sweet  Another interesting 
 
 \begin{table}[H]
   \centering
@@ -513,6 +516,7 @@ I train with differnet parameters for  number of epochs and batch size. followin
   \label{tab:ranking softmax}
 \end{table}
 
+\textcolor{red}{add image}
 
 \textcolor{red}{Depend on time do ex twenty nine}
   

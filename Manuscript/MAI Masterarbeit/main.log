@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  4 FEB 2025 00:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  4 FEB 2025 13:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -636,4 +636,1493 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language90
-\c@mincomprange=\cou
+\c@mincomprange=\count366
+\c@maxcomprange=\count367
+\c@mincompwidth=\count368
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'numeric.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count369
+\c@savedafterword=\count370
+\c@annotator=\count371
+\c@savedannotator=\count372
+\c@author=\count373
+\c@savedauthor=\count374
+\c@bookauthor=\count375
+\c@savedbookauthor=\count376
+\c@commentator=\count377
+\c@savedcommentator=\count378
+\c@editor=\count379
+\c@savededitor=\count380
+\c@editora=\count381
+\c@savededitora=\count382
+\c@editorb=\count383
+\c@savededitorb=\count384
+\c@editorc=\count385
+\c@savededitorc=\count386
+\c@foreword=\count387
+\c@savedforeword=\count388
+\c@holder=\count389
+\c@savedholder=\count390
+\c@introduction=\count391
+\c@savedintroduction=\count392
+\c@namea=\count393
+\c@savednamea=\count394
+\c@nameb=\count395
+\c@savednameb=\count396
+\c@namec=\count397
+\c@savednamec=\count398
+\c@translator=\count399
+\c@savedtranslator=\count400
+\c@shortauthor=\count401
+\c@savedshortauthor=\count402
+\c@shorteditor=\count403
+\c@savedshorteditor=\count404
+\c@labelname=\count405
+\c@savedlabelname=\count406
+\c@institution=\count407
+\c@savedinstitution=\count408
+\c@lista=\count409
+\c@savedlista=\count410
+\c@listb=\count411
+\c@savedlistb=\count412
+\c@listc=\count413
+\c@savedlistc=\count414
+\c@listd=\count415
+\c@savedlistd=\count416
+\c@liste=\count417
+\c@savedliste=\count418
+\c@listf=\count419
+\c@savedlistf=\count420
+\c@location=\count421
+\c@savedlocation=\count422
+\c@organization=\count423
+\c@savedorganization=\count424
+\c@origlocation=\count425
+\c@savedoriglocation=\count426
+\c@origpublisher=\count427
+\c@savedorigpublisher=\count428
+\c@publisher=\count429
+\c@savedpublisher=\count430
+\c@language=\count431
+\c@savedlanguage=\count432
+\c@origlanguage=\count433
+\c@savedoriglanguage=\count434
+\c@pageref=\count435
+\c@savedpageref=\count436
+\shorthandwidth=\skip104
+\shortjournalwidth=\skip105
+\shortserieswidth=\skip106
+\shorttitlewidth=\skip107
+\shortauthorwidth=\skip108
+\shorteditorwidth=\skip109
+\locallabelnumberwidth=\skip110
+\locallabelalphawidth=\skip111
+\localshorthandwidth=\skip112
+\localshortjournalwidth=\skip113
+\localshortserieswidth=\skip114
+\localshorttitlewidth=\skip115
+\localshortauthorwidth=\skip116
+\localshorteditorwidth=\skip117
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (c:/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+\c@textcitecount=\count437
+\c@textcitetotal=\count438
+\c@textcitemaxnames=\count439
+\c@biburlbigbreakpenalty=\count440
+\c@biburlbreakpenalty=\count441
+\c@biburlnumpenalty=\count442
+\c@biburlucpenalty=\count443
+\c@biburllcpenalty=\count444
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count445
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (c:/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (c:/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count446
+\c@bbx:relatedtotal=\count447
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+ (c:/texlive/2024/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (c:/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+ (c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-08-16 L3 programming layer (loader) 
+ (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count448
+\l__pdf_internal_box=\box74
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2024-08-16 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
+)) (c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+ (c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
+\col@sep=\dimen194
+\ar@mcellbox=\box75
+\extrarowheight=\dimen195
+\NC@list=\toks29
+\extratabsurround=\skip118
+\backup@length=\skip119
+\ar@cellbox=\box76
+)
+\rotheadsize=\dimen196
+\c@nlinenum=\count449
+\TeXr@lab=\toks30
+) (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/05/23 v2.17q AMS math features
+\@mathmargin=\skip120
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks31
+\ex@=\dimen197
+)) (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen198
+) (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count450
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count451
+\leftroot@=\count452
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count453
+\DOTSCASE@=\count454
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box77
+\strutbox@=\box78
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen199
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count455
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count456
+\dotsspace@=\muskip22
+\c@parentequation=\count457
+\dspbrk@lvl=\count458
+\tag@help=\toks32
+\row@=\count459
+\column@=\count460
+\maxfields@=\count461
+\andhelp@=\toks33
+\eqnshift@=\dimen256
+\alignsep@=\dimen257
+\tagshift@=\dimen258
+\tagwidth@=\dimen259
+\totwidth@=\dimen260
+\lineht@=\dimen261
+\@envbody=\toks34
+\multlinegap=\skip121
+\multlinetaggap=\skip122
+\mathdisplay@stack=\toks35
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrhack.sty
+Package: scrhack 2023/07/07 v3.41 KOMA-Script package (hacking other packages)
+ (c:/texlive/2024/texmf-dist/tex/latex/xpatch/xpatch.sty
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+)
+Package scrhack Info: hyperref hack deactivated because of
+(scrhack)             detection of hyperref version, that doesn't
+(scrhack)             need that hack, on input line 162.
+Package scrhack Info: loading float hack on input line 178.
+ (c:/texlive/2024/texmf-dist/tex/latex/koma-script/float.hak
+File: float.hak 2023/07/07 v3.41 KOMA-Script scrhack part (hacking package float)
+Package scrhack Info: redefining \newfloat on input line 163.
+Package scrhack Info: redefining \listof on input line 163.
+Package scrhack Info: undefining \float@addtolists on input line 163.
+)
+Package scrhack Info: loading setspace hack on input line 199.
+ (c:/texlive/2024/texmf-dist/tex/latex/koma-script/setspace.hak
+File: setspace.hak 2023/07/07 v3.41 KOMA-Script scrhack part (hacking package setspace)
+)
+Package scrhack Info: loading lscape hack on input line 207.
+ (c:/texlive/2024/texmf-dist/tex/latex/koma-script/lscape.hak
+File: lscape.hak 2023/07/07 v3.41 KOMA-Script scrhack part (hacking package lscape)
+Package scrhack Info: \landscape patched to make \textheight change optional on input line 90.
+\scrh@LT@textheight=\skip123
+)) (c:/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.sty (c:/texlive/2024/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count462
+\l__lipsum_a_int=\count463
+\l__lipsum_b_int=\count464
+ (c:/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (c:/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen262
+\TX@old@table=\dimen263
+\TX@old@col=\dimen264
+\TX@target=\dimen265
+\TX@delta=\dimen266
+\TX@cols=\count465
+\TX@ftn=\toks36
+) (c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count466
+\Gm@cntv=\count467
+\c@Gm@tempcnt=\count468
+\Gm@bindingoffset=\dimen267
+\Gm@wd@mp=\dimen268
+\Gm@odd@mp=\dimen269
+\Gm@even@mp=\dimen270
+\Gm@layoutwidth=\dimen271
+\Gm@layoutheight=\dimen272
+\Gm@layouthoffset=\dimen273
+\Gm@layoutvoffset=\dimen274
+\Gm@dimlist=\toks37
+) (c:/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip124
+\multirow@cntb=\count469
+\multirow@dima=\skip125
+\bigstrutjot=\dimen275
+)
+   defining Unicode char U+2212 (decimal 8722)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 107.
+ (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+) (./main.aux (./chapters/introduction.aux) (./chapters/Motivation.aux) (./chapters/Research questions.aux) (./chapters/literature_review.aux) (./chapters/Data Description.aux) (./chapters/Structure of the Thesis.aux) (./chapters/Methodology for SimCLR.aux) (./chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+
+LaTeX Warning: Label `fig:before' multiply defined.
+
+
+LaTeX Warning: Label `fig:before' multiply defined.
+
+
+LaTeX Warning: Label `tab:dataset_summary' multiply defined.
+
+
+LaTeX Warning: Label `tab:professional_table' multiply defined.
+
+) (./chapters/Methodology for Ranking.aux
+
+LaTeX Warning: Label `fig:unloss' multiply defined.
+
+
+LaTeX Warning: Label `fig:unloss' multiply defined.
+
+
+LaTeX Warning: Label `tab:table_label' multiply defined.
+
+
+LaTeX Warning: Label `tab:table_label' multiply defined.
+
+
+LaTeX Warning: Label `tab:table_label' multiply defined.
+
+
+LaTeX Warning: Label `tab:table_label' multiply defined.
+
+
+LaTeX Warning: Label `tab:table_label' multiply defined.
+
+
+LaTeX Warning: Label `tab:table_label' multiply defined.
+
+
+LaTeX Warning: Label `tab:table_label' multiply defined.
+
+
+LaTeX Warning: Label `tab:table_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:unloss' multiply defined.
+
+
+LaTeX Warning: Label `tab:table_label' multiply defined.
+
+
+LaTeX Warning: Label `tab:ranking softmax' multiply defined.
+
+
+LaTeX Warning: Label `tab:original_image_results' multiply defined.
+
+) (./chapters/conclusions.aux))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+Package scrbase Info: activating english \partname on input line 107.
+Package scrbase Info: activating english \chaptername on input line 107.
+Package scrbase Info: activating english \appendixname on input line 107.
+Package scrbase Info: activating english \figurename on input line 107.
+Package scrbase Info: activating english \tablename on input line 107.
+Package scrbase Info: activating english \contentsname on input line 107.
+Package scrbase Info: activating english \listfigurename on input line 107.
+Package scrbase Info: activating english \listtablename on input line 107.
+Package scrbase Info: activating english \bibname on input line 107.
+Package scrbase Info: activating english \indexname on input line 107.
+ (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count470
+\scratchdimen=\dimen276
+\scratchbox=\box79
+\nofMPsegments=\count471
+\nofMParguments=\count472
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count473
+\MPscratchDim=\dimen277
+\MPnumerator=\count474
+\makeMPintoPDFobject=\count475
+\everyMPtoPDFconversion=\toks39
+)
+Package hyperref Info: Link coloring OFF on input line 107.
+ (./main.out) (./main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+Class scrbook Info: loading recommended package `bookmark'.
+(scrbook)           Using `bookmark' together with `hyperref' is recommended,
+(scrbook)           because of handling of possible bookmark level gaps.
+(scrbook)           You can avoid loading `bookmark' with KOMA-Script option
+(scrbook)           `bookmarkpackage=false' before \begin{document} and
+(scrbook)           you can avoid this message adding:
+(scrbook)             \usepackage{bookmark}
+(scrbook)           before \begin{document} on input line 107.
+ (c:/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+ (c:/texlive/2024/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
+\BKM@id=\count476
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: longtable package is loaded.
+ (c:/texlive/2024/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: End \AtBeginDocument code.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (c:/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (./main.bbl)
+Package biblatex Info: Reference section=0 on input line 107.
+Package biblatex Info: Reference segment=0 on input line 107.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-39.875pt
+* \headheight=18.125pt
+* \headsep=21.75pt
+* \topskip=12.0pt
+* \footskip=50.75pt
+* \marginparwidth=74.68849pt
+* \marginparsep=12.8401pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--158
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 158.
+(c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 158.
+ (c:/texlive/2024/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 158.
+ (c:/texlive/2024/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 158.
+ (c:/texlive/2024/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
+
+
+[1
+
+
+
+
+
+
+
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+<figures/qrcode-thesis.png, id=12, 501.875pt x 501.875pt>
+File: figures/qrcode-thesis.png Graphic file (type png)
+<use figures/qrcode-thesis.png>
+Package pdftex.def Info: figures/qrcode-thesis.png  used on input line 158.
+(pdftex.def)             Requested size: 113.81102pt x 113.80533pt.
+
+
+[2
+
+ <./figures/qrcode-thesis.png (PNG copy)>]
+Overfull \hbox (3.84277pt too wide) in paragraph at lines 167--168
+\OT1/ptm/m/n/12 smod-elle mit-tels Repr[]asen-ta-tion-sler-nen ex-trahiert wer-den. Die zen-trale Her-aus-forderung besteht
+ []
+
+
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 169.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 169.
+[3]
+
+[4
+
+
+]
+
+
+Package scrlayer-scrpage Warning: \headheight to low.
+(scrlayer-scrpage)                At least 21.74998pt needed,
+(scrlayer-scrpage)                but only 18.125pt found.
+(scrlayer-scrpage)                I'll enlarge \headheight, for further
+(scrlayer-scrpage)                processing, but you should do this yourself,
+(scrlayer-scrpage)                e.g., setting geometry's option
+(scrlayer-scrpage)                `head=21.74998pt'.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 205.
+
+
+Overfull \vbox (3.62498pt too high) has occurred while \output is active []
+
+
+
+Package scrlayer-scrpage Warning: \footheight to low.
+(scrlayer-scrpage)                At least 21.74998pt needed,
+(scrlayer-scrpage)                but only 18.125pt found.
+(scrlayer-scrpage)                I'll enlarge \footheight, for further
+(scrlayer-scrpage)                processing, but you should do this yourself,
+(scrlayer-scrpage)                e.g., using
+(scrlayer-scrpage)                  \setlength{\footheight}{21.74998pt}
+(scrlayer-scrpage)                in your preamble.
+(scrlayer-scrpage)                I'll also increase \footskip on input line 205.
+
+[5]
+
+[6
+
+
+] (./main.toc
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[7])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+
+
+[8] (./main.lof
+Overfull \hbox (12.72534pt too wide) in paragraph at lines 23--23
+ [][] [][]\OT1/ptm/m/n/12 First row: croped to 2054*2054 then re-sized to 96*96: no shear change/elongation 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[9
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[10])
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+
+
+[11]
+
+[12
+
+
+] (./main.lot
+
+[13])
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+
+
+[14]
+\openout2 = `chapters/introduction.aux'.
+
+ (./chapters/introduction.tex
+chapter 1.
+
+Overfull \hbox (20.42715pt too wide) in paragraph at lines 9--17
+\OT1/ptm/m/n/12 Ther-apy TLZ-RT Wuerzburg, pro-pose a vi-sion for the fu-ture: cul-ti-vat-ing mul-ti-ple three-dimensional
+ []
+
+
+
+[1
+
+
+
+
+
+]
+<figures/platform setup.png, id=317, 834.11626pt x 624.3325pt>
+File: figures/platform setup.png Graphic file (type png)
+<use figures/platform setup.png>
+Package pdftex.def Info: figures/platform setup.png  used on input line 26.
+(pdftex.def)             Requested size: 333.6406pt x 249.72858pt.
+<figures/robot.png, id=319, 804.00375pt x 602.25pt>
+File: figures/robot.png Graphic file (type png)
+<use figures/robot.png>
+Package pdftex.def Info: figures/robot.png  used on input line 35.
+(pdftex.def)             Requested size: 321.59581pt x 240.89572pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[2 <./figures/platform setup.png>]
+
+[3 <./figures/robot.png>]
+<figures/WellPlate.png, id=331, 1541.76pt x 1031.052pt>
+File: figures/WellPlate.png Graphic file (type png)
+<use figures/WellPlate.png>
+Package pdftex.def Info: figures/WellPlate.png  used on input line 51.
+(pdftex.def)             Requested size: 407.66833pt x 272.6139pt.
+
+
+[4 <./figures/WellPlate.png>]
+<figures/types.png, id=338, 749.04843pt x 813.0375pt>
+File: figures/types.png Graphic file (type png)
+<use figures/types.png>
+Package pdftex.def Info: figures/types.png  used on input line 78.
+(pdftex.def)             Requested size: 449.43253pt x 487.82626pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[5]
+<figures/singledose.png, id=352, 752.8125pt x 480.79625pt>
+File: figures/singledose.png Graphic file (type png)
+<use figures/singledose.png>
+Package pdftex.def Info: figures/singledose.png  used on input line 88.
+(pdftex.def)             Requested size: 407.66833pt x 260.36707pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[6 <./figures/types.png (PNG copy)>]
+<figures/drug_screened.png, id=357, 934.24031pt x 574.39594pt>
+File: figures/drug_screened.png Graphic file (type png)
+<use figures/drug_screened.png>
+Package pdftex.def Info: figures/drug_screened.png  used on input line 96.
+(pdftex.def)             Requested size: 452.9679pt x 278.49403pt.
+
+Underfull \vbox (badness 3291) has occurred while \output is active []
+
+
+
+[7 <./figures/singledose.png> <./figures/drug_screened.png (PNG copy)>]
+<figures/timed.png, id=364, 713.66624pt x 252.945pt>
+File: figures/timed.png Graphic file (type png)
+<use figures/timed.png>
+Package pdftex.def Info: figures/timed.png  used on input line 110.
+(pdftex.def)             Requested size: 499.56296pt x 177.06029pt.
+
+Overfull \hbox (46.59506pt too wide) in paragraph at lines 110--111
+ [][] 
+ []
+
+)
+
+[8 <./figures/timed.png>]
+\openout2 = `chapters/Motivation.aux'.
+
+ (./chapters/Motivation.tex
+chapter 2.
+)
+
+[9
+
+
+
+
+]
+\openout2 = `"chapters/Research questions.aux"'.
+
+ (./chapters/Research questions.tex
+chapter 3.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[10
+
+
+
+
+])
+
+[11]
+\openout2 = `chapters/literature_review.aux'.
+
+ (./chapters/literature_review.tex
+chapter 4.
+
+
+[12
+
+
+
+
+])
+Underfull \vbox (badness 3514) has occurred while \output is active []
+
+
+
+[13]
+
+[14]
+\openout2 = `"chapters/Data Description.aux"'.
+
+ (./chapters/Data Description.tex
+chapter 5.
+<figures/finevalid.png, id=422, 1062.21844pt x 493.845pt>
+File: figures/finevalid.png Graphic file (type png)
+<use figures/finevalid.png>
+Package pdftex.def Info: figures/finevalid.png  used on input line 19.
+(pdftex.def)             Requested size: 424.87985pt x 197.53448pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[15
+
+
+
+
+]
+<figures/blur.png, id=428, 532.23843pt x 374.90062pt>
+File: figures/blur.png Graphic file (type png)
+<use figures/blur.png>
+Package pdftex.def Info: figures/blur.png  used on input line 33.
+(pdftex.def)             Requested size: 212.89159pt x 149.95758pt.
+
+
+[16 <./figures/finevalid.png (PNG copy)> <./figures/blur.png (PNG copy)>]
+<figures/posi.png, id=434, 825.0825pt x 726.46407pt>
+File: figures/posi.png Graphic file (type png)
+<use figures/posi.png>
+Package pdftex.def Info: figures/posi.png  used on input line 47.
+(pdftex.def)             Requested size: 330.02715pt x 290.58047pt.
+<figures/noise.png, id=436, 715.17188pt x 711.4078pt>
+File: figures/noise.png Graphic file (type png)
+<use figures/noise.png>
+Package pdftex.def Info: figures/noise.png  used on input line 59.
+(pdftex.def)             Requested size: 286.06367pt x 284.55807pt.
+
+
+[17 <./figures/posi.png (PNG copy)>]
+<figures/drug_eff.png, id=443, 438.13687pt x 706.89093pt>
+File: figures/drug_eff.png Graphic file (type png)
+<use figures/drug_eff.png>
+Package pdftex.def Info: figures/drug_eff.png  used on input line 74.
+(pdftex.def)             Requested size: 219.06789pt x 353.4446pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[18 <./figures/noise.png (PNG copy)>]
+
+[19 <./figures/drug_eff.png (PNG copy)>]
+<figures/8bitvs16bit.png, id=454, 808.7013pt x 714.7503pt>
+File: figures/8bitvs16bit.png Graphic file (type png)
+<use figures/8bitvs16bit.png>
+Package pdftex.def Info: figures/8bitvs16bit.png  used on input line 107.
+(pdftex.def)             Requested size: 404.34966pt x 357.37428pt.
+
+
+[20 <./figures/8bitvs16bit.png>])
+
+[21]
+\openout2 = `"chapters/Structure of the Thesis.aux"'.
+
+ (./chapters/Structure of the Thesis.tex
+chapter 6.
+
+
+[22
+
+
+
+
+]
+<figures/bigpic.png, id=482, 679.53876pt x 513.92pt>
+File: figures/bigpic.png Graphic file (type png)
+<use figures/bigpic.png>
+Package pdftex.def Info: figures/bigpic.png  used on input line 47.
+(pdftex.def)             Requested size: 312.59163pt x 236.40607pt.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[23]
+
+[24 <./figures/bigpic.png>]
+\openout2 = `"chapters/Methodology for SimCLR.aux"'.
+
+ (./chapters/Methodology for SimCLR.tex
+chapter 7.
+
+Overfull \hbox (0.5687pt too wide) in paragraph at lines 11--12
+[]\OT1/ptm/m/n/12 For ease of in-te-gra-tion with our pre-trained ar-chi-tec-ture ResNet18, which was trained
+ []
+
+
+
+[25
+
+
+
+
+]
+<figures/long.png, id=505, 914.2155pt x 860.013pt>
+File: figures/long.png Graphic file (type png)
+<use figures/long.png>
+Package pdftex.def Info: figures/long.png  used on input line 46.
+(pdftex.def)             Requested size: 420.54424pt x 395.61078pt.
+
+
+[26]
+<figures/rotation.png, id=523, 877.3578pt x 758.1123pt>
+File: figures/rotation.png Graphic file (type png)
+<use figures/rotation.png>
+Package pdftex.def Info: figures/rotation.png  used on input line 57.
+(pdftex.def)             Requested size: 403.5895pt x 348.73589pt.
+
+Overfull \hbox (22.30081pt too wide) in paragraph at lines 52--61
+[]\OT1/ptm/m/n/12 Augmentations such as ro-ta-tion = 90 and 270, Hori-flip+rotation 90, Hori-flip+rotation270
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[27 <./figures/long.png>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 67.
+ (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Underfull \vbox (badness 7777) has occurred while \output is active []
+
+
+
+[28 <./figures/rotation.png>]
+Overfull \hbox (0.93394pt too wide) in paragraph at lines 77--78
+[]\OT1/ptm/m/n/12 Contours are ex-tracted from the bi-nary mask us-ing \OT1/cmtt/m/n/12 cv2.findContours\OT1/ptm/m/n/12 . The largest
+ []
+
+
+Overfull \hbox (29.25319pt too wide) in paragraph at lines 78--81
+[]\OT1/ptm/m/n/12 A bound-ing rect-an-gle is de-ter-mined around the largest con-tour us-ing \OT1/cmtt/m/n/12 cv2.boundingRect\OT1/ptm/m/n/12 .
+ []
+
+<figures/crop.png, id=536, 903.375pt x 732.48656pt>
+File: figures/crop.png Graphic file (type png)
+<use figures/crop.png>
+Package pdftex.def Info: figures/crop.png  used on input line 85.
+(pdftex.def)             Requested size: 415.55754pt x 336.94789pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[30 <./figures/crop.png (PNG copy)>]
+
+[31]
+<figures/bs.png, id=570, 633.11531pt x 643.6547pt>
+File: figures/bs.png Graphic file (type png)
+<use figures/bs.png>
+Package pdftex.def Info: figures/bs.png  used on input line 138.
+(pdftex.def)             Requested size: 316.55687pt x 321.82655pt.
+<figures/repeat.png, id=571, 1062.21844pt x 1497.34406pt>
+File: figures/repeat.png Graphic file (type png)
+<use figures/repeat.png>
+Package pdftex.def Info: figures/repeat.png  used on input line 145.
+(pdftex.def)             Requested size: 371.78203pt x 524.07828pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[32 <./figures/bs.png (PNG copy)>]
+
+[33 <./figures/repeat.png (PNG copy)>]
+<figures/16bit_three_1.png, id=583, 859.2903pt x 570.933pt>
+File: figures/16bit_three_1.png Graphic file (type png)
+<use figures/16bit_three_1.png>
+Package pdftex.def Info: figures/16bit_three_1.png  used on input line 166.
+(pdftex.def)             Requested size: 429.64409pt x 285.46579pt.
+
+
+[34 <./figures/16bit_three_1.png>]
+<figures/bright.png, id=594, 1171.37625pt x 409.53pt>
+File: figures/bright.png Graphic file (type png)
+<use figures/bright.png>
+Package pdftex.def Info: figures/bright.png  used on input line 184.
+(pdftex.def)             Requested size: 468.5422pt x 163.80908pt.
+
+Overfull \hbox (15.57431pt too wide) in paragraph at lines 184--185
+ [][] 
+ []
+
+<figures/contra.png, id=595, 981.6675pt x 310.15875pt>
+File: figures/contra.png Graphic file (type png)
+<use figures/contra.png>
+Package pdftex.def Info: figures/contra.png  used on input line 191.
+(pdftex.def)             Requested size: 490.83255pt x 155.079pt.
+
+Overfull \hbox (37.86465pt too wide) in paragraph at lines 191--192
+ [][] 
+ []
+
+
+
+[35 <./figures/bright.png (PNG copy)> <./figures/contra.png (PNG copy)>]
+<figures/expo.png, id=603, 603.0028pt x 603.0028pt>
+File: figures/expo.png Graphic file (type png)
+<use figures/expo.png>
+Package pdftex.def Info: figures/expo.png  used on input line 209.
+(pdftex.def)             Requested size: 361.80447pt x 361.80447pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[36]
+<figures/ohne.png, id=610, 1202.99437pt x 362.85562pt>
+File: figures/ohne.png Graphic file (type png)
+<use figures/ohne.png>
+Package pdftex.def Info: figures/ohne.png  used on input line 224.
+(pdftex.def)             Requested size: 481.18922pt x 145.13968pt.
+
+Overfull \hbox (28.22133pt too wide) in paragraph at lines 224--225
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[37 <./figures/expo.png (PNG copy)>]
+<figures/strong_aug.png, id=617, 819.06pt x 824.07875pt>
+File: figures/strong_aug.png Graphic file (type png)
+<use figures/strong_aug.png>
+Package pdftex.def Info: figures/strong_aug.png  used on input line 246.
+(pdftex.def)             Requested size: 491.43979pt x 494.45107pt.
+
+Overfull \hbox (38.4719pt too wide) in paragraph at lines 246--247
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[38 <./figures/ohne.png (PNG copy)>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[39 <./figures/strong_aug.png>]
+
+[40]
+
+[41]
+
+[42]
+Overfull \hbox (2.30748pt too wide) in paragraph at lines 381--384
+[]\OT1/ptm/m/n/12 While train-ing and val-i-da-tion im-ages are ap-plied by data aug-men-ta-tion pipelines such as 'strong'
+ []
+
+
+
+[43]
+
+LaTeX Warning: Reference `sec: distance' on page 44 undefined on input line 394.
+
+<figures/strong.png, id=663, 1437.4503pt x 860.013pt>
+File: figures/strong.png Graphic file (type png)
+<use figures/strong.png>
+Package pdftex.def Info: figures/strong.png  used on input line 403.
+(pdftex.def)             Requested size: 431.23842pt x 258.00589pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[44]
+<figures/sweet_bs64.png, id=668, 1996.45876pt x 1194.4625pt>
+File: figures/sweet_bs64.png Graphic file (type png)
+<use figures/sweet_bs64.png>
+Package pdftex.def Info: figures/sweet_bs64.png  used on input line 410.
+(pdftex.def)             Requested size: 598.94226pt x 358.3415pt.
+
+Overfull \hbox (145.97437pt too wide) in paragraph at lines 410--411
+ [][] 
+ []
+
+<figures/sweet_no_contra.png, id=669, 1438.173pt x 860.013pt>
+File: figures/sweet_no_contra.png Graphic file (type png)
+<use figures/sweet_no_contra.png>
+Package pdftex.def Info: figures/sweet_no_contra.png  used on input line 417.
+(pdftex.def)             Requested size: 431.45523pt x 258.00589pt.
+
+
+[45 <./figures/strong.png> <./figures/sweet_bs64.png>]
+<figures/Resize_No_contra.png, id=675, 1438.173pt x 860.013pt>
+File: figures/Resize_No_contra.png Graphic file (type png)
+<use figures/Resize_No_contra.png>
+Package pdftex.def Info: figures/Resize_No_contra.png  used on input line 424.
+(pdftex.def)             Requested size: 431.45523pt x 258.00589pt.
+<figures/Resize.png, id=676, 1438.173pt x 860.013pt>
+File: figures/Resize.png Graphic file (type png)
+<use figures/Resize.png>
+Package pdftex.def Info: figures/Resize.png  used on input line 431.
+(pdftex.def)             Requested size: 431.45523pt x 258.00589pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[46 <./figures/sweet_no_contra.png> <./figures/Resize_No_contra.png>])
+
+[47 <./figures/Resize.png>]
+\openout2 = `"chapters/Methodology for Intermediate evaluation of SimCLR model.aux"'.
+
+ (./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
+chapter 8.
+
+
+[48
+
+
+
+
+]
+Underfull \vbox (badness 4328) has occurred while \output is active []
+
+
+
+[49]
+Overfull \hbox (16.55267pt too wide) in paragraph at lines 83--87
+\OT1/ptm/m/n/12 malised each by di-vid-ing it by 65535 (16 bit). Each im-age flat-ten into vec-tors of ([1,96*96*3]where
+ []
+
+
+
+[50]
+Overfull \hbox (68.71584pt too wide) in paragraph at lines 126--132
+ [][] 
+ []
+
+<figures/before.pdf, id=702, 472.64577pt x 782.17218pt>
+File: figures/before.pdf Graphic file (type pdf)
+<use figures/before.pdf>
+Package pdftex.def Info: figures/before.pdf  used on input line 139.
+(pdftex.def)             Requested size: 449.01093pt x 743.05937pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[51]
+Overfull \vbox (67.05249pt too high) has occurred while \output is active []
+
+
+
+[52 <./figures/before.pdf>]
+<figures/after.pdf, id=721, 443.40656pt x 746.03719pt>
+File: figures/after.pdf Graphic file (type pdf)
+<use figures/after.pdf>
+Package pdftex.def Info: figures/after.pdf  used on input line 146.
+(pdftex.def)             Requested size: 421.23384pt x 708.73131pt.
+
+Overfull \vbox (32.72443pt too high) has occurred while \output is active []
+
+
+
+[53 <./figures/after.pdf>]
+<figures/orig_classi.png, id=736, 1076.1003pt x 354.123pt>
+File: figures/orig_classi.png Graphic file (type png)
+<use figures/orig_classi.png>
+Package pdftex.def Info: figures/orig_classi.png  used on input line 154.
+(pdftex.def)             Requested size: 457.34479pt x 150.50298pt.
+
+Overfull \hbox (4.37689pt too wide) in paragraph at lines 154--155
+ [][] 
+ []
+
+<figures/test_class.png, id=737, 711.1368pt x 426.393pt>
+File: figures/test_class.png Graphic file (type png)
+<use figures/test_class.png>
+Package pdftex.def Info: figures/test_class.png  used on input line 161.
+(pdftex.def)             Requested size: 355.56752pt x 213.19597pt.
+<figures/train_class.png, id=738, 711.8595pt x 426.393pt>
+File: figures/train_class.png Graphic file (type png)
+<use figures/train_class.png>
+Package pdftex.def Info: figures/train_class.png  used on input line 168.
+(pdftex.def)             Requested size: 355.92888pt x 213.19597pt.
+
+
+[54 <./figures/orig_classi.png> <./figures/test_class.png> <./figures/train_class.png>]
+Overfull \hbox (17.41704pt too wide) in paragraph at lines 182--188
+ [][] 
+ []
+
+
+
+[55]
+<figures/controlex.png, id=750, 603.0028pt x 611.28375pt>
+File: figures/controlex.png Graphic file (type png)
+<use figures/controlex.png>
+Package pdftex.def Info: figures/controlex.png  used on input line 235.
+(pdftex.def)             Requested size: 223.10754pt x 226.17145pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[56]
+
+[57 <./figures/controlex.png (PNG copy)>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[58]
+<figures/cluster.png, id=763, 1364.09625pt x 438.13687pt>
+File: figures/cluster.png Graphic file (type png)
+<use figures/cluster.png>
+Package pdftex.def Info: figures/cluster.png  used on input line 371.
+(pdftex.def)             Requested size: 504.70772pt x 162.1081pt.
+
+Overfull \hbox (51.73982pt too wide) in paragraph at lines 371--372
+ [][] 
+ []
+
+
+
+[59]
+
+[60 <./figures/cluster.png (PNG copy)>]
+<figures/cconfusion.png, id=773, 1079.53313pt x 386.94562pt>
+File: figures/cconfusion.png Graphic file (type png)
+<use figures/cconfusion.png>
+Package pdftex.def Info: figures/cconfusion.png  used on input line 425.
+(pdftex.def)             Requested size: 399.421pt x 143.16763pt.
+<figures/econfuse.png, id=774, 1035.11719pt x 377.91188pt>
+File: figures/econfuse.png Graphic file (type png)
+<use figures/econfuse.png>
+Package pdftex.def Info: figures/econfuse.png  used on input line 456.
+(pdftex.def)             Requested size: 382.98737pt x 139.8252pt.
+
+
+[61 <./figures/cconfusion.png (PNG copy)> <./figures/econfuse.png (PNG copy)>])
+
+[62]
+\openout2 = `"chapters/Methodology for Ranking.aux"'.
+
+ (./chapters/Methodology for Ranking.tex
+chapter 9.
+
+
+[63
+
+
+
+
+]
+Underfull \vbox (badness 2150) has occurred while \output is active []
+
+
+
+[64]
+
+[65]
+
+[66]
+<figures/rankloss.png, id=806, 499.8675pt x 388.45125pt>
+File: figures/rankloss.png Graphic file (type png)
+<use figures/rankloss.png>
+Package pdftex.def Info: figures/rankloss.png  used on input line 103.
+(pdftex.def)             Requested size: 229.94183pt x 178.68973pt.
+<figures/unpred.png, id=807, 893.58844pt x 301.8778pt>
+File: figures/unpred.png Graphic file (type png)
+<use figures/unpred.png>
+Package pdftex.def Info: figures/unpred.png  used on input line 110.
+(pdftex.def)             Requested size: 411.05566pt x 138.86546pt.
+<figures/pproblem.png, id=808, 615.0478pt x 228.10219pt>
+File: figures/pproblem.png Graphic file (type png)
+<use figures/pproblem.png>
+Package pdftex.def Info: figures/pproblem.png  used on input line 117.
+(pdftex.def)             Requested size: 307.52315pt x 114.0508pt.
+
+
+[67 <./figures/rankloss.png (PNG copy)> <./figures/unpred.png (PNG copy)> <./figures/pproblem.png (PNG copy)>]
+
+[68]
+<figures/overfit.png, id=818, 548.0475pt x 654.19406pt>
+File: figures/overfit.png Graphic file (type png)
+<use figures/overfit.png>
+Package pdftex.def Info: figures/overfit.png  used on input line 148.
+(pdftex.def)             Requested size: 274.02307pt x 327.09622pt.
+
+
+[69 <./figures/overfit.png (PNG copy)>]
+
+[70]
+
+[71]
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 237--247
+ [][] 
+ []
+
+
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 253--263
+ [][] 
+ []
+
+
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 269--279
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[72]
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 285--295
+ [][] 
+ []
+
+
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 301--311
+ [][] 
+ []
+
+
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 318--328
+ [][] 
+ []
+
+
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 334--344
+ [][] 
+ []
+
+
+
+[73]
+Overfull \hbox (32.31934pt too wide) in paragraph at lines 350--360
+ [][] 
+ []
+
+<figures/predall.pdf, id=843, 1053.1847pt x 685.8122pt>
+File: figures/predall.pdf Graphic file (type pdf)
+<use figures/predall.pdf>
+Package pdftex.def Info: figures/predall.pdf  used on input line 381.
+(pdftex.def)             Requested size: 526.59106pt x 342.90526pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[74]
+
+[75 <./figures/predall.pdf>]
+Overfull \hbox (62.64307pt too wide) in paragraph at lines 412--422
+ [][] 
+ []
+
+<figures/allbox.pdf, id=871, 835.62187pt x 800.23969pt>
+File: figures/allbox.pdf Graphic file (type pdf)
+<use figures/allbox.pdf>
+Package pdftex.def Info: figures/allbox.pdf  used on input line 428.
+(pdftex.def)             Requested size: 417.8099pt x 400.11887pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[76]
+Overfull \hbox (62.64307pt too wide) in paragraph at lines 437--447
+ [][] 
+ []
+
+
+
+[77 <./figures/allbox.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[78]
+
+[79]
+
+[80]
+Overfull \hbox (4.6844pt too wide) in paragraph at lines 570--576
+ [][] 
+ []
+
+
+
+[81])
+
+[82]
+\openout2 = `chapters/conclusions.aux'.
+
+ (./chapters/conclusions.tex
+chapter 10.
+
+
+[83
+
+
+
+
+])
+
+[84]
+chapter without number
+
+
+[85
+
+
+
+
+
+]
+
+[86]
+
+[87]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[88]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[89]
+
+[90]
+Underfull \vbox (badness 2856) has occurred while \output is active []
+
+
+
+[91]
+
+[92]
+
+[93
+
+
+]
+
+[94]
+chapter without number
+
+
+[95
+
+]
+chapter without number
+
+
+[96
+
+] (./main.aux (./chapters/introduction.aux) (./chapters/Motivation.aux) (./chapters/Research questions.aux) (./chapters/literature_review.aux) (./chapters/Data Description.aux) (./chapters/Structure of the Thesis.aux) (./chapters/Methodology for SimCLR.aux) (./chapters/Methodology for Intermediate evaluation of SimCLR model.aux) (./chapters/Methodology for Ranking.aux) (./chapters/conclusions.aux))
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2020/03/25>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 30329 strings out of 473578
+ 585859 string characters out of 5732243
+ 1956960 words of memory out of 5000000
+ 52408 multiletter control sequences out of 15000+600000
+ 597285 words of font info for 119 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 108i,20n,107p,11029b,2469s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (110 pages, 16283601 bytes).
+PDF statistics:
+ 1253 PDF objects out of 1440 (max. 8388607)
+ 1004 compressed objects within 11 object streams
+ 335 named destinations out of 1000 (max. 500000)
+ 503 words of extra memory for PDF output out of 10000 (max. 10000000)
+
