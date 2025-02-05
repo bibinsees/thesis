@@ -657,21 +657,6 @@ OUTPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux
 INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.tex
-INPUT ./figures/before.pdf
-INPUT ./figures/before.pdf
-INPUT ./figures/before.pdf
-INPUT ./figures/before.pdf
-INPUT ./figures/before.pdf
-INPUT ./figures/after.pdf
-INPUT ./figures/after.pdf
-INPUT ./figures/after.pdf
-INPUT ./figures/after.pdf
-INPUT ./figures/after.pdf
-INPUT ./figures/orig_classi.png
-INPUT ./figures/orig_classi.png
-INPUT ./figures/orig_classi.png
-INPUT ./figures/orig_classi.png
-INPUT ./figures/orig_classi.png
 INPUT ./figures/test_class.png
 INPUT ./figures/test_class.png
 INPUT ./figures/test_class.png
@@ -708,26 +693,6 @@ OUTPUT chapters/Methodology for Ranking.aux
 INPUT ./chapters/Methodology for Ranking.tex
 INPUT ./chapters/Methodology for Ranking.tex
 INPUT chapters/Methodology for Ranking.tex
-INPUT ./figures/rankloss.png
-INPUT ./figures/rankloss.png
-INPUT ./figures/rankloss.png
-INPUT ./figures/rankloss.png
-INPUT ./figures/rankloss.png
-INPUT ./figures/unpred.png
-INPUT ./figures/unpred.png
-INPUT ./figures/unpred.png
-INPUT ./figures/unpred.png
-INPUT ./figures/unpred.png
-INPUT ./figures/pproblem.png
-INPUT ./figures/pproblem.png
-INPUT ./figures/pproblem.png
-INPUT ./figures/pproblem.png
-INPUT ./figures/pproblem.png
-INPUT ./figures/overfit.png
-INPUT ./figures/overfit.png
-INPUT ./figures/overfit.png
-INPUT ./figures/overfit.png
-INPUT ./figures/overfit.png
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
@@ -736,11 +701,36 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT ./figures/rankloss.png
+INPUT ./figures/rankloss.png
+INPUT ./figures/rankloss.png
+INPUT ./figures/rankloss.png
+INPUT ./figures/rankloss.png
+INPUT ./figures/unpred.png
+INPUT ./figures/unpred.png
+INPUT ./figures/unpred.png
+INPUT ./figures/unpred.png
+INPUT ./figures/unpred.png
+INPUT ./figures/pproblem.png
+INPUT ./figures/pproblem.png
+INPUT ./figures/pproblem.png
+INPUT ./figures/pproblem.png
+INPUT ./figures/pproblem.png
+INPUT ./figures/overfit.png
+INPUT ./figures/overfit.png
+INPUT ./figures/overfit.png
+INPUT ./figures/overfit.png
+INPUT ./figures/overfit.png
 INPUT ./figures/predall.pdf
 INPUT ./figures/predall.pdf
 INPUT ./figures/predall.pdf
 INPUT ./figures/predall.pdf
 INPUT ./figures/predall.pdf
+INPUT ./figures/softmax.pdf
+INPUT ./figures/softmax.pdf
+INPUT ./figures/softmax.pdf
+INPUT ./figures/softmax.pdf
+INPUT ./figures/softmax.pdf
 INPUT ./figures/allbox.pdf
 INPUT ./figures/allbox.pdf
 INPUT ./figures/allbox.pdf

@@ -1,24 +1,26 @@
 \chapter{Conclusion}
 
 \section{Final Evaluation}
-
+Now out of the 4 methodologies which methodology is more reliable and consistant?
+I picked 22 sinle dose  similar images from drug screening images (Note: This final Evaluation is not relaible in the sense that the picked images are not verified by any biology expert that those are the most similar images to single dose images from drug screening. so eventhough this final evaluation is not scientific its better than nothing). Idea is that we will pick the best performed data augmentation type/category from each methodology and check whether these images are still positioned in the range of the single dose image range.
 \begin{table}[H]
 	\centering
 	\resizebox{\textwidth}{!}{%
-	\begin{tabular}{@{}lccc@{}}
+	\begin{tabular}{@{}lc@{}}
 	\toprule
-	\textbf{Ranking Strategy}                                                                       & \textbf{Old Accuracy} & \textbf{New Accuracy} & \textbf{Accuracy Reduction} \\ \midrule
-	Softmax: cond7 vs sd                                                                            & 100                   & 100                   & 0                            \\ 
-	Softmax: cond7 vs Ex                                                                            & 100                   & 100                   & 0                            \\ 
-	\begin{tabular}[c]{@{}l@{}}K-means: Before resize Pearson \\ distance using explod mean\end{tabular} & 96.69                 & 95.50                 & 1.19                         \\ 
-	\begin{tabular}[c]{@{}l@{}}K-means: After cosine strong\\ using single dose mean\end{tabular}   & 97.39                 & 93.33                 & 4.06                         \\ 
-	PCA: strong cosine distance                                                                     & 100                   & 90.14                 & 9.86                         \\ 
-	PCA: Euclidean strong                                                                           & 99.17                 & 88.73                 & 10.44                        \\ \bottomrule
+	\textbf{Ranking Strategy}                                                                       & \textbf{Old Accuracy} \\ \midrule
+	Softmax: cond7 vs sd                                                                            & 100                   \\ 
+	Softmax: cond7 vs Ex                                                                            & 100                   \\ 
+	\begin{tabular}[c]{@{}l@{}}K-means: After cosine strong\\ using single dose mean\end{tabular}   & 95.12                 \\ 
+	PCA: strong cosine distance                                                                     & 100                   \\ 
+	PCA: Euclidean strong                                                                           & 99.17                 \\ \bottomrule
 	\end{tabular}%
 	}
 	\caption{Performance metrics across different ranking strategies.}
 	\label{tab:ranking_strategies}
-	\end{table}
+\end{table}
+
+
 	
 	Conclusions - yes, what are they? What is the outcome. Important - it is fine to say that despite your best efforts the methods do not seem to
 	 deliver useful results. Perhaps they do not beat the baseline, this is very common in research and is perfectly fine, correct and useful to admit.

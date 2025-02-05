@@ -134,27 +134,7 @@ for simclr feats classification lke learning rate , batch size etc for fair comp
 Train loss vs Val loss . Train accurcay  vs val accuracy 
           
 
-          \begin{figure}[H]
-            \centering
-            \includegraphics[scale=0.95]{figures/before.pdf} 
-            \caption{before}
-            \label{fig:before}
-          \end{figure}
 
-          \begin{figure}[H]
-            \centering
-            \includegraphics[scale=0.95]{figures/after.pdf} 
-            \caption{after}
-            \label{fig:after}
-          \end{figure}
-
-          
-          \begin{figure}[H]
-            \centering
-            \includegraphics[scale=0.425]{figures/orig_classi.png} 
-            \caption{orig}
-            \label{fig:orig}
-          \end{figure}
 
           \begin{figure}[H]
             \centering
@@ -259,7 +239,7 @@ Curated 40 Subset (Balanced) & 40 (all without debris)                  & 40    
 run 400 times for different random initilisation. Note: Drug screen images are visually similar to single dose treatment. All balanced datasets
  are normalized to the exploded group size (n=40).
  \textcolor{red}{the curated full data set doesn't give any infromation ? if no remove the column}
-
+ \textcolor{red}{class imbalnce problem nn orappich parayanda , say this could be  because of weight imbalance problem.}
 
     \begin{table}[H]
         \centering
@@ -294,10 +274,8 @@ Before:
 
 data augmentatoin ‘sweet’ performs the best over other data augmentations and achieved consistant accuracy over all different data set types. 
 
-since sweet performed 100 percentage accurcay across cured and uncured dataset its evidant that the problem for having less accracy is nothing
+since sweet and strong performed 100 percentage accurcay across cured and uncured balanced dataset its evidant that the problem for having less accracy is nothing
  to do with exploeded look like images in control instead its weight unbalance class problem. 
-
- comparing 'sweet' and 'sweet no contrast' its evident that without contrast slightly hurts the performance.
 
 comparing 'sweet' and 'strong' they both achieved 100 percenatage accuracy ie (same performance)over all different data set types except the full dataset.
 for full dataset sweet performed far better than strong , sweeet even achieved 99.18 where strong reached only 83.90.

@@ -1,18 +1,86 @@
 \chapter{Methodology for Ranking}\label{ch:Methodology for Ranking}
  
-since we don't have ground truth labels to rank the images except control images.
+since we don't have ground truth labels to rank the images except control images (since control images doesn't applied by drug, drug efficacy is basically zero).
 My strategy was to simplify the current ranking problem to only scale/order/rank images 
 using only control, single dose and exploded images.
 The reason to pick these groups is that controls we know that there is no drug applied which means that there is no effect of drug at all. 
-single dose images are the category which is clinically recommended at the moment (eventhough we don't know how much drug effected or how 
+single dose images are the category which we apply specific drug concentration and its clinically recommended at the moment as the most effective genearlly (eventhough we don't know how much drug effected or how 
 much it killed the cancer) 
-and exploded are visually exploded from the original cancer cell meansing we can visually see debris around the cancer cell potentially which
- may potentially harm the surrounding goof cells.
-once if we can order those small subset of entire images, we can add the other image as inference to see where they plotted relative to 
-control 
-or single dose or exloded in this scale.
+and exploded are visually exploded from the original cancer cell meaning we can visually see debris around the cancer cell potentially which may potentially harm the surrounding good cells.
+once if we can order those small subset of entire images, we can add the other image as inference to see where they plotted relative to control or single dose or exloded in this scale. For example, If we can order control , single dose and exploded images in an scale using any of the methodologies we use the same methodology to order all of the drug screening images, we expect it will follow an order of images  where drug screening images which are similar to control comes first in the scale then single dose and then exploded images comes next in the scale.
 
-\section{Day7 to day10 predcition using CAE} \label{subsec:day7-to-day10}
+\section*{Ranking customized Accuracy Calculation}
+
+Accuracy formulation: Goal is to check whether we have clear seperation of each class by the inference metric while using as it as a scale. Accuracy below formulated to check whether the first and third classes are well-separated from the middle. there by it also penalizes if first and third classes are overlaped each other. If its clearly seperated from the middile means all 3 classes  are well seperated. 
+
+Detailed explanation of the accuracy calculation:
+
+Once we obtain the inference metric for each individual feature vector in each class, the next steps involve calculating the mean inference metric for each class, identifying the middle class based on the mean values, and proceeding with the remaining computations as described below.
+
+\textbf{Task 1: Mean of Each Class}
+
+The mean inference metric for each class \( C_i \) is calculated as:
+
+\[
+\mu_i = \frac{1}{|C_i|} \sum_{\mathbf{x} \in C_i} M(\mathbf{x}, \mathbf{c})
+\]
+
+where \( |C_i| \) represents the number of points in class \( C_i \), and \( M(\mathbf{x}, \mathbf{c}) \) is the inference metric between a point \( \mathbf{x} \) and the centroid \( \mathbf{c} \).
+
+\textbf{Task 2: Middle Class Based on Mean}
+
+To determine the middle class, sort the mean values \( \mu_1, \mu_2, \mu_3 \) in ascending order:
+
+\[
+\mu_{\text{sorted}} = \{\mu_{\text{min}}, \mu_{\text{mid}}, \mu_{\text{max}}\}
+\]
+
+The middle class is the class corresponding to \( \mu_{\text{mid}} \).
+
+\textbf{Task 3: Minimum and Maximum of Middle Class}
+
+For the middle class (denoted as \( C_{\text{mid}} \)), compute the minimum and maximum inference metric values:
+
+\[
+\text{middle\_class\_min} = \min_{\mathbf{x} \in C_{\text{mid}}} M(\mathbf{x}, \mathbf{c})
+\]
+\[
+\text{middle\_class\_max} = \max_{\mathbf{x} \in C_{\text{mid}}} M(\mathbf{x}, \mathbf{c})
+\]
+
+\textbf{Task 4: Error and Accuracy Calculation}
+
+1. \textbf{Error Calculation}: Count the number of points in the first class \( C_1 \) that exceed the middle class's minimum, and the number of points in the third class \( C_3 \) that are less than the middle class's maximum. The total error is given by:
+
+\[
+\text{error}_1 = \left| \{\mathbf{x} \in C_1 : M(\mathbf{x}, \mathbf{c}) > \text{middle\_class\_min} \} \right|
+\]
+\[
+\text{error}_3 = \left| \{\mathbf{x} \in C_3 : M(\mathbf{x}, \mathbf{c}) < \text{middle\_class\_max} \} \right|
+\]
+\[
+\text{total\_errors} = \text{error}_1 + \text{error}_3
+\]
+
+2. \textbf{Accuracy Calculation}: Subtract the total errors from the total number of points across all classes to compute the number of non-errors. Divide this by the total number of points to calculate the accuracy:
+
+\[
+\text{accuracy} = \frac{\text{total\_points} - \text{total\_errors}}{\text{total\_points}}
+\]
+
+where:
+\[
+\text{total\_points} = |C_1| + |C_2| + |C_3|
+\]
+
+\textbf{Summary of Steps}
+1. Compute \( \mu_1, \mu_2, \mu_3 \).
+2. Identify the middle class using \( \mu_{\text{mid}} \).
+3. Compute \( \text{middle\_class\_min} \) and \( \text{middle\_class\_max} \).
+4. Count the errors \( \text{error}_1 \) and \( \text{error}_3 \).
+5. Calculate accuracy using the formula above.
+
+\section{Day 7 to day 10 predcition using CAE} \label{subsec:day7-to-day10}
 
 
 \textcolor{red}{mention problem of data lack here instead in research questions?}
@@ -97,7 +165,7 @@ model struggles to predict the day 10 images from day 7 image, the predicted ima
 shape or size or color pixel intensity. Also it could be the position change due to the microscope handling position. (We used different flip and rotation 
 augmentation but it maynot be effective as we think it is.) since the same problem we may have with the day 7 to day 10 single dose or explod images, I decided to move to
 simclr features to see if it can learn the transition better than the original images. 
-
+\textcolor{red}{explain why mse and euclidean distance haev same values because of same ratio?}
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.46]{figures/rankloss.png} 
@@ -151,76 +219,7 @@ As we see in the figure below, for the training of day 7 to day 10 untreated ima
 \end{figure}
 
 
-\section*{Ranking customized Accuracy Calculation}
 
-Accuracy formulation: Goal is to check whether we have clear seperation of each class by the inference metric while using as it as a scale. Accuracy below formulated to check whether the first and third classes are well-separated from the middle. there by it also penalizes if first and third classes are overlaped each other. If its clearly seperated from the middile means all 3 classes  are well seperated. 
-
-Detailed explanation of the accuracy calculation:
-
-Once we obtain the inference metric for each individual feature vector in each class, the next steps involve calculating the mean inference metric for each class, identifying the middle class based on the mean values, and proceeding with the remaining computations as described below.
-
-\textbf{Task 1: Mean of Each Class}
-
-The mean inference metric for each class \( C_i \) is calculated as:
-
-\[
-\mu_i = \frac{1}{|C_i|} \sum_{\mathbf{x} \in C_i} M(\mathbf{x}, \mathbf{c})
-\]
-
-where \( |C_i| \) represents the number of points in class \( C_i \), and \( M(\mathbf{x}, \mathbf{c}) \) is the inference metric between a point \( \mathbf{x} \) and the centroid \( \mathbf{c} \).
-
-\textbf{Task 2: Middle Class Based on Mean}
-
-To determine the middle class, sort the mean values \( \mu_1, \mu_2, \mu_3 \) in ascending order:
-
-\[
-\mu_{\text{sorted}} = \{\mu_{\text{min}}, \mu_{\text{mid}}, \mu_{\text{max}}\}
-\]
-
-The middle class is the class corresponding to \( \mu_{\text{mid}} \).
-
-\textbf{Task 3: Minimum and Maximum of Middle Class}
-
-For the middle class (denoted as \( C_{\text{mid}} \)), compute the minimum and maximum inference metric values:
-
-\[
-\text{middle\_class\_min} = \min_{\mathbf{x} \in C_{\text{mid}}} M(\mathbf{x}, \mathbf{c})
-\]
-\[
-\text{middle\_class\_max} = \max_{\mathbf{x} \in C_{\text{mid}}} M(\mathbf{x}, \mathbf{c})
-\]
-
-\textbf{Task 4: Error and Accuracy Calculation}
-
-1. \textbf{Error Calculation}: Count the number of points in the first class \( C_1 \) that exceed the middle class's minimum, and the number of points in the third class \( C_3 \) that are less than the middle class's maximum. The total error is given by:
-
-\[
-\text{error}_1 = \left| \{\mathbf{x} \in C_1 : M(\mathbf{x}, \mathbf{c}) > \text{middle\_class\_min} \} \right|
-\]
-\[
-\text{error}_3 = \left| \{\mathbf{x} \in C_3 : M(\mathbf{x}, \mathbf{c}) < \text{middle\_class\_max} \} \right|
-\]
-\[
-\text{total\_errors} = \text{error}_1 + \text{error}_3
-\]
-
-2. \textbf{Accuracy Calculation}: Subtract the total errors from the total number of points across all classes to compute the number of non-errors. Divide this by the total number of points to calculate the accuracy:
-
-\[
-\text{accuracy} = \frac{\text{total\_points} - \text{total\_errors}}{\text{total\_points}}
-\]
-
-where:
-\[
-\text{total\_points} = |C_1| + |C_2| + |C_3|
-\]
-
-\textbf{Summary of Steps}
-1. Compute \( \mu_1, \mu_2, \mu_3 \).
-2. Identify the middle class using \( \mu_{\text{mid}} \).
-3. Compute \( \text{middle\_class\_min} \) and \( \text{middle\_class\_max} \).
-4. Count the errors \( \text{error}_1 \) and \( \text{error}_3 \).
-5. Calculate accuracy using the formula above.
 
 Do inference loss for both  before and after projection head feats.
 used following metrics as inference loss between target feature vector and predicted feature vector.: mse, cosine distance, L2 ( euclidean distance ), L1 distance, Pearson correlation, dot product,jaccard similarity, hamming distance.
@@ -386,7 +385,67 @@ range of hamming distance is working.
 
 Since we couldn't seperate those 3 classes well that means we won't have good ranking of drug screnn images since sd close images and explod images will be mixed while ranking. this calls the need for other ranking strategy such as Softmax approach, K means centroid approach, PCA approach. where for K means centroid , PCA approach small no of data will not effect that much for the performance of ranking. since there is no training required.
 
+\section{Ranking strategy 3: Softmax approach}
+
+This strategy utilizes the before projection head vectors since its linearly seperable for downstream task classification as suggested in original simclr paper.
+
+We are using only before projectoin head simclr features since original images or after projection head simclr features are not able to classify 100 percentage as we seen in intermediate evaluation chapter.
+
+Steps of methodology for softmax approach:
+1. Train classification model to classify control and single dose images.
+2. Since we attained 100 percentage acuracy for train and test dataset for this binary classification If we look at softmax score of all of the single dose feature vector to classify as single dose class the values will be will be equal to  or really closer to 1 and similarly, If we look at softmax score of all of the control feature vector to classify as single dose class will be equal to or really closer to 0.
+3. Now when we do inference with this learned weights and parameters on the same control, single dose features, we will get   softmax value of all of the single dose feature vector to classify as single dose class the values will be equal to  or really closer to 1 and similarly, If we look at softmax score of all of the control feature vector to classify as single dose class the values will be equal to or really closer to 0.
+4. Now we add explod class in addition to this control and single dose class in inference. Idea is that, since we didn't used explod class in training, the softmax score of all of the explod feature vector to classify as single dose class  will not be exactly or closer to 1. It can be below  the values of single dose class features. that  means it can overlap with the values of control feature values. But what if those explod feature softmax values did not overlap with the values of control? ie if we use softmax score to predict as single dose class as inference metric for ranking, in the range of our ranking scale control class features comes first as the values are closer or equal to 0, then explod class features comes next in the scale inbetween 0 and 1.and single dose class features comes last as the values are closer to 1. This is the ideal situation that we would like to have. If we get this kind of ranking scale, we can say that our softmax score is able to seperate control, explod and single dose classes. and we use same customized rankng accuracy calculation as we used in the previous ranking strategies.
+5. Use this same steps to classify between control and explod so that we expect those class softmax values will be at both ends (0 and 1) and while single dose class softmax values will be inbetween control and explod class values. like wise classification between explod and single dose, where control feature softmax values will be inbetween explod and single dose class softmax values.
+
+Initialy I used original dataset of control (472 images) and single dose images (103 images) as explained in the dataset table and we used explod ( 40 images) that we get from dalias classifier model.
+I train with differnet parameters for  number of epochs and batch size. following parameers gave higher accuracy: 750 epochs, batch:16. every other parameter is same as explained in the classification chapter.
+
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}lccccc@{}}
+  \toprule
+  \textbf{Classification} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
+  Control vs SD             & 25.04            & 49.75           & 76.91          & 85.85                         & 90                        \\
+  Control vs Ex             & 83.41            & 49.27               & 95.12           & 60.49                          &    71.54                 \\
+  Ex vs SD                & 95.78           & 98.94          & 95.08           & 92.98                       & 97.54                        \\ \bottomrule
+  \end{tabular}
+  \caption{Table description goes here.}
+  \label{tab:ranking softmax}
+\end{table}
+
+As we seen in the above table, none of the  data augmentation types are not able to give clear seperation between 3 classes. No contrast sweet, resize and sweet data augmentation data types achieved highest accuracy 89.99 and 95.12 and 98.94  in the category of  Cond7 vs SD and Cond7 vs Ex categories correspondingly. In the classification category between Exploded and single dose features every data augmentation type achived above 90 percentage. this could be because explod and single dose features are less numbers or in another words the class imbalance ratio is less and number of errors( number of overlap between classes) also less. Hence the accuracy is stays higher comparing to the other classification categories which involves control of total 472 images.
+
+
+Since there is more class imbalance for the classification involves control features, inorder to check if No contrast sweet and resize  giving higher accuracy consistanctly for corresponding control vs sd and control vs ex for balanced dataset, I reduced the original control images to 103 (same number of single dose images ) from 472 images. Result is shown in the following table. highest accuracy achieved for the two categories of Cond7 vs SD and Cond7 vs Ex becomes 100 coresponding to the no contrast sweet and resize  data augmentation types as we see in the table. that means in these two cases there is clear seperation between the classes as we see in the figure below.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}lccccc@{}} 
+  \toprule
+  \textbf{Classification} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
+  Control vs SD             & 97.89           & 99.29          & 98.59           & 98.25                       & 100                        \\
+  Control vs Ex             & 97.54               & 96.49              & 100               & 98                          &   97.54                        \\ \bottomrule
+  \end{tabular}
+  \caption{Table description goes here.}
+  \label{tab:ranking softmax}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{figures/softmax.pdf} 
+  \caption{last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}
+  \label{fig:unloss}
+\end{figure}
+
+The main limitation of this approach is we can't garantee when we get new images it will stil seperate three classes 100 percentage like we seen above, there can be overlaps, since the classification only promise us that the softmax score of the control will be closer or equal to zero and  single dose will be closer or equal to 1 in control vs sd case. that means classification only promise us that we get clear seperation inbetween 2 classes not three classes based on the softmax value.
+
+
+
 \section{Ranking strategy 2: K Means approach}
+
+Unlike other 2 strategies this strategy doesn't have the probelm of class imbalance
 
 \begin{enumerate}
   \item \textbf{Step 1:} Feed control images simclr features into k means and find the centriod of control (untreated) cluster based on both cosine distance and the euclidean distance using kmeans clustering. 
@@ -430,7 +489,7 @@ single dose image (103) and exploded images (40).
   \label{fig:unloss}
 \end{figure}
 
-\textcolor{red}{ add figures below. }
+
 
 \begin{table}[H]
   \centering
@@ -472,120 +531,10 @@ All of the above inference metric scaling  I did it on original image vector and
   \label{tab:you_label}
 \end{table}
 
-
-\section{Ranking strategy 3: Softmax approach}
-
-This strategy utilizes the before projection head vectors since its linearly seperable for downstream task classification as suggested in original simclr paper.
-
-We are using only before projectoin head simclr features since original images or after projection head simclr features are not able to classify 100 percentage as we seen in intermediate evaluation chapter.
-
-Steps of methodology for softmax approach:
-1. Train classification model to classify control and single dose images.
-2. Since we attained 100 percentage acuracy for train and test dataset for this binary classification If we look at softmax score of all of the single dose feature vector to classify as single dose class the values will be will be equal to  or really closer to 1 and similarly, If we look at softmax score of all of the control feature vector to classify as single dose class will be equal to or really closer to 0.
-3. Now when we do inference with this learned weights and parameters on the same control, single dose features, we will get   softmax value of all of the single dose feature vector to classify as single dose class the values will be equal to  or really closer to 1 and similarly, If we look at softmax score of all of the control feature vector to classify as single dose class the values will be equal to or really closer to 0.
-4. Now we add explod class in addition to this control and single dose class in inference. Idea is that, since we didn't used explod class in training, the softmax score of all of the explod feature vector to classify as single dose class  will not be exactly or closer to 1. It can be below  the values of single dose class features. that  means it can overlap with the values of control feature values. But what if those explod feature softmax values did not overlap with the values of control? ie if we use softmax score to predict as single dose class as inference metric for ranking, in the range of our ranking scale control class features comes first as the values are closer or equal to 0, then explod class features comes next in the scale inbetween 0 and 1.and single dose class features comes last as the values are closer to 1. This is the ideal situation that we would like to have. If we get this kind of ranking scale, we can say that our softmax score is able to seperate control, explod and single dose classes. and we use same customized rankng accuracy calculation as we used in the previous ranking strategies.
-
-Initialy I used original dataset of control (472 images) and single dose images (103 images) as explained in the dataset table and we used explod ( 40m images) that we get from dalias classifier model.
-I train with differnet parameters for  number of epochs and batch size. following parameers gave higher accuracy: 750 epochs, batch:8. every other parameter is same as explained in the classification chapter.
-
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{@{}lccccc@{}}
-  \toprule
-  \textbf{Classification} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-  Cond7 vs SD             & 25.04            & 49.75           & 76.91          & 85.85                         & 89.99                        \\
-  Cond7 vs Ex             & 83.41            & 49.27               & 85.12           & 60.49                          &    71.54                 \\
-  Ex vs SD                & 95.78           & 98.94          & 95.08           & 92.98                       & 97.54                        \\ \bottomrule
-  \end{tabular}
-  \caption{Table description goes here.}
-  \label{tab:ranking softmax}
-\end{table}
-
-As we seen in the above table, none of the  data augmentation types are not able to give clear seperation between 3 classes. but interestingly overlap between class happened only between explod and control softmax values not with single dose. No contrast sweet  Another interesting 
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{@{}lccccc@{}} 
-  \toprule
-  \textbf{Classification} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-  Cond7 vs SD             & 97.89           & 99.29          & 98.59           & 98.25                       & 100                        \\
-  Cond7 vs Ex             & 97.54               & 96.49              & 98.94               & 98                          &   97.54                        \\ \bottomrule
-  \end{tabular}
-  \caption{Table description goes here.}
-  \label{tab:ranking softmax}
-\end{table}
-
-\textcolor{red}{add image}
-
-\textcolor{red}{Depend on time do ex twenty nine}
-  
-\textcolor{red}{this questions if strong or No contrast sweet is betterr? because previously strong was better. Now sweet performed well for this task. 
-to understand why sweet performs better we need to see crop change and brghtness, contrast change seperatly.}
-
-When we used curated dataset percentage of gp wise accuracy went down where when we used control as the same number of images of sd accuracy is 100. 
-it worked maybe because of class balancing.
-
-How do we check which data aug is working?
-it should seperate cond7, ex, sd: 100 percentage. because if get 100 that means it is able to make gp of control and sd for sure, from ex mixing.
-
-why are we doing this because every aug can  seperate cond 7 and sd. thats obivious. because there is no other gps. so we have to add new gp as inference to see if 
-cond7 and sd still gp together. same principle in kmeans approach.
-
-so, with this approach from cond7 to sd classsification softmax probability score we get mixture of exploded and gray from drug screen.
-
-if we want to avoid that we can train supervised classification to filter out the exploded from there then put them on right side of sd so that we get clean scale.
-for that training we can use simclr feature vectors because it gave more accuracy than the original image accuracy.
-
-\textcolor{red}{put the below table in classification and also do classification of ex fourty others because we are usign it for softmax approach} 
-
-\begin{table}[H]
-  \centering
-  \resizebox{\textwidth}{!}{%
-  \begin{tabular}{llccccc}
-  \toprule
-  \textbf{Augmentation Type}      & \textbf{Metric} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{Resize No Contrast} & \textbf{Sweet No Contrast} \\ \midrule
-  \multirow{4}{*}{\textbf{Before Projection Head}} 
-      & Train Accuracy (\%) & 97.07 & 96.23 & 96.23 & 97.91 & 97.07 \\
-      & Train Epoch         & 30 & 41 & 128 & 465 & 485 \\
-      & Test Accuracy (\%)  & 95 & 91.67 & 93.33 & 93.33 & 95 \\
-      & Test Epoch          & 5 & 5 & 21 & 12 & 17 \\ 
-  \bottomrule
-  \end{tabular}%
-  }
-  \caption{Performance metrics for different augmentation strategies before the projection head.}
-  \label{tab:augmentation}
-\end{table}
-
-\textcolor{red}{include other classification combinations in table}
-
-Why its not giving 100 because now the problem is harder. we had 2 classes, explod vs all other drug screen,where drug screen look intermediate to explod and sigle dose.
-Also we can improve this result by adding more hidden layers instead of just one linear layer and so more. at the moment i didn't since we want to know which data aug works for harder problem.
-because in the intermediate evaluation  most of them gave 100 percenatage making it not  evaluator for evaluating inbetween data augs. there we get that orig vs data augs.
-
-\begin{table}[h!]
-  \centering
-  \caption{Original Image Results}
-  \label{tab:original_image_results}
-  \begin{tabular}{lcccc}
-  \toprule
-  \textbf{Metric}         & \textbf{Train Accuracy (\%)} & \textbf{Train Epoch} & \textbf{Test Accuracy (\%)} & \textbf{Test Epoch} \\ \midrule
-  \textbf{Original Image} & 84.94                        & 434                   & 78.33                        & 19                  \\ 
-  \bottomrule
-  \end{tabular}
-\end{table}
-
-
-ordered images can found in the below gdrive links for both mixed and cleaned order for ds and ex.
-show them ordered images for 80 percentage gp wise accuracy ie only seperated 2 gps, show them its worse.
-
-\textcolor{red}{its better to not use exploded and harm people sentence from intro and data intro just say debris, because cond10 and exploded have debris. cond10 
-have debris even without drug so debris can happen without drug.it is probabliy because its cultivated in lab where these things happen.} 
-
 \section{ Ranking strategy 4: PCA variation}
 
-- First cluster points that exceed the minimum value of the middle cluster
-- Third cluster points that fall below the maximum value of the middle cluster
+I need to talk about why pca? what pca does do?
+
 
 why we choosed cluster 40 dataset because thats the one give 100 accuracy for clustering.
 
@@ -596,8 +545,8 @@ we used clearly differentiable curated cluster 40 dataset. after projection and 
     \begin{tabular}{@{}lccccc@{}}
     \toprule
     \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-    \textbf{Cosine Distance} & 100               & 90.0              & 91.67               & 68.33                           & 95.83                          \\
-    \textbf{Euclidean Distance} & 99.17           & 79.17              & 69.17               & 88.00                           & 97.50                          \\ \bottomrule
+    \textbf{Cosine Distance} & 100                & 90.0              & 91.67               & 68.33                          & 95.83                          \\
+    \textbf{Euclidean Distance} & 99.17           & 79.17              & 69.17               & 87.50                           & 97.50                          \\ \bottomrule
     \end{tabular}
     \caption{Table showing distances for different augmentation strategies.}
     \label{tab:distances}
