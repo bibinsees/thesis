@@ -30,7 +30,8 @@
 \contentsline {section}{\numberline {9.4}Ranking strategy 4: PCA variation}{79}{section.9.4}%
 \contentsline {chapter}{\numberline {10}Conclusion}{80}{chapter.10}%
 \contentsline {section}{\numberline {10.1}Final Evaluation}{80}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Future research direction}{81}{section.10.2}%
+\contentsline {section}{\numberline {10.2}Things that doesn't work}{81}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Future research direction}{81}{section.10.3}%
 \contentsline {chapter}{\nonumberline Appendix}{83}{chapter*.85}%
 \contentsline {chapter}{Literature}{91}{section*.99}%
 \contentsline {chapter}{\nonumberline Declaration on oath}{93}{chapter*.101}%

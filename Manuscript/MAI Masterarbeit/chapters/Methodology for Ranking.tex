@@ -225,7 +225,7 @@ Do inference loss for both  before and after projection head feats.
 used following metrics as inference loss between target feature vector and predicted feature vector.: mse, cosine distance, L2 ( euclidean distance ), L1 distance, Pearson correlation, dot product,jaccard similarity, hamming distance.
 
 Reason to choose cosine distance is basically because the loss function of simclr is designed to make the cosine distance between similar images to be close to 1. the reason to choose other metrics are the metrics mainly used in medical images as explained in literature review.
-
+\textcolor{red}{put mean line in figure}
 
 results:
 
@@ -534,6 +534,10 @@ All of the above inference metric scaling  I did it on original image vector and
 \section{ Ranking strategy 4: PCA variation}
 
 I need to talk about why pca? what pca does do?
+
+PCA  aka Principal componanet anaylisis can be defined as the orthogonal projection of the data onto lower dimensional linear space, known as the principle subspace, such that variance of the projected data is maximized, equalantly it can defined as the linear projection that minimizes the average projection cost,defines as the mean squared distance between the datapoints and their projection \cite{bishop:2006:PRML}. We will use the PCA technique to identify the direction of maximum variance in the high dimensional feature space in our case 512 D ( since before projection head feature vector have 512 features, we will consider no of features as our samples and each features represent as variables that is 512) and projects data onto this single axis (1D). The resulting First PCA scores (positions along this axis) aim to preserve maximum variance as possible from the original data while reducing redundancy and noise.  Idea is that whether this 1D PCA value can be used as as our ranking metric or not.
+
+Explained variance ratio  of pca 1 axis and maybe show pca 2 works better show with images and percaentagewise
 
 
 why we choosed cluster 40 dataset because thats the one give 100 accuracy for clustering.
