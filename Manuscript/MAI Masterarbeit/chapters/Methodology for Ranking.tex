@@ -531,31 +531,43 @@ All of the above inference metric scaling  I did it on original image vector and
   \label{tab:you_label}
 \end{table}
 
-\section{ Ranking strategy 4: PCA variation}
+\section{ Ranking strategy 4: Dimensionality reduction technics}
 
+\subsection{PCA approach}
 PCA  aka Principal componanet anaylisis can be defined as the orthogonal projection of the data onto lower dimensional linear space, known as the principle subspace, such that variance of the projected data is maximized, equalantly it can defined as the linear projection that minimizes the average projection cost,defines as the mean squared distance between the datapoints and their projection \cite{bishop:2006:PRML}. We will use the PCA technique to identify the direction of maximum variance in the high dimensional feature space in our case 512 D ( since before projection head feature vector have 512 features, we will consider no of features as our samples and each features represent as variables that is 512) and projects data onto this single axis (1D). The resulting First PCA scores (positions along this axis) aim to preserve maximum variance as possible from the original data while reducing redundancy and noise.  Idea is that whether this 1D PCA value can be used as as our ranking metric or not.
 
-We choosed cluster 40 cured dataset because, this dataset gives us100 accuracy for clustering as wee seen in the table from the clustering chapter. So the basic flow this method is that , we cluster the datapoints using kmeans and then do the  orthogonal projection of the data onto lower dimensional linear space, in our case from 512 D to 1D, while restraining maximum variance.
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}lccccc@{}}
+  \toprule
+  \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
+  \textbf{Before projection head} & -                & -              & -               & -                          & -                          \\
+  \textbf{After projection head} & -                & -              & -               & -                          & -                          \\ \bottomrule
+  \end{tabular}
+  \caption{PCA}
+  \label{tab:distances}
+\end{table}
 
-Explained variance ratio  of pca 1 axis and maybe show pca 2 works better show with images and percaentagewise
-
-we used clearly differentiable curated cluster 40 dataset. after projection and original iamges couldnt make 100 percentage clustering so we didn't need to do pca.
 
 \begin{table}[H]
-    \centering
-    \begin{tabular}{@{}lccccc@{}}
-    \toprule
-    \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-    \textbf{Cosine Distance} & 100                & 90.0              & 91.67               & 68.33                          & 95.83                          \\
-    \textbf{Euclidean Distance} & 99.17           & 79.17              & 69.17               & 87.50                           & 97.50                          \\ \bottomrule
-    \end{tabular}
-    \caption{Table showing distances for different augmentation strategies.}
-    \label{tab:distances}
+  \centering
+  \begin{tabular}{@{}lccccc@{}}
+  \toprule
+  \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
+  \textbf{Before projection head} &  93.33               & 100              & 99.35               & 93.50                          & 100                          \\
+  \textbf{After projection head} & 93.50               & 34.47              & 56.26               & 25.53                          & 93.50                          \\ \bottomrule
+  \end{tabular}
+  \caption{umap}
+  \label{tab:distances}
+\end{table}
+
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|}
+  \hline
+  \multicolumn{1}{|c|}{Pca} & tsne & umap \\ \hline
+                         54.47   &  9    & 17.56     \\ \hline
+  \end{tabular}
   \end{table}
-
-using these we can order but in one end of the scale 2 gps will be mixed.
-
-
-\textcolor{red}{pca inference acc strong cosine: 90.14 sd 40 + ds close 22. pca eucli: 88.73}
-
 

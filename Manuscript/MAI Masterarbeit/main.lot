@@ -32,9 +32,10 @@
 \contentsline {table}{\numberline {9.11}{\ignorespaces Cosine distance}}{76}{table.caption.79}%
 \contentsline {table}{\numberline {9.12}{\ignorespaces Euclidean distance}}{77}{table.caption.81}%
 \contentsline {table}{\numberline {9.13}{\ignorespaces Your table caption here}}{78}{table.caption.82}%
-\contentsline {table}{\numberline {9.14}{\ignorespaces Table showing distances for different augmentation strategies.}}{79}{table.caption.83}%
+\contentsline {table}{\numberline {9.14}{\ignorespaces PCA}}{79}{table.caption.83}%
+\contentsline {table}{\numberline {9.15}{\ignorespaces umap}}{79}{table.caption.84}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {10.1}{\ignorespaces Performance metrics across different ranking strategies.}}{80}{table.caption.84}%
+\contentsline {table}{\numberline {10.1}{\ignorespaces Performance metrics across different ranking strategies.}}{80}{table.caption.86}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
