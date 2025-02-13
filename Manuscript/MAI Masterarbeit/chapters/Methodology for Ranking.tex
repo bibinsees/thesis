@@ -541,8 +541,8 @@ PCA  aka Principal componanet anaylisis can be defined as the orthogonal project
   \begin{tabular}{@{}lccccc@{}}
   \toprule
   \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-  \textbf{Before projection head} & -                & -              & -               & -                          & -                          \\
-  \textbf{After projection head} & -                & -              & -               & -                          & -                          \\ \bottomrule
+  \textbf{Before projection head} & 73.33                & 51.87              & 49.59               & 34.80                        & 77.56                          \\
+  \textbf{After projection head} & 80.49                & 21.95              & 76.75               & 76.75                          & 31.71                          \\ \bottomrule
   \end{tabular}
   \caption{PCA}
   \label{tab:distances}
@@ -555,19 +555,30 @@ PCA  aka Principal componanet anaylisis can be defined as the orthogonal project
   \toprule
   \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
   \textbf{Before projection head} &  93.33               & 100              & 99.35               & 93.50                          & 100                          \\
-  \textbf{After projection head} & 93.50               & 34.47              & 56.26               & 25.53                          & 93.50                          \\ \bottomrule
+  \textbf{After projection head} & 93.50               & 34.47              & 56.26               & 25.53                          & 93.50                       \\ \bottomrule
   \end{tabular}
   \caption{umap}
   \label{tab:distances}
 \end{table}
 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}lccccc@{}}
+  \toprule
+  \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
+  \textbf{Before projection head} & 99.84                & 100              & 100               & 100                          & 99.19                          \\
+  \textbf{After projection head} & 74.63                & 55.61              & 98.70               & 76.75                          & 31.71                          \\ \bottomrule
+  \end{tabular}
+  \caption{tsne}
+  \label{tab:distances}
+\end{table}
 
 \begin{table}[H]
   \centering
   \begin{tabular}{|l|l|l|}
   \hline
   \multicolumn{1}{|c|}{Pca} & tsne & umap \\ \hline
-                         54.47   &  9    & 17.56     \\ \hline
+                         54.47   &  54.80    & 17.56     \\ \hline
   \end{tabular}
   \end{table}
 
