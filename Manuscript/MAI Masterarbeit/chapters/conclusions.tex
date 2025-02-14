@@ -2,23 +2,28 @@
 
 \section{Final Evaluation}
 Now out of the 4 methodologies which methodology is more reliable and consistant?
-I picked 22 sinle dose  similar images from drug screening images (Note: This final Evaluation is not relaible in the sense that the picked images are not verified by any biology expert that those are the most similar images to single dose images from drug screening. so eventhough this final evaluation is not scientific its better than nothing). Idea is that we will pick the best performed data augmentation type/category from each methodology and check whether these images are still positioned in the range of the single dose image range.
+so in this chapter we will evaluate the performance of the specific method out of each main 4 methodologies that performed well in ranking accuracy.
+I picked 22 sinle dose  similar images from drug screening images (Note: This final Evaluation is not relaible in the sense that the picked images are not verified by any biology expert that those are the most similar images to single dose images from drug screening. so eventhough this final evaluation is not scientific its better than nothing). Idea is that we will pick the best performed data augmentation type/category from each methodology and check whether these images are still positioned in the range of the single dose image range. limitations is that we are not sure whether the picked images are the most similar images to single dose images from drug screening since I'm not expert in biology.
+
 \begin{table}[H]
 	\centering
 	\small
-	\begin{tabular}{@{}lc@{}}
+	\begin{tabular}{@{}lcc@{}}
 	\toprule
-	\textbf{Ranking Strategy}                                                                       & \textbf{Out of single dose range} \\ \midrule
-	Softmax: cond7 vs sd                                                                            & 0                   \\ 
-	Softmax: cond7 vs Ex                                                                            & 0                   \\ 
-	Prediction model Euclidean distance Before                                                     & 0                   \\  
-	tsne: before  sweet                                                                           & 11  controlil               \\ 
-	\begin{tabular}[c]{@{}l@{}}K-means: After cosine strong\\ using single dose mean\end{tabular}   & 12   controlil kedakkane              \\ 
-	tsne: resize before                                                                     & 12 controlil kedakkane                   \\ \bottomrule
+	\textbf{Ranking Strategy}                                                                       & \textbf{Out of single dose range} & \textbf{Ranking Accuracy} \\ \midrule
+	Softmax: cond7 vs sd                                                                            & 0                   & -                   \\ 
+	Softmax: cond7 vs Ex                                                                            & 0                   & -                   \\ 
+	Prediction model Euclidean distance Before                                                     & 0                   & 76.93                   \\  
+	tsne: before sweet                                                                              & 0  & 100                   \\ 
+	tsne: resize before                                                                             & 0  & 100                   \\ 
+	tsne: before no contrast resize                                                                 & 0  & 100                   \\ 
+	\begin{tabular}[c]{@{}l@{}}K-means: After cosine strong\\ using single dose mean\end{tabular}   & 12 controlil kedakkane              & 93.17                   \\ \bottomrule
 	\end{tabular}
-	\caption{Performance metrics across different ranking strategies.}
+	\caption{Performance metrics across different strategies.}
 	\label{tab:ranking_strategies}
 \end{table}
+
+
 
 
 
