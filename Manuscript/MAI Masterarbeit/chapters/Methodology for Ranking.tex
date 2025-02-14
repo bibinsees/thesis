@@ -408,36 +408,14 @@ I train with differnet parameters for  number of epochs and batch size. followin
   \toprule
   \textbf{Classification} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
   Control vs SD             & 25.04            & 49.75           & 76.91          & 85.85                         & 90                        \\
-  Control vs Ex             & 83.41            & 49.27               & 95.12           & 60.49                          &    71.54                 \\
-  Ex vs SD                & 95.78           & 98.94          & 95.08           & 92.98                       & 97.54                        \\ \bottomrule
+  Control vs Ex             & 83.41            & 49.27               & 95.93           & 60.49                          &    71.54                 \\
+  Ex vs SD                & 97.07           & 96.75          & 93.5           & 87.64                       & 87.31                        \\ \bottomrule
   \end{tabular}
   \caption{Table description goes here.}
   \label{tab:ranking softmax}
 \end{table}
 
-As we seen in the above table, none of the  data augmentation types are not able to give clear seperation between 3 classes. No contrast sweet, resize and sweet data augmentation data types achieved highest accuracy 89.99 and 95.12 and 98.94  in the category of  Cond7 vs SD and Cond7 vs Ex categories correspondingly. In the classification category between Exploded and single dose features every data augmentation type achived above 90 percentage. this could be because explod and single dose features are less numbers or in another words the class imbalance ratio is less and number of errors( number of overlap between classes) also less. Hence the accuracy is stays higher comparing to the other classification categories which involves control of total 472 images.
-
-
-Since there is more class imbalance for the classification involves control features, inorder to check if No contrast sweet and resize  giving higher accuracy consistanctly for corresponding control vs sd and control vs ex for balanced dataset, I reduced the original control images to 103 (same number of single dose images ) from 472 images. Result is shown in the following table. highest accuracy achieved for the two categories of Cond7 vs SD and Cond7 vs Ex becomes 100 coresponding to the no contrast sweet and resize  data augmentation types as we see in the table. that means in these two cases there is clear seperation between the classes as we see in the figure below.
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{@{}lccccc@{}} 
-  \toprule
-  \textbf{Classification} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-  Control vs SD             & 97.89           & 99.29          & 98.59           & 98.25                       & 100                        \\
-  Control vs Ex             & 97.54               & 96.49              & 100               & 98                          &   97.54                        \\ \bottomrule
-  \end{tabular}
-  \caption{Table description goes here.}
-  \label{tab:ranking softmax}
-\end{table}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.4]{figures/softmax.pdf} 
-  \caption{last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}
-  \label{fig:unloss}
-\end{figure}
+As we seen in the above table, none of the  data augmentation types are not able to give clear seperation between 3 classes. No contrast sweet, resize and sweet data augmentation data types achieved highest accuracy 90 and 95.12 and 97.07  in the category of  Control vs SD and Control vs Ex and Ex vs Sd categories correspondingly. 
 
 The main limitation of this approach is we can't garantee when we get new images it will stil seperate three classes 100 percentage like we seen above, there can be overlaps, since the classification only promise us that the softmax score of the control will be closer or equal to zero and  single dose will be closer or equal to 1 in control vs sd case. that means classification only promise us that we get clear seperation inbetween 2 classes not three classes based on the softmax value.
 
@@ -533,9 +511,11 @@ All of the above inference metric scaling  I did it on original image vector and
 
 \section{ Ranking strategy 4: Dimensionality reduction technics}
 
-\subsection{PCA approach}
-PCA  aka Principal componanet anaylisis can be defined as the orthogonal projection of the data onto lower dimensional linear space, known as the principle subspace, such that variance of the projected data is maximized, equalantly it can defined as the linear projection that minimizes the average projection cost,defines as the mean squared distance between the datapoints and their projection \cite{bishop:2006:PRML}. We will use the PCA technique to identify the direction of maximum variance in the high dimensional feature space in our case 512 D ( since before projection head feature vector have 512 features, we will consider no of features as our samples and each features represent as variables that is 512) and projects data onto this single axis (1D). The resulting First PCA scores (positions along this axis) aim to preserve maximum variance as possible from the original data while reducing redundancy and noise.  Idea is that whether this 1D PCA value can be used as as our ranking metric or not.
 
+
+PCA  aka Principal componanet anaylisis can be defined as the orthogonal projection of the data onto lower dimensional linear space, known as the principle subspace, such that variance of the projected data is maximized, equalantly it can defined as the linear projection that minimizes the average projection cost,defines as the mean squared distance between the datapoints and their projection \cite{bishop:2006:PRML}. We will use the PCA technique to identify the direction of maximum variance in the high dimensional feature space in our case 512 D ( since before projection head feature vector have 512 features, we will consider no of features as our samples and each features represent as variables that is 512) and projects data onto this single axis (1D). The resulting First PCA scores (positions along this axis) aim to preserve maximum variance as possible from the original data while reducing redundancy and noise.  Idea is that whether this 1D PCA value can be used as as our ranking metric or not. 
+
+Similarly we use other dimensionality reduction techniques such as  t-SNE (t-Distributed Stochastic Neighbor Embedding)  and UMAP (Uniform Manifold Approximation and Projection) to rank the images. 
 \begin{table}[H]
   \centering
   \begin{tabular}{@{}lccccc@{}}

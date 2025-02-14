@@ -26,15 +26,14 @@
 \contentsline {chapter}{\numberline {9}Methodology for Ranking}{60}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Day 7 to day 10 predcition using CAE}{62}{section.9.1}%
 \contentsline {section}{\numberline {9.2}Ranking strategy 3: Softmax approach}{73}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Ranking strategy 2: K Means approach}{76}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Ranking strategy 4: Dimensionality reduction technics}{79}{section.9.4}%
-\contentsline {subsection}{\numberline {9.4.1}PCA approach}{79}{subsection.9.4.1}%
-\contentsline {chapter}{\numberline {10}Conclusion}{81}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Final Evaluation}{81}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Things that doesn't work}{82}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Future research direction}{82}{section.10.3}%
-\contentsline {chapter}{\nonumberline Appendix}{85}{chapter*.88}%
-\contentsline {chapter}{Literature}{93}{section*.102}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{95}{chapter*.104}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{96}{chapter*.105}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 2: K Means approach}{74}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Ranking strategy 4: Dimensionality reduction technics}{78}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Conclusion}{80}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Final Evaluation}{80}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Things that doesn't work}{81}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Future research direction}{81}{section.10.3}%
+\contentsline {chapter}{\nonumberline Appendix}{83}{chapter*.86}%
+\contentsline {chapter}{Literature}{91}{section*.100}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{93}{chapter*.102}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{94}{chapter*.103}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
