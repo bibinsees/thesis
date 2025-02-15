@@ -10,18 +10,20 @@ I picked 22 sinle dose  similar images from drug screening images (Note: This fi
 	\small
 	\begin{tabular}{@{}lcc@{}}
 	\toprule
-	\textbf{Ranking Strategy}                                                                       & \textbf{Out of single dose range} & \textbf{Ranking Accuracy} \\ \midrule
-	Softmax: Ex vs sd   Strong                                                                       & 7                  & 92.46                  \\ 
-	Softmax: cond7 vs Ex  Resize                                                                          & 1                   & 97.33                   \\ 
+	\textbf{Ranking Strategy}                                                                       & \textbf{Out of Single Dose Range} & \textbf{Ranking Accuracy} \\ \midrule
 	Prediction model Euclidean distance Before                                                     & 0                   & 76.93                   \\  
-	tsne: before sweet                                                                              & 0  & 100                   \\ 
-	tsne: resize before                                                                             & 0  & 100                   \\ 
-	tsne: before no contrast resize                                                                 & 0  & 100                   \\ 
-	\begin{tabular}[c]{@{}l@{}}K-means: After cosine strong\\ using single dose mean\end{tabular}   & 12 controlil kedakkane              & 93.17                   \\ \bottomrule
+	tsne: before sweet                                                                              & 0                   & 100                     \\ 
+	tsne: resize before                                                                             & 0                   & 100                     \\ 
+	tsne: before no contrast resize                                                                 & 0                   & 100                     \\ 
+	Softmax: cond7 vs Ex Resize                                                                     & 1                   & 97.33                   \\ 
+	Softmax: Ex vs sd Strong                                                                        & 7                   & 92.46                   \\ 
+	\begin{tabular}[c]{@{}l@{}}K-means: After cosine strong\\ using single dose mean\end{tabular}   & 12                  & 93.17                   \\ 
+	\bottomrule
 	\end{tabular}
 	\caption{Performance metrics across different strategies.}
 	\label{tab:ranking_strategies}
 \end{table}
+
 
 
 

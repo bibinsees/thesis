@@ -1,0 +1,57 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Robo platform}}{2}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Dual-arm robot}}{3}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces A well plate containing 96 wells where rows A, H and columns 1, 2 are excluded due to edge effects.}}{4}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Three different types of images: Drug Screened, Single Dose, and Untreated as mentioned in section ~\ref {sec:lab-setup}.}}{6}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Well plate setup for the single-dose experiment where the left half remains untreated and the right half is treated with a single drug concentration. This image was taken three days after drug application.}}{7}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Well plate setup for the drug screening experiment where the majority of tumor tissues are treated with different combinations of drug concentrations (multi-colored wells), while some are left untreated (white wells bounded by orange box).}}{7}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Illustrates the flow chart of time evolutoion of 3D tumor tissues.}}{8}{figure.caption.13}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces invalid vs valid}}{16}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces invalid vs valid}}{16}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Misalighned}}{17}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Noise}}{18}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces gp 8 drug applied}}{19}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces 8-bit vs 16 bit data lose comparison}}{20}{figure.caption.22}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Overall framework of the thesis.}}{24}{figure.caption.23}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}}{27}{figure.caption.24}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces A: croped to 2054*2054 then resized to 96*96: No black cuts. B: original image 2456*2054 then resized to 96*96: black cuts happened}}{28}{figure.caption.25}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces crop}}{30}{figure.caption.26}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Blur and sharped. explain what happens when its blured or sarpened. edge details}}{32}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Orange box consist of implemented flips and rotations. Blue box consist of avoided flips and rotation combinations because of their repeated pattern to the orange box augmentations.}}{33}{figure.caption.28}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces 16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}}{34}{figure.caption.29}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces contrast increased or decreased}}{35}{figure.caption.30}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Brightness increased or decreased}}{35}{figure.caption.31}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces 5 Data augmentations we explored}}{37}{figure.caption.32}%
+\contentsline {figure}{\numberline {7.10}{\ignorespaces contrast increased or decreased}}{38}{figure.caption.33}%
+\contentsline {figure}{\numberline {7.11}{\ignorespaces 5 Data augmentations we explored}}{39}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.12}{\ignorespaces strong}}{45}{figure.caption.39}%
+\contentsline {figure}{\numberline {7.13}{\ignorespaces sweet}}{45}{figure.caption.40}%
+\contentsline {figure}{\numberline {7.14}{\ignorespaces sweet no contra}}{46}{figure.caption.41}%
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Resize no contra}}{46}{figure.caption.42}%
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Resize}}{47}{figure.caption.43}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces before}}{52}{figure.caption.47}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces before}}{52}{figure.caption.48}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces orig}}{55}{figure.caption.51}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces orig}}{57}{figure.caption.56}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces orig}}{59}{figure.caption.58}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces orig}}{59}{figure.caption.60}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{67}{figure.caption.63}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces train vs test loss}}{67}{figure.caption.64}%
+\contentsline {figure}{\numberline {9.3}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{68}{figure.caption.65}%
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Wrong heading crct image upload Ohne contrast Resize before projection head data aug: Explod dataset plot in the figure shows overfitting }}{69}{figure.caption.67}%
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Last row shows the misposition of the cancer cell. On day 7, it was above, and on day 10, it moved below.}}{73}{figure.caption.76}%
+\contentsline {figure}{\numberline {9.6}{\ignorespaces train vs test loss}}{77}{figure.caption.79}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

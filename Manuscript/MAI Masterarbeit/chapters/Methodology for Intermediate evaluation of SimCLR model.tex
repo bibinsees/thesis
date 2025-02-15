@@ -169,6 +169,24 @@ For doing inferecne I choosed before head projection features since thats the on
     \label{tab:performance_metrics}
 \end{table}
 
+\begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{llcccccc}
+    \toprule
+    \textbf{Augmentation Type}      & \textbf{Metric} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{Resize No Contrast} & \textbf{Sweet No Contrast} \\ \midrule
+    \multirow{2}{*}{\textbf{After Projection Head}}  
+        & Train Accuracy (\%) & - & - & - & - & - \\
+        & Test Accuracy (\%)  & - & - & - & - & - \\ \midrule
+    \multirow{2}{*}{\textbf{Before Projection Head}} 
+        & Train Accuracy (\%) & - & - & - & - & - \\
+        & Validation Accuracy (\%)  & - & - & - & - & - \\ 
+    \bottomrule
+    \end{tabular}%
+    }
+    \caption{Performance metrics for different augmentation strategies before and after the projection head.}
+    \label{tab:augmentation_metric}
+\end{table}
 
 
 From the above table we can see that during the inference except 'strong' and 'sweet no contrast' all other augs still able to reach 100 percentage accuracy to classify the ds 

@@ -515,50 +515,42 @@ All of the above inference metric scaling  I did it on original image vector and
 
 PCA  aka Principal componanet anaylisis can be defined as the orthogonal projection of the data onto lower dimensional linear space, known as the principle subspace, such that variance of the projected data is maximized, equalantly it can defined as the linear projection that minimizes the average projection cost,defines as the mean squared distance between the datapoints and their projection \cite{bishop:2006:PRML}. We will use the PCA technique to identify the direction of maximum variance in the high dimensional feature space in our case 512 D for before projection head feature simclr feature vector, and 20 D for after projection head simclr feature vector and 27648 D for original images and projects data onto this single axis (1D). The resulting First PCA scores (positions along this axis) aim to preserve maximum variance as possible from the original data while reducing redundancy and noise.  Idea is that whether this 1D PCA value can be used as as our ranking metric or not. 
 
-Similarly we use other dimensionality reduction techniques such as  t-SNE (t-Distributed Stochastic Neighbor Embedding)  and UMAP (Uniform Manifold Approximation and Projection) to reduce the higher dimension of data to single dimension to check whether these single dmension data tsne or umap values used for ranking  the images. 
+Similarly we use other dimensionality reduction techniques such as  t-SNE (t-Distributed Stochastic Neighbor Embedding)  and UMAP (Uniform Manifold Approximation and Projection) to reduce the higher dimension of data to single dimension to check whether these single dmension data of tsne or umap values are useful for ranking  the images. 
+
 \begin{table}[H]
   \centering
-  \begin{tabular}{@{}lccccc@{}}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}llccccc@{}}
   \toprule
-  \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-  \textbf{Before projection head} & 73.33                & 51.87              & 49.59               & 34.80                        & 77.56                          \\
-  \textbf{After projection head} & 80.49                & 21.95              & 76.75               & 76.75                          & 31.71                          \\ \bottomrule
-  \end{tabular}
-  \caption{PCA}
-  \label{tab:distances}
-\end{table}
-
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{@{}lccccc@{}}
-  \toprule
-  \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-  \textbf{Before projection head} &  93.33               & 99.51              & 99.35               & 93.50                          & 99.67                          \\
-  \textbf{After projection head} & 93.50               & 34.47              & 56.26               & 25.53                          & 93.50                       \\ \bottomrule
-  \end{tabular}
-  \caption{umap}
-  \label{tab:distances}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{@{}lccccc@{}}
-  \toprule
-  \textbf{Metric}          & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
-  \textbf{Before projection head} & 99.84                & 100              & 100               & 100                          & 99.19                          \\
-  \textbf{After projection head} & 74.63                & 55.61              & 98.70               & 76.75                          & 31.71                          \\ \bottomrule
-  \end{tabular}
-  \caption{tsne}
-  \label{tab:distances}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|l|l|l|}
-  \hline
-  \multicolumn{1}{|c|}{Pca} & tsne & umap \\ \hline
-                         54.47   &  54.80    & 17.56     \\ \hline
-  \end{tabular}
+  \textbf{Metric}              & \textbf{DR Technique} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{No Contrast Resize} & \textbf{No Contrast Sweet} \\ \midrule
+  \multirow{3}{*}{\textbf{Before Projection Head}} 
+                               & PCA                   & 73.33           & 51.87          & 49.59           & 34.80                        & 77.56                      \\
+                               & UMAP                  & 93.33           & 99.51          & 99.35           & 93.50                        & 99.67                      \\
+                               & t-SNE                 & 99.84           & \textbf{100.00}         & \textbf{100.00}          & \textbf{100.00}                       & 99.19                      \\ \midrule
+  \multirow{3}{*}{\textbf{After Projection Head}} 
+                               & PCA                   & 80.49           & 21.95          & 76.75           & 76.75                        & 31.71                      \\
+                               & UMAP                  & 93.50           & 34.47          & 56.26           & 25.53                        & 93.50                      \\
+                               & t-SNE                 & 74.63           & 55.61          & 98.70           & 76.75                        & 31.71                      \\ 
+  \bottomrule
+  \end{tabular}%
+  }
+  \caption{Comparison of dimensionality reduction techniques (PCA, UMAP, t-SNE) for various metrics before and after the projection head.}
+  \label{tab:combined_dr}
   \end{table}
 
+  
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{lccc}
+      \toprule
+      & \textbf{PCA} & \textbf{t-SNE} & \textbf{UMAP} \\ 
+      \midrule
+      & 54.47 & 54.80 & 17.56 \\ 
+      \bottomrule
+  \end{tabular}
+  \caption{Comparison of dimensionality reduction techniques.}
+  \label{tab:dim_reduction}
+\end{table}
+
+From the above tables we see that before projection head out performs genearally after projection head and the original image feature vectors in amoung all dimenstionaily reduction technic.
+While comparing amoung before projection head: Above table shows that PCA reducing data dimension to 1 D doesn't seperate 3 classes well comapre to the tsne and umap. While Umap achieved closer to 100, Tsne performed better amoung all dimesnionality redcution technic  with the achievance of 100 percentage accuracy to seperate 3 classes in sweet, resize, No contrast data augmentation pipelines. 

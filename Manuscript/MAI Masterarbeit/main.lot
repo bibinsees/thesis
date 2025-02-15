@@ -1,0 +1,42 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Dataset Class Overview}}{19}{table.caption.21}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {8.1}{\ignorespaces Dataset Summary from Drug Screening Experiments}}{50}{table.caption.44}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Performance metrics for different augmentation strategies before and after the projection head.}}{51}{table.caption.45}%
+\contentsline {table}{\numberline {8.3}{\ignorespaces Original Image Results}}{51}{table.caption.46}%
+\contentsline {table}{\numberline {8.4}{\ignorespaces Performance Metrics Before and After the Projection Head}}{53}{table.caption.49}%
+\contentsline {table}{\numberline {8.5}{\ignorespaces Performance metrics for different augmentation strategies before and after the projection head.}}{53}{table.caption.50}%
+\contentsline {table}{\numberline {8.6}{\ignorespaces Summary of Datasets}}{55}{table.caption.52}%
+\contentsline {table}{\numberline {8.7}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with cosine distance}}{55}{table.caption.53}%
+\contentsline {table}{\numberline {8.8}{\ignorespaces Evaluation Results on Different Datasets and Augmentations with euclidean distance}}{56}{table.caption.54}%
+\contentsline {table}{\numberline {8.9}{\ignorespaces Evaluation Results Using Different Distance Metrics for original images}}{57}{table.caption.55}%
+\contentsline {table}{\numberline {8.10}{\ignorespaces Evaluation Results on COSINE}}{58}{table.caption.57}%
+\contentsline {table}{\numberline {8.11}{\ignorespaces Evaluation Results on Euclidean}}{59}{table.caption.59}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {9.1}{\ignorespaces Cosine distance}}{70}{table.caption.68}%
+\contentsline {table}{\numberline {9.2}{\ignorespaces Euclidean distance}}{71}{table.caption.69}%
+\contentsline {table}{\numberline {9.3}{\ignorespaces MSE distance}}{71}{table.caption.70}%
+\contentsline {table}{\numberline {9.4}{\ignorespaces L1 distance}}{71}{table.caption.71}%
+\contentsline {table}{\numberline {9.5}{\ignorespaces Pearson correlation}}{71}{table.caption.72}%
+\contentsline {table}{\numberline {9.6}{\ignorespaces Dot product}}{72}{table.caption.73}%
+\contentsline {table}{\numberline {9.7}{\ignorespaces Jaccard similarity}}{72}{table.caption.74}%
+\contentsline {table}{\numberline {9.8}{\ignorespaces Hamming distance}}{72}{table.caption.75}%
+\contentsline {table}{\numberline {9.9}{\ignorespaces Table description goes here.}}{75}{table.caption.77}%
+\contentsline {table}{\numberline {9.10}{\ignorespaces Cosine distance}}{76}{table.caption.78}%
+\contentsline {table}{\numberline {9.11}{\ignorespaces Euclidean distance}}{77}{table.caption.80}%
+\contentsline {table}{\numberline {9.12}{\ignorespaces Your table caption here}}{78}{table.caption.81}%
+\contentsline {table}{\numberline {9.13}{\ignorespaces Comparison of dimensionality reduction techniques (PCA, UMAP, t-SNE) for various metrics before and after the projection head.}}{79}{table.caption.82}%
+\contentsline {table}{\numberline {9.14}{\ignorespaces Comparison of dimensionality reduction techniques.}}{79}{table.caption.83}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {10.1}{\ignorespaces Performance metrics across different strategies.}}{81}{table.caption.84}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
