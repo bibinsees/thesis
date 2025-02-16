@@ -20,7 +20,7 @@
 \contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{48}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features}{48}{section.8.1}%
 \contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{50}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Inference}{52}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.2}Inference}{53}{subsection.8.1.2}%
 \contentsline {section}{\numberline {8.2}kmeans clustering}{54}{section.8.2}%
 \contentsline {subsection}{\numberline {8.2.1}Evaluation}{54}{subsection.8.2.1}%
 \contentsline {chapter}{\numberline {9}Methodology for Ranking}{61}{chapter.9}%
@@ -32,8 +32,8 @@
 \contentsline {section}{\numberline {10.1}Final Evaluation}{81}{section.10.1}%
 \contentsline {section}{\numberline {10.2}Things that doesn't work}{83}{section.10.2}%
 \contentsline {section}{\numberline {10.3}Future research direction}{83}{section.10.3}%
-\contentsline {chapter}{\nonumberline Appendix}{85}{chapter*.86}%
-\contentsline {chapter}{Literature}{93}{section*.100}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{95}{chapter*.102}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{96}{chapter*.103}%
+\contentsline {chapter}{\nonumberline Appendix}{85}{chapter*.87}%
+\contentsline {chapter}{Literature}{93}{section*.101}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{95}{chapter*.103}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{96}{chapter*.104}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

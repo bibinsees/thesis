@@ -79,7 +79,7 @@ We calculate the train accuracy and the test accuracy for each data aug pipeline
 
 Train epoch in the table: The number of epochs required to reach the best training accuracy.
 Test epoch in the table: The number of epochs required to reach the best test accuracy.
-
+\textcolor{red}{add parameters for classification simclr}
 \textcolor{red}{how do we turn raw images to orig images to feats}
 To use original images directly first we resized to 96*96 since we did that for simclr so that it could be fair comparison. Then we normalised each by dividing it by 65535 
 (16 bit). Each image flatten into vectors of ([1,96*96*3]where 96 =H=W and 3 = no of channels) suitable for logistic regression model. and we use same parameters that we used 
@@ -130,12 +130,44 @@ for simclr feats classification lke learning rate , batch size etc for fair comp
             \bottomrule
             \end{tabular}
         \end{table}
-           
+
+With cross vaidation with 10 kfolds:             
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{llcccccc}
+    \toprule
+    \textbf{Augmentation Type}      & \textbf{Metric} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{Resize No Contrast} & \textbf{Sweet No Contrast} \\ \midrule
+    \multirow{2}{*}{\textbf{After Projection Head}}  
+        & Average train Accuracy (\%) & 35.17 & 36.60 & 49.44 & 35.28 & 34.57 \\
+        & Average test Accuracy (\%)  & 33.48 & 34.62 & 54.43 & 33.77 & 34.65 \\ \midrule
+    \multirow{2}{*}{\textbf{Before Projection Head}} 
+        & Average train Accuracy (\%) & 99.81 & 99.90 & 99.86 & 99.90 & 99.89 \\
+        & Average validation Accuracy (\%)  & 99.71 & 99.77 & 99.49 & 99.72 & 99.61 \\ 
+    \bottomrule
+    \end{tabular}%
+    }
+    \caption{Performance metrics for different augmentation strategies before and after the projection head.}
+    \label{tab:augmentation_metric}
+\end{table}
+\begin{table}[H]
+    \centering
+    \caption{Original Image Results}
+    \label{tab:original_image_results}
+    \begin{tabular}{lcc}
+    \toprule
+    \textbf{Metric}         & \textbf{ logisitic reg average Accuracy (\%)} & \textbf{ResNet18 average Accuracy (\%)} \\ \midrule
+    \textbf{Train}          & 96.73                                                     & 99.86                                             \\ 
+    \textbf{Validation}     & 96.50                                                     & 99.93                                              \\ 
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+
+Inbetween the dtata augmentation pipeline while using  before projection, which one is better we can't evaluate since everything have subtle difference in accuracy.
+
+
 Train loss vs Val loss . Train accurcay  vs val accuracy 
-          
-
-
-
           \begin{figure}[H]
             \centering
             \includegraphics[scale=0.5]{figures/test_class.png} 
@@ -169,24 +201,7 @@ For doing inferecne I choosed before head projection features since thats the on
     \label{tab:performance_metrics}
 \end{table}
 
-\begin{table}[h!]
-    \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{llcccccc}
-    \toprule
-    \textbf{Augmentation Type}      & \textbf{Metric} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{Resize No Contrast} & \textbf{Sweet No Contrast} \\ \midrule
-    \multirow{2}{*}{\textbf{After Projection Head}}  
-        & Train Accuracy (\%) & - & - & - & - & - \\
-        & Test Accuracy (\%)  & - & - & - & - & - \\ \midrule
-    \multirow{2}{*}{\textbf{Before Projection Head}} 
-        & Train Accuracy (\%) & - & - & - & - & - \\
-        & Validation Accuracy (\%)  & - & - & - & - & - \\ 
-    \bottomrule
-    \end{tabular}%
-    }
-    \caption{Performance metrics for different augmentation strategies before and after the projection head.}
-    \label{tab:augmentation_metric}
-\end{table}
+
 
 
 From the above table we can see that during the inference except 'strong' and 'sweet no contrast' all other augs still able to reach 100 percentage accuracy to classify the ds 

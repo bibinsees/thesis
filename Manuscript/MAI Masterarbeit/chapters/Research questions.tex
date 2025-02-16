@@ -1,19 +1,28 @@
 \chapter{Research Objective and Questions}\label{ch:Research Objectives and Questions}
 \section*{Research objective}
-This thesis aims to assess drug efficacy by ranking different drug combinations and concentrations on lab-cultivated pancreatic tumor tissue models. 
+This thesis aims to assess drug efficacy by ranking different drug combinations and concentrations on lab-cultivated pancreatic 3D tumor tissue models. 
 The ranking is based on features extracted from bright-field microscopy images of these tumor tissue models using
-SimCLR self supervised learning. Since we lack ground truth labels, ranking to get exact efficacy value will be out of focus, instead we rank the images as a transition from
- untreated to single dose images or untreated to explod images. This is our objective.  
+SimCLR self supervised learning. The primary challenge lies in learning the efficient features of alterations induced in these
+tumor tissue models by the impact of drug application over a period of time.
+
+Other main challenges in the ranking strategy, the lack of groundtruth labels, except we only know that drug efficacy is zero for untreated (control) images.
 
 
- \textcolor{red}{one more thing. You had a master thesis proposal in the beginning which actually listed the research questions as well as the methodology. 
- Your final manuscript shall reflect it and follow it. When you diverted from the original proposal, you shall explain why you diverted.} 
+supervision
+- what do you do 
+- why you do it
+what are the challenges in it
+- what do ypo not do out of scope
+
+Since we lack ground truth labels, ranking to get exact efficacy value will be out of focus. 
+instead we rank the images as a transition from
+untreated to single dose images or untreated to explod images. 
 
 
-\textcolor{red}{My plan is to rewrite the introduction to include why we use SimCLR as self supervised learning for learning representation by including :
- basically in simclr the loss function is defined such a way that it reduce the cosine distance between the augmentations derived from one image  and no 
- penalisation for pushing or no pushing away of augmentation from one image to augmentation from another image. this is perfect in our case where 
- we don't want to push away augmented images derived from different images, especially when we don't know if those images have same drug efficay or not.}
+
+
+
+
 
 \section*{Research Questions}
 
