@@ -271,6 +271,13 @@ INPUT c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 INPUT c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/acronym/acronym.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/acronym/acronym.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/bigfoot/suffix.sty
+INPUT c:/texlive/2024/texmf-dist/tex/latex/bigfoot/suffix.sty
+INPUT c:/texlive/2024/texmf-dist/tex/generic/xstring/xstring.sty
+INPUT c:/texlive/2024/texmf-dist/tex/generic/xstring/xstring.sty
+INPUT c:/texlive/2024/texmf-dist/tex/generic/xstring/xstring.tex
 INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
@@ -408,15 +415,18 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ./main.toc
 INPUT ./main.toc
 INPUT main.toc
 OUTPUT main.toc
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmro7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmro8r.tfm
 INPUT ./main.lof
 INPUT ./main.lof
 INPUT main.lof
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmro7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmro8r.tfm
 OUTPUT main.lof
 INPUT ./main.lot
 INPUT ./main.lot
@@ -483,8 +493,6 @@ OUTPUT chapters/literature_review.aux
 INPUT ./chapters/literature_review.tex
 INPUT ./chapters/literature_review.tex
 INPUT chapters/literature_review.tex
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ./chapters/Data Description.tex
 INPUT ./chapters/Data Description.tex
 OUTPUT chapters/Data Description.aux
@@ -524,6 +532,12 @@ INPUT ./figures/8bitvs16bit.png
 INPUT ./figures/8bitvs16bit.png
 INPUT ./figures/8bitvs16bit.png
 INPUT ./figures/8bitvs16bit.png
+INPUT ./chapters/Structure of the Thesis.tex
+INPUT ./chapters/Structure of the Thesis.tex
+OUTPUT chapters/Structure of the Thesis.aux
+INPUT ./chapters/Structure of the Thesis.tex
+INPUT ./chapters/Structure of the Thesis.tex
+INPUT chapters/Structure of the Thesis.tex
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
@@ -531,12 +545,6 @@ INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT ./chapters/Structure of the Thesis.tex
-INPUT ./chapters/Structure of the Thesis.tex
-OUTPUT chapters/Structure of the Thesis.aux
-INPUT ./chapters/Structure of the Thesis.tex
-INPUT ./chapters/Structure of the Thesis.tex
-INPUT chapters/Structure of the Thesis.tex
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm

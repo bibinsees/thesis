@@ -45,6 +45,7 @@
 \usepackage{multirow}
 \usepackage{float}
 
+\usepackage{acronym}
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -179,15 +180,9 @@ Thank Prof. Jan for the softmax approach idea.
 
 Thank Dalia for the code for sharp layer calculation and thanks for the biological stuff explanation and the once in a time opportunity.
 
-Thank Phillip Ockermann for the cell viability test idea.
+Thank Phillip Ockermann for the cell viability test idea.Thank stefan for the microscope focal length explanation.Thank Philipp vaeth for the resize and crop augmentationc idea and general explanation for th edata augemnetation.
 
-Thank stefan for the microscope focal length explanation.
-
-Thank Philipp vaeth for the resize and crop augmentationc idea and general explanation for th edata augemnetation.
-
-Thank Dad and Mom for this life. Without you guys I won't be able to write this. Thank you to my brother for being my backbone.
-
-Finally thanks to chatgpt, perpexilitcity, claude sonnet, deepseek, grammerly. without those there will be only implementations.
+Thank Dad and Mom for this life. Without you guys I won't be able to write this. Thank you to my brother for being my backbone. Finally thanks to chatgpt, perpexilitcity, claude sonnet, deepseek, grammerly. without those there will be only implementations.
 
 Danke.
 \vspace{2em}
@@ -201,6 +196,16 @@ Danke.
 \vspace{0.5em}
 
 \noindent Bibin Babu
+\let\clearpage\relax
+\chapter*{List of Abbreviations}
+\begin{acronym}[UMAP] % The argument "UMAP" is the longest acronym for proper alignment.
+  \acro{PCA}{Principal Component Analysis}
+  \acro{t-SNE}{t-distributed Stochastic Neighbor Embedding}
+  \acro{UMAP}{Uniform Manifold Approximation and Projection}
+  \acro{ML}{Machine Learning}
+  % Add more abbreviations as needed.
+\end{acronym}
+
 %%%%%%%%%%%%%%%%%%%
 %% toc
 %%%%%%%%%%%%%%%%%%%

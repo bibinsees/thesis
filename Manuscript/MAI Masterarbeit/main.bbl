@@ -88,6 +88,54 @@
       \verb 2002.05709
       \endverb
     \endentry
+    \entry{CrossZamirski2022LabelFree}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=2c19f20525c98a12d07db810d8f67a02}{%
+           family={Cross-Zamirski},
+           familyi={C\bibinithyphendelim Z\bibinitperiod},
+           given={J.\bibnamedelimi O.},
+           giveni={J\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=1bf51fa0cd05f9de9ab9e0fbf5256f59}{%
+           family={Mouchet},
+           familyi={M\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=f4a9e8950eb282c0400166e00fe5a66c}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{ec01510061ea68acfe7c16e7689c9976}
+      \strng{fullhash}{ec01510061ea68acfe7c16e7689c9976}
+      \strng{fullhashraw}{ec01510061ea68acfe7c16e7689c9976}
+      \strng{bibnamehash}{ec01510061ea68acfe7c16e7689c9976}
+      \strng{authorbibnamehash}{ec01510061ea68acfe7c16e7689c9976}
+      \strng{authornamehash}{ec01510061ea68acfe7c16e7689c9976}
+      \strng{authorfullhash}{ec01510061ea68acfe7c16e7689c9976}
+      \strng{authorfullhashraw}{ec01510061ea68acfe7c16e7689c9976}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Reports}
+      \field{title}{Label-free prediction of cell painting from brightfield images}
+      \field{volume}{12}
+      \field{year}{2022}
+      \field{pages}{10001}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41598-022-12914-x
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1038/s41598-022-12914-x
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1038/s41598-022-12914-x
+      \endverb
+    \endentry
     \entry{Dembski2023Establishing}{article}{}{}
       \name{author}{8}{}{%
         {{hash=d3575ba2898bbae85c4b78a3290b931a}{%
@@ -447,6 +495,203 @@
       \verb https://doi.org/10.1002/cyto.a.24158
       \endverb
     \endentry
+    \entry{Lee2018DeepHCS}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=d920d03f5bc6ee5a01c679ac8a792277}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=80ee0756d64de5298fd925fa282495cd}{%
+           family={Oh},
+           familyi={O\bibinitperiod},
+           given={J.\bibnamedelimi W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=8850d5a648d2470e3da18b48c1adb254}{%
+           family={Kang},
+           familyi={K\bibinitperiod},
+           given={M.\bibnamedelimi S.},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=44c2d893f04fed44a40b5e2123ec0797}{%
+           family={Her},
+           familyi={H\bibinitperiod},
+           given={N.\bibnamedelimi G.},
+           giveni={N\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=4fe1b02288e362835f1e4382c80016e7}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={M.\bibnamedelimi H.},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=2e50af1c9c189688deee6d421456e5b3}{%
+           family={Jeong},
+           familyi={J\bibinitperiod},
+           given={W.\bibnamedelimi K.},
+           giveni={W\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=417546581a57c6839557459153326f02}{%
+           family={Frangi},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0c8ae908308842bae891c80cfb7b2b43}{%
+           family={Schnabel},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ef28ed885c2940375292c3c78e04a6e7}{%
+           family={Davatzikos},
+           familyi={D\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=ba2d4cb08a5a783378f19a060cd06a32}{%
+           family={Alberola-López},
+           familyi={A\bibinithyphendelim L\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6d033eb65b651b62713bda44515ce95e}{%
+           family={Fichtinger},
+           familyi={F\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Cham}%
+      }
+      \strng{namehash}{6e80fd0d0b64e965f10248c4b5bf2724}
+      \strng{fullhash}{330a9eecb0b39efcc9531b8e0c4c7257}
+      \strng{fullhashraw}{330a9eecb0b39efcc9531b8e0c4c7257}
+      \strng{bibnamehash}{6e80fd0d0b64e965f10248c4b5bf2724}
+      \strng{authorbibnamehash}{6e80fd0d0b64e965f10248c4b5bf2724}
+      \strng{authornamehash}{6e80fd0d0b64e965f10248c4b5bf2724}
+      \strng{authorfullhash}{330a9eecb0b39efcc9531b8e0c4c7257}
+      \strng{authorfullhashraw}{330a9eecb0b39efcc9531b8e0c4c7257}
+      \strng{editorbibnamehash}{7752e9f92e25c1b2304882fd403c61e6}
+      \strng{editornamehash}{7752e9f92e25c1b2304882fd403c61e6}
+      \strng{editorfullhash}{079ee01a989f4e507a3328fdf3710d9c}
+      \strng{editorfullhashraw}{079ee01a989f4e507a3328fdf3710d9c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Medical Image Computing and Computer Assisted Intervention – MICCAI 2018}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{DeepHCS: Bright-Field to Fluorescence Microscopy Image Conversion Using Deep Learning for Label-Free High-Content Screening}
+      \field{volume}{11071}
+      \field{year}{2018}
+      \field{pages}{297\bibrangedash 305}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/978-3-030-00934-2_38
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-030-00934-2_38
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-030-00934-2_38
+      \endverb
+    \endentry
+    \entry{Mualla2013ACD}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=7b64daf1cbf636a26c9968ea1e1be35b}{%
+           family={Mualla},
+           familyi={M\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=215e188f27ef2b59462286f6b49869c5}{%
+           family={Scholl},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c734787c5a2d3d5dc9585308c2b5a5ba}{%
+           family={Sommerfeldt},
+           familyi={S\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=6c9cb602e0ba2fbbea631b113dea0e0b}{%
+           family={Maier},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=281dbb947f607a379e4f2af4fe5af246}{%
+           family={Hornegger},
+           familyi={H\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f245a287a2a086a4c609b23f3df6521}
+      \strng{fullhash}{efecc7506b8daed2604dbeb97092190f}
+      \strng{fullhashraw}{efecc7506b8daed2604dbeb97092190f}
+      \strng{bibnamehash}{8f245a287a2a086a4c609b23f3df6521}
+      \strng{authorbibnamehash}{8f245a287a2a086a4c609b23f3df6521}
+      \strng{authornamehash}{8f245a287a2a086a4c609b23f3df6521}
+      \strng{authorfullhash}{efecc7506b8daed2604dbeb97092190f}
+      \strng{authorfullhashraw}{efecc7506b8daed2604dbeb97092190f}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Medical Imaging}
+      \field{note}{Epub 2013 Aug 30}
+      \field{number}{12}
+      \field{title}{Automatic Cell Detection in Bright-Field Microscope Images Using SIFT, Random Forests, and Hierarchical Clustering}
+      \field{volume}{32}
+      \field{year}{2013}
+      \field{pages}{2274\bibrangedash 2286}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/TMI.2013.2280380
+      \endverb
+    \endentry
+    \entry{Todorov2023STrack}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=a3c8ff1d5b3ece68ad3726e760427294}{%
+           family={Todorov},
+           familyi={T\bibinitperiod},
+           given={Hristo},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b8becf62718a204aec5fed31c9116c6f}{%
+           family={Miguel\bibnamedelima Trabajo},
+           familyi={M\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Teresa},
+           giveni={T\bibinitperiod}}}%
+        {{hash=40d31b2877ad859a6b51acf6f4a6b258}{%
+           family={Meer},
+           familyi={M\bibinitperiod},
+           given={Jan\bibnamedelima Roelof},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{0f8275b6faeb26ee5f949ae6b841dddc}
+      \strng{fullhash}{0f8275b6faeb26ee5f949ae6b841dddc}
+      \strng{fullhashraw}{0f8275b6faeb26ee5f949ae6b841dddc}
+      \strng{bibnamehash}{0f8275b6faeb26ee5f949ae6b841dddc}
+      \strng{authorbibnamehash}{0f8275b6faeb26ee5f949ae6b841dddc}
+      \strng{authornamehash}{0f8275b6faeb26ee5f949ae6b841dddc}
+      \strng{authorfullhash}{0f8275b6faeb26ee5f949ae6b841dddc}
+      \strng{authorfullhashraw}{0f8275b6faeb26ee5f949ae6b841dddc}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{mSphere}
+      \field{number}{2}
+      \field{title}{STrack: A Tool to Simply Track Bacterial Cells in Microscopy Time-Lapse Images}
+      \field{volume}{8}
+      \field{year}{2023}
+      \field{pages}{e0065822}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1128/msphere.00658-22
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1128/msphere.00658-22
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1128/msphere.00658-22
+      \endverb
+    \endentry
     \entry{8099852}{inproceedings}{}{}
       \name{author}{6}{}{%
         {{hash=c524ce366a5f141c1da3c2505692aaf4}{%
@@ -502,6 +747,119 @@
       \endverb
       \keyw{Diseases;X-ray imaging;Pathology;Databases;Biomedical imaging;Machine learning;Image segmentation}
     \endentry
+    \entry{melba:2024:020:woodland}{article}{}{}
+      \name{author}{16}{}{%
+        {{hash=c116f65a26a7dffa56f1f6ecf45afcd0}{%
+           family={Woodland},
+           familyi={W\bibinitperiod},
+           given={McKell},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b44f0c0fd28828d3cfe0d29fbb1c25f9}{%
+           family={Patel},
+           familyi={P\bibinitperiod},
+           given={Nihil},
+           giveni={N\bibinitperiod}}}%
+        {{hash=becf12cd095cb282d5f7de7de433c236}{%
+           family={Castelo},
+           familyi={C\bibinitperiod},
+           given={Austin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cb1a6a86000c811c847ebe62fb31a82a}{%
+           family={Al\bibnamedelima Taie},
+           familyi={A\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Mais},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c595e0ca6adff600399804a1f392bdce}{%
+           family={Eltaher},
+           familyi={E\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=38c380572d4b5e1954f013c6af97e185}{%
+           family={Yung},
+           familyi={Y\bibinitperiod},
+           given={Joshua\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=958d37e963ac92e72b621a8ef2d41484}{%
+           family={Netherton},
+           familyi={N\bibinitperiod},
+           given={Tucker\bibnamedelima J.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=8623c44ded2d7812916c9c55cc93b49a}{%
+           family={Calderone},
+           familyi={C\bibinitperiod},
+           given={Tiffany\bibnamedelima L.},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=8f23bf696e259b830313f828da9b2eba}{%
+           family={Sanchez},
+           familyi={S\bibinitperiod},
+           given={Jessica\bibnamedelima I.},
+           giveni={J\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=fe24175159179e543d5df42604583f32}{%
+           family={Cleere},
+           familyi={C\bibinitperiod},
+           given={Darrel\bibnamedelima W.},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=d07b307ddb8d0c060891d45c8f624d67}{%
+           family={Elsaiey},
+           familyi={E\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6c38a5704f99a9ad77c897c464684bab}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Nakul},
+           giveni={N\bibinitperiod}}}%
+        {{hash=617c953a48ad2824aa664327ebf6f27d}{%
+           family={Victor},
+           familyi={V\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f877c00cedbc1153fdedb73fe2e2c6fd}{%
+           family={Beretta},
+           familyi={B\bibinitperiod},
+           given={Laura},
+           giveni={L\bibinitperiod}}}%
+        {{hash=9ad160c6fd5744ff68b012d8e844a5b5}{%
+           family={Patel},
+           familyi={P\bibinitperiod},
+           given={Ankit\bibnamedelima B.},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=0d99afa75338e8025934b37b2f32f615}{%
+           family={Brock},
+           familyi={B\bibinitperiod},
+           given={Kristy\bibnamedelima K.},
+           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{bb008381fa051b9359fa4cfe5f3606fd}
+      \strng{fullhash}{867066e6974a7b0baed52218424fe9cb}
+      \strng{fullhashraw}{867066e6974a7b0baed52218424fe9cb}
+      \strng{bibnamehash}{bb008381fa051b9359fa4cfe5f3606fd}
+      \strng{authorbibnamehash}{bb008381fa051b9359fa4cfe5f3606fd}
+      \strng{authornamehash}{bb008381fa051b9359fa4cfe5f3606fd}
+      \strng{authorfullhash}{867066e6974a7b0baed52218424fe9cb}
+      \strng{authorfullhashraw}{867066e6974a7b0baed52218424fe9cb}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2766-905X}
+      \field{issue}{UNSURE2023 special issue}
+      \field{journaltitle}{Machine Learning for Biomedical Imaging}
+      \field{title}{Dimensionality Reduction and Nearest Neighbors for Improving Out-of-Distribution Detection in Medical Image Segmentation}
+      \field{volume}{2}
+      \field{year}{2024}
+      \field{pages}{2006\bibrangedash 2052}
+      \range{pages}{47}
+      \verb{doi}
+      \verb https://doi.org/10.59275/j.melba.2024-g93a
+      \endverb
+      \verb{urlraw}
+      \verb https://melba-journal.org/
+      \endverb
+      \verb{url}
+      \verb https://melba-journal.org/
+      \endverb
+    \endentry
     \entry{zhang2022contrastive}{misc}{}{}
       \name{author}{5}{}{%
         {{hash=b43cba616065799ba45d146e48b95dd8}{%
@@ -551,7 +909,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{edwoodland_2024_13881989}
 \endrefsection
 \endinput
 
