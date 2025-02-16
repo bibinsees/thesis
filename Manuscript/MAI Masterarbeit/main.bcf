@@ -2378,15 +2378,13 @@
     <bcf:citekey order="4" intorder="1">irvin2019chexpert</bcf:citekey>
     <bcf:citekey order="5" intorder="1">zhang2022contrastive</bcf:citekey>
     <bcf:citekey order="6" intorder="1">chen2020simple</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">grill2020bootstrap</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">YANG2022108606</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">liu2024selfsupervised</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">caron2021emerging</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">khosla2021supervised</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">he2015deepresiduallearningimage</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">keyes2020cancerprimer</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">edwoodland_2024_13881989</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">chen2020simple</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">he2015deepresiduallearningimage</bcf:citekey>
     <bcf:citekey order="12" intorder="1">chen2020simple</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">he2015deepresiduallearningimage</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">chen2020simple</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">bishop:2006:PRML</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">bishop:2006:PRML</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

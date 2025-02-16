@@ -385,7 +385,7 @@ range of hamming distance is working.
 
 Since we couldn't seperate those 3 classes well that means we won't have good ranking of drug screnn images since sd close images and explod images will be mixed while ranking. this calls the need for other ranking strategy such as Softmax approach, K means centroid approach, PCA approach. where for K means centroid , PCA approach small no of data will not effect that much for the performance of ranking. since there is no training required.
 
-\section{Ranking strategy 3: Softmax approach}
+\section{Ranking strategy 2: Softmax approach}
 
 This strategy utilizes the before projection head vectors since its linearly seperable for downstream task classification as suggested in original simclr paper.
 
@@ -432,7 +432,7 @@ The main limitation of this approach is we can't garantee when we get new images
 
 
 
-\section{Ranking strategy 2: K Means approach}
+\section{Ranking strategy 3: K Means approach}
 
 Unlike other 2 strategies this strategy doesn't have the probelm of class imbalance
 
@@ -522,10 +522,13 @@ All of the above inference metric scaling  I did it on original image vector and
 
 
 
-PCA  aka Principal componanet anaylisis can be defined as the orthogonal projection of the data onto lower dimensional linear space, known as the principle subspace, such that variance of the projected data is maximized, equalantly it can defined as the linear projection that minimizes the average projection cost,defines as the mean squared distance between the datapoints and their projection \cite{bishop:2006:PRML}. We will use the PCA technique to identify the direction of maximum variance in the high dimensional feature space in our case 512 D for before projection head feature simclr feature vector, and 20 D for after projection head simclr feature vector and 27648 D for original images and projects data onto this single axis (1D). The resulting First PCA scores (positions along this axis) aim to preserve maximum variance as possible from the original data while reducing redundancy and noise.  Idea is that whether this 1D PCA value can be used as as our ranking metric or not. 
+PCA  aka Principal componanet anaylisis can be defined as the orthogonal projection of the data onto lower dimensional linear space, known as the principle subspace, such that variance of the projected data is maximized, equalantly it can defined as the linear projection that minimizes the average projection cost,defines as the mean squared distance between the datapoints and their projection \cite{bishop:2006:PRML}.  PCA is less effective when the intrinsic data structure is highly nonlinear.
 
-Similarly we use other dimensionality reduction techniques such as  t-SNE (t-Distributed Stochastic Neighbor Embedding)  and UMAP (Uniform Manifold Approximation and Projection) to reduce the higher dimension of data to single dimension to check whether these single dmension data of tsne or umap values are useful for ranking  the images. 
+t-SNE: In contrast, t-distributed Stochastic Neighbor Embedding (t-SNE) is a nonlinear technique designed specifically for visualizing high-dimensional data by preserving local neighborhood structures. t-SNE works by converting pairwise distances in high-dimensional space into probabilities that represent similarities, then optimizing a low-dimensional embedding to reflect these local relationships accurately. While t-SNE excels at revealing clusters and subtle local structures that PCA might miss, it is computationally intensive and sometimes struggles to preserve the global structure of the data. These characteristics can limit its effectiveness as a ranking tool when global relationships are important, even though it provides superior visualization of complex patterns.
 
+UMAP: Uniform Manifold Approximation and Projection (UMAP) is another nonlinear dimensionality reduction method that builds on principles from manifold learning and topology to capture both local and global data structures. UMAP tends to be faster than t-SNE and often preserves more of the global structure, making it a promising alternative when a balanced view of local detail and overall data distribution is needed. However, like t-SNE, UMAP is sensitive to hyperparameter tuning and the inherent structure of the data, which can influence its performance.
+
+We will use the PCA technique to identify the direction of maximum variance in the high dimensional feature space in our case 512 D for before projection head feature simclr feature vector, and 20 D for after projection head simclr feature vector and 27648 D for original images and projects data onto this single axis (1D). The resulting First PCA scores (positions along this axis) aim to preserve maximum variance as possible from the original data while reducing redundancy and noise.  Idea is that whether this 1D PCA value can be used as as our ranking metric or not. Similarly we use other dimensionality reduction techniques such as  t-SNE (t-Distributed Stochastic Neighbor Embedding)  and UMAP (Uniform Manifold Approximation and Projection) to reduce the higher dimension of data to single dimension to check whether these single dmension data of tsne or umap values are useful for ranking  the images. 
 \begin{table}[H]
   \centering
   \resizebox{\textwidth}{!}{%

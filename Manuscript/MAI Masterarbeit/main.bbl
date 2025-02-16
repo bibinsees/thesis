@@ -45,64 +45,6 @@
       \field{title}{Pattern Recognition and Machine Learning}
       \field{year}{2006}
     \endentry
-    \entry{caron2021emerging}{misc}{}{}
-      \name{author}{7}{}{%
-        {{hash=3edb601111e59d5826c21f2b90550b2d}{%
-           family={Caron},
-           familyi={C\bibinitperiod},
-           given={Mathilde},
-           giveni={M\bibinitperiod}}}%
-        {{hash=a2a13fcd633ec70c55a7f3f4812afdcf}{%
-           family={Touvron},
-           familyi={T\bibinitperiod},
-           given={Hugo},
-           giveni={H\bibinitperiod}}}%
-        {{hash=4ada721a93e1592ecdc3df0fc9876469}{%
-           family={Misra},
-           familyi={M\bibinitperiod},
-           given={Ishan},
-           giveni={I\bibinitperiod}}}%
-        {{hash=a2329be98a372037fcb95334bdc0c720}{%
-           family={Jégou},
-           familyi={J\bibinitperiod},
-           given={Hervé},
-           giveni={H\bibinitperiod}}}%
-        {{hash=d699b6cdc55cf5811dd19c9a2e13c7c1}{%
-           family={Mairal},
-           familyi={M\bibinitperiod},
-           given={Julien},
-           giveni={J\bibinitperiod}}}%
-        {{hash=dfd2b635b41689b48c4b81ce769b940b}{%
-           family={Bojanowski},
-           familyi={B\bibinitperiod},
-           given={Piotr},
-           giveni={P\bibinitperiod}}}%
-        {{hash=977d047821122d1c2e7aa855c30c8cf2}{%
-           family={Joulin},
-           familyi={J\bibinitperiod},
-           given={Armand},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{08b206d39c68e0a891bf9c793db0530c}
-      \strng{fullhash}{0847698a5ee6a6d58bdc95f47b92644e}
-      \strng{fullhashraw}{0847698a5ee6a6d58bdc95f47b92644e}
-      \strng{bibnamehash}{08b206d39c68e0a891bf9c793db0530c}
-      \strng{authorbibnamehash}{08b206d39c68e0a891bf9c793db0530c}
-      \strng{authornamehash}{08b206d39c68e0a891bf9c793db0530c}
-      \strng{authorfullhash}{0847698a5ee6a6d58bdc95f47b92644e}
-      \strng{authorfullhashraw}{0847698a5ee6a6d58bdc95f47b92644e}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.CV}
-      \field{eprinttype}{arXiv}
-      \field{title}{Emerging Properties in Self-Supervised Vision Transformers}
-      \field{year}{2021}
-      \verb{eprint}
-      \verb 2104.14294
-      \endverb
-    \endentry
     \entry{chen2020simple}{misc}{}{}
       \name{author}{4}{}{%
         {{hash=b240c653612b8157a41dd4282347398a}{%
@@ -269,99 +211,6 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1038/nature21056
-      \endverb
-    \endentry
-    \entry{grill2020bootstrap}{misc}{}{}
-      \name{author}{14}{}{%
-        {{hash=152351efb2aa1ec8470b935d63d68a21}{%
-           family={Grill},
-           familyi={G\bibinitperiod},
-           given={Jean-Bastien},
-           giveni={J\bibinithyphendelim B\bibinitperiod}}}%
-        {{hash=c3af936a4e6dd4b0086458a45dfac6da}{%
-           family={Strub},
-           familyi={S\bibinitperiod},
-           given={Florian},
-           giveni={F\bibinitperiod}}}%
-        {{hash=ba254bce2809834e8b51cd526e20c1c2}{%
-           family={Altché},
-           familyi={A\bibinitperiod},
-           given={Florent},
-           giveni={F\bibinitperiod}}}%
-        {{hash=53e127de75e9241aa5b25e378a90fea1}{%
-           family={Tallec},
-           familyi={T\bibinitperiod},
-           given={Corentin},
-           giveni={C\bibinitperiod}}}%
-        {{hash=bb66a15fe0e5fcdb7d3ba216e5cf9974}{%
-           family={Richemond},
-           familyi={R\bibinitperiod},
-           given={Pierre\bibnamedelima H.},
-           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=eee8c4b85d5c4e1f4bc70218d34ba69d}{%
-           family={Buchatskaya},
-           familyi={B\bibinitperiod},
-           given={Elena},
-           giveni={E\bibinitperiod}}}%
-        {{hash=96b67cea31d7dd5c10af974faba91947}{%
-           family={Doersch},
-           familyi={D\bibinitperiod},
-           given={Carl},
-           giveni={C\bibinitperiod}}}%
-        {{hash=f8ff346cbfa06024a8dd0afe01bd765a}{%
-           family={Pires},
-           familyi={P\bibinitperiod},
-           given={Bernardo\bibnamedelima Avila},
-           giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=610da8bda1894dde64553a72f1a275ea}{%
-           family={Guo},
-           familyi={G\bibinitperiod},
-           given={Zhaohan\bibnamedelima Daniel},
-           giveni={Z\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=c08c463bfe294c33c09d1f2c5a3b1e24}{%
-           family={Azar},
-           familyi={A\bibinitperiod},
-           given={Mohammad\bibnamedelima Gheshlaghi},
-           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=f31963abd2aa43dd3aafc40aa1252a05}{%
-           family={Piot},
-           familyi={P\bibinitperiod},
-           given={Bilal},
-           giveni={B\bibinitperiod}}}%
-        {{hash=481308b301166b521c74fde6566e97e6}{%
-           family={Kavukcuoglu},
-           familyi={K\bibinitperiod},
-           given={Koray},
-           giveni={K\bibinitperiod}}}%
-        {{hash=5d8fa91764a27bf97b87fdcac885745d}{%
-           family={Munos},
-           familyi={M\bibinitperiod},
-           given={Rémi},
-           giveni={R\bibinitperiod}}}%
-        {{hash=e25b9b55e0d33d8e554fb428b0122ba9}{%
-           family={Valko},
-           familyi={V\bibinitperiod},
-           given={Michal},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{37900d0162e64eae8ddfb8300b650795}
-      \strng{fullhash}{7c7006f0e81e1263f8c3ecc0ec1766a9}
-      \strng{fullhashraw}{7c7006f0e81e1263f8c3ecc0ec1766a9}
-      \strng{bibnamehash}{37900d0162e64eae8ddfb8300b650795}
-      \strng{authorbibnamehash}{37900d0162e64eae8ddfb8300b650795}
-      \strng{authornamehash}{37900d0162e64eae8ddfb8300b650795}
-      \strng{authorfullhash}{7c7006f0e81e1263f8c3ecc0ec1766a9}
-      \strng{authorfullhashraw}{7c7006f0e81e1263f8c3ecc0ec1766a9}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.LG}
-      \field{eprinttype}{arXiv}
-      \field{title}{Bootstrap your own latent: A new approach to self-supervised Learning}
-      \field{year}{2020}
-      \verb{eprint}
-      \verb 2006.07733
       \endverb
     \endentry
     \entry{he2015deepresiduallearningimage}{misc}{}{}
@@ -536,115 +385,66 @@
       \verb 1901.07031
       \endverb
     \endentry
-    \entry{khosla2021supervised}{misc}{}{}
-      \name{author}{9}{}{%
-        {{hash=c2967f14fec3dc6bce4bedc760572f10}{%
-           family={Khosla},
+    \entry{keyes2020cancerprimer}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=70156b1779c8fb19285a430259d3b4fe}{%
+           family={Keyes},
            familyi={K\bibinitperiod},
-           given={Prannay},
+           given={TJ},
+           giveni={T\bibinitperiod}}}%
+        {{hash=53c7b95043d4c9c93000b79eb2c46d0e}{%
+           family={Domizi},
+           familyi={D\bibinitperiod},
+           given={P},
            giveni={P\bibinitperiod}}}%
-        {{hash=b267fa16926a3b75c0f9af715749d548}{%
-           family={Teterwak},
-           familyi={T\bibinitperiod},
-           given={Piotr},
-           giveni={P\bibinitperiod}}}%
-        {{hash=147b8560865739e558b0631402b38ee6}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Chen},
-           giveni={C\bibinitperiod}}}%
-        {{hash=587a236ad49e1dae23ab208779b1923b}{%
-           family={Sarna},
-           familyi={S\bibinitperiod},
-           given={Aaron},
-           giveni={A\bibinitperiod}}}%
-        {{hash=212a623a4a045452d0eac0274782613e}{%
-           family={Tian},
-           familyi={T\bibinitperiod},
-           given={Yonglong},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=cae9f806bc99a5f19fadea538fc2db04}{%
-           family={Isola},
-           familyi={I\bibinitperiod},
-           given={Phillip},
-           giveni={P\bibinitperiod}}}%
-        {{hash=1c60c4ef0f0d37726133ef09f4a040fb}{%
-           family={Maschinot},
-           familyi={M\bibinitperiod},
-           given={Aaron},
-           giveni={A\bibinitperiod}}}%
-        {{hash=17bf470b120f24c48675bbcb261cab37}{%
-           family={Liu},
+        {{hash=073b08e7baf3f3132ec649928414f382}{%
+           family={Lo},
            familyi={L\bibinitperiod},
-           given={Ce},
-           giveni={C\bibinitperiod}}}%
-        {{hash=6e4c62612fa904e2c1c6c00006ccc142}{%
-           family={Krishnan},
-           familyi={K\bibinitperiod},
-           given={Dilip},
-           giveni={D\bibinitperiod}}}%
+           given={YC},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=162a7e91038efc7f211996836a7fcde6}{%
+           family={Nolan},
+           familyi={N\bibinitperiod},
+           given={GP},
+           giveni={G\bibinitperiod}}}%
+        {{hash=de6bf9fa9d9f323ac75b14fd9b4c4dfa}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={KL},
+           giveni={K\bibinitperiod}}}%
       }
-      \strng{namehash}{498eb192a18dd4884e99bb504e6850d5}
-      \strng{fullhash}{9afe0d70a673167c3817b6471dd4cd73}
-      \strng{fullhashraw}{9afe0d70a673167c3817b6471dd4cd73}
-      \strng{bibnamehash}{498eb192a18dd4884e99bb504e6850d5}
-      \strng{authorbibnamehash}{498eb192a18dd4884e99bb504e6850d5}
-      \strng{authornamehash}{498eb192a18dd4884e99bb504e6850d5}
-      \strng{authorfullhash}{9afe0d70a673167c3817b6471dd4cd73}
-      \strng{authorfullhashraw}{9afe0d70a673167c3817b6471dd4cd73}
+      \strng{namehash}{964caae94f88e7a78e74f83365e8c935}
+      \strng{fullhash}{49de71642ac3b78cf4fd6de0fabed6ce}
+      \strng{fullhashraw}{49de71642ac3b78cf4fd6de0fabed6ce}
+      \strng{bibnamehash}{964caae94f88e7a78e74f83365e8c935}
+      \strng{authorbibnamehash}{964caae94f88e7a78e74f83365e8c935}
+      \strng{authornamehash}{964caae94f88e7a78e74f83365e8c935}
+      \strng{authorfullhash}{49de71642ac3b78cf4fd6de0fabed6ce}
+      \strng{authorfullhashraw}{49de71642ac3b78cf4fd6de0fabed6ce}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.LG}
-      \field{eprinttype}{arXiv}
-      \field{title}{Supervised Contrastive Learning}
-      \field{year}{2021}
-      \verb{eprint}
-      \verb 2004.11362
+      \field{eprinttype}{PMID}
+      \field{journaltitle}{Cytometry Part A}
+      \field{note}{Epub 2020 Jun 30}
+      \field{number}{8}
+      \field{title}{A Cancer Biologist's Primer on Machine Learning Applications in High-Dimensional Cytometry}
+      \field{volume}{97}
+      \field{year}{2020}
+      \field{pages}{782\bibrangedash 799}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1002/cyto.a.24158
       \endverb
-    \endentry
-    \entry{liu2024selfsupervised}{misc}{}{}
-      \name{author}{4}{}{%
-        {{hash=8a3afc1bc08314369dbdef1f86cd331a}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Ziyu},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=c8740948cd94f2d64b9453279d7894a1}{%
-           family={Alavi},
-           familyi={A\bibinitperiod},
-           given={Azadeh},
-           giveni={A\bibinitperiod}}}%
-        {{hash=3baf3d30225a86d56a1181bc51f6c87b}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Minyi},
-           giveni={M\bibinitperiod}}}%
-        {{hash=87f628db6da99dc0a2a20f276e51b3ac}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Xiang},
-           giveni={X\bibinitperiod}}}%
-      }
-      \strng{namehash}{ce66744dbc058a4d04c7648f99e9a00a}
-      \strng{fullhash}{f1904024776713e190641c7561cff989}
-      \strng{fullhashraw}{f1904024776713e190641c7561cff989}
-      \strng{bibnamehash}{ce66744dbc058a4d04c7648f99e9a00a}
-      \strng{authorbibnamehash}{ce66744dbc058a4d04c7648f99e9a00a}
-      \strng{authornamehash}{ce66744dbc058a4d04c7648f99e9a00a}
-      \strng{authorfullhash}{f1904024776713e190641c7561cff989}
-      \strng{authorfullhashraw}{f1904024776713e190641c7561cff989}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.LG}
-      \field{eprinttype}{arXiv}
-      \field{title}{Self-Supervised Learning for Time Series: Contrastive or Generative?}
-      \field{year}{2024}
       \verb{eprint}
-      \verb 2403.09809
+      \verb 32602650
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1002/cyto.a.24158
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1002/cyto.a.24158
       \endverb
     \endentry
     \entry{8099852}{inproceedings}{}{}
@@ -702,53 +502,6 @@
       \endverb
       \keyw{Diseases;X-ray imaging;Pathology;Databases;Biomedical imaging;Machine learning;Image segmentation}
     \endentry
-    \entry{YANG2022108606}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=23bf696850651da86de72745f1c8cbc1}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={Xinyu},
-           giveni={X\bibinitperiod}}}%
-        {{hash=94c9c3457292feb834af723f30d80e03}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Zhenguo},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=9b4e962b400ab8b029355044fd02e90d}{%
-           family={Cui},
-           familyi={C\bibinitperiod},
-           given={Rongyi},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{0d33b5b01bc6e7c3d34b2646bf01e4fe}
-      \strng{fullhash}{0d33b5b01bc6e7c3d34b2646bf01e4fe}
-      \strng{fullhashraw}{0d33b5b01bc6e7c3d34b2646bf01e4fe}
-      \strng{bibnamehash}{0d33b5b01bc6e7c3d34b2646bf01e4fe}
-      \strng{authorbibnamehash}{0d33b5b01bc6e7c3d34b2646bf01e4fe}
-      \strng{authornamehash}{0d33b5b01bc6e7c3d34b2646bf01e4fe}
-      \strng{authorfullhash}{0d33b5b01bc6e7c3d34b2646bf01e4fe}
-      \strng{authorfullhashraw}{0d33b5b01bc6e7c3d34b2646bf01e4fe}
-      \field{sortinit}{Y}
-      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{0950-7051}
-      \field{journaltitle}{Knowledge-Based Systems}
-      \field{title}{TimeCLR: A self-supervised contrastive learning framework for univariate time series representation}
-      \field{volume}{245}
-      \field{year}{2022}
-      \field{pages}{108606}
-      \range{pages}{1}
-      \verb{doi}
-      \verb https://doi.org/10.1016/j.knosys.2022.108606
-      \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S0950705122002726
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S0950705122002726
-      \endverb
-    \endentry
     \entry{zhang2022contrastive}{misc}{}{}
       \name{author}{5}{}{%
         {{hash=b43cba616065799ba45d146e48b95dd8}{%
@@ -798,6 +551,7 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{edwoodland_2024_13881989}
 \endrefsection
 \endinput
 
