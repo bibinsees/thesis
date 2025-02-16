@@ -1,9 +1,9 @@
 \chapter{Conclusion}
 
 \section{Final Evaluation}
-Now out of the 4 methodologies which methodology is more reliable and consistant?
-so in this chapter we will evaluate the performance of the specific method out of each main 4 methodologies that performed well in ranking accuracy.
-I picked 22 sinle dose  similar images from drug screening images (Note: This final Evaluation is not relaible in the sense that the picked images are not verified by any biology expert that those are the most similar images to single dose images from drug screening. so eventhough this final evaluation is not scientific its better than nothing). Idea is that we will pick the best performed data augmentation type/category from each methodology and check whether these images are still positioned in the range of the single dose image range. limitations is that we are not sure whether the picked images are the most similar images to single dose images from drug screening since I'm not expert in biology.
+Now out of the 4 methodologies which methodology is more reliable and consistant in terms of relative positioning? This is the question we try to answer below.
+We will evaluate the performance of the specific method out of each main 4 methodologies that performed well in ranking accuracy.
+I picked 22 sinle dose  similar images from drug screening images (Note: This final Evaluation is not relaible in the sense that the picked images are not verified by any biology expert that those are the most visually similar images to single dose images from drug screening. so eventhough this final evaluation is not scientificly right, its better than nothing). Idea is that we will pick the best performed data augmentation type/category from each methodology and check whether these 22 images are still positioned in the range of the single dose image range. Limitation is that we are not sure whether the picked images are the most similar images to single dose images from drug screening interms of visual similartiy or drug efficay since I'm not expert in biology.
 
 \begin{table}[H]
 	\centering
@@ -24,22 +24,17 @@ I picked 22 sinle dose  similar images from drug screening images (Note: This fi
 	\label{tab:ranking_strategies}
 \end{table}
 
+From above table that sone of the selected out of 22 are out of the single dose image ranking metric for Softmax and K means strategy. that makes these strategies least reliable comparing to other approaches. Infact K means approach the 12 images which are out of single dose image ranking metric range positioned amoung the control class that makes K means strategy most unreliable. 
 
-
-
-
-
-
-
-	
-	Conclusions - yes, what are they? What is the outcome. Important - it is fine to say that despite your best efforts the methods do not seem to
-	 deliver useful results. Perhaps they do not beat the baseline, this is very common in research and is perfectly fine, correct and useful to admit.
-	  Or they actually seem to perform randomly and are not reliable. This may be due to not enough data and is also ok to say, admit and point out. Or 
+	  Or they actually seem to perform randomly and are not reliable. This may be due to not enough data.  Or 
 	  they do something but you are not actually sure, how to use for the final objective or ranking. This is also ok and you shall explain why you are 
-	  not convinced. Perhaps the ranking is simply a badly formulated problem and it should not be approached this way at all. This is also ok to say and 
+	  not convinced.
+	  
+	  Perhaps the ranking is simply a badly formulated problem and it should not be approached this way at all. This is also ok to say and 
 	  be open about it. Simply, even if it "does not work" it is still VERY useful if we understand what you have done and why you think it does not work.	
-How do you know which ranking strategy is better visually? inference from ds close tosd for the worked one from each strategy and look which one works 
-better?
+say classfication and clustering using unsupervised performed well 
+
+Despite your best efforts the methods do not seem to deliver useful results.
 
 References - clean these. Correct references shall have not only the names and year but also the publication venue (journal, conference, arxiv... etc.)
 
@@ -48,7 +43,6 @@ manhatton distance
 pca weighted 
 prediction with day 10 to 10 classical anamoly detection methodologies
 predict directly the mse change, predicting diectly cosine change
-tsne plot, umap
 
 \section{Future research direction}
 
