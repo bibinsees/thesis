@@ -417,12 +417,15 @@ I train with differnet parameters for  number of epochs and batch size. followin
 classification accuracy for original images were 99 accuracy but when we used it for ranking strategy accuracy is lower comapre to simclr feature.
 \begin{table}[H]
   \centering
-  \begin{tabular}{|l|l|l|l|}
-  \hline
-  \multicolumn{1}{|c|}{classification} & Control vs SD & Control vs Ex & Ex vs SD \\ \hline
-  Accuracy                             & 45.53             & 83.41             & 21.62        \\ \hline
+  \begin{tabular}{@{}lccc@{}}
+  \toprule
+  \textbf{Classification}     & \textbf{Control vs SD} & \textbf{Control vs Ex} & \textbf{Ex vs SD} \\ \midrule
+  \textbf{Accuracy (\%)}      & 45.53                  & 83.41                  & 21.62             \\ \bottomrule
   \end{tabular}
+  \caption{Classification accuracies for different comparison groups.}
+  \label{tab:classification_accuracies}
   \end{table}
+  
 As we seen in the above table, none of the  data augmentation types are not able to give clear seperation between 3 classes. No contrast sweet, resize and sweet data augmentation data types achieved highest accuracy 90 and 95.12 and 97.07  in the category of  Control vs SD and Control vs Ex and Ex vs Sd categories correspondingly. 
 
 The main limitation of this approach is we can't garantee when we get new images it will stil seperate three classes 100 percentage like we seen above, there can be overlaps, since the classification only promise us that the softmax score of the control will be closer or equal to zero and  single dose will be closer or equal to 1 in control vs sd case. that means classification only promise us that we get clear seperation inbetween 2 classes not three classes based on the softmax value.
@@ -447,10 +450,6 @@ Unlike other 2 strategies this strategy doesn't have the probelm of class imbala
 
 Dataset we used : As explained in the table, we used all of the control images (472),
 single dose image (103) and exploded images (40).
-
-\textcolor{red}{ds close to sd 10 worked 12 didn't worked}
-
-
 
 \begin{table}[H]
   \centering
@@ -493,6 +492,18 @@ single dose image (103) and exploded images (40).
   \label{tab:table_label}
 \end{table}
 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}llll@{}}
+  \toprule
+  Distance From & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Single Dose\\ Mean\end{tabular}} & \multicolumn{1}{c}{Control Mean} & \multicolumn{1}{c}{Explod Mean} \\ \midrule
+  Cosine        & 17.56                                                                           & 46.50                            & 28.45                           \\
+  Euclidean     & 24.227                                                                           & 50.08                            & 34.47                           \\ \bottomrule
+  \end{tabular}
+  \caption{Your table caption here}
+  \label{tab:you_label}
+\end{table}
+
 As you can see in the above table, cosine distance of each after projection head strong simclr feature from the single dose mean have the most seperation of classes with accuracy of 95.12. It doesn't seperate three classes fully but its something to hope for. 
 
 With the euclidean distance also  each before projection head strong simclr feature from the single dose mean have the most seperation of classes with accuracy of 92.52. It clearly  seperates one class from other but still far awy from the result of 3 class seperation that we hoped for.
@@ -505,17 +516,7 @@ from both of the Cosine and euclidan table its evident that distance from single
 
 All of the above inference metric scaling  I did it on original image vector and as you can see below perfromacne of the ranking accuracy using cosine and euclidean distacne were quite low comparing to the simclr feature vectors. Other inference metrics were also very low. Whcih basically tells us for this ranking strategy also simclr features are better than original image vectors.
 
-\begin{table}[H]
-  \centering
-  \begin{tabular}{@{}llll@{}}
-  \toprule
-  Distance From & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Single Dose\\ Mean\end{tabular}} & \multicolumn{1}{c}{Control Mean} & \multicolumn{1}{c}{Explod Mean} \\ \midrule
-  Cosine        & 17.56                                                                           & 46.50                            & 28.45                           \\
-  Euclidean     & 24.227                                                                           & 50.08                            & 34.47                           \\ \bottomrule
-  \end{tabular}
-  \caption{Your table caption here}
-  \label{tab:you_label}
-\end{table}
+
 
 \section{ Ranking strategy 4: Dimensionality reduction technics}
 
@@ -561,4 +562,4 @@ Similarly we use other dimensionality reduction techniques such as  t-SNE (t-Dis
 \end{table}
 
 From the above tables we see that before projection head out performs genearally after projection head and the original image feature vectors in amoung all dimenstionaily reduction technic.
-While comparing amoung before projection head: Above table shows that PCA reducing data dimension to 1 D doesn't seperate 3 classes well comapre to the tsne and umap. While Umap achieved closer to 100, Tsne performed better amoung all dimesnionality redcution technic  with the achievance of 100 percentage accuracy to seperate 3 classes in sweet, resize, No contrast data augmentation pipelines. Limitation is that we are not sure that these clear seperation between classes ensure there is perfect transition of druf efficacy within the class.
+While comparing amoung before projection head: Above table shows that PCA reducing data dimension to 1 D doesn't seperate 3 classes well comapre to the tsne and umap. While Umap achieved closer to 100, Tsne performed better amoung all dimesnionality redcution technic  with the achievance of 100 percentage accuracy to seperate 3 classes in sweet, resize, No contrast data augmentation pipelines. Limitation is that we are not sure that whether these clear seperation between classes ensure there is perfect transition of druf efficacy within the class.
