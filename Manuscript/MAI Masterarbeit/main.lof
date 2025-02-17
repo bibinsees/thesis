@@ -43,11 +43,11 @@
 \contentsline {figure}{\numberline {8.6}{\ignorespaces Confusion matrix for K-means clustering based on euclidean distance for both 3 class clustering (left side) and inference (right side)}}{50}{figure.caption.60}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{57}{figure.caption.63}%
-\contentsline {figure}{\numberline {9.2}{\ignorespaces train vs test loss}}{57}{figure.caption.64}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces train vs test loss}}{58}{figure.caption.64}%
 \contentsline {figure}{\numberline {9.3}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{58}{figure.caption.65}%
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Wrong heading crct image upload Ohne contrast Resize before projection head data aug: Explod dataset plot in the figure shows overfitting }}{59}{figure.caption.67}%
-\contentsline {figure}{\numberline {9.5}{\ignorespaces Last row shows the misposition of the cancer cell. On day 7, it was above, and on day 10, it moved below.}}{63}{figure.caption.76}%
-\contentsline {figure}{\numberline {9.6}{\ignorespaces train vs test loss}}{67}{figure.caption.80}%
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Wrong heading crct image upload Ohne contrast Resize before projection head data aug: Explod dataset plot in the figure shows overfitting }}{60}{figure.caption.67}%
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Last row shows the misposition of the cancer cell. On day 7, it was above, and on day 10, it moved below.}}{64}{figure.caption.76}%
+\contentsline {figure}{\numberline {9.6}{\ignorespaces train vs test loss}}{68}{figure.caption.80}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
