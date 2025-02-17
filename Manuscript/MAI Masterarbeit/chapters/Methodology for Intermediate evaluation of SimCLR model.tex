@@ -231,8 +231,6 @@ The results in table \ref{tab:evaluation_results_cosine_distance} show a clear t
 
 Data augmentation ‘sweet’ performs the best over other data augmentations and achieved consistent accuracy over all different data set types. Since sweet and strong performed 100 percentage accuracy across cured and uncured balanced dataset its evident that the problem for having less accuracy is nothing to do with explode look alike images (with debris)  in control instead it could be imbalance class problem. Comparing 'sweet' and 'strong' they both achieved 100 percentage accuracy ie (same performance) over all different data set types except the full dataset.
 for full dataset sweet performed far better than strong , sweet even achieved 99.18 where strong reached only 83.90. Comparing all data augmentations 'resize' and 'resize no contrast performed the least giving the insight that cropping is essential to get better cluster performance using cosine distance as distance metric. As a brief conclusion its pretty clear that cropping 0.35 to 1 percentage of whole image is crucial especially cropping have huge effect for cluster performance using cosine distance as distance metric. One thing that need to keep in mind that all above explanations or achievements by different data augmentations are corresponds to clustering performance doesn't mean that it could work for ranking strategies too.
-    
-Here is the updated table with the "Curated Full Dataset" column removed:
 
 \begin{table}[H]
     \centering
