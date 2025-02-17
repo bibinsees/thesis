@@ -4,14 +4,14 @@
 \section{Data preprocessing} \label{sec:data preprocessing}
 \begin{enumerate}
   \item \textbf{No of channel per image selection}:
-
    For 3 reasons, I decided to use 3 layers per image as 3 channels of the image for SimCLR training:
-  \begin{enumerate}
-      \item Considering each 3 layers per image may  capture depth information at 3 different focal planes of a 3D tumor tissue model give more richer information
-      comparing to only single channel information.
-      \item For ease of integration with our pretrained architecture ResNet18, which was trained on 3-channel images.
-      \item The majority of the images in the dataset have exactly 3 layers, making this a practical choice.
+   \begin{enumerate}
+    \setlength{\itemsep}{0pt}
+    \item Considering each 3 layers per image may capture depth information at 3 different focal planes of a 3D tumor tissue model, providing richer information compared to only single-channel data.
+    \item For ease of integration with our pretrained architecture, ResNet18, which was trained on 3-channel images.
+    \item The majority of the images in the dataset have exactly 3 layers, making this a practical choice.
   \end{enumerate}
+  
    Images with only 1 channel will have their single channel duplicated to form 3 identical channels. For images with 5 channels, the top 3 sharpest
    layers are filtered and selected to reduce the image to 3 layers. This ensures consistency across the dataset while maintaining maximum texture and edge 
    information.

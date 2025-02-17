@@ -3,48 +3,22 @@
 The goal of this thesis is to leverage representation learning of bright-field microscopy images using SimCLR to develop a ranking/ordering scale 
 (1 to \( n \)) for all images. 
 
-In this chapter, I will explain the framework designed to address this problem. The task is divided into three main pipelines.
-
-First, we learn latent representations from the images using SimCLR as a self-supervised learning (SSL) model. The details will be explained in the 
-\textit{Methodology for SimCLR} chapter.
-
-Next, we perform an intermediate evaluation to assess whether the features have been effectively learned. The intermediate evaluation aims to:
+In this chapter, I will explain the framework designed to address this problem. The task is divided into three main pipelines. First, we learn latent representations from the images using SimCLR as a self-supervised learning (SSL) model. The details will be explained in the 
+\textit{Methodology for SimCLR} chapter. Next, we perform an intermediate evaluation to assess whether the features have been effectively learned. The intermediate evaluation aims to classify and cluster the images. The details of this step will be explained in the \textit{Methodology for Intermediate Evaluation} chapter. Subsequently, we use the learned features to establish a ranking scale. To achieve this, the following methods are employed:
 
 \begin{enumerate}
-    \item Classify the images,
-    \item Cluster the images, and
-    \item Ensure that the same features are extracted for identical images, even after transformations such as flipping, rotation, blurring, or brightness changes,
-     using a direct distance measure approach.
+  \setlength{\itemsep}{0pt}
+  \item Prediction model,
+  \item K-means centroid approach,
+  \item Softmax approach, and
+  \item Dimensionality reduction techniques such as PCA, t-SNE, and UMAP.
 \end{enumerate}
-
-The details of this step will be explained in the \textit{Methodology for Intermediate Evaluation} chapter.
-
-Subsequently, we use the learned features to establish a ranking scale. To achieve this, the following methods are employed:
-
-\begin{enumerate}
-    \item Prediction model,
-    \item K-means centroid approach
-    \item Softmax approach, and
-    \item PCA variation
-\end{enumerate}
-
-The details of these methods will be discussed in the \textit{Methodology for Ranking Strategy} chapter.
-
-Finally, we address an important question: why do we need to learn feature vectors from the images? Could the ranking task perform better using the raw images 
-directly instead of SimCLR features? To answer this, we conduct a comparative study to evaluate the performance of both approaches.
-
-\textcolor{red}{Section 6 - it seems to be very focused on the simCLR features. I have thought that you tried similar approaches (e.g. the clustering)
- over some other features, e.g. directly the original images or the ResNet features. Is it not the case? Do you have a baseline model to compare to?}
-
- So in each intermediate evaluatiions and ranking strategy we will aslo compare the resnet features to original images.
-
- \textcolor{red}{include original image comparison in the figure}
+The details of these methods will be discussed in the \textit{Methodology for Ranking Strategy} chapter. Finally, we address an important question: why do we need to learn feature vectors from the images using SimCLR? Could the ranking task perform better using the raw image vectors directly instead of SimCLR features? To answer this, we conduct a comparative study to evaluate the performance of both approaches in intermediate evaluation and in ranking methods.
 
 The overall structure of the thesis is illustrated in Figure~\ref{fig:BigOutline}.
-
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.46]{figures/bigpic.png} 
+  \includegraphics[scale=0.5]{figures/final_big_pic.png} 
   \caption{Overall framework of the thesis.}
   \label{fig:BigOutline}
 \end{figure}

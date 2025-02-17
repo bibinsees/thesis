@@ -59,49 +59,38 @@ as temperature, humidity, or CO\textsubscript{2}, or by some inconsistencies in 
 inconsistency in the  acquired images. These images were included as-is for SimCLR training, providing an opportunity for the model to learn from realistic conditions. 
 However, I didn't artificially introduce additional noise or artifacts through data augmentation. This approach highlights a potential area for further exploration in future work. 
 
-Figure \ref{fig:drug_eff} illustrates that, even with the same drug concentration applied to the spheroid tissue models under controlled conditions, occasional variations in 
-effects were observed across different experiments. These variations could result from slight differences in spheroid composition or undetected microenvironmental influences 
-that affect drug absorption by the spheroid and cellular response. Initially, I thought I would be able to evaluate the effect by drug combination, but because of this 
-difference, we need to make the ranking relative assessment based on the day 10 images nevertheless it is applied by the same drug combo.
-
+Figure \ref{fig:drug_eff} illustrates that, even with the same drug concentration applied to the spheroid tissue models under controlled conditions, occasional variations in effects were observed across different experiments. These variations could be attributed to slight differences in spheroid composition or undetected microenvironmental influences that affected drug absorption by the spheroid and cellular response. Initiall idea was to evaluate the relative effect of images using the same drug concentration combination as a group, but due to these differences, the ranking assessment needs to be made relative, based on the individual day 10 images, even though the same drug combination was applied.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.5]{figures/drug_eff.png} 
-  \caption{gp 8 drug applied}
+  \includegraphics[scale=0.3]{figures/drug_eff.png} 
+  \caption{Different morphological changes were observed even when the same specific combination of drugs was applied in two different experiments. The same combination of 40 µM JQ1 and 40 µM GANT61 was applied in two different experiments, named DS61 and DS41}
   \label{fig:drug_eff}
 \end{figure}
 
 
-The table below shows the division of different types of image datasets we have, as  explained in the section ~\ref{sec:lab-setup}.
-\begin{table}[ht!]
+The table below \ref{tab:dataset} shows the division of different types of image datasets, as explained in Section~\ref{sec:lab-setup}. In this table, Day 8 and Day 9 represent the images obtained during different single-dose and drug-screen experiments. These images are included for SimCLR training. From the table, it is evident that there is a class imbalance.
+\begin{table}[H]
   \centering
   \resizebox{\textwidth}{!}{%
-  \begin{tabular}{|l|c|c|c|c|c|c|}
-  \hline
-  \textbf{Class} & \textbf{Drug Screened} & \textbf{Single Dose} & \textbf{Cond 10} & \textbf{Untreated} & \textbf{Day 8 \& 9} & \textbf{Total} \\ \hline
-  \textbf{No. of Images (\%)}  & 200 (16.05\%) & 103 (8.26\%) & 231 (18.54\%) & 472 (37.89\%) & 240 (19.26\%) & 1246 \\ \hline
+  \begin{tabular}{lcccccc}
+    \toprule
+    \textbf{Class} & \textbf{Drug Screen} & \textbf{Single Dose} & \textbf{Control day 10} & \textbf{Control} & \textbf{Day 8 \& 9} & \textbf{Total} \\ 
+    \midrule
+    \textbf{No. of Images (\%)} & 200 (16.05\%) & 103 (8.26\%) & 231 (18.54\%) & 472 (37.89\%) & 240 (19.26\%) & 1246 \\
+    \bottomrule
   \end{tabular}%
   }
   \caption{Dataset Class Overview}
   \label{tab:dataset}
 \end{table}
-
-
-
-An 8-bit image encompasses 256 color tones (ranging from 0 to 255) per channel, whereas a 16-bit image accommodates 65,536 color tones 
-(ranging from 0 to 65,535) per channel, in our case 65,536 shades of gray. Retaining the original 16-bit depth is crucial because
- Converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details.
-Since 8-bit images only allow 256 possible values, the finer variations in intensity that are present in 16-bit images become compressed as illusstrated in \ref{fig:8bitvs16bit}.
-For example, two distinct values in 16-bit (from 30,000 to 30,048 ) could map to the same 8-bit value (for instance, both might be mapped to 117).
-This results in the loss of subtle intensity differences, which can be crucial in our image task, where minute variations in intensity can be indicative
- of important features such as gradual trasnsition of dark color frfom center to border or amount of debris surrounded to the tumor cell.
+An 8-bit image encompasses 256 color tones (ranging from 0 to 255) per channel, while a 16-bit image accommodates 65,536 color tones (ranging from 0 to 65,535) per channel, specifically allowing for 65,536 shades of gray. Retaining the original 16-bit depth is crucial because converting it to an 8-bit image for faster and more efficient computation can lead to significant information loss in intensity details. Since 8-bit images permit only 256 possible values, the finer intensity variations present in 16-bit images become compressed, as illustrated in \ref{fig:8bitvs16bit}. For instance, two distinct 16-bit values (ranging from 30,000 to 30,048) could map to the same 8-bit value (for example, both might be mapped to 117). This results in the loss of subtle intensity differences, which can be vital in our image task, where minute variations in intensity can indicate important features, such as the gradual transition of dark color from the center to the border or the amount of debris surrounding the tumor cell.
 
 
  \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{figures/8bitvs16bit.png} 
-  \caption{8-bit vs 16 bit data lose comparison}
+  \caption{8-bit vs 16 bit data lose comparison. 16-bit data has pixel values ranging from 0 to 65535, whereas 8-bit data has pixel values ranging from 0 to 255.}
   \label{fig:8bitvs16bit}
 \end{figure}
 
@@ -110,35 +99,22 @@ This results in the loss of subtle intensity differences, which can be crucial i
     \item \textbf{Limited Dataset for Day 7 to Day 10 ranking prediction Model:} The dataset for predicting outcomes between Day 7 and Day 10 is limited, which poses a challenge for training and evaluation.
 
     \item \textbf{Issues with Day 10 Images:}
-    \begin{enumerate}
-        \item \textbf{Image Variations:} Day 10 images can exhibit variations such as flipping, blurring, brightness changes, and position changes from the original position of tumot tissue 
-        cell in the image. 
+     Day 10 images can exhibit variations such as flipping, blurring, brightness changes, and position changes from the original position of tumor tissue 
+        model in the image. 
         The position change occurs because, when the well plate is brought outside and then placed back under the microscope for taking day 10 image, 
         the position often shifts. This relative position of the tumor cell in the image can shift from the center to other directions.
-         While a 'center crop' explained in in Section~\ref{sec:data preprocessing} approach can address this issue to some extent, it fails when the tumor cell 
+         While a 'center crop' explained in in Section~\ref{sec:data preprocessing} approach can address this issue to some extent, it fails when the tumor tissue model 
          is located at the edge of the image. To deal this issue for some extend, Applying horizontal and vertical flips, rotations by $90^\circ$ and $270^\circ$, as 
         well as combinations like horizontal flip + rotation $90^\circ$ and horizontal flip + rotation $270^\circ$, can help make the model invariant to position changes.
-    \end{enumerate}
+   
 
     \item \textbf{Variability in Drug Effects on Day 10:}
-    \begin{enumerate}
-        \item \textbf{Effect Differences:} The same drug can have different effects on Day 10. For instance, there is a huge variation between DS 61 G6 and 
-        41 GP6, while less variation is observed between RBTDS 4.1 and 4.2 GP3. Hence we can't assess the drug efficacy based on the drug combination instead we need to make the ranking relative 
-        assessment based on the day 10 images.
-        \item \textbf{Debris Amount:} Images from different groups with significant debris were visually selected. Since the number of such images was small, no specific code was implemented for this selection process.
-    \end{enumerate}
+   The same drug can have different effects on Day 10. Hence we can't assess the drug efficacy based on the group of images applied by same drug combination instead we need to make the ranking relative 
+        assessment based on each individual the day 10 images as illustrated in \ref{fig:drug_eff}.
+ 
 \end{enumerate}
 
-
- 
-
+A total of 40 images from the drug screen with significant debris were manually selected for intermediate evaluation of SimCLR, as explained in Chapter \ref{ch:Methodology for Intermediate evaluation of SimCLR model}, and ranking strategies, as explained in Chapter \ref{ch:Methodology for Ranking}.
 
 
 
-
-
-
-
-
-
-I choosed images from different gps which have huge debris amount visually. it was few so I didn't code my self.

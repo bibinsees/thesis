@@ -427,6 +427,13 @@ OUTPUT main.toc
 INPUT ./main.lof
 INPUT ./main.lof
 INPUT main.lof
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmro7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmro8r.tfm
 OUTPUT main.lof
 INPUT ./main.lot
 INPUT ./main.lot
@@ -438,20 +445,20 @@ OUTPUT chapters/introduction.aux
 INPUT ./chapters/introduction.tex
 INPUT ./chapters/introduction.tex
 INPUT chapters/introduction.tex
-INPUT ./figures/labo.pdf
-INPUT ./figures/labo.pdf
-INPUT ./figures/labo.pdf
-INPUT ./figures/labo.pdf
-INPUT ./figures/labo.pdf
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmro7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmro8r.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT ./figures/labo.pdf
+INPUT ./figures/labo.pdf
+INPUT ./figures/labo.pdf
+INPUT ./figures/labo.pdf
+INPUT ./figures/labo.pdf
 INPUT ./figures/types.png
 INPUT ./figures/types.png
 INPUT ./figures/types.png
 INPUT ./figures/types.png
 INPUT ./figures/types.png
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT ./figures/well.png
 INPUT ./figures/well.png
 INPUT ./figures/well.png
@@ -468,6 +475,9 @@ OUTPUT chapters/Motivation.aux
 INPUT ./chapters/Motivation.tex
 INPUT ./chapters/Motivation.tex
 INPUT chapters/Motivation.tex
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT ./chapters/Research questions.tex
 INPUT ./chapters/Research questions.tex
 OUTPUT chapters/Research questions.aux
@@ -506,7 +516,6 @@ INPUT ./figures/noise.png
 INPUT ./figures/noise.png
 INPUT ./figures/noise.png
 INPUT ./figures/noise.png
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT ./figures/drug_eff.png
 INPUT ./figures/drug_eff.png
 INPUT ./figures/drug_eff.png
@@ -532,21 +541,22 @@ INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
-INPUT ./figures/bigpic.png
-INPUT ./figures/bigpic.png
-INPUT ./figures/bigpic.png
-INPUT ./figures/bigpic.png
-INPUT ./figures/bigpic.png
+INPUT ./figures/final_big_pic.png
+INPUT ./figures/final_big_pic.png
+INPUT ./figures/final_big_pic.png
+INPUT ./figures/final_big_pic.png
+INPUT ./figures/final_big_pic.png
 INPUT ./chapters/Methodology for SimCLR.tex
 INPUT ./chapters/Methodology for SimCLR.tex
 OUTPUT chapters/Methodology for SimCLR.aux
 INPUT ./chapters/Methodology for SimCLR.tex
 INPUT ./chapters/Methodology for SimCLR.tex
 INPUT chapters/Methodology for SimCLR.tex
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT ./figures/long.png
+INPUT ./figures/long.png
+INPUT ./figures/long.png
+INPUT ./figures/long.png
+INPUT ./figures/long.png
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7v.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
@@ -557,22 +567,12 @@ INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
-INPUT ./figures/long.png
-INPUT ./figures/long.png
-INPUT ./figures/long.png
-INPUT ./figures/long.png
-INPUT ./figures/long.png
 INPUT ./figures/rotation.png
 INPUT ./figures/rotation.png
 INPUT ./figures/rotation.png
 INPUT ./figures/rotation.png
 INPUT ./figures/rotation.png
-INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT ./figures/crop.png
 INPUT ./figures/crop.png
 INPUT ./figures/crop.png
