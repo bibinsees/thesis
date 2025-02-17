@@ -58,7 +58,7 @@ Test epoch in the table: The number of epochs required to reach the best test ac
 To use original images directly first we resized to 96*96 since we did that for simclr so that it could be fair comparison. Then we normalised each by dividing it by 65535 
 (16 bit). Each image flatten into vectors of ([1,96*96*3]where 96 =H=W and 3 = no of channels) suitable for logistic regression model. and we use same parameters that we used 
 for simclr feats classification lke learning rate , batch size etc for fair comparison.
-From table \ref{tab:augmentation_metric} and table \ref{tab:original_image_results} we show that when using the features Before Projection Head all augmentation methods reached 100 train and test accuracy. And when using the features original image vectors both accuracy reached upto 99 percentage. So comparing before projection head SimCLR features to original image vectors there is only subtle difference. But it is clear that the features extracted before the projection head perform far better than those extracted after the projection head, as seen in the original similar paper. Also, the number of training and test epochs required to reach the best accuracy is lower for the features extracted before the projection head than those extracted after the projection head as we seen in figures \ref{fig:test} and \ref{fig:train}. Interestingly, original image vectors performed better than the after projection head SimCLR features.
+From table \ref{tab:augmentation_metric} and table \ref{tab:original_image_results} we show that when using the features Before Projection Head all augmentation methods reached 100 train and test accuracy. And when using the features original image vectors both accuracy reached upto 99 percentage. So comparing before projection head SimCLR features to original image vectors there is only subtle difference. Their almost indistinguishable performance leads to the conclusion that it is difficult to determine whether SimCLR features have been learned efficiently from classification task. But it is clear that the features extracted before the projection head perform far better than those extracted after the projection head, as seen in the SimCLR \Cite{chen2020simple}paper. Also, the number of training and test epochs required to reach the best accuracy is lower for the features extracted before the projection head than those extracted after the projection head as we seen in figures \ref{fig:test} and \ref{fig:train}. Interestingly, original image vectors performed better than the after projection head SimCLR features.
 
 \begin{table}[H]
     \centering
@@ -146,12 +146,7 @@ Since the train and test accuracy are both 100 percent for before projection hea
           \end{figure}
 \subsection{Inference}
 
-I choose my self 22 images that have close resemblence in my eyes to single dose images from drug screen for inference. ( I repeat these are not biology expert labeled drug 
-screened image. so any inference result is irrelavant in the sense to actual ground truth )
-
-For doing inferecne I choosed before head projection features since thats the one gave 100 perentage accuracy while train and validation.
-
-
+Twenty-two images that closely resemble single-dose images from drug screening were manually selected for inference and refer them as 'inference images'. These images were not labeled by biology experts, and therefore, any inference results do not correspond to the actual ground truth. For the inference process, features before the projection head were utilized, as they achieved 100 percent accuracy during training and validation.
 \begin{table}[H]
     \centering
     \begin{tabular}{@{}lcccccc@{}}
@@ -164,26 +159,7 @@ For doing inferecne I choosed before head projection features since thats the on
     \label{tab:performance_metrics}
 \end{table}
 
-
-
-
-From the above table we can see that during the inference except 'strong' and 'sweet no contrast' all other augs still able to reach 100 percentage accuracy to classify the ds 
-close to sd images to sd based on visual resemblence. Using raw Original images features it got  68.18 percentage accuracy while Simclr before projectoin head could classify atleast 90 percentage.
-
-
-\textcolor{red}{table 8.2 can you somehow bring this into table 8.1 e.g. as another column? Would be easier to read. The first column 
-"Augmentation Type" could be made smaller if you wrap the text so that it is on multiple lines.} 
-
-
-In Table 8.1. we show that when using the features Before Projection Head, all augmentation methods reached 100 percent train and test accuracy. It is clear that the features extracted 
-before the projection head perform far better than those extracted after the projection head, as seen in the original similar paper. Also, the number of epochs required
-to reach the best accuracy is lower for the features extracted before the projection head than those extracted after the projection head.
-
-While original images also classify with 99 percent accuracy, they perform better than the features we use after projection. Also, their almost indistinguishable performance 
-from the features extracted before the projection head leads to the conclusion that we cannot make an informed decision based on this classification task.
-
-
-
+From the inference experiment table \ref{tab:performance_metrics}, it can be seen that, except for 'strong' and 'sweet no contrast', all other augmentations were able to achieve 100 percent accuracy in classifying the inference images as belonging to the single-dose image class. Using the original image features, the accuracy was 68.18 percent, while SimCLR features before the projection head achieved at least 90 percent accuracy.
 \section{kmeans clustering}
 
 Idea is whether the learned representation from simlcr outperforms the original images in clustering the images (unsupervised manner) For that we use simple kmeans 
