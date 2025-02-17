@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  17 FEB 2025 15:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  17 FEB 2025 16:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -974,9 +974,6 @@ LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 10
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (./main.aux (./chapters/introduction.aux) (./chapters/Motivation.aux) (./chapters/Research questions.aux) (./chapters/literature_review.aux) (./chapters/Data Description.aux) (./chapters/Structure of the Thesis.aux) (./chapters/Methodology for SimCLR.aux) (./chapters/Methodology for Intermediate evaluation of SimCLR model.aux
 
-LaTeX Warning: Label `fig:Resize_b64' multiply defined.
-
-
 LaTeX Warning: Label `tab:augmentation_metric' multiply defined.
 
 
@@ -1665,10 +1662,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [36 <./figures/sweet_no_contra.png> <./figures/Resize_No_contra.png>]
-<figures/pca_viz.png, id=672, 1346.02875pt x 504.38437pt>
+<figures/pca_viz.png, id=673, 1346.02875pt x 504.38437pt>
 File: figures/pca_viz.png Graphic file (type png)
 <use figures/pca_viz.png>
-Package pdftex.def Info: figures/pca_viz.png  used on input line 352.
+Package pdftex.def Info: figures/pca_viz.png  used on input line 350.
 (pdftex.def)             Requested size: 673.01273pt x 252.19156pt.
 )
 \openout2 = `"chapters/Methodology for Intermediate evaluation of SimCLR model.aux"'.
@@ -1702,12 +1699,12 @@ Overfull \hbox (68.71584pt too wide) in paragraph at lines 126--132
 
 
 [42]
-<figures/test_class.png, id=701, 711.1368pt x 426.393pt>
+<figures/test_class.png, id=702, 711.1368pt x 426.393pt>
 File: figures/test_class.png Graphic file (type png)
 <use figures/test_class.png>
 Package pdftex.def Info: figures/test_class.png  used on input line 173.
 (pdftex.def)             Requested size: 355.56752pt x 213.19597pt.
-<figures/train_class.png, id=702, 711.8595pt x 426.393pt>
+<figures/train_class.png, id=703, 711.8595pt x 426.393pt>
 File: figures/train_class.png Graphic file (type png)
 <use figures/train_class.png>
 Package pdftex.def Info: figures/train_class.png  used on input line 180.
@@ -1725,7 +1722,7 @@ Overfull \hbox (17.41704pt too wide) in paragraph at lines 194--200
 
 
 [44]
-<figures/controlex.png, id=714, 603.0028pt x 611.28375pt>
+<figures/controlex.png, id=715, 603.0028pt x 611.28375pt>
 File: figures/controlex.png Graphic file (type png)
 <use figures/controlex.png>
 Package pdftex.def Info: figures/controlex.png  used on input line 248.
@@ -1740,7 +1737,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [46 <./figures/controlex.png (PNG copy)>]
 
 [47]
-<figures/cluster.png, id=727, 1364.09625pt x 438.13687pt>
+<figures/cluster.png, id=728, 1364.09625pt x 438.13687pt>
 File: figures/cluster.png Graphic file (type png)
 <use figures/cluster.png>
 Package pdftex.def Info: figures/cluster.png  used on input line 382.
@@ -1753,7 +1750,7 @@ Overfull \hbox (51.73982pt too wide) in paragraph at lines 382--383
 
 
 [48 <./figures/cluster.png (PNG copy)>]
-<figures/cconfusion.png, id=732, 1079.53313pt x 386.94562pt>
+<figures/cconfusion.png, id=733, 1079.53313pt x 386.94562pt>
 File: figures/cconfusion.png Graphic file (type png)
 <use figures/cconfusion.png>
 Package pdftex.def Info: figures/cconfusion.png  used on input line 436.
@@ -1764,7 +1761,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [49]
-<figures/econfuse.png, id=738, 1035.11719pt x 377.91188pt>
+<figures/econfuse.png, id=739, 1035.11719pt x 377.91188pt>
 File: figures/econfuse.png Graphic file (type png)
 <use figures/econfuse.png>
 Package pdftex.def Info: figures/econfuse.png  used on input line 467.
@@ -1795,12 +1792,12 @@ Underfull \vbox (badness 1092) has occurred while \output is active []
 [55]
 
 [56]
-<figures/rankloss.png, id=775, 499.8675pt x 388.45125pt>
+<figures/rankloss.png, id=776, 499.8675pt x 388.45125pt>
 File: figures/rankloss.png Graphic file (type png)
 <use figures/rankloss.png>
 Package pdftex.def Info: figures/rankloss.png  used on input line 171.
 (pdftex.def)             Requested size: 229.94183pt x 178.68973pt.
-<figures/unpred.png, id=776, 893.58844pt x 301.8778pt>
+<figures/unpred.png, id=777, 893.58844pt x 301.8778pt>
 File: figures/unpred.png Graphic file (type png)
 <use figures/unpred.png>
 Package pdftex.def Info: figures/unpred.png  used on input line 178.
@@ -1811,7 +1808,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [57 <./figures/rankloss.png (PNG copy)>]
-<figures/pproblem.png, id=781, 615.0478pt x 228.10219pt>
+<figures/pproblem.png, id=782, 615.0478pt x 228.10219pt>
 File: figures/pproblem.png Graphic file (type png)
 <use figures/pproblem.png>
 Package pdftex.def Info: figures/pproblem.png  used on input line 185.
@@ -1819,7 +1816,7 @@ Package pdftex.def Info: figures/pproblem.png  used on input line 185.
 
 
 [58 <./figures/unpred.png (PNG copy)> <./figures/pproblem.png (PNG copy)>]
-<figures/overfit.png, id=787, 548.0475pt x 654.19406pt>
+<figures/overfit.png, id=788, 548.0475pt x 654.19406pt>
 File: figures/overfit.png Graphic file (type png)
 <use figures/overfit.png>
 Package pdftex.def Info: figures/overfit.png  used on input line 216.
@@ -1876,7 +1873,7 @@ Overfull \hbox (32.31934pt too wide) in paragraph at lines 349--359
 
 
 [62]
-<figures/predall.pdf, id=807, 1053.1847pt x 685.8122pt>
+<figures/predall.pdf, id=808, 1053.1847pt x 685.8122pt>
 File: figures/predall.pdf Graphic file (type pdf)
 <use figures/predall.pdf>
 Package pdftex.def Info: figures/predall.pdf  used on input line 380.
@@ -1897,7 +1894,7 @@ Overfull \hbox (62.64307pt too wide) in paragraph at lines 456--466
  [][] 
  []
 
-<figures/allbox.pdf, id=843, 835.62187pt x 800.23969pt>
+<figures/allbox.pdf, id=844, 835.62187pt x 800.23969pt>
 File: figures/allbox.pdf Graphic file (type pdf)
 <use figures/allbox.pdf>
 Package pdftex.def Info: figures/allbox.pdf  used on input line 472.
@@ -2005,18 +2002,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31262 strings out of 473578
- 599954 string characters out of 5732243
- 1958960 words of memory out of 5000000
- 53334 multiletter control sequences out of 15000+600000
+ 31263 strings out of 473578
+ 599967 string characters out of 5732243
+ 1957960 words of memory out of 5000000
+ 53335 multiletter control sequences out of 15000+600000
  608253 words of font info for 145 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,107p,11029b,2475s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (96 pages, 16347971 bytes).
+Output written on main.pdf (96 pages, 16348420 bytes).
 PDF statistics:
- 1214 PDF objects out of 1440 (max. 8388607)
- 994 compressed objects within 10 object streams
+ 1215 PDF objects out of 1440 (max. 8388607)
+ 995 compressed objects within 10 object streams
  324 named destinations out of 1000 (max. 500000)
  486 words of extra memory for PDF output out of 10000 (max. 10000000)
 

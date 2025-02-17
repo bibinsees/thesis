@@ -322,7 +322,7 @@ While training and validation images are processed using data augmentation pipel
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.3]{figures/sweet_no_contra.png} 
-  \caption{sweet no contra: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
+  \caption{sweet no contrast: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
   \label{fig:sweet_no_contra}
 \end{figure}
 
@@ -331,7 +331,7 @@ While training and validation images are processed using data augmentation pipel
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.3]{figures/Resize_No_contra.png} 
-  \caption{Resize no contra: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
+  \caption{Resize no contrast: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
   \label{fig:Resize_No_contra_b64}
 \end{figure}
 
@@ -344,12 +344,10 @@ While training and validation images are processed using data augmentation pipel
   \label{fig:Resize_b64}
 \end{figure}
 
-
-\textcolor{red}{add tsne i prefer pca plot for the cluster vs original vs befroe and after}
-
+In Figure \ref{fig:pca_viz}, we compare the PCA visualizations of SimCLR feature vectors and original image vectors for the classes: control, single dose, and explode. From the figure, we observe that, except for the 'resize' and 'resize no contrast' pipelines, all other data augmentation pipelines using SimCLR vectors before the projection head are able to clearly separate these classes better compared to SimCLR vectors after the projection head or the original image vectors. Among these, the 'sweet no contrast' pipeline demonstrates the most distinct separation of the classes.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5, angle=-90]{figures/pca_viz.png} 
-  \caption{Resize: loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
-  \label{fig:Resize_b64}
+  \caption{PCA visualisation of both after and before projection of the SimCLR feature vector for the classes control, single dose and explode images}
+  \label{fig:pca_viz}
 \end{figure}

@@ -30,10 +30,10 @@
 \contentsline {figure}{\numberline {7.11}{\ignorespaces 5 different data augmentation pipelines we explored}}{29}{figure.caption.32}%
 \contentsline {figure}{\numberline {7.12}{\ignorespaces strong: loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{35}{figure.caption.37}%
 \contentsline {figure}{\numberline {7.13}{\ignorespaces sweet: loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{35}{figure.caption.38}%
-\contentsline {figure}{\numberline {7.14}{\ignorespaces sweet no contra: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{36}{figure.caption.39}%
-\contentsline {figure}{\numberline {7.15}{\ignorespaces Resize no contra: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{36}{figure.caption.40}%
+\contentsline {figure}{\numberline {7.14}{\ignorespaces sweet no contrast: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{36}{figure.caption.39}%
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Resize no contrast: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{36}{figure.caption.40}%
 \contentsline {figure}{\numberline {7.16}{\ignorespaces Resize: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{37}{figure.caption.41}%
-\contentsline {figure}{\numberline {7.17}{\ignorespaces Resize: loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{38}{figure.caption.42}%
+\contentsline {figure}{\numberline {7.17}{\ignorespaces PCA visualisation of both after and before projection of the SimCLR feature vector for the classes control, single dose and explode images}}{38}{figure.caption.42}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {8.1}{\ignorespaces before}}{43}{figure.caption.48}%
 \contentsline {figure}{\numberline {8.2}{\ignorespaces before}}{43}{figure.caption.49}%
