@@ -144,7 +144,7 @@ Since the train and test accuracy are both 100 percent for before projection hea
             \caption{Train accuracy vs Train epochs of original image vectors and Simclr features }
             \label{fig:train}
           \end{figure}
-\subsection{Inference}
+\subsection{Inference}\label{subsec:inference}
 
 Twenty-two images that closely resemble single-dose images from drug screening were manually selected for inference and refer them as 'inference images'. These images were not labeled by biology experts, and therefore, any inference results do not correspond to the actual ground truth. For the inference process, features before the projection head were utilized, as they achieved 100 percent accuracy during training and validation.
 \begin{table}[H]
@@ -162,135 +162,105 @@ Twenty-two images that closely resemble single-dose images from drug screening w
 From the inference experiment table \ref{tab:performance_metrics}, it can be seen that, except for 'strong' and 'sweet no contrast', all other augmentations were able to achieve 100 percent accuracy in classifying the inference images as belonging to the single-dose image class. Using the original image features, the accuracy was 68.18 percent, while SimCLR features before the projection head achieved at least 90 percent accuracy. Note that this inference is from the first experiment of classification where cross validation training didn't used.
 \section{K-means clustering}
 
-The idea is to determine whether the learned representation from SimCLR outperforms the original images in clustering the images in an unsupervised manner. To achieve this, we use simple K-means clustering as explained in \cite{bishop:2006:PRML}. We use both euclidean distance and cosine distance to find the nearest data point to the cluster centroid as two different approach. When performing K-means with cosine distance, it compares only the direction of the vector. Therefore, we also perform standard K-means with Euclidean distance to evaluate the magnitude similarity. 
-
+The idea is to determine whether the learned representation from SimCLR outperforms the original images in clustering the images in an unsupervised manner. To achieve this, we use simple K-means clustering as explained in \cite{bishop:2006:PRML}. We use both euclidean distance and cosine distance to find the nearest data point to the cluster centroid as two different approach explained in appendix ~\ref{appendix}. When performing K-means with cosine distance, it compares only the direction of the vector. Therefore, we also perform standard K-means with Euclidean distance to evaluate the magnitude similarity. 
 \subsection{Evaluation}
-Since there is a class imbalance in the control, single dose and explode classes. Its also useful to cluster balanced subset. Additionally, there are some images in control, where debris is formulated, it can be attributed due to the environmental factors like cell medium. Which is noticed to be significantly less than the amount of debris formed around the treated spheroids as we seen in explode images. Assuming that these images can be miscluster to explode images or viseversa its useful to cluster  dataset where there is only control images without these debris.
-For clustering, we use below dataset category.
+Since there is a class imbalance in the control, single dose and explode classes. Its also useful to cluster balanced subset. Additionally, there are some images in control, where debris is formulated, it can be attributed due to the environmental factors like cell medium. Which is noticed to be significantly less than the amount of debris formed around the treated spheroids as we seen in explode images. Assuming that these images can be misclustered as exploded images or vice versa, it is beneficial to cluster a dataset containing only control images without any debris. Concluding above assumptions, for clustering, we use below dataset categories.
+
 Imbalance full dataset: contains all control: 472, all single dose: 103, all explode: 40 images.
 
-40 subset (Balanced to the minimum no of set in the group which is explode. ie there is only total 40 of explode): contains random but make sure it have exploded like 
-controls total 40, and all exploded which is basically 40, 10 ds close to sd, 30 single dose.
+Balance uncured 40 subset (Balanced to the minimum number of set in the class which is explode): control contains 20 explode look alike controls + 20 normal control images without any debris, all 40 explode image and 40 single dose images.
 
-Curated Full dataset (unbalanced): contains all control except controls have debris: 280, all single dose: 103, all exploded: 40 images
-
-Curated 40 subset  (Balanced to the minimum nof set in the group which is exploded. ie there is only total 40 of exploded but excluded explod look alike from control):
-contains random but make sure it doesn't have exploded like controls total 40, and all exploded which is basically 40, 10 ds close to sd, 30 single dose.
+Balance curated 40 subset  (Balanced to the minimum number of set in the class which is explode):
+contains randomly selected control 40 images without and debris, all 40 explode, and 40 single dose images. These category of dataset showed in the table \ref{tab:dataset_summary}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.25]{figures/controlex.png} 
-    \caption{orig}
+    \caption{Example of control images which contains debris which may miscluster with explode or viseversa}
     \label{fig:controlex.png}
 \end{figure}
 
 \begin{table}[H]
-\centering
-\caption{Summary of Datasets}
-\label{tab:dataset_summary}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Dataset}             & \textbf{Control (C)} & \textbf{Single Dose (SD)} & \textbf{Exploded (E)} & \textbf{SD close for inference} \\ \midrule
-Full Dataset (Unbalanced)    & 472                  & 103                       & 40                    & all 22                          \\ 
-40 Subset (Balanced)         & (20 with debris + 20 without debris)                   & 40                        & 40                    &    20          \\ 
-Curated Full Dataset         & 280                  & 103                       & 40                    & all 22                                \\ 
-Curated 40 Subset (Balanced) & 40 (all without debris)                  & 40                        & 40                    & 20           \\ 
-\bottomrule
-\end{tabular}%
-}
+    \centering
+    \caption{Summary of Datasets}
+    \label{tab:dataset_summary}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccc}
+    \toprule
+    \textbf{Dataset}             & \textbf{Control (C)} & \textbf{Single Dose (SD)} & \textbf{Exploded (E)} \\ \midrule
+    (Imbalance) uncurated Full Dataset       & 472                  & 103                       & 40                    \\ 
+    Uncurated 40 Subset (Balanced)         & (20 with debris + 20 without debris)                   & 40                        & 40                    \\ 
+    Curated 40 Subset (Balanced) & 40 (all without debris)                  & 40                        & 40                    \\ 
+    \bottomrule
+    \end{tabular}%
+    }
 \end{table}
 
     
-
-run 400 times for different random initilisation. Note: Drug screen images are visually similar to single dose treatment. All balanced datasets
- are normalized to the exploded group size (n=40).
- \textcolor{red}{the curated full data set doesn't give any infromation ? if no remove the column}
- \textcolor{red}{class imbalnce problem nn orappich parayanda , say this could be  because of weight imbalance problem.}
-
-    \begin{table}[H]
-        \centering
-        \caption{Evaluation Results on Different Datasets and Augmentations with cosine distance}
-        \label{tab:evaluation_results_cosine_distance}
-        \resizebox{\textwidth}{!}{%
-        \begin{tabular}{@{}llcccc@{}}
-            \toprule
-            \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
-            \multirow{5}{*}{\textbf{Before}} 
-            & Strong                & \textbf{83.90} & \textbf{100} & \textbf{100} & \textbf{100} \\
-            & Sweet                 & \textbf{99.18} & \textbf{100} & \textbf{100} & \textbf{100} \\
-            & Resize                & 65.7 & 97.5 & 97.87 & 100 \\
-            & Resize No Contrast    & 69.92 & 90 & 86.76 & 100 \\
-            & Sweet No Contrast     & \textbf{98.21} & \textbf{99.17} & \textbf{99.52}  & \textbf{99.17} \\ \midrule
-            \multirow{5}{*}{\textbf{After}} 
-            & Strong                & 72.68 & 95.83 & 74.00 & 100 \\
-            & Sweet                 & 47.32 & 74.17 & 55.08 & 78.33 \\
-            & Resize                & 60.32 & 92.50 & 74.23 & 100 \\
-            & Resize No Contrast    & 44.72 & 64.17 & 47.28 & 66.67 \\
-            & Sweet No Contrast     & 52.20 & 86.67 & 58.16 & 89.17 \\ \bottomrule
-        \end{tabular}% 
-        }
-    \end{table}
     
 
-cosine distance:
-
-The results show a clear trend of superior clustering performance before the projection head compared to after the projection head.
-
-Before: 
-
-data augmentatoin ‘sweet’ performs the best over other data augmentations and achieved consistant accuracy over all different data set types. 
-
-since sweet and strong performed 100 percentage accurcay across cured and uncured balanced dataset its evidant that the problem for having less accracy is nothing
- to do with exploeded look like images in control instead its weight unbalance class problem. 
-
-comparing 'sweet' and 'strong' they both achieved 100 percenatage accuracy ie (same performance)over all different data set types except the full dataset.
-for full dataset sweet performed far better than strong , sweeet even achieved 99.18 where strong reached only 83.90.
-
-comparing all data augmentations 'resize' and 'reesize no contrast performed the least giving the insight that cropping is essential to get better cluster performance
- using cosine distance as distance metric.
-
- as a breif conclusion its pretty clear that cropping 0.35 to 1 percentage of whole image is crucial especially cropping have huge effect for cluster performance using cosine distance as distacne metric.
-
- One thing that need to keep in mind that all above explanations or achievements by different data augs are corresponds to clustering performance doesn't mean that
-  it could work for rankin strategies too.
-    
-  \begin{table}[H]
+K-means was run 400 times with different random initializations.
+\textbf{Evaluation of cosine distance based K-means}
+\begin{table}[H]
     \centering
-    \caption{Evaluation Results on Different Datasets and Augmentations with euclidean distance}
+    \caption{Evaluation Results on different datasets and augmentation pipeline with cosine distance}
+    \label{tab:evaluation_results_cosine_distance}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llccc@{}}
+        \toprule
+        \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated 40 Subset} \\ \midrule
+        \multirow{5}{*}{\textbf{Before}} 
+        & Strong                & \textbf{83.90} & \textbf{100} & \textbf{100} \\
+        & Sweet                 & \textbf{99.18} & \textbf{100} & \textbf{100} \\
+        & Resize                & 65.7 & 97.5 & 100 \\
+        & Resize No Contrast    & 69.92 & 90 & 100 \\
+        & Sweet No Contrast     & \textbf{98.21} & \textbf{99.17} & \textbf{99.17} \\ \midrule
+        \multirow{5}{*}{\textbf{After}} 
+        & Strong                & 72.68 & 95.83 & 100 \\
+        & Sweet                 & 47.32 & 74.17 & 78.33 \\
+        & Resize                & 60.32 & 92.50 & 100 \\
+        & Resize No Contrast    & 44.72 & 64.17 & 66.67 \\
+        & Sweet No Contrast     & 52.20 & 86.67 & 89.17 \\ \bottomrule
+    \end{tabular}% 
+    }
+\end{table}
+
+The results in table \ref{tab:evaluation_results_cosine_distance} show a clear trend of superior clustering performance before the projection head compared to after the projection head.
+
+\textbf{Among before projection head evaluation:} 
+
+Data augmentation ‘sweet’ performs the best over other data augmentations and achieved consistent accuracy over all different data set types. Since sweet and strong performed 100 percentage accuracy across cured and uncured balanced dataset its evident that the problem for having less accuracy is nothing to do with explode look alike images (with debris)  in control instead it could be imbalance class problem. Comparing 'sweet' and 'strong' they both achieved 100 percentage accuracy ie (same performance) over all different data set types except the full dataset.
+for full dataset sweet performed far better than strong , sweet even achieved 99.18 where strong reached only 83.90. Comparing all data augmentations 'resize' and 'resize no contrast performed the least giving the insight that cropping is essential to get better cluster performance using cosine distance as distance metric. As a brief conclusion its pretty clear that cropping 0.35 to 1 percentage of whole image is crucial especially cropping have huge effect for cluster performance using cosine distance as distance metric. One thing that need to keep in mind that all above explanations or achievements by different data augmentations are corresponds to clustering performance doesn't mean that it could work for ranking strategies too.
+    
+Here is the updated table with the "Curated Full Dataset" column removed:
+
+\begin{table}[H]
+    \centering
+    \caption{Evaluation Results on Different Datasets and Augmentations with Euclidean Distance}
     \label{tab:evaluation_results_euclidean}
     \resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}llcccc@{}}
+    \begin{tabular}{@{}llccc@{}}
         \toprule
-        \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated Full Dataset} & \textbf{Curated 40 Subset} \\ \midrule
+        \textbf{Projection Head} & \textbf{Augmentation Type} & \textbf{Full Dataset (Unbalanced)} & \textbf{40 Subset (Balanced)} & \textbf{Curated 40 Subset} \\ \midrule
         \multirow{5}{*}{\textbf{Before}} 
-        & Strong                & \textbf{88.45} & \textbf{100} & \textbf{100} & \textbf{100} \\
-        & Sweet                 & \textbf{98.21} & \textbf{91.67} & \textbf{99.29} & \textbf{95.83} \\
-        & Resize                & 70.40 & 78.33 & 66.66 & 88.33 \\
-        & Resize No Contrast    & 68.62 & 90.00 & 86.28 & 100 \\
-        & Sweet No Contrast     & \textbf{99.02} & \textbf{97.50} & \textbf{99.76} & \textbf{99.17} \\ \midrule
+        & Strong                & \textbf{88.45} & \textbf{100} & \textbf{100} \\
+        & Sweet                 & \textbf{98.21} & \textbf{91.67} & \textbf{95.83} \\
+        & Resize                & 70.40 & 78.33 & 88.33 \\
+        & Resize No Contrast    & 68.62 & 90.00 & 100 \\
+        & Sweet No Contrast     & \textbf{99.02} & \textbf{97.50} & \textbf{99.17} \\ \midrule
         \multirow{5}{*}{\textbf{After}} 
-        & Strong                & \textbf{75.45} & \textbf{100} & \textbf{99.53} & \textbf{100} \\
-        & Sweet                 & 51.54 & 74.17 & 60.52 & 79.17 \\
-        & Resize                & 43.25 & 83.33 & 53.90 & 87.5 \\
-        & Resize No Contrast    & 47.8 & 63.33 & 47.04 & 65.83 \\
-        & Sweet No Contrast     & 51.87 & 85.0 & 57.68 & 88.33 \\ \bottomrule
+        & Strong                & \textbf{75.45} & \textbf{100} & \textbf{100} \\
+        & Sweet                 & 51.54 & 74.17 & 79.17 \\
+        & Resize                & 43.25 & 83.33 & 87.5 \\
+        & Resize No Contrast    & 47.8 & 63.33 & 65.83 \\
+        & Sweet No Contrast     & 51.87 & 85.0 & 88.33 \\ \bottomrule
     \end{tabular}% 
     }
 \end{table}
 
     
-Euclidean distance:
-Just like  cosine distance, with eulcidean distacne as distacne metric also established a superior performance trend for before the projection head compared to after the
- projection head.
- Just like  cosine distance, inside the before projection head, data augs with cropping have far better performance than without cropping dataaugs such as resize and 
- resize no contrast.
-
- Eventhough 'strong' achieved 100 percentage accuracy across all dataset types except the full dataset unbalanced. when it comes to full dataset, sweet and sweet nocontrast pperforms better than all others.
- and among all data augs we can see sweet no contrast' maintain the cosistancey in performance across all dataset types with more than 97 percentage accuracy and also perfromed better than just 'sweet' across all dataset.
- 
- interesting thing to notice here is the after projection head  'strong' it achieved higher clusterig performance 99 and above across all dataset types except 
- the full dataset. which is a good indication that we should also consider the after projection head features for ranking task.
+\textbf{Evaluation of euclidean distance based K-means:}
+Just like  cosine distance, with euclidean distance as distance metric also established a superior performance trend for before the projection head compared to after the projection head. Just like  cosine distance, between the before projection head, data augmentation pipeline with cropping have far better performance than without cropping data augmentations such as resize and resize no contrast. Even though 'strong' achieved 100 percentage accuracy across all dataset types except the full dataset imbalanced. when it comes to full dataset, sweet and sweet no contrast performs better than all others. And among all data augmentation we can see 'sweet no contrast' maintain the constance in performance across all dataset types with more than 97 percentage accuracy and also performed better than just 'sweet' across all dataset. Interestingly after projection head  'strong' achieved higher clustering performance 99 and above across all dataset types except the full dataset. which is a good indication that we should also consider the after projection head features for ranking task.
 
     \begin{table}[H]
         \centering
@@ -307,47 +277,27 @@ Just like  cosine distance, with eulcidean distacne as distacne metric also esta
         }
     \end{table}
     
-Original images:
-comparing original images feats to simclr feats we can see that entire data augs for  before head feats outperformed entirly for both cosine distacne and euclidean distacne.
-while comparing original image to after projection head the performance is comparable except for the strong data aug where after head still have better perfromance.
+\textbf{Evaluation of original images:}
+Comparing original images features to SimCLR features, we can see that entire data augmentation for  before head features outperformed entirely for both cosine distance and euclidean distance based K-means.
+While comparing original image vectors to after projection head SimCLR features the performance is comparable except for the strong data augmentations where after head still have better performance. 
+Below figure \ref{fig:cluster} demonstrates the above findins in a nutshell. From the figure its evident that Before projection head SimCLR features perform better than after projections head SimCLR features.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.37]{figures/cluster.png} 
-    \caption{orig}
+    \caption{Comparison of clustering performance between SimCLR features and original image features}
     \label{fig:cluster}
 \end{figure}
 
+\textbf{Inference:}
+Since before projection head SimCLR features have far better performance, I do  inference on them. I choose 22 images that have close resemblance in my eyes to single dose images from drug screen for inference referred as 'inference image' just like we did in classification inference \ref{subsec:inference}. ( I repeat these are not biology expert labeled drug screen image. so any inference result is irrelevant in the sense to actual ground truth ). We used all inference images for full dataset along with the 3 classes. But for balanced datasets except control and explode
+ we changed the  dataset setup as follows: for keeping the dataset balanced: 20 single dose and 20 inference images. so that it will still be 40 as other classes.
 
-
-\textcolor{red}{Include PCA 1 here? maybe in ranking. but we can add PCA 2 fugures.}
-\textcolor{red}{remove inference data from table.}
-
-\textcolor{red}{do sd VS others all? yes depend on time}
-
-Inference:
-
-
-
-Since before projection head for cosine distance gives far better performance, i do  inference on them. I choose 22 images that have close resemblence in my eyes 
-to single dose images from drug screen for inference. We name those images as 'sd close'( I repeat these are not biology expert labeled drug screened image. so any inference result is irrelavant
- in the sense to actual ground truth )
-
-we used all 22 sd close images for full dataset along with the 3 classes that describe in the table. But for balanced datasets except control and exploded
- we changed the  dataset setup described in the table as follows for keeping the dataset balancing: 20 sd and 20 sd close images. so that it will stil be 40 as other classes.
-
-
-
- so during 3 class clustering 'sweet' (99.18 ) perfromed better than sweet no contrast (98.21) for all full dataset unbalanced. and in others sweet achieved 100 percentage accuracy
- whihc makes clear that for 3 class problem sweet have higher perfromacne comparing to other data augs. but during inference sweet accuracy reduced to 95.76  with -3.42 
- change in reduction while sweet no contrast reduced to  97.33 with -0.88 reduction change. and sweet no contrast kept the highest accuracy during inference. figure 8.8 shows that 
- with sweet no contrast data aug it classified all 103 sd images correctly and during inference it clustered all sd close image images in the cluster of sd images.
- 
- 
+So during the 3 class ( for the dataset set up explained in table \ref{tab:dataset_summary} ) clustering 'sweet' (99.18 percent accuracy) performed better than sweet no contrast (98.21 percent accuracy) for all full dataset imbalanced. and in others 'sweet' achieved 100 percentage accuracy which makes clear that for 3 class problem sweet have higher performance comparing to other data augmentations. but during inference sweet accuracy reduced to 95.76  with -3.42 change in reduction while sweet no contrast reduced to  97.33 with -0.88 reduction change. and sweet no contrast kept the highest accuracy during inference. figure 8.8 shows that with sweet no contrast data aug it classified all 103 sd images correctly and during inference it clustered all sd close image images in the cluster of sd images.
 
  \begin{table}[H]
     \centering
-    \caption{Evaluation Results on COSINE}
+    \caption{Inference evaluation results on COSINE distance based K-means}
     \label{tab:professional_table}
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}llcccc@{}}
@@ -372,11 +322,9 @@ we used all 22 sd close images for full dataset along with the 3 classes that de
     \label{fig:cconfusion}
 \end{figure}
 
-\textcolor{red}{How do you know in inference dsclose was the one confused? maybe confusion matrix?  sweet no contrast before cosine}
-
 \begin{table}[H]
     \centering
-    \caption{Evaluation Results on Euclidean}
+    \caption{Inference evaluation results on Euclidean distance based on K-means}
     \label{tab:professional_table}
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}llcccc@{}}

@@ -37,14 +37,14 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {8.1}{\ignorespaces Test accuracy vs Test epochs of original image vectors and Simclr features}}{43}{figure.caption.48}%
 \contentsline {figure}{\numberline {8.2}{\ignorespaces Train accuracy vs Train epochs of original image vectors and Simclr features }}{43}{figure.caption.49}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces orig}}{45}{figure.caption.51}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces orig}}{48}{figure.caption.56}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Example of control images which contains debris which may miscluster with explode or viseversa}}{45}{figure.caption.51}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Comparison of clustering performance between SimCLR features and original image features}}{48}{figure.caption.56}%
 \contentsline {figure}{\numberline {8.5}{\ignorespaces orig}}{49}{figure.caption.58}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces orig}}{50}{figure.caption.60}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces orig}}{49}{figure.caption.60}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{57}{figure.caption.63}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{56}{figure.caption.63}%
 \contentsline {figure}{\numberline {9.2}{\ignorespaces train vs test loss}}{57}{figure.caption.64}%
-\contentsline {figure}{\numberline {9.3}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{58}{figure.caption.65}%
+\contentsline {figure}{\numberline {9.3}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{57}{figure.caption.65}%
 \contentsline {figure}{\numberline {9.4}{\ignorespaces Wrong heading crct image upload Ohne contrast Resize before projection head data aug: Explod dataset plot in the figure shows overfitting }}{59}{figure.caption.67}%
 \contentsline {figure}{\numberline {9.5}{\ignorespaces Last row shows the misposition of the cancer cell. On day 7, it was above, and on day 10, it moved below.}}{63}{figure.caption.76}%
 \contentsline {figure}{\numberline {9.6}{\ignorespaces train vs test loss}}{67}{figure.caption.80}%
