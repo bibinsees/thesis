@@ -97,7 +97,7 @@ From table \ref{tab:augmentation_metric} and table \ref{tab:original_image_resul
     \label{tab:original_image_results}
 \end{table}
 
-Since the train and test accuracy are both 100 percent, which may indicate overfitting, I performed 10-fold cross-validation as an additional check to ensure the model's performance generalizes well The results are shown in the table \ref{tab:aug_metric} and \ref{tab:original_results}
+Since the train and test accuracy are both 100 percent for before projection head features, which may indicate overfitting, I performed a 10-fold cross-validation as an additional check to ensure the model's performance generalizes well. The results are shown in Tables \ref{tab:aug_metric} and \ref{tab:original_results}. The train and test accuracy for the features before the projection head drops from 100 percent to around 99 percent, and for the original image vectors, it drops from 99 percent to approximately 96 percent. This shows that the trend of the features before the projection head being slightly superior, as observed in earlier results, is also reflected here. Additionally, the after-projection head features still perform considerably worse than the before-projection head and original image vectors. Comparing this with classification using the ResNet18 architecture shows that the before-projection head SimCLR feature vectors and ResNet18 feature vectors achieve similar performance.
 \begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -113,20 +113,23 @@ Since the train and test accuracy are both 100 percent, which may indicate overf
     \bottomrule
     \end{tabular}%
     }
-    \caption{Performance metrics for different augmentation strategies before and after the projection head.}
+    \caption{Classification performance metrics for different augmentation strategies before and after the projection head using cross validation with 10 k folds}
     \label{tab:aug_metric}
 \end{table}
+
 \begin{table}[H]
     \centering
-    \caption{Original Image Results}
-    \label{tab:original_results}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{lcc}
     \toprule
-    \textbf{Metric}         & \textbf{ logisitic reg average Accuracy (\%)} & \textbf{ResNet18 average Accuracy (\%)} \\ \midrule
+    \textbf{Metric}         & \textbf{Logistic Reg Average Accuracy (\%)} & \textbf{ResNet18 Average Accuracy (\%)} \\ \midrule
     \textbf{Train}          & 96.73                                                     & 99.86                                             \\ 
     \textbf{Validation}     & 96.50                                                     & 99.93                                              \\ 
     \bottomrule
-    \end{tabular}
+    \end{tabular}%
+    }
+    \caption{Classification performance metrics for original image vectors using cross-validation with 10 k folds}
+    \label{tab:original_results}
 \end{table}
 
 
