@@ -160,14 +160,9 @@ Twenty-two images that closely resemble single-dose images from drug screening w
 \end{table}
 
 From the inference experiment table \ref{tab:performance_metrics}, it can be seen that, except for 'strong' and 'sweet no contrast', all other augmentations were able to achieve 100 percent accuracy in classifying the inference images as belonging to the single-dose image class. Using the original image features, the accuracy was 68.18 percent, while SimCLR features before the projection head achieved at least 90 percent accuracy.
-\section{kmeans clustering}
+\section{K-means clustering}
 
-Idea is whether the learned representation from simlcr outperforms the original images in clustering the images (unsupervised manner) For that we use simple kmeans 
-clusetring. We will cluster them based on both euclidean distance as well as cosine distance.
-
-If we do kmeans with cosine distance distance then it only compare direction of the vector thats why we need to do normal kmeans with euclidean dist to show the magnitude similarity
-
-
+The idea is to determine whether the learned representation from SimCLR outperforms the original images in clustering the images in an unsupervised manner. To achieve this, we use simple K-means clustering as explained in \cite{bishop:2006:PRML}. We use both euclidean distance and cosine distance to find the nearest data point to the cluster centroid as two different approach. When performing K-means with cosine distance, it compares only the direction of the vector. Therefore, we also perform standard K-means with Euclidean distance to evaluate the magnitude similarity. 
 
 \subsection{Evaluation}
 
