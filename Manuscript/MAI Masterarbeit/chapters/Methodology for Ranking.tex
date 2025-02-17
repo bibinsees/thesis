@@ -392,7 +392,7 @@ I train with different parameters for  number of epochs and batch size. followin
   \label{tab:classification_accuracies}
   \end{table}
   
-As we seen in the above tables \ref{tab:ranking_softmax} and \ref{tab:classification_accuracies}, none of the  data augmentation types are not able to give clear separation between 3 classes. No contrast sweet, resize and sweet data augmentation data types achieved highest accuracy 90 and 95.12 and 97.07  in the category of  Control vs SD and Control vs Ex and Ex vs Sd categories correspondingly. 
+As we seen in the above tables \ref{tab:ranking_softmax} and \ref{tab:classification_accuracies}, none of the  data augmentation types are not able to give clear separation between 3 classes. No contrast sweet, resize and sweet data augmentation data types achieved highest accuracy 90 and 95.12 and 97.07  in the category of  Control vs SD and Control vs Ex and Ex vs Sd categories correspondingly. Before head projection SimCLR features still performed comparatively well comparing to original image vectors.
 
 The main limitation of this approach is we can't guarantee when we get new images it will sail separate three classes 100 percentage like we seen above, there can be overlaps, since the classification only promise us that the softmax score of the control will be closer or equal to zero and  single dose will be closer or equal to 1 in control vs sd case. that means classification only promise us that we get clear separation between 2 classes not three classes based on the softmax value.
 
@@ -422,20 +422,20 @@ single dose image (103) and exploded images (40).
   Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
                   & Single Dose Mean   & 93.33      & 93.50     & 48.23      & 92.52                  & 93.82                 \\
   Before          & Control Mean       & 78.86      & 87.64     & 91.49      & 85.53                  & 92.20                 \\
-                  & Explod Mean        & 83.25      & 25.53     & 82.74      & 29.43                  & 82.76                 \\ \midrule
+                  & Explode Mean        & 83.25      & 25.53     & 82.74      & 29.43                  & 82.76                 \\ \midrule
                   & Single Dose Mean   & \textbf{95.12}      & 85.69     & 28.29      & 77.72                  & 83.74                 \\
   After           & Control Mean       & 71.54      & 76.75     & 82.76      & 14.47                  & 20.16                 \\
-                  & Explod Mean        & 85.37      & 80.00     & 37.72      & 78.21                  & 80.81                 \\ \bottomrule
+                  & Explode Mean        & 85.37      & 80.00     & 37.72      & 78.21                  & 80.81                 \\ \bottomrule
   \end{tabular}
-  \caption{Cosine distance}
+  \caption{Performance of K-means centroid approach based on cosine distance as inference metric using SimCLR features}
   \label{tab:table_label}
 \end{table}
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{figures/allbox.pdf} 
-  \caption{train vs test loss}
-  \label{fig:unloss}
+  \caption{Selected inference metric scales for ranking accuracy using SimCLR features. Strong after projection head feature, using single dose as centroid , got best for ranking accuracy while cosine distance as inference metric showed in the first plot and Strong before  projection head feature, using single dose as centroid , got best for ranking accuracy while euclidean distance as inference metric as shown in the second plot}
+  \label{fig:cosi_mean}
 \end{figure}
 
 
@@ -447,13 +447,13 @@ single dose image (103) and exploded images (40).
   Projection Head & Distance From      & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
                   & Single Dose Mean   & \textbf{92.52}      & 90.41     & 31.71      & 83.58                  &  91.38                \\
   Before          & Control Mean       & 69.11      & 37.24     & 76.75      & 39.84                  & 57.89                 \\
-                  & Explod Mean        & 82.44      & 82.60    & 67.97      & 23.90                  & 82.28                 \\ \midrule
+                  & Explode Mean        & 82.44      & 82.60    & 67.97      & 23.90                  & 82.28                 \\ \midrule
                   & Single Dose Mean   & 90.57     & 80.33     & 36.42      & 76.75                  & 21.63                 \\
   After           & Control Mean       & 55.70      & 76.75     & 76.75      & 76.75                  & 77.07                 \\
-                  & Explod Mean        & 83.09      & 77.40     & 55.93      & 19.84                  &  81.63                \\ \bottomrule
+                  & Explode Mean        & 83.09      & 77.40     & 55.93      & 19.84                  &  81.63                \\ \bottomrule
   \end{tabular}
-  \caption{Euclidean distance}
-  \label{tab:table_label}
+  \caption{Performance of K-means centroid approach based on euclidean distance as inference metric using SimCLR features}
+  \label{tab:eucli_mean}
 \end{table}
 
 \begin{table}[H]
@@ -464,21 +464,12 @@ single dose image (103) and exploded images (40).
   Cosine        & 17.56                                                                           & 46.50                            & 28.45                           \\
   Euclidean     & 24.227                                                                           & 50.08                            & 34.47                           \\ \bottomrule
   \end{tabular}
-  \caption{Your table caption here}
-  \label{tab:you_label}
+  \caption{Performance of K-means centroid approach on original images}
+  \label{tab:orig_mean}
 \end{table}
 
-As you can see in the above table, cosine distance of each after projection head strong simclr feature from the single dose mean have the most seperation of classes with accuracy of 95.12. It doesn't seperate three classes fully but its something to hope for. 
-
-With the euclidean distance also  each before projection head strong simclr feature from the single dose mean have the most seperation of classes with accuracy of 92.52. It clearly  seperates one class from other but still far awy from the result of 3 class seperation that we hoped for.
-
-By observing the plot of all inference metric scales the general trend of the accuracy metric is that if its achieved 90 percentage means it seperates one class from other while other 2 classes are still be mixed. And if it starts to increase  from   95 percentage accuracy, it means it seperates those mixed  2 classes. 100 percentage means it seperates all classes clearly without any overlap.
-
-For other inference metrics instead of kmeans clustering, I direcly calculated mean vector of each class to get the centroid vector. and treat it as the centroid of each class and calculated the accuracy as we did before. None of them achieved 90 percentage accuracy. Hence for this mean ranking approach cosine distacne as inference metric is the better choice for the ranking. 
-
-from both of the Cosine and euclidan table its evident that distance from single dose centroid using strong simclr fature is the better choice for the ranking comparing to others since it all achieves 90 percentage accuracy.
-
-All of the above inference metric scaling  I did it on original image vector and as you can see below perfromacne of the ranking accuracy using cosine and euclidean distacne were quite low comparing to the simclr feature vectors. Other inference metrics were also very low. Whcih basically tells us for this ranking strategy also simclr features are better than original image vectors.
+Insights from the above tables \ref{fig:cosi_mean}, \ref{fig:eucli_mean} and \ref{fig:orig_mean} and figure \ref{fig:cosi_mean}: Cosine distance of each after projection head strong simclr feature from the single dose mean have the most separation of classes with accuracy of 95.12. It doesn't separate three classes fully but its something to hope for. With the euclidean distance, before projection head strong simclr feature from the single dose mean have the most separation of classes with accuracy of 92.52. It clearly  separates one class from other but still far away from the result of 3 class separation that we hoped for.
+All of the above inference metric scaling  I did it on original image vector and as you can see below performance of the ranking accuracy using cosine and euclidean distance were quite low comparing to the simclr feature vectors.Which basically tells us for this ranking strategy also simclr features are better than original image vectors.
 
 
 
@@ -486,13 +477,13 @@ All of the above inference metric scaling  I did it on original image vector and
 
 
 
-PCA  aka Principal componanet anaylisis can be defined as the orthogonal projection of the data onto lower dimensional linear space, known as the principle subspace, such that variance of the projected data is maximized, equalantly it can defined as the linear projection that minimizes the average projection cost,defines as the mean squared distance between the datapoints and their projection \cite{bishop:2006:PRML}.  PCA is less effective when the intrinsic data structure is highly nonlinear.
+PCA  aka Principal component analysis can be defined as the orthogonal projection of the data onto lower dimensional linear space, known as the principle subspace, such that variance of the projected data is maximized, equally it can defined as the linear projection that minimizes the average projection cost,defines as the mean squared distance between the datapoint and their projection \cite{bishop:2006:PRML}.  PCA is less effective when the intrinsic data structure is highly nonlinear.
 
 t-SNE: In contrast, t-distributed Stochastic Neighbor Embedding (t-SNE) is a nonlinear technique designed specifically for visualizing high-dimensional data by preserving local neighborhood structures. t-SNE works by converting pairwise distances in high-dimensional space into probabilities that represent similarities, then optimizing a low-dimensional embedding to reflect these local relationships accurately. While t-SNE excels at revealing clusters and subtle local structures that PCA might miss, it is computationally intensive and sometimes struggles to preserve the global structure of the data. These characteristics can limit its effectiveness as a ranking tool when global relationships are important, even though it provides superior visualization of complex patterns.
 
 UMAP: Uniform Manifold Approximation and Projection (UMAP) is another nonlinear dimensionality reduction method that builds on principles from manifold learning and topology to capture both local and global data structures. UMAP tends to be faster than t-SNE and often preserves more of the global structure, making it a promising alternative when a balanced view of local detail and overall data distribution is needed. However, like t-SNE, UMAP is sensitive to hyperparameter tuning and the inherent structure of the data, which can influence its performance.
 
-We will use the PCA technique to identify the direction of maximum variance in the high dimensional feature space in our case 512 D for before projection head feature simclr feature vector, and 20 D for after projection head simclr feature vector and 27648 D for original images and projects data onto this single axis (1D). The resulting First PCA scores (positions along this axis) aim to preserve maximum variance as possible from the original data while reducing redundancy and noise.  Idea is that whether this 1D PCA value can be used as as our ranking metric or not. Similarly we use other dimensionality reduction techniques such as  t-SNE (t-Distributed Stochastic Neighbor Embedding)  and UMAP (Uniform Manifold Approximation and Projection) to reduce the higher dimension of data to single dimension to check whether these single dmension data of tsne or umap values are useful for ranking  the images. 
+We will use the PCA technique to identify the direction of maximum variance in the high dimensional feature space in our case 512 D for before projection head feature simclr feature vector, and 20 D for after projection head simclr feature vector and 27648 D for original images and projects data onto this single axis (1D). The resulting First PCA scores (positions along this axis) aim to preserve maximum variance as possible from the original data while reducing redundancy and noise.  Idea is that whether this 1D PCA value can be used as as our ranking metric or not. Similarly we use other dimensionality reduction techniques such as  t-SNE (t-Distributed Stochastic Neighbor Embedding)  and UMAP (Uniform Manifold Approximation and Projection) to reduce the higher dimension of data to single dimension to check whether these single dimension data of t-sne or UMAP values are useful for ranking  the images. 
 \begin{table}[H]
   \centering
   \resizebox{\textwidth}{!}{%
@@ -510,7 +501,7 @@ We will use the PCA technique to identify the direction of maximum variance in t
   \bottomrule
   \end{tabular}%
   }
-  \caption{Comparison of dimensionality reduction techniques (PCA, UMAP, t-SNE) for various metrics before and after the projection head.}
+  \caption{Comparison of dimensionality reduction techniques (PCA, UMAP, t-SNE) for various metrics before and after the projection head SimCLR features.}
   \label{tab:combined_dr}
   \end{table}
 
@@ -528,5 +519,5 @@ We will use the PCA technique to identify the direction of maximum variance in t
   \label{tab:dim_reduction}
 \end{table}
 
-From the above tables we see that before projection head out performs genearally after projection head and the original image feature vectors in amoung all dimenstionaily reduction technic.
-While comparing amoung before projection head: Above table shows that PCA reducing data dimension to 1 D doesn't seperate 3 classes well comapre to the tsne and umap. While Umap achieved closer to 100, Tsne performed better amoung all dimesnionality redcution technic  with the achievance of 100 percentage accuracy to seperate 3 classes in sweet, resize, No contrast data augmentation pipelines. Limitation is that we are not sure that whether these clear seperation between classes ensure there is perfect transition of druf efficacy within the class.
+From the above table \ref{tab:combined_dr} we see that before projection head SimCLR features out performs generally after projection head SimCLR features and the original image feature vectors in among all dimensionally reduction technic.
+While comparing among before projection head: Above table \ref{tab:combined_dr}  shows that PCA reducing data dimension to 1 D doesn't separate 3 classes well compare to the t-SNE and UMAP. While umap achieved closer to 100 percent ranking accuracy, t-SNE performed better among all dimensionality reduction technic  with the 100 percentage ranking accuracy to separate 3 classes in sweet, resize, No contrast data augmentation pipelines. Limitation is that we are not sure that whether these clear separation between classes ensure there is perfect transition of drug efficacy within the class.
