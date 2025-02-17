@@ -248,13 +248,12 @@ Equation~\ref{eq:loss} is implemented as the loss function in our experiments.
 
 The SimCLR framework was originally implemented in TensorFlow by the authors. In this work, I adopted the PyTorch implementation of SimCLR and utilized the parameters provided 
 in
- the PyTorch SimCLR tutorial \textcolor{red}{add reference}, as they demonstrated optimal performance for the STL10 dataset. The STL10 dataset is still natural image dataset,
-  with an image resolution of \( 96 \times 96 \),  matches the dimensionality of the our images to feeded into the model. 
- I used the following parameters for training from them: a learning rate of \( 5 \times 10^{-4} \), a temperature of 0.07, a weight decay of \( 1 \times 10^{-4} \), a cosine learning 
+ the PyTorch SimCLR tutorial \cite{lippe2024uvadlc} , as they demonstrated optimal performance for the STL10 dataset. The STL10 dataset is still natural image dataset,
+  with an image resolution of \( 96 \times 96 \),  matches the dimensionality of the our images that feeded into the model. 
+ I used the following parameters for training from the tutorial: a learning rate of \( 5 \times 10^{-4} \), a temperature of 0.07, a weight decay of \( 1 \times 10^{-4} \), a cosine learning 
  rate schedule with a minimum learning rate of \( \frac{\text{lr}}{50} \) and \( T_{\text{max}} \) set to the maximum number of epochs where 
- \( T_{\text{max}} \) refers to the maximum number of iterations or epochs for which the cosine learning rate schedule is defined. It determines the period of the cosine function used to anneal the learning rate, the ADAM optimizer, and 4 hidden layers
-with a hidden dimension of 128 in the projection head. Additionally I used max epoch as 245 and Batch size as 64. I didn't finetuned specifically for
- downstream ranking task because we don't know the ground truth label. I could have been fine tune for the intermediate evaluations, but my focus was on completing the pipeline. 
+ \( T_{\text{max}} \) refers to the maximum number of iterations or epochs for which the cosine learning rate schedule is defined. It determines the period of the cosine function used to anneal the learning rate. the ADAM optimizer, and 4 hidden layers
+with a hidden dimension of 128 in the projection head also used. Additionally I used max epoch as 245 and Batch size as 64.
 
 The following explains how we process a 3-channel image as if it were a standard RGB image and apply augmentations to generate two augmented versions.
 

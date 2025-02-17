@@ -591,6 +591,30 @@
       \verb https://doi.org/10.1007/978-3-030-00934-2_38
       \endverb
     \endentry
+    \entry{lippe2024uvadlc}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=1b321c384f6ae18e178d29d4927e281e}{%
+           family={Lippe},
+           familyi={L\bibinitperiod},
+           given={Phillip},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b321c384f6ae18e178d29d4927e281e}
+      \strng{fullhash}{1b321c384f6ae18e178d29d4927e281e}
+      \strng{fullhashraw}{1b321c384f6ae18e178d29d4927e281e}
+      \strng{bibnamehash}{1b321c384f6ae18e178d29d4927e281e}
+      \strng{authorbibnamehash}{1b321c384f6ae18e178d29d4927e281e}
+      \strng{authornamehash}{1b321c384f6ae18e178d29d4927e281e}
+      \strng{authorfullhash}{1b321c384f6ae18e178d29d4927e281e}
+      \strng{authorfullhashraw}{1b321c384f6ae18e178d29d4927e281e}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://uvadlc-notebooks.readthedocs.io/en/latest/}}
+      \field{title}{{UvA Deep Learning Tutorials}}
+      \field{year}{2024}
+    \endentry
     \entry{Mualla2013ACD}{article}{}{}
       \name{author}{5}{}{%
         {{hash=7b64daf1cbf636a26c9968ea1e1be35b}{%
