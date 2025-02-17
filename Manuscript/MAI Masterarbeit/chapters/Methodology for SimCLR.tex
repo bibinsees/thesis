@@ -1,26 +1,18 @@
 \chapter{Methodology for SimCLR}\label{ch: Methodology for SimCLR}
-
-\textcolor{red}{why after not only before}
 \section{Data preprocessing} \label{sec:data preprocessing}
 \begin{enumerate}
   \item \textbf{No of channel per image selection}:
    For 3 reasons, I decided to use 3 layers per image as 3 channels of the image for SimCLR training:
-   \begin{enumerate}
-    \setlength{\itemsep}{0pt}
+   \begin{enumerate}[itemsep=0pt]
     \item Considering each 3 layers per image may capture depth information at 3 different focal planes of a 3D tumor tissue model, providing richer information compared to only single-channel data.
     \item For ease of integration with our pretrained architecture, ResNet18, which was trained on 3-channel images.
     \item The majority of the images in the dataset have exactly 3 layers, making this a practical choice.
   \end{enumerate}
   
    Images with only 1 channel will have their single channel duplicated to form 3 identical channels. For images with 5 channels, the top 3 sharpest
-   layers are filtered and selected to reduce the image to 3 layers. This ensures consistency across the dataset while maintaining maximum texture and edge 
-   information.
-
-   The concept of sharpness is central to selecting the most informative layers. Layers with higher sharpness are retained because they carry more 
-  texture and edge information, while layers with lower sharpness tend to have less detail and appear blurred. Sharpness is calculated intuitively as follows:
-  (Code is from Dalia)
+   layers are filtered and selected to reduce the image to 3 layers (Process is explained below). This ensures consistency across the dataset while maintaining maximum texture and edge information. The concept of sharpness is central to selecting the most informative layers. Layers with higher sharpness are retained because they carry more texture and edge information, while layers with lower sharpness tend to have less detail and appear blurred. Sharpness is calculated intuitively as follows (Dalia Mahdy's code used for the implementation): 
   \begin{enumerate}
-      \item Sharpness is related to how quickly pixel intensities change in an image. These changes are measured using gradients, which calculate how intensity changes between neighboring pixels. The gradient magnitude is computed as:
+      \item Sharpness is related to how quickly pixel intensities change in an image. These changes are measured using gradients, which calculate how intensity changes between neighboring pixels. The gradient magnitude \[g_{\text{norm}}\] is computed as:
       \[
       g_{\text{norm}} = \sqrt{g_x^2 + g_y^2}
       \]
@@ -32,65 +24,49 @@
       where \(N\) is the total number of pixels in the layer. A higher sharpness score corresponds to layers with more edges, transitions, and details, which are likely to be in focus.
       \item Layers are ranked based on their sharpness scores, and the top 3 layers are selected. This ensures that the dataset retains layers that are in focus and have the most texture and edge information.
   \end{enumerate}
+
   
-  
-  \item  \textbf{Croping the image to make whole image from rectangular to square ie H= W}
+  \item  \textbf{Croping the image to make whole image from rectangular to square ie Hight = Width (H=W) of the iamge}
   
     Advantage of croping to H=W are:
     \begin{enumerate}
       \item  Remove unnecessary background which contains no information
       \item  There will be no shear during resize to 96*96 augmentation like as shown in the figure \ref{fig:elong}
-      \item minor changes in positions of day 10 image can be reduce with this crop, but itis not a solution if the cancer cell is too edge of the image.
-      \item \textcolor{red}{only state if you can show fig}
       \begin{figure}[H]
         \centering
         \includegraphics[scale=0.46]{figures/long.png} 
-        \caption{First row: croped to 2054*2054 then resized to 96*96: no shear change/elongation in one dimension happened, Second row: 
-       original image 2456*2054 then resized to 96*96: shear change/elongation in one dimension happened}
+        \caption{First row: Cropped to 2054x2054 and then resized to 96x96, with no shear or elongation in one dimension. Second row: Original image (2456x2054) resized to 96x96, resulting in shear or elongation in one dimension}
         \label{fig:elong}
       \end{figure}
       
-      \item Augmentations such as rotation = 90 and 270, Horiflip+rotation 90, Horiflip+rotation270 this is only possible because of square image. if its other 
-      angles except multiples of 90 then images will have black part for that we need additional careful interpolation or something like that.
-       so my point is since the image is square we could take rotations of 90 mulitiples without any additional tasks. explained in \ref{fig:rotation}.
+      \item Augmentations such as rotation by 90° and 270°, as well as combinations of horizontal flip and rotations by 90° or 270°, are easily applied when the image is square. If the rotation involves angles other than multiples of 90°, black borders will appear, requiring additional interpolation or other techniques. Therefore, since the image is square, rotations by multiples of 90° can be applied without any additional tasks, as explained in the figure \ref{fig:rotation}.
        \begin{figure}[H]
         \centering
-        \includegraphics[scale=0.46]{figures/rotation.png} 
-        \caption{A: croped to 2054*2054 then resized to 96*96: No black cuts. B: 
-        original image 2456*2054 then resized to 96*96: black cuts happened}
+        \includegraphics[scale=0.3]{figures/rotation.png} 
+        \caption{A: Cropped to 2054x2054 and then resized to 96x96: No black borders. B: Original image (2456x2054) resized to 96x96: Black borders appeared.}
         \label{fig:rotation}
       \end{figure}
     \end{enumerate}
-
-    We cannot rely on a simple center crop for our images because some cancer cells are not centrally located within the image but are instead closer to the 
-edges. To ensure the cancer cells are fully included in the cropped region, the solution involves identifying the boundaries of the cancer cell including the
- debris, obtaining the corresponding bounding box, and cropping the image, wich ensures that croped image contain the full cancer cell. 
- The original image dimensions are 2456×2054 (Height × Width). It turns out to be H=W= 2054 ensures that the cancer cell is fully inside for all of the 
- image using computer vision lybraries (will explain below).
-  and any cancer cell that have more than this are either elongated in single dimension (eg. Horizontal) this indicates an invalid cultivation by the robotic system,  which will be disgard in the first place through Dalias machine learning model 
-  or have have very few amount of debris which I neglected since its very small.
-
-
+  We cannot rely on a simple center crop for our images because some tissue models are not located centrally within the image; instead, they are closer to the edges. To ensure that the tissue models are completely included in the cropped region, we must identify the boundaries of the tissue models, including any debris, obtain the corresponding bounding box, and crop the image accordingly to guarantee that the cropped image contains the full tumor tissue models. The original image dimensions are 2456×2054 (Height × Width). It turns out that setting H = W = 2054 ensures that the tumor tissue model is fully contained in all images processed with computer vision libraries (to be explained soon). Any tumor tissue model that exceeds this size is either elongated in a single dimension (e.g., horizontally), indicating invalid cultivation by the robotic system, and will be discarded by Dalia's machine learning model.
 For implementing this procedure, the following steps were employed using the \texttt{skimage}, \texttt{cv2}, and \texttt{numpy} libraries:
-\begin{enumerate}
-    \item The image is converted to grayscale by averaging across the three layers and then normalized to an 8-bit format using the \texttt{cv2.normalize} function.
-    \item The Otsu thresholding method (\texttt{skimage.filters.threshold\_otsu}) is used to create a binary mask, followed by inversion to highlight the cancer cell region.
-    \item Contours are extracted from the binary mask using \texttt{cv2.findContours}. The largest contour, corresponding to the cancer cell or debris, is identified by sorting the contours based on area.
-    \item A bounding rectangle is determined around the largest contour using \texttt{cv2.boundingRect}. The rectangle is then adjusted to ensure the crop is 
-    centered around the detected region and fits within the  \(2054 \times 2054\) dimensions. The image is then cropped ensuring that the cancer cell and debris 
-    are fully included in the crop. Figure \ref{fig:crop} demonstrates the whole procedure.
+\begin{enumerate}[label=\arabic*.]
+  \item The image is converted to grayscale by averaging across the three layers and then normalized to an 8-bit format using the \texttt{cv2.normalize} function.
+  \item The Otsu thresholding method (\texttt{skimage.filters.threshold\_otsu}) is used to create a binary mask, followed by inversion to highlight the tumor tissue model region.
+  \item Contours are extracted from the binary mask using \texttt{cv2.findContours}. The largest contour, corresponding to the tumor tissue model or debris, is identified by sorting the contours based on area.
+  \item A bounding rectangle is determined around the largest contour using \texttt{cv2.boundingRect}. The rectangle is then adjusted to ensure the crop is centered around the detected region and fits within the  \(2054 \times 2054\) dimensions. The image is then cropped, ensuring that the tumor tissue model and debris are fully included in the crop. Figure \ref{fig:crop} demonstrates the whole procedure.
 \end{enumerate}
+
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.46]{figures/crop.png} 
-  \caption{crop}
+  \includegraphics[scale=0.3]{figures/crop.png} 
+  \caption{Pipeline for careful cropping of the image.}
   \label{fig:crop}
 \end{figure}
 
   \item  \textbf{Normalize the 16-bit image to [0, 1]}
   
-  \item \textbf{Perform data augmentations} which detaily explained in the \ref{sec:data augmentation}
+  \item \textbf{Perform data augmentations} which detaily explained in the section \ref{sec:data augmentation}
 
   \item \textbf{Perform Z-score normalization} after data augmentation since:
   \begin{enumerate}
@@ -102,42 +78,25 @@ For implementing this procedure, the following steps were employed using the \te
 \end{enumerate}
 
 \section{Data augmentation} \label{sec:data augmentation}
-
-\textcolor{red}{ figure add data aug for sweet , resize, ohne figure 7.7 why is anchor the last image and not the first in the left? }
-
-I started with best data augmentation pipeline that proposed by simclr \cite{chen2020simple} paper did,
+I started with best data augmentation pipeline that proposed by SimCLR \cite{chen2020simple} paper did,
 because it gave best performance on natural image dataset such as Imagenet and CIFAR for downstream task like classification. 
 
 Which follows a sequential of:
 
-\begin{enumerate}
-  \item Randomly crop  and resize to specific smaller size. In my case I choosed to crop and resize to $96 \times 96$. i choosed this small H and W as 
-  image size to feed train our model because of two reasons: 1. computational fast, so that we can complete the pipeline in time. 2. if we can get good performance
-   in ranking with this small image sizes (ie less pixel details compared to 2054 * 2056 ) that means we may can improve the performance with larger image sizes. The
-   crop of random size (uniform from 0.08 to 1.0 in area) of the original size and a random aspect ratio (default: of 3/4 to 4/3) of the original aspect ratio is 
-   made. This crop is finally resized to the original size.
+\begin{enumerate}  
+  \item Randomly crop and resize to a specific smaller size. In my case, I chose to crop and resize to $96 \times 96$. I selected this small height and width for the image size to train our model because achieving good performance with these small image sizes (i.e., fewer pixel details compared to $2054 \times 2056$) may indicate that we can improve performance with larger image sizes. Additionally, it's computationally efficient. The image is randomly cropped uniformly from 0.08 to 1.0 in area of the original image and maintains a random aspect ratio (default: from 3/4 to 4/3) of the original aspect ratio. This crop is then resized to its original size.
 
-  \item Apply a horizontal flip, (simclr paper only used horizontal flip because it doesn't make sense to have vertical flip/rotation in natural images. This is 
-  default policy in SimCLR as it improve 1 percentage accuracy for downstream task in simclr paper) vertical flip, (Horizontal+Vertical flip), Rotation = (90, 270), 
-  Horizontal flip + Rotation = (90, 270) with the probability 50 percentage. We can have these aditional augs because it will  still fall into our distribution
-  samples. Other flip and rotation combinations are restrained due to its repeatable pattern to the above as shown in \ref{fig:repeat} and due to the black cut 
-  problem explained in \ref{fig:rotation}. We set this as our default for all data augmentation. Figure \ref{fig:bs} shows the original and corresponding blured image.
+  \item Apply a horizontal flip (the SimCLR paper only used horizontal flip because it doesn't make sense to have vertical flip/rotation in natural images). This is the default policy in SimCLR as it improves 1 percentage accuracy for downstream tasks in the SimCLR paper. We can also apply a vertical flip (as flipping the tumor tissue model vertically still results in valid samples that belong to our image distribution.), combination of horizontal and vertical flip, rotation of (90, 270), or a combination of horizontal flip + rotation (90, 270) with a probability of 50 percent. We include these additional augmentations because they still fit within our distribution samples. Other flip and rotation combinations are restricted due to their repetitive pattern, as shown in figure \ref{fig:repeat}, and the black cut problem explained in figure \ref{fig:rotation}. We set this as our default for all data augmentation.
 
-  \item Randomly change the brightness and contrast  upto lower=1-0.8, upper=1+0.8  with the probability of 80 percentage. I removed saturation and hue since it 
-  doesn't have effect on gray scale images since gray scale images are  nuetral and saturation and hue of a gray scale image is zero. ie when we try
-   to adjust the value, we have essentially have no color to modify as it is achromatic.
+  \item Randomly change the brightness and contrast up to lower=1-0.8, upper=1+0.8, with a probability of 80 percent. I removed saturation and hue since they do not affect grayscale images. Grayscale images are neutral, and the saturation and hue of a grayscale image are zero. Thus, when we try to adjust the values, we essentially have no color to modify as it is achromatic.
    
-  
-  \item Gaussian blur and increase in sharpness. Blur augmentation is also default policy in SimCLR, because they find it helpful as  it improves the performance 
-  for downstream linear classification task by around 2 percentage. as they do we randomly sample sigma from 0.1 to 2 . We also kept the kernal size to be 10 percentage of 
-  image height/width, in our case 5. Some images are blured ( Probabily due to the microscopic error). So inorder to mimic original version, I added sharpness 
- increase. It increaases the sharpness by a factor of 2. We set this also as our default for all data augmentation.  Figure \ref{fig:bs} shows the original
-  and corresponding sharpened image
+  \item Apply Gaussian blur and increase sharpness. Blur augmentation is also the default policy in SimCLR because it has been found to improve performance for downstream linear classification tasks by around 2 percent. Like them, we randomly sample sigma from 0.1 to 2. We also keep the kernel size to be 10 percent of the image height/width, which is 5 in our case. Some images are blurred (probably due to a microscopic error). To mimic the original version, I added an increase in sharpness, which doubles the sharpness factor. We set this as our default for all data augmentation. Figure \ref{fig:bs} shows the original and corresponding sharpened image.  
 \end{enumerate}
+
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{figures/bs.png} 
-  \caption{Blur and sharped. explain what happens when its blured or sarpened. edge details}
+  \caption{Applying blurriness and sharpness to the original images: The higher the sharpness, the more texture and edge details are enhanced, while blurriness results in the opposite effect}
   \label{fig:bs}
 \end{figure}
 
@@ -149,12 +108,9 @@ Which follows a sequential of:
   \label{fig:repeat}
 \end{figure}
 
-I call the above chain of data augmentation pipeline parameters as 'strong' data augmentation which illustrated in \ref{fig:strong_aug} first row.
+I refer to the above chain of data augmentation parameters as 'strong' data augmentation, as illustrated in the first row of Figure \ref{fig:strong_aug}.
 
-Since there is a strong intensity change in color jitter \textcolor{red}{ explain whats color jitter or directly use brightness contrast word} in the above data augmentation I decided to analyse the effect of only that color jitter. For 16-bit images
- with 3 channels, instead of a reduction, there was an increase in the number of unique pixel values—by a maximum of 258,757 percentage. The issue with this
-  increase is that after data augmentation, the new pixel values are not distributed similarly to the original image. Instead, they shift to
- the two extremes,such as 0 or 1 which deviate significantly from the original image distribution, as shown in Figures \ref{fig:16bit_three_v1}.
+Since there is a significant intensity change in brightness and contrast for 'strong' augmentation, I decided to analyze the effect of only the brightness and contrast changes. For 16-bit images with 3 channels, there was an increase in the number of unique pixel values—by a maximum of 258,757 percent in one of the changes in the combination of brightness and contrast. This is due to the fact that after data augmentation, the new pixel values are not distributed similarly to the original image. Instead, they shift toward the two extremes, such as 0 or 65535, deviating significantly from the original image distribution, as shown in figure \ref{fig:16bit_three_v1}.
 
   \textbf{16-bit three-channel image before and after data augmentation:}
   \begin{itemize}
@@ -165,16 +121,12 @@ Since there is a strong intensity change in color jitter \textcolor{red}{ explai
   \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figures/16bit_three_1.png} 
-    \caption{16-bit three-channel image after 3000 epochs of random color jitter applied using PyTorch.}
+    \caption{16-bit three-channel image in one of the brightness and contrast changes according to 'strong' augmentation}
     \label{fig:16bit_three_v1}
   \end{figure}
    
 
-As we seen in the figures  \ref{fig:16bit_three_v1}, I found that those strong color jitter augmentations transformed to 
-distribution out of the original distribution. Hence its a good idea to experiment with less intensity change instead of using SimCLR best performed data aug parameters.
-
-Also original simclr random crop resizing to 96*96 is first done by random croping of random size (uniform from 0.08 to 1 in area). that means even really small 
-crops without a cancer cell in it is train to have high cosine simililartiy to these same image smaller crop patch of dark cancer cell from center due to the design
+As we seen in the figures  \ref{fig:16bit_three_v1}, I found that those 'strong' combination of  brightness and contrast augmentations transformed to distribution out of the original distribution. Hence its a good idea to experiment with less intensity change instead of using SimCLR best performed data augmentation parameters. Also original simclr random crop resizing to 96*96 is first done by random croping of random size (uniform from 0.08 to 1 in area). that means even really small crops without a cancer cell in it is train to have high cosine simililartiy to these same image smaller crop patch of dark cancer cell from center due to the design
  of  loss function in SimCLR. Which doesn't make sense especially when we have commom as background inner well for every of our images (or natural images atleast cars are only seen in roads, so 
  relating cars or bikes to road make sense). Hence the next data augmentation sequence designed to have random crop with scale 0.4 to 1 ( so that 
  assuming crop patches will have atleast small portion of cancer cell) and brightness and contrast variations reduced to lower=1-0.2, upper=1+0.2 and lower=1-0.35,
@@ -352,7 +304,7 @@ The following explains how we process a 3-channel image as if it were a standard
 \end{itemize}
 
 Both output feature before and after projection head will be used for further downstream task to check the performance.
-
+\textcolor{red}{why after not only before}
 \section{Evaluation of SimCLR training} \label{sec:Evaluation result of SImclr}
 
 \textbf{Top-1 Accuracy}:
