@@ -17,23 +17,23 @@
 \contentsline {subsubsection}{\nonumberline Model}{30}{subsubsection*.34}%
 \contentsline {subsubsection}{\nonumberline Training}{30}{subsubsection*.36}%
 \contentsline {section}{\numberline {7.4}Evaluation of SimCLR training}{32}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{37}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features}{38}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{40}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Inference}{42}{subsection.8.1.2}%
-\contentsline {section}{\numberline {8.2}kmeans clustering}{43}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Evaluation}{44}{subsection.8.2.1}%
-\contentsline {chapter}{\numberline {9}Methodology for Ranking}{49}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Day 7 to day 10 predcition using CAE}{52}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Ranking strategy 2: Softmax approach}{63}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Ranking strategy 3: K Means approach}{65}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Ranking strategy 4: Dimensionality reduction technics}{68}{section.9.4}%
-\contentsline {chapter}{\numberline {10}Conclusion}{69}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Final Evaluation}{70}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Things that doesn't work}{72}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Future research direction}{72}{section.10.3}%
-\contentsline {chapter}{\nonumberline Appendix}{73}{chapter*.85}%
-\contentsline {chapter}{Literature}{80}{section*.99}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{82}{chapter*.101}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{82}{chapter*.102}%
+\contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{39}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features}{39}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{41}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Inference}{44}{subsection.8.1.2}%
+\contentsline {section}{\numberline {8.2}kmeans clustering}{45}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Evaluation}{45}{subsection.8.2.1}%
+\contentsline {chapter}{\numberline {9}Methodology for Ranking}{51}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Day 7 to day 10 predcition using CAE}{54}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Ranking strategy 2: Softmax approach}{65}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 3: K Means approach}{67}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Ranking strategy 4: Dimensionality reduction technics}{70}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Conclusion}{71}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Final Evaluation}{72}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Things that doesn't work}{74}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Future research direction}{74}{section.10.3}%
+\contentsline {chapter}{\nonumberline Appendix}{75}{chapter*.86}%
+\contentsline {chapter}{Literature}{82}{section*.100}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{84}{chapter*.102}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{84}{chapter*.103}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

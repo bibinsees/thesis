@@ -28,25 +28,26 @@
 \contentsline {figure}{\numberline {7.9}{\ignorespaces 5 Data augmentations we explored}}{28}{figure.caption.30}%
 \contentsline {figure}{\numberline {7.10}{\ignorespaces Contrast was increased or decreased on the original control Day 10 image. The contrast-decreased image resembles the control, while the contrast-increased image resembles the treated image}}{28}{figure.caption.31}%
 \contentsline {figure}{\numberline {7.11}{\ignorespaces 5 different data augmentation pipelines we explored}}{29}{figure.caption.32}%
-\contentsline {figure}{\numberline {7.12}{\ignorespaces strong}}{35}{figure.caption.37}%
-\contentsline {figure}{\numberline {7.13}{\ignorespaces sweet}}{35}{figure.caption.38}%
-\contentsline {figure}{\numberline {7.14}{\ignorespaces sweet no contra}}{36}{figure.caption.39}%
-\contentsline {figure}{\numberline {7.15}{\ignorespaces Resize no contra}}{36}{figure.caption.40}%
-\contentsline {figure}{\numberline {7.16}{\ignorespaces Resize}}{37}{figure.caption.41}%
+\contentsline {figure}{\numberline {7.12}{\ignorespaces strong: loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{35}{figure.caption.37}%
+\contentsline {figure}{\numberline {7.13}{\ignorespaces sweet: loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{35}{figure.caption.38}%
+\contentsline {figure}{\numberline {7.14}{\ignorespaces sweet no contra: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{36}{figure.caption.39}%
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Resize no contra: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{36}{figure.caption.40}%
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Resize: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{37}{figure.caption.41}%
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Resize: loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}}{38}{figure.caption.42}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces before}}{42}{figure.caption.47}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces before}}{42}{figure.caption.48}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces orig}}{44}{figure.caption.50}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces orig}}{47}{figure.caption.55}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces orig}}{48}{figure.caption.57}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces orig}}{49}{figure.caption.59}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces before}}{43}{figure.caption.48}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces before}}{43}{figure.caption.49}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces orig}}{46}{figure.caption.51}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces orig}}{48}{figure.caption.56}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces orig}}{50}{figure.caption.58}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces orig}}{50}{figure.caption.60}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{56}{figure.caption.62}%
-\contentsline {figure}{\numberline {9.2}{\ignorespaces train vs test loss}}{56}{figure.caption.63}%
-\contentsline {figure}{\numberline {9.3}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{57}{figure.caption.64}%
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Wrong heading crct image upload Ohne contrast Resize before projection head data aug: Explod dataset plot in the figure shows overfitting }}{58}{figure.caption.66}%
-\contentsline {figure}{\numberline {9.5}{\ignorespaces Last row shows the misposition of the cancer cell. On day 7, it was above, and on day 10, it moved below.}}{62}{figure.caption.75}%
-\contentsline {figure}{\numberline {9.6}{\ignorespaces train vs test loss}}{66}{figure.caption.79}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{57}{figure.caption.63}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces train vs test loss}}{58}{figure.caption.64}%
+\contentsline {figure}{\numberline {9.3}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{58}{figure.caption.65}%
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Wrong heading crct image upload Ohne contrast Resize before projection head data aug: Explod dataset plot in the figure shows overfitting }}{60}{figure.caption.67}%
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Last row shows the misposition of the cancer cell. On day 7, it was above, and on day 10, it moved below.}}{64}{figure.caption.76}%
+\contentsline {figure}{\numberline {9.6}{\ignorespaces train vs test loss}}{68}{figure.caption.80}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

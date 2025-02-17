@@ -274,7 +274,7 @@ The following explains how we process a 3-channel image as if it were a standard
 \end{itemize}
 
 Both output feature before and after projection head will be used for further downstream task to check the performance.
-\textcolor{red}{why after not only before}
+
 \section{Evaluation of SimCLR training} \label{sec:Evaluation result of SImclr}
 
 \textbf{Top-1 Accuracy}:
@@ -300,61 +300,56 @@ For each pair, the ranking is calculated based on its cosine similarity relative
 pair \( z_j \) and  \( z_i \) across all sample pairs in the batch. The mean position is the average of these ranking positions.
 
 Purpose: Provides a quantitative metric for how far down the ranked list the  positive pairs typically appears, offering insight into the quality of the model's ranking performance.
+Figures \ref{fig:strong_64}, \ref{fig:sweet_bs64}, \ref{fig:sweet_no_contra}, \ref{fig:Resize_No_contra_b64}, and \ref{fig:Resize_b64} illustrate the top-1 accuracy, top-5 accuracy, and mean position for the training, validation, and inference datasets, respectively, across the 'strong,' 'sweet,' 'sweet no contrast,' 'resize no contrast,' and 'resize' data augmentation pipelines. In the figures: red, blue and green curves are corresponding to validation, train, inference dataset.  From these figures, the following insights can be concluded:
 
-While training  and validation images are applied by data augmentation pipelines such as 'strong' , 'sweet', 'resize', 'sweet no contrast', 'resize no contrast' inference 
-images are only resized to 96*96 before the training as data augmentation. that means while calculating the ranking position or top 1 accuracy or top 5 accurcay or loss, model do inference on pairs 
-of images which are always full image without any cropping.
-
-If we compare the strong aug vs others we can see loss or top accuracies or mean position for training and validation dataset 
-are better for others than strong. This is because 'strong' have to learn harder than other augmentations since 2 different 
-augs of same image in strong are completely different. For example one is highly increased contrasted and other is highly 
-decreased contrast. or another example: one have very small portion of background other have small portion of cancer which is
- just pure black.  which doesn't have any certain pattern or feature relation of same image. These pure small portion of black can be also be present in the batch as  from another image as aug
- so it have to learn to map high cosine sim for these two different augs. Specifically Top one accuracy struugles to get close to 100  comparing to others.
-
- Another interesting thing to notice is: top accuracy and mean position for inference dataset. From the beginning of the epoch inference top accuracies or mean position are the 
- close to 100 or 1 respectively. This is because since inference image augs are just resized and not applied any kind of brightness or contrast or blur/sharp or flip/rotation,
-  its just original images but with reduced size 96*96. so while ranking or calculating the similarity between pairs model sees the full picture to determine the similarity. and as we are gonna seen in section \ref{sec: distance} if its full image  without any additional data augs other than reduced to size 96*96 cosine similarity between augs
-   of same image is higher than any other data aug pipelines which includes crop(strong, sweet etc).  in another words for model its so easy. this leads to the question whether model learn some effective features for downstream tasks.
-
-Thats also refelects why 'Resize' and 'resize no contrast' data aug pipelines have better performance in terms of training and val loss or top accuracies or mean position 
-than data aug pipeline which includes cropping.
-
-
+While training and validation images are processed using data augmentation pipelines such as 'strong', 'sweet', 'resize', 'sweet no contrast', and 'resize no contrast', inference images are only resized to 96x96, meaning there are no additional data augmentations. This means that when calculating the ranking position, top 1 accuracy, top 5 accuracy, or loss, the model performs inference on pairs of images that are always full images without any cropping. When comparing strong augmentation to the others, we can observe that the loss, top accuracies, or mean position for the training and validation datasets perform less than others. This is because 'strong' has to learn harder than other augmentations since two different augs of the same image in strong may have completely different image distributions between them. For example, one might have a highly increased contrast, while the other has a highly decreased contrast. Another example: one has a very small portion of the background, and the other has a small portion of a tumor tissue model that is just pure black, which doesn't have any certain pattern or feature relation to the same image. These small portions of black can also be present in the batch from another image as an augmentation of a different image. Therefore, it has to learn to map high cosine similarities for these two different augmentations. Specifically, the top accuracy struggles to get close to 100 compared to others. Another interesting thing to note is the top accuracy and mean position for the inference dataset. From the beginning of the epoch, inference top accuracies or mean positions are close to 100 or 1, respectively. This is because inference images are just resized and do not have any kind of brightness, contrast, blur/sharpness, or flip/rotation applied as augmentation; they are just the original images but with a reduced size of 96x96. While ranking or calculating the similarity between these pairs, the model gets to see the full picture to calculate the cosine similarity. That also reflects why 'Resize' and 'resize no contrast' data augmentation pipelines which doesn't have cropping have better performance in terms of training and validation loss, as well as top accuracies or mean positions than data augmentation pipelines that include cropping. However, there remains an open question about whether the model learns any effective features for downstream tasks.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.3]{figures/strong.png} 
-  \caption{strong}
+  \caption{strong: loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
   \label{fig:strong_64}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.3]{figures/sweet_bs64.png} 
-  \caption{sweet}
+  \includegraphics[scale=0.23]{figures/sweet_bs64.png} 
+  \caption{sweet: loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
   \label{fig:sweet_bs64}
 \end{figure}
+
+\vspace{-5mm} % Adjust this value to reduce space
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.3]{figures/sweet_no_contra.png} 
-  \caption{sweet no contra}
+  \caption{sweet no contra: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
   \label{fig:sweet_no_contra}
 \end{figure}
+
+\vspace{-5mm} % Adjust this value to reduce space
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.3]{figures/Resize_No_contra.png} 
-  \caption{Resize no contra}
+  \caption{Resize no contra: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
   \label{fig:Resize_No_contra_b64}
 \end{figure}
+
+\vspace{-5mm} % Adjust this value to reduce space
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.3]{figures/Resize.png} 
-  \caption{Resize}
+  \caption{Resize: : loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
   \label{fig:Resize_b64}
 \end{figure}
 
 
 \textcolor{red}{add tsne i prefer pca plot for the cluster vs original vs befroe and after}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5, angle=-90]{figures/pca_viz.png} 
+  \caption{Resize: loss curve on top left, top-1 accuracy on top right, top-5 accuracy on bottom left, and mean position on bottom right}
+  \label{fig:Resize_b64}
+\end{figure}

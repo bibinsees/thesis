@@ -646,6 +646,11 @@ INPUT ./figures/Resize.png
 INPUT ./figures/Resize.png
 INPUT ./figures/Resize.png
 INPUT ./figures/Resize.png
+INPUT ./figures/pca_viz.png
+INPUT ./figures/pca_viz.png
+INPUT ./figures/pca_viz.png
+INPUT ./figures/pca_viz.png
+INPUT ./figures/pca_viz.png
 INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.tex
 OUTPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux
