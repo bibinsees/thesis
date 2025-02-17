@@ -97,7 +97,7 @@ From table \ref{tab:augmentation_metric} and table \ref{tab:original_image_resul
     \label{tab:original_image_results}
 \end{table}
 
-Since the train and test accuracy are both 100 percent for before projection head features, which may indicate overfitting, I performed a 10-fold cross-validation as an additional check to ensure the model's performance generalizes well. The results are shown in Tables \ref{tab:aug_metric} and \ref{tab:original_results}. The train and test accuracy for the features before the projection head drops from 100 percent to around 99 percent, and for the original image vectors, it drops from 99 percent to approximately 96 percent. This shows that the trend of the features before the projection head being slightly superior, as observed in earlier results, is also reflected here. Additionally, the after-projection head features still perform considerably worse than the before-projection head and original image vectors. Comparing this with classification using the ResNet18 architecture shows that the before-projection head SimCLR feature vectors and ResNet18 feature vectors achieve similar performance.
+Since the train and test accuracy are both 100 percent for before projection head features, which may indicate overfitting, I performed a 10-fold cross-validation as an additional check to ensure the model's performance generalizes well. The results are shown in Tables \ref{tab:aug_metric} and \ref{tab:original_results}. The train and test accuracy for the features before the projection head drops from 100 percent to around 99 percent, and for the original image vectors, it drops from 99 percent to approximately 96 percent. This shows that the trend of the features before the projection head being slightly superior, as observed in earlier results, is also reflected here. Additionally, the after-projection head features still perform considerably worse than the before-projection head and original image vectors. Comparing this with classification using the ResNet18 architecture shows that the before-projection head SimCLR feature vectors and ResNet18 feature vectors achieve similar performance. However, between the data augmentation pipelines when using the features before the projection head, it is difficult to evaluate which one is better, as all of them show subtle differences in accuracy.
 \begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -131,23 +131,17 @@ Since the train and test accuracy are both 100 percent for before projection hea
     \caption{Classification performance metrics for original image vectors using cross-validation with 10 k folds}
     \label{tab:original_results}
 \end{table}
-
-
-Inbetween the dtata augmentation pipeline while using  before projection, which one is better we can't evaluate since everything have subtle difference in accuracy.
-
-
-Train loss vs Val loss . Train accurcay  vs val accuracy 
           \begin{figure}[H]
             \centering
             \includegraphics[scale=0.5]{figures/test_class.png} 
-            \caption{before}
+            \caption{Test accuracy vs Test epochs of original image vectors and Simclr features}
             \label{fig:test}
           \end{figure}
 
           \begin{figure}[H]
             \centering
             \includegraphics[scale=0.5]{figures/train_class.png} 
-            \caption{before}
+            \caption{Train accuracy vs Train epochs of original image vectors and Simclr features }
             \label{fig:train}
           \end{figure}
 \subsection{Inference}
