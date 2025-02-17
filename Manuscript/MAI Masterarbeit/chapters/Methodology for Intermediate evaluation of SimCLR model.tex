@@ -146,7 +146,7 @@ Since the train and test accuracy are both 100 percent for before projection hea
           \end{figure}
 \subsection{Inference}\label{subsec:inference}
 
-Twenty-two images that closely resemble single-dose images from drug screening were manually selected for inference and refer them as 'inference images'. These images were not labeled by biology experts, and therefore, any inference results do not correspond to the actual ground truth. For the inference process, features before the projection head were utilized, as they achieved 100 percent accuracy during training and validation.
+Twenty-two images that closely resemble single-dose images from drug screening were manually selected for inference and refer them as 'inference images'. These images were not labeled by biology experts, and therefore, any inference results do not correspond to the actual ground truth. Note that this inference is from the first experiment of classification where cross validation training didn't used. For the inference process, features before the projection head were utilized, as they achieved 100 percent accuracy during training and validation.
 \begin{table}[H]
     \centering
     \begin{tabular}{@{}lcccccc@{}}
@@ -159,7 +159,7 @@ Twenty-two images that closely resemble single-dose images from drug screening w
     \label{tab:performance_metrics}
 \end{table}
 
-From the inference experiment table \ref{tab:performance_metrics}, it can be seen that, except for 'strong' and 'sweet no contrast', all other augmentations were able to achieve 100 percent accuracy in classifying the inference images as belonging to the single-dose image class. Using the original image features, the accuracy was 68.18 percent, while SimCLR features before the projection head achieved at least 90 percent accuracy. Note that this inference is from the first experiment of classification where cross validation training didn't used.
+From the inference experiment table \ref{tab:performance_metrics}, it can be seen that, except for 'strong' and 'sweet no contrast', all other augmentations were able to achieve 100 percent accuracy in classifying the inference images as belonging to the single-dose image class. Using the original image features, the accuracy was 68.18 percent, while SimCLR features before the projection head achieved at least 90 percent accuracy. 
 \section{K-means clustering}
 
 The idea is to determine whether the learned representation from SimCLR outperforms the original images in clustering the images in an unsupervised manner. To achieve this, we use simple K-means clustering as explained in \cite{bishop:2006:PRML}. We use both euclidean distance and cosine distance to find the nearest data point to the cluster centroid as two different approach explained in appendix ~\ref{appendix}. When performing K-means with cosine distance, it compares only the direction of the vector. Therefore, we also perform standard K-means with Euclidean distance to evaluate the magnitude similarity. 

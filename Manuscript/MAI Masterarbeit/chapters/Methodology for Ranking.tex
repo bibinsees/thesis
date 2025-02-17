@@ -351,19 +351,21 @@ Since we couldn't separate those 3 classes well that means we won't have good ra
 
 \section{Ranking strategy 2: Softmax approach}
 
-This strategy utilizes the before projection head vectors since its linearly seperable for downstream task classification as suggested in original simclr paper.
+This strategy utilizes the before projection head SimCLR vectors since its linearly separable for downstream task classification as suggested in original SimCLR paper \cite{chen2020simple}.
 
-We are using only before projectoin head simclr features since original images or after projection head simclr features are not able to classify 100 percentage as we seen in intermediate evaluation chapter.
+We are using only before projection head SimCLR features since original images or after projection head SimCLR features are not able to classify 100 percentage as we seen in intermediate evaluation chapter \ref{ch:Methodology for Intermediate evaluation of SimCLR model}
 
-Steps of methodology for softmax approach:
-1. Train classification model to classify control and single dose images.
-2. Since we attained 100 percentage acuracy for train and test dataset for this binary classification If we look at softmax score of all of the single dose feature vector to classify as single dose class the values will be will be equal to  or really closer to 1 and similarly, If we look at softmax score of all of the control feature vector to classify as single dose class will be equal to or really closer to 0.
-3. Now when we do inference with this learned weights and parameters on the same control, single dose features, we will get   softmax value of all of the single dose feature vector to classify as single dose class the values will be equal to  or really closer to 1 and similarly, If we look at softmax score of all of the control feature vector to classify as single dose class the values will be equal to or really closer to 0.
-4. Now we add explod class in addition to this control and single dose class in inference. Idea is that, since we didn't used explod class in training, the softmax score of all of the explod feature vector to classify as single dose class  will not be exactly or closer to 1. It can be below  the values of single dose class features. that  means it can overlap with the values of control feature values. But what if those explod feature softmax values did not overlap with the values of control? ie if we use softmax score to predict as single dose class as inference metric for ranking, in the range of our ranking scale control class features comes first as the values are closer or equal to 0, then explod class features comes next in the scale inbetween 0 and 1.and single dose class features comes last as the values are closer to 1. This is the ideal situation that we would like to have. If we get this kind of ranking scale, we can say that our softmax score is able to seperate control, explod and single dose classes. and we use same customized rankng accuracy calculation as we used in the previous ranking strategies.
-5. Use this same steps to classify between control and explod so that we expect those class softmax values will be at both ends (0 and 1) and while single dose class softmax values will be inbetween control and explod class values. like wise classification between explod and single dose, where control feature softmax values will be inbetween explod and single dose class softmax values.
+\begin{enumerate}
+  \item Train a classification model to classify control and single dose images.
+  \item Since we attained 100\% accuracy for the train and test datasets for this binary classification, if we look at the softmax score of all the single dose feature vectors to classify as the single dose class, the values will be equal to or really close to 1. Similarly, if we look at the softmax score of all the control feature vectors to classify as the single dose class, the values will be equal to or really close to 0.
+  \item Now, when we do inference with these learned weights and parameters on the same control and single dose features, we will get the softmax value of all the single dose feature vectors to classify as the single dose class. The values will be equal to or really close to 1. Similarly, if we look at the softmax score of all the control feature vectors to classify as the single dose class, the values will be equal to or really close to 0.
+  \item Now, we add an explode class in addition to the control and single dose classes in inference. The idea is that since we didn't use the explode class in training, the softmax score of all the explode feature vectors to classify as the single dose class will not be exactly or closer to 1. It can be below the values of single dose class features, which means it can overlap with the values of control features. But what if those explode feature softmax values did not overlap with the values of control? If we use the softmax score to predict the single dose class as an inference metric for ranking, in the range of our ranking scale, control class features come first as the values are closer or equal to 0, then explode class features come next in the scale in between 0 and 1, and single dose class features come last as the values are closer to 1. This is the ideal situation that we would like to have. If we get this kind of ranking scale, we can say that our softmax score is able to separate control, explode, and single dose classes, and we can use the same customized ranking accuracy calculation as we used in the previous ranking strategies.
+  \item Use these same steps to classify between control and explode, so that we expect those class softmax values will be at both ends (0 and 1), and the single dose class softmax values will be in between control and explode class values. Likewise, classification between explode and single dose, where control feature softmax values will be in between explode and single dose class softmax values.
+\end{enumerate}
 
-Initialy I used original dataset of control (472 images) and single dose images (103 images) as explained in the dataset table and we used explod ( 40 images) that we get from dalias classifier model.
-I train with differnet parameters for  number of epochs and batch size. following parameers gave higher accuracy: 750 epochs, batch:16. every other parameter is same as explained in the classification chapter.
+
+Initialy I used original dataset of control (472 images) and single dose images (103 images) as explained in the dataset table and we used explode ( 40 images) 
+I train with different parameters for  number of epochs and batch size. following parameters gave higher accuracy: 750 epochs, batch:16. Every other parameter is same as explained in the classification section in the chapter \ref{ch:Methodology for Intermediate evaluation of SimCLR model}.
 
 
 \begin{table}[H]
@@ -375,10 +377,10 @@ I train with differnet parameters for  number of epochs and batch size. followin
   Control vs Ex             & 83.41            & 49.27               & 95.93           & 60.49                          &    71.54                 \\
   Ex vs SD                & 97.07           & 96.75          & 93.5           & 87.64                       & 87.31                        \\ \bottomrule
   \end{tabular}
-  \caption{Table description goes here.}
-  \label{tab:ranking softmax}
+  \caption{Ranking accuracy on inference using all the dataset we have for each class using SimCLR features and}
+  \label{tab:ranking_softmax}
 \end{table}
-classification accuracy for original images were 99 accuracy but when we used it for ranking strategy accuracy is lower comapre to simclr feature.
+
 \begin{table}[H]
   \centering
   \begin{tabular}{@{}lccc@{}}
@@ -386,33 +388,31 @@ classification accuracy for original images were 99 accuracy but when we used it
   \textbf{Classification}     & \textbf{Control vs SD} & \textbf{Control vs Ex} & \textbf{Ex vs SD} \\ \midrule
   \textbf{Accuracy (\%)}      & 45.53                  & 83.41                  & 21.62             \\ \bottomrule
   \end{tabular}
-  \caption{Classification accuracies for different comparison groups.}
+  \caption{Ranking accuracy on inference using all the dataset we have for each class using original image features}
   \label{tab:classification_accuracies}
   \end{table}
   
-As we seen in the above table, none of the  data augmentation types are not able to give clear seperation between 3 classes. No contrast sweet, resize and sweet data augmentation data types achieved highest accuracy 90 and 95.12 and 97.07  in the category of  Control vs SD and Control vs Ex and Ex vs Sd categories correspondingly. 
+As we seen in the above tables \ref{tab:ranking_softmax} and \ref{tab:classification_accuracies}, none of the  data augmentation types are not able to give clear separation between 3 classes. No contrast sweet, resize and sweet data augmentation data types achieved highest accuracy 90 and 95.12 and 97.07  in the category of  Control vs SD and Control vs Ex and Ex vs Sd categories correspondingly. 
 
-The main limitation of this approach is we can't garantee when we get new images it will stil seperate three classes 100 percentage like we seen above, there can be overlaps, since the classification only promise us that the softmax score of the control will be closer or equal to zero and  single dose will be closer or equal to 1 in control vs sd case. that means classification only promise us that we get clear seperation inbetween 2 classes not three classes based on the softmax value.
+The main limitation of this approach is we can't guarantee when we get new images it will sail separate three classes 100 percentage like we seen above, there can be overlaps, since the classification only promise us that the softmax score of the control will be closer or equal to zero and  single dose will be closer or equal to 1 in control vs sd case. that means classification only promise us that we get clear separation between 2 classes not three classes based on the softmax value.
 
 
 
 \section{Ranking strategy 3: K Means approach}
 
-Unlike other 2 strategies this strategy doesn't have the probelm of class imbalance
+Unlike other 2 strategies this strategy doesn't effect the class imbalance problem since there is no specific training required.
 
 \begin{enumerate}
-  \item \textbf{Step 1:} Feed control images simclr features into k means and find the centriod of control (untreated) cluster based on both cosine distance and the euclidean distance using kmeans clustering. 
+  \item \textbf{Step 1:} Feed control images SimCLR features into K-means and find the centroid of control cluster based on both cosine distance and the euclidean distance using k-means clustering. 
  
   
-  \item \textbf{Step 2:} calculate the euclidean/cosine distance from this centroid to every simclr features.
+  \item \textbf{Step 2:} Calculate the euclidean/cosine distance from this centroid to every simclr features.
   \item \textbf{Step 3:} Rank the images based on the distance from the centroid of control simclr features.
-  \item \textbf{Step 4:} Perform the above ranking procedure from centroid of single dose image simclr features to other image features and from centroid of exploded image simclr features to other image features correspondingly.
+  \item \textbf{Step 4:} Perform the above ranking procedure from centroid of single dose image simclr features to other image features and from centroid of explode image simclr features to other image features correspondingly.
   
   \item \textbf{Step 5:} Perform the same operation  on original images.
 \end{enumerate}
-
-
-Dataset we used : As explained in the table, we used all of the control images (472),
+Dataset we used : We used all of the control images (472),
 single dose image (103) and exploded images (40).
 
 \begin{table}[H]
