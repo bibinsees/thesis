@@ -501,12 +501,12 @@ We will use the PCA technique to identify the direction of maximum variance in t
   \bottomrule
   \end{tabular}%
   }
-  \caption{Comparison of dimensionality reduction techniques (PCA, UMAP, t-SNE) for various metrics before and after the projection head SimCLR features.}
+  \caption{Comparison of dimensionality reduction techniques (PCA, UMAP, t-SNE) on before and after the projection head SimCLR features for ranking strategy.}
   \label{tab:combined_dr}
   \end{table}
 
   
-\begin{table}[h!]
+\begin{table}[H]
   \centering
   \begin{tabular}{lccc}
       \toprule
@@ -515,9 +515,9 @@ We will use the PCA technique to identify the direction of maximum variance in t
       & 54.47 & 54.80 & 17.56 \\ 
       \bottomrule
   \end{tabular}
-  \caption{Comparison of dimensionality reduction techniques.}
+  \caption{Comparison of dimensionality reduction techniques (PCA, UMAP, t-SNE) on original image vectors for ranking strategy.}
   \label{tab:dim_reduction}
 \end{table}
 
 From the above table \ref{tab:combined_dr} we see that before projection head SimCLR features out performs generally after projection head SimCLR features and the original image feature vectors in among all dimensionally reduction technic.
-While comparing among before projection head: Above table \ref{tab:combined_dr}  shows that PCA reducing data dimension to 1 D doesn't separate 3 classes well compare to the t-SNE and UMAP. While umap achieved closer to 100 percent ranking accuracy, t-SNE performed better among all dimensionality reduction technic  with the 100 percentage ranking accuracy to separate 3 classes in sweet, resize, No contrast data augmentation pipelines. Limitation is that we are not sure that whether these clear separation between classes ensure there is perfect transition of drug efficacy within the class.
+While comparing among before projection head: It shows that PCA reducing data dimension to 1 D doesn't separate 3 classes well compare to the t-SNE and UMAP. While umap achieved closer to 100 percent ranking accuracy, t-SNE performed better among all dimensionality reduction technic  with the 100 percentage ranking accuracy to separate 3 classes in sweet, resize, No contrast data augmentation pipelines. Limitation is that we are not sure that whether these clear separation between classes ensure there is perfect transition of drug efficacy within the class. And in this ranking methodology also SimCLR features outperformed original image vectors.
