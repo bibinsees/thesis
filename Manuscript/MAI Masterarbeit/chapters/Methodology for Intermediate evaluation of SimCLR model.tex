@@ -1,26 +1,15 @@
 \chapter{Methodology for Intermediate evaluation of SimCLR model}\label{ch:Methodology for Intermediate evaluation of SimCLR model}
 
-\textcolor{red}{change the name to evaluatoin to check whether simclr learned something? instead of intermediate evaluatoin?}  
+The final evaluation of the SimCLR model depends on the ranking task. Nevertheless, other evaluation metrics, such as downstream tasks like classification and clustering, can be used to verify if SimCLR has effectively learned to differentiate between control, single dose, and explode images.
 
-If we do kmeans with cosine distance distance then it only compare direction of the vector thats why we need to do normal kmeans with euclidean dist to show 
-the magnitude similarity
-
-Final evaluation of the SimCLR model depends on the  Ranking task, neverthless we can use other evaluation metrics, such as downstream task 
-like classification  and clusetring to check if simclr atleast learned to differentiate between untreated , single dose and exploded images.
-
-Distance measurement approach is used to whats the performance of simclr feats derived from  5 different aug pipelines  in terms of cosine distance between 2 augs derived 
-from same image.
-
-\section{Classification using Logistic Regression on the SimCLR features}
+\section{Classification using Logistic Regression on the SimCLR features and original image vectors}
 1. A common approach to verify whether the SSL model has learned generalized representations is to perform Logistic Regression on the learned features.
- In other words, we use a single, linear layer that maps these representations to class predictions, where the three categories, 'untreated' and 'single dose', 'explod'  
- serve as our classes. The Logistic Regression model can only perform well if the learned representations capture all the relevant features necessary for the task. 
- Moreover, we don't need to worry much about overfitting since only a few parameters are trained. Therefore, we expect the model to perform well even with limited data.
+ In other words, we use a single linear layer that maps these representations to class predictions, where the three categories, 'control' and 'single dose', 'explode' serve as our classes. The Logistic regression model can only perform well if the learned representations capture all the relevant features necessary for the task. Moreover, we don't need to worry much about overfitting since only a few parameters are trained. Therefore, we expect the model to perform well even with limited data.
  
 
-2. Baseline comparison to original images. We classify the original images to see if simclr feature vectors are better or worse than original image to classify.
+2. Baseline comparison to original images. We classify the original image vectors to see if SimCLR feature vectors are better or worse than original image to classify.
 
-The logistic regression model is implemented as a single linear layer, where the input dimension corresponds to the feature dimension of feature spits out from simclr, and the 
+The logistic regression model is implemented as a single linear layer, where the input dimension corresponds to the feature dimension of feature spits out from SimCLR, and the 
 output dimension corresponds to the number of classes. Specifically, the model uses a feature dimension of \(512\) if the feature is before projection head or  \(20\) if the
  feature is after projection head and outputs predictions for \(3\) classes. The mathematical representation of the model is as follows:
 
@@ -36,12 +25,8 @@ extracted after the projection head.
 - \(b \in \mathbb{R}^3\) is the bias term,
 - \(\hat{y} \in \mathbb{R}^{N \times 3}\) are the logits representing the unnormalized class scores for \(N\) samples.
 
-PyTorch's CrossEntropyLoss combines the softmax operation with the log loss computation for numerical stability, which is why we pass the logits (unnormalized outputs) directly
-to the loss function.
-
 This model is trained to minimize the cross-entropy loss for multi-class classification.
-3 classes trained for 250 epochs. The dataset was divided into a training set (80\%) and a validation set (20\%). Batch size = 8. loss function = 
-cross entropy loss.  a learning rate of \( 5 \times 10^{-4} \). 
+3 classes trained for 250 epochs. The dataset was divided into a training set (80\%) and a validation set (20\%). Batch size = 8.  A learning rate of \( 5 \times 10^{-4} \). 
 
 The learning rate scheduler used is the \texttt{MultiStepLR}, which reduces the learning rate at specific milestones during training. In this case, the learning rate is 
 reduced by a factor of 0.1 at the epochs corresponding to 60\% and 80\% of the total training epochs. These milestones are defined as:
@@ -59,79 +44,60 @@ milestone, which in this case is 0.1.
     \toprule
     \textbf{Dataset}                              & \textbf{Total Number of Images} \\ 
     \midrule
-    Untreated Dataset                             & 472                            \\ 
+    Control Dataset                             & 472                            \\ 
     Single Dose Dataset                           & 103                            \\ 
-    Exploded Dataset from Drug Screening Experiments & 40                             \\ 
+    Explode dataset from Drug Screening Experiments & 40                             \\ 
     \bottomrule
     \end{tabular}
 \end{table}
-
-I didn't add any other comibnation of drug screening experiments since we are not sure whether they belong to which group. Some of them have medium resemblence of the
- above 3 classes but we can't be sure.
-
-
+Table \ref{tab:dataset_summary} shows the total number of images in each dataset used for classification. Additional images from drug screening experiments were not included, as their class labels are uncertain. Some images exhibit low to medium resemblance to the three defined classes, while others differ significantly, making it difficult to use them for classification task with confidence.
 \subsection{Comparison of Classification Accuracy and Epochs for Different Data Augmentations}
 
-As explained in Data augmentation section we use  'strong', 'sweet', 'resize', 'sweet no contrast', 'resize no contrast' simclr features to compare their performance inbetween
- and also against original images which one classify these 3 classes better.
-
-We calculate the train accuracy and the test accuracy for each data aug pipelines as well as for original images.
-
-Train epoch in the table: The number of epochs required to reach the best training accuracy.
+As explained in the data augmentation section, we use 'strong,' 'sweet,' 'resize,' 'sweet no contrast,' and 'resize no contrast' SimCLR features to compare their performance against each other and the original images in classifying the three defined classes. We calculate the training accuracy and testing accuracy for each data augmentation pipeline as well as for the original image vectors. Train epoch in the table: The number of epochs required to reach the best training accuracy.
 Test epoch in the table: The number of epochs required to reach the best test accuracy.
-\textcolor{red}{add parameters for classification simclr}
-\textcolor{red}{how do we turn raw images to orig images to feats}
 To use original images directly first we resized to 96*96 since we did that for simclr so that it could be fair comparison. Then we normalised each by dividing it by 65535 
 (16 bit). Each image flatten into vectors of ([1,96*96*3]where 96 =H=W and 3 = no of channels) suitable for logistic regression model. and we use same parameters that we used 
 for simclr feats classification lke learning rate , batch size etc for fair comparison.
+From table \ref{tab:augmentation_metric} and table \ref{tab:original_image_results} we show that when using the features Before Projection Head all augmentation methods reached 100 train and test accuracy. And when using the features original image vectors both accuracy reached upto 99 percentage. So comparing before projection head SimCLR features to original image vectors there is only subtle difference. But it is clear that the features extracted before the projection head perform far better than those extracted after the projection head, as seen in the original similar paper. Also, the number of training and test epochs required to reach the best accuracy is lower for the features extracted before the projection head than those extracted after the projection head as we seen in figures \ref{fig:test} and \ref{fig:train}. Interestingly, original image vectors performed better than the after projection head SimCLR features.
 
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{llcccccc}
+    \toprule
+    \textbf{Augmentation Type}      & \textbf{Metric} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{Resize No Contrast} & \textbf{Sweet No Contrast} \\ \midrule
+    \multirow{4}{*}{\textbf{After Projection Head}}  
+        & Train Accuracy (\%) & 66.67 & 47.76 & 89.63 & 63.41 & 54.67 \\
+        & Train Epoch         & 246   & 249   & 250   & 250   & 245   \\
+        & Test Accuracy (\%)  & 68.29 & 55.28 & 90.24 & 63.41 & 56.10 \\
+        & Validation Epoch          & 228   & 246   & 223   & 202   & 244   \\ \midrule
+    \multirow{4}{*}{\textbf{Before Projection Head}} 
+        & Train Accuracy (\%) & 100 & 100 & 100 & 100 & 100 \\
+        & Train Epoch         & 190    & 3     & 13     & 12     & 21     \\
+        & Validation Accuracy (\%)  & 100 & 100 & 100 & 100 & 100 \\
+        & Validation Epoch          & 1      & 1      & 1      & 2      & 2      \\ 
+    \bottomrule
+    \end{tabular}%
+    }
+    \caption{Classification performance metrics for different augmentation strategies before and after the projection head using SimCLR}
+    \label{tab:augmentation_metric}
+\end{table}
 
-\textcolor{red}{Table 8.1.1 - are you saying that you classification accuracy is 100?
- That seems far too good to be true. Why do the train runs have different number of epochs? And what do you mean by "Test Epoch"?!}
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lcccc}
+    \toprule
+    \textbf{Metric}         & \textbf{Train Accuracy (\%)} & \textbf{Train Epoch} & \textbf{Validation Accuracy (\%)} & \textbf{Validation Epoch} \\ \midrule
+    \textbf{Original Image} & 99.39                        & 249                  & 99.19                        & 17                  \\ 
+    \bottomrule
+    \end{tabular}%
+    }
+    \caption{Classification performance metrics for original image vectors}
+    \label{tab:original_image_results}
+\end{table}
 
-
- \textcolor{red}{general comment to tables with result - after giving the tables you need to write a text which helps us to interpret it. What are the most important 
- number we shall look at? What shall we take out from the table as a message. For example something like (please do not use this directly. I have no clue 
- if this is the message you want us to take away from the table) "In Table 8.1. we show that when using the features Before Projection Head all 
- augmentation methods reached 100 train and test accuracy. The Resize approach needed the fewest epochs."}
-    
-    \begin{table}[h!]
-        \centering
-        \resizebox{\textwidth}{!}{%
-        \begin{tabular}{llcccccc}
-        \toprule
-        \textbf{Augmentation Type}      & \textbf{Metric} & \textbf{Strong} & \textbf{Sweet} & \textbf{Resize} & \textbf{Resize No Contrast} & \textbf{Sweet No Contrast} \\ \midrule
-        \multirow{4}{*}{\textbf{After Projection Head}}  
-            & Train Accuracy (\%) & 66.67 & 47.76 & 89.63 & 63.41 & 54.67 \\
-            & Train Epoch         & 246   & 249   & 250   & 250   & 245   \\
-            & Test Accuracy (\%)  & 68.29 & 55.28 & 90.24 & 63.41 & 56.10 \\
-            & Validation Epoch          & 228   & 246   & 223   & 202   & 244   \\ \midrule
-        \multirow{4}{*}{\textbf{Before Projection Head}} 
-            & Train Accuracy (\%) & 100 & 100 & 100 & 100 & 100 \\
-            & Train Epoch         & 190    & 3     & 13     & 12     & 21     \\
-            & Validation Accuracy (\%)  & 100 & 100 & 100 & 100 & 100 \\
-            & Validation Epoch          & 1      & 1      & 1      & 2      & 2      \\ 
-        \bottomrule
-        \end{tabular}%
-        }
-        \caption{Performance metrics for different augmentation strategies before and after the projection head.}
-        \label{tab:augmentation_metric}
-        \end{table}
-        
-
-        \begin{table}[h!]
-            \centering
-            \caption{Original Image Results}
-            \label{tab:original_image_results}
-            \begin{tabular}{lcccc}
-            \toprule
-            \textbf{Metric}         & \textbf{Train Accuracy (\%)} & \textbf{Train Epoch} & \textbf{Validation Accuracy (\%)} & \textbf{Validation Epoch} \\ \midrule
-            \textbf{Original Image} & 99.39                        & 249                  & 99.19                        & 17                  \\ 
-            \bottomrule
-            \end{tabular}
-        \end{table}
-
-With cross vaidation with 10 kfolds:             
+Since the train and test accuracy are both 100 percent, which may indicate overfitting, I performed 10-fold cross-validation as an additional check to ensure the model's performance generalizes well The results are shown in the table \ref{tab:aug_metric} and \ref{tab:original_results}
 \begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -148,12 +114,12 @@ With cross vaidation with 10 kfolds:
     \end{tabular}%
     }
     \caption{Performance metrics for different augmentation strategies before and after the projection head.}
-    \label{tab:augmentation_metric}
+    \label{tab:aug_metric}
 \end{table}
 \begin{table}[H]
     \centering
     \caption{Original Image Results}
-    \label{tab:original_image_results}
+    \label{tab:original_results}
     \begin{tabular}{lcc}
     \toprule
     \textbf{Metric}         & \textbf{ logisitic reg average Accuracy (\%)} & \textbf{ResNet18 average Accuracy (\%)} \\ \midrule
@@ -172,14 +138,14 @@ Train loss vs Val loss . Train accurcay  vs val accuracy
             \centering
             \includegraphics[scale=0.5]{figures/test_class.png} 
             \caption{before}
-            \label{fig:before}
+            \label{fig:test}
           \end{figure}
 
           \begin{figure}[H]
             \centering
             \includegraphics[scale=0.5]{figures/train_class.png} 
             \caption{before}
-            \label{fig:before}
+            \label{fig:train}
           \end{figure}
 \subsection{Inference}
 
@@ -226,7 +192,7 @@ from the features extracted before the projection head leads to the conclusion t
 Idea is whether the learned representation from simlcr outperforms the original images in clustering the images (unsupervised manner) For that we use simple kmeans 
 clusetring. We will cluster them based on both euclidean distance as well as cosine distance.
 
-
+If we do kmeans with cosine distance distance then it only compare direction of the vector thats why we need to do normal kmeans with euclidean dist to show the magnitude similarity
 
 
 
