@@ -162,11 +162,7 @@ pdfkeywords={Keywords}
 %% abstract
 %%%%%%%%%%%%%%%%%%%
 \section*{Abstract (en)}
-Pancreatic tumor treatment is hindered by the intricate nature of tumors and their diverse microenvironments. This complexity necessitates an exploration into identifying optimal drug combinations and concentrations tailored to each patient's specific tumor characteristics. This thesis aims to assess drug efficacy by ranking these various drug combinations and concentrations. The ranking is based on features extracted from bright-field microscopy images of three-dimensional tumor tissue models using representation learning. The core challenge is to learn robust features that accurately characterize alterations in these tumor tissue models induced by drug application over time. This research seeks to develop a standardized and effective approach for evaluating drug efficacy, potentially improving treatment outcomes for pancreatic tumor patients.
-
-% cSpell:disable
-\section*{Abstract (de)}
-Die Behandlung von Bauchspeicheldrüsentumoren wird durch die komplexe Natur der Tumore und ihre vielfältigen Mikroumgebungen behindert. Diese Komplexität erfordert eine Untersuchung zur Identifizierung optimaler Medikamentenkombinationen und -konzentrationen, die auf die spezifischen Tumoreigenschaften jedes Patienten zugeschnitten sind. Diese Masterarbeit zielt darauf ab, die Wirksamkeit von Medikamenten zu bewerten, indem sie diese verschiedenen Medikamentenkombinationen und -konzentrationen einstuft. Die Bewertung basiert auf Merkmalen, die aus Helligkeitsmikroskopiebildern dreidimensionaler Tumorgewebsmodelle mittels Repräsentationslernen extrahiert werden. Die zentrale Herausforderung besteht darin, robuste Merkmale zu erlernen, die Veränderungen in diesen Tumorgewebsmodellen genau charakterisieren, die durch die Anwendung von Medikamenten über Zeit induziert werden. Diese Forschung zielt darauf ab, einen standardisierten und effektiven Ansatz zur Bewertung der Medikamenteneffizienz zu entwickeln, der möglicherweise die Behandlungsergebnisse für Patienten mit Bauchspeicheldrüsentumoren verbessert.
+Pancreatic tumor treatment is hindered by the intricate nature of tumors and their diverse microenvironments. This complexity necessitates an exploration into identifying optimal drug combinations and concentrations tailored to each patient's specific tumor characteristics. This thesis aims to assess drug efficacy by ranking these various drug combinations and concentrations. The ranking is based on features extracted from bright-field microscopy images of three-dimensional tumor tissue models using SimCLR self supervised learning. The core challenge is to learn robust features that accurately characterize alterations in these tumor tissue models induced by drug application over time. This research seeks to develop a standardized and effective approach for evaluating drug efficacy, potentially improving treatment outcomes for pancreatic tumor patients.
 
 \newpage
 \chapter*{Acknowledgment}
@@ -175,15 +171,15 @@ Die Behandlung von Bauchspeicheldrüsentumoren wird durch die komplexe Natur der
 \setstretch{1.5}
 Thank all who believed in me.
 
-Thank Prof. Magda for guiding me to how to think scientifically and also for the SimCLR and autoencoder prediction ranking startegy.
+Thank Prof. Magda Gregorova for guiding me to how to think scientifically and also for the SimCLR and autoencoder prediction ranking strategy.
 
-Thank Prof. Jan for the softmax approach idea.
+Thank Prof. Jan Hansmann for the softmax approach idea.
 
-Thank Dalia for the code for sharp layer calculation and thanks for the biological stuff explanation and the once in a time opportunity.
+Thank Dalia Mahdy for the code for sharp layer calculation and thanks for the biology explanation of tumor tissue model,and the once in a time opportunity.
 
-Thank Phillip Ockermann for the cell viability test idea.Thank stefan for the microscope focal length explanation.Thank Philipp vaeth for the resize and crop augmentationc idea and general explanation for th edata augemnetation.
+Thank Phillip Ockermann for the cell viability test idea. Thank stefan Zinggrebe for the microscope focal length explanation. Thank Philipp vaeth for the resize and crop augmentation idea and general explanation for the data augmentation.
 
-Thank Dad and Mom for this life. Without you guys I won't be able to write this. Thank you to my brother for being my backbone. Finally thanks to chatgpt, perpexilitcity, claude sonnet, deepseek, grammerly. without those there will be only implementations.
+Thank Dad and Mom for this life. Without you guys I won't be able to write this. Thank you to my brother for being my backbone. Finally thanks to chatgpt, Perplexity, Claude sonnet, Deepseek, Grammerly. without those there will be only implementations.
 
 Danke.
 \vspace{2em}

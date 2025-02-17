@@ -1,8 +1,8 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{List of Figures}{xii}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Laboratory Setup}{4}{section.1.1}%
-\contentsline {chapter}{List of Tables}{1}{chapter*.7}%
+\contentsline {chapter}{List of Figures}{1}{chapter*.5}%
+\contentsline {chapter}{List of Tables}{1}{chapter*.6}%
 \contentsline {chapter}{\numberline {2}Motivation}{6}{chapter.2}%
 \contentsline {chapter}{\numberline {3}Research Objective and Questions}{7}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Literature Review}{9}{chapter.4}%
@@ -14,8 +14,8 @@
 \contentsline {section}{\numberline {7.1}Data preprocessing}{19}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Data augmentation}{24}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Train SimCLR as SSL model}{31}{section.7.3}%
-\contentsline {subsubsection}{\nonumberline Model}{31}{subsubsection*.34}%
-\contentsline {subsubsection}{\nonumberline Training}{31}{subsubsection*.36}%
+\contentsline {subsubsection}{\nonumberline Model}{31}{subsubsection*.33}%
+\contentsline {subsubsection}{\nonumberline Training}{31}{subsubsection*.35}%
 \contentsline {section}{\numberline {7.4}Evaluation of SimCLR training}{33}{section.7.4}%
 \contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{40}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features and original image vectors}{40}{section.8.1}%
@@ -34,8 +34,8 @@
 \contentsline {section}{\numberline {9.3}Ranking strategy 3: K Means approach}{67}{section.9.3}%
 \contentsline {section}{\numberline {9.4}Ranking strategy 4: Dimensionality reduction technics}{69}{section.9.4}%
 \contentsline {chapter}{\numberline {10}Conclusion}{71}{chapter.10}%
-\contentsline {chapter}{\nonumberline Appendix}{75}{chapter*.86}%
-\contentsline {chapter}{Literature}{82}{section*.100}%
-\contentsline {chapter}{\nonumberline Declaration on oath}{84}{chapter*.102}%
-\contentsline {chapter}{\nonumberline Consent to plagiarism check}{84}{chapter*.103}%
+\contentsline {chapter}{\nonumberline Appendix}{75}{chapter*.85}%
+\contentsline {chapter}{Literature}{82}{section*.99}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{84}{chapter*.101}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{84}{chapter*.102}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
