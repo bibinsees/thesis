@@ -40,34 +40,30 @@ For simplicity, bright-field microscopy images will be referred to as 'images'.
  lengths A, B, and C, Image 2 will also have layers corresponding to the same focal lengths A, B, and C.  However, for images from different experiments, the focal lengths may differ. For instance, images from 
  experiment 1 (single dose) may have slightly different acquisition settings compared to images from experiment 2 (drug screening), leading to variations 
  in the focal lengths and corresponding layers. 
- Secondly, the layers in each image are slightly misaligned when stacked, as shown in the figure  \ref{fig:Misalignment}. This misalignment may or may not affect the performance of ranking.
+ Secondly, the layers in each image are slightly misaligned when stacked, as shown in the figure  \ref{fig:Misalignment}. This misalignment of layers within the image and variation in focal length inbetween the images may or may not affect the performance of ranking.
 
  \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.4]{figures/posi.png} 
-  \caption{Misalignment of layers when stacked on top of each other}
+  \includegraphics[scale=0.25]{figures/posi.png} 
+  \caption{A small section of the image was zoomed in and separated to show the misalignment of the three stacked layers.}
   \label{fig:Misalignment}
 \end{figure}
-
-We observed some temporal noise/artifacts, as shown in figure  \ref{fig:noise} in different category of images such as untreated, cond10, single dose, explod. The presence of artifacts in the well-plates could be attributed to environmental factors such
-as temperature, humidity, or CO\textsubscript{2}, or by some inconsistencies in sample handling. Such factors are likely to cause variations in cell behavior and
-inconsistency in the  acquired images. These images were included as-is for SimCLR training, providing an opportunity for the model to learn from realistic conditions. 
-However, I didn't artificially introduce additional noise or artifacts through data augmentation. This approach highlights a potential area for further exploration in future work.
-  
- \begin{figure}[H]
+\begin{figure}[H]
   \centering
-  \includegraphics[scale=0.4]{figures/noise.png} 
+  \includegraphics[scale=0.2]{figures/noise.png} 
   \caption{Noise}
   \label{fig:noise}
 \end{figure}
- 
-\textcolor{red}{organised folders}
+We observed some temporal noise/artifacts, as shown in figure  \ref{fig:noise} in images. The presence of artifacts in the well-plates could be attributed to environmental factors such
+as temperature, humidity, or CO\textsubscript{2}, or by some inconsistencies in sample handling. Such factors are likely to cause variations in cell behavior and
+inconsistency in the  acquired images. These images were included as-is for SimCLR training, providing an opportunity for the model to learn from realistic conditions. 
+However, I didn't artificially introduce additional noise or artifacts through data augmentation. This approach highlights a potential area for further exploration in future work. 
 
+Figure \ref{fig:drug_eff} illustrates that, even with the same drug concentration applied to the spheroid tissue models under controlled conditions, occasional variations in 
+effects were observed across different experiments. These variations could result from slight differences in spheroid composition or undetected microenvironmental influences 
+that affect drug absorption by the spheroid and cellular response. Initially, I thought I would be able to evaluate the effect by drug combination, but because of this 
+difference, we need to make the ranking relative assessment based on the day 10 images nevertheless it is applied by the same drug combo.
 
-Figure \ref{fig:drug_eff} illustrates that, even with the The same drug concentration applied to the spheroids under controlled conditions occasionally resulted in 
-varying effects across different experiments. This variation could result from slight differences in spheroid composition, or undetected microenvironmental influences 
-that affect drug absorption by the spheroid and cellular response.  initially i thought I will be able to evaluate the effect by drug combination , but because of this 
-difference, we need to make the ranking relative assessment based on the day 10 images neverthless its appied by same drug combo.
 
 \begin{figure}[H]
   \centering
