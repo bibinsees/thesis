@@ -2373,22 +2373,23 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">Dembski2023Establishing</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">8099852</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">Esteva2017Dermatologist</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">irvin2019chexpert</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">zhang2022contrastive</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">chen2020simple</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">he2015deepresiduallearningimage</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">Mualla2013ACD</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">CrossZamirski2022LabelFree</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">Lee2018DeepHCS</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">Todorov2023STrack</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">keyes2020cancerprimer</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">melba:2024:020:woodland</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">chen2020simple</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">he2015deepresiduallearningimage</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">chen2020simple</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">bishop:2006:PRML</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">chen2020simple</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">8099852</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">Esteva2017Dermatologist</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">irvin2019chexpert</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">zhang2022contrastive</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">chen2020simple</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">he2015deepresiduallearningimage</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">Mualla2013ACD</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">CrossZamirski2022LabelFree</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Lee2018DeepHCS</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Todorov2023STrack</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">keyes2020cancerprimer</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">melba:2024:020:woodland</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">chen2020simple</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">he2015deepresiduallearningimage</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">chen2020simple</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">bishop:2006:PRML</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
