@@ -287,10 +287,46 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT ./main.aux
 INPUT ./main.aux
 INPUT main.aux
+INPUT ./chapters/introduction.aux
+INPUT ./chapters/introduction.aux
+INPUT chapters/introduction.aux
+INPUT ./chapters/Motivation.aux
+INPUT ./chapters/Motivation.aux
+INPUT chapters/Motivation.aux
+INPUT ./chapters/Research questions.aux
+INPUT ./chapters/Research questions.aux
+INPUT chapters/Research questions.aux
+INPUT ./chapters/literature_review.aux
+INPUT ./chapters/literature_review.aux
+INPUT chapters/literature_review.aux
+INPUT ./chapters/Data Description.aux
+INPUT ./chapters/Data Description.aux
+INPUT chapters/Data Description.aux
+INPUT ./chapters/Structure of the Thesis.aux
+INPUT ./chapters/Structure of the Thesis.aux
+INPUT chapters/Structure of the Thesis.aux
+INPUT ./chapters/Methodology for SimCLR.aux
+INPUT ./chapters/Methodology for SimCLR.aux
+INPUT chapters/Methodology for SimCLR.aux
+INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+INPUT ./chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+INPUT chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+INPUT ./chapters/Methodology for Ranking.aux
+INPUT ./chapters/Methodology for Ranking.aux
+INPUT chapters/Methodology for Ranking.aux
+INPUT ./chapters/conclusions.aux
+INPUT ./chapters/conclusions.aux
+INPUT chapters/conclusions.aux
 OUTPUT main.aux
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT ./main.out
+INPUT ./main.out
+INPUT main.out
+INPUT main.out
+INPUT ./main.out
+INPUT ./main.out
 OUTPUT main.out
 OUTPUT main.pdf
 INPUT c:/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty
@@ -384,8 +420,24 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT ./main.toc
+INPUT ./main.toc
+INPUT main.toc
 OUTPUT main.toc
+INPUT ./main.lof
+INPUT ./main.lof
+INPUT main.lof
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmro7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmro8r.tfm
 OUTPUT main.lof
+INPUT ./main.lot
+INPUT ./main.lot
+INPUT main.lot
 OUTPUT main.lot
 INPUT ./chapters/introduction.tex
 INPUT ./chapters/introduction.tex
@@ -393,8 +445,6 @@ OUTPUT chapters/introduction.aux
 INPUT ./chapters/introduction.tex
 INPUT ./chapters/introduction.tex
 INPUT chapters/introduction.tex
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmro7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmro8r.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT ./figures/labo.pdf
@@ -471,13 +521,8 @@ INPUT ./figures/drug_eff.png
 INPUT ./figures/drug_eff.png
 INPUT ./figures/drug_eff.png
 INPUT ./figures/drug_eff.png
-INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT ./figures/8bitvs16bit.png
 INPUT ./figures/8bitvs16bit.png
 INPUT ./figures/8bitvs16bit.png
@@ -754,6 +799,7 @@ INPUT ./chapters/conclusions.aux
 INPUT chapters/conclusions.aux
 INPUT ./main.out
 INPUT ./main.out
+INPUT main.run.xml
 OUTPUT main.run.xml
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb

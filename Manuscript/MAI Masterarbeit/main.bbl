@@ -45,7 +45,7 @@
       \field{title}{Pattern Recognition and Machine Learning}
       \field{year}{2006}
     \endentry
-    \entry{chen2020simple}{misc}{}{}
+    \entry{chen2020simple}{inproceedings}{}{}
       \name{author}{4}{}{%
         {{hash=b240c653612b8157a41dd4282347398a}{%
            family={Chen},
@@ -68,6 +68,9 @@
            given={Geoffrey},
            giveni={G\bibinitperiod}}}%
       }
+      \list{publisher}{1}{%
+        {Proceedings of Machine Learning Research}%
+      }
       \strng{namehash}{3dc8ec697e4145870100b5dc50b300b9}
       \strng{fullhash}{584a9ff5d36bb27e8e9ed9ee39cb795e}
       \strng{fullhashraw}{584a9ff5d36bb27e8e9ed9ee39cb795e}
@@ -80,13 +83,12 @@
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.LG}
-      \field{eprinttype}{arXiv}
+      \field{booktitle}{Proceedings of the 37th International Conference on Machine Learning (ICML 2020)}
       \field{title}{A Simple Framework for Contrastive Learning of Visual Representations}
+      \field{volume}{119}
       \field{year}{2020}
-      \verb{eprint}
-      \verb 2002.05709
-      \endverb
+      \field{pages}{1597\bibrangedash 1607}
+      \range{pages}{11}
     \endentry
     \entry{CrossZamirski2022LabelFree}{article}{}{}
       \true{moreauthor}
@@ -259,55 +261,6 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1038/nature21056
-      \endverb
-    \endentry
-    \entry{he2015deepresiduallearningimage}{misc}{}{}
-      \name{author}{4}{}{%
-        {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
-           family={He},
-           familyi={H\bibinitperiod},
-           given={Kaiming},
-           giveni={K\bibinitperiod}}}%
-        {{hash=5e72bc22dbcf0984c6d113d280e36990}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Xiangyu},
-           giveni={X\bibinitperiod}}}%
-        {{hash=bb295293acacd54387339079ebbe4ead}{%
-           family={Ren},
-           familyi={R\bibinitperiod},
-           given={Shaoqing},
-           giveni={S\bibinitperiod}}}%
-        {{hash=f85751488058842b5777c7b4074077b5}{%
-           family={Sun},
-           familyi={S\bibinitperiod},
-           given={Jian},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{6edb98fe38401d2fe4a026f5ce6e8451}
-      \strng{fullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
-      \strng{fullhashraw}{42c4b52dc3a62cebabbc11c73e1afb53}
-      \strng{bibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
-      \strng{authorbibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
-      \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
-      \strng{authorfullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
-      \strng{authorfullhashraw}{42c4b52dc3a62cebabbc11c73e1afb53}
-      \field{sortinit}{H}
-      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.CV}
-      \field{eprinttype}{arXiv}
-      \field{title}{Deep Residual Learning for Image Recognition}
-      \field{year}{2015}
-      \verb{eprint}
-      \verb 1512.03385
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/1512.03385
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/1512.03385
       \endverb
     \endentry
     \entry{irvin2019chexpert}{misc}{}{}
@@ -884,55 +837,9 @@
       \verb https://melba-journal.org/
       \endverb
     \endentry
-    \entry{zhang2022contrastive}{misc}{}{}
-      \name{author}{5}{}{%
-        {{hash=b43cba616065799ba45d146e48b95dd8}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Yuhao},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=cac40e7d0e9500e4e98d893feffd7430}{%
-           family={Jiang},
-           familyi={J\bibinitperiod},
-           given={Hang},
-           giveni={H\bibinitperiod}}}%
-        {{hash=2c8390a42661322ca1ddc56028a5fd90}{%
-           family={Miura},
-           familyi={M\bibinitperiod},
-           given={Yasuhide},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=2214edb8305f7ccd7cdc310b3a8ae1b4}{%
-           family={Manning},
-           familyi={M\bibinitperiod},
-           given={Christopher\bibnamedelima D.},
-           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=f3b87612827d5a394ddaa95b607d1a73}{%
-           family={Langlotz},
-           familyi={L\bibinitperiod},
-           given={Curtis\bibnamedelima P.},
-           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-      }
-      \strng{namehash}{2fc504245b6911085114818f7ea18255}
-      \strng{fullhash}{8d047b96401363af4b5ee0babf63a221}
-      \strng{fullhashraw}{8d047b96401363af4b5ee0babf63a221}
-      \strng{bibnamehash}{2fc504245b6911085114818f7ea18255}
-      \strng{authorbibnamehash}{2fc504245b6911085114818f7ea18255}
-      \strng{authornamehash}{2fc504245b6911085114818f7ea18255}
-      \strng{authorfullhash}{8d047b96401363af4b5ee0babf63a221}
-      \strng{authorfullhashraw}{8d047b96401363af4b5ee0babf63a221}
-      \field{sortinit}{Z}
-      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.CV}
-      \field{eprinttype}{arXiv}
-      \field{title}{Contrastive Learning of Medical Visual Representations from Paired Images and Text}
-      \field{year}{2022}
-      \verb{eprint}
-      \verb 2010.00747
-      \endverb
-    \endentry
   \enddatalist
+  \missing{he2015deepresiduallearningimage}
+  \missing{zhang2022contrastive}
 \endrefsection
 \endinput
 

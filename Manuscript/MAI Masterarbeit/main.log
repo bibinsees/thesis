@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  17 FEB 2025 23:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.3)  17 FEB 2025 23:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -972,7 +972,15 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 109.
  (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (./main.aux)
+) (./main.aux (./chapters/introduction.aux) (./chapters/Motivation.aux) (./chapters/Research questions.aux) (./chapters/literature_review.aux) (./chapters/Data Description.aux) (./chapters/Structure of the Thesis.aux) (./chapters/Methodology for SimCLR.aux) (./chapters/Methodology for Intermediate evaluation of SimCLR model.aux
+
+LaTeX Warning: Label `tab:dataset_summary' multiply defined.
+
+) (./chapters/Methodology for Ranking.aux
+
+LaTeX Warning: Label `fig:unloss' multiply defined.
+
+) (./chapters/conclusions.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
@@ -1018,6 +1026,7 @@ Package scrbase Info: activating english \indexname on input line 109.
 \everyMPtoPDFconversion=\toks41
 )
 Package hyperref Info: Link coloring OFF on input line 109.
+ (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
@@ -1053,7 +1062,22 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+ (./main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                he2015deepresiduallearningimage
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                zhang2022contrastive
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 109.
 Package biblatex Info: Reference segment=0 on input line 109.
 
@@ -1220,22 +1244,63 @@ LaTeX Warning: Hyper reference `acro:W' on page vi undefined on input line 204.
 
 
 
-[6]
-No file main.toc.
+[6] (./main.toc
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[7])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-No file main.lof.
+
+
+[8] (./main.lof
+Overfull \hbox (0.92892pt too wide) in paragraph at lines 4--4
+ [][] [][]\OT1/ptm/m/n/12 Different types of im-ages: Sin-gle dose, Con-trol, con-trol day 10 and drug screen- 
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 15.
+(c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Underfull \vbox (badness 6708) has occurred while \output is active []
+
+
+
+[9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[10])
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
-No file main.lot.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[11] (./main.lot
+Overfull \hbox (20.25946pt too wide) in paragraph at lines 15--15
+ [][] [][]\OT1/ptm/m/n/12 Classification per-for-mance met-rics for orig-i-nal im-age vec-tors us-ing cross-validation 
+ []
+
+
+
+[12]
+Overfull \hbox (39.54434pt too wide) in paragraph at lines 40--40
+ [][] [][]\OT1/ptm/m/n/12 Inference rank-ing per-for-mance across best-performing data aug-men-ta-tion type/category 
+ []
+
+)
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
 \openout2 = `chapters/introduction.aux'.
 
-(./chapters/introduction.tex
+ (./chapters/introduction.tex
 chapter 1.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1248,18 +1313,12 @@ Overfull \hbox (20.42715pt too wide) in paragraph at lines 8--16
  []
 
 
-LaTeX Warning: Reference `fig:Roboplatform' on page 2 undefined on input line 18.
-
-
-LaTeX Warning: Reference `ch: DataDescription' on page 2 undefined on input line 20.
-
-
 Underfull \vbox (badness 1038) has occurred while \output is active []
 
 
 
 [2]
-<figures/labo.pdf, id=59, 1407.00656pt x 391.4625pt>
+<figures/labo.pdf, id=360, 1407.00656pt x 391.4625pt>
 File: figures/labo.pdf Graphic file (type pdf)
 <use figures/labo.pdf>
 Package pdftex.def Info: figures/labo.pdf  used on input line 26.
@@ -1268,54 +1327,21 @@ Package pdftex.def Info: figures/labo.pdf  used on input line 26.
 
 [3 <./figures/labo.pdf>]
 
-LaTeX Warning: Reference `fig:Roboplatform' on page 4 undefined on input line 39.
-
-
-LaTeX Warning: Reference `fig:Types' on page 4 undefined on input line 42.
-
-
-LaTeX Warning: Reference `fig:Types' on page 4 undefined on input line 43.
-
-
-LaTeX Warning: Reference `fig:Types' on page 4 undefined on input line 44.
-
-
-LaTeX Warning: Reference `fig:Types' on page 4 undefined on input line 45.
-
-
-LaTeX Warning: Reference `fig:Types' on page 4 undefined on input line 45.
-
-
-
 [4]
-<figures/types.png, id=89, 749.04843pt x 813.0375pt>
+<figures/types.png, id=394, 749.04843pt x 813.0375pt>
 File: figures/types.png Graphic file (type png)
 <use figures/types.png>
 Package pdftex.def Info: figures/types.png  used on input line 51.
 (pdftex.def)             Requested size: 299.61406pt x 325.20924pt.
 
 
-LaTeX Warning: Reference `sec:lab-setup' on page 5 undefined on input line 52.
-
-
-LaTeX Warning: Reference `sec:lab-setup' on page 5 undefined on input line 52.
-
-
-LaTeX Warning: Reference `fig:wellplate setup' on page 5 undefined on input line 56.
-
-
-
 [5 <./figures/types.png (PNG copy)>]
-<figures/well.png, id=95, 1292.57906pt x 436.63126pt>
+<figures/well.png, id=402, 1292.57906pt x 436.63126pt>
 File: figures/well.png Graphic file (type png)
 <use figures/well.png>
 Package pdftex.def Info: figures/well.png  used on input line 61.
 (pdftex.def)             Requested size: 407.66833pt x 137.70613pt.
-
-
-LaTeX Warning: Reference `fig:time' on page 6 undefined on input line 68.
-
-<figures/timed.png, id=96, 713.66624pt x 252.945pt>
+<figures/timed.png, id=404, 713.66624pt x 252.945pt>
 File: figures/timed.png Graphic file (type png)
 <use figures/timed.png>
 Package pdftex.def Info: figures/timed.png  used on input line 76.
@@ -1339,106 +1365,72 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [7]
 
-LaTeX Warning: Reference `ch:Methodology for Ranking' on page 8 undefined on input line 6.
-
-
-
 [8])
 \openout2 = `chapters/literature_review.aux'.
 
  (./chapters/literature_review.tex
 chapter 4.
 
+LaTeX Warning: Citation 'zhang2022contrastive' on page 9 undefined on input line 5.
+
+
+LaTeX Warning: Citation 'he2015deepresiduallearningimage' on page 9 undefined on input line 7.
+
+
+Overfull \hbox (19.65929pt too wide) in paragraph at lines 7--8
+\OT1/ptm/m/n/12 con-straints. The au-thors opt for sim-plic-ity and adopt ResNet [[]],
+ []
+
+
 
 [9]
+Underfull \vbox (badness 1406) has occurred while \output is active []
 
-LaTeX Warning: Reference `ch:Methodology for Ranking' on page 10 undefined on input line 9.
 
-)
+
+[10])
 \openout2 = `"chapters/Data Description.aux"'.
 
  (./chapters/Data Description.tex
 chapter 5.
 
-Underfull \vbox (badness 1406) has occurred while \output is active []
-
-
-
-[10]
-
-LaTeX Warning: Reference `ch:intro' on page 11 undefined on input line 4.
-
-
-LaTeX Warning: Reference `fig:valid' on page 11 undefined on input line 15.
-
-
 
 [11]
-<figures/finevalid.png, id=163, 1062.21844pt x 493.845pt>
+<figures/finevalid.png, id=464, 1062.21844pt x 493.845pt>
 File: figures/finevalid.png Graphic file (type png)
 <use figures/finevalid.png>
 Package pdftex.def Info: figures/finevalid.png  used on input line 19.
 (pdftex.def)             Requested size: 265.55396pt x 123.46094pt.
-
-
-LaTeX Warning: Reference `fig:blur' on page 12 undefined on input line 27.
-
-<figures/blur.png, id=164, 532.23843pt x 374.90062pt>
+<figures/blur.png, id=466, 532.23843pt x 374.90062pt>
 File: figures/blur.png Graphic file (type png)
 <use figures/blur.png>
 Package pdftex.def Info: figures/blur.png  used on input line 33.
 (pdftex.def)             Requested size: 212.89159pt x 149.95758pt.
 
-LaTeX Warning: Reference `fig:Misalignment' on page 12 undefined on input line 43.
-
-
-Underfull \vbox (badness 1629) has occurred while \output is active []
-
-
 
 [12 <./figures/finevalid.png (PNG copy)> <./figures/blur.png (PNG copy)>]
-<figures/posi.png, id=171, 825.0825pt x 726.46407pt>
+<figures/posi.png, id=472, 825.0825pt x 726.46407pt>
 File: figures/posi.png Graphic file (type png)
 <use figures/posi.png>
 Package pdftex.def Info: figures/posi.png  used on input line 47.
 (pdftex.def)             Requested size: 206.27011pt x 181.61557pt.
-<figures/noise.png, id=172, 715.17188pt x 711.4078pt>
+<figures/noise.png, id=473, 715.17188pt x 711.4078pt>
 File: figures/noise.png Graphic file (type png)
 <use figures/noise.png>
 Package pdftex.def Info: figures/noise.png  used on input line 53.
 (pdftex.def)             Requested size: 143.03183pt x 142.27904pt.
 
 
-LaTeX Warning: Reference `fig:noise' on page 13 undefined on input line 57.
-
-
-
 [13 <./figures/posi.png (PNG copy)> <./figures/noise.png (PNG copy)>]
-
-LaTeX Warning: Reference `fig:drug_eff' on page 14 undefined on input line 62.
-
-<figures/drug_eff.png, id=180, 438.13687pt x 706.89093pt>
+<figures/drug_eff.png, id=481, 438.13687pt x 706.89093pt>
 File: figures/drug_eff.png Graphic file (type png)
 <use figures/drug_eff.png>
 Package pdftex.def Info: figures/drug_eff.png  used on input line 66.
 (pdftex.def)             Requested size: 131.44206pt x 212.06891pt.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 67.
-(c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-
-LaTeX Warning: Reference `tab:dataset' on page 14 undefined on input line 72.
-
-
-LaTeX Warning: Reference `sec:lab-setup' on page 14 undefined on input line 72.
-
 
 
 [14 <./figures/drug_eff.png (PNG copy)>]
-
-LaTeX Warning: Reference `fig:8bitvs16bit' on page 15 undefined on input line 87.
-
-<figures/8bitvs16bit.png, id=186, 808.7013pt x 714.7503pt>
+<figures/8bitvs16bit.png, id=489, 808.7013pt x 714.7503pt>
 File: figures/8bitvs16bit.png Graphic file (type png)
 <use figures/8bitvs16bit.png>
 Package pdftex.def Info: figures/8bitvs16bit.png  used on input line 92.
@@ -1450,21 +1442,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [15]
 
-LaTeX Warning: Reference `sec:data preprocessing' on page 16 undefined on input line 106.
-
-
-
-[16 <./figures/8bitvs16bit.png>]
-
-LaTeX Warning: Reference `fig:drug_eff' on page 17 undefined on input line 113.
-
-
-LaTeX Warning: Reference `ch:Methodology for Intermediate evaluation of SimCLR model' on page 17 undefined on input line 117.
-
-
-LaTeX Warning: Reference `ch:Methodology for Ranking' on page 17 undefined on input line 117.
-
-)
+[16 <./figures/8bitvs16bit.png>])
 \openout2 = `"chapters/Structure of the Thesis.aux"'.
 
  (./chapters/Structure of the Thesis.tex
@@ -1472,10 +1450,7 @@ chapter 6.
 
 
 [17]
-
-LaTeX Warning: Reference `fig:BigOutline' on page 18 undefined on input line 18.
-
-<figures/final_big_pic.png, id=209, 750.805pt x 442.65375pt>
+<figures/final_big_pic.png, id=513, 750.805pt x 442.65375pt>
 File: figures/final_big_pic.png Graphic file (type png)
 <use figures/final_big_pic.png>
 Package pdftex.def Info: figures/final_big_pic.png  used on input line 21.
@@ -1498,10 +1473,7 @@ Overfull \hbox (3.71269pt too wide) in paragraph at lines 8--9
 
 
 [19]
-
-LaTeX Warning: Reference `fig:elong' on page 20 undefined on input line 34.
-
-<figures/long.png, id=231, 914.2155pt x 860.013pt>
+<figures/long.png, id=533, 914.2155pt x 860.013pt>
 File: figures/long.png Graphic file (type png)
 <use figures/long.png>
 Package pdftex.def Info: figures/long.png  used on input line 37.
@@ -1512,10 +1484,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [20]
-
-LaTeX Warning: Reference `fig:rotation' on page 21 undefined on input line 42.
-
-<figures/rotation.png, id=245, 877.3578pt x 758.1123pt>
+<figures/rotation.png, id=548, 877.3578pt x 758.1123pt>
 File: figures/rotation.png Graphic file (type png)
 <use figures/rotation.png>
 Package pdftex.def Info: figures/rotation.png  used on input line 45.
@@ -1533,43 +1502,26 @@ Overfull \hbox (0.93394pt too wide) in paragraph at lines 55--56
 
 
 [22 <./figures/rotation.png>]
-
-LaTeX Warning: Reference `fig:crop' on page 23 undefined on input line 56.
-
-
 Overfull \hbox (29.25319pt too wide) in paragraph at lines 56--57
 []\OT1/ptm/m/n/12 A bound-ing rect-an-gle is de-ter-mined around the largest con-tour us-ing \OT1/cmtt/m/n/12 cv2.boundingRect\OT1/ptm/m/n/12 .
  []
 
-<figures/crop.png, id=262, 903.375pt x 732.48656pt>
+<figures/crop.png, id=564, 903.375pt x 732.48656pt>
 File: figures/crop.png Graphic file (type png)
 <use figures/crop.png>
 Package pdftex.def Info: figures/crop.png  used on input line 62.
 (pdftex.def)             Requested size: 271.01459pt x 219.74765pt.
 
-LaTeX Warning: Reference `sec:data augmentation' on page 23 undefined on input line 69.
-
-
 
 [23 <./figures/crop.png (PNG copy)>]
 
-LaTeX Warning: Reference `fig:repeat' on page 24 undefined on input line 89.
-
-
-LaTeX Warning: Reference `fig:rotation' on page 24 undefined on input line 89.
-
-
-LaTeX Warning: Reference `fig:bs' on page 24 undefined on input line 93.
-
-
-
 [24]
-<figures/bs.png, id=285, 633.11531pt x 643.6547pt>
+<figures/bs.png, id=590, 633.11531pt x 643.6547pt>
 File: figures/bs.png Graphic file (type png)
 <use figures/bs.png>
 Package pdftex.def Info: figures/bs.png  used on input line 98.
 (pdftex.def)             Requested size: 316.55687pt x 321.82655pt.
-<figures/repeat.png, id=286, 1062.21844pt x 1497.34406pt>
+<figures/repeat.png, id=591, 1062.21844pt x 1497.34406pt>
 File: figures/repeat.png Graphic file (type png)
 <use figures/repeat.png>
 Package pdftex.def Info: figures/repeat.png  used on input line 105.
@@ -1581,76 +1533,39 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [25 <./figures/bs.png (PNG copy)>]
 
-LaTeX Warning: Reference `fig:strong_aug' on page 26 undefined on input line 111.
-
-
-LaTeX Warning: Reference `fig:16bit_three_v1' on page 26 undefined on input line 113.
-
-
-
 [26 <./figures/repeat.png (PNG copy)>]
-<figures/16bit_three_1.png, id=300, 859.2903pt x 570.933pt>
+<figures/16bit_three_1.png, id=604, 859.2903pt x 570.933pt>
 File: figures/16bit_three_1.png Graphic file (type png)
 <use figures/16bit_three_1.png>
 Package pdftex.def Info: figures/16bit_three_1.png  used on input line 123.
 (pdftex.def)             Requested size: 343.71002pt x 228.36914pt.
 
 
-LaTeX Warning: Reference `fig:16bit_three_v1' on page 27 undefined on input line 129.
-
-
-LaTeX Warning: Reference `fig:bright' on page 27 undefined on input line 129.
-
-
-LaTeX Warning: Reference `fig:contra' on page 27 undefined on input line 129.
-
-
-LaTeX Warning: Reference `fig:strong_aug' on page 27 undefined on input line 129.
-
-
-
 [27 <./figures/16bit_three_1.png>]
-<figures/bright.png, id=307, 1171.37625pt x 409.53pt>
+<figures/bright.png, id=614, 1171.37625pt x 409.53pt>
 File: figures/bright.png Graphic file (type png)
 <use figures/bright.png>
 Package pdftex.def Info: figures/bright.png  used on input line 133.
 (pdftex.def)             Requested size: 269.41087pt x 94.18991pt.
-<figures/contra.png, id=308, 981.6675pt x 310.15875pt>
+<figures/contra.png, id=615, 981.6675pt x 310.15875pt>
 File: figures/contra.png Graphic file (type png)
 <use figures/contra.png>
 Package pdftex.def Info: figures/contra.png  used on input line 140.
 (pdftex.def)             Requested size: 294.50252pt x 93.04834pt.
 
 
-LaTeX Warning: Reference `fig:expo' on page 28 undefined on input line 145.
-
-
-
 [28 <./figures/bright.png (PNG copy)> <./figures/contra.png (PNG copy)>]
-<figures/expos.png, id=315, 603.0028pt x 603.0028pt>
+<figures/expos.png, id=621, 603.0028pt x 603.0028pt>
 File: figures/expos.png Graphic file (type png)
 <use figures/expos.png>
 Package pdftex.def Info: figures/expos.png  used on input line 149.
 (pdftex.def)             Requested size: 180.90224pt x 180.90224pt.
-
-
-LaTeX Warning: Reference `fig:strong_aug' on page 29 undefined on input line 154.
-
-
-LaTeX Warning: Reference `fig:ohne' on page 29 undefined on input line 157.
-
-<figures/ohne.png, id=316, 1202.99437pt x 362.85562pt>
+<figures/ohne.png, id=624, 1202.99437pt x 362.85562pt>
 File: figures/ohne.png Graphic file (type png)
 <use figures/ohne.png>
 Package pdftex.def Info: figures/ohne.png  used on input line 161.
 (pdftex.def)             Requested size: 0.0pt x 0.0pt.
-
-LaTeX Warning: Reference `fig:strong_aug' on page 29 undefined on input line 166.
-
-
-LaTeX Warning: Reference `fig:strong_aug' on page 29 undefined on input line 167.
-
-<figures/diff_aug.png, id=317, 820.06375pt x 824.07875pt>
+<figures/diff_aug.png, id=627, 820.06375pt x 824.07875pt>
 File: figures/diff_aug.png Graphic file (type png)
 <use figures/diff_aug.png>
 Package pdftex.def Info: figures/diff_aug.png  used on input line 170.
@@ -1658,53 +1573,22 @@ Package pdftex.def Info: figures/diff_aug.png  used on input line 170.
 
 
 [29 <./figures/expos.png (PNG copy)> <./figures/ohne.png (PNG copy)>]
-
-LaTeX Warning: Reference `ch: Methodology for SimCLR' on page 30 undefined on input line 179.
-
-
-Overfull \hbox (6.06335pt too wide) in paragraph at lines 179--180
-\OT1/ptm/m/n/12 As ex-plained in chap-ter [], Sim-CLR was used as the model for self-supervised learn-ing (SSL). 
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [30 <./figures/diff_aug.png>]
 
-LaTeX Warning: Reference `sec:data preprocessing' on page 31 undefined on input line 194.
-
-
-LaTeX Warning: Reference `eq:loss' on page 31 undefined on input line 202.
+LaTeX Warning: Citation 'he2015deepresiduallearningimage' on page 31 undefined on input line 185.
 
 
 
 [31]
 
-LaTeX Warning: Reference `eq:loss' on page 32 undefined on input line 247.
-
-
-
 [32]
 
 [33]
-
-LaTeX Warning: Reference `fig:strong_64' on page 34 undefined on input line 303.
-
-
-LaTeX Warning: Reference `fig:sweet_bs64' on page 34 undefined on input line 303.
-
-
-LaTeX Warning: Reference `fig:sweet_no_contra' on page 34 undefined on input line 303.
-
-
-LaTeX Warning: Reference `fig:Resize_No_contra_b64' on page 34 undefined on input line 303.
-
-
-LaTeX Warning: Reference `fig:Resize_b64' on page 34 undefined on input line 303.
-
-<figures/strong.png, id=360, 1437.4503pt x 860.013pt>
+<figures/strong.png, id=673, 1437.4503pt x 860.013pt>
 File: figures/strong.png Graphic file (type png)
 <use figures/strong.png>
 Package pdftex.def Info: figures/strong.png  used on input line 308.
@@ -1717,7 +1601,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [35]
-<figures/sweet_bs64.png, id=369, 1996.45876pt x 1194.4625pt>
+<figures/sweet_bs64.png, id=682, 1996.45876pt x 1194.4625pt>
 File: figures/sweet_bs64.png Graphic file (type png)
 <use figures/sweet_bs64.png>
 Package pdftex.def Info: figures/sweet_bs64.png  used on input line 315.
@@ -1727,7 +1611,7 @@ Overfull \hbox (6.20796pt too wide) in paragraph at lines 315--316
  [][] 
  []
 
-<figures/sweet_no_contra.png, id=370, 1438.173pt x 860.013pt>
+<figures/sweet_no_contra.png, id=683, 1438.173pt x 860.013pt>
 File: figures/sweet_no_contra.png Graphic file (type png)
 <use figures/sweet_no_contra.png>
 Package pdftex.def Info: figures/sweet_no_contra.png  used on input line 324.
@@ -1738,12 +1622,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [36 <./figures/strong.png> <./figures/sweet_bs64.png>]
-<figures/Resize_No_contra.png, id=378, 1438.173pt x 860.013pt>
+<figures/Resize_No_contra.png, id=689, 1438.173pt x 860.013pt>
 File: figures/Resize_No_contra.png Graphic file (type png)
 <use figures/Resize_No_contra.png>
 Package pdftex.def Info: figures/Resize_No_contra.png  used on input line 333.
 (pdftex.def)             Requested size: 431.45523pt x 258.00589pt.
-<figures/Resize.png, id=379, 1438.173pt x 860.013pt>
+<figures/Resize.png, id=690, 1438.173pt x 860.013pt>
 File: figures/Resize.png Graphic file (type png)
 <use figures/Resize.png>
 Package pdftex.def Info: figures/Resize.png  used on input line 342.
@@ -1754,10 +1638,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [37 <./figures/sweet_no_contra.png> <./figures/Resize_No_contra.png>]
-
-LaTeX Warning: Reference `fig:pca_viz' on page 38 undefined on input line 347.
-
-<figures/pca_viz.png, id=389, 1346.02875pt x 504.38437pt>
+<figures/pca_viz.png, id=700, 1346.02875pt x 504.38437pt>
 File: figures/pca_viz.png Graphic file (type png)
 <use figures/pca_viz.png>
 Package pdftex.def Info: figures/pca_viz.png  used on input line 350.
@@ -1781,10 +1662,6 @@ chapter 8.
 
 [40]
 
-LaTeX Warning: Reference `tab:dataset_summary' on page 41 undefined on input line 53.
-
-
-
 
 Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                At least 43.49998pt needed,
@@ -1799,31 +1676,12 @@ Package scrlayer-scrpage Warning: \headheight to low.
 Overfull \vbox (21.75pt too high) has occurred while \output is active []
 
  [41]
-
-LaTeX Warning: Reference `tab:augmentation_metric' on page 42 undefined on input line 61.
-
-
-LaTeX Warning: Reference `tab:original_image_results' on page 42 undefined on input line 61.
-
-
-LaTeX Warning: Reference `fig:test' on page 42 undefined on input line 61.
-
-
-LaTeX Warning: Reference `fig:train' on page 42 undefined on input line 61.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [42]
-
-LaTeX Warning: Reference `tab:aug_metric' on page 43 undefined on input line 100.
-
-
-LaTeX Warning: Reference `tab:original_results' on page 43 undefined on input line 100.
-
-<figures/test_class.png, id=419, 711.1368pt x 426.393pt>
+<figures/test_class.png, id=731, 711.1368pt x 426.393pt>
 File: figures/test_class.png Graphic file (type png)
 <use figures/test_class.png>
 Package pdftex.def Info: figures/test_class.png  used on input line 136.
@@ -1831,7 +1689,7 @@ Package pdftex.def Info: figures/test_class.png  used on input line 136.
 
 
 [43]
-<figures/train_class.png, id=428, 711.8595pt x 426.393pt>
+<figures/train_class.png, id=737, 711.8595pt x 426.393pt>
 File: figures/train_class.png Graphic file (type png)
 <use figures/train_class.png>
 Package pdftex.def Info: figures/train_class.png  used on input line 143.
@@ -1848,21 +1706,8 @@ Underfull \vbox (badness 8189) has occurred while \output is active []
 
 [44 <./figures/test_class.png> <./figures/train_class.png>]
 
-LaTeX Warning: Reference `tab:performance_metrics' on page 45 undefined on input line 162.
-
-
-LaTeX Warning: Reference `appendix' on page 45 undefined on input line 165.
-
-
-Underfull \vbox (badness 1107) has occurred while \output is active []
-
-
-
 [45]
-
-LaTeX Warning: Reference `tab:dataset_summary' on page 46 undefined on input line 174.
-
-<figures/controlex.png, id=448, 603.0028pt x 611.28375pt>
+<figures/controlex.png, id=753, 603.0028pt x 611.28375pt>
 File: figures/controlex.png Graphic file (type png)
 <use figures/controlex.png>
 Package pdftex.def Info: figures/controlex.png  used on input line 178.
@@ -1871,27 +1716,13 @@ Package pdftex.def Info: figures/controlex.png  used on input line 178.
 
 [46 <./figures/controlex.png (PNG copy)>]
 
-LaTeX Warning: Reference `tab:evaluation_results_cosine_distance' on page 47 undefined on input line 229.
-
-
-
 [47]
-
-LaTeX Warning: Reference `tab:evaluation_results_euclidean' on page 48 undefined on input line 240.
-
-
-LaTeX Warning: Reference `tab:distance_metrics' on page 48 undefined on input line 266.
-
-
-LaTeX Warning: Reference `fig:cluster' on page 48 undefined on input line 268.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [48]
-<figures/cluster.png, id=468, 1364.09625pt x 438.13687pt>
+<figures/cluster.png, id=770, 1364.09625pt x 438.13687pt>
 File: figures/cluster.png Graphic file (type png)
 <use figures/cluster.png>
 Package pdftex.def Info: figures/cluster.png  used on input line 286.
@@ -1902,47 +1733,20 @@ Overfull \hbox (51.73982pt too wide) in paragraph at lines 286--287
  []
 
 
-LaTeX Warning: Reference `subsec:inference' on page 49 undefined on input line 292.
-
-
 
 [49 <./figures/cluster.png (PNG copy)>]
-
-LaTeX Warning: Reference `tab:dataset_summary' on page 50 undefined on input line 294.
-
-
-LaTeX Warning: Reference `tab:professional_table' on page 50 undefined on input line 294.
-
-
-LaTeX Warning: Reference `fig:cconfusion' on page 50 undefined on input line 294.
-
-
-LaTeX Warning: Reference `fig:cconfusion' on page 50 undefined on input line 294.
-
-<figures/cconfusion.png, id=478, 1079.53313pt x 386.94562pt>
+<figures/cconfusion.png, id=781, 1079.53313pt x 386.94562pt>
 File: figures/cconfusion.png Graphic file (type png)
 <use figures/cconfusion.png>
 Package pdftex.def Info: figures/cconfusion.png  used on input line 318.
 (pdftex.def)             Requested size: 399.421pt x 143.16763pt.
-
-LaTeX Warning: Reference `tab:dataset_summary' on page 50 undefined on input line 326.
-
-
-LaTeX Warning: Reference `fig:econfuse' on page 50 undefined on input line 327.
-
-
-LaTeX Warning: Reference `fig:econfuse' on page 50 undefined on input line 327.
-
-
-LaTeX Warning: Reference `tab:eucli_table' on page 50 undefined on input line 327.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [50 <./figures/cconfusion.png (PNG copy)>]
-<figures/econfuse.png, id=485, 1035.11719pt x 377.91188pt>
+<figures/econfuse.png, id=790, 1035.11719pt x 377.91188pt>
 File: figures/econfuse.png Graphic file (type png)
 <use figures/econfuse.png>
 Package pdftex.def Info: figures/econfuse.png  used on input line 357.
@@ -1971,30 +1775,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [55]
 
-LaTeX Warning: Reference `sec:data augmentation' on page 56 undefined on input line 108.
-
-
-
 [56]
 
 [57]
-
-LaTeX Warning: Reference `fig:uloss' on page 58 undefined on input line 149.
-
-
-LaTeX Warning: Reference `fig:mispo' on page 58 undefined on input line 150.
-
-<figures/rankloss.png, id=529, 499.8675pt x 388.45125pt>
+<figures/rankloss.png, id=833, 499.8675pt x 388.45125pt>
 File: figures/rankloss.png Graphic file (type png)
 <use figures/rankloss.png>
 Package pdftex.def Info: figures/rankloss.png  used on input line 156.
 (pdftex.def)             Requested size: 229.94183pt x 178.68973pt.
-<figures/unpred.png, id=530, 893.58844pt x 301.8778pt>
+<figures/unpred.png, id=834, 893.58844pt x 301.8778pt>
 File: figures/unpred.png Graphic file (type png)
 <use figures/unpred.png>
 Package pdftex.def Info: figures/unpred.png  used on input line 163.
 (pdftex.def)             Requested size: 411.05566pt x 138.86546pt.
-<figures/pproblem.png, id=531, 615.0478pt x 228.10219pt>
+<figures/pproblem.png, id=835, 615.0478pt x 228.10219pt>
 File: figures/pproblem.png Graphic file (type png)
 <use figures/pproblem.png>
 Package pdftex.def Info: figures/pproblem.png  used on input line 170.
@@ -2004,10 +1798,7 @@ Package pdftex.def Info: figures/pproblem.png  used on input line 170.
 [58 <./figures/rankloss.png (PNG copy)> <./figures/unpred.png (PNG copy)>]
 
 [59 <./figures/pproblem.png (PNG copy)>]
-
-LaTeX Warning: Reference `fig:unloss' on page 60 undefined on input line 196.
-
-<figures/overfited.png, id=544, 548.0475pt x 663.22781pt>
+<figures/overfited.png, id=846, 548.0475pt x 663.22781pt>
 File: figures/overfited.png Graphic file (type png)
 <use figures/overfited.png>
 Package pdftex.def Info: figures/overfited.png  used on input line 199.
@@ -2015,10 +1806,6 @@ Package pdftex.def Info: figures/overfited.png  used on input line 199.
 
 
 [60 <./figures/overfited.png (PNG copy)>]
-
-LaTeX Warning: Reference `fig:bargraph' on page 61 undefined on input line 209.
-
-
 Overfull \hbox (32.31934pt too wide) in paragraph at lines 213--223
  [][] 
  []
@@ -2065,31 +1852,7 @@ Overfull \hbox (32.31934pt too wide) in paragraph at lines 326--336
  [][] 
  []
 
-
-LaTeX Warning: Reference `tab:table_hammi' on page 63 undefined on input line 339.
-
-
-LaTeX Warning: Reference `tab:table_jac' on page 63 undefined on input line 339.
-
-
-LaTeX Warning: Reference `tab:table_dot' on page 63 undefined on input line 339.
-
-
-LaTeX Warning: Reference `tab:table_pear' on page 63 undefined on input line 339.
-
-
-LaTeX Warning: Reference `tab:table_l' on page 63 undefined on input line 339.
-
-
-LaTeX Warning: Reference `tab:table_eucli' on page 63 undefined on input line 339.
-
-
-LaTeX Warning: Reference `tab:table_mse' on page 63 undefined on input line 339.
-
-
-LaTeX Warning: Reference `tab:table_cosine' on page 63 undefined on input line 339.
-
-<figures/predall.pdf, id=565, 1053.1847pt x 685.8122pt>
+<figures/predall.pdf, id=869, 1053.1847pt x 685.8122pt>
 File: figures/predall.pdf Graphic file (type pdf)
 <use figures/predall.pdf>
 Package pdftex.def Info: figures/predall.pdf  used on input line 344.
@@ -2103,21 +1866,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [64 <./figures/predall.pdf>]
 
-LaTeX Warning: Reference `ch:Methodology for Intermediate evaluation of SimCLR model' on page 65 undefined on input line 356.
-
-
-
 [65]
-
-LaTeX Warning: Reference `ch:Methodology for Intermediate evaluation of SimCLR model' on page 66 undefined on input line 368.
-
-
-LaTeX Warning: Reference `tab:ranking_softmax' on page 66 undefined on input line 395.
-
-
-LaTeX Warning: Reference `tab:classification_accuracies' on page 66 undefined on input line 395.
-
-
 
 [66]
 Overfull \hbox (62.64307pt too wide) in paragraph at lines 420--430
@@ -2127,7 +1876,7 @@ Overfull \hbox (62.64307pt too wide) in paragraph at lines 420--430
 
 
 [67]
-<figures/allbox.pdf, id=625, 835.62187pt x 800.23969pt>
+<figures/allbox.pdf, id=926, 835.62187pt x 800.23969pt>
 File: figures/allbox.pdf Graphic file (type pdf)
 <use figures/allbox.pdf>
 Package pdftex.def Info: figures/allbox.pdf  used on input line 436.
@@ -2141,16 +1890,10 @@ Overfull \hbox (62.64307pt too wide) in paragraph at lines 445--455
 
 [68 <./figures/allbox.pdf>]
 
-LaTeX Warning: Reference `fig:cosi_mean' on page 69 undefined on input line 471.
-
-
 LaTeX Warning: Reference `fig:eucli_mean' on page 69 undefined on input line 471.
 
 
 LaTeX Warning: Reference `fig:orig_mean' on page 69 undefined on input line 471.
-
-
-LaTeX Warning: Reference `fig:cosi_mean' on page 69 undefined on input line 471.
 
 
 
@@ -2159,18 +1902,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[70]
-
-LaTeX Warning: Reference `tab:combined_dr' on page 71 undefined on input line 522.
-
-)
+[70])
 \openout2 = `chapters/conclusions.aux'.
 
  (./chapters/conclusions.tex
 chapter 10.
-
-LaTeX Warning: Reference `ch:Methodology for Ranking' on page 71 undefined on input line 2.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2192,9 +1928,6 @@ Overfull \hbox (59.878pt too wide) in paragraph at lines 10--22
 Underfull \hbox (badness 6316) in paragraph at lines 22--22
 [][][]|\OT1/ptm/m/n/12 In-fer-ence rank-ing per-for-mance across best-performing data aug-men-ta-tion
  []
-
-
-LaTeX Warning: Reference `tab:ranking_strategies' on page 72 undefined on input line 26.
 
 
 
@@ -2245,9 +1978,6 @@ Overfull \hbox (21.45168pt too wide) in paragraph at lines 524--524
 chapter without number
 chapter without number
 
-Underfull \vbox (badness 5592) has occurred while \output is active []
-
-
 
 [84] (./main.aux (./chapters/introduction.aux) (./chapters/Motivation.aux) (./chapters/Research questions.aux) (./chapters/literature_review.aux) (./chapters/Data Description.aux) (./chapters/Structure of the Thesis.aux) (./chapters/Methodology for SimCLR.aux) (./chapters/Methodology for Intermediate evaluation of SimCLR model.aux) (./chapters/Methodology for Ranking.aux) (./chapters/conclusions.aux))
  ***********
@@ -2259,38 +1989,27 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31216 strings out of 473578
- 598708 string characters out of 5732243
- 1954960 words of memory out of 5000000
- 53325 multiletter control sequences out of 15000+600000
+ 31269 strings out of 473578
+ 599774 string characters out of 5732243
+ 1960960 words of memory out of 5000000
+ 53344 multiletter control sequences out of 15000+600000
  608253 words of font info for 145 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,20n,107p,11029b,1847s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,20n,107p,11029b,2475s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (90 pages, 16328666 bytes).
+Output written on main.pdf (96 pages, 16345671 bytes).
 PDF statistics:
- 1001 PDF objects out of 1200 (max. 8388607)
- 790 compressed objects within 8 object streams
- 317 named destinations out of 1000 (max. 500000)
+ 1295 PDF objects out of 1440 (max. 8388607)
+ 1074 compressed objects within 11 object streams
+ 321 named destinations out of 1000 (max. 500000)
  510 words of extra memory for PDF output out of 10000 (max. 10000000)
 
