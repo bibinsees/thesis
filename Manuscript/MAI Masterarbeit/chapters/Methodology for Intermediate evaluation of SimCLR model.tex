@@ -159,27 +159,27 @@ Twenty-two images that closely resemble single-dose images from drug screening w
     \label{tab:performance_metrics}
 \end{table}
 
-From the inference experiment table \ref{tab:performance_metrics}, it can be seen that, except for 'strong' and 'sweet no contrast', all other augmentations were able to achieve 100 percent accuracy in classifying the inference images as belonging to the single-dose image class. Using the original image features, the accuracy was 68.18 percent, while SimCLR features before the projection head achieved at least 90 percent accuracy.
+From the inference experiment table \ref{tab:performance_metrics}, it can be seen that, except for 'strong' and 'sweet no contrast', all other augmentations were able to achieve 100 percent accuracy in classifying the inference images as belonging to the single-dose image class. Using the original image features, the accuracy was 68.18 percent, while SimCLR features before the projection head achieved at least 90 percent accuracy. Note that this inference is from the first experiment of classification where cross validation training didn't used.
 \section{K-means clustering}
 
 The idea is to determine whether the learned representation from SimCLR outperforms the original images in clustering the images in an unsupervised manner. To achieve this, we use simple K-means clustering as explained in \cite{bishop:2006:PRML}. We use both euclidean distance and cosine distance to find the nearest data point to the cluster centroid as two different approach. When performing K-means with cosine distance, it compares only the direction of the vector. Therefore, we also perform standard K-means with Euclidean distance to evaluate the magnitude similarity. 
 
 \subsection{Evaluation}
+Since there is a class imbalance in the control, single dose and explode classes. Its also useful to cluster balanced subset. Additionally, there are some images in control, where debris is formulated, it can be attributed due to the environmental factors like cell medium. Which is noticed to be significantly less than the amount of debris formed around the treated spheroids as we seen in explode images. Assuming that these images can be miscluster to explode images or viseversa its useful to cluster  dataset where there is only control images without these debris.
+For clustering, we use below dataset category.
+Imbalance full dataset: contains all control: 472, all single dose: 103, all explode: 40 images.
 
-Full dataset (unbalanced): contains all control(untreated): 472, all single dose: 103, all exploded: 40 images, all drug screen visualy similar/closer to single dose.
-
-40 subset (Balanced to the minimum nof set in the group which is exploded. ie there is only total 40 of exploded): contains random but make sure it have exploded like 
+40 subset (Balanced to the minimum no of set in the group which is explode. ie there is only total 40 of explode): contains random but make sure it have exploded like 
 controls total 40, and all exploded which is basically 40, 10 ds close to sd, 30 single dose.
 
-Curated Full dataset (unbalanced): contains all control except controls have debris: 280, all single dose: 103, all exploded: 40 images, all drug screen visualy 
-similar/closer to single dose: 22.
+Curated Full dataset (unbalanced): contains all control except controls have debris: 280, all single dose: 103, all exploded: 40 images
 
 Curated 40 subset  (Balanced to the minimum nof set in the group which is exploded. ie there is only total 40 of exploded but excluded explod look alike from control):
 contains random but make sure it doesn't have exploded like controls total 40, and all exploded which is basically 40, 10 ds close to sd, 30 single dose.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.37]{figures/controlex.png} 
+    \includegraphics[scale=0.25]{figures/controlex.png} 
     \caption{orig}
     \label{fig:controlex.png}
 \end{figure}
