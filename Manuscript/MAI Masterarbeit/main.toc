@@ -1,0 +1,39 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{List of Figures}{xi}{chapter*.6}%
+\contentsline {chapter}{List of Tables}{xii}{chapter*.7}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Laboratory Setup}{3}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Motivation}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Research Objective and Questions}{6}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Literature Review}{8}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Data Description}{10}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Data set}{10}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Challenges}{15}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Structure of the Thesis}{16}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Methodology for SimCLR}{17}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Data preprocessing}{18}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Data augmentation}{23}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Train SimCLR as SSL model}{31}{section.7.3}%
+\contentsline {subsubsection}{\nonumberline Model}{32}{subsubsection*.34}%
+\contentsline {subsubsection}{\nonumberline Training}{32}{subsubsection*.36}%
+\contentsline {section}{\numberline {7.4}Evaluation of SimCLR training}{34}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Methodology for Intermediate evaluation of SimCLR model}{39}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Classification using Logistic Regression on the SimCLR features}{40}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Comparison of Classification Accuracy and Epochs for Different Data Augmentations}{42}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Inference}{44}{subsection.8.1.2}%
+\contentsline {section}{\numberline {8.2}kmeans clustering}{45}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Evaluation}{46}{subsection.8.2.1}%
+\contentsline {chapter}{\numberline {9}Methodology for Ranking}{51}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Day 7 to day 10 predcition using CAE}{54}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Ranking strategy 2: Softmax approach}{65}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Ranking strategy 3: K Means approach}{67}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Ranking strategy 4: Dimensionality reduction technics}{70}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Conclusion}{71}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Final Evaluation}{72}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Things that doesn't work}{74}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Future research direction}{74}{section.10.3}%
+\contentsline {chapter}{\nonumberline Appendix}{75}{chapter*.85}%
+\contentsline {chapter}{Literature}{82}{section*.99}%
+\contentsline {chapter}{\nonumberline Declaration on oath}{84}{chapter*.101}%
+\contentsline {chapter}{\nonumberline Consent to plagiarism check}{84}{chapter*.102}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

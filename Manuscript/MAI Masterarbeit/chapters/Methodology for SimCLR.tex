@@ -120,17 +120,13 @@ Since there is a significant intensity change in brightness and contrast for 'st
   
   \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figures/16bit_three_1.png} 
-    \caption{16-bit three-channel image in one of the brightness and contrast changes according to 'strong' augmentation}
+    \includegraphics[scale=0.4]{figures/16bit_three_1.png} 
+    \caption{16-bit three-channel image in one of the brightness and contrast changes according to 'strong' augmentation}pipeline parameters parameters
     \label{fig:16bit_three_v1}
   \end{figure}
    
 
-As we seen in the figures  \ref{fig:16bit_three_v1}, I found that those 'strong' combination of  brightness and contrast augmentations transformed to distribution out of the original distribution. Hence its a good idea to experiment with less intensity change instead of using SimCLR best performed data augmentation parameters. Also original simclr random crop resizing to 96*96 is first done by random croping of random size (uniform from 0.08 to 1 in area). that means even really small crops without a cancer cell in it is train to have high cosine simililartiy to these same image smaller crop patch of dark cancer cell from center due to the design
- of  loss function in SimCLR. Which doesn't make sense especially when we have commom as background inner well for every of our images (or natural images atleast cars are only seen in roads, so 
- relating cars or bikes to road make sense). Hence the next data augmentation sequence designed to have random crop with scale 0.4 to 1 ( so that 
- assuming crop patches will have atleast small portion of cancer cell) and brightness and contrast variations reduced to lower=1-0.2, upper=1+0.2 and lower=1-0.35,
-  upper=1+0.35 consequently as showed in figures  \ref{fig:bright} and  \ref{fig:contra}. I named this augmentation as 'sweet'. which illustrated in \ref{fig:strong_aug} second row.
+  As seen in Figure \ref{fig:16bit_three_v1}, I found that the 'strong' combination of brightness and contrast augmentations resulted in a distribution that deviates from the original distribution. Therefore, it is a good idea to experiment with less intense changes, instead of using the best-performing data augmentation parameters from the SimCLR paper. Additionally, in the SimCLR paper, random crop resizing is first done by randomly cropping a uniform size ranging from 0.08 to 1 of the area of the original image. This means that even very small crops without a tumor tissue model in them are trained to have high cosine similarity to a corresponding smaller crop patch of the tumor tissue model positioned in the center of the image, due to the design of the loss function in SimCLR. This doesn't make sense in terms of representation learning, as we have a common background (the inner wellplate) in all of our images, and attaching the background to the tumor tissue model doesn't provide any unique information. (In natural images, at least cars are typically seen on roads, so relating cars or bikes to roads makes sense, and ships float in water, so attaching the background to an object in natural images is meaningful.) Hence, the next data augmentation sequence was designed to have a random crop with a scale of 0.4 to 1 of original image (so that crop patches will always contain at least a small portion of the tumor tissue model), and brightness and contrast variations reduced to lower=1-0.2, upper=1+0.2 and lower=1-0.35,upper=1+0.35 consequently as showed in figures  \ref{fig:bright} and  \ref{fig:contra} to maintain the original distribution after augmentations. I named this augmentation as 'sweet'. which illustrated in \ref{fig:strong_aug} second row.
 
   \begin{figure}[H]
     \centering
