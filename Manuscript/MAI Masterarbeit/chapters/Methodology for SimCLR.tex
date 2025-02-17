@@ -126,36 +126,27 @@ Since there is a significant intensity change in brightness and contrast for 'st
   \end{figure}
    
 
-  As seen in Figure \ref{fig:16bit_three_v1}, I found that the 'strong' combination of brightness and contrast augmentations resulted in a distribution that deviates from the original distribution. Therefore, it is a good idea to experiment with less intense changes, instead of using the best-performing data augmentation parameters from the SimCLR paper. Additionally, in the SimCLR paper, random crop resizing is first done by randomly cropping a uniform size ranging from 0.08 to 1 of the area of the original image. This means that even very small crops without a tumor tissue model in them are trained to have high cosine similarity to a corresponding smaller crop patch of the tumor tissue model positioned in the center of the image, due to the design of the loss function in SimCLR. This doesn't make sense in terms of representation learning, as we have a common background (the inner wellplate) in all of our images, and attaching the background to the tumor tissue model doesn't provide any unique information. (In natural images, at least cars are typically seen on roads, so relating cars or bikes to roads makes sense, and ships float in water, so attaching the background to an object in natural images is meaningful.) Hence, the next data augmentation sequence was designed to have a random crop with a scale of 0.4 to 1 of original image (so that crop patches will always contain at least a small portion of the tumor tissue model), and brightness and contrast variations reduced to lower=1-0.2, upper=1+0.2 and lower=1-0.35,upper=1+0.35 consequently as showed in figures  \ref{fig:bright} and  \ref{fig:contra} to maintain the original distribution after augmentations. I named this augmentation as 'sweet'. which illustrated in \ref{fig:strong_aug} second row.
+  As seen in Figure \ref{fig:16bit_three_v1}, I found that the 'strong' combination of brightness and contrast augmentations resulted in a distribution that deviates from the original distribution. Therefore, it is a good idea to experiment with less intense changes, instead of using the best-performing data augmentation parameters from the SimCLR paper. Additionally, in the SimCLR paper, random crop resizing is first done by randomly cropping a uniform size ranging from 0.08 to 1 of the area of the original image. This means that even very small crops without a tumor tissue model in them are trained to have high cosine similarity to a corresponding smaller crop patch of the tumor tissue model positioned in the center of the image, due to the design of the loss function in SimCLR. This may doesn't make sense in terms of representation learning, as we have a common background (the inner wellplate) in all of our images, and attaching the background to the tumor tissue model doesn't provide any unique information. (In natural images, at least cars are typically seen on roads, so relating cars or bikes to roads makes sense, and ships float in water, so attaching the background to an object in natural images is meaningful.) Hence, the next data augmentation sequence was designed to have a random crop with a scale of 0.4 to 1 of original image (so that crop patches will always contain at least a small portion of the tumor tissue model), and brightness and contrast variations reduced to lower=1-0.2, upper=1+0.2 and lower=1-0.35,upper=1+0.35 consequently as showed in figures  \ref{fig:bright} and  \ref{fig:contra} to maintain the original distribution after augmentations. I named this augmentation as 'sweet'. which illustrated in \ref{fig:strong_aug} second row.
 
   \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{figures/bright.png} 
-    \caption{contrast increased or decreased}
+    \includegraphics[scale=0.23]{figures/bright.png} 
+    \caption{Contrast increased or decreased was applied to the original image}
     \label{fig:bright}
   \end{figure}
 
   \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figures/contra.png} 
-    \caption{Brightness increased or decreased}
+    \includegraphics[scale=0.3]{figures/contra.png} 
+    \caption{Brightness increased or decreased was applied to the original image}
     \label{fig:contra}
   \end{figure}
 
- In some drug screening group of images, when we look at the day 10 image, they are exploded ( assuming due to the overdose). exploded in the sense, round 
- small cancer cell surronding lot of debris around it as we seen in figure \ref{fig:originals}. so if we apply the above random crop and resize aug: smaller crop from the round cancer cell part (without 
- debris) have high cosine similarity with some other small crop from the round cancer cell part (without debris) of the same image like in figure \ref{fig:expo}. which doesn't connect anything
-  about the debris surrounded by for exploed images. In general model will also learn to map high cosine similarity between dark area to gray area which can happen
-to generally all images except single dose images, meaning it doesn't learn any specific feature or certain debris patterns of explod images.
-Maybe its better to not to crop and just resize to 96*96 all the time so that model learn to map high cosine similarity by seeing the whole picture (Big picture).
-I understand this is not good argument because then dog and cat have same color and maybe similar shape but still learns to differentiate using strong crop in simclr.
-But maybe for time predictoin ranking model it helps. because model have to predict the change from day 7 to day 10. and most of the time the size/shape changes. 
-especially to the category which are exploded, they produce debris. so maybe data augmentation seeing the whole picture is good to learn the model better for time 
-change.  With this assumption in mind, I decided to do data aug pipeline with just resizing.
+  If we apply the random crop and resize augmentation on 'explode' images, it's possible that smaller crop patches from the image containing spheroid tumor tissue models without debris will have high cosine similarity with other small crops from the image, which consist only of background without debris, as shown in Figure \ref{fig:expo}. This does not efficiently learn the total spread of debris around the tumor tissue model. It may be better to avoid cropping and resizing to 96x96; instead, we should always resize to 96x96 so that the model learns to map high cosine similarity by observing the entire image, including all of the debris, assuming it learns something about variations in the amount of debris. This could be beneficial for the time prediction ranking model, as it needs to predict changes from day 7 to day 10 based on the shape and structure of changes induced by drug application. With this assumption in mind, I decided to implement the data augmentation pipeline using only resizing. All other data augmentations remain the same as 'sweet'. 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{figures/expo.png} 
+  \includegraphics[scale=0.3]{figures/expos.png} 
   \caption{5 Data augmentations we explored}
   \label{fig:expo}
 \end{figure}
@@ -163,37 +154,21 @@ change.  With this assumption in mind, I decided to do data aug pipeline with ju
 I named this augmentation as 'Resize', which illustrated in \ref{fig:strong_aug} third row.
 
 
-All of the above augmentations includes contrast change. With this augmentation it is possible that model learned to have both dark cancer cell and gray cancer
-cell of same image have same feature map ( because 2 data aug from original image can be one with increased contrast which makes darker and one with less contrast 
-which makes it gray as in the fugure \ref{fig:ohne} ) which is infact not good for our downstream task. because one of our goal is to differentiate/have different feature representation
-for  untreated images (gray color) and single dose (darker color). 
+All of the above augmentations include contrast changes. With this augmentation, it is possible that the SimCLR model has learned to represent both the darker sections of image and the gray sections of the same image to have similar feature representations (because two data augmentations from the original image may consist of one with increased contrast that results in darker tissue and one with decreased contrast that results in gray tissue, as seen in Figure \ref{fig:ohne}). This may not actually be beneficial for our downstream task, since one of our goals is to differentiate between untreated images (gray color) and single-dose images (darker color). Moreover, it will reduce the performance intermediate evaluations and ranking strategies if we  have similar latent representations for both single-dose and control images.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.4]{figures/ohne.png} 
-  \caption{contrast increased or decreased}
+  \includegraphics[scale=0.]{figures/ohne.png} 
+  \caption{Contrast was increased or decreased on the original control Day 10 image. The contrast-decreased image resembles the control, while the contrast-increased image resembles the treated image}
   \label{fig:ohne}
 \end{figure}
-
- 
-Hence I removed contrast from 'Resize' and 'Sweet' and named them as 'Resize ohne contrast' and 'Sweet ohne contrast' correspondingly. 
+Hence I removed contrast from 'Resize' and 'Sweet' and named them as 'Resize no contrast' and 'Sweet no contrast' correspondingly. 
 which illustrated in \ref{fig:strong_aug} third row and fourth row correspondingly. 
-
-Eventhough we know that these kind of strong augmentations is sensitive to our dataset, I was speculate that strong augmentation may
- have better learned latent space representations because I feel like the purpose of ths strong data augmentation explained by the authorsof simclr is not to
- include/increase the possible distribution that can happen in real life scenarios, but it is to learn the features that are invariant to these augmentations.
- \textcolor{red}{ie if contrast change is there it learns to have high cosine sim for same shape. if croping happens it learns to have high cosine sim for same pixel 
- color. if shape is different but color is same it learns to have high cosine sim. if shape is same but color is different it learns to have high cosine sim. if  color
-  is different it learns to have high cosine sim for shape something like this}
-
-Hence Its worth to experiment with this strong augmentation for downstream tasks.
-
-
-5 Different data augmentation pipe lines explained above illlustrated as nutshell in \ref{fig:strong_aug}
+Although we know that 'strong' augmentation is sensitive to our dataset, I speculate it may lead to better-learned latent space representations by capturing features that are invariant to both forms of augmentation of the same original image. For example, when contrast changes in both augmentations derived from the same original image, the model learns to achieve high cosine similarity from the same shape; if cropping occurs, it learns to maintain high cosine similarity for the same pixel-wise values. Hence its worth to experiment with this strong augmentation for downstream tasks.5 Different data augmentation pipe lines explained above illlustrated as nutshell in the table \ref{fig:strong_aug}
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{figures/strong_aug.png} 
-  \caption{5 Data augmentations we explored}
+  \includegraphics[scale=0.5]{figures/diff_aug.png} 
+  \caption{5 different data augmentation pipelines we explored}
   \label{fig:strong_aug}
 \end{figure}
 
