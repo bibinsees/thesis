@@ -289,27 +289,27 @@ Below figure \ref{fig:cluster} demonstrates the above findins in a nutshell. Fro
     \label{fig:cluster}
 \end{figure}
 
-\textbf{Inference:}
-Since before projection head SimCLR features have far better performance, I do  inference on them. I choose 22 images that have close resemblance in my eyes to single dose images from drug screen for inference referred as 'inference image' just like we did in classification inference \ref{subsec:inference}. ( I repeat these are not biology expert labeled drug screen image. so any inference result is irrelevant in the sense to actual ground truth ). We used all inference images for full dataset along with the 3 classes. But for balanced datasets except control and explode
- we changed the  dataset setup as follows: for keeping the dataset balanced: 20 single dose and 20 inference images. so that it will still be 40 as other classes.
+\textbf{Inference for cosine distance based K-means:}
+Since before projection head SimCLR features have far better performance, I do  inference on them. I choose 22 images that have close resemblance in my eyes to single dose images from drug screen for inference referred as 'inference image' just like we did in classification inference \ref{subsec:inference}. ( I repeat these are not biology expert labeled drug screen image. so any inference result is irrelevant in the sense to actual ground truth ). We used all inference images for full dataset along with the 3 classes refer as Full dataset (imbalanced). But for balanced datasets except control and explode
+ we changed the  dataset setup as follows: for keeping the dataset balanced: 20 single dose and 20 inference images. so that it will still be 40 as other classes. everything else stays the same as previous experiment.
 
-So during the 3 class ( for the dataset set up explained in table \ref{tab:dataset_summary} ) clustering 'sweet' (99.18 percent accuracy) performed better than sweet no contrast (98.21 percent accuracy) for all full dataset imbalanced. and in others 'sweet' achieved 100 percentage accuracy which makes clear that for 3 class problem sweet have higher performance comparing to other data augmentations. but during inference sweet accuracy reduced to 95.76  with -3.42 change in reduction while sweet no contrast reduced to  97.33 with -0.88 reduction change. and sweet no contrast kept the highest accuracy during inference. figure 8.8 shows that with sweet no contrast data aug it classified all 103 sd images correctly and during inference it clustered all sd close image images in the cluster of sd images.
+So during the 3 class ( for the uncurated imbalance full dataset set up explained in table \ref{tab:dataset_summary} ) clustering 'sweet' (99.18 percent accuracy) performed better than sweet no contrast (98.21 percent accuracy) for all full dataset imbalanced. and in other dataset types, 'sweet' achieved 100 percentage accuracy which makes clear that for 3 class problem sweet have higher performance comparing to other data augmentations. but during inference sweet accuracy reduced to 95.76  with -3.42 change in reduction while sweet no contrast reduced to  97.33 with -0.88 reduction change. and sweet no contrast kept the highest accuracy during inference. figure \ref{fig:cconfusion} shows that with 'sweet no contrast' data augmentation (in left image) it classified all 103 single dose images correctly and during inference figure \ref{fig:cconfusion} (right image) it clustered all inference images in the cluster of single dose images.
 
- \begin{table}[H]
+\begin{table}[H]
     \centering
-    \caption{Inference evaluation results on COSINE distance based K-means}
+    \caption{Inference evaluation results on cosine distance based K-means}
     \label{tab:professional_table}
     \resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}llcccc@{}}
+    \begin{tabular}{@{}llccc@{}}
         \toprule
-        \textbf{Type} & \textbf{Augmentation} & \textbf{Full Dataset (Unbalanced)} & \textbf{Uncured Balanced} & \textbf{Curated Full Dataset} & \textbf{Curated Balanced} \\ 
+        \textbf{Type} & \textbf{Augmentation} & \textbf{Full Dataset (Imbalanced)} & \textbf{Uncured subset balanced} & \textbf{Curated subset balanced} \\ 
         \midrule
         \multirow{5}{*}{\textbf{Before Projection Head}} 
-        & Strong             & 85.09 (+1.19) & 100 (0) & 98.43 (-1.57) & 100 (0) \\ 
-        & Sweet              & 95.76 (-3.42) & 100 (0) & 100 (0) & 100 (0) \\ 
-        & Resize             & 67.03 (+1.33) & 97.50 (0) & 98.42 (+0.55) & 100 (0) \\ 
-        & Resize No Contrast & 71.89 (+1.97) & 90.83 (+0.83) & 87.42 (+0.66) & 100 (0)\\ 
-        & \textbf{Sweet No Contrast}  & \textbf{97.33 (-0.88)} & \textbf{98.33 (-0.84)} & \textbf{99.55 (+0.03)} & \textbf{99.17 (0)} \\ 
+        & Strong             & 85.09 (+1.19) & 100 (0) & 100 (0) \\ 
+        & Sweet              & 95.76 (-3.42) & 100 (0) & 100 (0) \\ 
+        & Resize             & 67.03 (+1.33) & 97.50 (0) & 100 (0) \\ 
+        & Resize No Contrast & 71.89 (+1.97) & 90.83 (+0.83) & 100 (0)\\ 
+        & \textbf{Sweet No Contrast}  & \textbf{97.33 (-0.88)} & \textbf{98.33 (-0.84)} & \textbf{99.17 (0)} \\ 
         \bottomrule
     \end{tabular}% 
     }
@@ -318,46 +318,46 @@ So during the 3 class ( for the dataset set up explained in table \ref{tab:datas
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.37]{figures/cconfusion.png} 
-    \caption{orig}
+    \caption{Confusion matrix for K-means clustering based on cosine distance for both 3 class clustering and inference for uncurated imbalance full data set}
     \label{fig:cconfusion}
 \end{figure}
 
 \begin{table}[H]
     \centering
-    \caption{Inference evaluation results on Euclidean distance based on K-means}
+    \caption{Inference evaluation results on euclidean distance based on K-means}
     \label{tab:professional_table}
     \resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}llcccc@{}}
+    \begin{tabular}{@{}llccc@{}}
         \toprule
-        \textbf{Type} & \textbf{Augmentation} & \textbf{Full Dataset (Unbalanced)} & \textbf{Uncured Balanced} & \textbf{Curated Full Dataset} & \textbf{Curated Balanced} \\ 
+        \textbf{Type} & \textbf{Augmentation} & \textbf{Full Dataset (Imbalanced)} & \textbf{Uncured subset balanced} & \textbf{Curated subset balanced} \\ 
         \midrule
         \multirow{5}{*}{\textbf{Before Projection Head}} 
-        & Strong             & 84.61 (-3.84) & 100 (0) & 99.10 (-0.9)& 100 (0) \\ 
-        & Sweet              & 98.27 (+0.06) & 91.67(0) & 99.32(+0.03) & 95.83 (0) \\ 
-        & Resize             & 72.06 (+1.66) & 79.17 (+0.84) & 68.54 (+1.88) & 86.67(-1.66) \\ 
-        & Resize No Contrast & 71.11 (+2.49) & 100 (+10) & 87.42 (1.14)& 100 (0)\\ 
-        & \textbf{Sweet No Contrast}  & \textbf{99.06 (+.04)} & \textbf{97.50 (0)} & \textbf{99.78 (+.02)} & \textbf{99.17 (0)} \\ 
+        & Strong             & 84.61 (-3.84) & 100 (0) & 100 (0) \\ 
+        & Sweet              & 98.27 (+0.06) & 91.67(0) & 95.83 (0) \\ 
+        & Resize             & 72.06 (+1.66) & 79.17 (+0.84) & 86.67(-1.66) \\ 
+        & Resize No Contrast & 71.11 (+2.49) & 100 (+10) & 100 (0)\\ 
+        & \textbf{Sweet No Contrast}  & \textbf{99.06 (+.04)} & \textbf{97.50 (0)} & \textbf{99.17 (0)} \\ 
         \midrule
-        \textbf{After Projection Head} & Strong & 75.51 (+0.06) & 92.5 (-7.5)& 72.58 (-26.95) & 95 (-5 )\\  
+        \textbf{After Projection Head} & Strong & 75.51 (+0.06) & 92.5 (-7.5)& 95 (-5 )\\  
         \bottomrule
     \end{tabular}% 
     }
 \end{table}
 
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.37]{figures/econfuse.png} 
-    \caption{orig}
+    \caption{Confusion matrix for K-means clustering based on euclidean distance for both 3 class clustering and inference}
     \label{fig:econfuse.png}
 \end{figure}
 
+\textbf{Inference for euclidean distance based K-means:}
+For euclidean distance, during 3 class ( for the uncurated imbalance full dataset set up explained in table \ref{tab:dataset_summary} ) clustering 'sweet no contrast' have the highest performance with 99.02 accuracy without any misclassification for single dose images as we seen 
+in figure \ref{fig:econfuse} (left image). and during inference it clustered all inference images and single dose images together in the cluster of single dose images correctly as we seen in figure \ref{fig:econfuse} (right image).
 
-For euclidean distance, during 3 class 'sweet no contrast' have he highest performance with 99.02 accuracy without any misclassification for sd images as we seen 
-in figure 8.9. and during inference it clustered all sd close image and sd images together in the cluster of sd images corrrectly as we seen in figure 8.9.
 
-
-From this we can conclude that 'sweet no contrast' data aug before projection head is the best data aug for clustering task for both
- cosine distance and euclidean distance as distance metric. which basically means that sweet cropping of 0.35 to 1 (less intense cropping is essential for clustering performance.)
+From this we can conclude that 'sweet no contrast' data augmentation before projection head is the best data augmentation for clustering task for both cosine distance and euclidean distance as distance metric. which basically means that sweet cropping of 0.35 to 1 area of original image (less intense cropping is essential for clustering performance.)
 
 
 

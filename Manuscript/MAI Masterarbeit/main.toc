@@ -1,10 +1,10 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{List of Figures}{xi}{chapter*.6}%
-\contentsline {chapter}{List of Tables}{xiii}{chapter*.7}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Laboratory Setup}{3}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Motivation}{5}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Research Objective and Questions}{6}{chapter.3}%
+\contentsline {chapter}{List of Tables}{1}{chapter*.7}%
+\contentsline {chapter}{\numberline {2}Motivation}{6}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Research Objective and Questions}{7}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Literature Review}{8}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Data Description}{10}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Data set}{10}{section.5.1}%

@@ -3,16 +3,16 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces First and second images are the roboplatform that cultivates the 3d tumor tissue models. Third imags shows the well plate used to contain these tissue models}}{2}{figure.caption.8}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Different types of images: Single dose, Control, control day 10 and drug screening as mentioned in section ~\ref {sec:lab-setup}.}}{4}{figure.caption.9}%
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Left image shows well plate setup for the single-dose experiment. Right image shows well plate setup for the drug screening experiment}}{5}{figure.caption.10}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Illustrates the flow chart of time evolutoion of 3D tumor tissues.}}{5}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Illustrates the flow chart of time evolutoion of 3D tumor tissues.}}{6}{figure.caption.11}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Examples of bright-field microscopy images with valid and invalid (unexpectedly elongated) morphology of tumor tissue models.}}{11}{figure.caption.14}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Different layers of the same image reveal that, from A to C, the region above the white dotted line becomes sharper, while the region below becomes blurry }}{11}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Different layers of the same image reveal that, from A to C, the region above the white dotted line becomes sharper, while the region below becomes blurry }}{12}{figure.caption.15}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces A small section of the image was zoomed in and separated to show the misalignment of the three stacked layers.}}{12}{figure.caption.16}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Noise}}{12}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Different morphological changes were observed even when the same specific combination of drugs was applied in two different experiments. The same combination of 40 µM JQ1 and 40 µM GANT61 was applied in two different experiments, named DS61 and DS41}}{13}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Noise}}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Different morphological changes were observed even when the same specific combination of drugs was applied in two different experiments. The same combination of 40 µM JQ1 and 40 µM GANT61 was applied in two different experiments, named DS61 and DS41}}{14}{figure.caption.18}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces 8-bit vs 16 bit data lose comparison. Although the images visually appear similar, 16-bit data has pixel values ranging from 0 to 65535, while 8-bit data has pixel values ranging from 0 to 255}}{15}{figure.caption.20}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Overall framework of the thesis.}}{17}{figure.caption.21}%
@@ -39,10 +39,10 @@
 \contentsline {figure}{\numberline {8.2}{\ignorespaces Train accuracy vs Train epochs of original image vectors and Simclr features }}{43}{figure.caption.49}%
 \contentsline {figure}{\numberline {8.3}{\ignorespaces Example of control images which contains debris which may miscluster with explode or viseversa}}{45}{figure.caption.51}%
 \contentsline {figure}{\numberline {8.4}{\ignorespaces Comparison of clustering performance between SimCLR features and original image features}}{48}{figure.caption.56}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces orig}}{49}{figure.caption.58}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces orig}}{49}{figure.caption.60}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Confusion matrix for K-means clustering based on cosine distance for both 3 class clustering and inference for uncurated imbalance full data set}}{49}{figure.caption.58}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Confusion matrix for K-means clustering based on euclidean distance for both 3 class clustering and inference}}{49}{figure.caption.60}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{56}{figure.caption.63}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{57}{figure.caption.63}%
 \contentsline {figure}{\numberline {9.2}{\ignorespaces train vs test loss}}{57}{figure.caption.64}%
 \contentsline {figure}{\numberline {9.3}{\ignorespaces last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}}{57}{figure.caption.65}%
 \contentsline {figure}{\numberline {9.4}{\ignorespaces Wrong heading crct image upload Ohne contrast Resize before projection head data aug: Explod dataset plot in the figure shows overfitting }}{59}{figure.caption.67}%

@@ -469,15 +469,15 @@ INPUT ./figures/timed.png
 INPUT ./figures/timed.png
 INPUT ./figures/timed.png
 INPUT ./figures/timed.png
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT ./chapters/Motivation.tex
 INPUT ./chapters/Motivation.tex
 OUTPUT chapters/Motivation.aux
 INPUT ./chapters/Motivation.tex
 INPUT ./chapters/Motivation.tex
 INPUT chapters/Motivation.tex
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT ./chapters/Research questions.tex
 INPUT ./chapters/Research questions.tex
 OUTPUT chapters/Research questions.aux
