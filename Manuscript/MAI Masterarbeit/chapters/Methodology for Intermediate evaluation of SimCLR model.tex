@@ -292,7 +292,7 @@ Below figure \ref{fig:cluster} demonstrates the above findins in a nutshell. Fro
 Since before projection head SimCLR features have far better performance, I do  inference on them. I choose 22 images that have close resemblance in my eyes to single dose images from drug screen for inference referred as 'inference image' just like we did in classification inference \ref{subsec:inference}. ( I repeat these are not biology expert labeled drug screen image. so any inference result is irrelevant in the sense to actual ground truth ). We used all inference images for full dataset along with the 3 classes refer as Full dataset (imbalanced). But for balanced datasets except control and explode
  we changed the  dataset setup as follows: for keeping the dataset balanced: 20 single dose and 20 inference images. so that it will still be 40 as other classes. everything else stays the same as previous experiment.
 
-So during the 3 class ( for the uncurated imbalance full dataset set up explained in table \ref{tab:dataset_summary} ) clustering 'sweet' (99.18 percent accuracy) performed better than sweet no contrast (98.21 percent accuracy) for all full dataset imbalanced. and in other dataset types, 'sweet' achieved 100 percentage accuracy which makes clear that for 3 class problem sweet have higher performance comparing to other data augmentations. but during inference sweet accuracy reduced to 95.76  with -3.42 change in reduction while sweet no contrast reduced to  97.33 with -0.88 reduction change. and sweet no contrast kept the highest accuracy during inference. figure \ref{fig:cconfusion} shows that with 'sweet no contrast' data augmentation (in left image) it classified all 103 single dose images correctly and during inference figure \ref{fig:cconfusion} (right image) it clustered all inference images in the cluster of single dose images.
+So during the 3 class ( for the uncurated imbalance full dataset set up explained in table \ref{tab:dataset_summary} ) clustering 'sweet' (99.18 percent accuracy) performed better than sweet no contrast (98.21 percent accuracy) for all full dataset imbalanced. and in other dataset types, 'sweet' achieved 100 percentage accuracy which makes clear that for 3 class problem sweet have higher performance comparing to other data augmentations. but during inference sweet accuracy reduced to 95.76  with -3.42 change in reduction while sweet no contrast reduced to  97.33 with -0.88 reduction change. and sweet no contrast kept the highest accuracy during inference. figure \ref{fig:cconfusion} shows that with 'sweet no contrast' data augmentation (in left side confusion matrix) it classified all 103 single dose images correctly and during inference figure \ref{fig:cconfusion} (right side confusion matrix) it clustered all inference images in the cluster of single dose images.
 
 \begin{table}[H]
     \centering
@@ -317,7 +317,7 @@ So during the 3 class ( for the uncurated imbalance full dataset set up explaine
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.37]{figures/cconfusion.png} 
-    \caption{Confusion matrix for K-means clustering based on cosine distance for both 3 class clustering and inference for uncurated imbalance full data set}
+    \caption{Confusion matrix for K-means clustering based on cosine distance for both 3 class clustering (left side) and inference (right side) for uncurated imbalance full data set. }
     \label{fig:cconfusion}
 \end{figure}
 
@@ -325,7 +325,7 @@ So during the 3 class ( for the uncurated imbalance full dataset set up explaine
 
 \section{Inference for euclidean distance based K-means:}
 For euclidean distance, during 3 class ( for the uncurated imbalance full dataset set up explained in table \ref{tab:dataset_summary} ) clustering 'sweet no contrast' have the highest performance with 99.02 accuracy without any misclassification for single dose images as we seen 
-in figure \ref{fig:econfuse} (left image). and during inference it clustered all inference images and single dose images together in the cluster of single dose images correctly as we seen in figure \ref{fig:econfuse} (right image).
+in figure \ref{fig:econfuse} (left side confusion matrix). and during inference it clustered all inference images and single dose images together in the cluster of single dose images correctly as we seen in figure \ref{fig:econfuse} (right side confusion matrix).
 
 
 From this we can conclude that 'sweet no contrast' data augmentation before projection head is the best data augmentation for clustering task for both cosine distance and euclidean distance as distance metric. which basically means that sweet cropping of 0.35 to 1 area of original image (less intense cropping is essential for clustering performance.)
@@ -356,7 +356,7 @@ From this we can conclude that 'sweet no contrast' data augmentation before proj
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.37]{figures/econfuse.png} 
-    \caption{Confusion matrix for K-means clustering based on euclidean distance for both 3 class clustering and inference}
-    \label{fig:econfuse.png}
+    \caption{Confusion matrix for K-means clustering based on euclidean distance for both 3 class clustering (left side) and inference (right side)}
+    \label{fig:econfuse}
 \end{figure}
 

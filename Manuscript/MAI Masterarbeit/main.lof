@@ -39,8 +39,8 @@
 \contentsline {figure}{\numberline {8.2}{\ignorespaces Train accuracy vs Train epochs of original image vectors and Simclr features }}{43}{figure.caption.49}%
 \contentsline {figure}{\numberline {8.3}{\ignorespaces Example of control images which contains debris which may miscluster with explode or viseversa}}{45}{figure.caption.51}%
 \contentsline {figure}{\numberline {8.4}{\ignorespaces Comparison of clustering performance between SimCLR features and original image features}}{48}{figure.caption.56}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Confusion matrix for K-means clustering based on cosine distance for both 3 class clustering and inference for uncurated imbalance full data set}}{49}{figure.caption.58}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Confusion matrix for K-means clustering based on euclidean distance for both 3 class clustering and inference}}{50}{figure.caption.60}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Confusion matrix for K-means clustering based on cosine distance for both 3 class clustering (left side) and inference (right side) for uncurated imbalance full data set. }}{49}{figure.caption.58}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Confusion matrix for K-means clustering based on euclidean distance for both 3 class clustering (left side) and inference (right side)}}{50}{figure.caption.60}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {9.1}{\ignorespaces train vs test loss}}{57}{figure.caption.63}%
 \contentsline {figure}{\numberline {9.2}{\ignorespaces train vs test loss}}{57}{figure.caption.64}%
