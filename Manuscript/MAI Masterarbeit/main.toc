@@ -23,6 +23,11 @@
 \contentsline {subsection}{\numberline {8.1.2}Inference}{44}{subsection.8.1.2}%
 \contentsline {section}{\numberline {8.2}K-means clustering}{44}{section.8.2}%
 \contentsline {subsection}{\numberline {8.2.1}Evaluation}{45}{subsection.8.2.1}%
+\contentsline {section}{\numberline {8.3}Evaluation of cosine distance based K-means:}{46}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Evaluation of euclidean distance based K-means:}{47}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Evaluation of original images:}{48}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Inference for cosine distance based K-means:}{48}{section.8.6}%
+\contentsline {section}{\numberline {8.7}Inference for euclidean distance based K-means:}{50}{section.8.7}%
 \contentsline {chapter}{\numberline {9}Methodology for Ranking}{50}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Day 7 to day 10 predcition using CAE}{53}{section.9.1}%
 \contentsline {section}{\numberline {9.2}Ranking strategy 2: Softmax approach}{64}{section.9.2}%
