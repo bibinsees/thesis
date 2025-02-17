@@ -1,16 +1,15 @@
 \chapter{Conclusion}
+In this chapter, we aim to determine which of the four methodologies is more reliable and consistent in terms of relative positioning. To do this, we will evaluate the best-performing strategy from each of the four methodologies that showed promising results in ranking accuracy, as explained in the Methodology for Ranking chapter (\ref{ch:Methodology for Ranking}).
 
-\section{Final Evaluation}
-Now out of the 4 methodologies which methodology is more reliable and consistant in terms of relative positioning? This is the question we try to answer below.
-We will evaluate the performance of the specific method out of each main 4 methodologies that performed well in ranking accuracy.
-I picked 22 sinle dose  similar images from drug screening images, lets call them inference images in this chapter (Note: This final Evaluation is not relaible in the sense that the picked images are not verified by any biology expert that those are the most visually similar images to single dose images from drug screening. so eventhough this final evaluation is not scientificly right, its better than nothing). Idea is that we will pick the best performed data augmentation type/category from each methodology and check whether these 22 images are still positioned in the range (min and max of single dose metric value) of the single dose image range. Limitation is that we are not sure whether the picked images are the most similar images to single dose images from drug screening interms of visual similartiy or drug efficay since I'm not expert in biology.
+The evaluation will involve checking whether the 22 inference images still fall within the range (minimum and maximum values) of the single dose metric, based on the best-performing data augmentation type/category from each methodology. The goal is to see if these inference images are still positioned within the range of the single dose images.
 
+It is important to note that this final evaluation is not entirely reliable. The inference images have not been verified by a biology expert to confirm that they are the most  similar images to the single dose images visually or by drug efficacy from the drug screening. Therefore, while this evaluation may not be scientifically precise, it provides a useful comparison, especially in the absence of expert validation.
 \begin{table}[H]
 	\centering
 	\small
 	\begin{tabular}{@{}lcc@{}}
 	\toprule
-	\textbf{Ranking Strategy}                                                                       & \textbf{Out of Single Dose Range} & \textbf{Ranking Accuracy} \\ \midrule
+	\textbf{Ranking Strategy}                                                                       & \textbf{Inference Images Outside Single Dose Range} & \textbf{Ranking Accuracy} \\ \midrule
 	Prediction model Euclidean distance Before                                                     & 0                   & 76.93                   \\  
 	tsne: before sweet                                                                              & 0                   & 100                     \\ 
 	tsne: resize before                                                                             & 0                   & 100                     \\ 
@@ -20,44 +19,25 @@ I picked 22 sinle dose  similar images from drug screening images, lets call the
 	\begin{tabular}[c]{@{}l@{}}K-means: After cosine strong\\ using single dose mean\end{tabular}   & 12                  & 93.17                   \\ 
 	\bottomrule
 	\end{tabular}
-	\caption{Performance metrics across different strategies.}
+	\caption{Inference ranking performance across best-performing data augmentation type/category from each methodology. Ranking accuracy refers to the inclusion of inference images in the ranking of images, along with control, single dose, and explod. "Inference Images Outside Single Dose Range" indicates the number of inference images positioned outside the minimum and maximum range of the single dose images.}
 	\label{tab:ranking_strategies}
 \end{table}
 
-From above table that some of the selected out of 22 are out of the single dose image ranking metric for Softmax and K means strategy. that makes these strategies least reliable comparing to other approaches. Infact K means approach the 12 images which are out of single dose image ranking metric range positioned amoung the control class that makes K means strategy most unreliable. Interestingly Predictoin model and tsne strategy have 0  number of inference images that are out of range of single dose. While predictoin model still struggles to have clear seperation between  3 classes (This is probably due to the lack of data for predicting day 7 to day 10. we had only 29, 40,130 pair of tansition coresspondingly to  single dose, explod,control ), tsne strategy maintained clear seperation between 3 classes achieving 100 ranking accuracy as we see in the figure below. \textcolor{red}{add figure} Limitation is that we are still not sure that whether these clear seperation between classes ensure there is perfect transition of druf efficacy within the class or inbetween classes.
+From the table \ref{tab:ranking_strategies}, we observe that some of the inference images are outside the single dose image ranking metric range for the Softmax and K-means strategies. This makes these strategies less reliable compared to the others. In fact, in the K-means approach, the 12 inference images that fall outside the single dose image range are positioned among the control class, making the K-means strategy the most unreliable. Interestingly, the Prediction model and t-SNE strategies have zero inference images that fall outside the single dose range. While the Prediction model still struggles to clearly separate the three classes (with accuracy of 76.93) (likely due to the limited data available for predicting transitions from day 7 to day 10, with only 29, 40, and 130 pairs for the single dose, explode, and control classes, respectively), the t-SNE strategy maintained a clear separation between the three classes, achieving 100 percent ranking accuracy. However, a limitation remains in t-SNE: we are still unsure whether this clear separation between the classes ensures perfect drug efficacy transition within and between the classes, as we expect.
 
-One finding taht we are sure about is that from every results including ranking strategy and intermediate evaluation methods, generally simclr before projection head outperforms the after projection head features and original image features except in K-means: cosine strong where after projection head performed better but we can disgard it since turn out to be unreliable strategy from the above table.
+One consistent finding across all results, including ranking strategy and intermediate evaluation methods, is that SimCLR features before the projection head generally outperform those after the projection head and the original image features, except in the K-means: cosine strong strategy, where the features after the projection head performed better. However, this strategy can be disregarded since it turned out to be unreliable.
 
-While using before projection head features, inbetween different data augmentation pipeline methods such as strong, sweet, resize, no contrast sweet, nocontrast resize. which one performs better? If we look at different ranking startegies and intermediate evaluation, each of them performed best in different ranking and intermediate evaluation strategies. point is, there is no consistancy in terms of one data augmentation pipileine showed best prformance overall. in another words they actually seem to perform randomly and which raises the question whether we can rely on them. This may be due to not enough data. If we have more data maybe the same methodolgy reveals which one better. At the moment they give some results but I'm not actually sure, whether its useful for the final objective or ranking. because eventhough simclr before projection head features with different  data aug pipelines gives clear seperation between classes with 100 percentage ranking accuracy using tsne, that doesn't mean there is ideal transition of druf efficacy within the class or inbetween classes we are looking for our objective. Hence I'm not convinced the final evaluation that we get in the above table for relative positioning of drug screen images to three classes make sense at the end. 
+While using before projection head features, between different data augmentation pipeline methods such as strong, sweet, resize, no contrast sweet, no contrast resize. which one performs better? If we look at different ranking strategies and intermediate evaluation, each of them performed best in different ranking and intermediate evaluation strategies. point is, there is no consistency in terms of one of the data augmentation pipelines showed best performant overall. In another words, they actually seem to perform randomly and which raises the question whether we can rely on them. This may be due to not enough data. If we have more data maybe the same methodology reveals which one better. At the moment they give some results but I'm not actually sure, whether its useful for the final objective or ranking. because even though simclr before projection head features with different  data aug pipelines gives clear separation between classes with 100 percentage ranking accuracy using t-SNE, that doesn't mean there is ideal transition of drug efficacy within the class or between classes we are looking for our objective. Hence I'm not convinced the final evaluation that we get in the above table for relative positioning of drug screen images to three classes make sense at the end. 
 
-One of the main point to take awy is that for intermediate evaluations clustering using simclr before head feature vectors perfromed very well and gave around 99 percentage accuracy. This is interesting result because using completely unsupervised learning, we could cluster the three classes of control (untreated) , single dose, explod images very well without using any manually handcrafted feature extraction like Size/Area, Circularity/Diameter/Perimeter, Pixel intensity or color change during the changes it induces in the bright-field microscopy images from day 7 to day 10, which is also a comparably equal result to supervised resnt \textcolor{red}{add resnet classification}.
+One key takeaway is that, for intermediate evaluations, clustering using SimCLR feature vectors before the projection head performed very well, achieving around 99 percent accuracy. This is an interesting result because, using completely unsupervised learning, we were able to cluster the three classes—control (untreated), single dose, and explode images—without relying on any manually handcrafted feature extraction methods, such as Size/Area, Circularity/Diameter/Perimeter, or Pixel intensity changes observed in the bright-field microscopy images from day 7 to day 10. In the classification task, using SimCLR before the projection head achieved around 99 percent accuracy, which is comparable to the performance of supervised ResNet18, which also achieved around 99 percent classification accuracy, as seen in the classification chapter.
 
-Perhaps the ranking is simply a badly formulated problem and instead of approaching this way, we should have been approach which group/cluster of specific drug screening concentration applied images are more closer to the clsuetr of single dose image cluster
-
-
-Despite your best efforts the methods do not seem to deliver useful results.
-
-
-
-\section{Things that doesn't work}
-manhatton distance 
-pca weighted 
-prediction with day 10 to 10 classical anamoly detection methodologies
-predict directly the mse change, predicting diectly cosine change
+Perhaps, the ranking approach is not the best formulation of the problem. Instead of pursuing this method, a better approach might be to focus on which group or cluster of specific drug screening concentrations is closer to the cluster of single dose images. Despite my best efforts, the current methods do not seem to yield useful results.
 
 \section{Future research direction}
 
-\begin{enumerate}
-    \item Hybrid: Include human-interpretable features in the unsupervised learning features combined effect.
-    \item Weakly supervised DINO transformer-based approach. Future work: Later, other models such as masked autoencoders and DINO will be explored, depending on the available time.
-	Why we would like to try other models? Because SimCLR demands larger batch size and more data for better performance which we don't have.
-    \item Weakly supervised SimCLR approach.
-    \item Other distance-based approaches.
-    \item kl density estimation probability
-    \item Image size for simclr 96 vs 256 vs 512 as well as original images 96 vs 256 vs 512 vs even original size 2054?
-    \item other architectures. Resnet vs unet in Simclr
-    \item 3 channel vs 1 channel (mis alignment probelm or compuatoinal faster?)
-    \item Batch size 16 vs 64 vs 128 vs 256
-    \item new paper about simclr in linkedin magda
-
+\begin{enumerate} 
+	\item Hybrid: Combine human-interpretable features with unsupervised learning features for a combined effect. 
+	\item Weakly supervised DINO transformer-based and SimCLR approach.
+	 \item Experiment with different image sizes for SimCLR: 96 vs. 256 vs. 512 vs 2054. since more the image size more information it contain.
+	  \item Experimenting different Batch size: 16 vs. 64 vs. 128 vs. 256 with SimCLR. Why explore other models? SimCLR requires a larger batch size and more data for optimal performance, which we currently lack. 
 \end{enumerate}
