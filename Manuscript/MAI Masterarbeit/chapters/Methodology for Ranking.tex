@@ -154,7 +154,7 @@ SimCLR features to see if it can learn the transition better than the original i
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.46]{figures/rankloss.png} 
-  \caption{train vs test loss}
+  \caption{Train vs test loss for original image vectors using CAE prediction model from day 7 to day 10}
   \label{fig:uloss}
 \end{figure}
 
@@ -197,7 +197,7 @@ As we see in the figure below \ref{fig:unloss}, for the training of day 7 to day
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{figures/overfited.png} 
-  \caption{Explod dataset plot in the figure shows overfitting }
+  \caption{Training loss Vs test loss for each class as normal (ie the class is only used in training). Single dose dataset shows overfitting }
   \label{fig:unloss}
 \end{figure}
 
@@ -220,7 +220,7 @@ The reason to choose these metrics are the metrics mainly used in medical images
   After           & Control        & 35.42      & 38.16    & 33.82      & 35.26                  & 39.66                 \\
                   & Explod         & 48.40      & 64.32     & 61.01      & 36.40                  & 51.96                 \\ \bottomrule
   \end{tabular}
-  \caption{Cosine distance}
+  \caption{Cosine distance as inference metric}
   \label{tab:table_cosine}
 \end{table}
 
@@ -236,7 +236,7 @@ The reason to choose these metrics are the metrics mainly used in medical images
   After           & Control        & 35.68      & 36.61     & 33.66      & 35.32                  & 36.71                 \\
                   & Explod         & 51.50      & 56.41     & 37.80      & 44.98                  & 59.98                 \\ \bottomrule
   \end{tabular}
-  \caption{Euclidean distance}
+  \caption{Euclidean distance as inference metric}
   \label{tab:table_eucli}
 \end{table}
 
@@ -252,7 +252,7 @@ The reason to choose these metrics are the metrics mainly used in medical images
   After           & Control        & 35.68      & 36.61     & 43.80      & 35.32                  & 36.71                 \\
                   & Explod         & 51.50      & 56.41     & 61.48      & 44.98                  & 59.98                 \\ \bottomrule
   \end{tabular}
-  \caption{MSE distance}
+  \caption{MSE distance as inference metric}
   \label{tab:table_mse}
 \end{table}
 
@@ -268,7 +268,7 @@ The reason to choose these metrics are the metrics mainly used in medical images
   After           & Control        & 35.52      & 37.44     & 33.61      & 34.64                  & 36.81                 \\
                   & Explod         & 48.71      & 52.12     & 59.10      & 41.68                  & 56.10                 \\ \bottomrule
   \end{tabular}
-  \caption{L1 distance}
+  \caption{L1 distance as inference metric}
   \label{tab:table_l}
 \end{table}
 
@@ -284,8 +284,8 @@ The reason to choose these metrics are the metrics mainly used in medical images
   After           & Control        & 47.78      & 43.02     & 44.26      & 34.49                  & 51.14                 \\
                   & Explod         & 45.04      & 67.11     & 59.26      & 47.21                  & 53.15                 \\ \bottomrule
   \end{tabular}
-  \caption{Pearson correlation}
-  \label{tab:table_pearson_correlation}
+  \caption{Pearson correlation as inference metric}
+  \label{tab:table_pear}
 \end{table}
 
 
@@ -294,14 +294,14 @@ The reason to choose these metrics are the metrics mainly used in medical images
   \begin{tabular}{@{}llccccc@{}}
   \toprule
   Projection Head & Normal as       & Strong & Sweet & Resize & No Contrast Resize & No Contrast Sweet \\ \midrule
-                  & Single Dose    & 33.61      & 34.13     & 33.40      & 34.23                  & 53.93                 \\
+                  & Single Dose    & 33.61      & 34.13     & 33.40      & 34.23                  & \textbf{53.93}                 \\
   Before          & Control        & 39.97      & 49.28     & 34.90      & 40.12                  & 47.10                 \\
-                  & Explod         & 37.75      & 35.32     & 34.85      & 44.93                  & 32.99                 \\ \midrule
+                  & Explode         & 37.75      & 35.32     & 34.85      & 44.93                  & 32.99                 \\ \midrule
                   & Single Dose    & 36.81      & 46.38     & 47.00      & 39.71                  & 34.75                 \\
   After           & Control        & 33.30      & 38.99     & 34.23      & 34.28                  & 33.66                 \\
-                  & Explod         & 34.18      & 45.45     & 33.87      & 36.19                  & 33.61                 \\ \bottomrule
+                  & Explode         & 34.18      & 45.45     & 33.87      & 36.19                  & 33.61                 \\ \bottomrule
   \end{tabular}
-  \caption{Dot product}
+  \caption{Dot product as inference metric}
   \label{tab:table_dot}
 \end{table}
 
@@ -317,7 +317,7 @@ The reason to choose these metrics are the metrics mainly used in medical images
   After           & Control        & 42.14      & 37.18     & 34.33      & 33.09                  & 36.30                 \\
                   & Explod         & 39.14      & 50.78     & 42.55      & 35.47                  & 41.47                 \\ \bottomrule
   \end{tabular}
-  \caption{Jaccard similarity}
+  \caption{Jaccard similarity as inference metric}
   \label{tab:table_jac}
 \end{table}
 
@@ -333,11 +333,11 @@ The reason to choose these metrics are the metrics mainly used in medical images
   After           & Control        & 45.76      & 42.97     & 34.33      & 33.92                  & 36.76                 \\
                   & Explod         & 45.24      & 55.17     & 43.07      & 43.07                  & 45.04                \\ \bottomrule
   \end{tabular}
-  \caption{Hamming  distance}
+  \caption{Hamming  distance as inference metric}
   \label{tab:table_hammi}
 \end{table}
-From the above tables, \ref{tab:table_hammi},  \ref{tab:table_jac} ,  \ref{tab:table_dot} ,  \ref{tab:table_pear} ,  \ref{tab:table_l} ,  \ref{tab:table_eucli} ,  \ref{tab:table_mse} and \ref{tab:table_cosine} 
-We can see that cosine distance, euclidean distance, mse, L1 distance and  Pearson correlation coefficient are able to separate the classes moderately comparing to dot product as inference metric is separating the classes least among all metrics which make it as the worst metric for ranking.
+From the above tables, \ref{tab:table_hammi},  \ref{tab:table_jac} ,  \ref{tab:table_dot} ,  \ref{tab:table_pear} ,  \ref{tab:table_l} ,  \ref{tab:table_eucli} ,  \ref{tab:table_mse} and \ref{tab:table_cosine}, 
+we can see that cosine distance, euclidean distance, mse, L1 distance and  Pearson correlation coefficient are able to separate the classes moderately comparing to dot product as inference metric is separating the classes least among all metrics which make it as the worst metric for ranking.
 
 \begin{figure}[H]
   \centering
