@@ -78,57 +78,49 @@ where:
 5. Calculate accuracy using the formula above.
 
 \section{Day 7 to day 10 prediction using Convolutional Autoencoder} \label{subsec:day7-to-day10}
-
-\textcolor{red}{Reason why control doesn't work as anomaly normal because when it turns to day 10 it contains darker + gray so it learns to predict both dark and gray. but when it comes to single dose as anomaly normal it learns only contains dark in day 10 which have no similarity to control day10 or explod day10, and also when it comes to explod in day 10 it have explod thats not in both / no similarity in day 10 of single dose and control}
-
 \begin{enumerate}
-    \item \textbf{Step 1:} Create a latent space representation of all images, including untreated, clinically recommended, 
-    and drug screening images, using SimCLR. 
+    \item \textbf{Step 1:} Create a latent space representation of all images, including control, single dose, 
+    and drug screen images, using SimCLR. 
     The idea is that SimCLR effectively learns efficient features of similar images that are not captured by 
     human-interpretable metrics. We expect the SimCLR feature vectors of similar images will be closer in the latent space. 
-    In other words, feature vectors of similar images will be more linearly separable.
   
   \item \textbf{Step 2:} Train a prediction model exclusively on the representations of 
-  untreated images from Day 7 to Day 10 using convolutional autoencoder. ( Input: Day 7 feature vector and target: Day 10 feature vector )
+  control images from Day 7 to Day 10 using convolutional autoencoder. ( Input: Day 7 SimCLR feature vector and target: Day 10 SimCLR feature vector )
 
   
-  \item \textbf{Step 3:} Perform inference on the representations of test images, which include untreated, clinically recommended, and drug screening images.
-  Since the day 10 prediction model is trained solely on the representations of untreated images, the inference loss/metric 
-  (i.e., the difference between the predicted and actual Day 10 image representations) will be very small for untreated images.
-   Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of untreated images.
+  \item \textbf{Step 3:} Perform inference on the representations of test images, which include control, single dose, and drug screen images.
+  Since the day 10 prediction model is trained solely on the representations of control images, the inference loss/metric 
+  (i.e., the difference between the predicted and actual Day 10 image representations) will be very small for control images.
+   Conversely, the inference loss/metric will increase for treated images as their representations deviate from those of control images.
   This inference loss/metric will be used as the feature for the ranking/order scale, where the initial images will start 
-  with untreated images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. 
+  with control images that have very small inference loss/metric, and the scale will end with images having high inference loss/metric in ascending order. 
   
-  \item \textbf{Step 4:} so in the above methods we train first solely on untreated /control images then we did inference on all images just like classical anomaly detection approach. 
-  with that same idea/concept, but now we considered other gps as normal and will try to find the deviation from that transition. that is
-  we train solyliy on day 7 untreated to day 10 sd images then we do the inference on all images so that inference loss will be how much it deviated from the single dose 
-  images. repeating the same concept, we train solely on day 7 untreated to day 10 ex images then we do the inference on all images so that inference loss will be
-   how much it deviated from the exploded
-  \item Perform the above steps on original image features instead of simclr feature vectors for comparitive study.
+  \item \textbf{Step 4:} so in the above methods we train first solely on control images then we did inference on all images just like classical anomaly detection approach. 
+  with that same idea/concept, but now we considered other classes as normal and will try to find the deviation from that transition. that is for instance we train solely on day 7 untreated to day 10 single dose images then we do the inference on all images so that inference loss will be how much it deviated from the single dose 
+  images. repeating the same concept, we train solely on day 7 untreated to day 10 explode images then we do the inference on all images so that inference loss will be how much it deviated from the explode.
+  \item Perform the above steps on original image features instead of SimCLR feature vectors for comparative study.
 \end{enumerate}
 
-Lack of dataset problem for day 7 to day 10 images:
-Due to environmetal factors sometimes we may get images of day 7  but we won't able to aquaire  day 10 images or sometimes we may have day 10 images but not corresponding day 7 images. 
+\textbf{Lack of dataset problem for day 7 to day 10 images:}
+Due to environmental factors sometimes we may get images of day 7  but we won't able to acquire  day 10 images or sometimes we may have day 10 images but not corresponding day 7 images. Hence for the images for prediction from day 7 to day 10, we only have 130 control images of pair transitions. 29 images of pair for single dose and 40 image pairs for explode. 
 
-Hence for the images for prediction from day 7 to day 10, we only have 130 control images of pair transitions. 29 images of pair for single dose and 40 image pairs for explod. 
-
-\subsubsection*{original images}
-data preperation: I decided to train with day 7 untreated to day 10 untretaed images.
- normalised the images by dividing them by 65535. reduced the size to 96*96. Added data augmentations such as horizontal/vertical flips and rotations and random brightness/sharpness/blur as explained in the sweet augmentation section  except contrast and cropping. We can't change contrast  as I explained in the augmentation chapter.and also i didn't use cropping because of the idea that inorder to learn whole change or transformation to day 10, it needs to see the whole day 7 image which is already explained in the data augmentation resize chapter. i made sure that 
- 1. augmentation to be coupled that means the same  data augmenattion type parameter value used for both day 7 and corresponding day 10 images. 
- 2.  flips or rotation will be unique to each image with random brightness/sharpness/blur change. that means in the dataset original image can have different augs with the same parameter value of brightness/sharpness/blur since its random but it won't have the same geomatrical transformation.
-
-The augmentation helps to increase the possible sample distribution that could happen in real life by that we are trying to find a solution for data defficiency and also helps to prevent overfitting. also it helps to be invariant of the brightness/position/blur/sharp changes that can happen due to the microscope mishandling. 
+\subsubsection*{CAE Prediction model for original images}
+Data preparation: I decided to train with day 7 control to day 10 control images.Normalized the images by dividing them by 65535. reduced the size to 96*96. Added data augmentations such as horizontal/vertical flips and rotations and random brightness/sharpness/blur as explained in the sweet augmentation section  except contrast and cropping. We can't change contrast  as I explained in the augmentation chapter,and also i didn't use cropping because of the idea that in order to learn whole change or transformation to day 10, it needs to see the whole day 7 image which is already explained in the data augmentation resize chapter \ref{sec:data augmentation}. I made sure that:
+\begin{enumerate}
+  \item Augmentation to be coupled, meaning the same data augmentation type parameter value is used for both day 7 and corresponding day 10 images.
+  \item Flips or rotation will be unique to each image with random brightness/sharpness/blur change. This means that in the dataset, the original image can have different augmentations with the same parameter value of brightness/sharpness/blur since it's random, but it won't have the same geometrical transformation.
+\end{enumerate}
 
 
-training parameters and archiecture:
+The augmentation helps to increase the possible sample distribution that could happen in real life. By that we are trying to find a solution for data deficiency and also helps to prevent overfilling. also it helps to be invariant of the brightness/position/blur/sharp changes that can happen due to the microscope mishandling. So now final dataset consist of all class having 650 pair of transitions.
+
+
+\textbf{Training parameters and archiecture:}
 
 Convolutional Autoencoder Architecture:
 We developed an autoencoder architecture with an encoder-decoder structure, utilizing convolutional layers, batch normalization, dropout, and activation functions
  to learn feature representations and predict day 10 image from day 7. The number of feature maps is progressively increased and then symmetrically decreased to balance
   feature extraction and construction of day 10 same size image as day 7.   
-
-
   \textbf{Encoder}
   The encoder consists of three convolutional layers with a kernel size of $3 \times 3$ and \texttt{same} padding to maintain spatial resolution.  
   \begin{itemize}
@@ -153,14 +145,12 @@ channel reduction in the decoder (\(64 \to 32 \to 16 \to 3\)) for day 10 image c
 training parameters: bacth size = 32. learning rate = 0.001. optimizer = adam. loss = mse. epochs = 500. 
 
 
-
-Result: 
-unfortunately, the model didn't learn the features of transition to day 10 well. the loss didn't decrease in the 500 epochs as we see in the figure.  figure reflects that
-model struggles to predict the day 10 images from day 7 image, the predicted image is more resemblence visually to day 7 than day 10. For the model its hard to learn probably because in most cases the day 10 image cancer cell is totally changed to different 
-shape or size or color pixel intensity. Also it could be the position change due to the microscope handling position. (We used different flip and rotation 
-augmentation but it maynot be effective as we think it is.) since the same problem we may have with the day 7 to day 10 single dose or explod images, I decided to move to
-simclr features to see if it can learn the transition better than the original images. 
-\textcolor{red}{explain why mse and euclidean distance haev same values because of same ratio?}
+\textbf{Result:}
+Unfortunately, the model didn't learn the features of transition from day 7 to day 10 well. the loss didn't decrease in the 500 epochs as we see in the figure \ref{fig:uloss}.  Figure reflects that
+model struggles to predict the day 10 images from day 7 image, the predicted image is more resemblance visually to day 7 than day 10. For the model its hard to learn, probably because in most cases as we see in figure \ref{fig:mispo} the day 10 image tumor tissue model is totally changed in 
+shape or size or  pixel intensity. Also from the same figure shows, it could be the positional change due to the microscope handling position. ( We used different flip and rotation 
+augmentation but it seems like it mayn't be effective as we think it is.) Since the same problem we may have with the day 7 to day 10 single dose or explode images, I decided to move to
+SimCLR features to see if it can learn the transition better than the original images. 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.46]{figures/rankloss.png} 
@@ -171,24 +161,24 @@ simclr features to see if it can learn the transition better than the original i
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.46]{figures/unpred.png} 
-  \caption{train vs test loss}
+  \caption{Train vs test loss on original image vectors using CAE prediction model from day 7 to day 10}
   \label{fig:unloss}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{figures/pproblem.png} 
-  \caption{last row shows misposition of the cancer cell. in the day 7 it was above now. and in day 10 its below.}
-  \label{fig:unloss}
+  \caption{Each pair of day 7 to day 10 transition shows changes in size/shape etc. last pair of transition shows mis position of the cancer cell. In the day 7 it was above the middle line of the image. and in day 10 its below of the middle line of the image}
+  \label{fig:mispo}
 \end{figure}
 
-\subsubsection*{Simclr feats}
+\subsubsection*{Simclr features}
 Set up of data processing same as above original setup.
-frist I started with the pair of day 7 untreated to predict the day 10 untreated images setup.normalised images by dividing them by 65535. resized to 96*96. then
-I increased the dataset of all gps 130 of untreated. by using same data augmentation technics that I did to original image setup as explained in the above section but with made sure that flips or rotation will be unique to each image with random brightness/sharpness/blur change within a range as above. then I feed to simclr model 
+first I started with the pair of day 7 untreated to predict the day 10 control images setup. Normalized images by dividing them by 65535. resized to 96*96. then
+I increased the dataset using same data augmentation technics that I did to original image setup as explained in the above section but with made sure that flips or rotation will be unique to each image with random brightness/sharpness/blur change within a range as above. then I feed to simclr model 
 to get features after and before projection head to train the CAE model. 
 
-Training setup: first to ensure the simclr features are scaled I did featurewise minmax scaling. Then I feed those into FeaturePredictor model which is a fully 
+\textbf{Training setup:} First to ensure the simclr features are scaled I did featurewise minmax scaling. Then I feed those into FeaturePredictor model which is a fully 
 connected neural network. It consists of a series of 12 linear layers, where the input size reduces from 512 to 8 and then symmetrically increases back to 512 to
  match the original feature dimensions for before projection head features. For after projection head features,consists of a series of 6 linear layers, where the 
  input size reduces from 20 to 4 and then symmetrically increases back to 20.
@@ -198,33 +188,25 @@ Each intermediate layer is followed by:
 Batch normalization (BatchNorm1d): Normalizes activations to stabilize training and accelerate convergence.
 ReLU activation: Introduces non-linearity to model complex feature relationships.
 Dropout (Dropout): Applied with probabilities ranging from 0.2 to 0.4 to prevent overfitting, with deeper layers using higher dropout rates for regularization.
-The final layer is a linear transformation to ensure the output feature size matches the day 10 feature vectore dimensions which is 512 for before and 20 for after.
+The final layer is a linear transformation to ensure the output feature size matches the day 10 feature vector dimensions which is 512 for before and 20 for after.
 
-batch size = 32. loss = mse loss. optimizer = adam optimizer. learning rate = 0.0001. no of epochs = 2000. used cross validation with 3 fold and  early stopp with 
+batch size = 32. loss = mse loss. optimizer = adam optimizer. learning rate = 0.0001. no of epochs = 2000. used cross validation with 3 fold and  early stop with 
 the parameters patience = 500 and delta = 0.0001. training data and validation data divided as 80: 20 ratio.
 
-As we see in the figure below, for the training of day 7 to day 10 untreated images and single dose, the train loss and validation loss decreased gradually  in the 2000 epochs. But for the category of cosnidering exploded as normal ie training  day 7 to day 10 exploed images we can see overfitting behaviour in the loss. This is probably due to the fact that for training day 7 to day 10 untreated images we have 130 images correspondingly but for day 7 to day 10 exploded images we have only 40 images as original \textcolor{red}{show sd only have 29 original images also shows overfitting}. This is the problem of data deficiency. We have tried to mitigate this problem by increasing the dataset size by data augmentation but neverthless for the exploded images training didn't quite worked out.
-
-
+As we see in the figure below \ref{fig:unloss}, for the training of day 7 to day 10 control images and single dose, the train loss and validation loss decreased gradually  in the 2000 epochs. But for the category of considering single dose as normal ie training  day 7 to day 10 single dose images we can see overfitting behavior in the loss. This is probably due to the fact that for training day 7 to day 10 single dose images we have only 29 images as original. This is the problem of data deficiency. We have tried to mitigate this problem by increasing the dataset size by data augmentation but nevertheless for the explode images training didn't quite worked out.
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.5]{figures/overfit.png} 
-  \caption{Wrong heading crct image upload Ohne contrast Resize  before projection head data aug: Explod dataset plot in the figure shows overfitting }
+  \includegraphics[scale=0.5]{figures/overfited.png} 
+  \caption{Explod dataset plot in the figure shows overfitting }
   \label{fig:unloss}
 \end{figure}
 
+We calculated inference loss/metric for both  before and after projection head feats and used following metrics as inference loss between target feature vector and predicted feature vector: mse, cosine distance, L2 ( euclidean distance ), L1 distance, Pearson correlation, dot product,jaccard similarity, hamming distance.
 
+The reason to choose these metrics are the metrics mainly used in medical images as explained in literature review.
 
-
-Do inference loss for both  before and after projection head feats.
-used following metrics as inference loss between target feature vector and predicted feature vector.: mse, cosine distance, L2 ( euclidean distance ), L1 distance, Pearson correlation, dot product,jaccard similarity, hamming distance.
-
-Reason to choose cosine distance is basically because the loss function of simclr is designed to make the cosine distance between similar images to be close to 1. the reason to choose other metrics are the metrics mainly used in medical images as explained in literature review.
-\textcolor{red}{put mean line in figure}
-
-results:
-
-As explained before, if the cae trained solely on the transition of untreated images when we do the inerence metric calculation between predicted feature vector and target feature vector for these untreated images should be less than other classes  except pearson, dot product and jaccard similarity. since for those metrics similartiy increases as the value of them increases as explained in \textcolor{red}{ metric chapter}. we met that expectation as we can see the figure \ref{fig:bargraph}.  and some of the metric are able to make a clear seperation of the training class to others ie atleat one class is have clear seperation from other classes as we seen in figure. and some of the metric couldn't make a clear seperation for atleast one class ie all of the classes are mixed as we seen in the figure for dot product and jaccard similarity. We observed this same trend  for both before and after projection head features and for all transition category. Ideal situation that we would like to have is all of the classes are seperated from each other. so that when we do inference on drug screen images there will be look alike smooth transition from class to other.
+\textbf{Results:}
+ As we can see the figure \ref{fig:bargraph}. Some of the inference metric are able to make a clear separation of the training class to others ie talent one class is have clear separation from other classes as we seen in figure. and some of the metric couldn't make a clear separation for atlas one class ie all of the classes are mixed as we seen in the figure for dot product and jaccard similarity. We observed this same trend  for both before and after projection head features and for all transition category. Ideal situation that we would like to have is all of the classes are separated from each other. so that when we do inference on drug screen images there will be look alike smooth transition from class to other.
 
 \begin{table}[H]
   \centering
@@ -239,7 +221,7 @@ As explained before, if the cae trained solely on the transition of untreated im
                   & Explod         & 48.40      & 64.32     & 61.01      & 36.40                  & 51.96                 \\ \bottomrule
   \end{tabular}
   \caption{Cosine distance}
-  \label{tab:table_label}
+  \label{tab:table_cosine}
 \end{table}
 
 \begin{table}[H]
@@ -255,7 +237,7 @@ As explained before, if the cae trained solely on the transition of untreated im
                   & Explod         & 51.50      & 56.41     & 37.80      & 44.98                  & 59.98                 \\ \bottomrule
   \end{tabular}
   \caption{Euclidean distance}
-  \label{tab:table_label}
+  \label{tab:table_eucli}
 \end{table}
 
 \begin{table}[H]
@@ -271,7 +253,7 @@ As explained before, if the cae trained solely on the transition of untreated im
                   & Explod         & 51.50      & 56.41     & 61.48      & 44.98                  & 59.98                 \\ \bottomrule
   \end{tabular}
   \caption{MSE distance}
-  \label{tab:table_label}
+  \label{tab:table_mse}
 \end{table}
 
 \begin{table}[H]
@@ -287,7 +269,7 @@ As explained before, if the cae trained solely on the transition of untreated im
                   & Explod         & 48.71      & 52.12     & 59.10      & 41.68                  & 56.10                 \\ \bottomrule
   \end{tabular}
   \caption{L1 distance}
-  \label{tab:table_label}
+  \label{tab:table_l}
 \end{table}
 
 \begin{table}[H]
@@ -303,7 +285,7 @@ As explained before, if the cae trained solely on the transition of untreated im
                   & Explod         & 45.04      & 67.11     & 59.26      & 47.21                  & 53.15                 \\ \bottomrule
   \end{tabular}
   \caption{Pearson correlation}
-  \label{tab:table_label}
+  \label{tab:table_pearson_correlation}
 \end{table}
 
 
@@ -320,7 +302,7 @@ As explained before, if the cae trained solely on the transition of untreated im
                   & Explod         & 34.18      & 45.45     & 33.87      & 36.19                  & 33.61                 \\ \bottomrule
   \end{tabular}
   \caption{Dot product}
-  \label{tab:table_label}
+  \label{tab:table_dot}
 \end{table}
 
 \begin{table}[H]
@@ -336,7 +318,7 @@ As explained before, if the cae trained solely on the transition of untreated im
                   & Explod         & 39.14      & 50.78     & 42.55      & 35.47                  & 41.47                 \\ \bottomrule
   \end{tabular}
   \caption{Jaccard similarity}
-  \label{tab:table_label}
+  \label{tab:table_jac}
 \end{table}
 
 \begin{table}[H]
@@ -352,33 +334,20 @@ As explained before, if the cae trained solely on the transition of untreated im
                   & Explod         & 45.24      & 55.17     & 43.07      & 43.07                  & 45.04                \\ \bottomrule
   \end{tabular}
   \caption{Hamming  distance}
-  \label{tab:table_label}
+  \label{tab:table_hammi}
 \end{table}
-
-Dot product is seperating the classes least amoung all metrics which make it as the worst metric for ranking.
-
-
-range of cosine distacnes = 0-2
-range of euclidean distacnes = working
-range of mse working
-
-range of L1 distacne is working
-
-range of pearson correlation coefficient: -1 to 1 working. 1 linearly correlated 0 no corelation, -1 inversly corelated.
-range of dot product  working.
-range of jaccard : working 0 to 1
-range of hamming distance is working.
-
+From the above tables, \ref{tab:table_hammi},  \ref{tab:table_jac} ,  \ref{tab:table_dot} ,  \ref{tab:table_pear} ,  \ref{tab:table_l} ,  \ref{tab:table_eucli} ,  \ref{tab:table_mse} and \ref{tab:table_cosine} 
+We can see that cosine distance, euclidean distance, mse, L1 distance and  Pearson correlation coefficient are able to separate the classes moderately comparing to dot product as inference metric is separating the classes least among all metrics which make it as the worst metric for ranking.
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5, angle=270]{figures/predall.pdf} 
-  \caption{Last row shows the misposition of the cancer cell. On day 7, it was above, and on day 10, it moved below.}
+  \caption{Ranking scale for before projection head SimCLR  features while control class used as normal ie control class only used for training}
   \label{fig:bargraph}
 \end{figure}
 
 
-Since we couldn't seperate those 3 classes well that means we won't have good ranking of drug screnn images since sd close images and explod images will be mixed while ranking. this calls the need for other ranking strategy such as Softmax approach, K means centroid approach, PCA approach. where for K means centroid , PCA approach small no of data will not effect that much for the performance of ranking. since there is no training required.
+Since we couldn't separate those 3 classes well that means we won't have good ranking of drug screen images since sd close images and explode images will be mixed while ranking. this calls the need for other ranking strategy such as softmax approach, K means centroid approach, dimensionality reduction technics. where for K means centroid , dimensionality reduction technics, small no of data will not effect that much for the performance of ranking. since there is no training required.
 
 \section{Ranking strategy 2: Softmax approach}
 
