@@ -1,21 +1,18 @@
 \chapter{Methodology for Ranking}\label{ch:Methodology for Ranking}
  
-since we don't have ground truth labels to rank the images except control images (since control images doesn't applied by drug, drug efficacy is basically zero).
-My strategy was to simplify the current ranking problem to only scale/order/rank images 
-using only control, single dose and exploded images.
-The reason to pick these groups is that controls we know that there is no drug applied which means that there is no effect of drug at all. 
-single dose images are the category which we apply specific drug concentration and its clinically recommended at the moment as the most effective genearlly (eventhough we don't know how much drug effected or how 
-much it killed the cancer) 
-and exploded are visually exploded from the original cancer cell meaning we can visually see debris around the cancer cell potentially which may potentially harm the surrounding good cells.
-once if we can order those small subset of entire images, we can add the other image as inference to see where they plotted relative to control or single dose or exloded in this scale. For example, If we can order control , single dose and exploded images in an scale using any of the methodologies we use the same methodology to order all of the drug screening images, we expect it will follow an order of images  where drug screening images which are similar to control comes first in the scale then single dose and then exploded images comes next in the scale.
+Since we don't have ground truth labels to rank the images except control images (since control images doesn't applied by drug, drug efficacy is basically zero).
+My strategy was to simplify the current ranking problem to only scale/order/rank images relative to only control, single dose and explode images. What I mean by ordering relative to these specified classes means for example, while ordering drug screen images it shows maybe first control look alike drug screen images then single dose look alike drug screen images then comes explode images. 
+The reason to pick these specific classes for relative positioning is that controls: we know that there is no drug applied which means that there is no effect of drug at all. 
+single dose images are the category which we apply specific drug concentration and its clinically recommended at the moment as the most effective generally (even though we don't know how much drug effected or how much it killed the tumor tissue model) 
+and explode are visually see debris around the tumor tissue model which may potentially harm the surrounding good tissues.
+once if we can order those control, single dose and explode image using ranking strategy, we can add the  inference images to see where they positioned in the scale of control or single dose or explode images. Finally if we can order control , single dose and exploded images in an scale using any of the ranking methodologies thats gonna explain below, we use the same methodology to order all of the drug screening images, we expect it will follow an order of images  where drug screening images which are similar to control comes first in the scale then single dose and then exploded images comes next in the scale.
 
-\section*{Ranking customized Accuracy Calculation}
-
-Accuracy formulation: Goal is to check whether we have clear seperation of each class by the inference metric while using as it as a scale. Accuracy below formulated to check whether the first and third classes are well-separated from the middle. there by it also penalizes if first and third classes are overlaped each other. If its clearly seperated from the middile means all 3 classes  are well seperated. 
+\section*{Ranking customized accuracy calculation}
+Accuracy formulation: Goal is to check whether we have clear separation of each class by the inference metric as explained in literature review \ref{{ch:Literature Review}} while using as it as a scale order. Accuracy below formulated to check whether the first and third classes are well-separated from the middle class. there by it also penalizes if first and third classes are overladed each other. If its clearly separated from the middle class means all 3 classes  are well separated and accuracy will be 100.
 
 Detailed explanation of the accuracy calculation:
 
-Once we obtain the inference metric for each individual feature vector in each class, the next steps involve calculating the mean inference metric for each class, identifying the middle class based on the mean values, and proceeding with the remaining computations as described below.
+Once we obtain the inference metric for each individual feature vector in each class, the next steps involve calculating the mean inference metric for each class, identifying the middle class based on the mean values of inference metric, and proceeding with the remaining computations as described below.
 
 \textbf{Task 1: Mean of Each Class}
 
